@@ -1,5 +1,5 @@
-<ui-spinner *ngIf="srvURLInterceptor.activeCalls>0"></ui-spinner>
-<div class="qsm-main-wrapper" [ngStyle]="{'direction':direction}" fxLayout="row">
+<div class="qsm-main-wrapper" [ngStyle]="{'direction':direction}"  [direction-selection]="direction" fxLayout="row">
+  <!--<div style="background: grey" fxFlex="250px">menu</div>-->
   <ui-sidebar fxFlex="150px"></ui-sidebar>
   <div style="background: lightcyan" fxFlex fxLayout="column">
     <ui-header></ui-header>

@@ -1,5 +1,6 @@
 import { Interceptor, InterceptedRequest, InterceptedResponse } from 'ng2-interceptors';
 import {Injectable} from "@angular/core";
+
 @Injectable()
 export class ServerURLInterceptor implements Interceptor {
   public activeCalls = 0;
@@ -18,7 +19,7 @@ export class ServerURLInterceptor implements Interceptor {
 
   public interceptAfter(response: InterceptedResponse): InterceptedResponse {
     // Do whatever with response: get info or edit it
-    console.log('error');
+    console.log('error',response);
     this.activeCalls--;
     return response;
     /*

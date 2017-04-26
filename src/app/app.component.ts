@@ -14,15 +14,15 @@ export class AppComponent {
 
   constructor(private srvURLInterceptor: ServerURLInterceptor, private translate: TranslateService, private http: InterceptorService) {
     translate.addLangs(["en", "he"]);
-    translate.use('he');
+    translate.use('en');
     translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.direction = i18n[event.lang];
     });
 
-    // this.http.get("/api/user").subscribe(
-    //   (res) => console.log(res),
-    //   (err) => console.error(err),
-    //   () => console.log("Yay"));
+    this.http.get("/api/user").subscribe(
+      (res) => console.log(res),
+      (err) => console.error(err),
+      () => console.log("Yay"));
 
 
   }

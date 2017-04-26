@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {TranslateService, LangChangeEvent} from "@ngx-translate/core";
 import {i18n} from "./config/i18n";
-import {HttpClientService} from "./shared/services/http-client.service";
 import {InterceptorService} from "ng2-interceptors";
 import {ServerURLInterceptor} from "./app.interceptors";
 
@@ -15,15 +14,15 @@ export class AppComponent {
 
   constructor(private srvURLInterceptor: ServerURLInterceptor, private translate: TranslateService, private http: InterceptorService) {
     translate.addLangs(["en", "he"]);
-    translate.use('en');
+    translate.use('he');
     translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.direction = i18n[event.lang];
     });
 
-    this.http.get("/api/user").subscribe(
-      (res) => console.log(res),
-      (err) => console.error(err),
-      () => console.log("Yay"));
+    // this.http.get("/api/user").subscribe(
+    //   (res) => console.log(res),
+    //   (err) => console.error(err),
+    //   () => console.log("Yay"));
 
 
   }

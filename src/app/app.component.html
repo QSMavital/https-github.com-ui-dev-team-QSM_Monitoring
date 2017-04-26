@@ -1,4 +1,4 @@
-<div class="qsm-main-wrapper" [ngStyle]="{'direction':direction}"  [direction-selection]="direction" fxLayout="row">
+<div class="qsm-main-wrapper" [ngStyle]="{'direction':direction}" [ngClass]="{'in':direction}" [direction-selection]="direction" fxLayout="row">
   <!--<div style="background: grey" fxFlex="250px">menu</div>-->
   <ui-sidebar fxFlex="150px"></ui-sidebar>
   <div style="background: lightcyan" fxFlex fxLayout="column">
@@ -13,3 +13,4 @@
   <button (click)="translate.use('he');">HE</button>
   <button (click)="translate.use('en');">EN</button>
 </div>
+<ui-spinner *ngIf="srvURLInterceptor.activeCalls>0||!direction"></ui-spinner>

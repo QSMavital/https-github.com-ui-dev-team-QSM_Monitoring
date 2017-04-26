@@ -15,6 +15,7 @@ export class DirSelectionDirective implements OnChanges, AfterViewChecked, OnIni
 
   @Input('direction-selection') direction: string;
   private prevDirection: string;
+  private init: boolean = true;
 
   constructor(private el: ElementRef) {
   }
@@ -30,12 +31,15 @@ export class DirSelectionDirective implements OnChanges, AfterViewChecked, OnIni
   }
 
   ngAfterViewChecked() {
-    this.el.nativeElement.querySelectorAll('*').forEach(el => {
+    if(isNullOrUndefined(this.prevDirection) && !(this.init&&this.direction=='rtl')){return}
+    let styles = [].slice.call(document.querySelectorAll('style'));
+    styles.forEach((el) => {
       if (!el.getAttribute('bidi') || this.direction !== this.prevDirection) {
         el.setAttribute('bidi', this.direction);
-        el.style.cssText = cssjanus.transform(el.style.cssText);
+        el.innerText = cssjanus.transform(el.innerText);
       }
     });
+    this.prevDirection=this.direction;
   }
 
 

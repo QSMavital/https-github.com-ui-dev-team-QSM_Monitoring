@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  height: 100%;
+  .qsm-main-wrapper {
+    height: 100%;
+  }
+
+  .lang-switcher {
+    position: fixed;
+    bottom: -25px;
+    right: 10px;
+    border-radius:3px 3px 0 0;
+    background: yellow;
+    height: 50px;
+    padding: 5px;
+    & > div {
+      height: 20px;
+      line-height: 20px;
+      font-family: Arial;
+      text-align: center;
+    }
+    &:hover {
+      bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?> 
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <font id="ui-icons" horiz-adv-x="16">
+    <font-face font-family="ui-icons"
+      units-per-em="16" ascent="16"
+      descent="0"
+      font-style="normal !important" />
+    <missing-glyph horiz-adv-x="0" />
+    <glyph glyph-name="add-new"
+      unicode="&#xEA01;"
+      horiz-adv-x="16" d=" M15 7.001H9V1.001A1 1 0 0 0 7 1.001V7.001H1A1 1 0 0 0 1 9.001H7V15.001A1 1 0 0 0 9 15.001V9.001H15A1 1 0 0 0 15 7.001z" />
+  </font>
+</defs>
+</svg>

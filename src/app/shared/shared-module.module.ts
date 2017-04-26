@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
-import {HttpClientService} from "./services/http-client.service";
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   imports: [],
-  declarations: [],
-  exports: [],
-  providers: [ HttpClientService]
+  declarations: [SpinnerComponent],
+  exports: [SpinnerComponent],
+  providers: []
 })
 export class SharedModuleModule {
 }

@@ -21,11 +21,17 @@ import { ReportsComponent } from './core/reports/reports.component';
 import {RouterModule} from "@angular/router";
 import {appRoutes} from "./app.routes";
 import {SharedModuleModule} from "./shared/shared-module.module";
-
+import {InterceptorService, provideInterceptorService} from 'ng2-interceptors';
+import { XHRBackend, RequestOptions } from '@angular/http';
+import {NgReduxModule, NgRedux} from "@angular-redux/store";
+import {IStore, rootReducer, enhancers} from "../store/index";
+import {ServerURLInterceptor} from "./app.interceptors";
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "i18n/", ".json");
 }
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +56,7 @@ export function HttpLoaderFactory(http: Http) {
     FlexLayoutModule,
     RouterModule,
     RouterModule.forRoot(appRoutes),
+    NgReduxModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -58,7 +65,17 @@ export function HttpLoaderFactory(http: Http) {
       }
     })
   ],
-  providers: [],
+  providers: [
+    ServerURLInterceptor,
+    provideInterceptorService([
+      ServerURLInterceptor
+    ])
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private ngRedux: NgRedux<IStore>) {
+    const middlewares = [];
+    this.ngRedux.configureStore(rootReducer, {}, middlewares,[ ...enhancers]);
+  }
+}

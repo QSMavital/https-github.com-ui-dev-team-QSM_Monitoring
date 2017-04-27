@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import {isNullOrUndefined} from "util";
 
-declare var cssjanus: any;
+// declare var cssjanus: any;
 
 import * as cssjanus from "cssjanus/src/cssjanus";
 

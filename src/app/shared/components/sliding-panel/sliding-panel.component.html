@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <ng-sidebar-container style="position: relative">
+    <!-- A sidebar -->
+    <ng-sidebar mode="dock" dockedSize="28px" [(opened)]="open" position="right">
+      <div style="display: inline;width:28px;"><div class="open-sliding-panel-btn" (click)="open = !open"></div></div>
+      <div style="display: inline-block; width:calc(100% - 28px)">
+      <p>Sidebar contents</p>
+      </div>
+    </ng-sidebar>
+  </ng-sidebar-container>
+</div>

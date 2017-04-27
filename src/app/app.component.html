@@ -19,4 +19,4 @@
   <button (click)="translate.use('en');">EN</button>
 </div>
 <ui-spinner *ngIf="srvURLInterceptor.activeCalls>0||!direction"></ui-spinner>
-
+<ui-sliding-panel [direction]="direction"></ui-sliding-panel>

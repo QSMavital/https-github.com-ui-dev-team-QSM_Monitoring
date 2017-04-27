@@ -27,6 +27,7 @@ import {IStore, rootReducer, enhancers} from "../store/index";
 import {ServerURLInterceptor} from "./app.interceptors";
 import {DialogModule} from 'primeng/primeng';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {CommonModule} from "@angular/common";
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "i18n/", ".json");
@@ -53,6 +54,7 @@ export function HttpLoaderFactory(http: Http) {
   imports: [
     BrowserModule,
     SharedModule,
+    CommonModule,
     FormsModule,
     HttpModule,
     FlexLayoutModule,
@@ -77,6 +79,7 @@ export function HttpLoaderFactory(http: Http) {
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
   constructor(private ngRedux: NgRedux<IStore>) {
     const middlewares = [];

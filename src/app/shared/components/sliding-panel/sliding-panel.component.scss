@@ -1,18 +1,31 @@
-//@import "br";
 :host {
+  background: transparent;
   .wrapper {
-    width:0;
-    height:0;
+    width: 0;
+    height: 0;
     overflow: visible;
-    .open-sliding-panel-btn {
-      position: absolute;
-      top:calc(50% - 20px);
-      height:80px;
-      width:28px;
-      background:blue;
-      border-radius: 15px 0 0 15px;
-      cursor: pointer;
-      left:0px;
+    .left-button-container {
+      display: inline-block;
+      width: 28px;
+      height: 80px;
+      float: left;
+      .open-sliding-panel-btn {
+        position: absolute;
+        top: calc(50% - 20px);
+        height: 80px;
+        width: 28px;
+        background: blue;
+        border-radius: 15px 0 0 15px;
+        cursor: pointer;
+        left: 0px;
+      }
+    }
+    .right-bar-container {
+      display: inline-block;
+      width: calc(100% - 30px);
+      height: 100%;
+      float: right;
+      background: blue;
     }
   }
 }

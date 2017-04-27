@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+//used by bidi drv
+.qsm_self{text-align: center}
+
 @import "styles/helpers/ui-reset";
 @import "styles/helpers/ui-helper";
 @import "styles/overrides/ng-sidebar-overrides";

@@ -16,5 +16,6 @@ import {CommonModule} from "@angular/common";
   exports: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent],
   providers: []
 })
-export class SharedModuleModule {
+
+export class SharedModule {
 }

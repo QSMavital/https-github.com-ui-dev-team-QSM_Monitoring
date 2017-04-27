@@ -1,6 +1,9 @@
-<div class="qsm-main-wrapper" [ngStyle]="{'direction':direction}" [ngClass]="{'in':direction}"
-      fxLayout="row">
-     <!--[direction-selection]="direction" fxLayout="row">-->
+<p-dialog header="Error" [(visible)]="errorHandler.show">
+  <div class="width-325 scroll-y" style="height: 300px">
+    <pre>{{errorHandler.error | json}}</pre>
+  </div>
+</p-dialog>
+<div class="qsm-main-wrapper" [ngStyle]="{'direction':direction}" [ngClass]="{'in':direction}" [direction-selection]="direction" fxLayout="row">
   <!--<div style="background: grey" fxFlex="250px">menu</div>-->
   <ui-sidebar fxFlex="150px"></ui-sidebar>
   <div style="background: lightcyan" fxFlex fxLayout="column">

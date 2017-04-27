@@ -7,14 +7,15 @@ import {DirSelectionDirective} from './directives/bidi/dir-selection.directive';
 import { SlidingPanelComponent } from './components/sliding-panel/sliding-panel.component';
 import { MomentPipe } from './pipes/moment.pipe';
 import {CommonModule} from "@angular/common";
+import { GaugeComponent } from './components/gauge/gauge.component';
 
 @NgModule({
   imports: [
     CommonModule,
     SidebarModule.forRoot()
   ],
-  declarations: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe],
-  exports: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe],
+  declarations: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent],
+  exports: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe,GaugeComponent],
   providers: []
 })
 

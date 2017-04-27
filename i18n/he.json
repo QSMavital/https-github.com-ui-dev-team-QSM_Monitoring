@@ -4,5 +4,9 @@
   "menu.atm":"כספומט",
   "menu.epps":"epps",
   "menu.hsm":"hsm",
-  "menu.reports":"דוחות"
+  "menu.reports":"דוחות",
+  "general": {
+    "date":"תאריך",
+    "time":"שעה"
+  }
 }

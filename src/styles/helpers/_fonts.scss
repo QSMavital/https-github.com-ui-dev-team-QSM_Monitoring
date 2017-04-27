@@ -1,0 +1,63 @@
+
+@font-face {
+  font-family: 'opensans-light';
+  src: url('./assets/fonts/opensans/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/opensans/opensans-light-webfont.woff') format('woff'),
+  url('./assets/fonts/opensans/opensans-light-webfont.ttf') format('truetype'),
+  url('./assets/fonts/opensans/opensans-light-webfont.svg#DIN-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'opensans-regular';
+  src: url('./assets/fonts/opensans/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/opensans/opensans-regular-webfont.woff') format('woff'),
+  url('./assets/fonts/opensans/opensans-regular-webfont.ttf') format('truetype'),
+  url('./assets/fonts/opensans/opensans-regular-webfont.svg#DIN-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'opensans-semibold';
+  src: url('./assets/fonts/opensans/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/opensans/opensans-semibold-webfont.woff') format('woff'),
+  url('./assets/fonts/opensans/opensans-semibold-webfont.ttf') format('truetype'),
+  url('./assets/fonts/opensans/opensans-semibold-webfont.svg#DIN-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'opensans-bold';
+  src: url('./assets/fonts/opensans/opensans-bold-webfont.eot#iefix') format('embedded-opentype'),
+  url('./assets/fonts/opensans/opensans-bold-webfont.woff') format('woff'),
+  url('./assets/fonts/opensans/opensans-bold.ttf') format('truetype'),
+  url('./assets/fonts/opensans/opensans-bold-webfont.svg#DIN-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'opensans-extrabold';
+  src: url('./assets/fonts/opensans/opensans-extrabold-webfont.eot#iefix') format('embedded-opentype'),
+  url('./assets/fonts/opensans/opensans-extrabold-webfont.woff') format('woff'),
+  url('./assets/fonts/opensans/opensans-extrabold.ttf') format('truetype'),
+  url('./assets/fonts/opensans/opensans-extrabold-webfont.svg#DIN-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.bold {
+  font-family:"opensans-bold"
+}
+.light {
+  font-family:"opensans-light"
+}
+.semi-bold {
+  font-family: "opensans-semibold";
+}
+.extra-bold {
+  font-family: "opensans-extrabold";
+}

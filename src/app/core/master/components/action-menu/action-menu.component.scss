@@ -1,0 +1,15 @@
+@import "./src/styles/helpers/brand";
+:host {
+  ul {
+    margin: 25px;
+    border-top: 1px solid $ber-gray;
+    li {
+      text-align: center;
+      margin:40px 0;
+      i {
+        cursor: pointer;
+        color:$ber-gray;
+      }
+    }
+  }
+}

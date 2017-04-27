@@ -4,5 +4,9 @@
   "menu.atm":"atm",
   "menu.epps":"epps",
   "menu.hsm":"hsm",
-  "menu.reports":"reports"
+  "menu.reports":"reports",
+  "general": {
+    "date":"date",
+    "time":"time"
+  }
 }

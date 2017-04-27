@@ -1,4 +1,8 @@
 $ui-icons-add-new: "\ea01";
+$ui-icons-info: "\ea02";
+$ui-icons-mail: "\ea03";
+$ui-icons-print: "\ea04";
+$ui-icons-save: "\ea05";
 
 @font-face {
     font-family: ui-icons;
@@ -51,4 +55,20 @@ $ui-icons-add-new: "\ea01";
 
 .ui-icons-add-new::before {
     content: "\ea01";
+}
+
+.ui-icons-info::before {
+    content: "\ea02";
+}
+
+.ui-icons-mail::before {
+    content: "\ea03";
+}
+
+.ui-icons-print::before {
+    content: "\ea04";
+}
+
+.ui-icons-save::before {
+    content: "\ea05";
 }

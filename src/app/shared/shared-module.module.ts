@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-import {HttpClientService} from "./services/http-client.service";
 import {DirSelectionDirective} from './directives/bidi/dir-selection.directive';
 
 @NgModule({
@@ -9,5 +8,5 @@ import {DirSelectionDirective} from './directives/bidi/dir-selection.directive';
   exports: [SpinnerComponent,DirSelectionDirective],
   providers: []
 })
-export class SharedModuleModule {
+export class SharedModule {
 }

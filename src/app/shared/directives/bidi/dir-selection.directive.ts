@@ -34,7 +34,8 @@ export class DirSelectionDirective implements OnChanges, AfterViewChecked, OnIni
     if(isNullOrUndefined(this.prevDirection) && !(this.init&&this.direction=='rtl')){return}
     let styles = [].slice.call(document.querySelectorAll('style'));
     styles.forEach((el) => {
-      if (!el.getAttribute('bidi') || this.direction !== this.prevDirection) {
+      let selfCss = el.innerText.indexOf('.qsm_self')>-1;
+      if (selfCss &&(!el.getAttribute('bidi') || this.direction !== this.prevDirection)) {
         el.setAttribute('bidi', this.direction);
         el.innerText = cssjanus.transform(el.innerText);
       }

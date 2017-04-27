@@ -5,6 +5,7 @@ import { SidebarModule } from 'ng-sidebar';
 
 import {DirSelectionDirective} from './directives/bidi/dir-selection.directive';
 import { SlidingPanelComponent } from './components/sliding-panel/sliding-panel.component';
+import { MomentPipe } from './pipes/moment.pipe';
 import {CommonModule} from "@angular/common";
 
 @NgModule({
@@ -12,8 +13,8 @@ import {CommonModule} from "@angular/common";
     CommonModule,
     SidebarModule.forRoot()
   ],
-  declarations: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent],
-  exports: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent],
+  declarations: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe],
+  exports: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe],
   providers: []
 })
 

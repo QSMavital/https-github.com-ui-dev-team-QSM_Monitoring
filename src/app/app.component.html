@@ -1,7 +1,3 @@
-<i class="ui-icons-add-new fs14"></i>
-
----
-
 <p-dialog header="Error" [rtl]="direction=='rtl'" [(visible)]="errorHandler.show">
   <div class="width-325 scroll-y" style="height: 300px">
     <pre>{{errorHandler.error | json}}</pre>
@@ -10,7 +6,7 @@
 <div class="qsm-main-wrapper" [ngStyle]="{'direction':direction}" [ngClass]="{'in':direction}" [direction-selection]="direction" fxLayout="row">
   <!--<div style="background: grey" fxFlex="250px">menu</div>-->
   <ui-sidebar fxFlex="150px"></ui-sidebar>
-  <div style="background: lightcyan" fxFlex fxLayout="column">
+  <div class="background-wrapper" fxFlex fxLayout="column">
     <ui-header></ui-header>
     <div fxFlex class="scroll-y">
       <router-outlet></router-outlet>
@@ -23,6 +19,6 @@
   <button (click)="translate.use('en');">EN</button>
 </div>
 <ui-spinner *ngIf="srvURLInterceptor.activeCalls>0||!direction"></ui-spinner>
-<ui-sliding-panel [direction]="direction">
+<ui-sliding-panel [direction]="direction" icon="ui-icons-add-new">
   Hello How are you doing today?
 </ui-sliding-panel>

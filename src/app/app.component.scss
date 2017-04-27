@@ -1,4 +1,5 @@
 //used by bidi drv
+@import "../styles/helpers/brand";
 .qsm_self{text-align: center}
 
 :host {
@@ -17,7 +18,9 @@
       opacity: 1;
     }
   }
-
+  .background-wrapper {
+    background:$white-lilac;
+  }
   .lang-switcher {
     position: fixed;
     bottom: -25px;

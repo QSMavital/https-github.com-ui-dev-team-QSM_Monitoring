@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'ui-dates',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatesComponent implements OnInit {
 
+  private time = moment().format();
   constructor() { }
 
   ngOnInit() {
+    setInterval(()=>{
+      this.time = moment().format();
+      console.log(this.time);
+    },1000);
   }
 
 }

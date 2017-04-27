@@ -25,10 +25,13 @@ import {provideInterceptorService} from 'ng2-interceptors';
 import {NgReduxModule, NgRedux} from "@angular-redux/store";
 import {IStore, rootReducer, enhancers} from "../store/index";
 import {ServerURLInterceptor} from "./app.interceptors";
+import {DialogModule} from 'primeng/primeng';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "i18n/", ".json");
 }
+
 
 
 @NgModule({
@@ -62,12 +65,14 @@ export function HttpLoaderFactory(http: Http) {
         useFactory: HttpLoaderFactory,
         deps: [Http]
       }
-    })
+    }),
+    DialogModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ServerURLInterceptor,
     provideInterceptorService([
-      new ServerURLInterceptor()
+      ServerURLInterceptor
     ])
   ],
   bootstrap: [AppComponent]

@@ -1,3 +1,8 @@
+<p-dialog header="Error" [(visible)]="errorHandler.show">
+  <div class="width-325 scroll-y" style="height: 300px">
+    <pre>{{errorHandler.error | json}}</pre>
+  </div>
+</p-dialog>
 <div class="qsm-main-wrapper" [ngStyle]="{'direction':direction}" [ngClass]="{'in':direction}" [direction-selection]="direction" fxLayout="row">
   <!--<div style="background: grey" fxFlex="250px">menu</div>-->
   <ui-sidebar fxFlex="150px"></ui-sidebar>
@@ -14,3 +19,4 @@
   <button (click)="translate.use('en');">EN</button>
 </div>
 <ui-spinner *ngIf="srvURLInterceptor.activeCalls>0||!direction"></ui-spinner>
+

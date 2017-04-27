@@ -1,5 +1,5 @@
 import { ErrorHandlerActions } from '../actions/error-handler-actions'
-const INITIAL_STATE: any = {};
+const INITIAL_STATE: any = null;
 
 export function errorReducer(state: any = INITIAL_STATE, action:any) {
   switch (action.type) {

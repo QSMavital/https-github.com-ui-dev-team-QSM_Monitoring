@@ -1,7 +1,15 @@
 .qsm_self{text-align: center}
+@import "./src/styles/helpers/brand";
 :host{
-  background: red;
+  background: $gun-powder;
+  position: relative;
   .qsm-logo{
-    padding: 5px 10px 15px 0; //test
+    padding-top:10px;
+    text-align: center;
+    height:74px;
+    line-height:74px;
+    img {
+      height:30px !important;
+    }
   }
 }

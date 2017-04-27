@@ -1,1 +1,21 @@
-:host{}
+@import "./src/styles/helpers/brand";
+
+:host {
+  ul {
+    li {
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      &.active {
+        background:$bright-gray;
+      }
+      a {
+        text-decoration: none !important;
+        color: $blue-haze;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import "./src/styles/helpers/brand";
+:host {
+  span {
+    text-transform: uppercase;
+    &.time-label {
+      margin: 0 15px;
+      position: relative;
+      &:before {    content: '';
+        width: 1px;
+        position: absolute;
+        top: 0;
+        left: -15px;
+        z-index: 99999;
+        height: 100%;
+        background:$per-gray;
+      }
+      &:first-child {
+        margin-left:0;
+        &:before {
+          display: none;
+        }
+      }
+    }
+    .time {
+      font-family: opensans-bold;
+    }
+  }
+}

@@ -92,3 +92,4 @@ export class AppModule {
     this.ngRedux.configureStore(rootReducer, {}, middlewares, [...enhancers]);
   }
 }
+

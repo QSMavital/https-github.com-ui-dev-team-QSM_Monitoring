@@ -28,6 +28,8 @@ import {ServerURLInterceptor} from "./app.interceptors";
 import {DialogModule} from 'primeng/primeng';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CommonModule} from "@angular/common";
+import {Moment} from "moment";
+import {MomentPipe} from "./shared/pipes/moment.pipe";
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "i18n/", ".json");
@@ -76,6 +78,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     BrowserAnimationsModule
   ],
   providers: [
+    MomentPipe,
     ServerURLInterceptor,
     {
       provide: InterceptorService,

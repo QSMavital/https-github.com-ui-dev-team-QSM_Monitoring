@@ -1,6 +1,7 @@
 <div class="wrapper">
   <div class="open-sliding-panel-btn static" (click)="open = !open">
     <!--<i class="ui-icons ui-icons-add-new"></i>-->
+    <i class="fs14" [ngClass]="icon"></i>
   </div>
   <ng-sidebar-container>
     <!-- A sidebar -->
@@ -9,6 +10,7 @@
       <!--</div>-->
       <div class="open-sliding-panel-btn" (click)="open = !open">
         <!--<i class="ui-icons ui-icons-all-actions"></i>-->
+        <i class="fs14" [ngClass]="icon"></i>
       </div>
       <div class="right-bar-container">
         <ng-content></ng-content>

@@ -7,8 +7,12 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SlidingPanelComponent implements OnInit {
   @Input() direction = 'ltr';
+  @Input() icon: string = '';
+
   private open:boolean = false;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

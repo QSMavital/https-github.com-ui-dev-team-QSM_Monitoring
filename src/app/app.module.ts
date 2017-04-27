@@ -26,11 +26,11 @@ import { XHRBackend, RequestOptions } from '@angular/http';
 import {NgReduxModule, NgRedux} from "@angular-redux/store";
 import {IStore, rootReducer, enhancers} from "../store/index";
 import {ServerURLInterceptor} from "./app.interceptors";
+import {CommonModule} from "@angular/common";
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "i18n/", ".json");
 }
-
 
 @NgModule({
   declarations: [
@@ -51,6 +51,7 @@ export function HttpLoaderFactory(http: Http) {
   imports: [
     BrowserModule,
     SharedModuleModule,
+    CommonModule,
     FormsModule,
     HttpModule,
     FlexLayoutModule,
@@ -68,11 +69,12 @@ export function HttpLoaderFactory(http: Http) {
   providers: [
     ServerURLInterceptor,
     provideInterceptorService([
-      ServerURLInterceptor
+      new ServerURLInterceptor()
     ])
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
   constructor(private ngRedux: NgRedux<IStore>) {
     const middlewares = [];

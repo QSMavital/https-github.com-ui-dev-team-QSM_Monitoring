@@ -18,13 +18,7 @@ export class AppComponent {
     translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.direction = i18n[event.lang];
     });
-
-    this.http.get("/api/user").subscribe(
-      (res) => console.log(res),
-      (err) => console.error(err),
-      () => console.log("Yay"));
-
-
+    this.go();
   }
 
   title = 'app works!';

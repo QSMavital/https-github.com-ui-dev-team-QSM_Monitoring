@@ -1,0 +1,19 @@
+//@import "br";
+:host {
+  .wrapper {
+    width:0;
+    height:0;
+    overflow: visible;
+    .open-sliding-panel-btn {
+      position: absolute;
+      top:calc(50% - 20px);
+      height:80px;
+      width:28px;
+      background:blue;
+      border-radius: 15px 0 0 15px;
+      cursor: pointer;
+      left:0px;
+    }
+  }
+}
+

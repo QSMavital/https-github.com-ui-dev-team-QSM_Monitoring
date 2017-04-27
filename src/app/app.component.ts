@@ -42,9 +42,9 @@ export class AppComponent implements OnDestroy{
       }
     });
 
-    this.http.get("/api/user").subscribe((e)=>{
-      console.log(e);
-    });
+    // this.http.get("/api/user").subscribe((e)=>{
+    //   console.log(e);
+    // });
   }
 
   ngOnDestroy(){

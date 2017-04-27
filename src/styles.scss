@@ -5,6 +5,15 @@
 @import "styles/helpers/ui-helper";
 @import "styles/overrides/ng-sidebar-overrides";
 @import "styles/helpers/brand";
+@import "styles/ui-sprite";
+@import "styles/ui-icons";
+
+//icons
+@include sprites($spritesheet-sprites);
+[class*="ui-icons"] {
+  @extend %ui-icons;
+}
+
 html,body{
   height: 100%;
 }

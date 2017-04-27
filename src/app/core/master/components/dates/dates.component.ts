@@ -14,8 +14,9 @@ export class DatesComponent implements OnInit {
   ngOnInit() {
     setInterval(()=>{
       this.time = moment().format();
-      console.log(this.time);
     },1000);
   }
+
+
 
 }

@@ -10,7 +10,6 @@ import {SidebarComponent} from './core/master/components/sidebar/sidebar.compone
 import {HeaderComponent} from './core/master/components/header/header.component';
 import {MenuComponent} from './core/master/components/menu/menu.component';
 import {ActionMenuComponent} from './core/master/components/action-menu/action-menu.component';
-import {UserComponent} from './core/master/components/user/user.component';
 import {CustomerLogoComponent} from './core/master/components/customer-logo/customer-logo.component';
 import {DatesComponent} from './core/master/components/dates/dates.component';
 import {DashboardComponent} from './core/dashboard/dashboard.component';
@@ -21,14 +20,13 @@ import {ReportsComponent} from './core/reports/reports.component';
 import {RouterModule} from "@angular/router";
 import {appRoutes} from "./app.routes";
 import {SharedModule} from "./shared/shared-module.module";
-import {provideInterceptorService, InterceptorService} from 'ng2-interceptors';
+import {InterceptorService} from 'ng2-interceptors';
 import {NgReduxModule, NgRedux} from "@angular-redux/store";
 import {IStore, rootReducer, enhancers} from "../store/index";
 import {ServerURLInterceptor} from "./app.interceptors";
 import {DialogModule} from 'primeng/primeng';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CommonModule} from "@angular/common";
-import {Moment} from "moment";
 import {MomentPipe} from "./shared/pipes/moment.pipe";
 
 export function HttpLoaderFactory(http: Http) {
@@ -48,7 +46,6 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     HeaderComponent,
     MenuComponent,
     ActionMenuComponent,
-    UserComponent,
     CustomerLogoComponent,
     DatesComponent,
     DashboardComponent,

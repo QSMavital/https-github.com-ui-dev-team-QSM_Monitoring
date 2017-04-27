@@ -1,4 +1,4 @@
-<p-dialog header="Error" [(visible)]="errorHandler.show">
+<p-dialog header="Error" [rtl]="direction=='rtl'" [(visible)]="errorHandler.show">
   <div class="width-325 scroll-y" style="height: 300px">
     <pre>{{errorHandler.error | json}}</pre>
   </div>

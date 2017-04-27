@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {HttpModule, Http} from '@angular/http';
+import {HttpModule, Http, XHRBackend, RequestOptions} from '@angular/http';
 import {TranslateModule, TranslateLoader} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {AppComponent} from './app.component';
@@ -21,7 +21,7 @@ import {ReportsComponent} from './core/reports/reports.component';
 import {RouterModule} from "@angular/router";
 import {appRoutes} from "./app.routes";
 import {SharedModule} from "./shared/shared-module.module";
-import {provideInterceptorService} from 'ng2-interceptors';
+import {provideInterceptorService, InterceptorService} from 'ng2-interceptors';
 import {NgReduxModule, NgRedux} from "@angular-redux/store";
 import {IStore, rootReducer, enhancers} from "../store/index";
 import {ServerURLInterceptor} from "./app.interceptors";
@@ -32,7 +32,11 @@ import {CommonModule} from "@angular/common";
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "i18n/", ".json");
 }
-
+export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions, serverURLInterceptor:ServerURLInterceptor){ // Add it here
+  let service = new InterceptorService(xhrBackend, requestOptions);
+  service.addInterceptor(serverURLInterceptor); // Add it here
+  return service;
+}
 
 
 @NgModule({
@@ -73,9 +77,11 @@ export function HttpLoaderFactory(http: Http) {
   ],
   providers: [
     ServerURLInterceptor,
-    provideInterceptorService([
-      ServerURLInterceptor
-    ])
+    {
+      provide: InterceptorService,
+      useFactory: interceptorFactory,
+      deps: [XHRBackend, RequestOptions, ServerURLInterceptor] // Add it here, in the same order as the signature of interceptorFactory
+    }
   ],
   bootstrap: [AppComponent]
 })

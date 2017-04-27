@@ -30,7 +30,8 @@ export class AppComponent implements OnDestroy{
     this.errorHandler = {
       show:false,
       error:{}
-    }
+    };
+
     this.unsubsribers.errorHandler = this.errorHandler$.subscribe((state)=>{
       if(!isNullOrUndefined(state)){
         console.log(state);
@@ -41,8 +42,9 @@ export class AppComponent implements OnDestroy{
       }
     });
 
-    this.http.get("/api/user").subscribe(
-      (res) => console.log(res))
+    this.http.get("/api/user").subscribe((e)=>{
+      console.log(e);
+    });
   }
 
   ngOnDestroy(){

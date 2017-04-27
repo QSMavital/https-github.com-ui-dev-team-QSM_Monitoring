@@ -4,7 +4,7 @@
   </div>
   <ng-sidebar-container>
     <!-- A sidebar -->
-    <ng-sidebar [(opened)]="open" [position]="direction === 'ltr' ? 'right' : 'left'">
+    <ng-sidebar [(opened)]="open" [showBackdrop]="true" [closeOnClickOutside]="true" [position]="direction === 'ltr' ? 'right' : 'left'">
       <!--<div class="left-button-container">-->
       <!--</div>-->
       <div class="open-sliding-panel-btn" (click)="open = !open">

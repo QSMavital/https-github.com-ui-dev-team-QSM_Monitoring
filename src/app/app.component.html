@@ -1,13 +1,9 @@
-<i class="ui-icons-add-new fs14"></i>
-
----
-
 <p-dialog header="Error" [rtl]="direction=='rtl'" [(visible)]="errorHandler.show">
   <div class="width-325 scroll-y" style="height: 300px">
     <pre>{{errorHandler.error | json}}</pre>
   </div>
 </p-dialog>
-<div class="qsm-main-wrapper" [ngStyle]="{'direction':direction}" [ngClass]="{'in':direction}" [direction-selection]="direction" fxLayout="row">
+<div class="qsm-main-wrapper scroll-y scroll-x" [ngStyle]="{'direction':direction}" [ngClass]="{'in':direction}" [direction-selection]="direction" fxLayout="row">
   <!--<div style="background: grey" fxFlex="250px">menu</div>-->
   <ui-sidebar fxFlex="150px"></ui-sidebar>
   <div style="background: lightcyan" fxFlex fxLayout="column">
@@ -22,7 +18,9 @@
   <button (click)="translate.use('he');">HE</button>
   <button (click)="translate.use('en');">EN</button>
 </div>
+
 <ui-spinner *ngIf="srvURLInterceptor.activeCalls>0||!direction"></ui-spinner>
-<ui-sliding-panel [direction]="direction">
-  Hello How are you doing today?
+
+<ui-sliding-panel *ngIf="router.url!='/'" [direction]="direction">
+  <ui-dashboard></ui-dashboard>
 </ui-sliding-panel>

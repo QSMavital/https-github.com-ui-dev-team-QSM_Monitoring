@@ -1,12 +1,17 @@
 <div class="wrapper">
-  <ng-sidebar-container style="position: relative">
+  <div class="open-sliding-panel-btn static" (click)="open = !open">
+    <!--<i class="ui-icons ui-icons-add-new"></i>-->
+  </div>
+  <ng-sidebar-container>
     <!-- A sidebar -->
-    <ng-sidebar mode="dock" dockedSize="28px" [(opened)]="open" position="right">
-      <div class="left-button-container">
-        <div class="open-sliding-panel-btn" (click)="open = !open"></div>
+    <ng-sidebar [(opened)]="open" [position]="direction === 'ltr' ? 'right' : 'left'">
+      <!--<div class="left-button-container">-->
+      <!--</div>-->
+      <div class="open-sliding-panel-btn" (click)="open = !open">
+        <!--<i class="ui-icons ui-icons-all-actions"></i>-->
       </div>
       <div class="right-bar-container">
-        <p>Sidebar contents</p>
+        <ng-content></ng-content>
       </div>
     </ng-sidebar>
   </ng-sidebar-container>

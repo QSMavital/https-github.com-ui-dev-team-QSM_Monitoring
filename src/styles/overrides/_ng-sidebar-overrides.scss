@@ -1,4 +1,11 @@
+@import "../helpers/brand";
+
 .ng-sidebar {
   overflow: visible !important;
   //position: relative;
+  height:80% !important;
+  top:10% !important;
+  border: 2px solid $ber-gray;
+  border-right:none;
+  border-radius: 5px 0 0 5px;
 }

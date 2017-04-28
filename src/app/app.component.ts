@@ -13,7 +13,7 @@ import {Router} from "@angular/router";
   templateUrl: './app.component.html',
   styleUrls: ['app.component.scss']
 })
-export class AppComponent implements OnDestroy{
+export class AppComponent implements OnDestroy {
   private direction: string;
   private errorHandler: any = {};
   private unsubsribers: any = {};
@@ -24,19 +24,9 @@ export class AppComponent implements OnDestroy{
   constructor(private srvURLInterceptor: ServerURLInterceptor,
               private translate: TranslateService,
               private http: InterceptorService,
-              private router:Router) {
-   this.initI18n();
-    console.log(router);
-    this.errorHandler = {
-      show:false,
-      error:{}
-    };
-
+              private router: Router) {
+    this.initI18n();
     this.initErrorHandler();
-
-    this.router.events.subscribe((e)=>{
-      console.log(e);
-    });
 
 
     // this.http.get("/api/user").subscribe((e)=>{
@@ -44,7 +34,7 @@ export class AppComponent implements OnDestroy{
     // });
   }
 
-  initI18n(){
+  initI18n() {
     this.translate.addLangs(["en", "he"]);
     this.translate.use('en');
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -52,20 +42,26 @@ export class AppComponent implements OnDestroy{
     });
   }
 
-  initErrorHandler(){
-    this.unsubsribers.errorHandler = this.errorHandler$.subscribe((state)=>{
-      if(!isNullOrUndefined(state)){
+  initErrorHandler() {
+    this.errorHandler = {
+      show: false,
+      error: {}
+    };
+    this.unsubsribers.errorHandler = this.errorHandler$.subscribe((state) => {
+      if (!isNullOrUndefined(state)) {
         console.log(state);
         console.log(state);
-        this.errorHandler.show=true;
-        this.errorHandler.error=state;
+        this.errorHandler.show = true;
+        this.errorHandler.error = state;
 
       }
     });
   }
-  ngOnDestroy(){
+
+  ngOnDestroy() {
     this.unsubsribers.errorHandler.unsubscribe();
   }
+
   title = 'app works!';
 
 }

@@ -1,15 +1,16 @@
-//used by bidi drv
 @import "../styles/helpers/brand";
+
+//used by bidi drv
 .qsm_self{text-align: center}
 
 :host {
   display: block;
-  height: 100%;
+  min-height: 768px !important;
+  min-width: 1366px !important;
+  overflow: auto;
   .qsm-main-wrapper {
     position: relative;
     height: 100%;
-    min-height:768px !important;
-    min-width:1366px !important;
     opacity: 0;
     -webkit-transition: opacity 1s ease-in;
     -moz-transition: opacity 1s ease-in;

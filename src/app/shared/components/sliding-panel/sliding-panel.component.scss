@@ -25,7 +25,8 @@
         text-align: center;
         color: $gun-powder;
         &.static {
-          left:calc(100% - 28px)
+          left:calc(100% - 28px);
+          position: fixed !important;
         }
       }
     //}

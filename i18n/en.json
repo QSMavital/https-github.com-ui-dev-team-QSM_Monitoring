@@ -1,12 +1,23 @@
 {
   "app.title":"hello",
   "menu.main":"main",
-  "menu.atm":"atm",
+  "menu.atms":"atms",
   "menu.epps":"epps",
   "menu.hsm":"hsm",
   "menu.reports":"reports",
   "general": {
     "date":"date",
     "time":"time"
+  },
+  "atms":{
+    "tabs":{
+      "inventory":"Inventory",
+      "status":"status",
+      "notifications":"notifications",
+      "events":"events",
+      "transactions":"transactions",
+      "transaction":"transaction"
+    }
   }
 }
+

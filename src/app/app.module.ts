@@ -28,6 +28,13 @@ import {DialogModule} from 'primeng/primeng';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CommonModule} from "@angular/common";
 import {MomentPipe} from "./shared/pipes/moment.pipe";
+import { AtmsComponent } from './core/atms/atms.component';
+import { InventoryComponent } from './core/atms/inventory/inventory.component';
+import { AtmsStatusComponent } from './core/atms/atms-status/atms-status.component';
+import { AtmsNotificationsComponent } from './core/atms/atms-notifications/atms-notifications.component';
+import { AtmsEventsComponent } from './core/atms/atms-events/atms-events.component';
+import { AtmsTransactionsComponent } from './core/atms/atms-transactions/atms-transactions.component';
+import { AtmsTransactionComponent } from './core/atms/atms-transaction/atms-transaction.component';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "i18n/", ".json");
@@ -52,7 +59,14 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     AtmComponent,
     EppsComponent,
     HsmComponent,
-    ReportsComponent
+    ReportsComponent,
+    AtmsComponent,
+    InventoryComponent,
+    AtmsStatusComponent,
+    AtmsNotificationsComponent,
+    AtmsEventsComponent,
+    AtmsTransactionsComponent,
+    AtmsTransactionComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +75,6 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     FormsModule,
     HttpModule,
     FlexLayoutModule,
-    RouterModule,
     RouterModule.forRoot(appRoutes),
     NgReduxModule,
     TranslateModule.forRoot({

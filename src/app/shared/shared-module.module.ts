@@ -8,14 +8,19 @@ import { SlidingPanelComponent } from './components/sliding-panel/sliding-panel.
 import { MomentPipe } from './pipes/moment.pipe';
 import {CommonModule} from "@angular/common";
 import { GaugeComponent } from './components/gauge/gauge.component';
+import { TabsComponent } from './components/tabs/tabs.component';
+import {TranslateModule} from "@ngx-translate/core";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   imports: [
     CommonModule,
-    SidebarModule.forRoot()
+    SidebarModule.forRoot(),
+    TranslateModule,
+    RouterModule
   ],
-  declarations: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent],
-  exports: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe,GaugeComponent],
+  declarations: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent],
+  exports: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe,GaugeComponent,TabsComponent],
   providers: []
 })
 

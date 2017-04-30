@@ -1,0 +1,55 @@
+@import "./src/styles/helpers/brand";
+
+.ui-datatable table {
+  border: none !important;
+  tbody {
+    border: none !important;
+    tr {
+      border-bottom: 1px solid lightgray !important;
+      &:last-child {
+        border-bottom: none !important;
+      }
+    }
+  }
+  tr {
+    border: none !important;
+    th {
+      border: none !important;
+      background: $ath-gray !important;
+      text-align: left !important;
+      height: 40px;
+      line-height: 40px;
+      color: $kimb;
+      text-transform: uppercase;
+      font-size: 0.785714rem !important; //font-size 11px for 14px REM
+      white-space: nowrap;
+      &:first-child {
+        padding-left: 15px !important;
+      }
+
+    }
+    td {
+      border: none !important;
+      height: 30px;
+      line-height: 30px;
+      background: white !important;
+      font-size: 0.9285714rem !important; //font-size 13px for 14px REM
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-transform: capitalize;
+      &:first-child {
+        padding-left: 15px !important;
+      }
+
+    }
+  }
+  .small {
+    width:65px !important;
+  }
+  .medium {
+    width:110px !important;
+  }
+  .long {
+    width:150px !important;
+  }
+}

@@ -4,6 +4,7 @@
 @import "styles/helpers/ui-reset";
 @import "styles/helpers/ui-helper";
 @import "styles/overrides/ng-sidebar-overrides";
+@import "styles/overrides/primeng-overrides";
 @import "styles/helpers/brand";
 @import "styles/ui-sprite";
 @import "styles/ui-icons";
@@ -16,7 +17,6 @@
 }
 
 html,body{
-  height: 100%;
   font-family: 'opensans-regular', sans-serif;
   font-size: 14px;
   min-height: 768px !important;

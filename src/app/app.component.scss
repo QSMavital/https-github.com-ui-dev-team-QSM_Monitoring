@@ -1,45 +1,8 @@
-@import "../styles/helpers/brand";
-
-//used by bidi drv
 .qsm_self{text-align: center}
 
-:host {
+
+:host{
   display: block;
-  min-height: 768px !important;
-  min-width: 1366px !important;
-  overflow: auto;
-  .qsm-main-wrapper {
-    position: relative;
-    height: 100%;
-    opacity: 0;
-    -webkit-transition: opacity 1s ease-in;
-    -moz-transition: opacity 1s ease-in;
-    -ms-transition: opacity 1s ease-in;
-    -o-transition: opacity 1s ease-in;
-    transition: opacity 1s ease-in;
-    &.in{
-      opacity: 1;
-    }
-  }
-  .background-wrapper {
-    background:$white-lilac;
-  }
-  .lang-switcher {
-    position: fixed;
-    bottom: -25px;
-    right: 10px;
-    border-radius:3px 3px 0 0;
-    background: yellow;
-    height: 50px;
-    padding: 5px;
-    & > div {
-      height: 20px;
-      line-height: 20px;
-      font-family: Arial;
-      text-align: center;
-    }
-    &:hover {
-      bottom: 0;
-    }
-  }
+  height: 100%;
+
 }

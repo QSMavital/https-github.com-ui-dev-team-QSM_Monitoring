@@ -11,6 +11,7 @@ import { GaugeComponent } from './components/gauge/gauge.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import {TranslateModule} from "@ngx-translate/core";
 import {RouterModule} from "@angular/router";
+import {SettingsResolverService} from "./services/settings-resolver.service";
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import {RouterModule} from "@angular/router";
   ],
   declarations: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent],
   exports: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe,GaugeComponent,TabsComponent],
-  providers: []
+  providers: [SettingsResolverService]
 })
 
 export class SharedModule {

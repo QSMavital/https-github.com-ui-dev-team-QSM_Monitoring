@@ -11,24 +11,37 @@ import {AtmsNotificationsComponent} from "./core/atms/atms-notifications/atms-no
 import {AtmsEventsComponent} from "./core/atms/atms-events/atms-events.component";
 import {AtmsTransactionsComponent} from "./core/atms/atms-transactions/atms-transactions.component";
 import {AtmsTransactionComponent} from "./core/atms/atms-transaction/atms-transaction.component";
+import {SettingsResolverService} from "./shared/services/settings-resolver.service";
+import {MainComponent} from "./core/master/main/main.component";
 
 export const appRoutes: Route[] = [
 
-  {path: '', component: DashboardComponent},
   {
-    path: 'atms', component: AtmsComponent,
-    children: [
-      {path: '', redirectTo: '/atms/inventory', pathMatch: 'full'},
-      {path: 'inventory', component: InventoryComponent},
-      {path: 'status', component: AtmsStatusComponent},
-      {path: 'notifications', component: AtmsNotificationsComponent},
-      {path: 'events', component: AtmsEventsComponent},
-      {path: 'transactions', component: AtmsTransactionsComponent},
-      {path: 'transaction', component: AtmsTransactionComponent}
+    path: '', component: MainComponent,
+    resolve: {
+      settings: SettingsResolverService
+    },
+    children:[
+      {
+        path: '', component: DashboardComponent,
+      },
+      {
+        path: 'atms', component: AtmsComponent,
+        children: [
+          {path: '', redirectTo: '/atms/inventory', pathMatch: 'full'},
+          {path: 'inventory', component: InventoryComponent},
+          {path: 'status', component: AtmsStatusComponent},
+          {path: 'notifications', component: AtmsNotificationsComponent},
+          {path: 'events', component: AtmsEventsComponent},
+          {path: 'transactions', component: AtmsTransactionsComponent},
+          {path: 'transaction', component: AtmsTransactionComponent}
+        ]
+      },
+      {path: 'epps', component: EppsComponent},
+      {path: 'hsm', component: HsmComponent},
+      {path: 'reports', component: ReportsComponent}
     ]
-  },
-  {path: 'epps', component: EppsComponent},
-  {path: 'hsm', component: HsmComponent},
-  {path: 'reports', component: ReportsComponent}
+  }
+
 
 ];

@@ -28,18 +28,20 @@ import {DialogModule} from 'primeng/primeng';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CommonModule} from "@angular/common";
 import {MomentPipe} from "./shared/pipes/moment.pipe";
-import { AtmsComponent } from './core/atms/atms.component';
-import { InventoryComponent } from './core/atms/inventory/inventory.component';
-import { AtmsStatusComponent } from './core/atms/atms-status/atms-status.component';
-import { AtmsNotificationsComponent } from './core/atms/atms-notifications/atms-notifications.component';
-import { AtmsEventsComponent } from './core/atms/atms-events/atms-events.component';
-import { AtmsTransactionsComponent } from './core/atms/atms-transactions/atms-transactions.component';
-import { AtmsTransactionComponent } from './core/atms/atms-transaction/atms-transaction.component';
+import {AtmsComponent} from './core/atms/atms.component';
+import {InventoryComponent} from './core/atms/inventory/inventory.component';
+import {AtmsStatusComponent} from './core/atms/atms-status/atms-status.component';
+import {AtmsNotificationsComponent} from './core/atms/atms-notifications/atms-notifications.component';
+import {AtmsEventsComponent} from './core/atms/atms-events/atms-events.component';
+import {AtmsTransactionsComponent} from './core/atms/atms-transactions/atms-transactions.component';
+import {AtmsTransactionComponent} from './core/atms/atms-transaction/atms-transaction.component';
+import {UserMiddleware} from "../store/middlewares/user-middleware";
+import { MainComponent } from './core/master/main/main.component';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "i18n/", ".json");
 }
-export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions, serverURLInterceptor:ServerURLInterceptor){ // Add it here
+export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions, serverURLInterceptor: ServerURLInterceptor) { // Add it here
   let service = new InterceptorService(xhrBackend, requestOptions);
   service.addInterceptor(serverURLInterceptor); // Add it here
   return service;
@@ -66,7 +68,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     AtmsNotificationsComponent,
     AtmsEventsComponent,
     AtmsTransactionsComponent,
-    AtmsTransactionComponent
+    AtmsTransactionComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -94,15 +97,17 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       provide: InterceptorService,
       useFactory: interceptorFactory,
       deps: [XHRBackend, RequestOptions, ServerURLInterceptor] // Add it here, in the same order as the signature of interceptorFactory
-    }
+    },
+    UserMiddleware
   ],
   bootstrap: [AppComponent]
 })
 
 export class AppModule {
-  constructor(private ngRedux: NgRedux<IStore>) {
-    const middlewares = [];
+  constructor(private ngRedux: NgRedux<IStore>, private userMiddle: UserMiddleware) {
+    const middlewares = [userMiddle.Settings];
     this.ngRedux.configureStore(rootReducer, {}, middlewares, [...enhancers]);
+
   }
 }
 

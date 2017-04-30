@@ -1,0 +1,24 @@
+@import "./src/styles/helpers/brand";
+input[type=text] {
+  &.search {
+    border-radius:15px;
+    padding: 0 10px;
+    outline: none;
+    box-shadow: none;
+    border:1px solid $botti;
+    height:30px;
+    line-height:30px;
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $botti;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: $botti;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: $botti;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $botti;
+    }
+  }
+}

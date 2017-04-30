@@ -1,0 +1,15 @@
+@import './src/styles/helpers/brand';
+:host {
+  .wrapper {
+    box-shadow:0 0 27px rgba(145,164,182,.44);
+    border-radius: 6px;
+    background:white;
+    padding-bottom: 3px;
+    .table-header {
+      background:transparent;
+      padding:15px 10px;
+      color:$reg-gray;
+      text-transform: uppercase;
+    }
+  }
+}

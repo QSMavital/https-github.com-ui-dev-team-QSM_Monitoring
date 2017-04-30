@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <div class="table-header fs11">{{header}}</div>
+  <p-dataTable [value]="data" [scrollable]="true">
+    <p-column *ngFor="let col of colDef" [field]="col.field" [header]="col.title">
+      <template let-col let-item="rowData" pTemplate="body">
+        <span [title]="item[col.field]">{{item[col.field]}}</span>
+      </template>
+    </p-column>
+  </p-dataTable>
+</div>

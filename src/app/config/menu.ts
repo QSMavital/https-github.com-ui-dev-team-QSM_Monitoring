@@ -1,8 +1,8 @@
 export const MainMenu = {
   MAIN: {link: '', label: "menu.main",},
   ATM: {link: '/atms', label: "menu.atms"},
-  HSM: {link: '/epp', label: "menu.epp"},
-  EPP: {link: '/hsm', label: "menu.hsm"},
+  HSM: {link: '/hsm', label: "menu.hsm"},
+  EPP: {link: '/epp', label: "menu.epp"},
   REPORTS: {link: '/reports', label: "menu.reports"}
 
 }

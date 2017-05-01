@@ -31,10 +31,8 @@ export class DirSelectionDirective implements OnChanges, AfterViewChecked, OnIni
   }
 
   ngAfterViewChecked() {
-    // debugger;
-    if(isNullOrUndefined(this.prevDirection) || !(this.init&&this.direction=='rtl')){return}
+    if(this.direction!='rtl'){return}
     let styles = [].slice.call(document.querySelectorAll('style'));
-
     styles.forEach((el) => {
       let selfCss = el.innerText.indexOf('.qsm_self')>-1;
       if(!selfCss){
@@ -42,8 +40,7 @@ export class DirSelectionDirective implements OnChanges, AfterViewChecked, OnIni
       }
       if (selfCss &&(!el.getAttribute('bidi') || this.direction !== this.prevDirection)) {
         el.setAttribute('bidi', this.direction);
-       el.innerText = cssjanus.transform(el.innerText);
-        this.init=false;
+        el.innerText = cssjanus.transform(el.innerText);
       }
     });
     this.prevDirection=this.direction;

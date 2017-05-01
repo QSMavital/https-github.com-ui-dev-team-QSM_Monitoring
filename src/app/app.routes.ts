@@ -19,16 +19,11 @@ export const appRoutes: Route[] = [
 
   {
     path: '', component: MainComponent,
-
-    resolve: {
-      settings: SettingsResolverService
-    },
     children: [
       {
         path: '', component: DashboardComponent,
         canActivate: [CanActivateRoute],
         data:{state:"MAIN"}
-
       },
       {
         path: 'atms', component: AtmsComponent,

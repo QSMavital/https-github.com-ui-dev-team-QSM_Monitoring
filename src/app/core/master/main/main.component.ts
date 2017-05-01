@@ -3,9 +3,9 @@ import {ActivatedRoute, Router, ActivatedRouteSnapshot, RouterStateSnapshot} fro
 import {i18n} from "../../../config/i18n";
 import {TranslateService, LangChangeEvent} from "@ngx-translate/core";
 import {IStore} from "../../../../store/index";
-import {NgRedux} from "@angular-redux/store";
-import {UserSettingsActions} from "../../../../store/actions/userSettings-actions";
-import {CanActivateRoute} from "../../../shared/services/can-activate.service";
+import {NgRedux, select} from "@angular-redux/store";
+import {Observable} from "rxjs";
+import {isNullOrUndefined} from "util";
 
 @Component({
   selector: 'ui-main',
@@ -14,22 +14,27 @@ import {CanActivateRoute} from "../../../shared/services/can-activate.service";
 })
 export class MainComponent implements OnInit {
 
-  private direction: string = "ltr";
+  private direction;
   private userSettings;
+  @select('userSettings') userSettings$: Observable<any>;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private ngRedux: NgRedux<IStore>,
               private translate: TranslateService) {
 
-    this.translate.use(this.route.snapshot.data['settings'].language.toLowerCase());
-    this.direction = i18n[this.route.snapshot.data['settings'].language];
-    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-      this.direction = i18n[event.lang.toUpperCase()];
+    this.userSettings$.subscribe((state)=>{
+      if(!isNullOrUndefined(state)){
+        this.translate.use(state.language.toLowerCase());
+        this.direction = i18n[state.language];
+        this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+          this.direction = i18n[event.lang.toUpperCase()];
+        });
+        this.userSettings = state;
+      }
+
     });
-    this.userSettings = this.route.snapshot.data['settings'];
-    this.ngRedux.dispatch({type:UserSettingsActions.SET_USER_SETTINGS,payload:this.userSettings});
-    // console.log(this.fff);
+
   }
 
   ngOnInit() {

@@ -107,7 +107,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
 
 export class AppModule {
   constructor(private ngRedux: NgRedux<IStore>, private userMiddle: UserMiddleware) {
-    const middlewares = [userMiddle.Settings];
+    const middlewares = [];
     this.ngRedux.configureStore(rootReducer, {}, middlewares, [...enhancers]);
 
   }

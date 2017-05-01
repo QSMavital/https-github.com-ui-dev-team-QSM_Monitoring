@@ -1,4 +1,4 @@
-<div class="qsm-main-wrapper" [ngStyle]="{'direction':direction}" *ngIf="direction" [ngClass]="{'in':direction}"
+<div class="qsm-main-wrapper" [ngStyle]="{'direction':direction}" [ngClass]="{'in':direction}"
      [direction-selection]="direction" fxLayout="row">
   <!--<div style="background: grey" fxFlex="250px">menu</div>-->
   <ui-sidebar fxFlex="110px"></ui-sidebar>
@@ -14,8 +14,6 @@
 </div>
 <div class="lang-switcher">
   <div>{{translate.currentLang}}</div>
-  <button (click)="translate.use('he');">HE</button>
-  <button (click)="translate.use('en');">EN</button>
 </div>
 
 

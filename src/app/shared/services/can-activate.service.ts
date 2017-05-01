@@ -4,6 +4,9 @@ import {Observable} from "rxjs";
 import {NgRedux, select} from "@angular-redux/store";
 import {IStore} from "../../../store/index";
 import {isNullOrUndefined} from "util";
+import {Api} from "../../config/api";
+import {InterceptorService} from "ng2-interceptors";
+import {UserSettingsActions} from "../../../store/actions/userSettings-actions";
 
 @Injectable()
 export class CanActivateRoute implements CanActivate,OnDestroy {
@@ -12,29 +15,31 @@ export class CanActivateRoute implements CanActivate,OnDestroy {
   @select('userSettings') userSettings: Observable<any>;
 
   constructor(private ngRedux: NgRedux<IStore>,
-              private router: Router) {
-    this.userSettingsRef = this.userSettings.subscribe((state) => {
-      if (!isNullOrUndefined(state)) {
-        return this.redirect(state.menu, this.lastState);
-      }
-    });
-  }
+              private http: InterceptorService,
+              private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot,
               state: RouterStateSnapshot){
-    let menuSettings = [];
+
     this.lastState = route.data.state;
-    if (!isNullOrUndefined(this.ngRedux.getState().userSettings)) {
-      menuSettings = this.ngRedux.getState().userSettings.menu;
+    let userSettings = this.ngRedux.getState().userSettings;
+    if (isNullOrUndefined(userSettings)) {
+      this.http.post(Api.init.url,Api.init.payload)
+        .map((res)=>JSON.parse(res['_body']))
+        .subscribe((res)=>{
+          this.ngRedux.dispatch({type:UserSettingsActions.SET_USER_SETTINGS,payload:res});
+          this.redirect(res.menu,route.data.state);
+        });
+    }else{
+      this.redirect(userSettings.menu,route.data.state);
     }
-    return this.redirect(menuSettings, this.lastState);
+
+    return true;
   }
 
   redirect(menuSettings, state) {
     if (menuSettings.length && menuSettings.indexOf(state) == -1) {
-      // this.router.navigate(["/"]);
-      window.location.href='';
-      return false;
+      this.router.navigate(["/"]);
     }
     return true;
   }

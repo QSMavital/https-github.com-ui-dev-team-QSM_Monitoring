@@ -11,7 +11,6 @@ import {AtmsNotificationsComponent} from "./core/atms/atms-notifications/atms-no
 import {AtmsEventsComponent} from "./core/atms/atms-events/atms-events.component";
 import {AtmsTransactionsComponent} from "./core/atms/atms-transactions/atms-transactions.component";
 import {AtmsTransactionComponent} from "./core/atms/atms-transaction/atms-transaction.component";
-import {SettingsResolverService} from "./shared/services/settings-resolver.service";
 import {MainComponent} from "./core/master/main/main.component";
 import {CanActivateRoute} from "./shared/services/can-activate.service";
 

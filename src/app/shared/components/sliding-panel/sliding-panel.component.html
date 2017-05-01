@@ -5,10 +5,11 @@
   <!--</div>-->
   <ng-sidebar-container>
     <!-- A sidebar -->
-    <ng-sidebar [(opened)]="open" [showBackdrop]="true" [closeOnClickOutside]="true" mode="dock" [dockedSize]="'110px'" [position]="direction === 'ltr' ? 'right' : 'left'">
+    <ng-sidebar [(opened)]="open"
+                [showBackdrop]="true" [closeOnClickOutside]="true" mode="dock" [dockedSize]="'110px'" [position]="direction === 'ltr' ? 'right' : 'left'">
       <!--<div class="left-button-container">-->
       <!--</div>-->
-      <div class="open-sliding-panel-btn" (click)="open = !open">
+      <div class="open-sliding-panel-btn" (click)="toggle()">
         <!--<i class="ui-icons ui-icons-all-actions"></i>-->
         <i class="fs14" [ngClass]="icon"></i>
       </div>

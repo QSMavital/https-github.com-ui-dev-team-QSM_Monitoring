@@ -15,6 +15,7 @@ import {isNullOrUndefined} from "util";
 export class MainComponent implements OnInit {
 
   private direction;
+  private panelStatus = false;
   private userSettings;
   @select('userSettings') userSettings$: Observable<any>;
 

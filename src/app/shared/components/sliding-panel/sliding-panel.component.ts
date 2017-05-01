@@ -1,20 +1,30 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'ui-sliding-panel',
   templateUrl: './sliding-panel.component.html',
   styleUrls: ['./sliding-panel.component.scss']
 })
-export class SlidingPanelComponent implements OnInit {
+export class SlidingPanelComponent{
+  private openVal;
   @Input() direction = 'ltr';
   @Input() icon: string = '';
+  @Output() openChange = new EventEmitter();
 
-  private open:boolean = false;
+  @Input() get open(){
+    return this.openVal;
+  }
+
+  set open(val) {
+    this.openVal = val;
+    this.openChange.emit(this.openVal);
+  }
 
   constructor() {
   }
 
-  ngOnInit() {
+  toggle(){
+    this.open=!this.open;
   }
 
 }

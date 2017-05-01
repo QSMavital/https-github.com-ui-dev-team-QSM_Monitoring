@@ -11,5 +11,8 @@
     img {
       height:30px !important;
     }
+    &:focus{
+      outline: none;
+    }
   }
 }

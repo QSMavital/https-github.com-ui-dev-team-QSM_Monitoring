@@ -1,6 +1,13 @@
 <div class="qsm-main-wrapper" [ngStyle]="{'direction':direction}" [ngClass]="{'in':direction}"
      [direction-selection]="direction" fxLayout="row">
-  <!--<div style="background: grey" fxFlex="250px">menu</div>-->
+
+  <ui-sliding-panel [(open)]="panelStatus" icon="ui-icons-add-new" *ngIf="router.url!='/'" [direction]="direction">
+    <div [ngSwitch]="panelStatus">
+      <ui-dashboard *ngSwitchCase="true"></ui-dashboard>
+      <div style="width: 110px" *ngSwitchCase="false">CLOSED MODE</div>
+    </div>
+  </ui-sliding-panel>
+
   <ui-sidebar fxFlex="110px"></ui-sidebar>
   <div class="background-wrapper" fxFlex fxLayout="column">
     <ui-header></ui-header>
@@ -8,12 +15,10 @@
       <router-outlet></router-outlet>
     </div>
   </div>
-  <ui-sliding-panel icon="ui-icons-add-new" *ngIf="router.url!='/'" [direction]="direction">
-    <ui-dashboard></ui-dashboard>
-  </ui-sliding-panel>
 </div>
+
 <div class="lang-switcher">
-  <div>{{translate.currentLang}}</div>
+  <div>{{panelStatus}} | {{translate.currentLang}}</div>
 </div>
 
 

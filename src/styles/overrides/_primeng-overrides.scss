@@ -57,12 +57,14 @@
 .ui-dropdown {
   border: 1px solid $botti;
   .ui-dropdown-trigger {
-    border-left:none !important;
+    border:none !important;
     color:$nepal !important;
   }
   .ui-dropdown-label {
     height: 27px;
     line-height: 22px;
+    padding-left:2em;
+    padding-right:2em;
   }
   .ui-state-highlight {
     background:$gun-powder;

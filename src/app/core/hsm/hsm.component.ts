@@ -9,11 +9,11 @@ export class HsmComponent implements OnInit {
 
   private ddOptions:any[] = [
     {
-      label:'1',
+      label:'something',
       value:{id:'1'}
     },
     {
-      label:'2',
+      label:'something_else',
       value:{id:'2'}
     }
   ];

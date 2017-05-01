@@ -36,55 +36,55 @@ export class ReportsComponent implements OnInit {
   ];
   private colDef = [
     {
-      title: 'id',
+      title: 'general.id',
       field: 'id',
       size:'small'
     },
     {
-      title: 'name',
+      title: 'general.name',
       field: 'name',
       size:'medium'
     },
     {
-      title: 'status',
+      title: 'general.status',
       field: 'status',
       size:'medium'
     },
     {
-      title: 'reason',
+      title: 'general.reason',
       field: 'reason',
       size:'medium'
     },
     {
-      title: 'last withdrawal',
+      title: 'general.last_withdrawal',
       field: 'lastWithdrawal',
       size:'small'
     },
     {
-      title: 'remaining cash',
+      title: 'general.remaining_cash',
       field: 'remainingCash',
       size:'small'
     },
     {
-      title: 'retained cards',
+      title: 'general.retained_cards',
       field: 'retainedCards',
       size:'small'
     },
     {
-      title: 'card settlement',
+      title: 'general.card_settlement',
       field: 'cardSettlement',
       size:'small'
     },
     {
-      title: 'branch',
+      title: 'general.branch',
       field: 'branch',
       size:'small'
     },{
-      title: 'last activity',
+      title: 'general.last_activity',
       field: 'lastActivity',
       size:'small'
     },{
-      title: 'last settlement',
+      title: 'general.last_settlement',
       field: 'lastSettlement',
       size:'small'
     }

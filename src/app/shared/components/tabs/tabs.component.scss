@@ -2,12 +2,22 @@
 :host{
   display: block;
   ul{
+    background: white;
+    width:100%;
+    padding : 0 25px;
     li{
       display: inline-block;
       margin-right:40px;
       text-transform: uppercase;
+      cursor: pointer;
+      color:$bali;
+      height:40px;
+      line-height:40px;
+      border-bottom: 4px solid transparent;
+      outline: none;
       &.active {
-
+        color: $lynch;
+        border-color: $lavender;
       }
     }
   }

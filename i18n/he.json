@@ -13,7 +13,18 @@
   "general": {
     "date": "תאריך",
     "time": "שעה",
-    "last_notifications": "התראות אחרונות"
+    "last_notifications": "התראות אחרונות",
+    "id":"id",
+    "name":"שם",
+    "status":"סטטוס",
+    "reason":"סיבה",
+    "last_withdrawal":"משיכה אחרונה",
+    "remaining_cash":"remaining cash",
+    "retained_cards":"retained cards",
+    "card_settlement":"card settlement",
+    "branch":"סניף",
+    "last_activity":"פעילות אחרונה",
+    "last_settlement":"last settlement"
   },
   "atms": {
     "tabs": {

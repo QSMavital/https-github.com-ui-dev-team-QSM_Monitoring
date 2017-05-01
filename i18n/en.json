@@ -12,7 +12,18 @@
   "general": {
     "date": "date",
     "time": "time",
-    "last_notifications": "last notifications"
+    "last_notifications": "last notifications",
+    "id":"id",
+    "name":"name",
+    "status":"status",
+    "reason":"reason",
+    "last_withdrawal":"last withdrawal",
+    "remaining_cash":"remaining cash",
+    "retained_cards":"retained cards",
+    "card_settlement":"card settlement",
+    "branch":"branch",
+    "last_activity":"last activity",
+    "last_settlement":"last settlement"
   },
   "atms": {
     "tabs": {

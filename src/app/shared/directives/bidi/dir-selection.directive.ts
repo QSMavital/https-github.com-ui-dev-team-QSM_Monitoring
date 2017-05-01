@@ -31,7 +31,7 @@ export class DirSelectionDirective implements OnChanges, AfterViewChecked, OnIni
   }
 
   ngAfterViewChecked() {
-    debugger;
+    // debugger;
     if(isNullOrUndefined(this.prevDirection) || !(this.init&&this.direction=='rtl')){return}
     let styles = [].slice.call(document.querySelectorAll('style'));
 

@@ -1,12 +1,6 @@
 module.exports = function (req, res, next) {
-  // res.header('X-Hello', 'World');
-  console.log('url', req.url);
-  // console.log('method', req.method);
-  // console.log('body', req.body);
   //
   var delay = 1000;
-
-
   setTimeout(function () {
 
     if (req.url.indexOf('/general/settingsUser') !== -1) {
@@ -26,7 +20,7 @@ module.exports = function (req, res, next) {
 
 var settingsUser = {
   language: "EN",
-  menu: ["MAIN","AdTM","HSM","EPP","COMMUNICATION","REPORTS"],
+  menu: ["MAIN","ATM","HSM","EPP","COMMUNICATION","REPORTS"],
   connections: [],
   atmList: []
 };

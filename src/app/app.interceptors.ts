@@ -11,7 +11,6 @@ export class ServerURLInterceptor implements Interceptor {
   public activeCalls = 0;
   public interceptBefore(request: InterceptedRequest): InterceptedRequest {
     // Do whatever with request: get info or edit it
-    console.log('out');
     this.activeCalls++;
     return request;
     /*
@@ -24,7 +23,6 @@ export class ServerURLInterceptor implements Interceptor {
 
   public interceptAfter(response: InterceptedResponse): InterceptedResponse {
     // Do whatever with response: get info or edit it
-    console.log('error',);
     if(!response.response.ok){
       this.ngRedux.dispatch({type:ErrorHandlerActions.ERROR_HANDLER,payload:response.response});
     }

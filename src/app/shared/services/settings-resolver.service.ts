@@ -13,7 +13,6 @@ export class SettingsResolverService {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any>|Promise<any>|any {
-    console.log('SettingsResolverService');
     return this.http.post(Api.init.url,Api.init.payload).map((res)=>JSON.parse(res['_body']));
   }
 }

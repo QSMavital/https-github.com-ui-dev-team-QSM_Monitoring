@@ -2,7 +2,7 @@
   "app.title":"hello",
   "menu.main":"main",
   "menu.atms":"atms",
-  "menu.epps":"epps",
+  "menu.epp":"epp",
   "menu.hsm":"hsm",
   "menu.reports":"reports",
   "general": {

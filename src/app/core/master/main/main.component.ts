@@ -1,7 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router, ActivatedRouteSnapshot, RouterStateSnapshot} from "@angular/router";
 import {i18n} from "../../../config/i18n";
 import {TranslateService, LangChangeEvent} from "@ngx-translate/core";
+import {IStore} from "../../../../store/index";
+import {NgRedux} from "@angular-redux/store";
+import {UserSettingsActions} from "../../../../store/actions/userSettings-actions";
+import {CanActivateRoute} from "../../../shared/services/can-activate.service";
 
 @Component({
   selector: 'ui-main',
@@ -11,23 +15,21 @@ import {TranslateService, LangChangeEvent} from "@ngx-translate/core";
 export class MainComponent implements OnInit {
 
   private direction: string = "ltr";
-  private appSettings;
+  private userSettings;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
+              private ngRedux: NgRedux<IStore>,
               private translate: TranslateService) {
 
-    console.log(this.route.snapshot.data['settings']);
     this.translate.use(this.route.snapshot.data['settings'].language.toLowerCase());
     this.direction = i18n[this.route.snapshot.data['settings'].language];
-    console.log(this.direction);
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.direction = i18n[event.lang.toUpperCase()];
     });
-    this.appSettings = this.route.snapshot.data['settings'];
-    // this.http.get("/api/user").subscribe((e)=>{
-    //   console.log(e);
-    // });
+    this.userSettings = this.route.snapshot.data['settings'];
+    this.ngRedux.dispatch({type:UserSettingsActions.SET_USER_SETTINGS,payload:this.userSettings});
+    // console.log(this.fff);
   }
 
   ngOnInit() {

@@ -1,7 +1,7 @@
 <ul class="fs11">
-  <li routerLink="" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active"><a>{{"menu.main" | translate}}</a></li>
-  <li routerLink="/atms" routerLinkActive="active"><a>{{"menu.atms" | translate}}</a></li>
-  <li routerLink="/epps" routerLinkActive="active"><a>{{"menu.epps" | translate}}</a></li>
-  <li routerLink="/hsm" routerLinkActive="active"><a>{{"menu.hsm" | translate}}</a></li>
-  <li routerLink="/reports" routerLinkActive="active"><a>{{"menu.reports" | translate}}</a></li>
+  <li *ngFor="let item of activeMenuItems;let i = index"
+      [routerLink]="item['link']"
+      [routerLinkActiveOptions]="{exact: i==0}" routerLinkActive="active">
+    <a>{{item.label | translate}}</a>
+  </li>
 </ul>

@@ -13,20 +13,27 @@ import {AtmsTransactionsComponent} from "./core/atms/atms-transactions/atms-tran
 import {AtmsTransactionComponent} from "./core/atms/atms-transaction/atms-transaction.component";
 import {SettingsResolverService} from "./shared/services/settings-resolver.service";
 import {MainComponent} from "./core/master/main/main.component";
+import {CanActivateRoute} from "./shared/services/can-activate.service";
 
 export const appRoutes: Route[] = [
 
   {
     path: '', component: MainComponent,
+
     resolve: {
       settings: SettingsResolverService
     },
-    children:[
+    children: [
       {
         path: '', component: DashboardComponent,
+        canActivate: [CanActivateRoute],
+        data:{state:"MAIN"}
+
       },
       {
         path: 'atms', component: AtmsComponent,
+        data:{state:"ATM"},
+        canActivate: [CanActivateRoute],
         children: [
           {path: '', redirectTo: '/atms/inventory', pathMatch: 'full'},
           {path: 'inventory', component: InventoryComponent},
@@ -37,9 +44,9 @@ export const appRoutes: Route[] = [
           {path: 'transaction', component: AtmsTransactionComponent}
         ]
       },
-      {path: 'epps', component: EppsComponent},
-      {path: 'hsm', component: HsmComponent},
-      {path: 'reports', component: ReportsComponent}
+      {path: 'epp', component: EppsComponent, canActivate: [CanActivateRoute],data:{state:"EPP"},},
+      {path: 'hsm', component: HsmComponent, canActivate: [CanActivateRoute],data:{state:"HSM"},},
+      {path: 'reports', component: ReportsComponent, canActivate: [CanActivateRoute],data:{state:"REPORTS"}}
     ]
   }
 

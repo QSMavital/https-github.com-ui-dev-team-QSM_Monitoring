@@ -26,7 +26,7 @@ module.exports = function (req, res, next) {
 
 var settingsUser = {
   language: "EN",
-  menu: [],
+  menu: ["MAIN","AdTM","HSM","EPP","COMMUNICATION","REPORTS"],
   connections: [],
   atmList: []
 };

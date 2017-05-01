@@ -29,9 +29,6 @@ import {PortletComponent} from './components/portlet/portlet.component';
   ],
   declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent],
   exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent],
-  providers: [SettingsResolverService, CanActivateRoute]
-  declarations: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent,TableComponent],
-  exports: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe,GaugeComponent,TabsComponent,TableComponent],
   providers: [CanActivateRoute]
 })
 

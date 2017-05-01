@@ -1,6 +1,5 @@
 import {Route} from "@angular/router";
 import {DashboardComponent} from "./core/dashboard/dashboard.component";
-import {AtmComponent} from "./core/atm/atm.component";
 import {EppsComponent} from "./core/epps/epps.component";
 import {HsmComponent} from "./core/hsm/hsm.component";
 import {ReportsComponent} from "./core/reports/reports.component";
@@ -13,6 +12,17 @@ import {AtmsTransactionsComponent} from "./core/atms/atms-transactions/atms-tran
 import {AtmsTransactionComponent} from "./core/atms/atms-transaction/atms-transaction.component";
 import {MainComponent} from "./core/master/main/main.component";
 import {CanActivateRoute} from "./shared/services/can-activate.service";
+import {AtmComponent} from "./core/atm/atm.component";
+import {AtmStatusComponent} from "./core/atm/atm-status/atm-status.component";
+import {RetainedCardsComponent} from "./core/atm/retained-cards/retained-cards.component";
+import {AccessoriesStatusComponent} from "./core/atm/accessories-status/accessories-status.component";
+import {AtmSettingsComponent} from "./core/atm/atm-settings/atm-settings.component";
+import {AtmNotificationsComponent} from "./core/atm/atm-notifications/atm-notifications.component";
+import {AtmEventsComponent} from "./core/atm/atm-events/atm-events.component";
+import {AtmTransactionsComponent} from "./core/atm/atm-transactions/atm-transactions.component";
+import {AtmTransactionComponent} from "./core/atm/atm-transaction/atm-transaction.component";
+import {HsmStatusComponent} from "./core/hsm/hsm-status/hsm-status.component";
+import {HsmStatisticsComponent} from "./core/hsm/hsm-statistics/hsm-statistics.component";
 
 export const appRoutes: Route[] = [
 
@@ -22,25 +32,52 @@ export const appRoutes: Route[] = [
       {
         path: '', component: DashboardComponent,
         canActivate: [CanActivateRoute],
-        data:{state:"MAIN"}
+        data: {state: "MAIN"}
       },
       {
-        path: 'atms', component: AtmsComponent,
-        data:{state:"ATM"},
+        path: 'atms',
+        data: {state: "ATM"},
         canActivate: [CanActivateRoute],
         children: [
-          {path: '', redirectTo: '/atms/inventory', pathMatch: 'full'},
-          {path: 'inventory', component: InventoryComponent},
-          {path: 'status', component: AtmsStatusComponent},
-          {path: 'notifications', component: AtmsNotificationsComponent},
-          {path: 'events', component: AtmsEventsComponent},
-          {path: 'transactions', component: AtmsTransactionsComponent},
-          {path: 'transaction', component: AtmsTransactionComponent}
+          {
+            path: '', component: AtmsComponent,
+            children: [
+              {path: '', redirectTo: '/atms/inventory', pathMatch: 'full'},
+              {path: 'inventory', component: InventoryComponent},
+              {path: 'status', component: AtmsStatusComponent},
+              {path: 'notifications', component: AtmsNotificationsComponent},
+              {path: 'events', component: AtmsEventsComponent},
+              {path: 'transactions', component: AtmsTransactionsComponent},
+              {path: 'transaction', component: AtmsTransactionComponent},
+            ],
+          },
+
+          {
+            path: 'atm/:id', component: AtmComponent,
+            children: [
+              {path: '', redirectTo: '/atms', pathMatch: 'full'},
+              {path: 'status', component: AtmStatusComponent},
+              {path: 'accessories', component: AccessoriesStatusComponent},
+              {path: 'retained-cards', component: RetainedCardsComponent},
+              {path: 'settings', component: AtmSettingsComponent},
+              {path: 'notifications', component: AtmNotificationsComponent},
+              {path: 'events', component: AtmEventsComponent},
+              {path: 'transactions', component: AtmTransactionsComponent},
+              {path: 'transaction', component: AtmTransactionComponent}
+            ]
+          },
+
         ]
       },
-      {path: 'epp', component: EppsComponent, canActivate: [CanActivateRoute],data:{state:"EPP"},},
-      {path: 'hsm', component: HsmComponent, canActivate: [CanActivateRoute],data:{state:"HSM"},},
-      {path: 'reports', component: ReportsComponent, canActivate: [CanActivateRoute],data:{state:"REPORTS"}}
+      {path: 'epp', component: EppsComponent, canActivate: [CanActivateRoute], data: {state: "EPP"},},
+      {path: 'hsm', component: HsmComponent, canActivate: [CanActivateRoute], data: {state: "HSM"},
+        children: [
+          {path: '', redirectTo: '/hsm/status', pathMatch: 'full'},
+          {path: 'status', component: HsmStatusComponent},
+          {path: 'statistics', component: HsmStatisticsComponent},
+        ]
+      },
+      {path: 'reports', component: ReportsComponent, canActivate: [CanActivateRoute], data: {state: "REPORTS"}}
     ]
   }
 

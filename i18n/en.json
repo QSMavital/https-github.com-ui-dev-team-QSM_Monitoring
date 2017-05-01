@@ -36,6 +36,24 @@
       "transactions": "transactions",
       "transaction": "transaction"
     }
+  },
+  "atm": {
+    "tabs": {
+      "status": "atm status",
+      "accessories": "accessories status",
+      "retained_cards": "retained cards",
+      "settings": "settings",
+      "notifications": "notifications",
+      "events": "events",
+      "transactions": "transactions",
+      "transaction": "transaction"
+    }
+  },
+  "hsm": {
+    "tabs": {
+      "status": "hsm status",
+      "statistics": "hsm statistics"
+    }
   }
 }
 

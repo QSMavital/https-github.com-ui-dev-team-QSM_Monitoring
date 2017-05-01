@@ -7,17 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HsmComponent implements OnInit {
 
-  private ddOptions:any[] = [
-    {
-      label:'something',
-      value:{id:'1'}
-    },
-    {
-      label:'something_else',
-      value:{id:'2'}
-    }
-  ];
-  private ddModel:any;
+  private tabs = [
+    {label:'hsm.tabs.status',state:'status'},
+    {label:'hsm.tabs.statistics',state:'statistics'}
+  ]
 
   constructor() { }
 

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AtmsComponent implements OnInit {
 
-  private test = [
+  private tabs = [
     {label:'atms.tabs.inventory',state:'inventory'},
     {label:'atms.tabs.status',state:'status'},
     {label:'atms.tabs.notifications',state:'notifications'},

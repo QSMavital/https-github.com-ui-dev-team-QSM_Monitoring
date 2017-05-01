@@ -6,6 +6,17 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./reports.component.scss']
 })
 export class ReportsComponent implements OnInit {
+  private ddOptions:any[] = [
+    {
+      label:'something',
+      value:{id:'1'}
+    },
+    {
+      label:'something_else',
+      value:{id:'2'}
+    }
+  ];
+  private ddModel:any;
 
   private tableMock = [
     {

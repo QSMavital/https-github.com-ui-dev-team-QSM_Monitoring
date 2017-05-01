@@ -24,7 +24,9 @@
     "card_settlement":"card settlement",
     "branch":"סניף",
     "last_activity":"פעילות אחרונה",
-    "last_settlement":"last settlement"
+    "last_settlement":"last settlement",
+    "business_day":"יום עסקים",
+    "search":"חיפוש"
   },
   "atms": {
     "tabs": {

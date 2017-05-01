@@ -55,6 +55,7 @@
 }
 
 .ui-dropdown {
+  .qsm_self{text-align: center};
   border: 1px solid $botti;
   .ui-dropdown-trigger {
     border:none !important;
@@ -63,8 +64,8 @@
   .ui-dropdown-label {
     height: 27px;
     line-height: 22px;
-    padding-left:2em;
-    padding-right:2em;
+    //padding-left:2em;
+    //padding-right:2em;
   }
   .ui-state-highlight {
     background:$gun-powder;

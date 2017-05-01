@@ -1,11 +1,11 @@
 <div class="wrapper">
-  <div class="open-sliding-panel-btn static" (click)="open = !open">
+  <!--<div class="open-sliding-panel-btn static" (click)="open = !open">-->
     <!--<i class="ui-icons ui-icons-add-new"></i>-->
-    <i class="fs14" [ngClass]="icon"></i>
-  </div>
+    <!--<i class="fs14" [ngClass]="icon"></i>-->
+  <!--</div>-->
   <ng-sidebar-container>
     <!-- A sidebar -->
-    <ng-sidebar [(opened)]="open" [showBackdrop]="true" [closeOnClickOutside]="true" [position]="direction === 'ltr' ? 'right' : 'left'">
+    <ng-sidebar [(opened)]="open" [showBackdrop]="true" [closeOnClickOutside]="true" mode="dock" [dockedSize]="'110px'" [position]="direction === 'ltr' ? 'right' : 'left'">
       <!--<div class="left-button-container">-->
       <!--</div>-->
       <div class="open-sliding-panel-btn" (click)="open = !open">

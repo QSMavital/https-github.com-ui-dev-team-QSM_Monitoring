@@ -23,7 +23,9 @@
     "card_settlement":"card settlement",
     "branch":"branch",
     "last_activity":"last activity",
-    "last_settlement":"last settlement"
+    "last_settlement":"last settlement",
+    "business_day":"business day",
+    "search":"search"
   },
   "atms": {
     "tabs": {

@@ -1,8 +1,14 @@
+@import "./src/styles/helpers/brand";
 :host{
   display: block;
   ul{
     li{
       display: inline-block;
+      margin-right:40px;
+      text-transform: uppercase;
+      &.active {
+
+      }
     }
   }
 }

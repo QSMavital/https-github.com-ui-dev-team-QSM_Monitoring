@@ -1,22 +1,27 @@
 {
-  "app.title":"hello",
-  "menu.main":"main",
-  "menu.atms":"atms",
-  "menu.epp":"epp",
-  "menu.hsm":"hsm",
-  "menu.reports":"reports",
-  "general": {
-    "date":"date",
-    "time":"time"
+  "app":{
+    "title":"hello"
   },
-  "atms":{
-    "tabs":{
-      "inventory":"Inventory",
-      "status":"status",
-      "notifications":"notifications",
-      "events":"events",
-      "transactions":"transactions",
-      "transaction":"transaction"
+  "menu": {
+    "main": "main",
+    "atms": "atms",
+    "epp": "epp",
+    "hsm": "hsm",
+    "reports": "reports"
+  },
+  "general": {
+    "date": "date",
+    "time": "time",
+    "last_notifications": "last notifications"
+  },
+  "atms": {
+    "tabs": {
+      "inventory": "Inventory",
+      "status": "status",
+      "notifications": "notifications",
+      "events": "events",
+      "transactions": "transactions",
+      "transaction": "transaction"
     }
   }
 }

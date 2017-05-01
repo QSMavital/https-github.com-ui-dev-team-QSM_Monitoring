@@ -1,12 +1,29 @@
+
 {
-  "app.title":"שלום",
-  "menu.main":"ראשי",
-  "menu.atms":"כספומטים",
-  "menu.epp":"epp",
-  "menu.hsm":"hsm",
-  "menu.reports":"דוחות",
+  "app":{
+    "title":"שלום"
+  },
+  "menu": {
+    "main": "ראשי",
+    "atms": "כספומטים",
+    "epp": "epp",
+    "hsm": "hsm",
+    "reports": "דוחות"
+  },
   "general": {
-    "date":"תאריך",
-    "time":"שעה"
+    "date": "תאריך",
+    "time": "שעה",
+    "last_notifications": "התראות אחרונות"
+  },
+  "atms": {
+    "tabs": {
+      "inventory": "מלאי",
+      "status": "סטטוס",
+      "notifications": "התראות",
+      "events": "אירועים",
+      "transactions": "עסקאות",
+      "transaction": "עסקה"
+    }
   }
 }
+

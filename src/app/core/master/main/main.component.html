@@ -1,0 +1,22 @@
+<div class="qsm-main-wrapper" [ngStyle]="{'direction':direction}" *ngIf="direction" [ngClass]="{'in':direction}"
+     [direction-selection]="direction" fxLayout="row">
+  <!--<div style="background: grey" fxFlex="250px">menu</div>-->
+  <ui-sidebar fxFlex="110px"></ui-sidebar>
+  <div class="background-wrapper" fxFlex fxLayout="column">
+    <ui-header></ui-header>
+    <div fxFlex class="scroll-y ui-space-medium">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <ui-sliding-panel icon="ui-icons-add-new" *ngIf="router.url!='/'" [direction]="direction">
+    <ui-dashboard></ui-dashboard>
+  </ui-sliding-panel>
+</div>
+<div class="lang-switcher">
+  <div>{{translate.currentLang}}</div>
+  <button (click)="translate.use('he');">HE</button>
+  <button (click)="translate.use('en');">EN</button>
+</div>
+
+
+

@@ -21,4 +21,7 @@
 html,body{
   font-family: 'opensans-regular', sans-serif;
   font-size: 14px;
+  min-height: 768px !important;
+  min-width: 1366px !important;
+  overflow: auto;
 }

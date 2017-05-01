@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'ui-customer-logo',
@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerLogoComponent implements OnInit {
 
-  constructor() { }
+  @Input('logo') logo;
+  private customers:any;
+  constructor() {
+    this.customers = {
+      "BEINLEUMI":"icon-logo-benleumi"
+    }
+  }
 
   ngOnInit() {
   }

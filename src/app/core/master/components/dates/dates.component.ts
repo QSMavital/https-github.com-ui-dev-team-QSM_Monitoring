@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import * as moment from 'moment';
 
 @Component({
@@ -7,14 +7,14 @@ import * as moment from 'moment';
   styleUrls: ['./dates.component.scss']
 })
 export class DatesComponent implements OnInit {
-
+  @Input('date') date;
   private time = moment().format();
   constructor() { }
 
   ngOnInit() {
     setInterval(()=>{
       this.time = moment().format();
-    },1000);
+    },60000);
   }
 
 

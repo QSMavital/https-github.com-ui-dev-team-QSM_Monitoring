@@ -16,15 +16,26 @@ $icon-all-actions-offset-x: 0px;
 $icon-all-actions-offset-y: 0px;
 $icon-all-actions-width: 64px;
 $icon-all-actions-height: 58px;
-$icon-all-actions-total-width: 64px;
+$icon-all-actions-total-width: 190px;
 $icon-all-actions-total-height: 58px;
 $icon-all-actions-image: 'assets/images/sprite.png';
-$icon-all-actions: (0px, 0px, 0px, 0px, 64px, 58px, 64px, 58px, 'assets/images/sprite.png', 'icon-all_actions', );
-$spritesheet-width: 64px;
+$icon-all-actions: (0px, 0px, 0px, 0px, 64px, 58px, 190px, 58px, 'assets/images/sprite.png', 'icon-all_actions', );
+$icon-logo-benleumi-name: 'icon-logo-benleumi';
+$icon-logo-benleumi-x: 64px;
+$icon-logo-benleumi-y: 0px;
+$icon-logo-benleumi-offset-x: -64px;
+$icon-logo-benleumi-offset-y: 0px;
+$icon-logo-benleumi-width: 126px;
+$icon-logo-benleumi-height: 22px;
+$icon-logo-benleumi-total-width: 190px;
+$icon-logo-benleumi-total-height: 58px;
+$icon-logo-benleumi-image: 'assets/images/sprite.png';
+$icon-logo-benleumi: (64px, 0px, -64px, 0px, 126px, 22px, 190px, 58px, 'assets/images/sprite.png', 'icon-logo-benleumi', );
+$spritesheet-width: 190px;
 $spritesheet-height: 58px;
 $spritesheet-image: 'assets/images/sprite.png';
-$spritesheet-sprites: ($icon-all-actions, );
-$spritesheet: (64px, 58px, 'assets/images/sprite.png', $spritesheet-sprites, );
+$spritesheet-sprites: ($icon-all-actions, $icon-logo-benleumi, );
+$spritesheet: (190px, 58px, 'assets/images/sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //

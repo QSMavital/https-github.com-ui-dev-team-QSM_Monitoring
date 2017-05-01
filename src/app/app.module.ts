@@ -35,7 +35,7 @@ import {AtmsNotificationsComponent} from './core/atms/atms-notifications/atms-no
 import {AtmsEventsComponent} from './core/atms/atms-events/atms-events.component';
 import {AtmsTransactionsComponent} from './core/atms/atms-transactions/atms-transactions.component';
 import {AtmsTransactionComponent} from './core/atms/atms-transaction/atms-transaction.component';
-import {UserMiddleware} from "../store/middlewares/user-middleware";
+import {Customer} from "../store/middlewares/customer-middleware";
 import { MainComponent } from './core/master/main/main.component';
 
 
@@ -100,14 +100,14 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       useFactory: interceptorFactory,
       deps: [XHRBackend, RequestOptions, ServerURLInterceptor] // Add it here, in the same order as the signature of interceptorFactory
     },
-    UserMiddleware
+    Customer
   ],
   bootstrap: [AppComponent]
 })
 
 export class AppModule {
-  constructor(private ngRedux: NgRedux<IStore>, private userMiddle: UserMiddleware) {
-    const middlewares = [];
+  constructor(private ngRedux: NgRedux<IStore>, private customer: Customer) {
+    const middlewares = [customer.Middleware];
     this.ngRedux.configureStore(rootReducer, {}, middlewares, [...enhancers]);
 
   }

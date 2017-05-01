@@ -7,7 +7,8 @@
   "menu.reports":"reports",
   "general": {
     "date":"date",
-    "time":"time"
+    "time":"time",
+    "businessDay":"business day"
   },
   "atms":{
     "tabs":{

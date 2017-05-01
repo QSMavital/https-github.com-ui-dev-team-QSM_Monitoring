@@ -1,11 +1,13 @@
 import {Component, OnDestroy} from '@angular/core';
 import {Router} from "@angular/router";
 import {ServerURLInterceptor} from "./app.interceptors";
-import {select} from "@angular-redux/store";
+import {select, NgRedux} from "@angular-redux/store";
 import {Observable} from "rxjs";
 import {TranslateService, LangChangeEvent} from "@ngx-translate/core";
 import {i18n} from "./config/i18n";
 import {isNullOrUndefined} from "util";
+import {IStore} from "../store/index";
+import {GeneralCustomerActions} from "../store/actions/generalCustomer-actions";
 
 @Component({
   selector: 'app-root',
@@ -20,9 +22,11 @@ export class AppComponent implements OnDestroy{
   @select('errorHandler') errorHandler$: Observable<any>;
 
   constructor(private srvURLInterceptor: ServerURLInterceptor,
-              private translate: TranslateService) {
+              private translate: TranslateService,
+              private ngRedux: NgRedux<IStore>) {
     this.initI18n();
     this.initErrorHandler();
+    this.initCustomer();
   }
 
   initI18n() {
@@ -41,6 +45,10 @@ export class AppComponent implements OnDestroy{
 
       }
     });
+  }
+
+  initCustomer(){
+    this.ngRedux.dispatch({type:GeneralCustomerActions.GET_GENERAL_CUSTOMER});
   }
 
   ngOnDestroy() {

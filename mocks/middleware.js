@@ -9,6 +9,12 @@ module.exports = function (req, res, next) {
         settingsUser
       ));
     }
+    else if (req.url.indexOf('/general') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        customerGeneral
+      ));
+    }
     else {
       next();
     }
@@ -24,3 +30,8 @@ var settingsUser = {
   connections: [],
   atmList: []
 };
+
+var customerGeneral ={
+  businessDay:  1493626088621,
+  customer: "BEINLEUMI"
+}

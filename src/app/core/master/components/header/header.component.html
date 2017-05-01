@@ -1,8 +1,8 @@
 <header fxLayout fxLayoutAlign="center center"  class="fs12 no-select">
   <div fxFlex>
-    <ui-dates></ui-dates>
+    <ui-dates [date]="customerDefs?.businessDay"></ui-dates>
   </div>
   <div>
-    <ui-customer-logo></ui-customer-logo>
+    <ui-customer-logo [logo]="customerDefs?.customer"></ui-customer-logo>
   </div>
  </header>

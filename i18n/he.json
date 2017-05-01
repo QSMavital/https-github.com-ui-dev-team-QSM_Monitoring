@@ -7,6 +7,8 @@
   "menu.reports":"דוחות",
   "general": {
     "date":"תאריך",
-    "time":"שעה"
+    "time":"שעה",
+    "businessDay":"יום עסקים"
+
   }
 }

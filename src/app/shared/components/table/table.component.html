@@ -1,7 +1,6 @@
 <div class="wrapper">
-  <div class="table-header fs11">{{header}}</div>
   <p-dataTable [value]="data">
-    <p-column *ngFor="let col of colDef" [field]="col.field" [header]="col.title">
+    <p-column *ngFor="let col of colDef" [field]="col.field" [header]="col.title | translate">
       <ng-template let-col let-item="rowData" pTemplate="body">
         <span [title]="item[col.field]">{{item[col.field]}}</span>
       </ng-template>

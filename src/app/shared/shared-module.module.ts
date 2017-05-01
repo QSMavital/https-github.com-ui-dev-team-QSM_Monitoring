@@ -16,6 +16,7 @@ import {TableComponent} from './components/table/table.component';
 import {DataTableModule, SharedModule as PrimengSharedModule} from 'primeng/primeng';
 
 import {CanActivateRoute} from "./services/can-activate.service";
+import {PortletComponent} from './components/portlet/portlet.component';
 
 @NgModule({
   imports: [
@@ -26,8 +27,8 @@ import {CanActivateRoute} from "./services/can-activate.service";
     DataTableModule,
     PrimengSharedModule
   ],
-  declarations: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent,TableComponent],
-  exports: [SpinnerComponent,DirSelectionDirective, SlidingPanelComponent, MomentPipe,GaugeComponent,TabsComponent,TableComponent],
+  declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent],
+  exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent],
   providers: [CanActivateRoute]
 })
 

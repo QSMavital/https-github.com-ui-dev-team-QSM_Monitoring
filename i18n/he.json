@@ -1,14 +1,40 @@
-{
-  "app.title":"שלום",
-  "menu.main":"ראשי",
-  "menu.atms":"כספומטים",
-  "menu.epp":"epp",
-  "menu.hsm":"hsm",
-  "menu.reports":"דוחות",
-  "general": {
-    "date":"תאריך",
-    "time":"שעה",
-    "businessDay":"יום עסקים"
 
+{
+  "app":{
+    "title":"שלום"
+  },
+  "menu": {
+    "main": "ראשי",
+    "atms": "כספומטים",
+    "epp": "epp",
+    "hsm": "hsm",
+    "reports": "דוחות"
+  },
+  "general": {
+    "date": "תאריך",
+    "time": "שעה",
+    "last_notifications": "התראות אחרונות",
+    "id":"id",
+    "name":"שם",
+    "status":"סטטוס",
+    "reason":"סיבה",
+    "last_withdrawal":"משיכה אחרונה",
+    "remaining_cash":"remaining cash",
+    "retained_cards":"retained cards",
+    "card_settlement":"card settlement",
+    "branch":"סניף",
+    "last_activity":"פעילות אחרונה",
+    "last_settlement":"last settlement"
+  },
+  "atms": {
+    "tabs": {
+      "inventory": "מלאי",
+      "status": "סטטוס",
+      "notifications": "התראות",
+      "events": "אירועים",
+      "transactions": "עסקאות",
+      "transaction": "עסקה"
+    }
   }
 }
+

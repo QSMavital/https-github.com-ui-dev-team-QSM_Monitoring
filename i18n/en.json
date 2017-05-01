@@ -1,23 +1,38 @@
 {
-  "app.title":"hello",
-  "menu.main":"main",
-  "menu.atms":"atms",
-  "menu.epp":"epp",
-  "menu.hsm":"hsm",
-  "menu.reports":"reports",
-  "general": {
-    "date":"date",
-    "time":"time",
-    "businessDay":"business day"
+  "app":{
+    "title":"hello"
   },
-  "atms":{
-    "tabs":{
-      "inventory":"Inventory",
-      "status":"status",
-      "notifications":"notifications",
-      "events":"events",
-      "transactions":"transactions",
-      "transaction":"transaction"
+  "menu": {
+    "main": "main",
+    "atms": "atms",
+    "epp": "epp",
+    "hsm": "hsm",
+    "reports": "reports"
+  },
+  "general": {
+    "date": "date",
+    "time": "time",
+    "last_notifications": "last notifications",
+    "id":"id",
+    "name":"name",
+    "status":"status",
+    "reason":"reason",
+    "last_withdrawal":"last withdrawal",
+    "remaining_cash":"remaining cash",
+    "retained_cards":"retained cards",
+    "card_settlement":"card settlement",
+    "branch":"branch",
+    "last_activity":"last activity",
+    "last_settlement":"last settlement"
+  },
+  "atms": {
+    "tabs": {
+      "inventory": "Inventory",
+      "status": "status",
+      "notifications": "notifications",
+      "events": "events",
+      "transactions": "transactions",
+      "transaction": "transaction"
     }
   }
 }

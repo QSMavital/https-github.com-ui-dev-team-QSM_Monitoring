@@ -1,6 +1,6 @@
-$ui-icons-add-new: "\ea01";
-$ui-icons-info: "\ea02";
-$ui-icons-mail: "\ea03";
+$ui-icons-add-new: "\ea03";
+$ui-icons-info: "\ea01";
+$ui-icons-mail: "\ea02";
 $ui-icons-print: "\ea04";
 $ui-icons-save: "\ea05";
 
@@ -54,15 +54,15 @@ $ui-icons-save: "\ea05";
 }
 
 .ui-icons-add-new::before {
-    content: "\ea01";
+    content: "\ea03";
 }
 
 .ui-icons-info::before {
-    content: "\ea02";
+    content: "\ea01";
 }
 
 .ui-icons-mail::before {
-    content: "\ea03";
+    content: "\ea02";
 }
 
 .ui-icons-print::before {

@@ -50,14 +50,17 @@
 }
 
 .bold {
-  font-family:"opensans-bold"
+  font-family:"opensans-bold";
+  font-weight: 700;
 }
 .light {
-  font-family:"opensans-light"
+  font-family:"opensans-light";
 }
 .semi-bold {
   font-family: "opensans-semibold";
+  font-weight: 500;
 }
 .extra-bold {
   font-family: "opensans-extrabold";
+  font-weight: 1000;
 }

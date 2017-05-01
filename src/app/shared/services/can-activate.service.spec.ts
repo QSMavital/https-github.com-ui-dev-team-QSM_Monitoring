@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { CanActivateService } from './can-activate.service';
+import {CanActivateRoute} from './can-activate.service';
 
 describe('CanActivateService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CanActivateService]
+      providers: [CanActivateRoute]
     });
   });
 
-  it('should ...', inject([CanActivateService], (service: CanActivateService) => {
+  it('should ...', inject([CanActivateRoute], (service: CanActivateRoute) => {
     expect(service).toBeTruthy();
   }));
 });

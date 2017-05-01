@@ -24,7 +24,7 @@ import {InterceptorService} from 'ng2-interceptors';
 import {NgReduxModule, NgRedux} from "@angular-redux/store";
 import {IStore, rootReducer, enhancers} from "../store/index";
 import {ServerURLInterceptor} from "./app.interceptors";
-import {DialogModule} from 'primeng/primeng';
+import {DialogModule, DropdownModule} from 'primeng/primeng';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CommonModule} from "@angular/common";
 import {MomentPipe} from "./shared/pipes/moment.pipe";
@@ -37,6 +37,7 @@ import {AtmsTransactionsComponent} from './core/atms/atms-transactions/atms-tran
 import {AtmsTransactionComponent} from './core/atms/atms-transaction/atms-transaction.component';
 import {UserMiddleware} from "../store/middlewares/user-middleware";
 import { MainComponent } from './core/master/main/main.component';
+
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "i18n/", ".json");
@@ -88,7 +89,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       }
     }),
     DialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DropdownModule
   ],
   providers: [
     MomentPipe,

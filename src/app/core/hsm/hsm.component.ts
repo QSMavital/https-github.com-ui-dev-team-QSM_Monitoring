@@ -7,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HsmComponent implements OnInit {
 
+  private ddOptions:any[] = [
+    {
+      label:'1',
+      value:{id:'1'}
+    },
+    {
+      label:'2',
+      value:{id:'2'}
+    }
+  ];
+  private ddModel:any;
+
   constructor() { }
 
   ngOnInit() {

@@ -1,4 +1,21 @@
 <div class="wrapper ui-space-medium">
-  <ui-gauge [config]="gaugeCofing" [value]="gaugeCofing.value"></ui-gauge>
-  <ui-gauge [config]="donutCofing" [value]="donutCofing.value"></ui-gauge>
+  <div fxLayout='row' class="stretch-width" style="height:256px;">
+    <div fxFlex="20">
+      <ui-connection-status [data]="connectionStatus"></ui-connection-status>
+    </div>
+    <div fxFlex="60">
+      <ui-devices-status [data]="devicesStatus"></ui-devices-status>
+    </div>
+    <div fxFlex="20">
+      <ui-online-status [data]="gaugeCofing"></ui-online-status>
+    </div>
+  </div>
+  <div fxLayout='row' class="ui-space-t-medium stretch-width" style="height:336px;">
+    <div fxFlex="50">
+      <ui-issuer-actions-status></ui-issuer-actions-status>
+    </div>
+    <div fxFlex="50">
+      <ui-actions-status></ui-actions-status>
+    </div>
+  </div>
 </div>

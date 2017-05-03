@@ -17,6 +17,8 @@ import {DataTableModule, SharedModule as PrimengSharedModule} from 'primeng/prim
 
 import {CanActivateRoute} from "./services/can-activate.service";
 import {PortletComponent} from './components/portlet/portlet.component';
+import { StatusIndicatorComponent } from './components/status-indicator/status-indicator.component';
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   imports: [
@@ -25,10 +27,11 @@ import {PortletComponent} from './components/portlet/portlet.component';
     TranslateModule,
     RouterModule,
     DataTableModule,
-    PrimengSharedModule
+    PrimengSharedModule,
+    FlexLayoutModule
   ],
-  declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent],
-  exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent],
+  declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent, StatusIndicatorComponent],
+  exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent,StatusIndicatorComponent],
   providers: [CanActivateRoute]
 })
 

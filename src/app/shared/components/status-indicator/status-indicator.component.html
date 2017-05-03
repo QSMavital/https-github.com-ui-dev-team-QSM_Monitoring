@@ -1,0 +1,4 @@
+<div class="wrapper no-select" [ngClass]="size" fxLayout="row" fxLayoutAlign="start center">
+  <span class="circle"><span class="inner" [ngClass]="status" [ngStyle]="{background:color}"></span></span>
+  <span class="label fs10" [ngClass]="{limit:limit}"><ng-content></ng-content></span>
+</div>

@@ -1,0 +1,5 @@
+<div class="wrapper" fxLayout="column" fxLayoutWrap="true" style="padding-top: 10px;">
+  <div *ngFor="let item of list" style="margin-bottom:15px">
+    <ui-status-indicator [status]="item.status" limit="true" [title]="item.label.toUpperCase()">{{item.label}}</ui-status-indicator>
+  </div>
+</div>

@@ -58,7 +58,11 @@
   "db": {
     "connection_status":"connection status",
     "devices_status":"devices status",
-    "online_status":"online status"
+    "online_status":"online status",
+    "in_order":"in order",
+    "exception":"exception",
+    "attention":"attention",
+    "broken":"broken"
   }
 }
 

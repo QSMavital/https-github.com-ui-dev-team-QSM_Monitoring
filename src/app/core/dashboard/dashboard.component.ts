@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'ui-dashboard',
@@ -10,13 +10,48 @@ export class DashboardComponent implements OnInit {
   private gaugeCofing:any;
   private donutCofing:any;
 
+  private connectionStatus:any[] = [
+    {
+      "label":"HSM",
+      "status":"ok"
+    },
+    {
+      "label":"HSM",
+      "status":"danger"
+    },
+    {
+      "label":"bank connection",
+      "status":"warning"
+    },
+    {
+      "label":"HSM",
+      "status":"warning"
+    },
+    {
+      "label":"bank connection",
+      "status":"ok"
+    },
+    {
+      "label":"bank connection",
+      "status":"ok"
+    },
+    {
+      "label":"bank connection",
+      "status":"ok"
+    }
+  ];
+
+  @ViewChild('gCont') _gaugeContainer;
+
   constructor() {
     this.initGaugeCofing();
     this.initDonutCofing();
   }
 
   ngOnInit() {
-
+    setInterval(()=>{
+      this._gaugeContainer.getWidth();
+    },2000)
   }
 
   initGaugeCofing(){
@@ -27,10 +62,10 @@ export class DashboardComponent implements OnInit {
       value:10,
       animationSpeed:10,
       angle: 0, // The span of the gauge arc
-      lineWidth: 0.4, // The line thickness
-      radiusScale: 1, // Relative radius
+      lineWidth: 0.1, // The line thickness
+      radiusScale: 0.85, // Relative radius
       pointer: {
-        length: 0.3, // // Relative to gauge radius
+        length: 0.6, // // Relative to gauge radius
         strokeWidth: 0.035, // The thickness
         color: '#000000' // Fill color
       },
@@ -39,15 +74,16 @@ export class DashboardComponent implements OnInit {
       generateGradient: true,
       highDpiSupport: true,     // High resolution support
       staticLabels: {
-        font: "12px sans-serif",  // Specifies font
-        labels: [0, 2,5, 8, 10],  // Print labels at these values
-        color: "#000000",  // Optional: Label text color
-        fractionDigits: 0  // Optional: Numerical precision. 0=round off.
+        font: "0.9285714rem opensans-regular",  // Specifies font
+        labels: [0,1,2,3,4,5,6,7,8,9,10],  // Print labels at these values
+        color: "#6f7b87",  // Optional: Label text color
+        fractionDigits: 0,  // Optional: Numerical precision. 0=round off.
+        padding: '100px'
       },
       staticZones: [
-        {strokeStyle: "#F03E3E", min: 0, max: 2}, // Red from 100 to 130
-        {strokeStyle: "#FFDD00", min: 2, max: 8}, // Yellow
-        {strokeStyle: "#30B32D", min: 8, max: 10}, // Green
+        {strokeStyle: "#ff563e", min: 0, max: 0.5}, // Red from 100 to 130
+        {strokeStyle: "#71d36b", min: 0.5, max: 9.5}, // Yellow
+        {strokeStyle: "#ff563e", min: 9.5, max: 10}, // Green
       ]
     };
 

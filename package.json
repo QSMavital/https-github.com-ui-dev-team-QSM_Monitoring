@@ -5,9 +5,9 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4101 --proxy-config proxy.conf.json",
-    "mock1": "json-server -p 4000 --delay 1500 --watch mocks/mock.json --routes mocks/routes.json  --middlewares mocks/middleware.js",
-    "mock2": "json-server -p 4000 --delay 1500 --watch mocks/mock.json  --middlewares mocks/middleware.js",
+    "start": "ng serve --port 4102 --proxy-config proxy.conf.json",
+    "mock1": "json-server -p 4009 --delay 1500 --watch mocks/mock.json --routes mocks/routes.json  --middlewares mocks/middleware.js",
+    "mock2": "json-server -p 4009 --delay 1500 --watch mocks/mock.json  --middlewares mocks/middleware.js",
     "icons": "webpack -w",
     "build": "webpack -p && ng build -prod",
     "test": "ng test",

@@ -11,7 +11,7 @@ var chart = require('gaugeJS');
 export class GaugeComponent implements OnInit,OnChanges {
   @Input('config') config;
   @Input('value') value;
-  @Input() width:number = 300;
+  @Input() width;
   private opts: any = {};
   private gauge: any;
 
@@ -21,22 +21,30 @@ export class GaugeComponent implements OnInit,OnChanges {
   //usage and docs ;http://bernii.github.io/gauge.js/
 
   ngOnInit() {
-      //init gauge into canvas element.
+    //init gauge into canvas element.
+
+
+  }
+
+  ngOnChanges(event) {
+    if (!isNullOrUndefined(this.gauge)) {
+      this.gauge.set(this.value);
+    }
+    if (!isNullOrUndefined(event.width)
+      && !isNullOrUndefined(event.width.currentValue)
+      && isNullOrUndefined(event.width.previousValue)) {
+      this.initGauge()
+    }
+  }
+
+  initGauge() {
     this.gauge =
       new chart[this.config.type](this.refElm.nativeElement.querySelector('#gauge'))
         .setOptions(this.config);
     this.gauge.maxValue = this.config.maxValue; // set max gauge value
     this.gauge.setMinValue(this.config.minValue);  // Prefer setter over gauge.minValue = 0
     this.gauge.set(this.value); // set actual value
-
   }
-
-  ngOnChanges(event){
-    if(!isNullOrUndefined(this.gauge)){
-      this.gauge.set(this.value);
-    }
-  }
-
 
 
 }

@@ -1,21 +1,14 @@
-<div class="wrapper ui-space-medium">
-  <div fxLayout='row' class="stretch-width" style="height:256px;">
-    <div fxFlex="20">
-      <ui-connection-status [data]="connectionStatus"></ui-connection-status>
-    </div>
-    <div fxFlex="60">
-      <ui-devices-status [data]="devicesStatus"></ui-devices-status>
-    </div>
-    <div fxFlex="20">
-      <ui-online-status [data]="gaugeCofing"></ui-online-status>
-    </div>
-  </div>
-  <div fxLayout='row' class="ui-space-t-medium stretch-width" style="height:336px;">
-    <div fxFlex="50">
-      <ui-issuer-actions-status></ui-issuer-actions-status>
-    </div>
-    <div fxFlex="50">
-      <ui-actions-status></ui-actions-status>
-    </div>
-  </div>
+<!--<div fxLayout class="wrapper ui-space-tb-medium ui-space-lr-regular">-->
+      <!--<ui-connection-status  fxFlex="25%" [data]="connectionStatus"></ui-connection-status>-->
+      <!--<ui-devices-status class="qsm-widget" fxFlex="50%" [data]="devicesStatus"></ui-devices-status>-->
+      <!--<ui-online-status class="qsm-widget" fxFlex="25%" [data]="gaugeCofing"></ui-online-status>-->
+      <!--<ui-issuer-actions-status class="qsm-widget" fxFlex="50%"></ui-issuer-actions-status>-->
+      <!--<ui-actions-status class="qsm-widget" fxFlex="50%"></ui-actions-status>-->
+<!--</div>-->
+<div fxLayout class="wrapper ui-space-tb-medium ui-space-lr-regular">
+  <ui-widget-injector fxFlex="25%" class="qsm-widget" [widget]="'ConnectionStatusComponent'" [data]="connectionStatus"></ui-widget-injector>
+  <ui-widget-injector fxFlex="50%" class="qsm-widget" [widget]="'DevicesStatusComponent'" [data]="devicesStatus"></ui-widget-injector>
+  <ui-widget-injector fxFlex="25%" class="qsm-widget" [widget]="'OnlineStatusComponent'" [data]="gaugeCofing"></ui-widget-injector>
+  <ui-widget-injector fxFlex="50%" class="qsm-widget" [widget]="'IssuerActionsStatusComponent'" [data]="gaugeCofing"></ui-widget-injector>
+  <ui-widget-injector fxFlex="50%" class="qsm-widget" [widget]="'ActionsStatusComponent'" [data]="gaugeCofing"></ui-widget-injector>
 </div>

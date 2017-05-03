@@ -2,7 +2,8 @@
   <ui-portlet class="stretch-height" footer="1" [header]="'db.connection_status' | translate">
     <div class="wrapper" fxLayout="column" fxLayoutWrap="true" style="padding-top: 10px;">
       <div *ngFor="let item of data" style="margin-bottom:15px">
-        <ui-status-indicator [status]="item.status" limit="true" [title]="item.label.toUpperCase()">{{item.label}}</ui-status-indicator>
+        <ui-status-indicator
+          [status]="item.status" limit="true" [title]="item.label.toUpperCase()">{{item.label}}</ui-status-indicator>
       </div>
     </div>
     <div footer>

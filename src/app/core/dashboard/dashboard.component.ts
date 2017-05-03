@@ -1,4 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild, ComponentFactoryResolver, ElementRef, ViewContainerRef} from '@angular/core';
+import {OnlineStatusComponent} from "./online-status/online-status.component";
+import {DashboardInject} from "./dashboard-inject";
 
 @Component({
   selector: 'ui-dashboard',
@@ -52,6 +54,8 @@ export class DashboardComponent implements OnInit {
     // setInterval(()=>{
     //   this._gaugeContainer.getWidth();
     // },2000)
+
+
   }
 
   initGaugeCofing() {
@@ -101,7 +105,7 @@ export class DashboardComponent implements OnInit {
         minValue: 0,
         value: 10,
         angle: 1, // The span of the gauge arc
-        lineWidth: 0.1, // The line thickness
+        lineWidth: 0.05, // The line thickness
         radiusScale: .8, // Relative radius
         limitMax: false,     // If false, the max value of the gauge will be updated if value surpass max
         limitMin: false,     // If true, the min value of the gauge will be fixed unless you set it manually
@@ -118,7 +122,7 @@ export class DashboardComponent implements OnInit {
         minValue: 0,
         value: 10,
         angle: 1, // The span of the gauge arc
-        lineWidth: 0.1, // The line thickness
+        lineWidth: 0.05, // The line thickness
         radiusScale: .8, // Relative radius
         limitMax: false,     // If false, the max value of the gauge will be updated if value surpass max
         limitMin: false,     // If true, the min value of the gauge will be fixed unless you set it manually

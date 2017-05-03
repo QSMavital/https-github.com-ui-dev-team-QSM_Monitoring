@@ -53,6 +53,7 @@ import { DevicesStatusComponent } from './core/dashboard/devices-status/devices-
 import { OnlineStatusComponent } from './core/dashboard/online-status/online-status.component';
 import { IssuerActionsStatusComponent } from './core/dashboard/issuer-actions-status/issuer-actions-status.component';
 import { ActionsStatusComponent } from './core/dashboard/actions-status/actions-status.component';
+import { WidgetInjectorComponent } from './core/dashboard/widget-injector/widget-injector.component';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -102,7 +103,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     DevicesStatusComponent,
     OnlineStatusComponent,
     IssuerActionsStatusComponent,
-    ActionsStatusComponent
+    ActionsStatusComponent,
+    WidgetInjectorComponent
   ],
   imports: [
     BrowserModule,
@@ -133,6 +135,13 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       deps: [XHRBackend, RequestOptions, ServerURLInterceptor] // Add it here, in the same order as the signature of interceptorFactory
     },
     Customer
+  ],
+  entryComponents: [
+    ConnectionStatusComponent,
+    DevicesStatusComponent,
+    OnlineStatusComponent,
+    IssuerActionsStatusComponent,
+    ActionsStatusComponent
   ],
   bootstrap: [AppComponent]
 })

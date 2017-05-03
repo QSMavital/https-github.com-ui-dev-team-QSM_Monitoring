@@ -1,6 +1,8 @@
 <div class="stretch-height wrapper">
   <ui-portlet class="stretch-height" [header]="'db.online_status' | translate" footer="1" #gCont>
-    <ui-gauge [config]="data" [value]="data.value" width="240" style="text-align: center"></ui-gauge>
+    <div class="ui-space-t-small">
+      <ui-gauge [config]="data" [value]="data.value" [width]="'290px'" style="text-align: center"></ui-gauge>
+    </div>
     <div footer>
       <div fxLayout fxLayoutAlign="center center">
         <ui-status-indicator size="small" style="margin-right:20px;">{{'db.in_order' | translate}}</ui-status-indicator>

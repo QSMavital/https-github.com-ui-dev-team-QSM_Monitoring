@@ -1,9 +1,11 @@
-<div class="stretch-height" style="padding: 0 15px;">
+<div class="stretch-height">
   <ui-portlet class="stretch-height" [header]="'db.devices_status' | translate">
     <div class="wrapper" fxLayout="row" fxLayoutAlign="center center">
       <div class="stretch-height text-center" *ngFor="let item of data">
         <div class="label fs10">{{item.title | translate}}</div>
-        <div class="gauge-wrapper" *ngIf="item.value"><ui-gauge class="gauge" [config]="item" [value]="item.value"></ui-gauge></div>
+        <div class="gauge-wrapper" *ngIf="item.value">
+          <ui-gauge class="gauge" [width]="'200px'" [config]="item" [value]="item.value"></ui-gauge>
+        </div>
         <div class="value fs28">{{item.value}}<span class="perc fs18">%</span></div>
       </div>
     </div>

@@ -1,0 +1,28 @@
+@import "./src/styles/helpers/brand";
+:host {
+  .wrapper {
+    height: 215px;
+    position: relative;
+    .label {
+      text-transform: uppercase;
+      color:$pale-sky;
+    }
+    .gauge-wrapper {
+      width: 130px;
+      height: 150px;
+      position: relative;
+      overflow: hidden;
+      .gauge {
+        position: absolute;
+        top: 0;
+        left: -85px;
+      }
+    }
+    .value {
+      color:$pale-sky;
+      .perc {
+        opacity: .6;
+      }
+    }
+  }
+}

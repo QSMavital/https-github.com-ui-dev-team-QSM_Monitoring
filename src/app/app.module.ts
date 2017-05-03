@@ -49,6 +49,7 @@ import { AtmTransactionComponent } from './core/atm/atm-transaction/atm-transact
 import { HsmStatusComponent } from './core/hsm/hsm-status/hsm-status.component';
 import { HsmStatisticsComponent } from './core/hsm/hsm-statistics/hsm-statistics.component';
 import { ConnectionStatusComponent } from './core/dashboard/connection-status/connection-status.component';
+import { DevicesStatusComponent } from './core/dashboard/devices-status/devices-status.component';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -94,7 +95,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     AtmTransactionComponent,
     HsmStatusComponent,
     HsmStatisticsComponent,
-    ConnectionStatusComponent
+    ConnectionStatusComponent,
+    DevicesStatusComponent
   ],
   imports: [
     BrowserModule,

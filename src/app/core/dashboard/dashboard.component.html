@@ -1,5 +1,4 @@
 <div class="wrapper ui-space-medium">
-  <!--<ui-gauge [config]="donutCofing" [value]="donutCofing.value"></ui-gauge>-->
   <div fxLayout='row' style="height:256px;width:100%;">
     <div class="stretch-height" fxFlex="20" style="margin-right:25px;">
       <ui-portlet class="stretch-height" footer="1" [header]="'db.connection_status' | translate">
@@ -14,7 +13,9 @@
       </ui-portlet>
     </div>
     <div class="stretch-height" fxFlex="60" style="margin-right:25px;">
-      <ui-portlet class="stretch-height" [header]="'db.devices_status' | translate">p4 content</ui-portlet>
+      <ui-portlet class="stretch-height" [header]="'db.devices_status' | translate">
+        <ui-devices-status [data]="devicesStatus"></ui-devices-status>
+      </ui-portlet>
     </div>
     <div class="stretch-height" fxFlex="20">
       <ui-portlet class="stretch-height" [header]="'db.online_status' | translate" footer="1" #gCont>
@@ -36,8 +37,4 @@
       <ui-portlet class="stretch-height" header="p2">p2 content</ui-portlet>
     </div>
   </div>
-  <ui-status-indicator>Hello</ui-status-indicator>
-  <ui-status-indicator status="warning">Hello</ui-status-indicator>
-  <ui-status-indicator status="danger">Hello</ui-status-indicator>
-  <ui-status-indicator status="custom" color="blue">Hello</ui-status-indicator>
 </div>

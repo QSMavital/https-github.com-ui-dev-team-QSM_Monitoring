@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ConnectionStatusComponent implements OnInit {
 
-  @Input() list:any[];
+  @Input() data:any[];
 
   constructor() { }
 

@@ -1,40 +1,21 @@
 <div class="wrapper ui-space-medium">
-  <div fxLayout='row' style="height:256px;width:100%;">
-    <div class="stretch-height" fxFlex="20" style="margin-right:25px;">
-      <ui-portlet class="stretch-height" footer="1" [header]="'db.connection_status' | translate">
-        <ui-connection-status [list]="connectionStatus"></ui-connection-status>
-        <div footer>
-          <div fxLayout fxLayoutAlign="center center">
-            <ui-status-indicator size="small" style="margin-right:20px !important;">{{'db.in_order' | translate}}</ui-status-indicator>
-            <ui-status-indicator size="small" status="warning" style="margin-right:20px;">{{'db.attention' | translate}}</ui-status-indicator>
-            <ui-status-indicator size="small" status="danger">{{'db.broken' | translate}}</ui-status-indicator>
-          </div>
-        </div>
-      </ui-portlet>
+  <div fxLayout='row' class="stretch-width" style="height:256px;">
+    <div fxFlex="20">
+      <ui-connection-status [data]="connectionStatus"></ui-connection-status>
     </div>
-    <div class="stretch-height" fxFlex="60" style="margin-right:25px;">
-      <ui-portlet class="stretch-height" [header]="'db.devices_status' | translate">
-        <ui-devices-status [data]="devicesStatus"></ui-devices-status>
-      </ui-portlet>
+    <div fxFlex="60">
+      <ui-devices-status [data]="devicesStatus"></ui-devices-status>
     </div>
-    <div class="stretch-height" fxFlex="20">
-      <ui-portlet class="stretch-height" [header]="'db.online_status' | translate" footer="1" #gCont>
-        <ui-gauge [config]="gaugeCofing" [value]="gaugeCofing.value" width="240" style="text-align: center"></ui-gauge>
-        <div footer>
-          <div fxLayout fxLayoutAlign="center center">
-            <ui-status-indicator size="small" style="margin-right:20px;">{{'db.in_order' | translate}}</ui-status-indicator>
-            <ui-status-indicator size="small" status="danger">{{'db.exception' | translate}}</ui-status-indicator>
-          </div>
-        </div>
-      </ui-portlet>
+    <div fxFlex="20">
+      <ui-online-status [data]="gaugeCofing"></ui-online-status>
     </div>
   </div>
   <div fxLayout='row' class="ui-space-t-medium stretch-width" style="height:336px;">
-    <div fxFlex="50" class="stretch-height" style="margin-right:25px;">
-      <ui-portlet class="stretch-height" header="p1">p1 content</ui-portlet>
+    <div fxFlex="50">
+      <ui-issuer-actions-status></ui-issuer-actions-status>
     </div>
-    <div fxFlex="50" class="stretch-height">
-      <ui-portlet class="stretch-height" header="p2">p2 content</ui-portlet>
+    <div fxFlex="50">
+      <ui-actions-status></ui-actions-status>
     </div>
   </div>
 </div>

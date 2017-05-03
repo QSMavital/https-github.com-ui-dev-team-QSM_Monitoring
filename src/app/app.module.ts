@@ -50,6 +50,9 @@ import { HsmStatusComponent } from './core/hsm/hsm-status/hsm-status.component';
 import { HsmStatisticsComponent } from './core/hsm/hsm-statistics/hsm-statistics.component';
 import { ConnectionStatusComponent } from './core/dashboard/connection-status/connection-status.component';
 import { DevicesStatusComponent } from './core/dashboard/devices-status/devices-status.component';
+import { OnlineStatusComponent } from './core/dashboard/online-status/online-status.component';
+import { IssuerActionsStatusComponent } from './core/dashboard/issuer-actions-status/issuer-actions-status.component';
+import { ActionsStatusComponent } from './core/dashboard/actions-status/actions-status.component';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -96,7 +99,10 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     HsmStatusComponent,
     HsmStatisticsComponent,
     ConnectionStatusComponent,
-    DevicesStatusComponent
+    DevicesStatusComponent,
+    OnlineStatusComponent,
+    IssuerActionsStatusComponent,
+    ActionsStatusComponent
   ],
   imports: [
     BrowserModule,

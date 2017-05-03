@@ -54,6 +54,11 @@
       "status": "hsm status",
       "statistics": "hsm statistics"
     }
+  },
+  "db": {
+    "connection_status":"connection status",
+    "devices_status":"devices status",
+    "online_status":"online status"
   }
 }
 

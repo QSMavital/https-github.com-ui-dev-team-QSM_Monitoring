@@ -11,6 +11,7 @@ var chart = require('gaugeJS');
 export class GaugeComponent implements OnInit,OnChanges {
   @Input('config') config;
   @Input('value') value;
+  @Input() width:number = 300;
   private opts: any = {};
   private gauge: any;
 

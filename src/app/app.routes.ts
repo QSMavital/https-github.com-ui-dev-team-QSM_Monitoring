@@ -9,7 +9,6 @@ import {AtmsStatusComponent} from "./core/atms/atms-status/atms-status.component
 import {AtmsNotificationsComponent} from "./core/atms/atms-notifications/atms-notifications.component";
 import {AtmsEventsComponent} from "./core/atms/atms-events/atms-events.component";
 import {AtmsTransactionsComponent} from "./core/atms/atms-transactions/atms-transactions.component";
-import {AtmsTransactionComponent} from "./core/atms/atms-transaction/atms-transaction.component";
 import {MainComponent} from "./core/master/main/main.component";
 import {CanActivateRoute} from "./shared/services/can-activate.service";
 import {AtmComponent} from "./core/atm/atm.component";
@@ -42,20 +41,17 @@ export const appRoutes: Route[] = [
           {
             path: '', component: AtmsComponent,
             children: [
-              {path: '', redirectTo: '/atms/inventory', pathMatch: 'full'},
               {path: 'inventory', component: InventoryComponent},
               {path: 'status', component: AtmsStatusComponent},
               {path: 'notifications', component: AtmsNotificationsComponent},
               {path: 'events', component: AtmsEventsComponent},
-              {path: 'transactions', component: AtmsTransactionsComponent},
-              {path: 'transaction', component: AtmsTransactionComponent},
+              {path: 'transactions', component: AtmsTransactionsComponent}
             ],
           },
 
           {
             path: 'atm/:id', component: AtmComponent,
             children: [
-              {path: '', redirectTo: '/atms', pathMatch: 'full'},
               {path: 'status', component: AtmStatusComponent},
               {path: 'accessories', component: AccessoriesStatusComponent},
               {path: 'retained-cards', component: RetainedCardsComponent},

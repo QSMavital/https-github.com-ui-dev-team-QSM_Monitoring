@@ -27,6 +27,26 @@ module.exports = function (req, res, next) {
 var settingsUser = {
   language: "EN",
   menu: ["MAIN","ATM","HSM","EPP","COMMUNICATION","REPORTS"],
+  atms:{
+    tabs:[
+      {field:"inventory",visible:true},
+      {field:"status",visible:true},
+      {field:"notifications",visible:true},
+      {field:"events",visible:true},
+      {field:"transactions",visible:true}
+    ]
+  },
+  atm:{
+    tabs:[
+      {field:"status",visible:true},
+      {field:"accessories",visible:true},
+      {field:"retained-cards",visible:true},
+      {field:"settings",visible:true},
+      {field:"notifications",visible:true},
+      {field:"events",visible:true},
+      {field:"transactions",visible:true}
+    ]
+  },
   connections: [],
   atmList: []
 };

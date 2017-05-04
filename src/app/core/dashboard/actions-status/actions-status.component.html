@@ -1,3 +1,9 @@
 <div class="wrapper stretch-height">
-  <ui-portlet class="stretch-height" header="p2">p2 content</ui-portlet>
+  <ui-portlet class="stretch-height" [header]="'db.actions_status' | translate">
+    <div class="inside-portlet-wrapper">
+      <div style="width:50%;margin:auto">
+        <p-chart [type]="options.type" [data]="data" [options]="options"></p-chart>
+      </div>
+    </div>
+  </ui-portlet>
 </div>

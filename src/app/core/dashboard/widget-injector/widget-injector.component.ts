@@ -16,7 +16,9 @@ export class WidgetInjectorComponent implements OnInit {
   @ViewChild('component', {read: ViewContainerRef}) tpl;
   @Input('data') data;
   @Input('widget') widget;
-  constructor(private _componentFactoryResolver: ComponentFactoryResolver) { }
+
+  constructor(private _componentFactoryResolver: ComponentFactoryResolver) {
+  }
 
   ngOnInit() {
     let components = {
@@ -27,13 +29,14 @@ export class WidgetInjectorComponent implements OnInit {
       ActionsStatusComponent,
     };
 
-    let Obj = new DashboardInject(components[this.widget],  this.data);
+    let Obj = new DashboardInject(components[this.widget], this.data);
     let componentFactory =
       this._componentFactoryResolver.resolveComponentFactory(Obj.component);
 
 
     let componentRef = this.tpl.createComponent(componentFactory);
-    componentRef.instance.data = Obj.data;
+    if (Obj.data)
+      componentRef.instance.data = Obj.data;
   }
 
 }

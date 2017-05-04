@@ -6,9 +6,13 @@
       <!--<ui-actions-status class="qsm-widget" fxFlex="50%"></ui-actions-status>-->
 <!--</div>-->
 <div fxLayout class="wrapper ui-space-tb-medium ui-space-lr-regular">
-  <ui-widget-injector fxFlex="25%" class="qsm-widget" [widget]="'ConnectionStatusComponent'" [data]="connectionStatus"></ui-widget-injector>
-  <ui-widget-injector fxFlex="50%" class="qsm-widget" [widget]="'DevicesStatusComponent'" [data]="devicesStatus"></ui-widget-injector>
-  <ui-widget-injector fxFlex="25%" class="qsm-widget" [widget]="'OnlineStatusComponent'" [data]="gaugeCofing"></ui-widget-injector>
-  <ui-widget-injector fxFlex="50%" class="qsm-widget" [widget]="'IssuerActionsStatusComponent'" [data]="gaugeCofing"></ui-widget-injector>
-  <ui-widget-injector fxFlex="50%" class="qsm-widget" [widget]="'ActionsStatusComponent'" [data]="gaugeCofing"></ui-widget-injector>
+  <ui-widget-injector fxFlex="25%" class="qsm-widget" [widget]="'ConnectionStatusComponent'"></ui-widget-injector>
+  <ui-widget-injector fxFlex="50%" class="qsm-widget" [widget]="'DevicesStatusComponent'"></ui-widget-injector>
+  <ui-widget-injector fxFlex="25%" class="qsm-widget" [widget]="'OnlineStatusComponent'" ></ui-widget-injector>
+  <ui-widget-injector fxFlex="50%" class="qsm-widget" [widget]="'IssuerActionsStatusComponent'"></ui-widget-injector>
+  <ui-widget-injector fxFlex="50%" class="qsm-widget" [widget]="'ActionsStatusComponent'"></ui-widget-injector>
 </div>
+<i class="icon icon-working"></i>
+<i class="icon icon-broken"></i>
+<i class="icon icon-fix"></i>
+<i class="icon icon-unavailable"></i>

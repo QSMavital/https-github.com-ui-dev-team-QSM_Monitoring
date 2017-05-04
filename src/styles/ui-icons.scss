@@ -1,7 +1,7 @@
-$ui-icons-add-new: "\ea03";
-$ui-icons-info: "\ea01";
+$ui-icons-add-new: "\ea01";
+$ui-icons-info: "\ea02";
 $ui-icons-mail: "\ea04";
-$ui-icons-print: "\ea02";
+$ui-icons-print: "\ea03";
 $ui-icons-save: "\ea05";
 
 @font-face {
@@ -54,11 +54,11 @@ $ui-icons-save: "\ea05";
 }
 
 .ui-icons-add-new::before {
-    content: "\ea03";
+    content: "\ea01";
 }
 
 .ui-icons-info::before {
-    content: "\ea01";
+    content: "\ea02";
 }
 
 .ui-icons-mail::before {
@@ -66,7 +66,7 @@ $ui-icons-save: "\ea05";
 }
 
 .ui-icons-print::before {
-    content: "\ea02";
+    content: "\ea03";
 }
 
 .ui-icons-save::before {

@@ -7,7 +7,36 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ConnectionStatusComponent implements OnInit {
 
-  @Input() data:any[];
+  private data:any[] = [
+    {
+      "label": "HSM",
+      "status": "ok"
+    },
+    {
+      "label": "HSM",
+      "status": "danger"
+    },
+    {
+      "label": "bank connection",
+      "status": "warning"
+    },
+    {
+      "label": "HSM",
+      "status": "warning"
+    },
+    {
+      "label": "bank connection",
+      "status": "ok"
+    },
+    {
+      "label": "bank connection",
+      "status": "ok"
+    },
+    {
+      "label": "bank connection",
+      "status": "ok"
+    }
+  ];
 
   constructor() { }
 

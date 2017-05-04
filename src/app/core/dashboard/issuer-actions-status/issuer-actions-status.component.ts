@@ -12,32 +12,53 @@ export class IssuerActionsStatusComponent implements OnInit {
 
   constructor() {
     this.options = {
-      legend: {
-        visible:false
+      type:'bar',
+      layout:{
+        padding:15
       },
-      xAxes: {
-        stacked:true
+      legend: {
+        display:false
+      },
+      scales:{
+        yAxes: [{
+          stacked:true,
+          ticks: {
+            padding:0,
+            stepSize:5000,
+            fontFamily:'opensans-regular',
+            fontSize:12,
+            fontColor:'#6f7b87'
+          }
+        }],
+        xAxes:[
+          {
+            barPercentage: 0.65,
+            gridLines:{
+              display:false,
+              drawBorder:false,zeroLineWidth:0
+            },
+            ticks: {
+              stepSize:5000,
+              fontFamily:'opensans-regular',
+              fontSize:10,
+              fontColor:'#6f7b87'
+            }
+          }
+        ]
       }
     };
     this.data = {
-      options: {
-        legend: {
-          visible:false
-        }
-      },
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels: ['Bank', 'Bank', 'Bank', 'Bank', 'Bank', 'Bank', 'Bank'],
       datasets: [
         {
-          label: 'My First dataset',
-          backgroundColor: '#42A5F5',
-          borderColor: '#1E88E5',
-          data: [65, 59, 80, 81, 56, 55, 40]
+          backgroundColor: '#ff563e',
+          borderColor: '#ff563e',
+          data: [165, 259, 180, 281, 256, 155, 140]
         },
         {
-          label: 'My Second dataset',
-          backgroundColor: '#9CCC65',
-          borderColor: '#7CB342',
-          data: [28, 48, 40, 19, 86, 27, 90]
+          backgroundColor: '#71d36b',
+          borderColor: '#71d36b',
+          data: [17023, 19263, 14325, 18762, 18236, 12447, 19000]
         }
       ]
     }

@@ -1,7 +1,7 @@
-<div class="wrapper stretch-height">
+<div class="wrapper stretch-height no-select">
   <ui-portlet class="stretch-height" [header]="'db.issuer_actions_status' | translate">
     <div class="inside-portlet-wrapper">
-      <p-chart type="bar" [data]="data"></p-chart>
+      <p-chart [type]="options.type" [data]="data" [options]="options"></p-chart>
     </div>
   </ui-portlet>
 </div>

@@ -8,10 +8,17 @@
       color:$pale-sky;
     }
     .gauge-wrapper {
-      width: 130px;
       height: 150px;
       position: relative;
       overflow: hidden;
+      .icon-wrapper {
+        position: absolute;
+        width: 100%;
+        top: calc(50% - 14.5px);
+        .icon {
+          height:27px !important;
+        }
+      }
       .gauge {
         position: absolute;
         top:50%;

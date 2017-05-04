@@ -24,7 +24,7 @@ import {InterceptorService} from 'ng2-interceptors';
 import {NgReduxModule, NgRedux} from "@angular-redux/store";
 import {IStore, rootReducer, enhancers} from "../store/index";
 import {ServerURLInterceptor} from "./app.interceptors";
-import {DialogModule, DropdownModule} from 'primeng/primeng';
+import {DialogModule, DropdownModule, ChartModule} from 'primeng/primeng';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CommonModule} from "@angular/common";
 import {MomentPipe} from "./shared/pipes/moment.pipe";
@@ -124,7 +124,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     }),
     DialogModule,
     BrowserAnimationsModule,
-    DropdownModule
+    DropdownModule,
+    ChartModule
   ],
   providers: [
     MomentPipe,

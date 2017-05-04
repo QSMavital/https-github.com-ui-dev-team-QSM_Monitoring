@@ -17,7 +17,7 @@ export class DevicesStatusComponent implements OnInit, OnChanges {
       icon:'icon-unavailable',
       angle: 1, // The span of the gauge arc
       lineWidth: 0.1, // The line thickness
-      radiusScale: .8, // Relative radius
+      radiusScale: .9, // Relative radius
       limitMax: false,     // If false, the max value of the gauge will be updated if value surpass max
       limitMin: false,     // If true, the min value of the gauge will be fixed unless you set it manually
       colorStart: '#49bbf8',   // Colors
@@ -35,7 +35,7 @@ export class DevicesStatusComponent implements OnInit, OnChanges {
       icon:'icon-fix',
       angle: 1, // The span of the gauge arc
       lineWidth: 0.1, // The line thickness
-      radiusScale: .8, // Relative radius
+      radiusScale: .9, // Relative radius
       limitMax: false,     // If false, the max value of the gauge will be updated if value surpass max
       limitMin: false,     // If true, the min value of the gauge will be fixed unless you set it manually
       colorStart: '#fa9245',   // Colors
@@ -53,7 +53,7 @@ export class DevicesStatusComponent implements OnInit, OnChanges {
       icon:'icon-broken',
       angle: 1, // The span of the gauge arc
       lineWidth: 0.1, // The line thickness
-      radiusScale: .8, // Relative radius
+      radiusScale: .9, // Relative radius
       limitMax: false,     // If false, the max value of the gauge will be updated if value surpass max
       limitMin: false,     // If true, the min value of the gauge will be fixed unless you set it manually
       colorStart: '#ff563e',   // Colors
@@ -71,7 +71,7 @@ export class DevicesStatusComponent implements OnInit, OnChanges {
       icon:'icon-working',
       angle: 1, // The span of the gauge arc
       lineWidth: 0.1, // The line thickness
-      radiusScale: .8, // Relative radius
+      radiusScale: .9, // Relative radius
       limitMax: false,     // If false, the max value of the gauge will be updated if value surpass max
       limitMin: false,     // If true, the min value of the gauge will be fixed unless you set it manually
       colorStart: '#71d36b',   // Colors

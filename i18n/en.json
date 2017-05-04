@@ -59,6 +59,8 @@
     "connection_status":"connection status",
     "devices_status":"devices status",
     "online_status":"online status",
+    "issuer_actions_status":"issuer actions status",
+    "actions_status":"actions status",
     "in_order":"in order",
     "exception":"exception",
     "attention":"attention",

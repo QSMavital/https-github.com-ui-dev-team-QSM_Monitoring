@@ -1,9 +1,16 @@
 <div class="wrapper stretch-height">
   <ui-portlet class="stretch-height" [header]="'db.actions_status' | translate">
-    <div class="inside-portlet-wrapper">
-      <div style="width:50%;margin:auto">
+    <div class="inside-portlet-wrapper stretch-height">
+
+      <div class="chartJsImplementation" style="width:50%;margin:auto" *ngIf="false">
         <p-chart [type]="options.type" [data]="data" [options]="options"></p-chart>
       </div>
+
+      <div *ngIf="options">
+        <app-nvd3 [options]="options" [data]="data"></app-nvd3>
+        <!--<ui-gauge [config]="options" value="0" [width]="'290px'" style="text-align: center"></ui-gauge>-->
+      </div>
+
     </div>
   </ui-portlet>
 </div>

@@ -1,6 +1,6 @@
-<div class="wrapper stretch-height relative">
+<div fxLayout="column" class="wrapper stretch-height relative">
   <div class="header fs11" *ngIf="header">{{header | translate}}</div>
-  <div class="stretch-width scroll-y scroll-x">
+  <div style="flex:1" class="body stretch-width scroll-y scroll-x relative">
     <ng-content></ng-content>
   </div>
   <div class="footer stretch-width" *ngIf="footer">

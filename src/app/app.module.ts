@@ -36,25 +36,26 @@ import {AtmsEventsComponent} from './core/atms/atms-events/atms-events.component
 import {AtmsTransactionsComponent} from './core/atms/atms-transactions/atms-transactions.component';
 import {AtmsTransactionComponent} from './core/atms/atms-transaction/atms-transaction.component';
 import {Customer} from "../store/middlewares/customer-middleware";
-import { MainComponent } from './core/master/main/main.component';
-import { NewComponent } from './core/atm/new/new.component';
-import { AtmStatusComponent } from './core/atm/atm-status/atm-status.component';
-import { AccessoriesStatusComponent } from './core/atm/accessories-status/accessories-status.component';
-import { RetainedCardsComponent } from './core/atm/retained-cards/retained-cards.component';
-import { AtmSettingsComponent } from './core/atm/atm-settings/atm-settings.component';
-import { AtmNotificationsComponent } from './core/atm/atm-notifications/atm-notifications.component';
-import { AtmEventsComponent } from './core/atm/atm-events/atm-events.component';
-import { AtmTransactionsComponent } from './core/atm/atm-transactions/atm-transactions.component';
-import { AtmTransactionComponent } from './core/atm/atm-transaction/atm-transaction.component';
-import { HsmStatusComponent } from './core/hsm/hsm-status/hsm-status.component';
-import { HsmStatisticsComponent } from './core/hsm/hsm-statistics/hsm-statistics.component';
-import { ConnectionStatusComponent } from './core/dashboard/connection-status/connection-status.component';
-import { DevicesStatusComponent } from './core/dashboard/devices-status/devices-status.component';
-import { OnlineStatusComponent } from './core/dashboard/online-status/online-status.component';
-import { IssuerActionsStatusComponent } from './core/dashboard/issuer-actions-status/issuer-actions-status.component';
-import { ActionsStatusComponent } from './core/dashboard/actions-status/actions-status.component';
-import { WidgetInjectorComponent } from './core/dashboard/widget-injector/widget-injector.component';
+import {MainComponent} from './core/master/main/main.component';
+import {NewComponent} from './core/atm/new/new.component';
+import {AtmStatusComponent} from './core/atm/atm-status/atm-status.component';
+import {AccessoriesStatusComponent} from './core/atm/accessories-status/accessories-status.component';
+import {RetainedCardsComponent} from './core/atm/retained-cards/retained-cards.component';
+import {AtmSettingsComponent} from './core/atm/atm-settings/atm-settings.component';
+import {AtmNotificationsComponent} from './core/atm/atm-notifications/atm-notifications.component';
+import {AtmEventsComponent} from './core/atm/atm-events/atm-events.component';
+import {AtmTransactionsComponent} from './core/atm/atm-transactions/atm-transactions.component';
+import {AtmTransactionComponent} from './core/atm/atm-transaction/atm-transaction.component';
+import {HsmStatusComponent} from './core/hsm/hsm-status/hsm-status.component';
+import {HsmStatisticsComponent} from './core/hsm/hsm-statistics/hsm-statistics.component';
+import {ConnectionStatusComponent} from './core/dashboard/connection-status/connection-status.component';
+import {DevicesStatusComponent} from './core/dashboard/devices-status/devices-status.component';
+import {OnlineStatusComponent} from './core/dashboard/online-status/online-status.component';
+import {IssuerActionsStatusComponent} from './core/dashboard/issuer-actions-status/issuer-actions-status.component';
+import {ActionsStatusComponent} from './core/dashboard/actions-status/actions-status.component';
+import {WidgetInjectorComponent} from './core/dashboard/widget-injector/widget-injector.component';
 import {DataTableModule} from "primeng/components/datatable/datatable";
+import {NvD3Module} from "angular2-nvd3";
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -113,6 +114,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     SharedModule,
     CommonModule,
     FormsModule,
+    NvD3Module,
     HttpModule,
     FlexLayoutModule,
     RouterModule.forRoot(appRoutes),

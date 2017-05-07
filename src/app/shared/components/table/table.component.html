@@ -1,10 +1,7 @@
-<div class="wrapper scroll-x scroll-y">
-  <!--<p-dataTable [value]="data" scrollable="true" [ngStyle]="{'min-width':colDef.length*100+'px'}">-->
-  <p-dataTable [value]="data" scrollable="true" [ngStyle]="{'min-width':colDef.length*100+'px'}">
-    <p-column *ngFor="let col of colDef" [field]="col.field" [header]="col.title | translate">
-      <ng-template let-col let-item="rowData" pTemplate="body">
-        <span [title]="item[col.field]">{{item[col.field]}}</span>
-      </ng-template>
-    </p-column>
-  </p-dataTable>
-</div>
+<p-dataTable [value]="data" scrollable="true">
+  <p-column *ngFor="let col of colDef" [field]="col.field" [header]="col.title | translate">
+    <ng-template let-col let-item="rowData" pTemplate="body">
+      <span [title]="item[col.field]">{{item[col.field]}}</span>
+    </ng-template>
+  </p-column>
+</p-dataTable>

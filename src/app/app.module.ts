@@ -54,6 +54,7 @@ import { OnlineStatusComponent } from './core/dashboard/online-status/online-sta
 import { IssuerActionsStatusComponent } from './core/dashboard/issuer-actions-status/issuer-actions-status.component';
 import { ActionsStatusComponent } from './core/dashboard/actions-status/actions-status.component';
 import { WidgetInjectorComponent } from './core/dashboard/widget-injector/widget-injector.component';
+import {DataTableModule} from "primeng/components/datatable/datatable";
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -107,6 +108,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     WidgetInjectorComponent
   ],
   imports: [
+    DataTableModule,
     BrowserModule,
     SharedModule,
     CommonModule,

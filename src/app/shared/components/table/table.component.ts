@@ -7,7 +7,6 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
-  @Input() header:string = 'table title';
   @Input() data:any[];
   @Input() colDef:any[];
 

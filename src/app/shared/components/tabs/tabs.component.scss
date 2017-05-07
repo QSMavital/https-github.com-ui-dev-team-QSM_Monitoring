@@ -19,6 +19,9 @@
         color: $lynch;
         border-color: $lavender;
       }
+      &:last-child{
+        margin: 0;
+      }
     }
   }
 }

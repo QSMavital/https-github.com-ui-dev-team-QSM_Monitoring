@@ -1,6 +1,8 @@
 <div class="wrapper stretch-height relative">
   <div class="header fs11" *ngIf="header">{{header | translate}}</div>
-  <ng-content></ng-content>
+  <div class="stretch-width scroll-y scroll-x">
+    <ng-content></ng-content>
+  </div>
   <div class="footer stretch-width" *ngIf="footer">
     <ng-content select="[footer]"></ng-content>
   </div>

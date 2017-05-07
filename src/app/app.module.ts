@@ -21,7 +21,7 @@ import {RouterModule} from "@angular/router";
 import {appRoutes} from "./app.routes";
 import {SharedModule} from "./shared/shared-module.module";
 import {InterceptorService} from 'ng2-interceptors';
-import {NgReduxModule, NgRedux} from "@angular-redux/store";
+import {NgReduxModule, NgRedux, DevToolsExtension} from "@angular-redux/store";
 import {IStore, rootReducer, enhancers} from "../store/index";
 import {ServerURLInterceptor} from "./app.interceptors";
 import {DialogModule, DropdownModule, ChartModule} from 'primeng/primeng';
@@ -57,6 +57,7 @@ import {WidgetInjectorComponent} from './core/dashboard/widget-injector/widget-i
 import {DataTableModule} from "primeng/components/datatable/datatable";
 import {NvD3Module} from "angular2-nvd3";
 import {Dashboard} from "../store/middlewares/dashboard-middleware";
+import {environment} from "../environments/environment";
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -154,9 +155,15 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
 })
 
 export class AppModule {
-  constructor(private ngRedux: NgRedux<IStore>, private customer: Customer, private dashboard: Dashboard) {
+  constructor(private ngRedux: NgRedux<IStore>, private customer: Customer, private dashboard: Dashboard, private devTools: DevToolsExtension) {
+    var updatedEnhancers = [];
+    if (!environment.production && devTools.isEnabled()) {
+    console.log(environment);
+      updatedEnhancers = [...enhancers, devTools.enhancer()];
+    } else
+      updatedEnhancers = [...enhancers];
     const middlewares = [customer.Middleware,dashboard.Middleware];
-    this.ngRedux.configureStore(rootReducer, {}, middlewares, [...enhancers]);
+    this.ngRedux.configureStore(rootReducer, {}, middlewares, updatedEnhancers);
 
   }
 }

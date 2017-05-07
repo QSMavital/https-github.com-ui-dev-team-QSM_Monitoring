@@ -1,16 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {NgRedux, select} from "@angular-redux/store";
+import {IStore} from "../../../../store/index";
+import {isNullOrUndefined} from "util";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'ui-actions-status',
   templateUrl: './actions-status.component.html',
   styleUrls: ['./actions-status.component.scss']
 })
-export class ActionsStatusComponent implements OnInit {
+export class ActionsStatusComponent implements OnInit, OnDestroy {
+  private _actionsStatus;
+  @select(['dashboard','onlineStatus']) actionsStatus: Observable<any>;
 
   private data:any;
   private options:any;
 
-  constructor() {
+  constructor(private ngRedux: NgRedux<IStore>)  {
     this.options = {
       type:'pie',
       layout:{
@@ -33,6 +39,21 @@ export class ActionsStatusComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.subscribe();
+
+  }
+
+  ngOnDestroy() {
+    this._actionsStatus.unsubscribe();
+  }
+
+  subscribe(){
+    this._actionsStatus = this.actionsStatus.subscribe((state)=>{
+      if(!isNullOrUndefined(state)){
+        console.log('actionsStatus ----->>>>>>>>>>',state);
+      }
+    })
+
   }
 
 }

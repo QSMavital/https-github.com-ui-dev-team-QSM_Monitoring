@@ -11,7 +11,11 @@ export class CustomerLogoComponent implements OnInit {
   private customers:any;
   constructor() {
     this.customers = {
-      "BEINLEUMI":"icon-logo-benleumi"
+      "BEINLEUMI":"icon-logo-benleumi",
+      "BOJ":"",
+      "MIZRAHI":"",
+      "YAHAV":""
+
     }
   }
 

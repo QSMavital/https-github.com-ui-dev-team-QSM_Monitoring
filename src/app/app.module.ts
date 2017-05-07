@@ -55,6 +55,7 @@ import { IssuerActionsStatusComponent } from './core/dashboard/issuer-actions-st
 import { ActionsStatusComponent } from './core/dashboard/actions-status/actions-status.component';
 import { WidgetInjectorComponent } from './core/dashboard/widget-injector/widget-injector.component';
 import {DataTableModule} from "primeng/components/datatable/datatable";
+import {Dashboard} from "../store/middlewares/dashboard-middleware";
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -137,7 +138,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       useFactory: interceptorFactory,
       deps: [XHRBackend, RequestOptions, ServerURLInterceptor] // Add it here, in the same order as the signature of interceptorFactory
     },
-    Customer
+    Customer,
+    Dashboard
   ],
   entryComponents: [
     ConnectionStatusComponent,
@@ -150,8 +152,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
 })
 
 export class AppModule {
-  constructor(private ngRedux: NgRedux<IStore>, private customer: Customer) {
-    const middlewares = [customer.Middleware];
+  constructor(private ngRedux: NgRedux<IStore>, private customer: Customer, private dashboard: Dashboard) {
+    const middlewares = [customer.Middleware,dashboard.Middleware];
     this.ngRedux.configureStore(rootReducer, {}, middlewares, [...enhancers]);
 
   }

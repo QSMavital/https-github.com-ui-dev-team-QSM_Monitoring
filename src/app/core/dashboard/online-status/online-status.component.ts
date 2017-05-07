@@ -1,12 +1,18 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {DashComponent} from "../dashboard-inject";
+import {Component, Input, OnInit, OnDestroy} from '@angular/core';
+import {Observable} from "rxjs";
+import {select, NgRedux} from "@angular-redux/store";
+import {isNullOrUndefined} from "util";
+import {DashboardActions} from "../../../../store/actions/dashboard-actions";
+import {IStore} from "../../../../store/index";
 
 @Component({
   selector: 'ui-online-status',
   templateUrl: './online-status.component.html',
   styleUrls: ['./online-status.component.scss']
 })
-export class OnlineStatusComponent implements OnInit  {
+export class OnlineStatusComponent implements OnInit , OnDestroy {
+  private _onlineStatus;
+  @select(['dashboard','onlineStatus']) onlineStatus: Observable<any>;
 
   private data:any = {
     type: 'Gauge',
@@ -40,17 +46,27 @@ export class OnlineStatusComponent implements OnInit  {
     ]
   };
 
-  constructor() { }
+  constructor(private ngRedux: NgRedux<IStore>) {
+    this.ngRedux.dispatch({type:DashboardActions.WIDGET_GET_ONLINE_STATUS});
 
-
-  getRandomArbitrary(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
   }
 
   ngOnInit() {
-    setInterval(() => {
-      this.data.value = this.getRandomArbitrary(1, 9);
-    }, 4000)
+    this.subscribe();
+
+  }
+
+  ngOnDestroy() {
+    this._onlineStatus.unsubscribe();
+  }
+
+  subscribe(){
+    this._onlineStatus = this.onlineStatus.subscribe((state)=>{
+      if(!isNullOrUndefined(state)){
+        console.log('onlineStatus ----->>>>>>>>>>',state);
+      }
+    })
+
   }
 
 }

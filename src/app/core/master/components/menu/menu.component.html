@@ -1,7 +1,8 @@
 <ul class="fs11">
   <li *ngFor="let item of activeMenuItems;let i = index"
       [routerLink]="item['link']"
-      [routerLinkActiveOptions]="{exact: i==0}" routerLinkActive="active">
+      [routerLinkActiveOptions]="{exact: i==0}"
+      routerLinkActive="active">
     <a>{{item.label | translate}}</a>
   </li>
 </ul>

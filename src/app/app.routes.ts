@@ -35,7 +35,7 @@ export const appRoutes: Route[] = [
       },
       {
         path: 'atms',
-        data: {state: "ATM"},
+        data: {state: "ATMS"},
         canActivate: [CanActivateRoute],
         children: [
           {
@@ -65,8 +65,8 @@ export const appRoutes: Route[] = [
 
         ]
       },
-      {path: 'epp', component: EppsComponent, canActivate: [CanActivateRoute], data: {state: "EPP"},},
-      {path: 'hsm', component: HsmComponent, canActivate: [CanActivateRoute], data: {state: "HSM"},
+      {path: 'epp', component: EppsComponent, canActivate: [CanActivateRoute], data: {state: "EPPS"},},
+      {path: 'hsm', component: HsmComponent, canActivate: [CanActivateRoute], data: {state: "HSMS"},
         children: [
           {path: '', redirectTo: '/hsm/status', pathMatch: 'full'},
           {path: 'status', component: HsmStatusComponent},

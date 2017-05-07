@@ -1,12 +1,18 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, OnDestroy} from '@angular/core';
+import {select, NgRedux} from "@angular-redux/store";
+import {Observable} from "rxjs";
+import {isNullOrUndefined} from "util";
+import {IStore} from "../../../../store/index";
+import {DashboardActions} from "../../../../store/actions/dashboard-actions";
 
 @Component({
   selector: 'ui-devices-status',
   templateUrl: './devices-status.component.html',
   styleUrls: ['./devices-status.component.scss']
 })
-export class DevicesStatusComponent implements OnInit, OnChanges {
-
+export class DevicesStatusComponent implements OnInit, OnDestroy {
+  private _devicesStatus;
+  @select(['dashboard','deviceStatus']) devicesStatus$: Observable<any>;
   private data: any[] = [
     {
       type: 'Donut',
@@ -82,23 +88,28 @@ export class DevicesStatusComponent implements OnInit, OnChanges {
     }
   ];
 
-  constructor() {
-  }
+  constructor(private ngRedux: NgRedux<IStore>) {
+    this.ngRedux.dispatch({type:DashboardActions.WIDGET_GET_DEVICE_STATUS});
 
-  getRandomArbitrary(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
   }
 
   ngOnInit() {
-    setInterval(() => {
-      this.data.forEach(i=>{
-        i.value = this.getRandomArbitrary(1, 99);
-      })
-      // this.data[1].value = this.getRandomArbitrary(1, 99);
-    }, 4000)
+    this.subscribe();
   }
 
-  ngOnChanges(c) {
+  ngOnDestroy(){
+    this._devicesStatus.unsubscribe();
+
+  }
+
+  subscribe(){
+    this._devicesStatus = this.devicesStatus$.subscribe((state)=>{
+      if(!isNullOrUndefined(state)){
+        // this.data = state;
+        console.log('devicesStatus--->>>>>>>>',state);
+      }
+    })
+
   }
 
 }

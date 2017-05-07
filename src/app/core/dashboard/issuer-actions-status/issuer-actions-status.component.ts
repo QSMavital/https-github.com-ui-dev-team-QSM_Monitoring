@@ -1,16 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Observable} from "rxjs";
+import {select, NgRedux} from "@angular-redux/store";
+import {isNullOrUndefined} from "util";
+import {DashboardActions} from "../../../../store/actions/dashboard-actions";
+import {IStore} from "../../../../store/index";
 
 @Component({
   selector: 'ui-issuer-actions-status',
   templateUrl: './issuer-actions-status.component.html',
   styleUrls: ['./issuer-actions-status.component.scss']
 })
-export class IssuerActionsStatusComponent implements OnInit {
+export class IssuerActionsStatusComponent implements OnInit  , OnDestroy{
+  private _issuerActionsStatus;
+  @select(['dashboard','issuerActionsStatus']) issuerActionsStatus: Observable<any>;
 
   private data:any;
   private options:any;
 
-  constructor() {
+  constructor(private ngRedux: NgRedux<IStore>) {
     this.options = {
       type:'bar',
       layout:{
@@ -61,10 +68,26 @@ export class IssuerActionsStatusComponent implements OnInit {
           data: [17023, 19263, 14325, 18762, 18236, 12447, 19000]
         }
       ]
-    }
+    };
+    this.ngRedux.dispatch({type:DashboardActions.WIDGET_GET_ISSUER_ACTIONS_STATUS});
+
   }
 
   ngOnInit() {
+    this.subscribe();
+
+  }
+
+  ngOnDestroy() {
+    this._issuerActionsStatus.unsubscribe();
+  }
+  subscribe(){
+    this._issuerActionsStatus = this.issuerActionsStatus.subscribe((state)=>{
+      if(!isNullOrUndefined(state)){
+        console.log('IssuerActionsStatusComponent ----->>>>>>>>>>',state);
+      }
+    })
+
   }
 
 }

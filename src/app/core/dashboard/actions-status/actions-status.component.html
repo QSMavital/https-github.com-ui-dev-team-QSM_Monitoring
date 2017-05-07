@@ -2,7 +2,7 @@
   <ui-portlet class="stretch-height" [header]="'db.actions_status' | translate">
     <div class="inside-portlet-wrapper stretch-height">
 
-      <div *ngIf="options" style="width:50%;margin:auto">
+      <div *ngIf="options" style="width:50%;margin:auto;position: relative">
         <app-nvd3 [options]="options" [data]="data"></app-nvd3>
       </div>
 

@@ -13,68 +13,73 @@ import * as d3 from "d3";
 })
 export class ActionsStatusComponent implements OnInit, OnDestroy {
   private _actionsStatus;
-  @select(['dashboard','onlineStatus']) actionsStatus: Observable<any>;
+  @select(['dashboard', 'onlineStatus']) actionsStatus: Observable<any>;
 
   private data: any = [];
   private options: any;
+  private hoverLabelsOptions: any;
 
   constructor(private ngRedux: NgRedux<IStore>) {
     this.initData();
   }
 
 
-
   initData() {
     this.options = {
       chart: {
         type: 'pieChart',
-        height: 500,
-        x: function(d){return d.key;},
-        y: function(d){return d.y;},
+        height: 360,
+        x: function (d) {
+          return d.key;
+        },
+        y: function (d) {
+          return d.value;
+        },
         showLabels: true,
+        labelsOutside:true,
         duration: 500,
         labelThreshold: 0.01,
-        labelSunbeamLayout: true,
-        legend: {
-          margin: {
-            top: 5,
-            right: 35,
-            bottom: 5,
-            left: 0
+        labelSunbeamLayout: false,
+        labelType: "key",
+        showLegend: false,
+        growOnHover:false,
+        tooltip: {
+          contentGenerator: function (d) {
+            return d.series[0].key + ': ' + d.series[0].value+'%';
           }
         }
+        // legend: {
+        //   margin: {
+        //     top: 5,
+        //     right: 35,
+        //     bottom: 5,
+        //     left: 0
+        //   }
+        // }
       }
-    }
+    };
 
 
     this.data = [
       {
-        key: "One",
-        y: 5
+        key: "Rejection",
+        value: 13,
+        color: "#ff563e"
       },
       {
-        key: "Two",
-        y: 2
+        key: "Successful operations",
+        value: 45,
+        color: "#71d36b"
       },
       {
-        key: "Three",
-        y: 9
+        key: "Fault",
+        value: 10,
+        color: "#49bbf8"
       },
       {
-        key: "Four",
-        y: 7
-      },
-      {
-        key: "Five",
-        y: 4
-      },
-      {
-        key: "Six",
-        y: 3
-      },
-      {
-        key: "Seven",
-        y: .5
+        key: "Incorrect PIN code",
+        value: 32,
+        color: "#fa9a52"
       }
     ];
   }
@@ -88,10 +93,10 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
     this._actionsStatus.unsubscribe();
   }
 
-  subscribe(){
-    this._actionsStatus = this.actionsStatus.subscribe((state)=>{
-      if(!isNullOrUndefined(state)){
-        console.log('actionsStatus ----->>>>>>>>>>',state);
+  subscribe() {
+    this._actionsStatus = this.actionsStatus.subscribe((state) => {
+      if (!isNullOrUndefined(state)) {
+        console.log('actionsStatus ----->>>>>>>>>>', state);
       }
     })
 

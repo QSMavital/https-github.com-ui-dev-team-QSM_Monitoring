@@ -11,7 +11,9 @@ export class ServerURLInterceptor implements Interceptor {
   public activeCalls = 0;
   public interceptBefore(request: InterceptedRequest): InterceptedRequest {
     // Do whatever with request: get info or edit it
-    this.activeCalls++;
+    setTimeout(()=>{
+      this.activeCalls++;
+    },0);
     return request;
     /*
      You can return:
@@ -26,7 +28,9 @@ export class ServerURLInterceptor implements Interceptor {
     if(!response.response.ok){
       this.ngRedux.dispatch({type:ErrorHandlerActions.ERROR_HANDLER,payload:response.response});
     }
-    this.activeCalls--;
+    setTimeout(()=>{
+      this.activeCalls--;
+    },0);
     return response;
     /*
      You can return:

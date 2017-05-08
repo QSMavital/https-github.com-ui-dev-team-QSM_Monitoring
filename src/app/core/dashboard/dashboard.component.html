@@ -1,14 +1,5 @@
-<!--<div fxLayout class="wrapper ui-space-tb-medium ui-space-lr-regular">-->
-      <!--<ui-connection-status  fxFlex="25%" [data]="connectionStatus"></ui-connection-status>-->
-      <!--<ui-devices-status class="qsm-widget" fxFlex="50%" [data]="devicesStatus"></ui-devices-status>-->
-      <!--<ui-online-status class="qsm-widget" fxFlex="25%" [data]="gaugeCofing"></ui-online-status>-->
-      <!--<ui-issuer-actions-status class="qsm-widget" fxFlex="50%"></ui-issuer-actions-status>-->
-      <!--<ui-actions-status class="qsm-widget" fxFlex="50%"></ui-actions-status>-->
-<!--</div>-->
 <div fxLayout class="wrapper ui-space-tb-medium ui-space-lr-regular">
-  <ui-widget-injector fxFlex="25%" class="qsm-widget" [widget]="'ConnectionStatusComponent'"></ui-widget-injector>
-  <ui-widget-injector fxFlex="50%" class="qsm-widget" [widget]="'DevicesStatusComponent'"></ui-widget-injector>
-  <ui-widget-injector fxFlex="25%" class="qsm-widget" [widget]="'OnlineStatusComponent'" ></ui-widget-injector>
-  <ui-widget-injector fxFlex="50%" class="qsm-widget" [widget]="'IssuerActionsStatusComponent'"></ui-widget-injector>
-  <ui-widget-injector fxFlex="50%" class="qsm-widget" [widget]="'ActionsStatusComponent'"></ui-widget-injector>
+  <ui-widget-injector *ngFor="let item of widgets" [fxFlex]="item.size" class="qsm-widget"
+                      [widget]="item.widget"></ui-widget-injector>
+
 </div>

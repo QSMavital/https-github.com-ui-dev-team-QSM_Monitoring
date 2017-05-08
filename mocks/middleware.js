@@ -54,9 +54,19 @@ module.exports = function (req, res, next) {
 
 };
 
+
 var settingsUser = {
   language: "en_US",
   menu: ["MAIN", "ATMS", "HSMS", "EPPS", "COMMUNICATION", "REPORTS"],
+  dashboard:{
+    widgets:[
+      {field: "ConnectionStatusComponent", visible: true},
+      {field: "DevicesStatusComponent", visible: true},
+      {field: "OnlineStatusComponent", visible: true},
+      {field: "IssuerActionsStatusComponent", visible: true},
+      {field: "ActionsStatusComponent", visible: true}
+    ]
+  },
   atms: {
     tabs: [
       {field: "INVENTORY_OF_ATMS", visible: true},

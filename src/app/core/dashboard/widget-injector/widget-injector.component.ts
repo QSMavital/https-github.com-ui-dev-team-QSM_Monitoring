@@ -5,6 +5,9 @@ import {ConnectionStatusComponent} from "../connection-status/connection-status.
 import {DevicesStatusComponent} from "../devices-status/devices-status.component";
 import {IssuerActionsStatusComponent} from "../issuer-actions-status/issuer-actions-status.component";
 import {ActionsStatusComponent} from "../actions-status/actions-status.component";
+import {OnlineSmallComponent} from "../closed-bar-widgets/online-small/online-small.component";
+import {ConnectionSmallComponent} from "../closed-bar-widgets/connection-small/connection-small.component";
+import {ActionsSmallComponent} from "../closed-bar-widgets/actions-small/actions-small.component";
 
 
 @Component({
@@ -27,6 +30,9 @@ export class WidgetInjectorComponent implements OnInit {
       OnlineStatusComponent,
       IssuerActionsStatusComponent,
       ActionsStatusComponent,
+      OnlineSmallComponent,
+      ConnectionSmallComponent,
+      ActionsSmallComponent
     };
 
     let Obj = new DashboardInject(components[this.widget], this.data);

@@ -61,6 +61,7 @@ import {environment} from "../environments/environment";
 import { ConnectionSmallComponent } from './core/dashboard/closed-bar-widgets/connection-small/connection-small.component';
 import { ActionsSmallComponent } from './core/dashboard/closed-bar-widgets/actions-small/actions-small.component';
 import { OnlineSmallComponent } from './core/dashboard/closed-bar-widgets/online-small/online-small.component';
+import { WrapperComponent } from './core/dashboard/closed-bar-widgets/wrapper/wrapper.component';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -114,7 +115,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     WidgetInjectorComponent,
     ConnectionSmallComponent,
     ActionsSmallComponent,
-    OnlineSmallComponent
+    OnlineSmallComponent,
+    WrapperComponent
   ],
   imports: [
     DataTableModule,
@@ -155,7 +157,10 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     DevicesStatusComponent,
     OnlineStatusComponent,
     IssuerActionsStatusComponent,
-    ActionsStatusComponent
+    ActionsStatusComponent,
+    ConnectionSmallComponent,
+    ActionsSmallComponent,
+    OnlineSmallComponent
   ],
   bootstrap: [AppComponent]
 })

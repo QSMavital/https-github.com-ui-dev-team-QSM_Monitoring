@@ -4,4 +4,4 @@
     <pre>{{errorHandler.error | json}}</pre>
   </div>
 </p-dialog>
-<ui-spinner *ngIf="srvURLInterceptor.activeCalls>0"></ui-spinner>
+<ui-spinner *ngIf="srvURLInterceptor?.activeCalls"></ui-spinner>

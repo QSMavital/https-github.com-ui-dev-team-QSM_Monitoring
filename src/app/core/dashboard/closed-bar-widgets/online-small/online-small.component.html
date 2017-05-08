@@ -1,7 +1,8 @@
 <div class="wrapper stretch-height">
   <div fxLayout="column" fxLayoutAlign="center center" class="stretch-height">
-    <div fxFlex="60" fxLayout="column" fxLayoutAlign="center center" style="padding-bottom:20px"><div class="right-panel-closed-title fs12 bold">{{'db.online_status' | translate}}</div></div>
-    <div class="relative stretch-width" *ngIf="true">
+    <div class="stretch-width" fxFlex="60" fxLayout="column" fxLayoutAlign="center center" style="padding-bottom:20px"><div class="right-panel-closed-title fs12 bold">{{'db.online_status' | translate}}</div></div>
+    <div class="relative stretch-width text-center" style="height:80px" [ngClass]="'green'" *ngIf="true">
+      <i class="ui-icons ui-icons-v"></i>
     </div>
   </div>
 </div>

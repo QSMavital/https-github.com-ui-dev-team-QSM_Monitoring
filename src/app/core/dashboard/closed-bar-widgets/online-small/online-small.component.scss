@@ -1,6 +1,12 @@
+@import "./src/styles/helpers/brand";
 :host {
   height:100%;
   .wrapper {
-
+    .green {
+      background: $pastel-green;
+    }
+    .red {
+      background: $coral-red;
+    }
   }
 }

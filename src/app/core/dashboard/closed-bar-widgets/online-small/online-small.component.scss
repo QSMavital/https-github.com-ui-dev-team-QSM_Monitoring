@@ -6,7 +6,15 @@
       background: $pastel-green;
     }
     .red {
-      background: $coral-red;
+      background: $coral-red !important;
+    }
+    i {
+      color:$apple;
+    }
+    .label {
+      transform: rotate(90deg);
+      color:$apple;
+      font-family: opensans-bold;
     }
   }
 }

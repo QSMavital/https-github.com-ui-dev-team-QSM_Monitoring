@@ -13,7 +13,7 @@ export class OnlineSmallComponent implements OnInit, OnDestroy {
 
   private unsubscriber: any;
   @select(['dashboard', 'onlineStatus']) $status;
-  private list: any[] = [];
+  private data:any = {};
   private statusView: any;
   private actionStatus: any;
   constructor(private store: NgRedux<IStore>) {
@@ -25,15 +25,7 @@ export class OnlineSmallComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.unsubscriber = this.$status.subscribe(state => {
       if (!isNullOrUndefined(state))
-        // if (isArray(state)) {
-        //   this.list = state;
-        // } else {
-        //   Object.keys(state).forEach(key => {
-        //     this.list.push(state[key]);
-        //   })
-        // }
-      // }
-      console.log(state);
+        this.data = state;
     });
     this.store.dispatch({type: DashboardActions.WIDGET_GET_ONLINE_STATUS});
   }

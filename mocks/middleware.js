@@ -119,7 +119,7 @@ var device_status = [{
 
 var onlineStatus = {
   "avg": 5.0,
-  "currentOnline": 3
+  "currentOnline": 4.9
 };
 
 var issuerActionStatus = [{

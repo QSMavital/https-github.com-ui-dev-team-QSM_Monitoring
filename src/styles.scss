@@ -7,6 +7,8 @@
 @import "styles/overrides/primeng-overrides";
 @import "styles/overrides/nvd3";
 @import "styles/overrides/primeng_dialog";
+@import "styles/overrides/ag_grid";
+
 @import "styles/helpers/brand";
 @import "styles/ui-sprite";
 @import "styles/ui-icons";
@@ -23,7 +25,7 @@
 html,body{
   font-family: 'opensans-regular', sans-serif;
   font-size: 14px;
-  min-height: 768px !important;
+  min-height: 650px !important;
   min-width: 1366px !important;
   height: 100%;
   overflow: auto;

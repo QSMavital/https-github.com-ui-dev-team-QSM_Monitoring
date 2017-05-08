@@ -1,5 +1,7 @@
-<ui-tabs [menu]="tabs"></ui-tabs>
+<div class="stretch-height" fxLayout="column">
+  <ui-tabs [menu]="tabs"></ui-tabs>
 
-<div class="wrapper ui-space-medium">
-  <router-outlet></router-outlet>
+  <div fxFlex class="wrapper ui-space-medium">
+    <router-outlet></router-outlet>
+  </div>
 </div>

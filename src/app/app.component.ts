@@ -3,11 +3,12 @@ import {Router} from "@angular/router";
 import {ServerURLInterceptor} from "./app.interceptors";
 import {select, NgRedux} from "@angular-redux/store";
 import {Observable} from "rxjs";
-import {TranslateService, LangChangeEvent} from "@ngx-translate/core";
-import {i18n} from "./config/i18n";
+import {TranslateService} from "@ngx-translate/core";
 import {isNullOrUndefined} from "util";
 import {IStore} from "../store/index";
 import {GeneralCustomerActions} from "../store/actions/generalCustomer-actions";
+import {LicenseManager} from "ag-grid-enterprise/main";
+
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ export class AppComponent implements OnDestroy{
   constructor(private srvURLInterceptor: ServerURLInterceptor,
               private translate: TranslateService,
               private ngRedux: NgRedux<IStore>) {
+    LicenseManager.setLicenseKey('<yourkey>');
     this.initI18n();
     this.initErrorHandler();
     this.initCustomer();

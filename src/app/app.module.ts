@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule, Http, XHRBackend, RequestOptions} from '@angular/http';
-import {TranslateModule, TranslateLoader} from "@ngx-translate/core";
+import {TranslateModule, TranslateLoader, TranslatePipe} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {AppComponent} from './app.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
@@ -63,6 +63,7 @@ import { ActionsSmallComponent } from './core/dashboard/closed-bar-widgets/actio
 import { OnlineSmallComponent } from './core/dashboard/closed-bar-widgets/online-small/online-small.component';
 import { WrapperComponent } from './core/dashboard/closed-bar-widgets/wrapper/wrapper.component';
 import { AtmsInventoryFilterComponent } from './core/atms/inventory/atms-inventory-filter/atms-inventory-filter.component';
+import {AgGridModule} from "ag-grid-angular";
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -142,7 +143,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     BrowserAnimationsModule,
     DropdownModule,
     ChartModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgGridModule.withComponents([])
   ],
   providers: [
     MomentPipe,

@@ -54,7 +54,7 @@ export class AtmsComponent implements OnInit,OnDestroy {
         }
       });
       if (this.router.url.match(new RegExp("/", "g")).length == 1) {
-        this.router.navigate(['/atms', this.tabs[0].state]);
+          this.router.navigate(['/atms', this.tabs[0].state]);
       }
     }
 

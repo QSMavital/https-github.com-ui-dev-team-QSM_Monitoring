@@ -1,19 +1,27 @@
-<!--<p>-->
-  <!--inventory works!-->
-  <!--<a [routerLink]="['..','atm', 1]">a</a>-->
-
-<!--</p>-->
 <ui-portlet>
-  <ui-filters-bar fxLayout>
-    <ui-atms-inventory-filter></ui-atms-inventory-filter>
-    <div fxFlex class="text-right">
-      <button (click)="addNew=!addNew" class="blue-btn ui-icons-add-new"></button>
-    </div>
-  </ui-filters-bar>
-  <p-dataTable [value]="carsLarge" scrollable="true" scrollHeight="200px">
-    <p-column field="vin" [style]="{'width':'250px'}" header="Vin"></p-column>
-    <p-column field="year" [style]="{'width':'250px'}" header="Year"></p-column>
-    <p-column field="brand" [style]="{'width':'250px'}" header="Brand"></p-column>
-    <p-column field="color" [style]="{'width':'250px'}" header="Color"></p-column>
-  </p-dataTable>
+  <div class="stretch-height" fxLayout="column">
+    <ui-filters-bar>
+      <div fxLayout>
+        <ui-atms-inventory-filter></ui-atms-inventory-filter>
+        <div fxFlex class="text-right">
+          <button (click)="addNew=!addNew;" class="blue-btn ui-icons-add-new"></button>
+        </div>
+      </div>
+
+    </ui-filters-bar>
+
+
+    <ag-grid-angular *ngIf="gridOptions.columnDefs.length"
+                     fxFlex
+                     class="ag-fresh"
+                     [gridOptions]="gridOptions">
+    </ag-grid-angular>
+  </div>
+
 </ui-portlet>
+<p-dialog *ngIf="addNew" [(visible)]="addNew" [modal]="true">
+  <p-header translate="atm.newAtm"></p-header>
+  <div class="scroll-y ui-space-tb-medium" style="width: 750px; height: 550px">
+    <ui-atm-settings></ui-atm-settings>
+  </div>
+</p-dialog>

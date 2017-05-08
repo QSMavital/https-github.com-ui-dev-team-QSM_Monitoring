@@ -2,11 +2,17 @@
      [direction-selection]="direction" fxLayout="row">
 
   <ui-sliding-panel [(open)]="panelStatus" icon="ui-icons-add-new" *ngIf="router.url!='/'" [direction]="direction">
-    <div [ngSwitch]="panelStatus">
+    <div [ngSwitch]="panelStatus" class="stretch-height">
       <div  *ngSwitchCase="true">
         <ui-dashboard style="max-width: 1300px"></ui-dashboard>
       </div>
-      <div style="width: 110px" *ngSwitchCase="false">CLOSED MODE</div>
+      <div class="closed-wrapper stretch-height" *ngSwitchCase="false">
+        <div class="stretch-width stretch-height" fxLayout="column">
+          <div style="flex:1"><ui-connection-small></ui-connection-small></div>
+          <div style="flex:1"><ui-actions-small></ui-actions-small></div>
+          <div style="flex:1"><ui-online-small></ui-online-small></div>
+        </div>
+      </div>
     </div>
   </ui-sliding-panel>
 

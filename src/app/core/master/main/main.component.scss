@@ -1,7 +1,9 @@
 @import "../../../../styles/helpers/brand";
 
 //used by bidi drv
-.qsm_self{text-align: center}
+.qsm_self {
+  text-align: center
+}
 
 :host {
   display: block;
@@ -14,18 +16,18 @@
     -ms-transition: opacity 1s ease-in;
     -o-transition: opacity 1s ease-in;
     transition: opacity 1s ease-in;
-    &.in{
+    &.in {
       opacity: 1;
     }
   }
   .background-wrapper {
-    background:$white-lilac;
+    background: $white-lilac;
   }
   .lang-switcher {
     position: fixed;
     bottom: -25px;
     right: 10px;
-    border-radius:3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
     background: yellow;
     height: 50px;
     padding: 5px;
@@ -37,4 +39,10 @@
       text-align: center;
     }
   }
+}
+
+.closed-wrapper {
+  width: 50px;
+  height: 100%;
+  position: relative;
 }

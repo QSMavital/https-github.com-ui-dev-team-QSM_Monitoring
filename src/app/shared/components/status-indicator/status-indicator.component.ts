@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {StatusView} from "../../../config/statusView";
 
 @Component({
   selector: 'ui-status-indicator',
@@ -11,14 +12,15 @@ export class StatusIndicatorComponent implements OnInit {
   @Input() color: string;
   @Input() size: string = 'normal';
   @Input() limit:boolean = false;
+  @Input() showLabel:boolean = true;
   private custom: boolean = false;
-
+  private statusView:any;
   constructor() {
-    if (status === 'custom')
-      this.custom = true;
+    this.statusView = StatusView;
   }
 
   ngOnInit() {
+    console.log(this.statusView[this.status]);
   }
 
 }

@@ -58,6 +58,9 @@ import {DataTableModule} from "primeng/components/datatable/datatable";
 import {NvD3Module} from "angular2-nvd3";
 import {Dashboard} from "../store/middlewares/dashboard-middleware";
 import {environment} from "../environments/environment";
+import { ConnectionSmallComponent } from './core/dashboard/closed-bar-widgets/connection-small/connection-small.component';
+import { ActionsSmallComponent } from './core/dashboard/closed-bar-widgets/actions-small/actions-small.component';
+import { OnlineSmallComponent } from './core/dashboard/closed-bar-widgets/online-small/online-small.component';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -108,7 +111,10 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     OnlineStatusComponent,
     IssuerActionsStatusComponent,
     ActionsStatusComponent,
-    WidgetInjectorComponent
+    WidgetInjectorComponent,
+    ConnectionSmallComponent,
+    ActionsSmallComponent,
+    OnlineSmallComponent
   ],
   imports: [
     DataTableModule,
@@ -158,7 +164,6 @@ export class AppModule {
   constructor(private ngRedux: NgRedux<IStore>, private customer: Customer, private dashboard: Dashboard, private devTools: DevToolsExtension) {
     var updatedEnhancers = [];
     if (!environment.production && devTools.isEnabled()) {
-    console.log(environment);
       updatedEnhancers = [...enhancers, devTools.enhancer()];
     } else
       updatedEnhancers = [...enhancers];

@@ -1,0 +1,13 @@
+@import "./src/styles/helpers/brand";
+:host {
+  height:100%;
+  .wrapper {
+    .title {
+      transform: rotate(90deg);
+      color:$lynch;
+      white-space: nowrap;
+      text-transform: uppercase;
+      //margin-top:40px;
+    }
+  }
+}

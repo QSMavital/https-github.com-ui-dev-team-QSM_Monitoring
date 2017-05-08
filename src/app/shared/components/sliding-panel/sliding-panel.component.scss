@@ -14,11 +14,13 @@
 
       .open-sliding-panel-btn {
         position: absolute;
-        top: -1px;
+        top: 0;
         height: 80px;
         width: 28px;
-        background: $ber-gray;
+        //background: $ber-gray;
+        background: white;
         border-radius: 15px 0 0 15px;
+        box-shadow: -10px 1px 16px rgba(159,178,195,.44);
         cursor: pointer;
         left: -28px;
         line-height: 80px;
@@ -30,13 +32,16 @@
         }
       }
     //}
-    //.right-bar-container {
+    .right-bar-container {
     //  display: inline-block;
     //  width: calc(100% - 30px);
     //  height: 100%;
     //  float: right;
     //  background: blue;
-    //}
+      box-shadow: -10px 1px 16px rgba(159,178,195,.44);
+      height:100%;
+    }
+
   }
 }
 

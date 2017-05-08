@@ -14,18 +14,12 @@
     background: $ath-gray;
     border-radius: 50%;
     position: relative;
+    &.no-margin {
+      margin:0 !important;
+    }
     .inner {
       position: absolute;
       border-radius: 50%;
-      &.ok {
-        background: $pastel-green;
-      }
-      &.warning {
-        background: $tan;
-      }
-      &.danger {
-        background:$coral-red;
-      }
     }
   }
 }

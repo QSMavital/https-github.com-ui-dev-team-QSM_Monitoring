@@ -3,10 +3,9 @@
 .ng-sidebar {
   overflow: visible !important;
   //position: relative;
-  max-height:670px !important;
-  min-height: 615px !important;
+  height:670px !important;
   top:55px !important;
-  border: 1px solid $ber-gray;
+  //border: 1px solid $ber-gray;
   border-right:none;
   //border-radius: 5px 0 0 0;
 }

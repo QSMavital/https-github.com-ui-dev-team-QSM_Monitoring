@@ -1,0 +1,6 @@
+<div class="wrapper stretch-height">
+  <div fxLayout="column" fxLayoutAlign="center center" class="stretch-height">
+    <div fxFlex="60" fxLayout="column" fxLayoutAlign="center center" style="padding-bottom:20px"><div class="title fs12 bold">{{'db.connection_status' | translate}}</div></div>
+    <ui-status-indicator [status]="item.statusView" [showLabel]="false" *ngFor="let item of shortList"></ui-status-indicator>
+  </div>
+</div>

@@ -50,7 +50,6 @@ export class AtmsComponent implements OnInit,OnDestroy {
       this.tabs = [];
       this.userSettings.atms.tabs.forEach((tabView) => {
         if (!isNullOrUndefined(Atms.Tabs[tabView.field])&&tabView.visible) {
-          console.log(Atms.Tabs[tabView.field]);
           this.tabs.push(Atms.Tabs[tabView.field]);
         }
       });

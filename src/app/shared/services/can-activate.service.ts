@@ -38,7 +38,6 @@ export class CanActivateRoute implements CanActivate,OnDestroy {
   }
 
   redirect(menuSettings, state) {
-    debugger;
     if (menuSettings.length && menuSettings.indexOf(state) == -1) {
       this.router.navigate(["/"]);
     }

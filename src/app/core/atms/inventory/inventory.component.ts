@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent implements OnInit {
+  private addNew = false;
   private carsLarge = [
   {"brand": "VW", "year": 2012, "color": "Orange", "vin": "dsad231ff"},
   {"brand": "Audi", "year": 2011, "color": "Black", "vin": "gwregre345"},

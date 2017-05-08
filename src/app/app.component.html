@@ -1,7 +1,9 @@
 <router-outlet></router-outlet>
-<p-dialog header="Error" [(visible)]="errorHandler.show">
-  <div class="width-325 scroll-y" style="height: 300px">
-    <pre>{{errorHandler.error | json}}</pre>
+<p-dialog [(visible)]="errorHandler.show">
+  <p-header translate="app.error"></p-header>
+  <div class="width-325 scroll-y ui-space-tb-medium">
+    <p class="ui-space-b-tiny">{{errorHandler.error.status}} - {{errorHandler.error.statusText}}</p>
+    <p class="ui-space-b-tiny">{{errorHandler.error.url}}</p>
   </div>
 </p-dialog>
 <ui-spinner *ngIf="srvURLInterceptor?.activeCalls"></ui-spinner>

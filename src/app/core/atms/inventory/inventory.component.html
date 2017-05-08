@@ -3,8 +3,14 @@
   <!--<a [routerLink]="['..','atm', 1]">a</a>-->
 
 <!--</p>-->
-<ui-portlet [header]="'eee'">
-  <p-dataTable [value]="carsLarge" scrollable="true" scrollHeight="200px" [style]="{'margin-top':'30px'}">
+<ui-portlet>
+  <ui-filters-bar fxLayout>
+    <ui-atms-inventory-filter></ui-atms-inventory-filter>
+    <div fxFlex class="text-right">
+      <button (click)="addNew=!addNew" class="blue-btn ui-icons-add-new"></button>
+    </div>
+  </ui-filters-bar>
+  <p-dataTable [value]="carsLarge" scrollable="true" scrollHeight="200px">
     <p-column field="vin" [style]="{'width':'250px'}" header="Vin"></p-column>
     <p-column field="year" [style]="{'width':'250px'}" header="Year"></p-column>
     <p-column field="brand" [style]="{'width':'250px'}" header="Brand"></p-column>

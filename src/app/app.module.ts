@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule, Http, XHRBackend, RequestOptions} from '@angular/http';
 import {TranslateModule, TranslateLoader} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
@@ -62,6 +62,7 @@ import { ConnectionSmallComponent } from './core/dashboard/closed-bar-widgets/co
 import { ActionsSmallComponent } from './core/dashboard/closed-bar-widgets/actions-small/actions-small.component';
 import { OnlineSmallComponent } from './core/dashboard/closed-bar-widgets/online-small/online-small.component';
 import { WrapperComponent } from './core/dashboard/closed-bar-widgets/wrapper/wrapper.component';
+import { AtmsInventoryFilterComponent } from './core/atms/inventory/atms-inventory-filter/atms-inventory-filter.component';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -116,7 +117,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     ConnectionSmallComponent,
     ActionsSmallComponent,
     OnlineSmallComponent,
-    WrapperComponent
+    WrapperComponent,
+    AtmsInventoryFilterComponent
   ],
   imports: [
     DataTableModule,
@@ -139,7 +141,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     DialogModule,
     BrowserAnimationsModule,
     DropdownModule,
-    ChartModule
+    ChartModule,
+    ReactiveFormsModule
   ],
   providers: [
     MomentPipe,

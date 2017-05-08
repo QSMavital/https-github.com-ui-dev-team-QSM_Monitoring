@@ -1,6 +1,7 @@
 {
   "app":{
-    "title":"hello"
+    "error":"Error",
+    "go":"Go"
   },
   "menu": {
     "main": "main",
@@ -35,6 +36,11 @@
       "events": "events",
       "transactions": "transactions",
       "transaction": "transaction"
+    },
+    "filters":{
+      "chooseAtm":"Choose ATM:",
+      "group":"Group:",
+      "region":"Region:"
     }
   },
   "atm": {

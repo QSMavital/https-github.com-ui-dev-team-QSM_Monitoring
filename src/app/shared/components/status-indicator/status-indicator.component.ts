@@ -20,7 +20,6 @@ export class StatusIndicatorComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.statusView[this.status]);
   }
 
 }

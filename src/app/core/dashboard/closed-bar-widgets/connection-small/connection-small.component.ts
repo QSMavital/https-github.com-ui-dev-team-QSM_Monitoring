@@ -29,7 +29,6 @@ export class ConnectionSmallComponent implements OnInit, OnDestroy {
     this.unsubscriber = this.$status.subscribe(state => {
       if (!isNullOrUndefined(state))
         this.list = state;
-      console.log(state)
     });
     this.store.dispatch({type: DashboardActions.WIDGET_GET_CONNECTION_STATUS});
   }

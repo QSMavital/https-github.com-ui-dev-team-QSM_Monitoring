@@ -4,6 +4,7 @@ import {IStore} from "../../../../store/index";
 import {isNullOrUndefined} from "util";
 import {Observable} from "rxjs";
 import * as d3 from "d3";
+import {DashboardActions} from "../../../../store/actions/dashboard-actions";
 
 
 @Component({
@@ -13,7 +14,7 @@ import * as d3 from "d3";
 })
 export class ActionsStatusComponent implements OnInit, OnDestroy {
   private _actionsStatus;
-  @select(['dashboard', 'onlineStatus']) actionsStatus: Observable<any>;
+  @select(['dashboard', 'actionsStatus']) actionsStatus: Observable<any>;
 
   private data: any = [];
   private options: any;
@@ -22,13 +23,11 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
   constructor(private ngRedux: NgRedux<IStore>) {
     this.initData();
   }
-
-
   initData() {
     this.options = {
       chart: {
         type: 'pieChart',
-        height: 360,
+        height: 400,
         x: function (d) {
           return d.key;
         },
@@ -36,11 +35,11 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
           return d.value;
         },
         showLabels: true,
-        labelsOutside:true,
+        labelsOutside:false,
         duration: 500,
         labelThreshold: 0.01,
         labelSunbeamLayout: false,
-        labelType: "key",
+        labelType: "percent",
         showLegend: false,
         growOnHover:false,
         tooltip: {
@@ -48,6 +47,7 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
             return d.series[0].key + ': ' + d.series[0].value+'%';
           }
         }
+
         // legend: {
         //   margin: {
         //     top: 5,
@@ -59,6 +59,7 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
       }
     };
 
+    this.ngRedux.dispatch({type:DashboardActions.WIDGET_GET_ACTIONS_STATUS});
 
     this.data = [
       {

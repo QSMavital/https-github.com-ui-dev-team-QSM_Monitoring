@@ -42,7 +42,7 @@ module.exports = function (req, res, next) {
     else if (req.url.indexOf('/main/actionStatus') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
-        ActionStatus
+        actionStatus
       ));
     }
     else {
@@ -136,7 +136,7 @@ var issuerActionStatus = [{
   "fatal": 70
 }];
 
-var ActionStatus = [{
+var actionStatus = [{
   "statusName": "IncorrectPINCode",
   "precents": 32
 }, {

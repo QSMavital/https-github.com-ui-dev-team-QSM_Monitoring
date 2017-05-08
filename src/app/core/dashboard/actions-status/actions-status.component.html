@@ -1,11 +1,12 @@
 <div class="wrapper stretch-height">
-  <ui-portlet class="stretch-height" [header]="'db.actions_status' | translate">
+  <ui-portlet class="stretch-height" [header]="'db.actions_status' | translate" [footer]="true">
     <div class="inside-portlet-wrapper stretch-height">
 
-      <div *ngIf="options" style="width:50%;margin:auto;position: relative">
-        <app-nvd3 [options]="options" [data]="data"></app-nvd3>
+      <div *ngIf="options" style="height:275px;position:relative">
+        <app-nvd3 [options]="options" [data]="data" style="position:absolute;top:-40px;left:calc(50% - 200px);width:400px"></app-nvd3>
       </div>
 
     </div>
   </ui-portlet>
 </div>
+

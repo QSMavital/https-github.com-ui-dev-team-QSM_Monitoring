@@ -7,7 +7,7 @@
          [ngClass]="{'red':(data.currentOnline < data.avg*0.2) ||(data.currentOnline > (data.avg*2-(data.avg*0.2)))}"
          *ngIf="true">
       <i class="ui-icons ui-icons-x" *ngIf="(data.currentOnline < data.avg*0.2) || (data.currentOnline > (data.avg*2-(data.avg*0.2))); else iconV"></i>
-      <template #iconV><i class="ui-icons ui-icons-v"></i></template>
+      <ng-template #iconV><i class="ui-icons ui-icons-v"></i></ng-template>
       <div fxLayout fxLayoutAlign="center center" style="height:50px">
         <div class="label fs15">{{data.currentOnline}}</div>
       </div>

@@ -1,3 +1,27 @@
-<p>
-  atms-status works!
-</p>
+<ui-portlet>
+  <div class="stretch-height" fxLayout="column">
+    <ui-filters-bar>
+      <div fxLayout>
+        <ui-atms-inventory-filter></ui-atms-inventory-filter>
+        <div fxFlex class="text-right">
+          <button (click)="addNew=!addNew;" class="blue-btn ui-icons-add-new"></button>
+        </div>
+      </div>
+
+    </ui-filters-bar>
+
+
+    <ag-grid-angular
+      fxFlex
+      class="ag-fresh"
+      [gridOptions]="gridOptions">
+    </ag-grid-angular>
+  </div>
+
+</ui-portlet>
+<p-dialog *ngIf="addNew" [(visible)]="addNew" [modal]="true">
+  <p-header translate="atm.newAtm"></p-header>
+  <div class="scroll-y ui-space-tb-medium" style="width: 750px; height: 550px">
+    <ui-atm-settings></ui-atm-settings>
+  </div>
+</p-dialog>

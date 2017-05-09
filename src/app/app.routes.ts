@@ -10,7 +10,7 @@ import {AtmsNotificationsComponent} from "./core/atms/atms-notifications/atms-no
 import {AtmsEventsComponent} from "./core/atms/atms-events/atms-events.component";
 import {AtmsTransactionsComponent} from "./core/atms/atms-transactions/atms-transactions.component";
 import {MainComponent} from "./core/master/main/main.component";
-import {CanActivateRoute} from "./shared/services/can-activate.service";
+import {CanActivateRoute,AppActivator} from "./shared/services/can-activate.service";
 import {AtmComponent} from "./core/atm/atm.component";
 import {AtmStatusComponent} from "./core/atm/atm-status/atm-status.component";
 import {RetainedCardsComponent} from "./core/atm/retained-cards/retained-cards.component";
@@ -27,10 +27,12 @@ export const appRoutes: Route[] = [
 
   {
     path: '', component: MainComponent,
+    canActivate: [AppActivator],
     children: [
       {
         path: '', component: DashboardComponent,
         canActivate: [CanActivateRoute],
+
         data: {state: "MAIN"}
       },
       {
@@ -65,7 +67,7 @@ export const appRoutes: Route[] = [
 
         ]
       },
-      {path: 'epp', component: EppsComponent, canActivate: [CanActivateRoute], data: {state: "EPPS"},},
+      {path: 'epp', component: EppsComponent, canActivate: [CanActivateRoute], data: {state: "EPPS"}},
       {path: 'hsm', component: HsmComponent, canActivate: [CanActivateRoute], data: {state: "HSMS"},
         children: [
           {path: '', redirectTo: '/hsm/status', pathMatch: 'full'},

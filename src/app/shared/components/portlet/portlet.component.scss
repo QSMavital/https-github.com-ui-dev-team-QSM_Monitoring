@@ -13,23 +13,23 @@
       padding: 15px 10px;
       color: $reg-gray;
       text-transform: uppercase;
-      height:40px;
+      height: 40px;
     }
     .body {
-      height:calc(100% - 40px);
+      height: calc(100% - 30px);
       &.short {
-        height:calc(100% - 80px);
-
+        height: calc(100% - 70px);
       }
     }
     .footer {
       border-top: 1px solid $cats-white;
-      padding: 10px 0;
+      //padding: 10px 0;
       position: absolute;
       bottom: 0;
       left: 0;
-      height:40px;
-line-height: 40px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
     }
   }
 }

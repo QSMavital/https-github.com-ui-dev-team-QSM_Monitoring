@@ -15,12 +15,14 @@ import {TableComponent} from './components/table/table.component';
 
 import {DataTableModule, SharedModule as PrimengSharedModule} from 'primeng/primeng';
 
-import {CanActivateRoute} from "./services/can-activate.service";
+import {CanActivateRoute, AppActivator} from "./services/can-activate.service";
 import {PortletComponent} from './components/portlet/portlet.component';
 import { StatusIndicatorComponent } from './components/status-indicator/status-indicator.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { LabelComponent } from './components/label/label.component';
 import { FiltersBarComponent } from './components/filters-bar/filters-bar.component';
+import { AgStatusComponent } from './components/ag-status/ag-status.component';
+import {AgGridModule} from "ag-grid-angular";
 
 @NgModule({
   imports: [
@@ -32,9 +34,9 @@ import { FiltersBarComponent } from './components/filters-bar/filters-bar.compon
     PrimengSharedModule,
     FlexLayoutModule
   ],
-  declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent, StatusIndicatorComponent, LabelComponent, FiltersBarComponent],
-  exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent,StatusIndicatorComponent,LabelComponent,FiltersBarComponent],
-  providers: [CanActivateRoute]
+  declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent, StatusIndicatorComponent, LabelComponent, FiltersBarComponent, AgStatusComponent],
+  exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent,StatusIndicatorComponent,LabelComponent,FiltersBarComponent,AgStatusComponent],
+  providers: [CanActivateRoute,AppActivator]
 })
 
 export class SharedModule {

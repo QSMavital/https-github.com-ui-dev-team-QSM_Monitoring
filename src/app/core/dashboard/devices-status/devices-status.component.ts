@@ -108,7 +108,6 @@ export class DevicesStatusComponent implements OnInit, OnDestroy {
   subscribe(){
     this._devicesStatus = this.devicesStatus$.subscribe((state)=>{
       if(!isNullOrUndefined(state)){
-        console.log('devicesStatus--->>>>>>>>',state);
         if(isArray(state)) {
           state.forEach((i)=>{
             this.data.forEach(d=>{

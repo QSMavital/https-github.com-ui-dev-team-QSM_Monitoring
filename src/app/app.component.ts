@@ -25,7 +25,7 @@ export class AppComponent implements OnDestroy{
   constructor(private srvURLInterceptor: ServerURLInterceptor,
               private translate: TranslateService,
               private ngRedux: NgRedux<IStore>) {
-    LicenseManager.setLicenseKey('<yourkey>');
+    LicenseManager.setLicenseKey('QSM_Programming_Ltd._Qswitch_1Devs8_May_2018__MTUyNTc1MjAwMDAwMA==1176c44b35f16334586085ac74c58227');
     this.initI18n();
     this.initErrorHandler();
     this.initCustomer();

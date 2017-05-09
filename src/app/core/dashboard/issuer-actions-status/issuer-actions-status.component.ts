@@ -74,7 +74,6 @@ export class IssuerActionsStatusComponent implements OnInit  , OnDestroy{
   }
 
   initData(state) {
-    console.log(state);
     this.data = {
       labels:state.map((i)=>{return i.bank}),
       datasets:[
@@ -90,7 +89,6 @@ export class IssuerActionsStatusComponent implements OnInit  , OnDestroy{
         }
       ]
     };
-    console.log(this.data);
   }
 
   ngOnInit() {
@@ -113,7 +111,6 @@ export class IssuerActionsStatusComponent implements OnInit  , OnDestroy{
           });
         }
         this.initData(temp);
-        console.log('IssuerActionsStatusComponent ----->>>>>>>>>>',state);
       }
     })
 

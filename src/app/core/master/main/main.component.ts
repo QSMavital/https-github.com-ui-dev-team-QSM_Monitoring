@@ -26,11 +26,7 @@ export class MainComponent implements OnInit {
 
     this.userSettings$.subscribe((state)=>{
       if(!isNullOrUndefined(state)){
-        this.translate.use(state.language.toLowerCase());
-        this.direction = i18n[state.language];
-        this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-          this.direction = i18n[event.lang.toUpperCase()];
-        });
+        this.direction = i18n[state.language.toUpperCase()];
         this.userSettings = state;
       }
 

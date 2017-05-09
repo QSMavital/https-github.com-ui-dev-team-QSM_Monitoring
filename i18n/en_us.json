@@ -1,6 +1,7 @@
 {
   "app":{
-    "title":"hello"
+    "error":"Error",
+    "go":"Go"
   },
   "menu": {
     "main": "main",
@@ -35,9 +36,27 @@
       "events": "events",
       "transactions": "transactions",
       "transaction": "transaction"
+    },
+    "filters":{
+      "chooseAtm":"Choose ATM:",
+      "group":"Group:",
+      "region":"Region:"
+    },
+    "inventory":{
+      "atmNo":"ATM #",
+      "atmName":"ATM Name",
+      "status":"Status",
+      "reason":"Reason",
+      "lastWithdrawal":"Last Withdrawal",
+      "remainingCash":"Remaining Cash",
+      "retainedCards":"Retained Cards",
+      "cardSettlement":"Card Settlement",
+      "lastActivity":"Last Activity",
+      "lastSettlement":"Last Settlement"
     }
   },
   "atm": {
+    "newAtm":"New Atm",
     "tabs": {
       "status": "atm status",
       "accessories": "accessories status",

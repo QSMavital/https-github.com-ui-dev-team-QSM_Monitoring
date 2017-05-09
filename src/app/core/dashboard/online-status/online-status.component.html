@@ -1,7 +1,7 @@
 <div class="stretch-height wrapper">
   <ui-portlet class="stretch-height" [header]="'db.online_status' | translate" footer="1" #gCont>
-    <div class="ui-space-t-small" *ngIf="!hide">
-      <ui-gauge [config]="data" [value]="data.value" [width]="'290px'" style="text-align: center"></ui-gauge>
+    <div class="ui-space-t-small">
+      <ui-gauge [config]="data" [value]="data.value" [width]="'auto'" style="text-align: center"></ui-gauge>
     </div>
     <div footer>
       <div fxLayout fxLayoutAlign="center center">

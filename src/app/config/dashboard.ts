@@ -1,8 +1,8 @@
 export const Dashboard = {
   Widgets:{
-    ConnectionStatusComponent: {widget: 'ConnectionStatusComponent', size: '25%'},
+    ConnectionStatusComponent: {widget: 'ConnectionStatusComponent', size: '22%'},
     DevicesStatusComponent: {widget: 'DevicesStatusComponent', size: '50%'},
-    OnlineStatusComponent: {widget: 'OnlineStatusComponent', size: '25%'},
+    OnlineStatusComponent: {widget: 'OnlineStatusComponent', size: '28%'},
     IssuerActionsStatusComponent: {widget: 'IssuerActionsStatusComponent', size: '50%'},
     ActionsStatusComponent: {widget: 'ActionsStatusComponent', size: '50%'}
   },

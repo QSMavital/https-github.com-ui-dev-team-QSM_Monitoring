@@ -1,5 +1,5 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute, Router, ActivatedRouteSnapshot, RouterStateSnapshot} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 import {i18n} from "../../../config/i18n";
 import {TranslateService, LangChangeEvent} from "@ngx-translate/core";
 import {IStore} from "../../../../store/index";

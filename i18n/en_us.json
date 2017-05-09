@@ -71,6 +71,12 @@
     "need_to_be_fixed":"need to be fixed",
     "unavailable":"unavailable",
     "working":"working"
+  },
+  "actionsStatus":{
+    "IncorrectPINCode":"Incorrect PIN code",
+    "Rejection":"Rejection",
+    "SuccessfulOperations":"Successful Operations",
+    "Fault":"Fault"
   }
 }
 

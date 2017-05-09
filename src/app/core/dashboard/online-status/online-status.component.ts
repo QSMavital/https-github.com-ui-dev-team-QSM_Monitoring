@@ -10,11 +10,12 @@ import {IStore} from "../../../../store/index";
   templateUrl: './online-status.component.html',
   styleUrls: ['./online-status.component.scss']
 })
-export class OnlineStatusComponent implements OnInit , OnDestroy {
+export class OnlineStatusComponent implements OnInit, OnDestroy {
   private _onlineStatus;
-  @select(['dashboard','onlineStatus']) onlineStatus: Observable<any>;
+  private hide: boolean = true;
+  @select(['dashboard', 'onlineStatus']) onlineStatus: Observable<any>;
 
-  private data:any = {
+  private data: any = {
     type: 'Gauge',
     maxValue: 10,
     minValue: 0,
@@ -34,7 +35,7 @@ export class OnlineStatusComponent implements OnInit , OnDestroy {
     highDpiSupport: true,     // High resolution support
     staticLabels: {
       font: "0.9285714rem opensans-regular",  // Specifies font
-      labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],  // Print labels at these values
+      labels: [],  // Print labels at these values
       color: "#6f7b87",  // Optional: Label text color
       fractionDigits: 0,  // Optional: Numerical precision. 0=round off.
       padding: '100px'
@@ -47,8 +48,36 @@ export class OnlineStatusComponent implements OnInit , OnDestroy {
   };
 
   constructor(private ngRedux: NgRedux<IStore>) {
-    this.ngRedux.dispatch({type:DashboardActions.WIDGET_GET_ONLINE_STATUS});
+    this.ngRedux.dispatch({type: DashboardActions.WIDGET_GET_ONLINE_STATUS});
 
+  }
+
+  adjustData(state) {
+
+    function initLabels(max) {
+      let labels = [];
+      let step = max / 10;
+      for (let i = 0; i < 11; i++)
+        labels.push(i * step);
+      return labels;
+    }
+
+    function initStaticZones(staticZones, max) {
+      let step = max / 10;
+      let sz = [];
+      sz[0] = Object.assign({}, staticZones[0], {max: step});
+      sz[1] = Object.assign({}, staticZones[1], {min: step, max: max - step});
+      sz[2] = Object.assign({}, staticZones[2], {min: max - step, max: max});
+      return sz;
+    }
+
+    this.data.maxValue = state.avg * 2;
+    this.data.staticLabels.labels = initLabels(this.data.maxValue);
+    this.data.value = state.currentOnline;
+    this.data.staticZones = initStaticZones(this.data.staticZones, this.data.maxValue);
+    setTimeout(() => {
+      this.hide = false
+    }, 0);
   }
 
   ngOnInit() {
@@ -60,10 +89,11 @@ export class OnlineStatusComponent implements OnInit , OnDestroy {
     this._onlineStatus.unsubscribe();
   }
 
-  subscribe(){
-    this._onlineStatus = this.onlineStatus.subscribe((state)=>{
-      if(!isNullOrUndefined(state)){
-        console.log('onlineStatus ----->>>>>>>>>>',state);
+  subscribe() {
+    this._onlineStatus = this.onlineStatus.subscribe((state) => {
+      if (!isNullOrUndefined(state)) {
+        console.log('onlineStatus ----->>>>>>>>>>', state);
+        this.adjustData(state);
       }
     })
 

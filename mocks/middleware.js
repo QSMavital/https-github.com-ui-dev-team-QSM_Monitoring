@@ -118,22 +118,22 @@ var device_status = [{
 }];
 
 var onlineStatus = {
-  "avg": 5.0,
+  "avg": 16.0,
   "currentOnline": 4.9
 };
 
 var issuerActionStatus = [{
   "bank": "LEUMI",
-  "noError": 19050,
-  "fatal": 50
+  "noError": 18050,
+  "fatal": 450
 }, {
   "bank": "BOJ",
   "noError": 16000,
-  "fatal": 20
+  "fatal": 620
 }, {
   "bank": "YAHAV",
   "noError": 13000,
-  "fatal": 70
+  "fatal": 870
 }];
 
 var actionStatus = [{

@@ -1,11 +1,17 @@
 <div class="wrapper stretch-height">
-  <ui-portlet class="stretch-height" [header]="'db.actions_status' | translate" [footer]="true">
+  <ui-portlet class="stretch-height" footer="1" [header]="'db.actions_status' | translate" [footer]="true">
     <div class="inside-portlet-wrapper stretch-height">
 
-      <div *ngIf="options" style="height:275px;position:relative">
-        <app-nvd3 [options]="options" [data]="data" style="position:absolute;top:-40px;left:calc(50% - 200px);width:400px"></app-nvd3>
+      <div *ngIf="options" style="height:275px;top:calc(50% - 160px);position:relative">
+        <app-nvd3 [options]="options" [data]="data" style="position:absolute;top:-55px;left:0;width:100%"></app-nvd3>
       </div>
 
+
+    </div>
+    <div footer>
+      <div fxLayout fxLayoutAlign="center center">
+        <ui-status-indicator size="small" *ngFor="let item of data" [color]="item.color" style="margin-right:20px;">{{'actionsStatus.'+item.key | translate}}</ui-status-indicator>
+      </div>
     </div>
   </ui-portlet>
 </div>

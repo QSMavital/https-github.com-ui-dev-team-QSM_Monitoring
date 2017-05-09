@@ -1,7 +1,7 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {Observable} from "rxjs";
 import {select, NgRedux} from "@angular-redux/store";
-import {isNullOrUndefined} from "util";
+import {isArray, isNullOrUndefined} from "util";
 import {DashboardActions} from "../../../../store/actions/dashboard-actions";
 import {IStore} from "../../../../store/index";
 
@@ -73,6 +73,26 @@ export class IssuerActionsStatusComponent implements OnInit  , OnDestroy{
 
   }
 
+  initData(state) {
+    console.log(state);
+    this.data = {
+      labels:state.map((i)=>{return i.bank}),
+      datasets:[
+        {
+          backgroundColor: '#ff563e',
+          borderColor: '#ff563e',
+          data: state.map(i=>{return  i.fatal})
+        },
+        {
+          backgroundColor: '#71d36b',
+          borderColor: '#71d36b',
+          data: state.map(i=>{return  i.noError})
+        }
+      ]
+    };
+    console.log(this.data);
+  }
+
   ngOnInit() {
     this.subscribe();
 
@@ -83,7 +103,16 @@ export class IssuerActionsStatusComponent implements OnInit  , OnDestroy{
   }
   subscribe(){
     this._issuerActionsStatus = this.issuerActionsStatus.subscribe((state)=>{
+      var temp = [];
       if(!isNullOrUndefined(state)){
+        if(isArray(state))
+          temp = state;
+        else {
+          Object.keys(state).forEach(k=>{
+            temp.push(state[k]);
+          });
+        }
+        this.initData(temp);
         console.log('IssuerActionsStatusComponent ----->>>>>>>>>>',state);
       }
     })

@@ -1,12 +1,12 @@
 <div class="stretch-height wrapper">
   <ui-portlet class="stretch-height" [header]="'db.online_status' | translate" footer="1" #gCont>
-    <div class="ui-space-t-small">
+    <div class="ui-space-t-small" *ngIf="!hide">
       <ui-gauge [config]="data" [value]="data.value" [width]="'290px'" style="text-align: center"></ui-gauge>
     </div>
     <div footer>
       <div fxLayout fxLayoutAlign="center center">
-        <ui-status-indicator size="small" style="margin-right:20px;">{{'db.in_order' | translate}}</ui-status-indicator>
-        <ui-status-indicator size="small" status="danger">{{'db.exception' | translate}}</ui-status-indicator>
+        <ui-status-indicator size="small" color="#71d36b" style="margin-right:20px;">{{'db.no_error' | translate}}</ui-status-indicator>
+        <ui-status-indicator size="small" color="#ff563e">{{'db.fatal' | translate}}</ui-status-indicator>
       </div>
     </div>
   </ui-portlet>

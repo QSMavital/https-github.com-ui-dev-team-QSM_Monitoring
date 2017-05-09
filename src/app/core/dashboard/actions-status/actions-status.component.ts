@@ -1,10 +1,11 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {NgRedux, select} from "@angular-redux/store";
 import {IStore} from "../../../../store/index";
-import {isNullOrUndefined} from "util";
+import {isArray, isNullOrUndefined} from "util";
 import {Observable} from "rxjs";
 import * as d3 from "d3";
 import {DashboardActions} from "../../../../store/actions/dashboard-actions";
+import {ActionsStatus, StatusView} from "../../../config/statusView";
 
 
 @Component({
@@ -27,7 +28,7 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
     this.options = {
       chart: {
         type: 'pieChart',
-        height: 400,
+        height: 380,
         x: function (d) {
           return d.key;
         },
@@ -64,25 +65,37 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
     this.data = [
       {
         key: "Rejection",
-        value: 13,
+        value: 1,
         color: "#ff563e"
       },
       {
         key: "Successful operations",
-        value: 45,
+        value: 1,
         color: "#71d36b"
       },
       {
         key: "Fault",
-        value: 10,
+        value: 1,
         color: "#49bbf8"
       },
       {
         key: "Incorrect PIN code",
-        value: 32,
+        value: 1,
         color: "#fa9a52"
       }
     ];
+  }
+
+  adjustData(state){
+    var data = [];
+    state.forEach(i=>{
+      data.push({
+        key:i.statusName,
+        value:i.precents,
+        color:StatusView[ActionsStatus[i.statusName]].color
+      });
+    });
+    this.data = data;
   }
 
   ngOnInit() {
@@ -96,7 +109,16 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
 
   subscribe() {
     this._actionsStatus = this.actionsStatus.subscribe((state) => {
+      var arr=[];
       if (!isNullOrUndefined(state)) {
+        if(isArray(state))
+          arr = state;
+        else {
+          Object.keys(state).forEach(k=>{
+            arr.push(state[k]);
+          });
+        }
+        this.adjustData(arr);
         console.log('actionsStatus ----->>>>>>>>>>', state);
       }
     })

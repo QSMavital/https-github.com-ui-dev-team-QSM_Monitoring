@@ -92,7 +92,6 @@ export class OnlineStatusComponent implements OnInit, OnDestroy {
   subscribe() {
     this._onlineStatus = this.onlineStatus.subscribe((state) => {
       if (!isNullOrUndefined(state)) {
-        console.log('onlineStatus ----->>>>>>>>>>', state);
         this.adjustData(state);
       }
     })

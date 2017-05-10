@@ -119,7 +119,6 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
           });
         }
         this.adjustData(arr);
-        console.log('actionsStatus ----->>>>>>>>>>', state);
       }
     })
 

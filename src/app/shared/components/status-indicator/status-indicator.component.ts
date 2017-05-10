@@ -8,11 +8,12 @@ import {StatusView} from "../../../config/statusView";
 })
 export class StatusIndicatorComponent implements OnInit {
 
-  @Input() status: string = 'ok';
+  @Input() status: string;
   @Input() color: string;
   @Input() size: string = 'normal';
   @Input() limit:boolean = false;
   @Input() showLabel:boolean = true;
+  @Input() showStatus:boolean = false;
   private custom: boolean = false;
   private statusView:any;
   constructor() {

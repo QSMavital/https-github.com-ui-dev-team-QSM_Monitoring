@@ -11,6 +11,9 @@ export const StatusView = {
   FATAL: {
     color: "#ff563e"
   },
+  OFF_LINE: {
+    color: "#ff563e"
+  },
   OPERATOR: {
     color: "#fa9a52"
   }

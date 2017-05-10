@@ -64,6 +64,8 @@ import { OnlineSmallComponent } from './core/dashboard/closed-bar-widgets/online
 import { WrapperComponent } from './core/dashboard/closed-bar-widgets/wrapper/wrapper.component';
 import { AtmsInventoryFilterComponent } from './core/atms/inventory/atms-inventory-filter/atms-inventory-filter.component';
 import {AgGridModule} from "ag-grid-angular";
+import {SettingsResolverService} from "./shared/services/settings-resolver.service";
+import {AgStatusComponent} from "./shared/components/ag-status/ag-status.component";
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -144,7 +146,9 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     DropdownModule,
     ChartModule,
     ReactiveFormsModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([
+      AgStatusComponent
+    ])
   ],
   providers: [
     MomentPipe,
@@ -155,7 +159,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       deps: [XHRBackend, RequestOptions, ServerURLInterceptor] // Add it here, in the same order as the signature of interceptorFactory
     },
     Customer,
-    Dashboard
+    Dashboard,
+    SettingsResolverService
   ],
   entryComponents: [
     ConnectionStatusComponent,

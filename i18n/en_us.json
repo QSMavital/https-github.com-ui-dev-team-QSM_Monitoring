@@ -1,4 +1,5 @@
 {
+  "OFF_LINE":"Disconnected",
   "app":{
     "error":"Error",
     "go":"Go"
@@ -43,12 +44,12 @@
       "region":"Region:"
     },
     "inventory":{
-      "atmNo":"ATM #",
+      "terminalId":"ATM #",
       "atmName":"ATM Name",
-      "status":"Status",
-      "reason":"Reason",
+      "terminalStatus":"Status",
+      "closeReason":"Close Reason",
       "lastWithdrawal":"Last Withdrawal",
-      "remainingCash":"Remaining Cash",
+      "totalRemaining":"Remaining Cash",
       "retainedCards":"Retained Cards",
       "cardSettlement":"Card Settlement",
       "lastActivity":"Last Activity",

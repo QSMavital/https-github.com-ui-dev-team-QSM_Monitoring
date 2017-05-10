@@ -1,5 +1,5 @@
 <div class="wrapper no-select" [ngClass]="size" fxLayout="row" fxLayoutAlign="start center" *ngIf="(status && statusView && statusView[status]) || color">
   <span class="circle"  *ngIf="(status && statusView && statusView[status])" [ngClass]="{'no-margin':!showLabel}"><span class="inner" [ngStyle]="{background:statusView[status].color}"></span></span>
   <span class="label fs10 limit" *ngIf="showLabel && !showStatus"><ng-content></ng-content></span>
-  <span *ngIf="showStatus">{{status | translate}}</span>
+  <span *ngIf="showStatus">{{'actionsStatus.'+status | translate}}</span>
 </div>

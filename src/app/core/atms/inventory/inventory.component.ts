@@ -169,11 +169,13 @@ export class InventoryComponent implements OnInit, OnDestroy {
   }
 
   initColDefs(){
-    this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang()]=='rtl';
+    this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()]=='rtl';
+    this.gridOptions.enableSorting = true;
     this.gridOptions.columnDefs = [];
     for (var prop in Atms.Inventory) {
       this.gridOptions.columnDefs.push(
         Object.assign({},
+          {suppressFilter: true},
           Atms.Inventory[prop],
           {
             headerName: this.translateSrv.instant(Atms.Inventory[prop].headerName)
@@ -184,6 +186,6 @@ export class InventoryComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.gridOptions={};
+    // this.gridOptions={};
   }
 }

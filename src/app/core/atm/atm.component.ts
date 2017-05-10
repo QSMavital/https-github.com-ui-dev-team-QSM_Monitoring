@@ -21,6 +21,7 @@ export class AtmComponent implements OnInit,OnDestroy {
   constructor(private ngRedux: NgRedux<IStore>,
               private router: Router,
               private route: ActivatedRoute) {
+    this.atmId = this.route.params['value']['id'];
     this.initTabs();
     this._userSettingsRef = this.userSettings$.subscribe(() => {
       this.initTabs();
@@ -28,7 +29,6 @@ export class AtmComponent implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
-    this.atmId = this.route.params['value']['id'];
 
   }
 ץ
@@ -40,14 +40,15 @@ export class AtmComponent implements OnInit,OnDestroy {
     this.userSettings = this.ngRedux.getState().userSettings;
     if (!isNullOrUndefined(this.userSettings)) {
       this.tabs = [];
-      this.userSettings.atmSettingsCustomization.fieldsCustomization.ATM_SETTINGS_TABS.forEach((tabView) => {
-        debugger;
+      debugger;
+      this.userSettings.atmCustomization.atmTabs.forEach((tabView) => {
         if (tabView.visible) {
           this.tabs.push(Atm.Tabs[tabView.field]);
         }
       });
 
       if (this.router.url.match(new RegExp("/", "g")).length == 3) {
+        debugger;
         this.router.navigate(['atms','atm',this.atmId,this.tabs[0].state]);
       }
     }

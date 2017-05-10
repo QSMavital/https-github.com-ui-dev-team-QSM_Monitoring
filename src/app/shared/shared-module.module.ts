@@ -24,6 +24,8 @@ import { FiltersBarComponent } from './components/filters-bar/filters-bar.compon
 import { AgStatusComponent } from './components/ag-status/ag-status.component';
 import {AgGridModule} from "ag-grid-angular";
 import { LegendComponent } from './components/legend/legend.component';
+import { AgDateComponent } from './components/ag-date/ag-date.component';
+import { AgAmountComponent } from './components/ag-amount/ag-amount.component';
 
 @NgModule({
   imports: [
@@ -35,8 +37,8 @@ import { LegendComponent } from './components/legend/legend.component';
     PrimengSharedModule,
     FlexLayoutModule
   ],
-  declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent, StatusIndicatorComponent, LabelComponent, FiltersBarComponent, AgStatusComponent, LegendComponent],
-  exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent,StatusIndicatorComponent,LabelComponent,FiltersBarComponent,AgStatusComponent, LegendComponent],
+  declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent, StatusIndicatorComponent, LabelComponent, FiltersBarComponent, AgStatusComponent, LegendComponent, AgDateComponent, AgAmountComponent],
+  exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent,StatusIndicatorComponent,LabelComponent,FiltersBarComponent,AgStatusComponent, LegendComponent, AgDateComponent, AgAmountComponent],
   providers: [CanActivateRoute,AppActivator]
 })
 

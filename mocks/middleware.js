@@ -59,222 +59,224 @@ var settingsUser = {
   language: "en_US",
   menu: ["MAIN", "ATMS", "HSMS", "EPPS", "COMMUNICATION", "REPORTS"],
   atmsCustomization: {
-    "fieldsCustomization": {
-      "ATMS_TABS": [
-        {
-          "field": "INVENTORY_OF_ATMS",
-          "visible": true
-        }, {
-          "field": "ALL_STATUSES",
-          "visible": true
-        }, {
-          "field": "ALL_ALERTS",
-          "visible": true
-        }, {
-          "field": "ALL_EVENTS",
-          "visible": true
-        }, {
-          "field": "ALL_MOVEMENTS",
-          "visible": true
-        }, {
-          "field": "MOVEMENT",
-          "visible": true
-        }
-      ],
-      "INVENTORY_OF_ATMS": [
-        {
-        "field": "ID",
+    "atmsTabs": [
+      {
+        "field": "atmsSupply",
         "visible": true
       }, {
-        "field": "NAME",
+        "field": "atmsStatus",
         "visible": true
       }, {
-        "field": "STATUS",
+        "field": "alerts",
         "visible": true
       }, {
-        "field": "REASON",
+        "field": "events",
         "visible": true
       }, {
-        "field": "LAST_WITHDRAWAL",
+        "field": "transactions",
         "visible": true
-      }, {
-        "field": "REMAINING_CASH",
-        "visible": true
-      }, {
-        "field": "RETAINED_CARDS",
-        "visible": true
-      }, {
-        "field": "CARD_SETTLEMENT",
-        "visible": true
-      }, {
-        "field": "BRANCH",
-        "visible": true
-      }, {
-        "field": "LAST_ACTIVITY",
-        "visible": true
-      }, {
-        "field": "LAST_SETTLEMENT",
-        "visible": true
-      }, {
-        "field": "PRINTER_COLOR",
-        "visible": false
       }
-      ],
-      "ALL_ALERTS": [],
-      "ALL_EVENTS": [],
-      "ALL_MOVEMENTS": [],
-      "MOVEMENT": []
+    ],
+    "atmsSupply": [
+      {
+        "field" : "terminalId",
+        "visible" : true
+      }, {
+        "field" : "atmName",
+        "visible" : true
+      }, {
+        "field" : "terminalStatus",
+        "visible" : true
+      }, {
+        "field" : "closedReason",
+        "visible" : true
+      }, {
+        "field" : "dispenserColor",
+        "visible" : false
+      }, {
+        "field" : "cashDepositColor",
+        "visible" : false
+      }, {
+        "field" : "checkDepositColor",
+        "visible" : false
+      }, {
+        "field" : "printerColor",
+        "visible" : false
+      }, {
+        "field" : "receiptColor",
+        "visible" : false
+      }, {
+        "field" : "cardReaderColor",
+        "visible" : false
+      }, {
+        "field" : "eppColor",
+        "visible" : false
+      }, {
+        "field" : "lastMessage",
+        "visible" : false
+      }, {
+        "field" : "treatmentStartDate",
+        "visible" : false
+      }, {
+        "field" : "responsibility",
+        "visible" : false
+      }, {
+        "field" : "terminalGroup",
+        "visible" : false
+      }, {
+        "field" : "area",
+        "visible" : false
+      }, {
+        "field" : "terminalGroup",
+        "visible" : false
+      }, {
+        "field" : "lastDepositSettlement",
+        "visible" : false
+      }, {
+        "field" : "lastCheckSettlement",
+        "visible" : false
+      }, {
+        "field" : "totalDispensed",
+        "visible" : false
+      }, {
+        "field" : "checkTotalBin1",
+        "visible" : false
+      }, {
+        "field" : "checkTotalBin2",
+        "visible" : false
+      }, {
+        "field" : "lastGoodWdrl",
+        "visible" : true
+      }, {
+        "field" : "totalRemaining",
+        "visible" : true
+      }, {
+        "field" : "cardsRetained",
+        "visible" : true
+      }, {
+        "field" : "lastCardSettlement",
+        "visible" : true
+      }, {
+        "field" : "branch",
+        "visible" : true
+      }, {
+        "field" : "lastGoodTransaction",
+        "visible" : true
+      }, {
+        "field": "lastSettlement",
+        "visible": true
+      }
+
+    ]
+  },
+  atmCustomization: {
+    "atmTabs": [
+      {
+        "field": "atmStatus",
+        "visible": true
+      }, {
+        "field": "atmAccessories",
+        "visible": true
+      }, {
+        "field": "retainedCards",
+        "visible": true
+      }, {
+        "field": "atmSettings",
+        "visible": true
+      }, {
+        "field": "alerts",
+        "visible": true
+      }, {
+        "field": "events",
+        "visible": true
+      }, {
+        "field": "transactions",
+        "visible": true
+      }
+    ],
+    "atmSettings": [
+      {
+        "field": "atmGeneralSettings",
+        "visible": true
+      }, {
+        "field": "atmCassetesSettings",
+        "visible": true
+      }, {
+        "field": "disableSettings",
+        "visible": true
+      }, {
+        "field": "emvSettings",
+        "visible": true
+      }, {
+        "field": "feeSerttings",
+        "visible": true
+      }, {
+        "field": "limitationAmountsSettings",
+        "visible": true
+      }],
+    "atmGeneralSettings": {
+      "atmNo": "123456",
+      "terminalShvaId": "0000",
+      "leumiTerminalId": "00000000",
+      "atmName": "TEST",
+      "city": "city",
+      "address": "rehov 1",
+      "engAddress": "eng adress",
+      "zipCode": "1234567",
+      "vendor": "NCR",
+      "ipAddress": "10.0.0.13",
+      "portNumber": 5006,
+      "atmProtocol": "NDC",
+      "rklProtocol": "NONE",
+      "terminalGroup": "01",
+      "belong": 0,
+      "area": "NONE",
+      "bankNo": "20",
+      "branch": "123",
+      "branchName": "branch name",
+      "engBranchName": "eng branch name",
+      "branchPhone": "031234567",
+      "branchFax": "031234567",
+      "localCurrencyTrigger": 5000000,
+      "configId": "1111",
+      "maxBills": 200
+    },
+    "atmCassetesSettings": {
+      "cassetteType": "1",
+      "currencyCode": "376",
+      "denomination": 0
+    },
+    "disableSettings": {
+      "disabledATM": true,
+      "disableCashDeposit": false,
+      "disableCheckDeposit": false,
+      "disableReceipt": false,
+      "disableVoucher": true
+    },
+    "emvSettings": {
+      "emvNotOurs": false,
+      "emvOurs": false,
+      "emvTourist": false
+    },
+    "feeSerttings": {
+      "notOursFee": 0,
+      "oursFee": 0,
+      "touristFee": 0
+    },
+    "limitationAmountsSettings": {
+      "notOursFee": 0,
+      "claimAmount": 0,
+      "localCurrencyTrigger": 5000000,
+      "localCurrencyTrigger2": 1000000
+    },
+    "treatmentDeviceSettings": {
+      "terminalLogicalId": null,
+      "responsibility": "NONE",
+      "commentsTreatment": "",
+      "treatmentStartDate": 0
     }
   },
-  atmSettingsCustomization: {
-    "fieldsCustomization": {
-      "ATM_SETTINGS_TABS": [{
-        "field": "GENERAL_SETTINGS",
-        "visible": true
-      }, {
-        "field": "CASSETES_SETTINGS",
-        "visible": true
-      }, {
-        "field": "NEARBY_BRANCHES_SETTINGS",
-        "visible": true
-      }, {
-        "field": "LIMITATION_AMOUNTS_SETTINGS",
-        "visible": true
-      }, {
-        "field": "LOUK_OUT_SETTINGS",
-        "visible": true
-      }, {
-        "field": "TREATMENT_DEVICE_SETTINGS",
-        "visible": true
-      }],
-      "GENERAL_SETTINGS": [{
-        "field": "atm_no",
-        "visible": true
-      }, {
-        "field": "terminal_shva_id",
-        "visible": false
-      }, {
-        "field": "leumi_terminal_id",
-        "visible": false
-      }, {
-        "field": "atm_name",
-        "visible": true
-      }, {
-        "field": "city",
-        "visible": false
-      }, {
-        "field": "address",
-        "visible": true
-      }, {
-        "field": "zip_code",
-        "visible": true
-      }, {
-        "field": "vendor",
-        "visible": true
-      }, {
-        "field": "ip_address",
-        "visible": true
-      }, {
-        "field": "port_number",
-        "visible": true
-      }, {
-        "field": "atm_protocol",
-        "visible": true
-      }, {
-        "field": "rkl_protocol",
-        "visible": true
-      }, {
-        "field": "terminal_group",
-        "visible": true
-      }, {
-        "field": "belong",
-        "visible": true
-      }, {
-        "field": "area",
-        "visible": true
-      }, {
-        "field": "bank_no",
-        "visible": true
-      }, {
-        "field": "branch",
-        "visible": true
-      }, {
-        "field": "branch_name",
-        "visible": false
-      }, {
-        "field": "eng_branch_name",
-        "visible": false
-      }, {
-        "field": "branch_phone",
-        "visible": false
-      }, {
-        "field": "branch_fax",
-        "visible": false
-      }, {
-        "field": "local_currency_trigger",
-        "visible": false
-      }, {
-        "field": "config_id",
-        "visible": true
-      }, {
-        "field": "MAX_BILLS",
-        "visible": true
-      }],
-      "CASSETES_SETTINGS": [{
-        "field": "CESSETE_TYPE",
-        "visible": true
-      }, {
-        "field": "CURRENCY_CODE",
-        "visible": true
-      }, {
-        "field": "DENOMINATION",
-        "visible": true
-      }],
-      "NEARBY_BRANCHES_SETTINGS": [{
-        "field": "BANK",
-        "visible": true
-      }, {
-        "field": "BRANCH",
-        "visible": true
-      }, {
-        "field": "ADDRESS",
-        "visible": true
-      }],
-      "LIMITATION_AMOUNTS_SETTINGS": [{
-        "field": "NOT_OURS_FEE",
-        "visible": true
-      }, {
-        "field": "CLAIM_AMOUNT",
-        "visible": true
-      }, {
-        "field": "LOCAL_CURRENCY_TRIGGER",
-        "visible": true
-      }, {
-        "field": "LOCAL_CURRENCY_TRIGGER2",
-        "visible": true
-      }],
-      "LOUK_OUT_SETTINGS": [{
-        "field": "DISABLED_ATM",
-        "visible": true
-      }, {
-        "field": "DISABLE_CHECK_DEPOSIT",
-        "visible": true
-      }, {
-        "field": "DISABLE_RECEIPT",
-        "visible": true
-      }],
-      "TREATMENT_DEVICE_SETTINGS": [{
-        "field": "RESPONSIBILITY",
-        "visible": true
-      }, {
-        "field": "COMMENTS_TREATMENT",
-        "visible": true
-      }, {
-        "field": "TREATMENT_START_DATE",
-        "visible": true
-      }]
-    }
-  },
+
   dashboard: {
     "widgets": [
       {
@@ -301,57 +303,65 @@ var customerGeneral = {
   businessDay: 1493899326040,
   customer: "BEINLEUMI"
 }
-var mainConnection = [{
-  "connectionName": "HSM",
-  "statusView": "DISABLE"
-}, {
-  "connectionName": "BANK",
-  "statusView": "GOOD"
-}];
+var mainConnection = [
+  {
+    "connectionName": "HSM",
+    "statusView": "DISABLE"
+  }, {
+    "connectionName": "BANK",
+    "statusView": "GOOD"
+  }
+];
 
-var device_status = [{
-  "statusView": "GOOD",
-  "precents": 45
-}, {
-  "statusView": "FATAL",
-  "precents": 27
-}, {
-  "statusView": "ATTENTION",
-  "precents": 27
-}, {
-  "statusView": "DISABLE",
-  "precents": 27
-}];
+var device_status = [
+  {
+    "statusView": "GOOD",
+    "precents": 45
+  }, {
+    "statusView": "FATAL",
+    "precents": 27
+  }, {
+    "statusView": "ATTENTION",
+    "precents": 27
+  }, {
+    "statusView": "DISABLE",
+    "precents": 27
+  }
+];
 
 var onlineStatus = {
   "avg": 16.0,
   "currentOnline": 4.9
 };
 
-var issuerActionStatus = [{
-  "bank": "LEUMI",
-  "noError": 18050,
-  "fatal": 450
-}, {
-  "bank": "BOJ",
-  "noError": 16000,
-  "fatal": 620
-}, {
-  "bank": "YAHAV",
-  "noError": 13000,
-  "fatal": 870
-}];
+var issuerActionStatus = [
+  {
+    "bank": "LEUMI",
+    "noError": 18050,
+    "fatal": 450
+  }, {
+    "bank": "BOJ",
+    "noError": 16000,
+    "fatal": 620
+  }, {
+    "bank": "YAHAV",
+    "noError": 13000,
+    "fatal": 870
+  }
+];
 
-var actionStatus = [{
-  "statusName": "IncorrectPINCode",
-  "precents": 32
-}, {
-  "statusName": "Rejection",
-  "precents": 13
-}, {
-  "statusName": "SuccessfulOperations",
-  "precents": 45
-}, {
-  "statusName": "Fault",
-  "precents": 10
-}];
+var actionStatus = [
+  {
+    "statusName": "IncorrectPINCode",
+    "precents": 32
+  }, {
+    "statusName": "Rejection",
+    "precents": 13
+  }, {
+    "statusName": "SuccessfulOperations",
+    "precents": 45
+  }, {
+    "statusName": "Fault",
+    "precents": 10
+  }
+];

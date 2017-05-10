@@ -58,16 +58,18 @@ import {DataTableModule} from "primeng/components/datatable/datatable";
 import {NvD3Module} from "angular2-nvd3";
 import {Dashboard} from "../store/middlewares/dashboard-middleware";
 import {environment} from "../environments/environment";
-import { ConnectionSmallComponent } from './core/dashboard/closed-bar-widgets/connection-small/connection-small.component';
-import { ActionsSmallComponent } from './core/dashboard/closed-bar-widgets/actions-small/actions-small.component';
-import { OnlineSmallComponent } from './core/dashboard/closed-bar-widgets/online-small/online-small.component';
-import { WrapperComponent } from './core/dashboard/closed-bar-widgets/wrapper/wrapper.component';
-import { AtmsInventoryFilterComponent } from './core/atms/inventory/atms-inventory-filter/atms-inventory-filter.component';
+import {ConnectionSmallComponent} from './core/dashboard/closed-bar-widgets/connection-small/connection-small.component';
+import {ActionsSmallComponent} from './core/dashboard/closed-bar-widgets/actions-small/actions-small.component';
+import {OnlineSmallComponent} from './core/dashboard/closed-bar-widgets/online-small/online-small.component';
+import {WrapperComponent} from './core/dashboard/closed-bar-widgets/wrapper/wrapper.component';
+import {AtmsInventoryFilterComponent} from './core/atms/inventory/atms-inventory-filter/atms-inventory-filter.component';
 import {AgGridModule} from "ag-grid-angular";
 import {SettingsResolverService} from "./shared/services/settings-resolver.service";
 import {AgStatusComponent} from "./shared/components/ag-status/ag-status.component";
-import { AtmsNotificationsFiltersComponent } from './core/atms/atms-notifications/components/atms-notifications-filters/atms-notifications-filters.component';
+import {AtmsNotificationsFiltersComponent} from './core/atms/atms-notifications/components/atms-notifications-filters/atms-notifications-filters.component';
 import {CalendarModule} from 'primeng/primeng';
+import {AgAmountComponent} from "./shared/components/ag-amount/ag-amount.component";
+import {AgDateComponent} from "./shared/components/ag-date/ag-date.component";
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -151,7 +153,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     ChartModule,
     ReactiveFormsModule,
     AgGridModule.withComponents([
-      AgStatusComponent
+      AgStatusComponent, AgDateComponent, AgAmountComponent
     ])
   ],
   providers: [
@@ -186,7 +188,7 @@ export class AppModule {
       updatedEnhancers = [...enhancers, devTools.enhancer()];
     } else
       updatedEnhancers = [...enhancers];
-    const middlewares = [customer.Middleware,dashboard.Middleware];
+    const middlewares = [customer.Middleware, dashboard.Middleware];
     this.ngRedux.configureStore(rootReducer, {}, middlewares, updatedEnhancers);
 
   }

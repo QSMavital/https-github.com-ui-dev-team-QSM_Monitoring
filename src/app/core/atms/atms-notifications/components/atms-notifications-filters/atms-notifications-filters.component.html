@@ -1,0 +1,18 @@
+<form [formGroup]="form">
+  <div class="in-block ui-space-r-regular middle">
+    <ui-label translate="atms.filters.fromDate"></ui-label>
+    <p-calendar [showIcon]="true"
+                [showTime]="true"
+    ></p-calendar>
+
+  </div>
+  <div class="in-block ui-space-l-medium ui-space-r-regular middle">
+    <ui-label translate="atms.filters.toDate"></ui-label>
+    <p-calendar [showIcon]="true"
+                [showTime]="true"
+    ></p-calendar>
+  </div>
+  <span class="ui-space-l-medium in-block">
+    <button class="blue-btn" translate="app.go"></button>
+  </span>
+</form>

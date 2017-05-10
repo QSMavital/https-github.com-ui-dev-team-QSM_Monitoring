@@ -44,18 +44,24 @@
       "fromDate":"From Date:",
       "toDate":"To Date:"
     },
-    "inventory":{
-      "terminalId":"ATM #",
-      "atmName":"ATM Name",
-      "terminalStatus":"Status",
-      "closeReason":"Close Reason",
-      "lastWithdrawal":"Last Withdrawal",
-      "totalRemaining":"Remaining Cash",
-      "retainedCards":"Retained Cards",
-      "cardSettlement":"Card Settlement",
-      "lastActivity":"Last Activity",
-      "lastSettlement":"Last Settlement"
-    }
+    "terminalId":"ATM #",
+    "atmName":"ATM Name",
+    "terminalStatus":"Status",
+    "closeReason":"Close Reason",
+    "lastWithdrawal":"Last Withdrawal",
+    "totalRemaining":"Remaining Cash",
+    "retainedCards":"Retained Cards",
+    "cardSettlement":"Card Settlement",
+    "lastActivity":"Last Activity",
+    "lastSettlement":"Last Settlement",
+    "branch":"Branch",
+    "lastCardSettlement":"Last Card Settlement",
+    "cashDeposit":"Cash",
+    "checkDeposit":"Check",
+    "cardReader":"Card Reader",
+    "printer":"Printer",
+    "epp":"Keyboard",
+    "belong":"Belong"
   },
   "atm": {
     "newAtm":"New Atm",

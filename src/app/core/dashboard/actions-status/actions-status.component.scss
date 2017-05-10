@@ -1,5 +1,14 @@
 :host {
   .wrapper {
-    //padding: 0 15px;
+    .chart-wrapper {
+      height: 275px;
+      top: calc(50% - 160px);
+      app-nvd3 {
+        position: absolute;
+        top: -45px;
+        left: 0;
+        width: 100%;
+      }
+    }
   }
 }

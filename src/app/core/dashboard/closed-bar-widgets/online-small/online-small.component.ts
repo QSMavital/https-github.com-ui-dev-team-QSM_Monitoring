@@ -12,21 +12,22 @@ import {DashboardActions} from "../../../../../store/actions/dashboard-actions";
 export class OnlineSmallComponent implements OnInit, OnDestroy {
 
   private unsubscriber: any;
+  private data: any = {};
+
   @select(['dashboard', 'onlineStatus']) $status;
-  private data:any = {};
-  private statusView: any;
-  private actionStatus: any;
+
   constructor(private store: NgRedux<IStore>) {
-    // this.statusView = StatusView;
-    // this.actionStatus = ActionsStatus;
   }
 
-
-  ngOnInit() {
+  subscribe() {
     this.unsubscriber = this.$status.subscribe(state => {
       if (!isNullOrUndefined(state))
         this.data = state;
     });
+  }
+
+  ngOnInit() {
+    this.subscribe();
     this.store.dispatch({type: DashboardActions.WIDGET_GET_ONLINE_STATUS});
   }
 

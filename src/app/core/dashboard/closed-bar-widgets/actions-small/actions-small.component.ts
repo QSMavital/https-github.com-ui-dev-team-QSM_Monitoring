@@ -13,18 +13,18 @@ import {DashboardActions} from "../../../../../store/actions/dashboard-actions";
 export class ActionsSmallComponent implements OnInit, OnDestroy {
 
   private unsubscriber: any;
-  @select(['dashboard', 'actionsStatus']) $status;
-  private list: any[] = [];
+  private list: any[];
   private statusView: any;
   private actionStatus: any;
+
+  @select(['dashboard', 'actionsStatus']) $status;
 
   constructor(private store: NgRedux<IStore>) {
     this.statusView = StatusView;
     this.actionStatus = ActionsStatus;
   }
 
-
-  ngOnInit() {
+  subscribe() {
     this.unsubscriber = this.$status.subscribe(state => {
       if (!isNullOrUndefined(state)) {
         if (isArray(state)) {
@@ -36,11 +36,13 @@ export class ActionsSmallComponent implements OnInit, OnDestroy {
           })
         }
       }
-      // console.log(this.list);
     });
-    this.store.dispatch({type: DashboardActions.WIDGET_GET_ACTIONS_STATUS});
   }
 
+  ngOnInit() {
+    this.subscribe();
+    this.store.dispatch({type: DashboardActions.WIDGET_GET_ACTIONS_STATUS});
+  }
 
   ngOnDestroy() {
     if (this.unsubscriber)

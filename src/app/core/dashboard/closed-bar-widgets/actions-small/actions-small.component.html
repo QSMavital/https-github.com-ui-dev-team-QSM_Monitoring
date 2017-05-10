@@ -1,7 +1,7 @@
 <div class="wrapper stretch-height">
   <div fxLayout="column" fxLayoutAlign="center center" class="stretch-height">
-    <div fxFlex="60" class="stretch-width" fxLayout="column" fxLayoutAlign="center center" style="padding-bottom:20px"><div class="right-panel-closed-title fs12 bold">{{'db.actions_status' | translate}}</div></div>
-    <div class="relative stretch-width" style="height:80px;margin-bottom:10px" *ngIf="true">
+    <div fxFlex="60" class="stretch-width" fxLayout="column" fxLayoutAlign="center center"><div class="right-panel-closed-title fs12 bold">{{'db.actions_status' | translate}}</div></div>
+    <div class="relative stretch-width colors" *ngIf="true">
       <div *ngFor="let item of list" [ngStyle]="{background:statusView[actionStatus[item.statusName]].color,height:item.precents+'%'}"></div>
     </div>
   </div>

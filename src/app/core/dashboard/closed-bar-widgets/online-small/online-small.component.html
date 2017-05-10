@@ -1,15 +1,15 @@
 <div class="wrapper stretch-height">
   <div fxLayout="column" fxLayoutAlign="center center" class="stretch-height">
-    <div class="stretch-width" fxFlex="60" fxLayout="column" fxLayoutAlign="center center" style="padding-bottom:20px">
+    <div class="stretch-width" fxFlex="60" fxLayout="column" fxLayoutAlign="center center">
       <div class="right-panel-closed-title fs12 bold">{{'db.online_status' | translate}}</div>
     </div>
-    <div class="relative stretch-width text-center ui-space-tb-small green" style="height:80px"
+    <div class="relative stretch-width text-center ui-space-tb-small green tag"
          [ngClass]="{'red':(data.currentOnline < data.avg*0.2) ||(data.currentOnline > (data.avg*2-(data.avg*0.2)))}"
-         *ngIf="true">
+         *ngIf="data.currentOnline">
       <i class="ui-icons ui-icons-x" *ngIf="(data.currentOnline < data.avg*0.2) || (data.currentOnline > (data.avg*2-(data.avg*0.2))); else iconV"></i>
       <ng-template #iconV><i class="ui-icons ui-icons-v"></i></ng-template>
-      <div fxLayout fxLayoutAlign="center center" style="height:50px">
-        <div class="label fs15">{{data.currentOnline}}</div>
+      <div fxLayout fxLayoutAlign="center center" class="number">
+        <div class="label fs15 bold">{{data.currentOnline}}</div>
       </div>
     </div>
   </div>

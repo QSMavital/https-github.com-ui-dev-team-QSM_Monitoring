@@ -13,23 +13,28 @@ import {StatusView} from "../../../../config/statusView";
 export class ConnectionSmallComponent implements OnInit, OnDestroy {
 
   private unsubscriber: any;
+  private list: any[] = [];
+  private statusView: any;
+
   @select(['dashboard', 'connectionStatus']) $status;
-  private list:any[] = [];
-  private statusView:any;
 
   constructor(private store: NgRedux<IStore>) {
     this.statusView = StatusView;
   }
 
   private get shortList() {
-    return this.list.slice(0,3);
+    return this.list.slice(0, 3);
   }
 
-  ngOnInit() {
+  subscribe() {
     this.unsubscriber = this.$status.subscribe(state => {
       if (!isNullOrUndefined(state))
         this.list = state;
     });
+  }
+
+  ngOnInit() {
+    this.subscribe();
     this.store.dispatch({type: DashboardActions.WIDGET_GET_CONNECTION_STATUS});
   }
 

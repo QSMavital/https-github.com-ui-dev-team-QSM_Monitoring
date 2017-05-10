@@ -1,6 +1,5 @@
 <div class="wrapper no-select" [ngClass]="size" fxLayout="row" fxLayoutAlign="start center" *ngIf="(status && statusView && statusView[status]) || color">
   <span class="circle"  *ngIf="(status && statusView && statusView[status])" [ngClass]="{'no-margin':!showLabel}"><span class="inner" [ngStyle]="{background:statusView[status].color}"></span></span>
-  <span class="circle"  *ngIf="color" [ngClass]="{'no-margin':!showLabel}"><span class="inner" [ngStyle]="{background:color}"></span></span>
-  <span class="label fs10" [ngClass]="{limit:limit}" *ngIf="showLabel"><ng-content></ng-content></span>
+  <span class="label fs10 limit" *ngIf="showLabel && !showStatus"><ng-content></ng-content></span>
   <span *ngIf="showStatus">{{status | translate}}</span>
 </div>

@@ -1,11 +1,10 @@
 :host {
   .wrapper {
-    //padding: 0 15px;
     .inside-portlet-wrapper {
-      padding: 0 15px;
-      width:100% !important;
       margin:auto;
-      padding-top:15px;
+      p-chart {
+        height:300px;
+      }
     }
   }
 }

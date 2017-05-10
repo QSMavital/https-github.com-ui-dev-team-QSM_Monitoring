@@ -1,6 +1,9 @@
 <div class="wrapper stretch-height">
   <div fxLayout="column" fxLayoutAlign="center center" class="stretch-height">
-    <div fxFlex="60" fxLayout="column" fxLayoutAlign="center center" style="padding-bottom:20px;width:100%"><div class="right-panel-closed-title fs12 bold">{{'db.connection_status' | translate}}</div></div>
-    <ui-status-indicator [status]="item.statusView" [showLabel]="false" *ngFor="let item of shortList"></ui-status-indicator>
+    <div class="stretch-width" fxFlex="60" fxLayout="column" fxLayoutAlign="center center">
+      <div class="right-panel-closed-title fs12 bold">{{'db.connection_status' | translate}}</div>
+    </div>
+    <ui-status-indicator [status]="item.statusView" [showLabel]="false"
+                         *ngFor="let item of shortList"></ui-status-indicator>
   </div>
 </div>

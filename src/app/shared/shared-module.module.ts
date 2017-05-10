@@ -21,6 +21,7 @@ import { StatusIndicatorComponent } from './components/status-indicator/status-i
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { LabelComponent } from './components/label/label.component';
 import { FiltersBarComponent } from './components/filters-bar/filters-bar.component';
+import { LegendComponent } from './components/legend/legend.component';
 
 @NgModule({
   imports: [
@@ -32,8 +33,8 @@ import { FiltersBarComponent } from './components/filters-bar/filters-bar.compon
     PrimengSharedModule,
     FlexLayoutModule
   ],
-  declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent, StatusIndicatorComponent, LabelComponent, FiltersBarComponent],
-  exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent,StatusIndicatorComponent,LabelComponent,FiltersBarComponent],
+  declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent, StatusIndicatorComponent, LabelComponent, FiltersBarComponent, LegendComponent],
+  exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent,StatusIndicatorComponent,LabelComponent,FiltersBarComponent,LegendComponent],
   providers: [CanActivateRoute]
 })
 

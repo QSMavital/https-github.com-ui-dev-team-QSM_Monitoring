@@ -1,4 +1,7 @@
 //colors
+
+@import "./src/styles/helpers/brand";
+
 $color_log_cabin_approx: #222;
 $gray: #808080;
 $color_boulder_40_approx: rgba(120,120,120,0.4);
@@ -26,6 +29,12 @@ $font_1: Helvetica;
 $font_2: Arial;
 $font_3: sans-serif;
 
+.my-cell {
+  color: $raven !important;
+  font-size:0.9285714rem !important;
+  font-family: opensans-regular !important;
+}
+
 .ag-fresh {
   line-height: 1.4;
   font-family: $font_0, $font_1, $font_2, $font_3;
@@ -37,6 +46,9 @@ $font_3: sans-serif;
   }
   .ag-root {
     border: 0;
+  }
+  .ag-cell {
+    @extend .my-cell;
   }
   .ag-cell-not-inline-editing {
     padding: 2px;
@@ -50,17 +62,23 @@ $font_3: sans-serif;
   }
   .ag-ltr {
     .ag-cell-no-focus {
-      border-right: 1px dotted $gray;
+      border-right: 1px dotted transparent;
       border-left: 1px solid transparent;
     }
     .ag-cell-first-right-pinned {
-      border-left: 1px solid $gray;
+      border-left: 1px solid transparent;
     }
     .ag-cell-last-left-pinned {
-      border-right: 1px solid $gray;
+      border-right: 1px solid transparent;
     }
     .ag-header-cell {
-      border-right: 1px solid $gray;
+      font-family: opensans-regular !important;
+      font-size: 0.785714rem !important;
+      color:$kimb !important;
+      div {
+        max-height: 38px;
+        line-height: 33px;
+      }
     }
     .ag-header-group-cell {
       border-right: 1px solid $gray;
@@ -96,16 +114,19 @@ $font_3: sans-serif;
   .ag-rtl {
     .ag-cell-no-focus {
       border-right: 1px solid transparent;
-      border-left: 1px dotted $gray;
+      border-left: 1px dotted transparent;
     }
     .ag-cell-first-right-pinned {
-      border-left: 1px solid $gray;
+      border-left: 1px solid transparent;
     }
     .ag-cell-last-left-pinned {
-      border-right: 1px solid $gray;
+      border-right: 1px solid transparent;
     }
     .ag-header-cell {
-      border-left: 1px solid $gray;
+      div {
+        max-height: 38px;
+        line-height: 33px;
+      }
     }
     .ag-header-group-cell {
       border-left: 1px solid $gray;
@@ -194,9 +215,13 @@ $font_3: sans-serif;
   }
   .ag-header {
     color: $black;
-    background: $color_quill_gray_approx;
-    border-bottom: 1px solid $gray;
+    background: $ath-gray;
     font-weight: normal;
+    height:38px !important;
+    line-height:38px;
+    .ag-header-row {
+      height:38px !important;
+    }
   }
   .ag-header-icon {
     color: $black;
@@ -239,12 +264,13 @@ $font_3: sans-serif;
   }
   .ag-body {
     background-color: $color_black_haze_approx;
+    top:38px !important;
   }
   .ag-row-odd {
     background-color: $color_black_haze_approx;
   }
   .ag-row-even {
-    background-color: $white;
+    background-color: white;
   }
   .ag-row-selected {
     background-color: $powder_blue;
@@ -285,13 +311,13 @@ $font_3: sans-serif;
     font-style: italic;
   }
   .ag-menu {
-    border: 1px solid $gray;
+    border: 1px solid $kimb;
     background-color: $color_black_haze_approx;
     cursor: default;
     font-family: $font_0, $font_1, $font_2, $font_3;
     font-size: 14px;
     .ag-tab-header {
-      background-color: $color_mercury_approx;
+      background-color: $ath-gray;
     }
     .ag-tab {
       padding: 6px 8px;
@@ -475,6 +501,7 @@ $font_3: sans-serif;
     background-color: $black_40;
   }
   .ag-no-scrolls .ag-header-container {
+    //background: linear-gradient($white, $color_quill_gray_approx);
     background: linear-gradient($white, $color_quill_gray_approx);
     border-bottom: 1px solid $gray;
   }

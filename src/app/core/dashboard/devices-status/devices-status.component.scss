@@ -2,33 +2,26 @@
 :host {
   .wrapper {
     height: 215px;
-    position: relative;
-    padding-top:10px;
     .label {
-      text-transform: uppercase;
-      color:$pale-sky;
+      color: $pale-sky;
     }
     .gauge-wrapper {
       height: 150px;
-      position: relative;
       overflow: hidden;
       .icon-wrapper {
-        position: absolute;
-        width: 100%;
         top: calc(50% - 14.5px);
         .icon {
-          height:27px !important;
+          height: 27px !important;
         }
       }
       .gauge {
-        position: absolute;
-        top:50%;
-        left:50%;
-        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
     .value {
-      color:$pale-sky;
+      color: $pale-sky;
       .perc {
         opacity: .6;
       }

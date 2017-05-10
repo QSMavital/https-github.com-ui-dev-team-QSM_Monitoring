@@ -16,14 +16,13 @@
       height: 40px;
     }
     .body {
-      height: calc(100% - 30px);
+      height: calc(100% - 40px);
       &.short {
         height: calc(100% - 70px);
       }
     }
     .footer {
       border-top: 1px solid $cats-white;
-      //padding: 10px 0;
       position: absolute;
       bottom: 0;
       left: 0;

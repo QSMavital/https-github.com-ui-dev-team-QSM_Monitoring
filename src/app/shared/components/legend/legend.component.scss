@@ -1,0 +1,23 @@
+@import "./src/styles/helpers/brand";
+:host {
+.wrapper {
+  height:30px;
+  .item {
+    margin-right:20px;
+    height:30px;
+    &:last-child {
+      margin-right: 0;
+    }
+    .circle {
+      height: 7px;
+      width: 7px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .label {
+      color:$cadet-blue;
+      text-transform: uppercase;
+    }
+  }
+}
+}

@@ -1,8 +1,7 @@
-import {Component, Input, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {select, NgRedux} from "@angular-redux/store";
 import {Observable} from "rxjs";
 import {IStore} from "../../../../store/index";
-import {GeneralCustomerActions} from "../../../../store/actions/generalCustomer-actions";
 import {DashboardActions} from "../../../../store/actions/dashboard-actions";
 import {isNullOrUndefined} from "util";
 
@@ -11,62 +10,29 @@ import {isNullOrUndefined} from "util";
   templateUrl: './connection-status.component.html',
   styleUrls: ['./connection-status.component.scss']
 })
-export class ConnectionStatusComponent implements OnInit,OnDestroy {
+export class ConnectionStatusComponent implements OnInit, OnDestroy {
 
-  private _connectionStatus;
-  @select(['dashboard','connectionStatus']) connectionStatus$: Observable<any>;
+  private unsubscriber;
+  private data: any[];
+  @select(['dashboard', 'connectionStatus']) $connectionStatus: Observable<any>;
 
-  private data:any[] = [
-    {
-      "label": "HSM",
-      "status": "ok"
-    },
-    {
-      "label": "HSM",
-      "status": "danger"
-    },
-    {
-      "label": "bank connection",
-      "status": "warning"
-    },
-    {
-      "label": "HSM",
-      "status": "warning"
-    },
-    {
-      "label": "bank connection",
-      "status": "ok"
-    },
-    {
-      "label": "bank connection",
-      "status": "ok"
-    },
-    {
-      "label": "bank connection",
-      "status": "ok"
-    }
-  ];
+  constructor(private store: NgRedux<IStore>) { }
 
-  constructor(private ngRedux: NgRedux<IStore>) {
-    this.ngRedux.dispatch({type:DashboardActions.WIDGET_GET_CONNECTION_STATUS});
-
+  subscribe() {
+    this.unsubscriber = this.$connectionStatus.subscribe((state) => {
+      if (!isNullOrUndefined(state)) {
+        this.data = state;
+      }
+    })
   }
 
   ngOnInit() {
     this.subscribe();
+    this.store.dispatch({type: DashboardActions.WIDGET_GET_CONNECTION_STATUS});
   }
 
   ngOnDestroy() {
-    this._connectionStatus.unsubscribe();
-  }
-
-  subscribe(){
-    this._connectionStatus = this.connectionStatus$.subscribe((state)=>{
-      if(!isNullOrUndefined(state)){
-        this.data = state;
-      }
-    })
-
+    this.unsubscriber.unsubscribe();
   }
 
 }

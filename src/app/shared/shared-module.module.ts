@@ -23,6 +23,7 @@ import { LabelComponent } from './components/label/label.component';
 import { FiltersBarComponent } from './components/filters-bar/filters-bar.component';
 import { AgStatusComponent } from './components/ag-status/ag-status.component';
 import {AgGridModule} from "ag-grid-angular";
+import { LegendComponent } from './components/legend/legend.component';
 
 @NgModule({
   imports: [
@@ -34,8 +35,8 @@ import {AgGridModule} from "ag-grid-angular";
     PrimengSharedModule,
     FlexLayoutModule
   ],
-  declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent, StatusIndicatorComponent, LabelComponent, FiltersBarComponent, AgStatusComponent],
-  exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent,StatusIndicatorComponent,LabelComponent,FiltersBarComponent,AgStatusComponent],
+  declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent, StatusIndicatorComponent, LabelComponent, FiltersBarComponent, AgStatusComponent, LegendComponent],
+  exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent,StatusIndicatorComponent,LabelComponent,FiltersBarComponent,AgStatusComponent, LegendComponent],
   providers: [CanActivateRoute,AppActivator]
 })
 

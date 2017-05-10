@@ -1,0 +1,8 @@
+<div class="wrapper stretch-width">
+  <div fxLayout fxLayoutAlign="center center" class="stretch-height">
+    <div *ngFor="let item of data" fxLayout fxLayoutAlign="center center" class="item">
+      <div class="circle" [ngStyle]="{background:item.color}"></div>
+      <div class="label fs10">{{item.label | translate}}</div>
+    </div>
+  </div>
+</div>

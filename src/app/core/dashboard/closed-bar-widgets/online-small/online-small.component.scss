@@ -1,20 +1,26 @@
 @import "./src/styles/helpers/brand";
+
 :host {
-  height:100%;
+  height: 100%;
   .wrapper {
-    .green {
-      background: $pastel-green;
+    .tag {
+      height: 80px;
+      color: $apple;
+      .number {
+        height: 50px;
+        .label {
+          transform: rotate(90deg);
+        }
+      }
+      &.green {
+        background: $pastel-green;
+      }
+      &.red {
+        background: $coral-red !important;
+      }
     }
-    .red {
-      background: $coral-red !important;
-    }
-    i {
-      color:$apple;
-    }
-    .label {
-      transform: rotate(90deg);
-      color:$apple;
-      font-family: opensans-bold;
-    }
+
+
+
   }
 }

@@ -1,14 +1,12 @@
-<div class="stretch-height">
-  <ui-portlet class="stretch-height" [header]="'db.devices_status' | translate">
-    <div class="wrapper" fxLayout="row" fxLayoutAlign="center center">
-      <div class="stretch-height text-center" fxFlex="25%" *ngFor="let item of data">
-        <div class="label fs10">{{item.title | translate}}</div>
-        <div class="gauge-wrapper" *ngIf="item.value">
-          <ui-gauge class="gauge" [width]="'200px'" [config]="item" [value]="item.value"></ui-gauge>
-          <div class="icon-wrapper"><i class="icon" [ngClass]="item.icon"></i></div>
-        </div>
-        <div class="value fs28">{{item.value}}<span class="perc fs18">&nbsp;%</span></div>
+<ui-portlet [header]="'db.devices_status' | translate">
+  <div class="wrapper relative ui-space-t-small" fxLayout="row" fxLayoutAlign="center center" *ngIf="data">
+    <div class="stretch-height text-center" fxFlex="25%" *ngFor="let item of data">
+      <div class="label fs10 uppercase">{{item.title | translate}}</div>
+      <div class="gauge-wrapper relative" *ngIf="item.value">
+        <ui-gauge class="gauge absolute" [width]="'200px'" [config]="item" [value]="item.value"></ui-gauge>
+        <div class="icon-wrapper stretch-width absolute"><i class="icon" [ngClass]="item.icon"></i></div>
       </div>
+      <div class="value fs28">{{item.value}}<span class="perc fs18">&nbsp;%</span></div>
     </div>
-  </ui-portlet>
-</div>
+  </div>
+</ui-portlet>

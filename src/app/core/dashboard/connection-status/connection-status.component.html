@@ -1,18 +1,12 @@
 <div class="stretch-height">
   <ui-portlet class="stretch-height" [header]="'db.connection_status' | translate">
-    <div class="wrapper" fxLayout="column" fxLayoutWrap="true" style="padding-top: 10px;">
-      <div *ngFor="let item of data" style="margin-bottom:15px">
-        <ui-status-indicator
-          [status]="item.statusView" limit="true" [title]="item?.connectionName?.toUpperCase()">{{item.connectionName}}</ui-status-indicator>
+    <div class="wrapper ui-space-t-small ui-space-lr-regular" fxLayout="column" fxLayoutWrap="true" *ngIf="data">
+      <div *ngFor="let item of data" class="ui-space-b-regular">
+        <ui-status-indicator [status]="item.statusView" [title]="item?.connectionName?.toUpperCase()">
+          {{item.connectionName}}
+        </ui-status-indicator>
       </div>
     </div>
-    <!--<div footer>-->
-      <!--<div fxLayout fxLayoutAlign="center center">-->
-        <!--<ui-status-indicator size="small" style="margin-right:20px !important;">{{'db.in_order' | translate}}</ui-status-indicator>-->
-        <!--<ui-status-indicator size="small" status="warning" style="margin-right:20px;">{{'db.attention' | translate}}</ui-status-indicator>-->
-        <!--<ui-status-indicator size="small" status="danger">{{'db.broken' | translate}}</ui-status-indicator>-->
-      <!--</div>-->
-    <!--</div>-->
   </ui-portlet>
 </div>
 

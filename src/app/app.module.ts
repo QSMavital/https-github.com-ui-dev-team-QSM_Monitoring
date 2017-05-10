@@ -66,6 +66,8 @@ import { AtmsInventoryFilterComponent } from './core/atms/inventory/atms-invento
 import {AgGridModule} from "ag-grid-angular";
 import {SettingsResolverService} from "./shared/services/settings-resolver.service";
 import {AgStatusComponent} from "./shared/components/ag-status/ag-status.component";
+import { AtmsNotificationsFiltersComponent } from './core/atms/atms-notifications/components/atms-notifications-filters/atms-notifications-filters.component';
+import {CalendarModule} from 'primeng/primeng';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -121,7 +123,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     ActionsSmallComponent,
     OnlineSmallComponent,
     WrapperComponent,
-    AtmsInventoryFilterComponent
+    AtmsInventoryFilterComponent,
+    AtmsNotificationsFiltersComponent
   ],
   imports: [
     DataTableModule,
@@ -131,6 +134,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     FormsModule,
     NvD3Module,
     HttpModule,
+    CalendarModule,
     FlexLayoutModule,
     RouterModule.forRoot(appRoutes),
     NgReduxModule,

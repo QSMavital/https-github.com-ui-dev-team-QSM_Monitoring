@@ -40,7 +40,9 @@
     "filters":{
       "chooseAtm":"Choose ATM:",
       "group":"Group:",
-      "region":"Region:"
+      "region":"Region:",
+      "fromDate":"From Date:",
+      "toDate":"To Date:"
     },
     "inventory":{
       "terminalId":"ATM #",

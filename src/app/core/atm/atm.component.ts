@@ -31,7 +31,7 @@ export class AtmComponent implements OnInit,OnDestroy {
     this.atmId = this.route.params['value']['id'];
 
   }
-
+ץ
   ngOnDestroy(){
     this._userSettingsRef.unsubscribe();
   }
@@ -40,7 +40,8 @@ export class AtmComponent implements OnInit,OnDestroy {
     this.userSettings = this.ngRedux.getState().userSettings;
     if (!isNullOrUndefined(this.userSettings)) {
       this.tabs = [];
-      this.userSettings.atm.tabs.forEach((tabView) => {
+      this.userSettings.atmSettingsCustomization.fieldsCustomization.ATM_SETTINGS_TABS.forEach((tabView) => {
+        debugger;
         if (tabView.visible) {
           this.tabs.push(Atm.Tabs[tabView.field]);
         }

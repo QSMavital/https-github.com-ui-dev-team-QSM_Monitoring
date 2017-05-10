@@ -65,6 +65,9 @@ var settingsUser = {
           "field": "INVENTORY_OF_ATMS",
           "visible": true
         }, {
+          "field": "ALL_STATUSES",
+          "visible": true
+        }, {
           "field": "ALL_ALERTS",
           "visible": true
         }, {
@@ -124,7 +127,6 @@ var settingsUser = {
     }
   },
   atmSettingsCustomization: {
-    "isAtmsSettingsVisible": true,
     "fieldsCustomization": {
       "ATM_SETTINGS_TABS": [{
         "field": "GENERAL_SETTINGS",

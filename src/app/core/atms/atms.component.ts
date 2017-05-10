@@ -48,7 +48,7 @@ export class AtmsComponent implements OnInit,OnDestroy {
     this.userSettings = this.ngRedux.getState().userSettings;
     if (!isNullOrUndefined(this.userSettings)) {
       this.tabs = [];
-      this.userSettings.atms.tabs.forEach((tabView) => {
+      this.userSettings.atmsCustomization.fieldsCustomization.ATMS_TABS.forEach((tabView) => {
         if (!isNullOrUndefined(Atms.Tabs[tabView.field])&&tabView.visible) {
           this.tabs.push(Atms.Tabs[tabView.field]);
         }

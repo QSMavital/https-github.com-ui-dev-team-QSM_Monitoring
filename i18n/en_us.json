@@ -1,5 +1,4 @@
 {
-  "OFF_LINE":"Disconnected",
   "app":{
     "error":"Error",
     "go":"Go"
@@ -96,7 +95,13 @@
     "IncorrectPINCode":"Incorrect PIN code",
     "Rejection":"Rejection",
     "SuccessfulOperations":"Successful Operations",
-    "Fault":"Fault"
+    "Fault":"Fault",
+    "OFF_LINE":"Disconnected",
+    "DISABLE":"Disable",
+    "GOOD":"Good",
+    "ATTENTION":"Attention",
+    "FATAL":"Fatal",
+    "OPERATOR":"Operator"
   }
 }
 

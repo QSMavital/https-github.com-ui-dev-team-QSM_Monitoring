@@ -6,11 +6,12 @@
   font-size: 18px;
   input[type=text] {
     width: 100%;
+    border-radius: 15px !important;
   }
   &:before {
     content: "\F002";
     position: absolute;
-    top: calc(50% - 9px;);
+    top: calc(50% - 9px);
     right: 10px;
     color: $botti;
     display: inline-block;
@@ -22,7 +23,7 @@
 }
 
 input[type=text] {
-  border-radius: 15px;
+  border-radius: 2px;
   padding: 0 10px;
   outline: none;
   box-shadow: none;

@@ -1,0 +1,21 @@
+@import "./src/styles/helpers/brand";
+:host {
+  .form-body {
+    height:calc(100% - 40px);
+    .input-wrapper {
+      height:42px;
+      ui-label {
+        width:125px;
+        margin-left:15px;
+      }
+    }
+  }
+  .footer {
+    border-top: 1px solid $selago;
+    height:40px;
+    line-height:40px;
+    button {
+      margin-right:15px;
+    }
+  }
+}

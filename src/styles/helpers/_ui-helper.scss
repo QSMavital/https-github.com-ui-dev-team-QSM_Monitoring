@@ -77,65 +77,42 @@ $ui-spacing-large: 30px;
 @include ui-space($suffix: 'large', $prefix: $ui-space-prefix, $size: $ui-spacing-large);
 
 body {
-  font-size: 14px !important
+  font-size: 14px !important;
 }
 
-;
 .fs10 {
-  font-size: 0.7142857rem !important
+  font-size: 0.7142857rem !important;
 }
-
-;
 .fs11 {
-  font-size: 0.785714rem !important
+  font-size: 0.785714rem !important;
 }
-
-;
 .fs12 {
-  font-size: 0.85714rem !important
+  font-size: 0.85714rem !important;
 }
-
-;
 .fs13 {
-  font-size: 0.9285714rem !important
+  font-size: 0.9285714rem !important;
 }
-
-;
 .fs14 {
-  font-size: 1rem !important
+  font-size: 1rem !important;
 }
-
-;
 .fs15 {
   font-size: 1.071428571428571rem !important
 }
-
-;
 .fs16 {
   font-size: 1.1428rem !important
 }
-
-;
 .fs18 {
   font-size: 1.2857rem !important
 }
-
-;
 .fs20 {
   font-size: 1.4285rem !important
 }
-
-;
 .fs22 {
   font-size: 1.5714rem !important
 }
-
-;
 .fs28 {
   font-size: 2rem !important
 }
-
-;
 
 .ui-button-icon-only .fa {
   font-size: 14px;

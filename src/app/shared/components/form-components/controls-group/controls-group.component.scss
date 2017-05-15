@@ -1,0 +1,10 @@
+@import "./src/styles/helpers/brand";
+:host {
+  .form-inner-title {
+    font-size: 0.785714rem !important;
+    color:$kimb;
+    background: $ath-gray;
+    padding: 10px 15px;
+    text-transform: uppercase;
+  }
+}

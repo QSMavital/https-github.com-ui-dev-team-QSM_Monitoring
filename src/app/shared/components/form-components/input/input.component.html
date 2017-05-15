@@ -1,0 +1,5 @@
+<div [ngSwitch]="type">
+  <div *ngSwitchCase="'text'"><input type="text" [value]="inputValue" [placeholder]="placeholder" (keyup)="onValueChange($event.target.value)"></div>
+  <div *ngSwitchCase="'select'"></div>
+  <div *ngSwitchCase="'checkbox'"></div>
+</div>

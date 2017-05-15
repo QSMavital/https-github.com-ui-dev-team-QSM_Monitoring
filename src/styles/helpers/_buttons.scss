@@ -1,7 +1,5 @@
 @import "./src/styles/helpers/brand";
-.blue-btn {
-  color:$che-blue;
-  border:1px solid $che-blue;
+.btn {
   background: white;
   padding:5px 15px;
   text-transform: capitalize;
@@ -10,4 +8,14 @@
   outline: none;
   cursor: pointer;
   vertical-align: middle;
+}
+.blue-btn {
+  @extend .btn;
+  color:$che-blue;
+  border:1px solid $che-blue;
+}
+.purple-btn {
+  @extend .btn;
+  color:$victoria;
+  border:1px solid $victoria;
 }

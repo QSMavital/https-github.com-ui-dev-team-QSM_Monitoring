@@ -26,6 +26,10 @@ import {AgGridModule} from "ag-grid-angular";
 import { LegendComponent } from './components/legend/legend.component';
 import { AgDateComponent } from './components/ag-date/ag-date.component';
 import { AgAmountComponent } from './components/ag-amount/ag-amount.component';
+import { InputComponent } from './components/form-components/input/input.component';
+import { FormComponent } from './components/form-components/form/form.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { ControlsGroupComponent } from './components/form-components/controls-group/controls-group.component';
 
 @NgModule({
   imports: [
@@ -35,10 +39,11 @@ import { AgAmountComponent } from './components/ag-amount/ag-amount.component';
     RouterModule,
     DataTableModule,
     PrimengSharedModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ],
-  declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent, StatusIndicatorComponent, LabelComponent, FiltersBarComponent, AgStatusComponent, LegendComponent, AgDateComponent, AgAmountComponent],
-  exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent,StatusIndicatorComponent,LabelComponent,FiltersBarComponent,AgStatusComponent, LegendComponent, AgDateComponent, AgAmountComponent],
+  declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent, StatusIndicatorComponent, LabelComponent, FiltersBarComponent, AgStatusComponent, LegendComponent, AgDateComponent, AgAmountComponent, InputComponent, FormComponent, ControlsGroupComponent],
+  exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent,StatusIndicatorComponent,LabelComponent,FiltersBarComponent,AgStatusComponent, LegendComponent, AgDateComponent, AgAmountComponent, InputComponent, FormComponent],
   providers: [CanActivateRoute,AppActivator]
 })
 

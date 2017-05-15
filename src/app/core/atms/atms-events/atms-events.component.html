@@ -9,8 +9,10 @@
       </div>
 
     </ui-filters-bar>
-
-
+    <div style="height:610px;">
+      <ui-form [controlGroups]="controlGroups" (submitForm)="submitForm($event)"></ui-form>
+    </div>
   </div>
+
 
 </ui-portlet>

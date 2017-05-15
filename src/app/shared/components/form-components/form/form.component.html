@@ -1,0 +1,16 @@
+<form [formGroup]="form" (submit)="sub()" class="stretch-height" fxLayout="column">
+  <div class="scroll-x form-body" fxLayout="column" fxLayoutWrap>
+    <ui-controls-group *ngFor="let group of controlGroups" [header]="group.title" [formGroupName]="group.name">
+      <!--<div *ngFor="let group of controlGroups" [formGroupName]="group.name">-->
+      <div class="input-wrapper stretch-width" fxLayout fxLayoutAlign="start center" *ngFor="let i of group.controls">
+        <ui-label>{{i.name}}:</ui-label>
+        <ui-input [formControlName]="i.name" [placeholder]="i.placeholder"
+                  [type]="i.type"></ui-input>
+      </div>
+    </ui-controls-group>
+  </div>
+  <div class="footer" fxLayout fxLayoutAlign="end center ">
+    <button type="submit" class="purple-btn">submit</button>
+    <button type="reset" class="blue-btn">cancel</button>
+  </div>
+</form>

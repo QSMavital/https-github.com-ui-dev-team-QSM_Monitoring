@@ -1,13 +1,12 @@
 //colors
-
 @import "./src/styles/helpers/brand";
 
 $color_log_cabin_approx: #222;
 $gray: #808080;
-$color_boulder_40_approx: rgba(120,120,120,0.4);
-$color_fuscous_gray_40_approx: rgba(80,80,80,0.4);
-$color_shark_40_approx: rgba(40,40,40,0.4);
-$black_40: rgba(0,0,0,0.4);
+$color_boulder_40_approx: rgba(120, 120, 120, 0.4);
+$color_fuscous_gray_40_approx: rgba(80, 80, 80, 0.4);
+$color_shark_40_approx: rgba(40, 40, 40, 0.4);
+$black_40: rgba(0, 0, 0, 0.4);
 $color_shady_lady_approx: #a9a9a9;
 $color_japanese_laurel_approx: #006400;
 $color_red_berry_approx: #8b0000;
@@ -20,7 +19,7 @@ $color_silver_approx: #bebebe;
 $color_black_haze_approx: #f6f6f6;
 $powder_blue: #b0e0e6;
 $color_gallery_approx: #f0f0f0;
-$white_50: rgba(255,255,255,0.5);
+$white_50: rgba(255, 255, 255, 0.5);
 $color_mercury_approx: #e6e6e6;
 
 //fonts
@@ -31,7 +30,7 @@ $font_3: sans-serif;
 
 .my-cell {
   color: $raven !important;
-  font-size:0.9285714rem !important;
+  font-size: $fs13 !important;
   font-family: opensans-regular !important;
 }
 
@@ -73,8 +72,8 @@ $font_3: sans-serif;
     }
     .ag-header-cell {
       font-family: opensans-regular !important;
-      font-size: 0.785714rem !important;
-      color:$kimb !important;
+      font-size: $fs11 !important;
+      color: $kimb !important;
       div {
         max-height: 38px;
         line-height: 33px;
@@ -217,10 +216,10 @@ $font_3: sans-serif;
     color: $black;
     background: $ath-gray;
     font-weight: normal;
-    height:38px !important;
-    line-height:38px;
+    height: 38px !important;
+    line-height: 38px;
     .ag-header-row {
-      height:38px !important;
+      height: 38px !important;
     }
   }
   .ag-header-icon {
@@ -264,7 +263,7 @@ $font_3: sans-serif;
   }
   .ag-body {
     background-color: $color_black_haze_approx;
-    top:38px !important;
+    top: 38px !important;
   }
   .ag-row-odd {
     background-color: $color_black_haze_approx;

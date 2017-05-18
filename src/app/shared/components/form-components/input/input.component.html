@@ -1,5 +1,11 @@
 <div [ngSwitch]="type">
-  <div *ngSwitchCase="'text'"><input type="text" [value]="inputValue" [placeholder]="placeholder" (keyup)="onValueChange($event.target.value)"></div>
-  <div *ngSwitchCase="'select'"></div>
-  <div *ngSwitchCase="'checkbox'"></div>
+  <div *ngSwitchCase="'text'">
+    <input type="text" [value]="inputValue" style="width:100%" [placeholder]="placeholder | translate" (keyup)="onValueChange($event.target.value)">
+  </div>
+  <div *ngSwitchCase="'select'">
+    <p-dropdown [options]="options" [style]="{'width':'100%'}" [(ngModel)]="inputValue"></p-dropdown>
+  </div>
+  <div *ngSwitchCase="'checkbox'">
+    <p-checkbox [(ngModel)]="inputValue" binary="true"></p-checkbox>
+  </div>
 </div>

@@ -18,11 +18,11 @@
       background: $ath-gray !important;
       text-align: left !important;
       height: 40px;
-      width:150px;
+      width: 150px;
       line-height: 40px;
       color: $kimb;
       text-transform: uppercase;
-      font-size: 0.785714rem !important; //font-size 11px for 14px REM
+      font-size: $fs11 !important;
       white-space: nowrap;
       &:first-child {
         padding-left: 15px !important;
@@ -33,9 +33,9 @@
       border: none !important;
       height: 30px;
       line-height: 30px;
-      width:150px;
+      width: 150px;
       background: white !important;
-      font-size: 0.9285714rem !important; //font-size 13px for 14px REM
+      font-size: $fs13 !important;
       white-space: nowrap;
       text-overflow: ellipsis;
       text-transform: capitalize;
@@ -47,28 +47,31 @@
     }
   }
   .small {
-    width:65px !important;
+    width: 65px !important;
   }
   .medium {
-    width:110px !important;
+    width: 110px !important;
   }
   .long {
-    width:150px !important;
+    width: 150px !important;
   }
 }
 
 .ui-dropdown {
-  .qsm_self{text-align: center};
+  .qsm_self {
+    text-align: center
+  }
+;
   border: 1px solid $botti;
   .ui-dropdown-trigger {
-    border:none !important;
-    color:$nepal !important;
-    right:0 !important;
-    left:auto !important;
+    border: none !important;
+    color: $nepal !important;
+    right: 0 !important;
+    left: auto !important;
   }
   .ui-dropdown-label {
-    height: 27px;
-    line-height: 22px;
+    height: 20px;
+    line-height: 13px;
     //padding-left:2em;
     //padding-right:2em;
   }
@@ -76,6 +79,27 @@
     text-align: left !important;
   }
   .ui-state-highlight {
-    background:$gun-powder;
+    background: $gun-powder;
+  }
+  .ui-dropdown-trigger .fa {
+    margin-top: 0.3em !important;
+  }
+}
+
+.ui-chkbox {
+  .ui-chkbox-box {
+    height:14px;
+    line-height:12px;
+    width:14px;
+    border:1px solid $botti;
+    border-radius: 2px;
+    &.ui-state-active {
+      color:$kimb;
+      background:transparent;
+      border:1px solid $botti;
+    }
+    .ui-chkbox-icon {
+      font-size:10px !important;
+    }
   }
 }

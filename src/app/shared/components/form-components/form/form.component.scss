@@ -3,11 +3,23 @@
   .form-body {
     height:calc(100% - 40px);
     .input-wrapper {
-      height:42px;
+      height:32px;
+      padding: 0 15px;
       ui-label {
         width:125px;
-        margin-left:15px;
       }
+      .group-container {
+        ui-input {
+          margin-right:5px;
+          &:last-child {
+            margin-right:0 !important;
+          }
+        }
+      }
+    }
+    ui-controls-group {
+      width:400px;
+      border-right:1px solid $ath-gray;
     }
   }
   .footer {

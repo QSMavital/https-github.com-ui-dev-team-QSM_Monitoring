@@ -3,7 +3,7 @@
 .search-wrapper {
   position: relative;
   display: inline-block;
-  font-size: 18px;
+  font-size: $fs18;
   input[type=text] {
     width: 100%;
     border-radius: 15px !important;
@@ -28,11 +28,11 @@ input[type=text] {
   outline: none;
   box-shadow: none;
   border: 1px solid $botti;
-  height: 30px;
-  line-height: 30px;
-  font-size: 0.9285714rem !important; //fs13 for REM14
+  height: 23px;
+  line-height: 23px;
+  font-size: $fs13 !important;
   .placeholder-settings {
-    font-size: 0.9285714rem !important; //fs13 for REM14
+    font-size: $fs13 !important;
     color: $botti;
   }
   &::-webkit-input-placeholder { /* Chrome/Opera/Safari */

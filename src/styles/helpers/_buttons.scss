@@ -1,21 +1,24 @@
 @import "./src/styles/helpers/brand";
+
 .btn {
   background: white;
-  padding:5px 15px;
+  padding: 5px 15px;
   text-transform: capitalize;
   border-radius: 12px;
-  font-size:0.9285714rem!important; //fs13 by REM 14px
+  font-size: $fs13 !important;
   outline: none;
   cursor: pointer;
   vertical-align: middle;
 }
+
 .blue-btn {
   @extend .btn;
-  color:$che-blue;
-  border:1px solid $che-blue;
+  color: $che-blue;
+  border: 1px solid $che-blue;
 }
+
 .purple-btn {
   @extend .btn;
-  color:$victoria;
-  border:1px solid $victoria;
+  color: $victoria;
+  border: 1px solid $victoria;
 }

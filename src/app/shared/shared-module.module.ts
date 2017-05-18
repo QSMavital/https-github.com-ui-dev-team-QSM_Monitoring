@@ -13,7 +13,7 @@ import {TranslateModule} from "@ngx-translate/core";
 import {RouterModule} from "@angular/router";
 import {TableComponent} from './components/table/table.component';
 
-import {DataTableModule, SharedModule as PrimengSharedModule} from 'primeng/primeng';
+import {CheckboxModule, DataTableModule, DropdownModule, SharedModule as PrimengSharedModule} from 'primeng/primeng';
 
 import {CanActivateRoute, AppActivator} from "./services/can-activate.service";
 import {PortletComponent} from './components/portlet/portlet.component';
@@ -28,7 +28,7 @@ import { AgDateComponent } from './components/ag-date/ag-date.component';
 import { AgAmountComponent } from './components/ag-amount/ag-amount.component';
 import { InputComponent } from './components/form-components/input/input.component';
 import { FormComponent } from './components/form-components/form/form.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ControlsGroupComponent } from './components/form-components/controls-group/controls-group.component';
 
 @NgModule({
@@ -39,8 +39,11 @@ import { ControlsGroupComponent } from './components/form-components/controls-gr
     RouterModule,
     DataTableModule,
     PrimengSharedModule,
+    CheckboxModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    DropdownModule
   ],
   declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent, StatusIndicatorComponent, LabelComponent, FiltersBarComponent, AgStatusComponent, LegendComponent, AgDateComponent, AgAmountComponent, InputComponent, FormComponent, ControlsGroupComponent],
   exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent,StatusIndicatorComponent,LabelComponent,FiltersBarComponent,AgStatusComponent, LegendComponent, AgDateComponent, AgAmountComponent, InputComponent, FormComponent],

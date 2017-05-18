@@ -1,5 +1,6 @@
 import {Component, forwardRef, Input} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+import {isNullOrUndefined} from "util";
 
 @Component({
   selector: 'ui-input',
@@ -16,8 +17,29 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 export class InputComponent implements ControlValueAccessor {
 
-  @Input() type:string = 'text';
-  @Input() placeholder:string = '';
+  private ddOptions: any[] = [
+    {
+      label: 'something',
+      value: {id: '1'}
+    },
+    {
+      label: 'something_else',
+      value: {id: '2'}
+    }
+  ];
+  // private ddModel: any;
+
+  private _ph;
+
+  @Input() options:any[];
+  @Input() type: string = 'text';
+  @Input()
+  get placeholder() {
+    return isNullOrUndefined(this._ph) ? '' : this._ph;
+  }
+  set placeholder(val) {
+    this._ph = val;
+  }
 
   @Input()
   _val = 0;
@@ -32,14 +54,15 @@ export class InputComponent implements ControlValueAccessor {
   }
 
 
-
-  propagateChange = (_: any) => {};
+  propagateChange = (_: any) => {
+  };
 
   registerOnChange(fn) {
     this.propagateChange = fn;
   }
 
-  registerOnTouched() {}
+  registerOnTouched() {
+  }
 
   writeValue(value: any) {
     if (value !== undefined) {

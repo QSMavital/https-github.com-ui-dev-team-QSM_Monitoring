@@ -8,6 +8,8 @@ $ui-spacing-regular: 15px;
 $ui-spacing-medium: 25px;
 $ui-spacing-large: 30px;
 
+@import 'brand';
+
 @function htmlDirection() {
   @if ($htmlDirection == ltr) {
     @return left;
@@ -81,37 +83,37 @@ body {
 }
 
 .fs10 {
-  font-size: 0.7142857rem !important;
+  font-size: $fs10 !important;
 }
 .fs11 {
-  font-size: 0.785714rem !important;
+  font-size: $fs11 !important;
 }
 .fs12 {
-  font-size: 0.85714rem !important;
+  font-size: $fs12 !important;
 }
 .fs13 {
-  font-size: 0.9285714rem !important;
+  font-size: $fs13 !important;
 }
 .fs14 {
-  font-size: 1rem !important;
+  font-size: $fs14 !important;
 }
 .fs15 {
-  font-size: 1.071428571428571rem !important
+  font-size: $fs15 !important
 }
 .fs16 {
-  font-size: 1.1428rem !important
+  font-size: $fs16 !important
 }
 .fs18 {
-  font-size: 1.2857rem !important
+  font-size: $fs18 !important
 }
 .fs20 {
-  font-size: 1.4285rem !important
+  font-size: $fs20 !important
 }
 .fs22 {
-  font-size: 1.5714rem !important
+  font-size: $fs22 !important
 }
 .fs28 {
-  font-size: 2rem !important
+  font-size: $fs28 !important
 }
 
 .ui-button-icon-only .fa {

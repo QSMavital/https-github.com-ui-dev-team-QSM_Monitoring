@@ -1,7 +1,7 @@
 @import "./src/styles/helpers/brand";
 :host {
   .form-inner-title {
-    font-size: 0.785714rem !important;
+    font-size: $fs11 !important;
     color:$kimb;
     background: $ath-gray;
     padding: 10px 15px;

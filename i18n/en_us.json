@@ -64,7 +64,7 @@
     "belong":"Belong"
   },
   "atm": {
-    "newAtm":"New Atm",
+    "add_new_atm":"Add New Atm",
     "tabs": {
       "status": "atm status",
       "accessories": "accessories status",

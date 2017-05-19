@@ -1,0 +1,18 @@
+@import "./src/styles/helpers/brand";
+:host {
+  display: inline-block;
+  .wrapper {
+    width:45px;
+    .inner {
+      height:10px;
+      width:100%;
+      background: $mystic;
+      border-radius:5px;
+      .full {
+        height:10px;
+        border-radius:5px;
+        background:$malachite;
+      }
+    }
+  }
+}

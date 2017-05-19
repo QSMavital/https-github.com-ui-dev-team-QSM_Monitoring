@@ -1,0 +1,30 @@
+@import "./src/styles/helpers/brand";
+:host {
+  .wrapper {
+    background: white;
+    h3 {
+      padding: 10px 12px;
+      color:$kimb;
+      font-size: $fs11;
+      text-transform: uppercase;
+      font-family: opensans-bold;
+    }
+    .body {
+      padding: 5px 12px;
+    }
+    .footer {
+      .footer-item {
+        text-transform: uppercase;
+        color: $kimb;
+        font-size: $fs11;
+        padding: 8px 12px;
+        .key {
+
+        }
+        .value {
+          font-family:opensans-bold;
+        }
+      }
+    }
+  }
+}

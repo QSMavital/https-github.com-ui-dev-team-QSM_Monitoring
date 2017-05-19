@@ -17,19 +17,21 @@ import {CheckboxModule, DataTableModule, DropdownModule, SharedModule as Primeng
 
 import {CanActivateRoute, AppActivator} from "./services/can-activate.service";
 import {PortletComponent} from './components/portlet/portlet.component';
-import { StatusIndicatorComponent } from './components/status-indicator/status-indicator.component';
+import {StatusIndicatorComponent} from './components/status-indicator/status-indicator.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
-import { LabelComponent } from './components/label/label.component';
-import { FiltersBarComponent } from './components/filters-bar/filters-bar.component';
-import { AgStatusComponent } from './components/ag-status/ag-status.component';
+import {LabelComponent} from './components/label/label.component';
+import {FiltersBarComponent} from './components/filters-bar/filters-bar.component';
+import {AgStatusComponent} from './components/ag-status/ag-status.component';
 import {AgGridModule} from "ag-grid-angular";
-import { LegendComponent } from './components/legend/legend.component';
-import { AgDateComponent } from './components/ag-date/ag-date.component';
-import { AgAmountComponent } from './components/ag-amount/ag-amount.component';
-import { InputComponent } from './components/form-components/input/input.component';
-import { FormComponent } from './components/form-components/form/form.component';
+import {LegendComponent} from './components/legend/legend.component';
+import {AgDateComponent} from './components/ag-date/ag-date.component';
+import {AgAmountComponent} from './components/ag-amount/ag-amount.component';
+import {InputComponent} from './components/form-components/input/input.component';
+import {FormComponent} from './components/form-components/form/form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { ControlsGroupComponent } from './components/form-components/controls-group/controls-group.component';
+import {ControlsGroupComponent} from './components/form-components/controls-group/controls-group.component';
+import {AccesoriesCardComponent} from './components/accesories-card/accesories-card.component';
+import {SmallProgressComponent} from './components/small-progress/small-progress.component';
 
 @NgModule({
   imports: [
@@ -45,9 +47,50 @@ import { ControlsGroupComponent } from './components/form-components/controls-gr
     FormsModule,
     DropdownModule
   ],
-  declarations: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent, StatusIndicatorComponent, LabelComponent, FiltersBarComponent, AgStatusComponent, LegendComponent, AgDateComponent, AgAmountComponent, InputComponent, FormComponent, ControlsGroupComponent],
-  exports: [SpinnerComponent, DirSelectionDirective, SlidingPanelComponent, MomentPipe, GaugeComponent, TabsComponent, TableComponent, PortletComponent,StatusIndicatorComponent,LabelComponent,FiltersBarComponent,AgStatusComponent, LegendComponent, AgDateComponent, AgAmountComponent, InputComponent, FormComponent],
-  providers: [CanActivateRoute,AppActivator]
+  declarations: [
+    SpinnerComponent,
+    DirSelectionDirective,
+    SlidingPanelComponent,
+    MomentPipe,
+    GaugeComponent,
+    TabsComponent,
+    TableComponent,
+    PortletComponent,
+    StatusIndicatorComponent,
+    LabelComponent,
+    FiltersBarComponent,
+    AgStatusComponent,
+    LegendComponent,
+    AgDateComponent,
+    AgAmountComponent,
+    InputComponent,
+    FormComponent,
+    ControlsGroupComponent,
+    AccesoriesCardComponent,
+    SmallProgressComponent
+  ],
+  exports: [
+    SpinnerComponent,
+    DirSelectionDirective,
+    SlidingPanelComponent,
+    MomentPipe,
+    GaugeComponent,
+    TabsComponent,
+    TableComponent,
+    PortletComponent,
+    StatusIndicatorComponent,
+    LabelComponent,
+    FiltersBarComponent,
+    AgStatusComponent,
+    LegendComponent,
+    AgDateComponent,
+    AgAmountComponent,
+    InputComponent,
+    FormComponent,
+    AccesoriesCardComponent,
+    SmallProgressComponent
+  ],
+  providers: [CanActivateRoute, AppActivator]
 })
 
 export class SharedModule {

@@ -239,6 +239,7 @@ $font_3: sans-serif;
   }
   .ag-header-cell-label {
     padding: 4px 2px;
+    text-align: left !important;
   }
   .ag-header-cell-text {
     padding-left: 2px;
@@ -515,5 +516,16 @@ $font_3: sans-serif;
   }
   .rtl .ag-tool-panel {
     border-left: 1px solid $gray;
+  }
+}
+
+.ag-header-cell {
+  &:first-child {
+    padding-left:10px;
+  }
+}
+.ag-cell {
+  &:first-child {
+    padding-left:10px;
   }
 }

@@ -16,176 +16,366 @@ export class AtmSettingsComponent implements OnInit {
       controls: [
         {
           name: 'c1',
-          label: 'c1',
-          type: 'text',
-          value: 'a',
-          placeholder: 'TexT'
+          label: 'ATM Number',
+          type: 'text'
         },
         {
           name: 'c2',
-          label: 'c2',
-          type: 'text',
-          value: 'b'
+          label: 'ATM Number',
+          type: 'text'
         },
         {
           name: 'c3',
-          label: 'c3',
-          type: 'text',
-          value: 'b'
+          label: 'ATM Number',
+          type: 'text'
         },
         {
           name: 'c4',
-          label: 'c4',
-          type: 'text',
-          value: 'b'
-        },
-        {
-          name: 'c5',
-          label: 'c5',
-          type: 'text',
-          value: 'b'
-        },
-        {
-          name: 'c6',
-          label: 'c6',
-          type: 'text',
-          value: 'b'
-        },
-        {
-          name: 'c7',
-          label: 'c7',
-          type: 'text',
-          value: 'b'
-        },
-        {
-          name: 'c8',
-          label: 'c8',
-          type: 'text',
-          value: 'b'
-        },
-        {
-          name: 'c9',
-          label: 'c9',
-          type: 'text',
-          value: 'b'
-        },
-        {
-          name: 'c10',
-          label: 'c10',
-          type: 'text',
-          value: 'b'
-        },
-        {
-          name: 'c11',
-          label: 'c11',
-          type: 'text',
-          value: 'b'
-        },
-        {
-          name: 'c12',
-          label: 'c12',
-          type: 'text',
-          value: 'b'
-        },
-        {
-          name: 'c13',
-          label: 'c13',
-          type: 'text',
-          value: 'b'
-        },
-        {
-          name: 'c14',
-          label: 'c114',
-          type: 'text',
-          value: 'b'
-        },
-        {
-          name: 'c15',
-          label: 'c15',
-          type: 'text',
-          value: 'b'
-        },
-        {
-          name: 'c16',
-          label: 'c16',
-          type: 'text',
-          value: 'b'
-        }
-      ]
-    },
-    {
-      title: 'something',
-      name: 'something',
-      controls: [
-        {
-          name: 'c201',
-          label: 'c201',
-          type: 'text',
-          value: 'a',
-          placeholder: 'TexT'
-        },
-        {
-          name: 'c202',
-          label: 'c202',
           type: 'select',
+          label: 'ATM Number',
           value: 4,
           options: [
             {label: 'opt1', value: 1},
             {label: 'opt2', value: 2},
-            {label: 'opt3', value: 4},
+            {label: 'NCR', value: 4}
+          ]
+        },
+        {
+          name: 'c5',
+          label: 'ATM Number',
+          type: 'text'
+        },
+        {
+          name: 'c6',
+          label: 'ATM Number',
+          type: 'text'
+        },
+        {
+          name: 'c7',
+          label: 'ATM Number',
+          type: 'text'
+        },
+        {
+          name: 'c8',
+          type: 'select',
+          label: 'ATM Number',
+          value: 4,
+          options: [
+            {label: 'opt1', value: 1},
+            {label: 'opt2', value: 2},
+            {label: 'NCR', value: 4}
+          ]
+        },
+        {
+          name: 'c9',
+          type: 'select',
+          label: 'ATM Number',
+          value: 4,
+          options: [
+            {label: 'opt1', value: 1},
+            {label: 'opt2', value: 2},
+            {label: 'NCR', value: 4}
+          ]
+        },
+        {
+          name: 'c10',
+          label: 'ATM Number',
+          type: 'text'
+        },
+        {
+          name: 'c11',
+          type: 'select',
+          label: 'ATM Number',
+          value: 4,
+          options: [
+            {label: 'opt1', value: 1},
+            {label: 'opt2', value: 2},
+            {label: 'NCR', value: 4}
+          ]
+        },
+        {
+          name: 'c12',
+          type: 'select',
+          label: 'ATM Number',
+          value: 4,
+          options: [
+            {label: 'opt1', value: 1},
+            {label: 'opt2', value: 2},
+            {label: 'NCR', value: 4}
+          ]
+        },
+        {
+          name: 'c13', type: 'select',
+          label: 'ATM Number',
+          value: 4,
+          options: [
+            {label: 'opt1', value: 1},
+            {label: 'opt2', value: 2},
+            {label: 'NCR', value: 4}
+          ]
+        },
+        {
+          name: 'c14',
+          type: 'select',
+          label: 'ATM Number',
+          value: 4,
+          options: [
+            {label: 'opt1', value: 1},
+            {label: 'opt2', value: 2},
+            {label: 'NCR', value: 4}
+          ]
+        },
+        {
+          name: 'c15',
+          label: 'ATM Number',
+          type: 'text'
+        },
+        {
+          name: 'c16',
+          label: 'ATM Number',
+          type: 'text'
+        }
+      ]
+    },
+    {
+      title: 'settings',
+      name: 'settings2',
+      controls: [
+        {
+          name: 'c201',
+          label: 'ATM Number',
+          type: 'inputGroup',
+          inputs: [
+            {
+              name: 'c2011',
+              type: 'select',
+              value: 4,
+              options: [
+                {label: 'opt1', value: 1},
+                {label: 'opt2', value: 2},
+                {label: '', value: 4}
+              ]
+            }, {
+              name: 'c2012',
+              type: 'select',
+              value: 4,
+              options: [
+                {label: 'opt1', value: 1},
+                {label: 'opt2', value: 2},
+                {label: '', value: 4}
+              ]
+            }
+          ]
+        },
+        {
+          name: 'c202',
+          label: 'ATM Number',
+          type: 'inputGroup',
+          inputs: [
+            {
+              name: 'c2021',
+              type: 'select',
+              value: 4,
+              options: [
+                {label: 'opt1', value: 1},
+                {label: 'opt2', value: 2},
+                {label: '', value: 4}
+              ]
+            },
+            {
+              name: 'c2022',
+              type: 'select',
+              value: 4,
+              options: [
+                {label: 'opt1', value: 1},
+                {label: 'opt2', value: 2},
+                {label: '', value: 4}
+              ]
+            }
           ]
         },
         {
           name: 'c203',
-          label: 'c203',
+          label: 'ATM Number',
           type: 'inputGroup',
           inputs: [
             {
               name: 'c2031',
-              type: 'text',
-              placeholder: 'aa',
-              value: 'something here'
-            },
-            {
+              type: 'select',
+              value: 4,
+              options: [
+                {label: 'opt1', value: 1},
+                {label: 'opt2', value: 2},
+                {label: '', value: 4}
+              ]
+            }, {
               name: 'c2032',
               type: 'select',
               value: 4,
               options: [
                 {label: 'opt1', value: 1},
                 {label: 'opt2', value: 2},
-                {label: 'opt3', value: 4}
+                {label: '', value: 4}
               ]
             }
           ]
         },
         {
           name: 'c204',
-          label: 'c204',
-          type: 'checkbox',
-          value: true
-        },
-        {
-          name: 'c205',
-          label: 'c205',
+          label: 'ATM Number',
           type: 'inputGroup',
           inputs: [
             {
-              name: 'c2051',
-              type: 'text',
-              placeholder: 'aa',
-              value: 'something here'
-            },
-            {
-              name: 'c2052',
+              name: 'c2041',
               type: 'select',
               value: 4,
               options: [
                 {label: 'opt1', value: 1},
                 {label: 'opt2', value: 2},
-                {label: 'opt3', value: 4}
+                {label: '', value: 4}
+              ]
+            }, {
+              name: 'c2042',
+              type: 'select',
+              value: 4,
+              options: [
+                {label: 'opt1', value: 1},
+                {label: 'opt2', value: 2},
+                {label: '', value: 4}
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      title: 'settings',
+      name: 'settings3',
+      controls: [
+        {
+          name: 'c301',
+          type: 'inputGroup',
+          inputs: [
+            {
+              name: 'c3011',
+              type: 'select',
+              value: 4,
+              options: [
+                {label: 'opt1', value: 1},
+                {label: 'opt2', value: 2},
+                {label: '', value: 4}
+              ]
+            }, {
+              name: 'c3012-Branch',
+              type: 'text',
+              placeholder: 'Branch'
+            },
+            {
+              name: 'c3013-Address',
+              type: 'text',
+              placeholder: 'Address'
+            }
+          ]
+        },
+        {
+          name: 'c302',
+          type: 'inputGroup',
+          inputs: [
+            {
+              name: 'c3021',
+              type: 'select',
+              value: 4,
+              options: [
+                {label: 'opt1', value: 1},
+                {label: 'opt2', value: 2},
+                {label: '', value: 4}
+              ]
+            }, {
+              name: 'c3022-Branch',
+              type: 'text',
+              placeholder: 'Branch'
+            },
+            {
+              name: 'c3023-Address',
+              type: 'text',
+              placeholder: 'Address'
+            }
+          ]
+        },
+        {
+          name: 'c303',
+          type: 'inputGroup',
+          inputs: [
+            {
+              name: 'c3031',
+              type: 'select',
+              value: 4,
+              options: [
+                {label: 'opt1', value: 1},
+                {label: 'opt2', value: 2},
+                {label: '', value: 4}
+              ]
+            }, {
+              name: 'c3032-Branch',
+              type: 'text',
+              placeholder: 'Branch'
+            },
+            {
+              name: 'c3033-Address',
+              type: 'text',
+              placeholder: 'Address'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'settings',
+      name: 'settings4',
+      controls: [
+        {
+          name: 'c401',
+          label: 'ATM Number',
+          type: 'text'
+        },
+        {
+          name: 'c402',
+          label: 'ATM Number',
+          type: 'text'
+        },
+        {
+          name: 'c403',
+          label: 'ATM Number',
+          type: 'text'
+        },
+        {
+          name: 'c404',
+          label: 'ATM Number',
+          type: 'text'
+        }
+      ]
+    },
+    {
+      title: 'settings',
+      name: 'settings5',
+      controls: [
+        {
+          name: 'c501',
+          label: 'ATM Number',
+          type: 'checkbox',
+          value: true
+        },
+        {
+          name: 'c502',
+          label: 'ATM Number',
+          type: 'checkbox',
+          value: true
+        },
+        {
+          name: 'c503',
+          label: 'ATM Number',
+          type: 'checkbox',
+          value: false
         },
       ]
     }

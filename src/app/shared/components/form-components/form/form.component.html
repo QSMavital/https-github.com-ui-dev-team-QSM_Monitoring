@@ -3,7 +3,8 @@
     <ui-controls-group *ngFor="let group of controlGroups" [header]="group.title" [formGroupName]="group.name">
       <!--<div *ngFor="let group of controlGroups" [formGroupName]="group.name">-->
       <div class="input-wrapper stretch-width" fxLayout fxLayoutAlign="start center" *ngFor="let i of group.controls">
-        <ui-label *ngIf="i.label" [fxFlex]="100/3" [fxFlexOrder]="i.type === 'checkbox' ? 1 : 0">{{i.label | translate}}<span *ngIf="i.type !== 'checkbox'">:</span></ui-label>
+        <ui-label *ngIf="i.label" [fxFlex]="100/3" [fxFlexOrder]="i.type === 'checkbox' ? 1 : 0">{{i.label | translate}}<span
+          *ngIf="i.type !== 'checkbox'">:</span></ui-label>
         <ui-input [formControlName]="i.name"
                   [placeholder]="i.placeholder"
                   [type]="i.type"
@@ -12,15 +13,17 @@
                   [fxFlexOrder]="i.type === 'checkbox' ? 0 : 1"
                   *ngIf="i.type !== 'inputGroup'"
         ></ui-input>
-        <div class="group-container" *ngIf="i.type === 'inputGroup'" [formGroupName]="i.name" fxLayout [fxFlex]="(100/3)*i.inputs.length">
-          <ui-input
-            [formControlName]="input.name"
-            [placeholder]="input.placeholder"
-            [type]="input.type"
-            [options]="input.options"
-            [fxFlex]="100/i.inputs.length"
-            *ngFor="let input of i.inputs"
-          ></ui-input>
+        <div class="group-container" *ngIf="i.type === 'inputGroup'" [formGroupName]="i.name" fxLayout
+             [fxFlex]="(100/3)*i.inputs.length">
+          <span class="input-group-wrapper" *ngFor="let input of i.inputs">
+            <ui-input
+              [formControlName]="input.name"
+              [placeholder]="input.placeholder"
+              [type]="input.type"
+              [options]="input.options"
+              *ngIf="input"
+            ></ui-input>
+          </span>
         </div>
       </div>
     </ui-controls-group>
@@ -31,5 +34,5 @@
   </div>
 </form>
 <!--<pre>-->
-  <!--{{form.value | json}}-->
+<!--{{form.value | json}}-->
 <!--</pre>-->

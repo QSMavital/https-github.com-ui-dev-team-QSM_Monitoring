@@ -9,11 +9,15 @@
         width:125px;
       }
       .group-container {
-        ui-input {
-          margin-right:5px;
+        .input-group-wrapper {
+          padding-right:5px;
+          width:123px;
           &:last-child {
-            margin-right:0 !important;
+            padding-right:0 !important;
           }
+        }
+        ui-input {
+
         }
       }
     }

@@ -1,37 +1,13 @@
 <div class="wrapper">
 
-  <div fxLayout class="row">
+  <div fxLayout fxLayoutWrap="wrap" class="row">
 
-    <ui-accesories-card [fxFlex]="50" [footerData]="{'total':'15,000','something else':'is something'}">
+    <ui-accesories-card *ngFor="let widget of widgetsData" [fxFlex]="widget.width" [footerData]="widget.footer" [header]="widget.header">
       <ag-grid-angular
         fxFlex
         class="ag-fresh"
-        [gridOptions]="gridOptions">
+        [gridOptions]="widget.gridData">
       </ag-grid-angular>
-    </ui-accesories-card>
-
-    <ui-accesories-card [fxFlex]="50" [footerData]="{'total':'15,000','something else':'is something'}">
-      hi
-      <ui-small-progress value="50"></ui-small-progress>
-    </ui-accesories-card>
-
-  </div>
-
-  <div fxLayout class="row">
-
-    <ui-accesories-card [fxFlex]="100/3" [footerData]="{'total':'15,000','something else':'is something'}">
-      hi
-      <ui-small-progress value="50"></ui-small-progress>
-    </ui-accesories-card>
-
-    <ui-accesories-card [fxFlex]="100/3" [footerData]="{'total':'15,000','something else':'is something'}">
-      hi
-      <ui-small-progress value="50"></ui-small-progress>
-    </ui-accesories-card>
-
-    <ui-accesories-card [fxFlex]="100/3" [footerData]="{'total':'15,000','something else':'is something'}">
-      hi
-      <ui-small-progress value="50"></ui-small-progress>
     </ui-accesories-card>
 
   </div>

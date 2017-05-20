@@ -7,13 +7,16 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class AccesoriesCardComponent implements OnInit {
 
-  private keys:string[];
-  @Input() footerData:any;
+  private keys: string[];
+  @Input() footerData: any;
+  @Input() header: any = "header";
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
-    this.keys = Object.keys(this.footerData);
+    if (this.keys)
+      this.keys = Object.keys(this.footerData);
   }
 
 }

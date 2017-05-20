@@ -3,10 +3,10 @@
     .row {
       margin-bottom:25px;
       ui-accesories-card {
-        margin-right:25px;
+        padding-left:25px;
         height:300px;
-        &:last-child {
-          margin-right:0;
+        &:first-child {
+          padding-left:0;
         }
       }
     }

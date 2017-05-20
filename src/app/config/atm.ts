@@ -20,5 +20,28 @@ export const Atm = {
     withdrawed: {headerName: "atm.withdrawed", field: "withdrawed", width: 60},
     rejected: {headerName: "atm.rejected", field: "rejected", width: 60},
     left: {headerName: "atm.left", field: "left", width: 60}
+  },
+  LastStrokes:{
+    value: {headerName: "atm.value", field: "value", width: 100},
+    propriety: {headerName: "atm.propriety", field: "propriety", width: 100, cellRendererFramework: AgStatusComponent},
+    coin: {headerName: "atm.coin", field: "coin", width: 100},
+    amount: {headerName: "atm.amount", field: "amount", width: 100},
+    difference: {headerName: "atm.difference", field: "difference", width: 100}
+  },
+  Printers:{
+    item: {headerName: "atm.item", field: "item", width: 150},
+    propriety: {headerName: "atm.propriety", field: "propriety", width: 150, cellRendererFramework: AgStatusComponent}
+  },
+  Checks:{
+    item: {headerName: "atm.item", field: "item", width: 75},
+    propriety: {headerName: "atm.propriety", field: "propriety", width: 75, cellRendererFramework: AgStatusComponent},
+    inventory: {headerName: "atm.inventory", field: "inventory", width: 75, cellRendererFramework: AgProgressComponent},
+    counter: {headerName: "atm.counter", field: "counter", width: 75}
+  },
+  Other:{
+    item: {headerName: "atm.item", field: "item", width: 75},
+    propriety: {headerName: "atm.propriety", field: "propriety", width: 75, cellRendererFramework: AgStatusComponent},
+    inventory: {headerName: "atm.inventory", field: "inventory", width: 75, cellRendererFramework: AgProgressComponent},
+    counter: {headerName: "atm.counter", field: "counter", width: 75}
   }
 }

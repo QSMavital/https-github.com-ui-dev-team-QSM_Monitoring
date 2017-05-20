@@ -1,10 +1,11 @@
 <div class="wrapper stretch-height" fxLayout="column">
-  <h3>Cash Pool</h3>
+  <h3>{{header | translate}}</h3>
   <div class="body" style="flex:1;"><ng-content></ng-content></div>
   <div class="footer" fxLayout fxLayoutWrap="wrap" *ngIf="footerData">
     <div class="footer-item" *ngFor="let key of keys">
-      <span class="key">{{key}}:&nbsp;</span>
-      <span class="value">{{footerData[key]}}</span>
+      <span class="key">{{key | translate}}:&nbsp;</span>
+      <span class="value" *ngIf="footerData[key].time">{{footerData[key].value | moment : 'D/M/Y hh:mm'}}</span>
+      <span class="value" *ngIf="!footerData[key].time">{{footerData[key]}}</span>
     </div>
   </div>
 </div>

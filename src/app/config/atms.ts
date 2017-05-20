@@ -51,7 +51,8 @@ export const Atms = {
     terminalId: {
       cellRenderer: 'group',
       cellRendererParams: {checkbox: true},
-      headerName: "atms.terminalId", field: "terminalId", width: 100},
+      headerName: "atms.terminalId", field: "terminalId", width: 100
+    },
     atmName: {headerName: "atms.atmName", field: "atmName", width: 130},
     terminalStatus: {
       headerName: "atms.terminalStatus",
@@ -72,10 +73,14 @@ export const Atms = {
       width: 150,
       cellRendererFramework: AgStatusComponent
     },
-    cardReaderColor: {headerName: "atms.cardReader", field: "cardReaderColor", width: 150,
-      cellRendererFramework: AgStatusComponent},
-    printerColor: {headerName: "atms.printer", field: "printerColor", width: 100,
-      cellRendererFramework: AgStatusComponent},
+    cardReaderColor: {
+      headerName: "atms.cardReader", field: "cardReaderColor", width: 150,
+      cellRendererFramework: AgStatusComponent
+    },
+    printerColor: {
+      headerName: "atms.printer", field: "printerColor", width: 100,
+      cellRendererFramework: AgStatusComponent
+    },
     eppColor: {
       headerName: "atms.epp",
       field: "eppColor",
@@ -90,5 +95,39 @@ export const Atms = {
     belong: {headerName: "atms.belong", field: "belong", width: 120}
 
   },
-
-}
+  Notifications: {
+    number: {headerName: 'atms.number', field: 'number', width: 80},
+    hardwareState: {
+      headerName: 'atms.hardware_state',
+      field: 'hardwareState',
+      width: 110,
+      cellRendererFramework: AgStatusComponent
+    },
+    time: {headerName: 'atms.time', field: 'time', width: 160, cellRendererFramework: AgDateComponent},
+    handler: {headerName: 'atms.handler', field: 'handler', width: 80},
+    code: {headerName: 'atms.code', field: 'code', width: 80},
+    spec: {headerName: 'atms.spec', field: 'spec', width: 200},
+    fullSpec: {headerName: 'atms.full_spec', field: 'fullSpec', width: 440}
+  },
+  Events: {
+    terminalId: {headerName: 'atms.terminalId', field: 'terminalId', width: 80},
+    time: {headerName: 'atms.time', field: 'time', width: 160},
+    code: {headerName: 'atms.code', field: 'code', width: 80},
+    spec: {headerName: 'atms.spec', field: 'spec', width: 200},
+    fullSpec: {headerName: 'atms.full_spec', field: 'fullSpec', width: 440}
+  },
+  Transactions: {
+    transactionId: {headerName: 'atms.transactionId', field: 'transactionId', width: 110},
+    time: {headerName: 'atms.time', field: 'time', width: 160, cellRendererFramework: AgDateComponent},
+    terminalId: {headerName: 'atms.terminalId', field: 'terminalId', width: 80},
+    card: {headerName: 'atms.card', field: 'card', width: 60},
+    bank: {headerName: 'atms.bank', field: 'bank', width: 60},
+    actionType: {headerName: 'atms.actionType', field: 'actionType', width: 100},
+    amount: {headerName: 'atms.amount', field: 'amount', width: 80},
+    endTransaction: {headerName: 'atms.endTransaction', field: 'endTransaction', width: 110},
+    verifiedBy: {headerName: 'atms.verifiedBy', field: 'verifiedBy', width:100},
+    rejectionReason: {headerName: 'atms.rejectionReason', field: 'rejectionReason', width: 80},
+    deviceFee: {headerName: 'atms.deviceFee', field: 'deviceFee', width: 85},
+    businessDay: {headerName: 'atms.businessDay', field: 'businessDay', width: 90}
+  }
+};

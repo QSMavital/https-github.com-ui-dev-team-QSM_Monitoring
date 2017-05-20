@@ -3,12 +3,18 @@
     <ui-filters-bar>
       <div fxLayout>
         <ui-atms-notifications-filters></ui-atms-notifications-filters>
-        <div fxFlex class="text-right">
-          xx
-        </div>
+        <!--<div fxFlex class="text-right">-->
+          <!--xx-->
+        <!--</div>-->
       </div>
 
     </ui-filters-bar>
+
+    <ag-grid-angular
+      fxFlex
+      class="ag-fresh"
+      [gridOptions]="gridOptions">
+    </ag-grid-angular>
 
 
   </div>

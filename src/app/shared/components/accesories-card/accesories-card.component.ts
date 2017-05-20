@@ -15,7 +15,7 @@ export class AccesoriesCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.keys)
+    if (this.keys && this.footerData)
       this.keys = Object.keys(this.footerData);
   }
 

@@ -11,7 +11,6 @@ export class AgProgressComponent {
 
   agInit(params: any): void {
     this.params = params;
-    console.log(params);
   }
 
 }

@@ -1,0 +1,10 @@
+@import "./src/styles/helpers/brand";
+:host {
+  h4 {
+    padding:15px;
+    font-family: opensans-bold;
+    color: $kimb;
+    background: white;
+    font-size: $fs14;
+  }
+}

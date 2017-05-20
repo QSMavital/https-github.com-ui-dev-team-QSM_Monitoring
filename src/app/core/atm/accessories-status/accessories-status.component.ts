@@ -55,7 +55,7 @@ export class AccessoriesStatusComponent implements OnInit {
         "atm.last_successful": {time: true, value: "15 may 2017 22:15"}
       },
       width: 50,
-      props: Atm.CashPool
+      props: Atm.Accessories.CashPool
     },
     {
       header: "atm.balance_of_last_strokes",
@@ -64,41 +64,91 @@ export class AccessoriesStatusComponent implements OnInit {
           {
             "value": 100,
             "propriety": "FATAL",
-            "coin":"NIS",
-            "amount":100,
-            "difference":50
+            "coin": "NIS",
+            "amount": 100,
+            "difference": 50
           }
         ]
       },
       footer: {"atm.total": "15,000", "atm.alert": "7,000"},
       width: 50,
-      props: Atm.LastStrokes
+      props: Atm.Accessories.LastStrokes
     },
     {
-      header:"atm.printers",
-      gridData:{
-        rowData:[]
+      header: "atm.printers",
+      gridData: {
+        rowData: [
+          {
+            item: "item1",
+            propriety: "FATAL"
+          },
+          {
+            item: "item2",
+            propriety: "FATAL"
+          }
+        ]
       },
-      width:100/3,
-      props:Atm.Printers
+      width: 100 / 3,
+      props: Atm.Accessories.Printers
     },
     {
-      header:"atm.checks",
-      gridData:{
-        rowData:[]
+      header: "atm.checks",
+      gridData: {
+        rowData: [
+          {
+            item: "item1",
+            propriety:"FATAL",
+            inventory:"67",
+            counter:0
+          },
+          {
+            item: "item2",
+            propriety:"FATAL",
+            inventory:"67",
+            counter:0
+          },
+          {
+            item: "item3",
+            propriety:"FATAL",
+            inventory:"67",
+            counter:0
+          }
+        ]
       },
-      width:100/3,
-      props:Atm.Checks
+      footer:{"atm.last_successful":{time:true,value:"oct 10 1976"},"atm.last_reset":{time:true,value:"oct 10 1926"}},
+      width: 100 / 3,
+      props: Atm.Accessories.Checks
     },
     {
-      header:"atm.other",
-      gridData:{
-        rowData:[]
+      header: "atm.other",
+      gridData: {
+        rowData: [
+          {
+            item: "item1",
+            propriety:"FATAL",
+            inventory:"67",
+            counter:0
+          },
+          {
+            item: "item2",
+            propriety:"FATAL",
+            inventory:"67",
+            counter:0
+          },
+          {
+            item: "item3",
+            propriety:"FATAL",
+            inventory:"67",
+            counter:0
+          }
+        ]
       },
-      width:100/3,
-      props:Atm.Other
+      width: 100 / 3,
+      footer:{"atm.last_reset":{time:true,value:"oct 10 1926"}},
+      props: Atm.Accessories.Other
     }
   ];
+
   constructor(private translateSrv: TranslateService) {
   }
 
@@ -122,7 +172,6 @@ export class AccessoriesStatusComponent implements OnInit {
             }));
       }
     });
-
   }
 
   ngOnDestroy() {

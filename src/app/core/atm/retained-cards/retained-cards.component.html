@@ -1,3 +1,11 @@
-<p>
-  retained-cards works!
-</p>
+<div class="wrapper stretch-height">
+  HI
+  <pre>
+    {{gridOptions | json}}
+  </pre>
+  <ag-grid-angular
+    style="border:1px solid black"
+    class="ag-fresh"
+    [gridOptions]="gridOptions">
+  </ag-grid-angular>
+</div>

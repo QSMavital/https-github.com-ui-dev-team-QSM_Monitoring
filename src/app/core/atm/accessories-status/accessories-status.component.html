@@ -1,7 +1,5 @@
 <div class="wrapper">
-
   <div fxLayout fxLayoutWrap="wrap" class="row">
-
     <ui-accesories-card *ngFor="let widget of widgetsData" [fxFlex]="widget.width" [footerData]="widget.footer" [header]="widget.header">
       <ag-grid-angular
         fxFlex
@@ -9,7 +7,5 @@
         [gridOptions]="widget.gridData">
       </ag-grid-angular>
     </ui-accesories-card>
-
   </div>
-
 </div>

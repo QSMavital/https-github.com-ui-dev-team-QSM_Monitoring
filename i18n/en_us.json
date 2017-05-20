@@ -64,6 +64,15 @@
     "belong":"Belong"
   },
   "atm": {
+    "item":"item",
+    "propriety":"propriety",
+    "inventory":"inventory",
+    "value":"value",
+    "coin":"coin",
+    "withdrawed":"withdrawed",
+    "left":"left",
+    "loaded":"loaded",
+    "rejected":"rejected",
     "add_new_atm":"Add New Atm",
     "tabs": {
       "status": "atm status",

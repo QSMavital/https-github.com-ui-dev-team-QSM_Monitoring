@@ -70,6 +70,7 @@ import {AtmsNotificationsFiltersComponent} from './core/atms/atms-notifications/
 import {CalendarModule} from 'primeng/primeng';
 import {AgAmountComponent} from "./shared/components/ag-amount/ag-amount.component";
 import {AgDateComponent} from "./shared/components/ag-date/ag-date.component";
+import {AgProgressComponent} from "./shared/components/ag-progress/ag-progress.component";
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -153,7 +154,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     ChartModule,
     ReactiveFormsModule,
     AgGridModule.withComponents([
-      AgStatusComponent, AgDateComponent, AgAmountComponent
+      AgStatusComponent, AgDateComponent, AgAmountComponent, AgProgressComponent
     ])
   ],
   providers: [

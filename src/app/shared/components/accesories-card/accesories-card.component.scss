@@ -1,5 +1,6 @@
 @import "./src/styles/helpers/brand";
 :host {
+  position: relative;
   .wrapper {
     background: white;
     h3 {
@@ -10,7 +11,7 @@
       font-family: opensans-bold;
     }
     .body {
-      padding: 5px 12px;
+      padding: 5px 0;
     }
     .footer {
       .footer-item {

@@ -32,6 +32,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ControlsGroupComponent} from './components/form-components/controls-group/controls-group.component';
 import {AccesoriesCardComponent} from './components/accesories-card/accesories-card.component';
 import {SmallProgressComponent} from './components/small-progress/small-progress.component';
+import { AgProgressComponent } from './components/ag-progress/ag-progress.component';
 
 @NgModule({
   imports: [
@@ -67,7 +68,8 @@ import {SmallProgressComponent} from './components/small-progress/small-progress
     FormComponent,
     ControlsGroupComponent,
     AccesoriesCardComponent,
-    SmallProgressComponent
+    SmallProgressComponent,
+    AgProgressComponent
   ],
   exports: [
     SpinnerComponent,
@@ -88,7 +90,8 @@ import {SmallProgressComponent} from './components/small-progress/small-progress
     InputComponent,
     FormComponent,
     AccesoriesCardComponent,
-    SmallProgressComponent
+    SmallProgressComponent,
+    AgProgressComponent
   ],
   providers: [CanActivateRoute, AppActivator]
 })

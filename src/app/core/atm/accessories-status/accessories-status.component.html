@@ -1,5 +1,39 @@
 <div class="wrapper">
-  <ui-accesories-card [footerData]="{'total':'15,000'}">
-    hi <ui-small-progress value="50"></ui-small-progress>
-  </ui-accesories-card>
+
+  <div fxLayout class="row">
+
+    <ui-accesories-card [fxFlex]="50" [footerData]="{'total':'15,000','something else':'is something'}">
+      <ag-grid-angular
+        fxFlex
+        class="ag-fresh"
+        [gridOptions]="gridOptions">
+      </ag-grid-angular>
+    </ui-accesories-card>
+
+    <ui-accesories-card [fxFlex]="50" [footerData]="{'total':'15,000','something else':'is something'}">
+      hi
+      <ui-small-progress value="50"></ui-small-progress>
+    </ui-accesories-card>
+
+  </div>
+
+  <div fxLayout class="row">
+
+    <ui-accesories-card [fxFlex]="100/3" [footerData]="{'total':'15,000','something else':'is something'}">
+      hi
+      <ui-small-progress value="50"></ui-small-progress>
+    </ui-accesories-card>
+
+    <ui-accesories-card [fxFlex]="100/3" [footerData]="{'total':'15,000','something else':'is something'}">
+      hi
+      <ui-small-progress value="50"></ui-small-progress>
+    </ui-accesories-card>
+
+    <ui-accesories-card [fxFlex]="100/3" [footerData]="{'total':'15,000','something else':'is something'}">
+      hi
+      <ui-small-progress value="50"></ui-small-progress>
+    </ui-accesories-card>
+
+  </div>
+
 </div>

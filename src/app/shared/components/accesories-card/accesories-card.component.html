@@ -1,6 +1,6 @@
-<div class="wrapper">
+<div class="wrapper stretch-height" fxLayout="column">
   <h3>Cash Pool</h3>
-  <div class="body"><ng-content></ng-content></div>
+  <div class="body" style="flex:1;"><ng-content></ng-content></div>
   <div class="footer" fxLayout fxLayoutWrap="wrap" *ngIf="footerData">
     <div class="footer-item" *ngFor="let key of keys">
       <span class="key">{{key}}:&nbsp;</span>

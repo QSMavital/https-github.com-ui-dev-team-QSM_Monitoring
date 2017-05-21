@@ -12,14 +12,13 @@
 
 
     <ag-grid-angular
-                     fxFlex
-                     class="ag-fresh"
-                     [gridOptions]="gridOptions">
+      fxFlex
+      class="ag-fresh"
+      [gridOptions]="gridOptions">
     </ag-grid-angular>
   </div>
 
 </ui-portlet>
-
 
 
 <p-dialog *ngIf="addNew" [(visible)]="addNew" [modal]="true" class="dialog-no-padding add-atm-dialog">
@@ -28,6 +27,9 @@
     <ui-new></ui-new>
   </div>
   <p-footer>
-    <button>dsdsdsd</button>
+    <span class="pull-right">
+      <button class="btn purple-btn">{{'general.submit' | translate}}</button>
+      <button class="btn blue-btn">{{'general.cancel' | translate}}</button>
+    </span>
   </p-footer>
 </p-dialog>

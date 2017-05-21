@@ -104,7 +104,7 @@ export const Atms = {
   Notifications: {
     number: {headerName: 'atms.number', field: 'number', width: 80, suppressSizeToFit: true},
     hardwareState: {
-      headerName: 'atms.hardware_state',
+      headerName: 'atms.hardwareState',
       field: 'hardwareState',
       width: 110,
       cellRendererFramework: AgStatusComponent, suppressSizeToFit: true
@@ -113,23 +113,23 @@ export const Atms = {
     handler: {headerName: 'atms.handler', field: 'handler', width: 80, suppressSizeToFit: true},
     code: {headerName: 'atms.code', field: 'code', width: 80, suppressSizeToFit: true},
     spec: {headerName: 'atms.spec', field: 'spec', width: 200, suppressSizeToFit: true},
-    fullSpec: {headerName: 'atms.full_spec', field: 'fullSpec'}
+    fullSpec: {headerName: 'atms.fullSpec', field: 'fullSpec'}
   },
   Events: {
-    terminalId: {headerName: 'atms.terminalId', field: 'terminalId', width: 80},
-    time: {headerName: 'atms.time', field: 'time', width: 160},
-    code: {headerName: 'atms.code', field: 'code', width: 80},
-    spec: {headerName: 'atms.spec', field: 'spec', width: 200},
-    fullSpec: {headerName: 'atms.full_spec', field: 'fullSpec', width: 440}
+    terminalId: {headerName: 'atms.terminalId', field: 'terminalId', width: 80,suppressSizeToFit: true},
+    time: {headerName: 'atms.time', field: 'time', width: 160,suppressSizeToFit: true},
+    code: {headerName: 'atms.code', field: 'code', width: 80,suppressSizeToFit: true},
+    spec: {headerName: 'atms.spec', field: 'spec', width: 200,suppressSizeToFit: true},
+    fullSpec: {headerName: 'atms.fullSpec', field: 'fullSpec', width: 440}
   },
   Transactions: {
-    transactionId: {headerName: 'atms.transactionId', field: 'transactionId', width: 110},
+    transactionId: {headerName: 'atms.transactionId', field: 'transactionId', width: 110,suppressSizeToFit: true},
     time: {headerName: 'atms.time', field: 'time', width: 160, cellRendererFramework: AgDateComponent},
-    terminalId: {headerName: 'atms.terminalId', field: 'terminalId', width: 80},
+    terminalId: {headerName: 'atms.terminalId', field: 'terminalId', width: 80,suppressSizeToFit: true},
     card: {headerName: 'atms.card', field: 'card', width: 60},
     bank: {headerName: 'atms.bank', field: 'bank', width: 60},
     actionType: {headerName: 'atms.actionType', field: 'actionType', width: 100},
-    amount: {headerName: 'atms.amount', field: 'amount', width: 80},
+    amount: {headerName: 'atms.amount', field: 'amount', width: 80,suppressSizeToFit: true},
     endTransaction: {headerName: 'atms.endTransaction', field: 'endTransaction', width: 110},
     verifiedBy: {headerName: 'atms.verifiedBy', field: 'verifiedBy', width:100},
     rejectionReason: {headerName: 'atms.rejectionReason', field: 'rejectionReason', width: 80},

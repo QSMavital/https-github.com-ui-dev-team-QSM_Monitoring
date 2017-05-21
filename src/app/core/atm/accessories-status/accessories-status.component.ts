@@ -12,7 +12,7 @@ export class AccessoriesStatusComponent implements OnInit {
 
   private widgetsData: any[] = [
     {
-      header: "atm.cash_pool",
+      header: "atm.cashPool",
       gridData: {
         rowData: [
           {
@@ -52,13 +52,13 @@ export class AccessoriesStatusComponent implements OnInit {
       },
       footer: {
         "atm.total": "150,000",
-        "atm.last_successful": {time: true, value: "15 may 2017 22:15"}
+        "atm.lastSuccessful": {time: true, value: "15 may 2017 22:15"}
       },
       width: 50,
       props: Atm.Accessories.CashPool
     },
     {
-      header: "atm.balance_of_last_strokes",
+      header: "atm.balanceOfLastStrokes",
       gridData: {
         rowData: [
           {
@@ -97,25 +97,28 @@ export class AccessoriesStatusComponent implements OnInit {
         rowData: [
           {
             item: "item1",
-            propriety:"FATAL",
-            inventory:"67",
-            counter:0
+            propriety: "FATAL",
+            inventory: "67",
+            counter: 0
           },
           {
             item: "item2",
-            propriety:"FATAL",
-            inventory:"67",
-            counter:0
+            propriety: "FATAL",
+            inventory: "67",
+            counter: 0
           },
           {
             item: "item3",
-            propriety:"FATAL",
-            inventory:"67",
-            counter:0
+            propriety: "FATAL",
+            inventory: "67",
+            counter: 0
           }
         ]
       },
-      footer:{"atm.last_successful":{time:true,value:"oct 10 1976"},"atm.last_reset":{time:true,value:"oct 10 1926"}},
+      footer: {
+        "atm.lastSuccessful": {time: true, value: "oct 10 1976"},
+        "atm.lastReset": {time: true, value: "oct 10 1926"}
+      },
       width: 100 / 3,
       props: Atm.Accessories.Checks
     },
@@ -125,26 +128,26 @@ export class AccessoriesStatusComponent implements OnInit {
         rowData: [
           {
             item: "item1",
-            propriety:"FATAL",
-            inventory:"67",
-            counter:0
+            propriety: "FATAL",
+            inventory: "67",
+            counter: 0
           },
           {
             item: "item2",
-            propriety:"FATAL",
-            inventory:"67",
-            counter:0
+            propriety: "FATAL",
+            inventory: "67",
+            counter: 0
           },
           {
             item: "item3",
-            propriety:"FATAL",
-            inventory:"67",
-            counter:0
+            propriety: "FATAL",
+            inventory: "67",
+            counter: 0
           }
         ]
       },
       width: 100 / 3,
-      footer:{"atm.last_reset":{time:true,value:"oct 10 1926"}},
+      footer: {"atm.lastReset": {time: true, value: "oct 10 1926"}},
       props: Atm.Accessories.Other
     }
   ];
@@ -160,6 +163,9 @@ export class AccessoriesStatusComponent implements OnInit {
     this.widgetsData.forEach(widget => {
       widget.gridData.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl';
       widget.gridData.enableSorting = true;
+      widget.gridData.getRowHeight = (() => {
+        return 32
+      });
       widget.gridData.columnDefs = [];
       for (var prop in widget.props) {
         widget.gridData.columnDefs.push(

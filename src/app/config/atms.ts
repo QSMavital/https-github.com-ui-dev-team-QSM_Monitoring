@@ -39,6 +39,12 @@ export const Atms = {
       width: 160,
       cellRendererFramework: AgDateComponent
     },
+    lastSettlement: {
+      headerName: "atms.lastSettlement",
+      field: "lastSettlement",
+      width: 160,
+      cellRendererFramework: AgDateComponent
+    },
     lastGoodTransaction: {
       headerName: "atms.lastActivity",
       field: "lastGoodTransaction",

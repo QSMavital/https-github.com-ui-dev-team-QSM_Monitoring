@@ -3,46 +3,52 @@ module.exports = function (req, res, next) {
   var delay = 1000;
   setTimeout(function () {
 
-    if (req.url.indexOf('/general/settingsUser') !== -1) {
+    if (req.url.indexOf('/general/settingsUser/get') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         settingsUser
       ));
     }
-    else if (req.url.indexOf('/general') !== -1) {
+    else if (req.url.indexOf('/general/get') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         customerGeneral
       ));
     }
-    else if (req.url.indexOf('/main/connection') !== -1) {
+    else if (req.url.indexOf('/main/connection/get') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         mainConnection
       ));
     }
-    else if (req.url.indexOf('/main/deviceStatus') !== -1) {
+    else if (req.url.indexOf('/main/deviceStatus/get') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         device_status
       ));
     }
-    else if (req.url.indexOf('/main/onlineStatus') !== -1) {
+    else if (req.url.indexOf('/main/onlineStatus/get') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         onlineStatus
       ));
     }
-    else if (req.url.indexOf('/main/issuerActionStatus') !== -1) {
+    else if (req.url.indexOf('/main/issuerActionStatus/get') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         issuerActionStatus
       ));
     }
-    else if (req.url.indexOf('/main/actionStatus') !== -1) {
+    else if (req.url.indexOf('/main/actionStatus/get') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         actionStatus
+      ));
+    }
+    else if (req.url.indexOf('/atms/get') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        atms_inventory
       ));
     }
     else {
@@ -365,3 +371,53 @@ var actionStatus = [
     "precents": 10
   }
 ];
+
+var atms_inventory = {
+  "filters":{
+    "statusFilter":[
+      "DISABLE",
+      "GOOD",
+      "ATTENTION",
+      "FATAL",
+      "OPERATOR"
+    ],
+    "groupFilters":[01],
+    "areaFilters":[
+      "NONE",
+      "NORTH",
+      "SOUTH",
+      "CENTER",
+      "JERUSALEM_AND_SURROUNDINGS"]
+  },
+  "atms":[{
+    "terminalId" : "288032",
+    "atmName" : "test",
+    "terminalStatus" : "OFF_LINE",
+    "closedReason":"UNKNOWN",
+    "dispenserColor" : "GOOD",
+    "cashDepositColor" : "GOOD",
+    "checkDepositColor" : "DISABLE",
+    "printerColor" : "GOOD",
+    "receiptColor" : "DISABLE",
+    "cardReaderColor" : "GOOD",
+    "eppColor" : "GOOD",
+    "lastGoodTransaction" : 1449342890265,
+    "lastSettlement" : 1472027446100,
+    "lastMessage" : 1478269947371,
+    "branch" : "288",
+    "belong" : "YAHAV",
+    "treatmentStartDate" : 0,
+    "responsibility" : "NONE",
+    "terminalGroup" : "00",
+    "area" : "NORTH",
+    "cardsRetained" : 0,
+    "lastGoodWdrl" : 1449342890265,
+    "lastCardSettlement" : 1476307886568,
+    "lastDepositSettlement" : 946677600000,
+    "lastCheckSettlement" : 946677600000,
+    "totalRemaining" : 16965000,
+    "totalDispensed" : 0,
+    "checkTotalBin1" : 0,
+    "checkTotalBin2" : 0
+  }]
+};

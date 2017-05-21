@@ -1,7 +1,15 @@
 {
   "app": {
     "error": "Error",
-    "go": "Go"
+    "go": "Go",
+    "select":"Select..."
+  },
+  "area":{
+    "NONE":"Error",
+    "NORTH":"North",
+    "SOUTH":"South",
+    "CENTER":"Center",
+    "JERUSALEM_AND_SURROUNDINGS":"Jerusalem And Surroundings"
   },
   "menu": {
     "main": "main",

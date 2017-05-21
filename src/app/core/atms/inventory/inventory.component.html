@@ -1,8 +1,9 @@
+<script src="inventory.component.ts"></script>
 <ui-portlet>
   <div class="stretch-height" fxLayout="column">
     <ui-filters-bar>
       <div fxLayout>
-        <ui-atms-inventory-filter></ui-atms-inventory-filter>
+        <ui-atms-inventory-filter [filters]="filtersData"></ui-atms-inventory-filter>
         <div fxFlex class="text-right">
           <button (click)="addNew=!addNew;" class="blue-btn ui-icons-add-new"></button>
         </div>

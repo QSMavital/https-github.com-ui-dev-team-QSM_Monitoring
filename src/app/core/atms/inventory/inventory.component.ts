@@ -172,6 +172,9 @@ export class InventoryComponent implements OnInit, OnDestroy {
   initColDefs(){
     this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()]=='rtl';
     this.gridOptions.enableSorting = true;
+    this.gridOptions.getRowHeight = function () {
+      return 100;
+    };
     this.gridOptions.columnDefs = [];
     for (var prop in Atms.Inventory) {
       this.gridOptions.columnDefs.push(

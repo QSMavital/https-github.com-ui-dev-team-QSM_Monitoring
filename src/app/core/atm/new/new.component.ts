@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CustomControlGroup} from "../../../config/interfaces/form.interface";
+import {FormGroup, FormControl} from "@angular/forms";
+import {FormBuilderService} from "../../../shared/services/form-builder.service";
 
 @Component({
   selector: 'ui-new',
@@ -8,6 +10,7 @@ import {CustomControlGroup} from "../../../config/interfaces/form.interface";
 })
 export class NewComponent implements OnInit {
 
+  private form:FormGroup = new FormGroup({});
   private controlGroups: CustomControlGroup[] = [
     {
       title: 'settings',
@@ -381,7 +384,9 @@ export class NewComponent implements OnInit {
   ];
 
 
-  constructor() { }
+  constructor(frmBuilderSrv:FormBuilderService) {
+    this.form = frmBuilderSrv.createForm(this.controlGroups);
+  }
 
   submitForm(e) {
     console.log(e);

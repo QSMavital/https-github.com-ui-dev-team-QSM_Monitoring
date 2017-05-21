@@ -33,6 +33,7 @@ import {ControlsGroupComponent} from './components/form-components/controls-grou
 import {AccesoriesCardComponent} from './components/accesories-card/accesories-card.component';
 import {SmallProgressComponent} from './components/small-progress/small-progress.component';
 import { AgProgressComponent } from './components/ag-progress/ag-progress.component';
+import {FormBuilderService} from "./services/form-builder.service";
 
 @NgModule({
   imports: [
@@ -93,7 +94,7 @@ import { AgProgressComponent } from './components/ag-progress/ag-progress.compon
     SmallProgressComponent,
     AgProgressComponent
   ],
-  providers: [CanActivateRoute, AppActivator]
+  providers: [CanActivateRoute, AppActivator,FormBuilderService]
 })
 
 export class SharedModule {

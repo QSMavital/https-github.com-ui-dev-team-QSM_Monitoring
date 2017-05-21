@@ -47,7 +47,12 @@ export class AtmsNotificationsComponent implements OnInit {
         spec:"Communications Error",
         fullSpec:"Failed to connect to bank interface"
       }
-    ];
+    ]
+  }
+
+
+  fitCols(){
+    this.gridOptions.api.sizeColumnsToFit();
   }
 
   initColDefs() {

@@ -96,18 +96,18 @@ export const Atms = {
 
   },
   Notifications: {
-    number: {headerName: 'atms.number', field: 'number', width: 80},
+    number: {headerName: 'atms.number', field: 'number', width: 80, suppressSizeToFit: true},
     hardwareState: {
       headerName: 'atms.hardware_state',
       field: 'hardwareState',
       width: 110,
-      cellRendererFramework: AgStatusComponent
+      cellRendererFramework: AgStatusComponent, suppressSizeToFit: true
     },
-    time: {headerName: 'atms.time', field: 'time', width: 160, cellRendererFramework: AgDateComponent},
-    handler: {headerName: 'atms.handler', field: 'handler', width: 80},
-    code: {headerName: 'atms.code', field: 'code', width: 80},
-    spec: {headerName: 'atms.spec', field: 'spec', width: 200},
-    fullSpec: {headerName: 'atms.full_spec', field: 'fullSpec', width: 440}
+    time: {headerName: 'atms.time', field: 'time', width: 160, cellRendererFramework: AgDateComponent, suppressSizeToFit: true},
+    handler: {headerName: 'atms.handler', field: 'handler', width: 80, suppressSizeToFit: true},
+    code: {headerName: 'atms.code', field: 'code', width: 80, suppressSizeToFit: true},
+    spec: {headerName: 'atms.spec', field: 'spec', width: 200, suppressSizeToFit: true},
+    fullSpec: {headerName: 'atms.full_spec', field: 'fullSpec'}
   },
   Events: {
     terminalId: {headerName: 'atms.terminalId', field: 'terminalId', width: 80},

@@ -11,6 +11,7 @@
     </ui-filters-bar>
 
     <ag-grid-angular
+      (gridReady)="fitCols()"
       fxFlex
       class="ag-fresh"
       [gridOptions]="gridOptions">

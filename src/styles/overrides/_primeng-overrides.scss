@@ -61,8 +61,7 @@
   .qsm_self {
     text-align: center
   }
-;
-  border: 1px solid $botti;
+  border: 1px solid $botti !important;
   .ui-dropdown-trigger {
     border: none !important;
     color: $nepal !important;
@@ -70,10 +69,11 @@
     left: auto !important;
   }
   .ui-dropdown-label {
-    height: 20px;
-    line-height: 13px;
-    //padding-left:2em;
-    //padding-right:2em;
+    height: 21px;
+    line-height: 15px;
+    padding-left: 10px;
+    font-size: $fs13;
+    color: $shuttle !important;
   }
   .ui-dropdown-item {
     text-align: left !important;
@@ -88,18 +88,18 @@
 
 .ui-chkbox {
   .ui-chkbox-box {
-    height:14px;
-    line-height:12px;
-    width:14px;
-    border:1px solid $botti;
+    height: 14px;
+    line-height: 12px;
+    width: 14px;
+    border: 1px solid $botti;
     border-radius: 2px;
     &.ui-state-active {
-      color:$kimb;
-      background:transparent;
-      border:1px solid $botti;
+      color: $kimb;
+      background: transparent;
+      border: 1px solid $botti;
     }
     .ui-chkbox-icon {
-      font-size:10px !important;
+      font-size: 10px !important;
     }
   }
 }
@@ -107,7 +107,7 @@
 .ui-calendar {
   .ui-button-icon-only {
     background: white;
-    color:$casper;
-    border-color:$botti;
+    color: $casper;
+    border-color: $botti;
   }
 }

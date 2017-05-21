@@ -72,6 +72,8 @@ import {AgAmountComponent} from "./shared/components/ag-amount/ag-amount.compone
 import {AgDateComponent} from "./shared/components/ag-date/ag-date.component";
 import {AgProgressComponent} from "./shared/components/ag-progress/ag-progress.component";
 import {Atms as AtmsMiddleware} from "../store/middlewares/atms-middleware";
+import {AgDateShortComponent} from "./shared/components/ag-date-short/ag-date-short.component";
+import {AgTimeComponent} from "./shared/components/ag-time/ag-time.component";
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -155,7 +157,12 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     ChartModule,
     ReactiveFormsModule,
     AgGridModule.withComponents([
-      AgStatusComponent, AgDateComponent, AgAmountComponent, AgProgressComponent
+      AgStatusComponent,
+      AgDateComponent,
+      AgAmountComponent,
+      AgProgressComponent,
+      AgDateShortComponent,
+      AgTimeComponent
     ])
   ],
   providers: [

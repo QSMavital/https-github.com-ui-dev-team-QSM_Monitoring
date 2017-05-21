@@ -2,6 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import {Atms} from "../../../config/atms";
 import {i18n} from "../../../config/i18n";
 import {TranslateService} from "@ngx-translate/core";
+import {select, NgRedux} from "@angular-redux/store";
+import {Observable} from "rxjs";
+import {AtmsActions} from "../../../../store/actions/atms-actions";
+import {IStore} from "../../../../store/index";
+import {isNullOrUndefined} from "util";
+import {GridDefsService} from "../../../shared/services/grid-defs.service";
 
 @Component({
   selector: 'ui-atms-notifications',
@@ -9,45 +15,24 @@ import {TranslateService} from "@ngx-translate/core";
   styleUrls: ['./atms-notifications.component.scss']
 })
 export class AtmsNotificationsComponent implements OnInit {
-
+  @select(['atms', 'events']) $atms_events: Observable<any>;
   private gridOptions: any = {};
+  private $atms_events_ref;
 
-  constructor(private translateSrv: TranslateService) {
+  constructor(private ngRedux: NgRedux<IStore>,
+              private gridDefsSrv: GridDefsService) {
     this.gridOptions.columnDefs = [];
+    this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_EVENTS});
+
   }
 
   ngOnInit() {
     this.initColDefs();
-
-    this.gridOptions.rowData = [
-      {
-        number:1,
-        hardwareState:"FATAL",
-        time:1494795600000,
-        handler:"IT",
-        code:"CM002",
-        spec:"Communications Error",
-        fullSpec:"Failed to connect to bank interface"
-      },
-      {
-        number:2,
-        hardwareState:"FATAL",
-        time:1494795600000,
-        handler:"IT",
-        code:"CM002",
-        spec:"Communications Error",
-        fullSpec:"Failed to connect to bank interface"
-      },
-      {
-        number:3,
-        hardwareState:"FATAL",
-        time:1494795600000,
-        handler:"IT",
-        code:"CM002",
-        spec:"Communications Error",
-        fullSpec:"Failed to connect to bank interface"
+    this.$atms_events_ref = this.$atms_events.subscribe((state) => {
+      if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
+        this.gridOptions.api.setRowData(state);
       }
-    ]
+    });
   }
 
 
@@ -56,22 +41,14 @@ export class AtmsNotificationsComponent implements OnInit {
   }
 
   initColDefs() {
-    this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl';
-    this.gridOptions.enableSorting = true;
-    this.gridOptions.getRowHeight = (() => {return 32});
-    this.gridOptions.columnDefs = [];
-    for (var prop in Atms.Notifications) {
-      this.gridOptions.columnDefs.push(
-        Object.assign({},
-          {suppressFilter: true},
-          Atms.Notifications[prop],
-          {
-            headerName: this.translateSrv.instant(Atms.Notifications[prop].headerName)
-          }));
-    }
+    let colsDef = this.ngRedux.getState().userSettings.atmsCustomization['alerts'];
+    this.gridOptions = this.gridDefsSrv.initGridOptions();
+    this.gridOptions.columnDefs = this.gridDefsSrv.initAtmsGridColDefs(colsDef, 'Notifications');
+
   }
 
   ngOnDestroy() {
-    this.gridOptions = {};
+    this.$atms_events_ref.unsubscribe();
+
   }
 }

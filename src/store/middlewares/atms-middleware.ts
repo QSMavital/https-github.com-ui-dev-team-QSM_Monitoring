@@ -21,6 +21,15 @@ export class Atms {
               payload: res
             });
           });
+      case AtmsActions.ATMS_GET_EVENTS:
+        this.http.post(Api.atms_events.url, Api.atms_events.payload)
+          .map(res => JSON.parse(res['_body']))
+          .subscribe((res) => {
+            next({
+              type: AtmsActions.ATMS_SET_EVENTS,
+              payload: res
+            });
+          });
 
 
       default:

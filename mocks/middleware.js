@@ -51,6 +51,12 @@ module.exports = function (req, res, next) {
         atms_inventory
       ));
     }
+    else if (req.url.indexOf('/events/get') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        atms_events
+      ));
+    }
     else {
       next();
     }
@@ -268,52 +274,66 @@ var settingsUser = {
         "visible": false
       }
     ],
-    "alerts": [{
+    "alerts": [
+      {
       "field": "atmNo",
       "visible": true
-    }, {
+    },
+      {
       "field": "eventSeverity",
       "visible": true
-    }, {
+    },
+      {
       "field": "date",
       "visible": true
-    }, {}, {
+    },
+      {
       "field": "time",
       "visible": true
-    }, {
+    },
+      {
 
       "field": "eventDestinations",
       "visible": true
-    }, {
+    },
+      {
       "field": "eventCode",
       "visible": true
-    }, {
+    },
+      {
       "field": "eventTextEn",
       "visible": true
-    }, {
+    },
+      {
       "field": "eventTextLocal",
       "visible": true
-    }, {
+    },
+      {
       "field": "device",
       "visible": false
     }
     ],
-    "events": [{
-      "field": "atmNo",
-      "visible": true
-    }, {
-      "field": "date",
-      "visible": true
-    }, {}, {
-      "field": "time",
-      "visible": true
-    }, {
-      "field": "eventCode",
-      "visible": true
-    }, {
-      "field": "eventTextEn",
-      "visible": true
-    },
+    "events": [
+      {
+        "field": "atmNo",
+        "visible": true
+      },
+      {
+        "field": "date",
+        "visible": true
+      },
+      {
+        "field": "time",
+        "visible": true
+      },
+      {
+        "field": "eventCode",
+        "visible": true
+      },
+      {
+        "field": "eventTextEn",
+        "visible": true
+      },
       {
         "field": "eventTextLocal",
         "visible": true
@@ -321,10 +341,12 @@ var settingsUser = {
       {
         "field": "eventDestinations",
         "visible": false
-      }, {
+      },
+      {
         "field": "eventSeverity",
         "visible": false
-      }, {
+      },
+      {
         "field": "device",
         "visible": false
       }
@@ -578,3 +600,17 @@ var atms_inventory = {
     "checkTotalBin2": 0
   }]
 };
+
+var atms_events = [{
+  "id": 1,
+  "atmNo": "000000",
+  "atmName": "atmName",
+  "date": 1494317961838,
+  "time": 1494317961838,
+  "eventSeverity": "FATAL",
+  "eventCode": "AC001",
+  "eventTextEn": "AC001 Late response(approved) received from bank for transaction 1",
+  "eventTextLocal": "תשובה מאוחרת",
+  "device": "",
+  "eventDestinations": ["SEC", "IT", "CIT"]
+}];

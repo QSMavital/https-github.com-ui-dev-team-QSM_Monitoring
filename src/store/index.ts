@@ -29,6 +29,7 @@ class IDashboard {
 }
 class IAtms {
   inventory?: any;
+  events?:any;
 }
 
 export const rootReducer = combineReducers<IStore>({

@@ -1,13 +1,11 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {GridOptions} from "ag-grid";
-import {Atms} from "../../../config/atms";
-import {TranslateService} from "@ngx-translate/core";
-import {i18n} from "../../../config/i18n";
 import {NgRedux, select} from "@angular-redux/store";
 import {IStore} from "../../../../store/index";
 import {isNullOrUndefined} from "util";
 import {AtmsActions} from "../../../../store/actions/atms-actions";
 import {Observable} from "rxjs";
+import {GridDefsService} from "../../../shared/services/grid-defs.service";
 
 @Component({
   selector: 'ui-inventory',
@@ -15,19 +13,19 @@ import {Observable} from "rxjs";
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent implements OnInit, OnDestroy {
-  private addNew = false;
+  private addNew= false;
   private filtersData = {};
+  private $atms_inventory_ref;
   private gridOptions: GridOptions = {};
   @select(['atms', 'inventory']) $atms_inventory: Observable<any>;
 
-  constructor(private translateSrv: TranslateService, private ngRedux: NgRedux<IStore>) {
-    this.gridOptions.columnDefs = [];
+  constructor(private ngRedux: NgRedux<IStore>, private gridDefsSrv: GridDefsService) {
     this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_INVENTORY});
   }
 
   ngOnInit() {
     this.initColDefs();
-    this.$atms_inventory.subscribe((state) => {
+    this.$atms_inventory_ref = this.$atms_inventory.subscribe((state) => {
       if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
         this.gridOptions.api.setRowData(state.atms);
         this.filtersData = state.filters;
@@ -37,26 +35,13 @@ export class InventoryComponent implements OnInit, OnDestroy {
 
   initColDefs() {
     let colsDef = this.ngRedux.getState().userSettings.atmsCustomization['atmsSupply'];
-    this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl';
-    this.gridOptions.enableSorting = true;
-    this.gridOptions.getRowHeight = (() => {
-      return 32
-    });
-    this.gridOptions.columnDefs = [];
-    colsDef.forEach((col) => {
-      if (col.visible && !isNullOrUndefined(Atms.Inventory[col.field])) {
-        this.gridOptions.columnDefs.push(
-          Object.assign({},
-            {suppressFilter: true},
-            Atms.Inventory[col.field], {
-              headerName: this.translateSrv.instant(Atms.Inventory[col.field].headerName)
-            }));
-      }
+    this.gridOptions = this.gridDefsSrv.initGridOptions();
+    this.gridOptions.columnDefs = this.gridDefsSrv.initAtmsGridColDefs(colsDef, 'Inventory');
 
-    });
   }
 
   ngOnDestroy() {
-    this.gridOptions = {};
+    this.$atms_inventory_ref.unsubscribe();
+
   }
 }

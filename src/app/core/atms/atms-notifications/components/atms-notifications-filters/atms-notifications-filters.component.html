@@ -2,18 +2,18 @@
 
   <div class="in-block ui-space-r-regular middle">
     <ui-label translate="atms.filters.fromDate"></ui-label>
-    <p-calendar [showTime]="true" icon="ui-icons-calendar" showIcon="true"
+    <p-calendar formControlName="fromDate" [showTime]="true" icon="ui-icons-calendar" showIcon="true"
     ></p-calendar>
   </div>
 
   <div class="in-block ui-space-l-medium ui-space-r-regular middle">
     <ui-label translate="atms.filters.toDate"></ui-label>
-    <p-calendar  [showTime]="true" icon="ui-icons-calendar" showIcon="true"
+    <p-calendar  formControlName="toDate" [showTime]="true" icon="ui-icons-calendar" showIcon="true"
     ></p-calendar>
   </div>
 
   <span class="ui-space-l-medium in-block">
-    <button class="blue-btn" translate="app.go"></button>
+  <button class="blue-btn" [disabled]="form.pristine" (click)="filter()" translate="app.go"></button>
   </span>
 
 </form>

@@ -8,6 +8,7 @@ import {NgRedux, select} from "@angular-redux/store";
 import {IStore} from "../../../../store/index";
 import {Observable} from "rxjs";
 import {AtmsActions} from "../../../../store/actions/atms-actions";
+import {GridDefsService} from "../../../shared/services/grid-defs.service";
 
 @Component({
   selector: 'ui-atms-status',
@@ -17,10 +18,11 @@ import {AtmsActions} from "../../../../store/actions/atms-actions";
 export class AtmsStatusComponent implements OnInit {
   private addNew = false;
   private filtersData = {};
+  private $atms_inventory_ref;
   @select(['atms', 'inventory']) $atms_inventory: Observable<any>;
   private gridOptions: GridOptions = {};
 
-  constructor(private translateSrv: TranslateService,
+  constructor(private gridDefsSrv: GridDefsService,
               private ngRedux: NgRedux<IStore>) {
     this.gridOptions = {
       rowSelection: 'multiple',
@@ -39,7 +41,7 @@ export class AtmsStatusComponent implements OnInit {
 
   ngOnInit() {
     this.initColDefs();
-    this.$atms_inventory.subscribe((state)=> {
+    this.$atms_inventory_ref = this.$atms_inventory.subscribe((state)=> {
       if (!isNullOrUndefined(state)&&!isNullOrUndefined(this.gridOptions.api)) {
         this.gridOptions.api.setRowData(state.atms);
         this.filtersData = state.filters;
@@ -49,23 +51,11 @@ export class AtmsStatusComponent implements OnInit {
 
   initColDefs(){
     let colsDef = this.ngRedux.getState().userSettings.atmsCustomization['atmsStatus'];
-    this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang()]=='rtl';
-    this.gridOptions.columnDefs = [];
-    this.gridOptions.getRowHeight = (() => {return 32});
-    colsDef.forEach((col) => {
-      if (col.visible && !isNullOrUndefined(Atms.Status[col.field])) {
-        this.gridOptions.columnDefs.push(
-          Object.assign({},
-            {suppressFilter: true},
-            Atms.Status[col.field],
-            {
-              headerName: this.translateSrv.instant(Atms.Status[col.field].headerName)
-            }));
-      }
-    });
+    this.gridOptions = this.gridDefsSrv.initGridOptions();
+    this.gridOptions.columnDefs = this.gridDefsSrv.initAtmsGridColDefs(colsDef, 'Status');
   }
 
   ngOnDestroy(){
-    // this.gridOptions={};
+    this.$atms_inventory_ref.unsubscribe();
   }
 }

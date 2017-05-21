@@ -2,13 +2,19 @@
 
 .btn {
   background: white;
-  padding: 5px 15px;
+  padding: 0px 15px;
+  height:21px !important;
   text-transform: capitalize;
   border-radius: 12px;
   font-size: $fs13 !important;
   outline: none;
   cursor: pointer;
   vertical-align: middle;
+  &.ui-icons-add-new {
+    height:21px !important;
+    width:21px !important;
+    padding:0;
+  }
 }
 
 .blue-btn {

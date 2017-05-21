@@ -12,6 +12,7 @@
 
     <ag-grid-angular
       fxFlex
+      (gridReady)="fitCols()"
       class="ag-fresh"
       [gridOptions]="gridOptions">
     </ag-grid-angular>

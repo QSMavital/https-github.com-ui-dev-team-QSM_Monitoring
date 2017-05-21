@@ -267,7 +267,8 @@ $font_3: sans-serif;
     top: 38px !important;
   }
   .ag-row-odd {
-    background-color: $color_black_haze_approx;
+    //background-color: $color_black_haze_approx;
+    background-color: white;
   }
   .ag-row-even {
     background-color: white;
@@ -521,11 +522,29 @@ $font_3: sans-serif;
 
 .ag-header-cell {
   &:first-child {
-    padding-left:10px;
+    padding-left: 10px;
   }
 }
+
 .ag-cell {
   &:first-child {
-    padding-left:10px;
+    padding-left: 10px;
   }
+}
+
+.ag-row {
+  padding-top: 5px !important;
+  border-bottom: 1px solid $cats-white;
+  &:last-child {
+    border-color: transparent;
+  }
+}
+
+.ag-fresh .ag-header-cell-menu-button {
+  margin-top: 12px !important;
+}
+
+ag-tab-body, .ag-menu, .ag-menu-option-popup-pointer, .ag-fresh .ag-header-icon {
+  color: $kimb;
+  fill: $kimb;
 }

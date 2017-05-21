@@ -138,6 +138,7 @@ export class AtmsStatusComponent implements OnInit {
   initColDefs(){
     this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang()]=='rtl';
     this.gridOptions.columnDefs = [];
+    this.gridOptions.getRowHeight = (() => {return 32});
     for (var prop in Atms.Status) {
         this.gridOptions.columnDefs.push(
           Object.assign({},

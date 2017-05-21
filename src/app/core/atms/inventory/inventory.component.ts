@@ -13,6 +13,7 @@ import {isNullOrUndefined} from "util";
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent implements OnInit, OnDestroy {
+  private addNew = false;
   private gridOptions: GridOptions = {};
 
   constructor(private translateSrv: TranslateService, private ngRedux: NgRedux<IStore>) {

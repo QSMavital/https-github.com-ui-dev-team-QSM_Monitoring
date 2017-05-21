@@ -67,22 +67,22 @@ export class ReportsComponent implements OnInit {
       size:'medium'
     },
     {
-      title: 'general.last_withdrawal',
+      title: 'general.lastWithdrawal',
       field: 'lastWithdrawal',
       size:'small'
     },
     {
-      title: 'general.remaining_cash',
+      title: 'general.remainingCash',
       field: 'remainingCash',
       size:'small'
     },
     {
-      title: 'general.retained_cards',
+      title: 'general.retainedCards',
       field: 'retainedCards',
       size:'small'
     },
     {
-      title: 'general.card_settlement',
+      title: 'general.cardSettlement',
       field: 'cardSettlement',
       size:'small'
     },
@@ -91,11 +91,11 @@ export class ReportsComponent implements OnInit {
       field: 'branch',
       size:'small'
     },{
-      title: 'general.last_activity',
+      title: 'general.lastActivity',
       field: 'lastActivity',
       size:'small'
     },{
-      title: 'general.last_settlement',
+      title: 'general.lastSettlement',
       field: 'lastSettlement',
       size:'small'
     }

@@ -21,67 +21,74 @@ export class AtmsTransactionsComponent implements OnInit, OnDestroy {
 
     this.gridOptions.rowData = [
       {
-        transactionId:1,
-        time:1494795600000,
-        terminalId:6,
-        card:'0453',
-        bank:'BOJ',
-        actionType:"cardCheck",
-        amount:1000,
-        endTransaction:"Authorized",
-        verifiedBy:"pending",
-        rejectionReason:"-",
-        deviceFee:"1.74",
-        businessDay:"20/08/2015"
+        transactionId: 1,
+        time: 1494795600000,
+        terminalId: 6,
+        card: '0453',
+        bank: 'BOJ',
+        actionType: "cardCheck",
+        amount: 1000,
+        endTransaction: "Authorized",
+        verifiedBy: "pending",
+        rejectionReason: "-",
+        deviceFee: "1.74",
+        businessDay: "20/08/2015"
       },
       {
-        transactionId:2,
-        time:1494795600000,
-        terminalId:6,
-        card:'0453',
-        bank:'BOJ',
-        actionType:"cardCheck",
-        amount:1000,
-        endTransaction:"Authorized",
-        verifiedBy:"pending",
-        rejectionReason:"-",
-        deviceFee:"1.74",
-        businessDay:"20/08/2015"
+        transactionId: 2,
+        time: 1494795600000,
+        terminalId: 6,
+        card: '0453',
+        bank: 'BOJ',
+        actionType: "cardCheck",
+        amount: 1000,
+        endTransaction: "Authorized",
+        verifiedBy: "pending",
+        rejectionReason: "-",
+        deviceFee: "1.74",
+        businessDay: "20/08/2015"
       },
       {
-        transactionId:3,
-        time:1494795600000,
-        terminalId:6,
-        card:'0453',
-        bank:'BOJ',
-        actionType:"cardCheck",
-        amount:1000,
-        endTransaction:"Authorized",
-        verifiedBy:"pending",
-        rejectionReason:"-",
-        deviceFee:"1.74",
-        businessDay:"20/08/2015"
+        transactionId: 3,
+        time: 1494795600000,
+        terminalId: 6,
+        card: '0453',
+        bank: 'BOJ',
+        actionType: "cardCheck",
+        amount: 1000,
+        endTransaction: "Authorized",
+        verifiedBy: "pending",
+        rejectionReason: "-",
+        deviceFee: "1.74",
+        businessDay: "20/08/2015"
       },
       {
-        transactionId:4,
-        time:1494795600000,
-        terminalId:6,
-        card:'0453',
-        bank:'BOJ',
-        actionType:"cardCheck",
-        amount:1000,
-        endTransaction:"Authorized",
-        verifiedBy:"pending",
-        rejectionReason:"-",
-        deviceFee:"1.74",
-        businessDay:"20/08/2015"
+        transactionId: 4,
+        time: 1494795600000,
+        terminalId: 6,
+        card: '0453',
+        bank: 'BOJ',
+        actionType: "cardCheck",
+        amount: 1000,
+        endTransaction: "Authorized",
+        verifiedBy: "pending",
+        rejectionReason: "-",
+        deviceFee: "1.74",
+        businessDay: "20/08/2015"
       }
     ];
+  }
+
+  fitCols() {
+    this.gridOptions.api.sizeColumnsToFit();
   }
 
   initColDefs() {
     this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl';
     this.gridOptions.enableSorting = true;
+    this.gridOptions.getRowHeight = (() => {
+      return 32
+    });
     this.gridOptions.columnDefs = [];
     for (var prop in Atms.Transactions) {
       this.gridOptions.columnDefs.push(

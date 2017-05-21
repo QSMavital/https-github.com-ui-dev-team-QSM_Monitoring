@@ -74,6 +74,7 @@ export class RetainedCardsComponent implements OnInit {
   initColDefs() {
     this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl';
     this.gridOptions.enableSorting = true;
+    this.gridOptions.getRowHeight = (() => {return 32});
     this.gridOptions.columnDefs = [];
     for (var prop in Atm.RetainedCards) {
       this.gridOptions.columnDefs.push(

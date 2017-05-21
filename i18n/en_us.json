@@ -34,7 +34,9 @@
     "lastActivity": "last activity",
     "lastSettlement": "last settlement",
     "businessDay": "business day",
-    "search": "search"
+    "search": "search",
+    "submit":"submit",
+    "cancel":"cancel"
   },
   "atms": {
     "tabs": {

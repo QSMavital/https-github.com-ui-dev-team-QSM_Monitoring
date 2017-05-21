@@ -95,12 +95,26 @@
 
 .add-atm-dialog {
   .ui-dialog-titlebar {
-    background: $selago;
+    background: white !important;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 !important;
+    padding-left: 15px !important;
   }
   .ui-dialog-title {
     text-transform: uppercase;
-    color:$victoria;
-    font-family: opensans-bold;
-    font-size: $fs14;
+    color:$victoria !important;
+    font-family: opensans-bold  !important;
+    font-size: $fs14 !important;
+  }
+  p-footer {
+    display: block;
+    height:37px;
+    line-height: 37px;
+    padding:0x !important;
+    border-top: 1px solid $selago;
+    .btn {
+      margin-right:15px !important;
+    }
   }
 }

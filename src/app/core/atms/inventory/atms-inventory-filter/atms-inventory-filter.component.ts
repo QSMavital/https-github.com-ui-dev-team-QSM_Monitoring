@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, OnChanges} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {NgRedux} from "@angular-redux/store";
 import {IStore} from "../../../../../store/index";
@@ -21,7 +21,6 @@ export class AtmsInventoryFilterComponent implements OnInit,OnChanges {
               private translateSrv: TranslateService) {
     this.initForm();
     this.filterObj = {statusFilter: [], groupFilters: [], areaFilters: []}
-​
   }
 
   ngOnInit() {}
@@ -29,25 +28,33 @@ export class AtmsInventoryFilterComponent implements OnInit,OnChanges {
   ngOnChanges(newData) {
     this.filterObj = {statusFilter: [], groupFilters: [], areaFilters: []};
     if (!isNullOrUndefined(newData.filters.currentValue.statusFilter)) {
-      newData.filters.currentValue['statusFilter'].forEach((statusFilter)=>{
-        this.filterObj.statusFilter.push({label:this.translateSrv.instant(`actionsStatus.${statusFilter}`),value:statusFilter})
-        });
-      newData.filters.currentValue['groupFilters'].forEach((groupFilters)=>{
-        this.filterObj.groupFilters.push({label:groupFilters,value:groupFilters})
+      newData.filters.currentValue['statusFilter'].forEach((statusFilter) => {
+        this.filterObj.statusFilter.push({
+          label: this.translateSrv.instant(`actionsStatus.${statusFilter}`),
+          value: statusFilter
+        })
       });
-      newData.filters.currentValue['areaFilters'].forEach((areaFilters)=>{
-        this.filterObj.areaFilters.push({label:this.translateSrv.instant(`area.${areaFilters}`),value:areaFilters})
+      newData.filters.currentValue['groupFilters'].forEach((groupFilters) => {
+        this.filterObj.groupFilters.push({label: groupFilters, value: groupFilters})
+      });
+      newData.filters.currentValue['areaFilters'].forEach((areaFilters) => {
+        this.filterObj.areaFilters.push({label: this.translateSrv.instant(`area.${areaFilters}`), value: areaFilters})
       });
     }
   }
 
   initForm() {
     this.form = this.fb.group({
-      atm: ['', Validators.required],
-      group: ['', Validators.required],
-      region: ['', Validators.required]
+      atm: [null],
+      group: [null],
+      region: [null]
     });
 
+  }
+
+  filter() {
+    console.log('filer data:', this.form.getRawValue());
+    this.form.markAsPristine();
   }
 
 }

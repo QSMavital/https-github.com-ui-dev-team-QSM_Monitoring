@@ -67,7 +67,6 @@ export class AtmsNotificationsComponent implements OnInit {
           Atms.Notifications[prop],
           {
             headerName: this.translateSrv.instant(Atms.Notifications[prop].headerName)
-
           }));
     }
   }

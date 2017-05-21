@@ -102,7 +102,7 @@ export const Atms = {
 
   },
   Notifications: {
-    number: {headerName: 'atms.number', field: 'number', width: 80, suppressSizeToFit: true},
+    number: {headerName: 'atms.terminalId', field: 'number', width: 80, suppressSizeToFit: true},
     hardwareState: {
       headerName: 'atms.hardwareState',
       field: 'hardwareState',

@@ -134,6 +134,7 @@ export class InventoryComponent implements OnInit, OnDestroy {
     console.log(colsDef);
     this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl';
     this.gridOptions.enableSorting = true;
+    this.gridOptions.getRowHeight = (() => {return 32});
     this.gridOptions.columnDefs = [];
     colsDef.forEach((col) => {
       if (col.visible && !isNullOrUndefined(Atms.Inventory[col.field])) {

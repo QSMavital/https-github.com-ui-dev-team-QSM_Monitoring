@@ -9,7 +9,6 @@ export class AgDateComponent{
   private params: any;
 
   agInit(params: any): void {
-    console.log(params);
     this.params = params;
   }
 }

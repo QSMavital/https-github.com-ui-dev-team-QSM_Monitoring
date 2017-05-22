@@ -37,9 +37,11 @@ import {FormBuilderService} from "./services/form-builder.service";
 import { AgDateShortComponent } from './components/ag-date-short/ag-date-short.component';
 import { AgTimeComponent } from './components/ag-time/ag-time.component';
 import {GridDefsService} from "./services/grid-defs.service";
+import { MasonryModule } from 'angular2-masonry';
 
 @NgModule({
   imports: [
+    MasonryModule,
     CommonModule,
     SidebarModule.forRoot(),
     TranslateModule,

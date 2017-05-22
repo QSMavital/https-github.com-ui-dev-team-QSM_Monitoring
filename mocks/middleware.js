@@ -383,19 +383,24 @@ var settingsUser = {
       {
         "field": "atmGeneralSettings",
         "visible": true
-      }, {
+      },
+      {
         "field": "atmCassetesSettings",
         "visible": true
-      }, {
+      },
+      {
         "field": "disableSettings",
         "visible": true
-      }, {
+      },
+      {
         "field": "emvSettings",
         "visible": true
-      }, {
+      },
+      {
         "field": "feeSerttings",
         "visible": true
-      }, {
+      },
+      {
         "field": "limitationAmountsSettings",
         "visible": true
       }],
@@ -461,7 +466,6 @@ var settingsUser = {
       "treatmentStartDate": 0
     }
   },
-
   dashboard: {
     "widgets": [
       {

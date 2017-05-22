@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {FormGroup} from "@angular/forms";
 import {CustomControlGroup} from "../../../../config/interfaces/form.interface";
+import { MasonryOptions } from 'angular2-masonry';
 
 @Component({
   selector: 'ui-form',
@@ -9,6 +10,9 @@ import {CustomControlGroup} from "../../../../config/interfaces/form.interface";
 })
 export class FormComponent{
 
+  public masonryOptions: MasonryOptions = {
+    transitionDuration: '5s'
+  };
   @Input() form:FormGroup;
   @Input() controlGroups:CustomControlGroup[];
 

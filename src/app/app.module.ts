@@ -74,6 +74,7 @@ import {AgProgressComponent} from "./shared/components/ag-progress/ag-progress.c
 import {Atms as AtmsMiddleware} from "../store/middlewares/atms-middleware";
 import {AgDateShortComponent} from "./shared/components/ag-date-short/ag-date-short.component";
 import {AgTimeComponent} from "./shared/components/ag-time/ag-time.component";
+import { MasonryModule } from 'angular2-masonry';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -133,6 +134,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     AtmsNotificationsFiltersComponent
   ],
   imports: [
+    MasonryModule,
     DataTableModule,
     BrowserModule,
     SharedModule,

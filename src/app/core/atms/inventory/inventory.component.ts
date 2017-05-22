@@ -42,6 +42,6 @@ export class InventoryComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.$atms_inventory_ref.unsubscribe();
-
   }
+
 }

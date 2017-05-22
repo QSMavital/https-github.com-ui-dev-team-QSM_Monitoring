@@ -1,20 +1,21 @@
-<form [formGroup]="form" (submit)="sub()" class="stretch-height" fxLayout="column">
-  <div class="scroll-x form-body" fxLayout="column" fxLayoutWrap fxLayoutAlign="start start">
-    <ui-controls-group *ngFor="let group of controlGroups" [header]="group.title" [formGroupName]="group.name">
-      <!--<div *ngFor="let group of controlGroups" [formGroupName]="group.name">-->
-      <div class="input-wrapper stretch-width" fxLayout fxLayoutAlign="start center" *ngFor="let i of group.controls">
-        <ui-label *ngIf="i.label" [fxFlex]="100/3" [fxFlexOrder]="i.type === 'checkbox' ? 1 : 0">{{i.label | translate}}<span
-          *ngIf="i.type !== 'checkbox'">:</span></ui-label>
-        <ui-input [formControlName]="i.name"
-                  [placeholder]="i.placeholder"
-                  [type]="i.type"
-                  [options]="i.options"
-                  [fxFlex]="i.type === 'checkbox' ? '22px' : (100/3)*2"
-                  [fxFlexOrder]="i.type === 'checkbox' ? 0 : 1"
-                  *ngIf="i.type !== 'inputGroup'"
-        ></ui-input>
-        <div class="group-container" *ngIf="i.type === 'inputGroup'" [formGroupName]="i.name" fxLayout
-             [fxFlex]="(100/3)*i.inputs.length">
+<form class="stretch-height scroll-y" [formGroup]="form" (submit)="sub()">
+  <masonry  [options]="masonryOptions" class="form-body ">
+    <masonry-brick  *ngFor="let group of controlGroups" class="brick">
+      <ui-controls-group  [header]="group.label | translate" [formGroupName]="group.name">
+        <!--<div *ngFor="let group of controlGroups" [formGroupName]="group.name">-->
+        <div class="input-wrapper stretch-width" fxLayout fxLayoutAlign="start center" *ngFor="let i of group.controls">
+          <ui-label *ngIf="i.label" [fxFlex]="100/3" [fxFlexOrder]="i.type === 'checkbox' ? 1 : 0">{{i.label | translate}}<span
+            *ngIf="i.type !== 'checkbox'">:</span></ui-label>
+          <ui-input [formControlName]="i.name"
+                    [placeholder]="i.placeholder"
+                    [type]="i.type"
+                    [options]="i.options"
+                    [fxFlex]="i.type === 'checkbox' ? '22px' : (100/3)*2"
+                    [fxFlexOrder]="i.type === 'checkbox' ? 0 : 1"
+                    *ngIf="i.type !== 'inputGroup'"
+          ></ui-input>
+          <div class="group-container" *ngIf="i.type === 'inputGroup'" [formGroupName]="i.name" fxLayout
+               [fxFlex]="(100/3)*i.inputs.length">
           <span class="input-group-wrapper" *ngFor="let input of i.inputs">
             <ui-input
               [formControlName]="input.name"
@@ -24,10 +25,14 @@
               *ngIf="input"
             ></ui-input>
           </span>
+          </div>
         </div>
-      </div>
-    </ui-controls-group>
-  </div>
+      </ui-controls-group>
+    </masonry-brick>
+  </masonry>
+  <!--<div class="scroll-x form-body" fxLayout="column" fxLayoutWrap fxLayoutAlign="start start">-->
+
+  <!--</div>-->
   <!--<div class="footer" fxLayout fxLayoutAlign="end center ">-->
     <!--<button type="submit" class="purple-btn">submit</button>-->
     <!--<button type="reset" class="blue-btn">cancel</button>-->

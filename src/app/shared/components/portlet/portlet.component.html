@@ -1,6 +1,6 @@
 <div class="wrapper stretch-height relative" >
-  <div class="header fs11" *ngIf="header">{{header | translate}}</div>
-  <div [ngClass]="{'short': footer}" class="body stretch-width relative">
+  <div class="header fs12" *ngIf="header">{{header | translate}}</div>
+  <div [ngClass]="{'short': footer,'no_header':!header}" class="body stretch-width relative">
     <ng-content></ng-content>
   </div>
   <div class="footer stretch-width" *ngIf="footer">

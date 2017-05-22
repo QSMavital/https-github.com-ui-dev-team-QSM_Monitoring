@@ -1,36 +1,21 @@
-<script src="inventory.component.ts"></script>
 <ui-portlet>
   <div class="stretch-height" fxLayout="column">
     <ui-filters-bar>
       <div fxLayout>
         <ui-atms-inventory-filter [filters]="filtersData"></ui-atms-inventory-filter>
         <div fxFlex class="text-right">
-          <button (click)="addNew=!addNew;" class="blue-btn narrow ui-icons-add-new"></button>
+          <button (click)="showAddNew()" class="blue-btn narrow ui-icons-add-new"></button>
         </div>
       </div>
 
     </ui-filters-bar>
-
-
     <ag-grid-angular
       fxFlex
       class="ag-fresh"
       [gridOptions]="gridOptions">
     </ag-grid-angular>
   </div>
-
 </ui-portlet>
 
+<ui-add-new [(show)]="addNew"></ui-add-new>
 
-<p-dialog *ngIf="addNew" [(visible)]="addNew" [modal]="true" class="dialog-no-padding add-atm-dialog">
-  <p-header translate="atm.addNewAtm"></p-header>
-  <div class="scroll-y" style="width: 1200px; height: 550px">
-    <ui-new></ui-new>
-  </div>
-  <p-footer>
-    <span class="pull-right">
-      <button class="btn purple-btn">{{'general.submit' | translate}}</button>
-      <button class="btn blue-btn">{{'general.cancel' | translate}}</button>
-    </span>
-  </p-footer>
-</p-dialog>

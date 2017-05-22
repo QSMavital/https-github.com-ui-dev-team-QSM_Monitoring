@@ -11,12 +11,17 @@
     .header {
       background: transparent;
       padding: 15px 15px;
-      color: $reg-gray;
+      color: $victoria;
       text-transform: uppercase;
       height: 40px;
+      font-family: 'opensans-semibold', sans-serif;
+
     }
     .body {
-      height: 100%;
+      height: calc(100% - 40px);
+      &.no_header{
+        height: 100%;
+      }
       &.short {
         height: calc(100% - 70px);
       }

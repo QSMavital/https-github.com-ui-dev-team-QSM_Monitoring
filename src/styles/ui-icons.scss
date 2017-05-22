@@ -1,5 +1,5 @@
-$ui-icons-add-new: "\ea02";
-$ui-icons-calendar: "\ea01";
+$ui-icons-add-new: "\ea01";
+$ui-icons-calendar: "\ea02";
 $ui-icons-info: "\ea03";
 $ui-icons-mail: "\ea04";
 $ui-icons-print: "\ea05";
@@ -57,11 +57,11 @@ $ui-icons-x: "\ea08";
 }
 
 .ui-icons-add-new::before {
-    content: "\ea02";
+    content: "\ea01";
 }
 
 .ui-icons-calendar::before {
-    content: "\ea01";
+    content: "\ea02";
 }
 
 .ui-icons-info::before {

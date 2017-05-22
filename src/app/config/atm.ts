@@ -1,6 +1,7 @@
 import {AgProgressComponent} from "../shared/components/ag-progress/ag-progress.component";
 import {AgStatusComponent} from "../shared/components/ag-status/ag-status.component";
 import {AgDateComponent} from "../shared/components/ag-date/ag-date.component";
+
 export const Atm = {
   Tabs: {
     'atmStatus': {label: 'atm.tabs.status', state: 'status'},
@@ -10,6 +11,167 @@ export const Atm = {
     'alerts': {label: 'atm.tabs.notifications', state: 'notifications'},
     'events': {label: 'atm.tabs.events', state: 'events'},
     'transactions': {label: 'atm.tabs.transactions', state: 'transactions'}
+  },
+  Settings:{
+    atmGeneralSettings:{
+      label:"atm.settings.atmGeneralSettings",
+      name:"atmGeneralSettings",
+      controls: [
+        {
+          name: 'atmNo',
+          label: 'atms.terminalId',
+          type: 'text'
+        },
+        {
+          name: 'terminalShvaId',
+          label: 'atms.terminalShvaId',
+          type: 'text'
+        },
+        {
+          name: 'atmName',
+          label: 'atms.atmName',
+          type: 'text'
+        },
+        {
+          name: 'address',
+          label: 'atms.address',
+          type: 'select',
+          value: 4,
+          options: [
+            {label: 'opt1', value: 1},
+            {label: 'opt2', value: 2},
+            {label: 'NCR', value: 4}
+          ]
+        },
+        {
+          name: 'zipCode',
+          label: 'atms.zipCode',
+          type: 'text'
+        },
+        {
+          name: 'vendor',
+          label: 'atms.vendor',
+          type: 'text'
+        },
+        {
+          name: 'ipAddress',
+          label: 'atms.ipAddress',
+          type: 'text'
+        },
+        {
+          name: 'portNumber',
+          label: 'atms.portNumber',
+          type: 'select',
+          value: 4,
+          options: [
+            {label: 'opt1', value: 1},
+            {label: 'opt2', value: 2},
+            {label: 'NCR', value: 4}
+          ]
+        },
+        {
+          name: 'atmProtocol',
+          label: 'atms.atmProtocol',
+          type: 'select',
+          value: 4,
+          options: [
+            {label: 'opt1', value: 1},
+            {label: 'opt2', value: 2},
+            {label: 'NCR', value: 4}
+          ]
+        },
+        {
+          name: 'rklProtocol',
+          label: 'atms.rklProtocol',
+          type: 'text'
+        },
+        {
+          name: 'terminalGroup',
+          label: 'atms.terminalGroup',
+          type: 'select',
+          options: [
+            {label: 'opt1', value: 1},
+            {label: 'opt2', value: 2},
+            {label: 'NCR', value: 4}
+          ]
+        },
+        {
+          name: 'belong',
+          label: 'atms.belong',
+          type: 'select',
+          options: [
+            {label: 'opt1', value: 1},
+            {label: 'opt2', value: 2},
+            {label: 'NCR', value: 4}
+          ]
+        },
+        {
+          name: 'c13',
+          type: 'select',
+          label: 'ATM Number',
+          options: [
+            {label: 'opt1', value: 1},
+            {label: 'opt2', value: 2},
+            {label: 'NCR', value: 4}
+          ]
+        },
+        {
+          name: 'area',
+          type: 'select',
+          label: 'atms.area',
+          options: [
+            {label: 'opt1', value: 1},
+            {label: 'opt2', value: 2},
+            {label: 'NCR', value: 4}
+          ]
+        },
+        {
+          name: 'bankNo',
+          label: 'atms.bankNo',
+          type: 'text'
+        },
+        {
+          name: 'branch',
+          label: 'atms.branch',
+          type: 'text'
+        },
+        {
+          name: 'configId',
+          label: 'atms.configId',
+          type: 'text'
+        },
+        {
+          name: 'maxBills',
+          label: 'atms.maxBills',
+          type: 'text'
+        }
+      ]
+    },
+    atmCassetesSettings:{
+      label:"atm.settings.atmCassetesSettings",
+      name:"atmCassetesSettings",
+      controls:[]
+    },
+    disableSettings:{
+      label:"atm.settings.disableSettings",
+      name:"disableSettings",
+      controls:[]
+    },
+    emvSettings:{
+      label:"atm.settings.emvSettings",
+      name:"emvSettings",
+      controls:[]
+    },
+    feeSerttings:{
+      label:"atm.settings.feeSerttings",
+      name:"feeSerttings",
+      controls:[]
+    },
+    limitationAmountsSettings:{
+      label:"atm.settings.limitationAmountsSettings",
+      name:"limitationAmountsSettings",
+      controls:[]
+    },
   },
   Accessories: {
     CashPool: {

@@ -23,15 +23,4 @@
 
 </ui-portlet>
 
-<p-dialog *ngIf="addNew" [(visible)]="addNew" [modal]="true" class="dialog-no-padding add-atm-dialog">
-  <p-header translate="atm.addNewAtm"></p-header>
-  <div class="scroll-y" style="width: 1200px; height: 550px">
-    <ui-new></ui-new>
-  </div>
-  <p-footer>
-    <span class="pull-right">
-      <button class="btn purple-btn">{{'general.submit' | translate}}</button>
-      <button class="btn blue-btn">{{'general.cancel' | translate}}</button>
-    </span>
-  </p-footer>
-</p-dialog>
+<ui-add-new [(show)]="addNew"></ui-add-new>

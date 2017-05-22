@@ -26,7 +26,8 @@
         "styles.scss"
       ],
       "scripts": [
-        "../node_modules/chart.js/dist/Chart.js"
+        "../node_modules/chart.js/dist/Chart.js",
+        "../node_modules/masonry-layout/dist/masonry.pkgd.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

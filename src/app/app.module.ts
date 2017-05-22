@@ -37,7 +37,6 @@ import {AtmsTransactionsComponent} from './core/atms/atms-transactions/atms-tran
 import {AtmsTransactionComponent} from './core/atms/atms-transaction/atms-transaction.component';
 import {Customer} from "../store/middlewares/customer-middleware";
 import {MainComponent} from './core/master/main/main.component';
-import {NewComponent} from './core/atm/new/new.component';
 import {AtmStatusComponent} from './core/atm/atm-status/atm-status.component';
 import {AccessoriesStatusComponent} from './core/atm/accessories-status/accessories-status.component';
 import {RetainedCardsComponent} from './core/atm/retained-cards/retained-cards.component';
@@ -74,6 +73,7 @@ import {AgProgressComponent} from "./shared/components/ag-progress/ag-progress.c
 import {Atms as AtmsMiddleware} from "../store/middlewares/atms-middleware";
 import {AgDateShortComponent} from "./shared/components/ag-date-short/ag-date-short.component";
 import {AgTimeComponent} from "./shared/components/ag-time/ag-time.component";
+import { MasonryModule } from 'angular2-masonry';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -108,7 +108,6 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     AtmsTransactionsComponent,
     AtmsTransactionComponent,
     MainComponent,
-    NewComponent,
     AtmStatusComponent,
     AccessoriesStatusComponent,
     RetainedCardsComponent,
@@ -133,6 +132,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     AtmsNotificationsFiltersComponent
   ],
   imports: [
+    MasonryModule,
     DataTableModule,
     BrowserModule,
     SharedModule,

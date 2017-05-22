@@ -37,7 +37,7 @@ export class DevicesStatusComponent implements OnInit, OnDestroy {
         limitMin: false,     // If true, the min value of the gauge will be fixed unless you set it manually
         colorStart: '#71d36b',   // Colors
         colorStop: '#71d36b',    // just experiment with them
-        strokeColor: '#f4f7fa',  // to see which ones work best for you
+        strokeColor: '#dededf', // to see which ones work best for you
         generateGradient: false,
         highDpiSupport: true
       },
@@ -56,7 +56,7 @@ export class DevicesStatusComponent implements OnInit, OnDestroy {
         limitMin: false,     // If true, the min value of the gauge will be fixed unless you set it manually
         colorStart: '#ff563e',   // Colors
         colorStop: '#ff563e',    // just experiment with them
-        strokeColor: '#f4f7fa',  // to see which ones work best for you
+        strokeColor: '#dededf',  // to see which ones work best for you
         generateGradient: false,
         highDpiSupport: true
       },
@@ -75,7 +75,7 @@ export class DevicesStatusComponent implements OnInit, OnDestroy {
         limitMin: false,     // If true, the min value of the gauge will be fixed unless you set it manually
         colorStart: '#fa9245',   // Colors
         colorStop: '#fa9245',    // just experiment with them
-        strokeColor: '#f4f7fa',  // to see which ones work best for you
+        strokeColor: '#dededf',  // to see which ones work best for you
         generateGradient: false,
         highDpiSupport: true
       },
@@ -94,7 +94,7 @@ export class DevicesStatusComponent implements OnInit, OnDestroy {
         limitMin: false,     // If true, the min value of the gauge will be fixed unless you set it manually
         colorStart: '#49bbf8',   // Colors
         colorStop: '#49bbf8',    // just experiment with them
-        strokeColor: '#f4f7fa',  // to see which ones work best for you
+        strokeColor: '#dededf',  // to see which ones work best for you
         generateGradient: false,
         highDpiSupport: true
       }

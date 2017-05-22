@@ -2,11 +2,13 @@
 .qsm_self{text-align: center}
 :host {
   span {
+    color: #949dc1;
     text-transform: uppercase;
     &.time-label {
       margin: 0 15px;
       position: relative;
-      &:before {    content: '';
+      &:before {
+        content: '';
         width: 1px;
         position: absolute;
         top: 0;
@@ -23,7 +25,7 @@
       }
     }
     .time {
-      font-family: opensans-bold;
+      //font-family: opensans-bold;
     }
   }
 }

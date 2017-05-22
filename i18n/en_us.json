@@ -1,7 +1,15 @@
 {
   "app": {
     "error": "Error",
-    "go": "Go"
+    "go": "Go",
+    "select":"Select..."
+  },
+  "area":{
+    "NONE":"Error",
+    "NORTH":"North",
+    "SOUTH":"South",
+    "CENTER":"Center",
+    "JERUSALEM_AND_SURROUNDINGS":"Jerusalem And Surroundings"
   },
   "menu": {
     "main": "main",
@@ -26,7 +34,9 @@
     "lastActivity": "last activity",
     "lastSettlement": "last settlement",
     "businessDay": "business day",
-    "search": "search"
+    "search": "search",
+    "submit":"submit",
+    "cancel":"cancel"
   },
   "atms": {
     "tabs": {
@@ -64,7 +74,7 @@
     "belong": "Belong",
     "number": "Number",
     "hardwareState": "Hardware State",
-    "handler": "Handler",
+    "severity": "Severity",
     "code": "Code",
     "spec": "Specifications",
     "fullSpec": "Full Specifications",

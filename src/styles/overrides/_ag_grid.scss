@@ -53,22 +53,23 @@ $font_3: sans-serif;
     padding: 2px;
   }
   .ag-cell-focus {
-    border: 1px solid $color_shady_lady_approx;
+    border: 0;
+    outline: 0;
   }
   .ag-cell-no-focus {
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;
+    border-top: 0;
+    border-bottom: 0;
   }
   .ag-ltr {
     .ag-cell-no-focus {
-      border-right: 1px dotted transparent;
-      border-left: 1px solid transparent;
+      border-right: 0;
+      border-left:0;
     }
     .ag-cell-first-right-pinned {
-      border-left: 1px solid transparent;
+      border-left: 0;
     }
     .ag-cell-last-left-pinned {
-      border-right: 1px solid transparent;
+      border-right: 0;
     }
     .ag-header-cell {
       font-family: opensans-regular !important;
@@ -534,7 +535,7 @@ $font_3: sans-serif;
 }
 
 .ag-row {
-  padding-top: 5px !important;
+  line-height: 27px !important;
   border-bottom: 1px solid $cats-white;
   &:last-child {
     border-color: transparent;

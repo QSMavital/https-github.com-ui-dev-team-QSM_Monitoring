@@ -1,6 +1,8 @@
 import {AgStatusComponent} from "../shared/components/ag-status/ag-status.component";
 import {AgDateComponent} from "../shared/components/ag-date/ag-date.component";
 import {AgAmountComponent} from "../shared/components/ag-amount/ag-amount.component";
+import {AgDateShortComponent} from "../shared/components/ag-date-short/ag-date-short.component";
+import {AgTimeComponent} from "../shared/components/ag-time/ag-time.component";
 export const Atms = {
   Tabs: {
     atmsSupply: {label: 'atms.tabs.inventory', state: 'inventory'},
@@ -102,25 +104,26 @@ export const Atms = {
 
   },
   Notifications: {
-    number: {headerName: 'atms.number', field: 'number', width: 80, suppressSizeToFit: true},
-    hardwareState: {
-      headerName: 'atms.hardwareState',
-      field: 'hardwareState',
-      width: 110,
-      cellRendererFramework: AgStatusComponent, suppressSizeToFit: true
-    },
-    time: {headerName: 'atms.time', field: 'time', width: 160, cellRendererFramework: AgDateComponent, suppressSizeToFit: true},
-    handler: {headerName: 'atms.handler', field: 'handler', width: 80, suppressSizeToFit: true},
-    code: {headerName: 'atms.code', field: 'code', width: 80, suppressSizeToFit: true},
-    spec: {headerName: 'atms.spec', field: 'spec', width: 200, suppressSizeToFit: true},
-    fullSpec: {headerName: 'atms.fullSpec', field: 'fullSpec'}
+    atmNo: {headerName: 'atms.terminalId', field: 'atmNo', width: 80,suppressSizeToFit: true},
+    date: {headerName: 'atms.date', field: 'date', width: 120,suppressSizeToFit: true,cellRendererFramework: AgDateShortComponent},
+    time: {headerName: 'atms.time', field: 'time', width: 120,suppressSizeToFit: true,cellRendererFramework: AgTimeComponent},
+    eventCode: {headerName: 'atms.code', field: 'eventCode', width: 100,suppressSizeToFit: true},
+    eventTextEn: {headerName: 'atms.spec', field: 'eventTextEn', width: 200},
+    eventTextLocal: {headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 200},
+    eventDestinations: {headerName: 'atms.eventDestinations', field: 'eventDestinations', width: 200},
+    eventSeverity: {headerName: 'atms.severity', field: 'eventSeverity', width: 200,cellRendererFramework: AgStatusComponent},
+    device: {headerName: 'atms.device', field: 'device', width: 200}
   },
   Events: {
-    terminalId: {headerName: 'atms.terminalId', field: 'terminalId', width: 80,suppressSizeToFit: true},
-    time: {headerName: 'atms.time', field: 'time', width: 160,suppressSizeToFit: true},
-    code: {headerName: 'atms.code', field: 'code', width: 80,suppressSizeToFit: true},
-    spec: {headerName: 'atms.spec', field: 'spec', width: 200,suppressSizeToFit: true},
-    fullSpec: {headerName: 'atms.fullSpec', field: 'fullSpec', width: 440}
+    atmNo: {headerName: 'atms.terminalId', field: 'atmNo', width: 80,suppressSizeToFit: true},
+    date: {headerName: 'atms.date', field: 'date', width: 120,suppressSizeToFit: true,cellRendererFramework: AgDateShortComponent},
+    time: {headerName: 'atms.time', field: 'time', width: 120,suppressSizeToFit: true,cellRendererFramework: AgTimeComponent},
+    eventCode: {headerName: 'atms.code', field: 'eventCode', width: 100,suppressSizeToFit: true},
+    eventTextEn: {headerName: 'atms.spec', field: 'eventTextEn', width: 200},
+    eventTextLocal: {headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 200},
+    eventDestinations: {headerName: 'atms.eventDestinations', field: 'eventDestinations', width: 200},
+    eventSeverity: {headerName: 'atms.severity', field: 'eventSeverity', width: 200,cellRendererFramework: AgStatusComponent},
+    device: {headerName: 'atms.device', field: 'device', width: 200}
   },
   Transactions: {
     transactionId: {headerName: 'atms.transactionId', field: 'transactionId', width: 110,suppressSizeToFit: true},

@@ -1,7 +1,10 @@
 <div class="stretch-height wrapper">
   <ui-portlet [header]="'db.onlineStatus' | translate" [footer]="true">
     <div class="ui-space-t-small">
-      <ui-gauge class="text-center" *ngIf="!hide" [config]="data" [value]="data.value" [width]="'auto'"></ui-gauge>
+      <ui-gauge class="text-center"
+                *ngIf="!hide"
+                [config]="data"
+                [value]="data.value" [width]="'320px'"></ui-gauge>
     </div>
     <div footer>
       <ui-legend [data]="[{label:'db.noError',color:'#71d36b'},{label:'db.fatal',color:'#ff563e'}]"></ui-legend>

@@ -2,6 +2,12 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {i18n} from "../../../config/i18n";
 import {Atms} from "../../../config/atms";
+import {NgRedux, select} from "@angular-redux/store";
+import {IStore} from "../../../../store/index";
+import {AtmsActions} from "../../../../store/actions/atms-actions";
+import {isNullOrUndefined} from "util";
+import {Observable} from "rxjs";
+import {GridDefsService} from "../../../shared/services/grid-defs.service";
 
 @Component({
   selector: 'ui-atms-events',
@@ -9,63 +15,40 @@ import {Atms} from "../../../config/atms";
   styleUrls: ['./atms-events.component.scss']
 })
 export class AtmsEventsComponent implements OnInit, OnDestroy {
-
+  @select(['atms', 'events']) $atms_events: Observable<any>;
+  private $atms_events_ref;
   private gridOptions: any = {};
 
-  constructor(private translateSrv: TranslateService) {
+  constructor(private ngRedux: NgRedux<IStore>,
+              private gridDefsSrv: GridDefsService) {
     this.gridOptions.columnDefs = [];
+    this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_EVENTS});
+
   }
 
   ngOnInit() {
     this.initColDefs();
-
-    this.gridOptions.rowData = [
-      {
-        terminalId:1,
-        time:1494795600000,
-        code:"CM002",
-        spec:"Communications Error",
-        fullSpec:"Failed to connect to bank interface"
-      },
-      {
-        terminalId:2,
-        time:1494795600000,
-        code:"CM002",
-        spec:"Communications Error",
-        fullSpec:"Failed to connect to bank interface"
-      },
-      {
-        terminalId:3,
-        time:1494795600000,
-        code:"CM002",
-        spec:"Communications Error",
-        fullSpec:"Failed to connect to bank interface"
+    this.$atms_events_ref = this.$atms_events.subscribe((state) => {
+      if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
+        this.gridOptions.api.setRowData(state);
       }
-    ];
+    });
   }
 
-  fitCols(){
+  fitCols() {
     this.gridOptions.api.sizeColumnsToFit();
   }
 
   initColDefs() {
-    this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl';
-    this.gridOptions.enableSorting = true;
-    this.gridOptions.getRowHeight = (() => {return 32});
-    this.gridOptions.columnDefs = [];
-    for (var prop in Atms.Events) {
-      this.gridOptions.columnDefs.push(
-        Object.assign({},
-          {suppressFilter: true},
-          Atms.Events[prop],
-          {
-            headerName: this.translateSrv.instant(Atms.Events[prop].headerName)
-          }));
-    }
+    let colsDef = this.ngRedux.getState().userSettings.atmsCustomization['events'];
+
+    this.gridOptions = this.gridDefsSrv.initGridOptions();
+    this.gridOptions.columnDefs = this.gridDefsSrv.initAtmsGridColDefs(colsDef, 'Events');
+
   }
 
   ngOnDestroy() {
-    this.gridOptions = {};
+    this.$atms_events_ref.unsubscribe();
   }
 
 }

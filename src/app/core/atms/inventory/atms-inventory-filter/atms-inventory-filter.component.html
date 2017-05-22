@@ -1,17 +1,18 @@
-
 <form [formGroup]="form">
   <div class="in-block ui-space-r-regular middle">
     <ui-label translate="atms.filters.chooseAtm"></ui-label>
-    <p-dropdown formControlName="atm" [options]="ddOptions" [(ngModel)]="ddModel"></p-dropdown>
+    <p-dropdown [style]="{'width':'120px'}" formControlName="atm" [placeholder]="'app.select'|translate"
+                [options]="filterObj.statusFilter"></p-dropdown>
   </div>
   <div class="in-block ui-space-r-regular middle">
     <ui-label translate="atms.filters.group"></ui-label>
-    <p-dropdown formControlName="group" [options]="ddOptions" [(ngModel)]="ddModel"></p-dropdown>
+    <p-dropdown [style]="{'width':'120px'}" formControlName="group" [placeholder]="'app.select'|translate"
+                [options]="filterObj.groupFilters"></p-dropdown>
   </div>
   <div class="in-block ui-space-r-regular middle">
     <ui-label translate="atms.filters.region"></ui-label>
-    <p-dropdown formControlName="region" [options]="ddOptions" [(ngModel)]="ddModel"></p-dropdown>
+    <p-dropdown [style]="{'width':'120px'}" formControlName="region" [placeholder]="'app.select'|translate"
+                [options]="filterObj.areaFilters"></p-dropdown>
   </div>
-  <button class="blue-btn" translate="app.go"></button>
-  {{form.valid}}
+  <button class="blue-btn" [disabled]="form.pristine" (click)="filter()" translate="app.go"></button>
 </form>

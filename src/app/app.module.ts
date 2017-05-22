@@ -71,6 +71,9 @@ import {CalendarModule} from 'primeng/primeng';
 import {AgAmountComponent} from "./shared/components/ag-amount/ag-amount.component";
 import {AgDateComponent} from "./shared/components/ag-date/ag-date.component";
 import {AgProgressComponent} from "./shared/components/ag-progress/ag-progress.component";
+import {Atms as AtmsMiddleware} from "../store/middlewares/atms-middleware";
+import {AgDateShortComponent} from "./shared/components/ag-date-short/ag-date-short.component";
+import {AgTimeComponent} from "./shared/components/ag-time/ag-time.component";
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -154,7 +157,12 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     ChartModule,
     ReactiveFormsModule,
     AgGridModule.withComponents([
-      AgStatusComponent, AgDateComponent, AgAmountComponent, AgProgressComponent
+      AgStatusComponent,
+      AgDateComponent,
+      AgAmountComponent,
+      AgProgressComponent,
+      AgDateShortComponent,
+      AgTimeComponent
     ])
   ],
   providers: [
@@ -167,6 +175,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     },
     Customer,
     Dashboard,
+    AtmsMiddleware,
     SettingsResolverService
   ],
   entryComponents: [
@@ -183,13 +192,17 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
 })
 
 export class AppModule {
-  constructor(private ngRedux: NgRedux<IStore>, private customer: Customer, private dashboard: Dashboard, private devTools: DevToolsExtension) {
+  constructor(private ngRedux: NgRedux<IStore>,
+              private customer: Customer,
+              private atms:AtmsMiddleware,
+              private dashboard: Dashboard,
+              private devTools: DevToolsExtension) {
     var updatedEnhancers = [];
     if (!environment.production && devTools.isEnabled()) {
       updatedEnhancers = [...enhancers, devTools.enhancer()];
     } else
       updatedEnhancers = [...enhancers];
-    const middlewares = [customer.Middleware, dashboard.Middleware];
+    const middlewares = [customer.Middleware, dashboard.Middleware, atms.Middleware];
     this.ngRedux.configureStore(rootReducer, {}, middlewares, updatedEnhancers);
 
   }

@@ -3,46 +3,58 @@ module.exports = function (req, res, next) {
   var delay = 1000;
   setTimeout(function () {
 
-    if (req.url.indexOf('/general/settingsUser') !== -1) {
+    if (req.url.indexOf('/general/settingsUser/get') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         settingsUser
       ));
     }
-    else if (req.url.indexOf('/general') !== -1) {
+    else if (req.url.indexOf('/general/get') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         customerGeneral
       ));
     }
-    else if (req.url.indexOf('/main/connection') !== -1) {
+    else if (req.url.indexOf('/main/connection/get') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         mainConnection
       ));
     }
-    else if (req.url.indexOf('/main/deviceStatus') !== -1) {
+    else if (req.url.indexOf('/main/deviceStatus/get') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         device_status
       ));
     }
-    else if (req.url.indexOf('/main/onlineStatus') !== -1) {
+    else if (req.url.indexOf('/main/onlineStatus/get') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         onlineStatus
       ));
     }
-    else if (req.url.indexOf('/main/issuerActionStatus') !== -1) {
+    else if (req.url.indexOf('/main/issuerActionStatus/get') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         issuerActionStatus
       ));
     }
-    else if (req.url.indexOf('/main/actionStatus') !== -1) {
+    else if (req.url.indexOf('/main/actionStatus/get') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         actionStatus
+      ));
+    }
+    else if (req.url.indexOf('/atms/get') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        atms_inventory
+      ));
+    }
+    else if (req.url.indexOf('/events/get') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        atms_events
       ));
     }
     else {
@@ -79,95 +91,268 @@ var settingsUser = {
     ],
     "atmsSupply": [
       {
-        "field" : "terminalId",
-        "visible" : true
+        "field": "terminalId",
+        "visible": true
       }, {
-        "field" : "atmName",
-        "visible" : true
+        "field": "atmName",
+        "visible": true
       }, {
-        "field" : "terminalStatus",
-        "visible" : true
+        "field": "terminalStatus",
+        "visible": true
       }, {
-        "field" : "closedReason",
-        "visible" : true
+        "field": "closedReason",
+        "visible": true
       }, {
-        "field" : "dispenserColor",
-        "visible" : false
+        "field": "dispenserColor",
+        "visible": false
       }, {
-        "field" : "cashDepositColor",
-        "visible" : false
+        "field": "cashDepositColor",
+        "visible": false
       }, {
-        "field" : "checkDepositColor",
-        "visible" : false
+        "field": "checkDepositColor",
+        "visible": false
       }, {
-        "field" : "printerColor",
-        "visible" : false
+        "field": "printerColor",
+        "visible": false
       }, {
-        "field" : "receiptColor",
-        "visible" : false
+        "field": "receiptColor",
+        "visible": false
       }, {
-        "field" : "cardReaderColor",
-        "visible" : false
+        "field": "cardReaderColor",
+        "visible": false
       }, {
-        "field" : "eppColor",
-        "visible" : false
+        "field": "eppColor",
+        "visible": false
       }, {
-        "field" : "lastMessage",
-        "visible" : false
+        "field": "lastMessage",
+        "visible": false
       }, {
-        "field" : "treatmentStartDate",
-        "visible" : false
+        "field": "treatmentStartDate",
+        "visible": false
       }, {
-        "field" : "responsibility",
-        "visible" : false
+        "field": "responsibility",
+        "visible": false
       }, {
-        "field" : "terminalGroup",
-        "visible" : false
+        "field": "terminalGroup",
+        "visible": false
       }, {
-        "field" : "area",
-        "visible" : false
+        "field": "area",
+        "visible": false
       }, {
-        "field" : "terminalGroup",
-        "visible" : false
+        "field": "terminalGroup",
+        "visible": false
       }, {
-        "field" : "lastDepositSettlement",
-        "visible" : false
+        "field": "lastDepositSettlement",
+        "visible": false
       }, {
-        "field" : "lastCheckSettlement",
-        "visible" : false
+        "field": "lastCheckSettlement",
+        "visible": false
       }, {
-        "field" : "totalDispensed",
-        "visible" : false
+        "field": "totalDispensed",
+        "visible": false
       }, {
-        "field" : "checkTotalBin1",
-        "visible" : false
+        "field": "checkTotalBin1",
+        "visible": false
       }, {
-        "field" : "checkTotalBin2",
-        "visible" : false
+        "field": "checkTotalBin2",
+        "visible": false
       }, {
-        "field" : "lastGoodWdrl",
-        "visible" : true
+        "field": "lastGoodWdrl",
+        "visible": true
       }, {
-        "field" : "totalRemaining",
-        "visible" : true
+        "field": "totalRemaining",
+        "visible": true
       }, {
-        "field" : "cardsRetained",
-        "visible" : true
+        "field": "cardsRetained",
+        "visible": true
       }, {
-        "field" : "lastCardSettlement",
-        "visible" : true
+        "field": "lastCardSettlement",
+        "visible": true
       }, {
-        "field" : "branch",
-        "visible" : true
+        "field": "branch",
+        "visible": true
       }, {
-        "field" : "lastGoodTransaction",
-        "visible" : true
+        "field": "lastGoodTransaction",
+        "visible": true
       }, {
         "field": "lastSettlement",
         "visible": true
       }
 
-    ]
+    ],
+    "atmsStatus": [
+      {
+        "field": "terminalId",
+        "visible": true
+      }, {
+        "field": "atmName",
+        "visible": true
+      }, {
+        "field": "terminalStatus",
+        "visible": true
+      }, {
+        "field": "closedReason",
+        "visible": true
+      }, {
+        "field": "cashDepositColor",
+        "visible": true
+      }, {
+        "field": "checkDepositColor",
+        "visible": true
+      }, {
+        "field": "printerColor",
+        "visible": true
+      }, {
+        "field": "cardReaderColor",
+        "visible": true
+      }, {
+        "field": "eppColor",
+        "visible": true
+      }, {
+        "field": "treatmentStartDate",
+        "visible": true
+      }, {
+        "field": "responsibility",
+        "visible": true
+      }, {
+        "field": "branch",
+        "visible": true
+      }, {
+        "field": "belong",
+        "visible": true
+      }, {
+        "field": "dispenserColor",
+        "visible": false
+      }, {
+        "field": "receiptColor",
+        "visible": false
+      }, {
+        "field": "lastMessage",
+        "visible": false
+      }, {
+        "field": "terminalGroup",
+        "visible": false
+      }, {
+        "field": "area",
+        "visible": false
+      }, {
+        "field": "terminalGroup",
+        "visible": false
+      }, {
+        "field": "lastDepositSettlement",
+        "visible": false
+      }, {
+        "field": "lastCheckSettlement",
+        "visible": false
+      }, {
+        "field": "totalDispensed",
+        "visible": false
+      }, {
+        "field": "checkTotalBin1",
+        "visible": false
+      }, {
+        "field": "checkTotalBin2",
+        "visible": false
+      }, {
+        "field": "lastGoodWdrl",
+        "visible": false
+      }, {
+        "field": "totalRemaining",
+        "visible": false
+      }, {
+        "field": "cardsRetained",
+        "visible": false
+      }, {
+        "field": "lastCardSettlement",
+        "visible": false
+      }, {
+        "field": "lastGoodTransaction",
+        "visible": false
+      },
+      {
+        "field": "lastSettlement",
+        "visible": false
+      }
+    ],
+    "alerts": [
+      {
+      "field": "atmNo",
+      "visible": true
+    },
+      {
+      "field": "eventSeverity",
+      "visible": true
+    },
+      {
+      "field": "date",
+      "visible": true
+    },
+      {
+      "field": "time",
+      "visible": true
+    },
+      {
+
+      "field": "eventDestinations",
+      "visible": true
+    },
+      {
+      "field": "eventCode",
+      "visible": true
+    },
+      {
+      "field": "eventTextEn",
+      "visible": true
+    },
+      {
+      "field": "eventTextLocal",
+      "visible": true
+    },
+      {
+      "field": "device",
+      "visible": false
+    }
+    ],
+    "events": [
+      {
+        "field": "atmNo",
+        "visible": true
+      },
+      {
+        "field": "date",
+        "visible": true
+      },
+      {
+        "field": "time",
+        "visible": true
+      },
+      {
+        "field": "eventCode",
+        "visible": true
+      },
+      {
+        "field": "eventTextEn",
+        "visible": true
+      },
+      {
+        "field": "eventTextLocal",
+        "visible": true
+      },
+      {
+        "field": "eventDestinations",
+        "visible": false
+      },
+      {
+        "field": "eventSeverity",
+        "visible": false
+      },
+      {
+        "field": "device",
+        "visible": false
+      }
+    ],
+    "transactions": [],
+
   },
   atmCustomization: {
     "atmTabs": [
@@ -365,3 +550,67 @@ var actionStatus = [
     "precents": 10
   }
 ];
+
+var atms_inventory = {
+  "filters": {
+    "statusFilter": [
+      "DISABLE",
+      "GOOD",
+      "ATTENTION",
+      "FATAL",
+      "OPERATOR"
+    ],
+    "groupFilters": [01],
+    "areaFilters": [
+      "NONE",
+      "NORTH",
+      "SOUTH",
+      "CENTER",
+      "JERUSALEM_AND_SURROUNDINGS"]
+  },
+  "atms": [{
+    "terminalId": "288032",
+    "atmName": "test",
+    "terminalStatus": "OFF_LINE",
+    "closedReason": "UNKNOWN",
+    "dispenserColor": "GOOD",
+    "cashDepositColor": "GOOD",
+    "checkDepositColor": "DISABLE",
+    "printerColor": "GOOD",
+    "receiptColor": "DISABLE",
+    "cardReaderColor": "GOOD",
+    "eppColor": "GOOD",
+    "lastGoodTransaction": 1449342890265,
+    "lastSettlement": 1472027446100,
+    "lastMessage": 1478269947371,
+    "branch": "288",
+    "belong": "YAHAV",
+    "treatmentStartDate": 0,
+    "responsibility": "NONE",
+    "terminalGroup": "00",
+    "area": "NORTH",
+    "cardsRetained": 0,
+    "lastGoodWdrl": 1449342890265,
+    "lastCardSettlement": 1476307886568,
+    "lastDepositSettlement": 946677600000,
+    "lastCheckSettlement": 946677600000,
+    "totalRemaining": 16965000,
+    "totalDispensed": 0,
+    "checkTotalBin1": 0,
+    "checkTotalBin2": 0
+  }]
+};
+
+var atms_events = [{
+  "id": 1,
+  "atmNo": "000000",
+  "atmName": "atmName",
+  "date": 1494317961838,
+  "time": 1494317961838,
+  "eventSeverity": "FATAL",
+  "eventCode": "AC001",
+  "eventTextEn": "AC001 Late response(approved) received from bank for transaction 1",
+  "eventTextLocal": "תשובה מאוחרת",
+  "device": "",
+  "eventDestinations": ["SEC", "IT", "CIT"]
+}];

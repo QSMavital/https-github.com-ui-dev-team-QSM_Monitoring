@@ -34,6 +34,9 @@ import {AccesoriesCardComponent} from './components/accesories-card/accesories-c
 import {SmallProgressComponent} from './components/small-progress/small-progress.component';
 import { AgProgressComponent } from './components/ag-progress/ag-progress.component';
 import {FormBuilderService} from "./services/form-builder.service";
+import { AgDateShortComponent } from './components/ag-date-short/ag-date-short.component';
+import { AgTimeComponent } from './components/ag-time/ag-time.component';
+import {GridDefsService} from "./services/grid-defs.service";
 
 @NgModule({
   imports: [
@@ -70,7 +73,9 @@ import {FormBuilderService} from "./services/form-builder.service";
     ControlsGroupComponent,
     AccesoriesCardComponent,
     SmallProgressComponent,
-    AgProgressComponent
+    AgProgressComponent,
+    AgDateShortComponent,
+    AgTimeComponent
   ],
   exports: [
     SpinnerComponent,
@@ -92,9 +97,11 @@ import {FormBuilderService} from "./services/form-builder.service";
     FormComponent,
     AccesoriesCardComponent,
     SmallProgressComponent,
-    AgProgressComponent
+    AgProgressComponent,
+    AgDateShortComponent,
+    AgTimeComponent
   ],
-  providers: [CanActivateRoute, AppActivator,FormBuilderService]
+  providers: [CanActivateRoute, AppActivator,FormBuilderService,GridDefsService]
 })
 
 export class SharedModule {

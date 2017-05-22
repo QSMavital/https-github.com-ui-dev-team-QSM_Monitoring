@@ -17,8 +17,15 @@ export class AtmsNotificationsFiltersComponent implements OnInit {
 
 
   initForm(){
-    this.form = this.fb.group({});
+    this.form = this.fb.group({
+      fromDate: [null],
+      toDate: [null]
+    });
+  }
 
+  filter() {
+    console.log('filer data:', this.form.getRawValue());
+    this.form.markAsPristine();
   }
 
 }

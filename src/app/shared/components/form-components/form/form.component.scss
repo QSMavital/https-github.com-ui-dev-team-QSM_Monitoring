@@ -1,8 +1,13 @@
 @import "./src/styles/helpers/brand";
 :host {
+  display: block;
+  height: 100%;
   .form-body {
-    height:100%;
+    height:100%!important;
     background: white;
+    .brick{
+      display: block;
+    }
     .input-wrapper {
       height:32px;
       padding: 0 15px;
@@ -24,7 +29,10 @@
     }
     ui-controls-group {
       width:400px;
-      border-right:1px solid $ath-gray;
+      border:1px solid $ath-gray;
+      //border-bottom:1px solid $ath-gray;
+      margin-right:15px;
+      margin-bottom:15px;
     }
   }
   .footer {

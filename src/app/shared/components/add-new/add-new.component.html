@@ -1,0 +1,12 @@
+<p-dialog  [(visible)]="show" [modal]="true" class="dialog-no-padding add-atm-dialog">
+  <p-header translate="atm.addNewAtm"></p-header>
+  <div class="scroll-y ui-space-l-regular" style="width: 1260px;height: 600px">
+    <ui-form *ngIf="show" [form]="form" [controlGroups]="controlGroups"></ui-form>
+  </div>
+  <p-footer>
+    <span class="pull-right">
+      <button (click)="show=!show" class="btn purple-btn">{{'general.submit' | translate}}</button>
+      <button (click)="show=!show" class="btn blue-btn">{{'general.cancel' | translate}}</button>
+    </span>
+  </p-footer>
+</p-dialog>

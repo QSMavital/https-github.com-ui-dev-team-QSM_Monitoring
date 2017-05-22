@@ -11,7 +11,9 @@ import { MasonryOptions } from 'angular2-masonry';
 export class FormComponent{
 
   public masonryOptions: MasonryOptions = {
-    transitionDuration: '5s'
+    transitionDuration: '0',
+    fitWidth: true,
+    originLeft: true
   };
   @Input() form:FormGroup;
   @Input() controlGroups:CustomControlGroup[];

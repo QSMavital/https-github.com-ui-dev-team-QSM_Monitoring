@@ -491,7 +491,8 @@ var settingsUser = {
 var customerGeneral = {
   businessDay: 1493899326040,
   customer: "BEINLEUMI"
-}
+};
+
 var mainConnection = [
   {
     "connectionName": "HSM",
@@ -572,7 +573,8 @@ var atms_inventory = {
       "CENTER",
       "JERUSALEM_AND_SURROUNDINGS"]
   },
-  "atms": [{
+  "atms": [
+    {
     "terminalId": "288032",
     "atmName": "test",
     "terminalStatus": "OFF_LINE",
@@ -602,7 +604,98 @@ var atms_inventory = {
     "totalDispensed": 0,
     "checkTotalBin1": 0,
     "checkTotalBin2": 0
-  }]
+  },    {
+      "terminalId": "288032",
+      "atmName": "test",
+      "terminalStatus": "OFF_LINE",
+      "closedReason": "UNKNOWN",
+      "dispenserColor": "GOOD",
+      "cashDepositColor": "GOOD",
+      "checkDepositColor": "DISABLE",
+      "printerColor": "GOOD",
+      "receiptColor": "DISABLE",
+      "cardReaderColor": "GOOD",
+      "eppColor": "GOOD",
+      "lastGoodTransaction": 1449342890265,
+      "lastSettlement": 1472027446100,
+      "lastMessage": 1478269947371,
+      "branch": "288",
+      "belong": "YAHAV",
+      "treatmentStartDate": 0,
+      "responsibility": "NONE",
+      "terminalGroup": "00",
+      "area": "NORTH",
+      "cardsRetained": 0,
+      "lastGoodWdrl": 1449342890265,
+      "lastCardSettlement": 1476307886568,
+      "lastDepositSettlement": 946677600000,
+      "lastCheckSettlement": 946677600000,
+      "totalRemaining": 16965000,
+      "totalDispensed": 0,
+      "checkTotalBin1": 0,
+      "checkTotalBin2": 0
+    },    {
+      "terminalId": "288032",
+      "atmName": "test",
+      "terminalStatus": "OFF_LINE",
+      "closedReason": "UNKNOWN",
+      "dispenserColor": "GOOD",
+      "cashDepositColor": "GOOD",
+      "checkDepositColor": "DISABLE",
+      "printerColor": "GOOD",
+      "receiptColor": "DISABLE",
+      "cardReaderColor": "GOOD",
+      "eppColor": "GOOD",
+      "lastGoodTransaction": 1449342890265,
+      "lastSettlement": 1472027446100,
+      "lastMessage": 1478269947371,
+      "branch": "288",
+      "belong": "YAHAV",
+      "treatmentStartDate": 0,
+      "responsibility": "NONE",
+      "terminalGroup": "00",
+      "area": "NORTH",
+      "cardsRetained": 0,
+      "lastGoodWdrl": 1449342890265,
+      "lastCardSettlement": 1476307886568,
+      "lastDepositSettlement": 946677600000,
+      "lastCheckSettlement": 946677600000,
+      "totalRemaining": 16965000,
+      "totalDispensed": 0,
+      "checkTotalBin1": 0,
+      "checkTotalBin2": 0
+    },    {
+      "terminalId": "288032",
+      "atmName": "test",
+      "terminalStatus": "OFF_LINE",
+      "closedReason": "UNKNOWN",
+      "dispenserColor": "GOOD",
+      "cashDepositColor": "GOOD",
+      "checkDepositColor": "DISABLE",
+      "printerColor": "GOOD",
+      "receiptColor": "DISABLE",
+      "cardReaderColor": "GOOD",
+      "eppColor": "GOOD",
+      "lastGoodTransaction": 1449342890265,
+      "lastSettlement": 1472027446100,
+      "lastMessage": 1478269947371,
+      "branch": "288",
+      "belong": "YAHAV",
+      "treatmentStartDate": 0,
+      "responsibility": "NONE",
+      "terminalGroup": "00",
+      "area": "NORTH",
+      "cardsRetained": 0,
+      "lastGoodWdrl": 1449342890265,
+      "lastCardSettlement": 1476307886568,
+      "lastDepositSettlement": 946677600000,
+      "lastCheckSettlement": 946677600000,
+      "totalRemaining": 16965000,
+      "totalDispensed": 0,
+      "checkTotalBin1": 0,
+      "checkTotalBin2": 0
+    }
+  ]
 };
 
 var atms_events = [{

@@ -38,6 +38,8 @@ import { AgDateShortComponent } from './components/ag-date-short/ag-date-short.c
 import { AgTimeComponent } from './components/ag-time/ag-time.component';
 import {GridDefsService} from "./services/grid-defs.service";
 import { MasonryModule } from 'angular2-masonry';
+import { AddNewComponent } from './components/add-new/add-new.component';
+import {DialogModule} from "primeng/components/dialog/dialog";
 
 @NgModule({
   imports: [
@@ -52,6 +54,7 @@ import { MasonryModule } from 'angular2-masonry';
     FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
+    DialogModule,
     DropdownModule
   ],
   declarations: [
@@ -77,7 +80,8 @@ import { MasonryModule } from 'angular2-masonry';
     SmallProgressComponent,
     AgProgressComponent,
     AgDateShortComponent,
-    AgTimeComponent
+    AgTimeComponent,
+    AddNewComponent
   ],
   exports: [
     SpinnerComponent,
@@ -101,7 +105,8 @@ import { MasonryModule } from 'angular2-masonry';
     SmallProgressComponent,
     AgProgressComponent,
     AgDateShortComponent,
-    AgTimeComponent
+    AgTimeComponent,
+    AddNewComponent
   ],
   providers: [CanActivateRoute, AppActivator,FormBuilderService,GridDefsService]
 })

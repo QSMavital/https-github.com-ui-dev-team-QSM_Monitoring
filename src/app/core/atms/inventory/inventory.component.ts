@@ -6,6 +6,10 @@ import {isNullOrUndefined} from "util";
 import {AtmsActions} from "../../../../store/actions/atms-actions";
 import {Observable} from "rxjs";
 import {GridDefsService} from "../../../shared/services/grid-defs.service";
+import {FormGroup} from "@angular/forms";
+import {CustomControlGroup} from "../../../config/interfaces/form.interface";
+import {FormBuilderService} from "../../../shared/services/form-builder.service";
+import {Atm} from "../../../config/atm";
 
 @Component({
   selector: 'ui-inventory',
@@ -17,9 +21,14 @@ export class InventoryComponent implements OnInit, OnDestroy {
   private filtersData = {};
   private $atms_inventory_ref;
   private gridOptions: GridOptions = {};
+  private atmSettings;
+  private form: FormGroup = new FormGroup({});
+  private controlGroups: CustomControlGroup[] = [];
+
   @select(['atms', 'inventory']) $atms_inventory: Observable<any>;
 
-  constructor(private ngRedux: NgRedux<IStore>, private gridDefsSrv: GridDefsService) {
+  constructor(private ngRedux: NgRedux<IStore>,
+              private gridDefsSrv: GridDefsService) {
     this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_INVENTORY});
   }
 
@@ -42,6 +51,11 @@ export class InventoryComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.$atms_inventory_ref.unsubscribe();
+  }
+
+  showAddNew(){
+    this.addNew=true;
+
   }
 
 }

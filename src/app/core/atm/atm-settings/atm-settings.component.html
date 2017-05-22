@@ -1,3 +1,11 @@
 <ui-portlet header="atm.atmSettings">
-  <ui-form [form]="form" [controlGroups]="controlGroups"></ui-form>
+  <div class="stretch-height" fxLayout="column">
+    <ui-form fxFlex [form]="form" [controlGroups]="controlGroups"></ui-form>
+    <div class="text-right ui-space-regular">
+      <button [disabled]="form.pristine" (click)="save()" class="blue-btn">{{'general.save'|translate}}</button>
+      <button class="purple-btn">{{'general.cancel'|translate}}</button>
+    </div>
+  </div>
+
+
 </ui-portlet>

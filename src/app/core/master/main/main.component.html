@@ -3,7 +3,7 @@
 
   <ui-sliding-panel [(open)]="panelStatus" icon="fa fa-caret-left" *ngIf="router.url!='/'" [direction]="direction">
     <div [ngSwitch]="panelStatus" class="stretch-height">
-      <div  *ngSwitchCase="true" class="scroll-y scroll-x stretch-height">
+      <div *ngSwitchCase="true" class="scroll-y scroll-x stretch-height">
         <div class="ui-space-t-regular panelTitle ui-space-l-large uppercase bold fs14">{{'db.panelTitle'|translate}}</div>
         <ui-dashboard style="max-width: 1300px"></ui-dashboard>
       </div>

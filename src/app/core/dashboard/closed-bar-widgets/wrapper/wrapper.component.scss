@@ -1,3 +1,7 @@
 :host{
   display: block;
+
+  :not(:last-child) {
+    border-bottom: solid 3px #e1e7ec;
+  }
 }

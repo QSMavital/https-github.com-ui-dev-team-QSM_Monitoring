@@ -63,7 +63,7 @@ $font_3: sans-serif;
   .ag-ltr {
     .ag-cell-no-focus {
       border-right: 0;
-      border-left:0;
+      border-left: 0;
     }
     .ag-cell-first-right-pinned {
       border-left: 0;
@@ -71,7 +71,7 @@ $font_3: sans-serif;
     .ag-cell-last-left-pinned {
       border-right: 0;
     }
-    .ag-header-cell {
+    .ag-header-containerheader-cell {
       font-family: opensans-regular !important;
       font-size: $fs11 !important;
       color: $kimb !important;
@@ -110,6 +110,23 @@ $font_3: sans-serif;
     }
     .ag-selection-checkbox {
       padding-right: 4px;
+      :nth-child(1){
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background: url('assets/images/checkbox-on.png') no-repeat;
+        width: 16px;
+        height: 16px;
+        padding-left: 16px;
+      }
+      :nth-child(2){
+        -moz-box-sizing: border-box;
+
+        box-sizing: border-box;
+        background: url('assets/images/checkbox-off.png') no-repeat;
+        width: 16px;
+        height: 16px;
+        padding-left: 16px;
+      }
     }
   }
   .ag-rtl {
@@ -267,6 +284,15 @@ $font_3: sans-serif;
   .ag-body {
     background-color: $color_black_haze_approx;
     top: 38px !important;
+    .ag-body-container {
+      .ag-row {
+        border-bottom: solid 1px #dfe8ef;
+        > div {
+          padding-left: 10px;
+        }
+      }
+
+    }
   }
   .ag-row-odd {
     //background-color: $color_black_haze_approx;
@@ -523,12 +549,14 @@ $font_3: sans-serif;
 }
 
 .ag-header-cell {
+  padding-left: 10px;
   &:first-child {
-    padding-left: 10px;
+
   }
 }
 
 .ag-cell {
+
   &:first-child {
     padding-left: 10px;
   }

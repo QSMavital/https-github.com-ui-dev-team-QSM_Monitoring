@@ -1,9 +1,10 @@
 @import "./src/styles/helpers/brand";
 .qsm_self{text-align: center}
 :host {
+  border-top: 1px solid #494f69;
   ul {
     margin: 25px;
-    border-top: 1px solid $ber-gray;
+
     li {
       text-align: center;
       margin:30px 0;

@@ -138,6 +138,7 @@
     }
   },
   "db": {
+    "panelTitle": "dashboard",
     "connectionStatus": "connection status",
     "devicesStatus": "devices status",
     "onlineStatus": "online status",

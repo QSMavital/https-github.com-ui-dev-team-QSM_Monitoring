@@ -3,12 +3,13 @@
 :host {
   ul {
     li {
-      height: 50px;
-      line-height: 50px;
+      height: 83px;
+      line-height: 83px;
       text-align: center;
       cursor: pointer;
       outline: none;
       &.active {
+        font-weight: bold;
         background:$bright-gray;
       }
       a {

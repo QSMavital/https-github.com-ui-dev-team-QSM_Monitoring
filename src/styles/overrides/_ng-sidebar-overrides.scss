@@ -3,9 +3,77 @@
 .ng-sidebar {
   overflow: visible !important;
   //position: relative;
-  height:670px !important;
-  top:55px !important;
+  height: 722px !important;
+  top: 55px !important;
   //border: 1px solid $ber-gray;
-  border-right:none;
+  border-right: none;
   //border-radius: 5px 0 0 0;
+
+  .ng-sidebar--left {
+    bottom: 0;
+    left: 0;
+    top: 0;
+  }
+
+  .ng-sidebar--right {
+    bottom: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .ng-sidebar--top {
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .ng-sidebar--bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .ng-sidebar--inert {
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .ng-sidebar--animate.ng-sidebar {
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+  }
+}
+
+ng-sidebar-container {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+
+  &.ng-sidebar-container--animate {
+    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+  }
+
+  .ng-sidebar__backdrop {
+    background: #000;
+    height: 100%;
+    left: 0;
+    opacity: 0.40;
+    pointer-events: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999998;
+  }
+
+  .ng-sidebar__content {
+    display: block;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .ng-sidebar-container--animate .ng-sidebar__content {
+    -webkit-transition: margin 0.3s cubic-bezier(0, 0, 0.3, 1);
+    transition: margin 0.3s cubic-bezier(0, 0, 0.3, 1);
+  }
 }

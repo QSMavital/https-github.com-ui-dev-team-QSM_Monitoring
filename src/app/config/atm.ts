@@ -227,4 +227,4 @@ export const Atm = {
     comments: {headerName: "atm.comments", field: "comments", width: 90},
 
   }
-}
+};

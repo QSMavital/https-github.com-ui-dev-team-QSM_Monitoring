@@ -5,7 +5,6 @@ import {SidebarModule} from 'ng-sidebar';
 
 import {DirSelectionDirective} from './directives/bidi/dir-selection.directive';
 import {SlidingPanelComponent} from './components/sliding-panel/sliding-panel.component';
-import {MomentPipe} from './pipes/moment.pipe';
 import {CommonModule} from "@angular/common";
 import {GaugeComponent} from './components/gauge/gauge.component';
 import {TabsComponent} from './components/tabs/tabs.component';
@@ -22,7 +21,6 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {LabelComponent} from './components/label/label.component';
 import {FiltersBarComponent} from './components/filters-bar/filters-bar.component';
 import {AgStatusComponent} from './components/ag-status/ag-status.component';
-import {AgGridModule} from "ag-grid-angular";
 import {LegendComponent} from './components/legend/legend.component';
 import {AgDateComponent} from './components/ag-date/ag-date.component';
 import {AgAmountComponent} from './components/ag-amount/ag-amount.component';
@@ -61,7 +59,6 @@ import {DialogModule} from "primeng/components/dialog/dialog";
     SpinnerComponent,
     DirSelectionDirective,
     SlidingPanelComponent,
-    MomentPipe,
     GaugeComponent,
     TabsComponent,
     TableComponent,
@@ -87,7 +84,6 @@ import {DialogModule} from "primeng/components/dialog/dialog";
     SpinnerComponent,
     DirSelectionDirective,
     SlidingPanelComponent,
-    MomentPipe,
     GaugeComponent,
     TabsComponent,
     TableComponent,

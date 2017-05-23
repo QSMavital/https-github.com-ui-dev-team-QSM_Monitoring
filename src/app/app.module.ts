@@ -27,7 +27,6 @@ import {ServerURLInterceptor} from "./app.interceptors";
 import {DialogModule, DropdownModule, ChartModule} from 'primeng/primeng';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CommonModule} from "@angular/common";
-import {MomentPipe} from "./shared/pipes/moment.pipe";
 import {AtmsComponent} from './core/atms/atms.component';
 import {InventoryComponent} from './core/atms/inventory/inventory.component';
 import {AtmsStatusComponent} from './core/atms/atms-status/atms-status.component';
@@ -166,7 +165,6 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     ])
   ],
   providers: [
-    MomentPipe,
     ServerURLInterceptor,
     {
       provide: InterceptorService,

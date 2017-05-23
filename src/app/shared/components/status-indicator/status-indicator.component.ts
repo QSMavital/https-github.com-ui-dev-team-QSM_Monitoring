@@ -11,7 +11,7 @@ export class StatusIndicatorComponent implements OnInit {
   @Input() status: string;
   @Input() showLabel: boolean = true;
   @Input() showStatus: boolean = false;
-  private statusView:any;
+  public statusView:any;
   constructor() {
     this.statusView = StatusView;
   }

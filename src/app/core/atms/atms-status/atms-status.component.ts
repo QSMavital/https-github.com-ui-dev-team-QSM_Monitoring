@@ -17,11 +17,11 @@ import {Router} from "@angular/router";
   styleUrls: ['./atms-status.component.scss']
 })
 export class AtmsStatusComponent implements OnInit {
-  private addNew = false;
-  private filtersData = {};
+  public addNew = false;
+  public filtersData = {};
   private $atms_inventory_ref;
   @select(['atms', 'inventory']) $atms_inventory: Observable<any>;
-  private gridOptions: GridOptions = {};
+  public gridOptions: GridOptions = {};
 
   constructor(private gridDefsSrv: GridDefsService,
               private ngRedux: NgRedux<IStore>,

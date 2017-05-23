@@ -10,7 +10,7 @@ import {Atms} from "../../../config/atms";
 })
 export class AtmsTransactionsComponent implements OnInit, OnDestroy {
 
-  private gridOptions: any = {};
+  public gridOptions: any = {};
 
   constructor(private translateSrv: TranslateService) {
     this.gridOptions.columnDefs = [];

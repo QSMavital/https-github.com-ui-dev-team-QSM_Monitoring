@@ -8,7 +8,7 @@ import {Component, OnInit, Input} from '@angular/core';
 export class CustomerLogoComponent implements OnInit {
 
   @Input('logo') logo;
-  private customers:any;
+  public customers:any;
   constructor() {
     this.customers = {
       "BEINLEUMI":"icon-logo-benleumi",

@@ -14,9 +14,9 @@ import {ActionsStatus, StatusView} from "../../../config/statusView";
 })
 export class ActionsStatusComponent implements OnInit, OnDestroy {
   private unsubscriber;
-  private data: any[] = [];
-  private legendData: any[] = [];
-  private options: any;
+  public data: any[] = [];
+  public legendData: any[] = [];
+  public options: any;
 
   @select(['dashboard', 'actionsStatus']) $actionsStatus: Observable<any>;
 

@@ -12,8 +12,8 @@ import {IStore} from "../../../../store/index";
 })
 export class IssuerActionsStatusComponent implements OnInit, OnDestroy {
   private unsubscriber;
-  private data: any;
-  private options: any;
+  public data: any;
+  public options: any;
 
   @select(['dashboard', 'issuerActionsStatus']) $issuerActionsStatus: Observable<any>;
 

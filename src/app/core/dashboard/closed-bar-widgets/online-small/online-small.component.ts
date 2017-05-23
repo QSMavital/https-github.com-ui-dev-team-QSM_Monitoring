@@ -12,7 +12,7 @@ import {DashboardActions} from "../../../../../store/actions/dashboard-actions";
 export class OnlineSmallComponent implements OnInit, OnDestroy {
 
   private unsubscriber: any;
-  private data: any = {};
+  public data: any = {};
 
   @select(['dashboard', 'onlineStatus']) $status;
 

@@ -22,7 +22,7 @@ export class ConnectionSmallComponent implements OnInit, OnDestroy {
     this.statusView = StatusView;
   }
 
-  private get shortList() {
+  public get shortList() {
     return this.list.slice(0, 3);
   }
 

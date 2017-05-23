@@ -10,7 +10,7 @@ import {Atm} from "../../../config/atm";
 })
 export class AccessoriesStatusComponent implements OnInit {
 
-  private widgetsData: any[] = [
+  public widgetsData: any[] = [
     {
       header: "atm.cashPool",
       gridData: {

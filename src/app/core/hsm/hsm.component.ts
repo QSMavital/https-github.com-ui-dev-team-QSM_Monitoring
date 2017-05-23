@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HsmComponent implements OnInit {
 
-  private tabs = [
+  public tabs = [
     {label:'hsm.tabs.status',state:'status'},
     {label:'hsm.tabs.statistics',state:'statistics'}
   ]

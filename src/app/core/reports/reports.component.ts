@@ -6,7 +6,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./reports.component.scss']
 })
 export class ReportsComponent implements OnInit {
-  private ddOptions:any[] = [
+  public ddOptions:any[] = [
     {
       label:'something',
       value:{id:'1'}
@@ -16,9 +16,9 @@ export class ReportsComponent implements OnInit {
       value:{id:'2'}
     }
   ];
-  private ddModel:any;
+  public ddModel:any;
 
-  private tableMock = [
+  public tableMock = [
     {
       id: '345563',
       name: 'Notting Hill Gate, London',
@@ -45,7 +45,7 @@ export class ReportsComponent implements OnInit {
       lastSettlement: '05/07 13:30'
     }
   ];
-  private colDef = [
+  public colDef = [
     {
       title: 'general.id',
       field: 'id',
@@ -102,8 +102,7 @@ export class ReportsComponent implements OnInit {
 
   ];
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {
   }

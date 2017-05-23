@@ -17,7 +17,7 @@ import {GridDefsService} from "../../../shared/services/grid-defs.service";
 export class AtmsEventsComponent implements OnInit, OnDestroy {
   @select(['atms', 'events']) $atms_events: Observable<any>;
   private $atms_events_ref;
-  private gridOptions: any = {};
+  public gridOptions: any = {};
 
   constructor(private ngRedux: NgRedux<IStore>,
               private gridDefsSrv: GridDefsService) {

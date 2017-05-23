@@ -12,8 +12,8 @@ import {IStore} from "../../../../store/index";
 })
 export class OnlineStatusComponent implements OnInit, OnDestroy {
   private unsubscriber;
-  private data: any;
-  private hide: boolean = true;
+  public data: any;
+  public hide: boolean = true;
 
   @select(['dashboard', 'onlineStatus']) $onlineStatus: Observable<any>;
 

@@ -18,10 +18,10 @@ import {Router} from "@angular/router";
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent implements OnInit, OnDestroy {
-  private addNew= false;
-  private filtersData = {};
+  public addNew= false;
+  public filtersData = {};
   private $atms_inventory_ref;
-  private gridOptions: GridOptions = {};
+  public gridOptions: GridOptions = {};
   private atmSettings;
   private form: FormGroup = new FormGroup({});
   private controlGroups: CustomControlGroup[] = [];

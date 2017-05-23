@@ -13,7 +13,7 @@ import {IStore} from "../../../store/index";
 export class DashboardComponent implements OnInit, OnDestroy {
   private userSettings;
   private _userSettingsRef;
-  private widgets:any = [];
+  public widgets:any = [];
 
   @select('userSettings') userSettings$: Observable<any>;
 

@@ -13,7 +13,7 @@ import {isNullOrUndefined} from "util";
 export class ConnectionStatusComponent implements OnInit, OnDestroy {
 
   private unsubscriber;
-  private data: any[];
+  public data: any[];
   @select(['dashboard', 'connectionStatus']) $connectionStatus: Observable<any>;
 
   constructor(private store: NgRedux<IStore>) { }

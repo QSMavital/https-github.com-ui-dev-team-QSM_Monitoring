@@ -8,7 +8,7 @@ import * as moment from 'moment';
 })
 export class DatesComponent implements OnInit {
   @Input('date') date;
-  private time = moment().format();
+  public time = moment().format();
   constructor() { }
 
   ngOnInit() {

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ag-amount.component.scss']
 })
 export class AgAmountComponent {
-  private params: any;
+  public params: any;
 
   agInit(params: any): void {
     this.params = params;

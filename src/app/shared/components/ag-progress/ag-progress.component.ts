@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgProgressComponent {
 
-  private params: any;
+  public params: any;
 
   agInit(params: any): void {
     this.params = params;

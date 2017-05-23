@@ -13,7 +13,7 @@ import {Observable} from "rxjs";
 export class MenuComponent implements OnInit {
   @select('userSettings') userSettings$: Observable<any>;
 
-  private activeMenuItems = [];
+  public activeMenuItems = [];
 
   constructor(private ngRedux: NgRedux<IStore>) {
 

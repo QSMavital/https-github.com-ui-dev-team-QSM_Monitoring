@@ -13,7 +13,7 @@ import {Dashboard} from "../../../../config/dashboard";
 export class WrapperComponent implements OnInit {
   private userSettings;
   private _userSettingsRef;
-  private widgets:any = [];
+  public widgets:any = [];
 
   @select('userSettings') userSettings$: Observable<any>;
 

@@ -15,7 +15,7 @@ export class AtmsComponent implements OnInit,OnDestroy {
   private userSettings;
   private _userSettingsRef;
   private _routerRef;
-  private tabs: any = [];
+  public tabs: any = [];
 
 
   @select('userSettings') userSettings$: Observable<any>;

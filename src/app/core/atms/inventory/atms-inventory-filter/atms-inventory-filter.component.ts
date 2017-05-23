@@ -12,9 +12,9 @@ import {TranslateService} from "@ngx-translate/core";
   styleUrls: ['./atms-inventory-filter.component.scss']
 })
 export class AtmsInventoryFilterComponent implements OnInit,OnChanges {
-  private form: FormGroup;
+  public form: FormGroup;
   @Input() filters;
-  private filterObj;
+  public filterObj;
 
   constructor(private fb: FormBuilder,
               private ngRedux: NgRedux<IStore>,

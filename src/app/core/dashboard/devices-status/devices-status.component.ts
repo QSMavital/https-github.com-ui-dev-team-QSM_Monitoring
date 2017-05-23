@@ -12,7 +12,7 @@ import {DashboardActions} from "../../../../store/actions/dashboard-actions";
 })
 export class DevicesStatusComponent implements OnInit, OnDestroy {
   private unsubscriber;
-  private data: any[];
+  public data: any[];
   @select(['dashboard', 'deviceStatus']) $devicesStatus: Observable<any>;
 
   constructor(private ngRedux: NgRedux<IStore>) {

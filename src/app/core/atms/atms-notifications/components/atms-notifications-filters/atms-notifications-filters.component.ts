@@ -7,7 +7,7 @@ import {FormGroup, FormBuilder} from "@angular/forms";
   styleUrls: ['./atms-notifications-filters.component.scss']
 })
 export class AtmsNotificationsFiltersComponent implements OnInit {
-  private form: FormGroup;
+  public form: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 

@@ -10,7 +10,7 @@ import {Atm} from "../../../config/atm";
 })
 export class RetainedCardsComponent implements OnInit {
 
-  private gridOptions: any = {};
+  public gridOptions: any = {};
 
   constructor(private translateSrv: TranslateService) {
     this.gridOptions.columnDefs = [];

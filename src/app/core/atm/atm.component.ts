@@ -15,8 +15,8 @@ export class AtmComponent implements OnInit, OnDestroy {
   private userSettings;
   private unsubscriber;
   private _routerRef;
-  private tabs: any = [];
-  private atmId: number;
+  public tabs: any = [];
+  public atmId: number;
   @select('userSettings') userSettings$: Observable<any>;
 
   constructor(private ngRedux: NgRedux<IStore>, private router: Router, private route: ActivatedRoute) {

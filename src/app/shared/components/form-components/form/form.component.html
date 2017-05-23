@@ -1,5 +1,5 @@
-<form class="stretch-height scroll-y" [formGroup]="form" (submit)="sub()">
-  <masonry  [options]="masonryOptions" class="form-body ">
+<form class="stretch-height scroll-y" [formGroup]="form">
+  <masonry  [options]="masonryOptions" class="form-body">
     <masonry-brick  *ngFor="let group of controlGroups" class="brick">
       <ui-controls-group  [header]="group.label | translate" [formGroupName]="group.name">
         <!--<div *ngFor="let group of controlGroups" [formGroupName]="group.name">-->

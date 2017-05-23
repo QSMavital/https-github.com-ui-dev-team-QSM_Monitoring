@@ -9,7 +9,7 @@ import {isNullOrUndefined} from "util";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  private customerDefs:{"businessDay":number,"customer":string};
+  public customerDefs:{"businessDay":number,"customer":string};
   @select('generalCustomer') generalCustomer$: Observable<any>;
   constructor() {
     this.generalCustomer$.subscribe((state)=>{

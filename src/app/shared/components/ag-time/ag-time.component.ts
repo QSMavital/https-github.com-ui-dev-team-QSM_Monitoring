@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ag-time.component.scss']
 })
 export class AgTimeComponent{
-  private params: any;
+  public params: any;
 
   agInit(params: any): void {
     this.params = params;

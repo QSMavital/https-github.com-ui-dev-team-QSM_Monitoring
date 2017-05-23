@@ -13,8 +13,8 @@ import {Atm} from "../../../config/atm";
 })
 
 export class AtmSettingsComponent implements OnInit {
-  private form: FormGroup = new FormGroup({});
-  private controlGroups: CustomControlGroup[] = [];
+  public form: FormGroup = new FormGroup({});
+  public controlGroups: CustomControlGroup[] = [];
   private atmSettings;
 
   private old = [

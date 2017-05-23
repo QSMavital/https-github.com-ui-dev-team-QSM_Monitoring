@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ag-date-short.component.scss']
 })
 export class AgDateShortComponent{
-  private params: any;
+  public params: any;
 
   agInit(params: any): void {
     this.params = params;

@@ -14,15 +14,15 @@ import {isNullOrUndefined} from "util";
 })
 export class MainComponent implements OnInit {
 
-  private direction;
-  private panelStatus = false;
+  public direction;
+  public panelStatus = false;
   private userSettings;
   @select('userSettings') userSettings$: Observable<any>;
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
+              public router: Router,
               private ngRedux: NgRedux<IStore>,
-              private translate: TranslateService) {
+              public translate: TranslateService) {
 
     this.userSettings$.subscribe((state)=>{
       if(!isNullOrUndefined(state)){

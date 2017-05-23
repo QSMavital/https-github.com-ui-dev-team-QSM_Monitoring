@@ -15,10 +15,12 @@
 
 
     <ag-grid-angular
+      (rowDoubleClicked)="selectItem($event)"
       fxFlex
       class="ag-fresh"
       [gridOptions]="gridOptions">
     </ag-grid-angular>
+
   </div>
 
 </ui-portlet>

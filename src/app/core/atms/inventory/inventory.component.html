@@ -10,6 +10,7 @@
 
     </ui-filters-bar>
     <ag-grid-angular
+      (rowDoubleClicked)="selectItem($event)"
       fxFlex
       class="ag-fresh"
       [gridOptions]="gridOptions">

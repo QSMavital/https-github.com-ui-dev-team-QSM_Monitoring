@@ -9,6 +9,7 @@ import {IStore} from "../../../../store/index";
 import {Observable} from "rxjs";
 import {AtmsActions} from "../../../../store/actions/atms-actions";
 import {GridDefsService} from "../../../shared/services/grid-defs.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'ui-atms-status',
@@ -23,7 +24,8 @@ export class AtmsStatusComponent implements OnInit {
   private gridOptions: GridOptions = {};
 
   constructor(private gridDefsSrv: GridDefsService,
-              private ngRedux: NgRedux<IStore>) {
+              private ngRedux: NgRedux<IStore>,
+              private router: Router) {
     this.gridOptions = {
       rowSelection: 'multiple',
       groupSelectsChildren: true,
@@ -57,5 +59,11 @@ export class AtmsStatusComponent implements OnInit {
 
   ngOnDestroy(){
     this.$atms_inventory_ref.unsubscribe();
+  }
+
+  selectItem(item){
+    console.log(item.data.terminalId);
+    this.router.navigate(['/atms','atm',item.data.terminalId]);
+
   }
 }

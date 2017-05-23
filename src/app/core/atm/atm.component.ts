@@ -1,7 +1,7 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {isNullOrUndefined} from "util";
 import {NgRedux, select} from "@angular-redux/store";
-import {Router, ActivatedRoute} from "@angular/router";
+import {Router, ActivatedRoute, NavigationEnd} from "@angular/router";
 import {IStore} from "../../../store/index";
 import {Observable} from "rxjs";
 import {Atm} from "../../config/atm";
@@ -14,6 +14,7 @@ import {Atm} from "../../config/atm";
 export class AtmComponent implements OnInit, OnDestroy {
   private userSettings;
   private unsubscriber;
+  private _routerRef;
   private tabs: any = [];
   private atmId: number;
   @select('userSettings') userSettings$: Observable<any>;
@@ -27,11 +28,16 @@ export class AtmComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
+    this._routerRef = this.router.events.subscribe((e)=>{
+      if(e instanceof NavigationEnd){
+        this.initTabs(this.userSettings);
+      }
+    });
   }
 
   ngOnDestroy() {
     this.unsubscriber.unsubscribe();
+    this._routerRef.unsubscribe();
   }
 
   initTabs(settings?) {
@@ -43,7 +49,10 @@ export class AtmComponent implements OnInit, OnDestroy {
           this.tabs.push(Atm.Tabs[tabView.field]);
         }
       });
-
+      if (this.router.url.match(new RegExp("/", "g")).length == 3) {
+        this.router.navigate(['atms', 'atm', this.atmId, this.tabs[0].state]);
+      }
+    }else{
       if (this.router.url.match(new RegExp("/", "g")).length == 3) {
         this.router.navigate(['atms', 'atm', this.atmId, this.tabs[0].state]);
       }

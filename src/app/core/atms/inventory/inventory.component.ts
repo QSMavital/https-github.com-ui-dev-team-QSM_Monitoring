@@ -10,6 +10,7 @@ import {FormGroup} from "@angular/forms";
 import {CustomControlGroup} from "../../../config/interfaces/form.interface";
 import {FormBuilderService} from "../../../shared/services/form-builder.service";
 import {Atm} from "../../../config/atm";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'ui-inventory',
@@ -28,7 +29,8 @@ export class InventoryComponent implements OnInit, OnDestroy {
   @select(['atms', 'inventory']) $atms_inventory: Observable<any>;
 
   constructor(private ngRedux: NgRedux<IStore>,
-              private gridDefsSrv: GridDefsService) {
+              private gridDefsSrv: GridDefsService,
+              private router: Router) {
     this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_INVENTORY});
   }
 
@@ -58,4 +60,9 @@ export class InventoryComponent implements OnInit, OnDestroy {
 
   }
 
+  selectItem(item){
+    console.log(item.data.terminalId);
+    this.router.navigate(['/atms','atm',item.data.terminalId]);
+
+  }
 }

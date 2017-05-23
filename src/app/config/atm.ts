@@ -106,16 +106,6 @@ export const Atm = {
           ]
         },
         {
-          name: 'c13',
-          type: 'select',
-          label: 'ATM Number',
-          options: [
-            {label: 'opt1', value: 1},
-            {label: 'opt2', value: 2},
-            {label: 'NCR', value: 4}
-          ]
-        },
-        {
           name: 'area',
           type: 'select',
           label: 'atms.area',

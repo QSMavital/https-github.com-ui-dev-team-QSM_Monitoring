@@ -5,10 +5,11 @@
   //position: relative;
   height: 722px !important;
   top: 55px !important;
-  //border: 1px solid $ber-gray;
   border-right: none;
-  //border-radius: 5px 0 0 0;
-
+  @media screen and ( max-height: 800px ){
+    top: auto !important;
+    bottom: 0 !important;
+  }
   .ng-sidebar--left {
     bottom: 0;
     left: 0;

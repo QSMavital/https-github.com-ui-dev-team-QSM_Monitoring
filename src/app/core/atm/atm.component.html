@@ -1,5 +1,11 @@
 <div class="stretch-height" fxLayout="column">
-  <ui-tabs [menu]="tabs"></ui-tabs>
+  <div fxLayout>
+    <ui-tabs [menu]="tabs"></ui-tabs>
+    <div>
+      <label>ATM:{{atmId}}</label>
+    </div>
+  </div>
+
 
   <div fxFlex class="wrapper ui-space-medium">
     <router-outlet></router-outlet>

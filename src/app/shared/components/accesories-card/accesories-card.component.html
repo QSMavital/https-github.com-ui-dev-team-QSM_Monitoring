@@ -4,7 +4,7 @@
   <div class="footer" fxLayout fxLayoutWrap="wrap" *ngIf="footerData">
     <div class="footer-item" *ngFor="let key of keys">
       <span class="key">{{key | translate}}:&nbsp;</span>
-      <span class="value" *ngIf="footerData[key].time">{{footerData[key].value | moment : 'D/M/Y hh:mm'}}</span>
+      <span class="value" *ngIf="footerData[key].time">{{footerData[key].value | date : 'short'}}</span>
       <span class="value" *ngIf="!footerData[key].time">{{footerData[key]}}</span>
     </div>
   </div>

@@ -4,7 +4,7 @@
 
     <div [fxFlex]="widget.width" *ngFor="let widget of widgetsData">
       <div fxLayout>
-        <ui-controls-group class="ui-space-regular" fxLayout="column" [header]="widget.header | translate">
+        <ui-controls-group class="ui-space-regular stretch-width" fxLayout="column" [header]="widget.header | translate">
           <ag-grid-angular
             style="height: 300px;"
             class="ag-fresh"

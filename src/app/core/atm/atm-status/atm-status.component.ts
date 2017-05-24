@@ -1,10 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {GridDefsService} from "../../../shared/services/grid-defs.service";
-import {select, NgRedux} from "@angular-redux/store";
-import {IStore} from "../../../../store/index";
-import {Observable} from "rxjs/Observable";
-import {AtmsActions} from "../../../../store/actions/atms-actions";
-import {isNullOrUndefined} from "util";
+import {Component, OnInit} from '@angular/core';
+import {AgStatusComponent} from "../../../shared/components/ag-status/ag-status.component";
 
 @Component({
   selector: 'ui-atm-status',
@@ -13,36 +8,136 @@ import {isNullOrUndefined} from "util";
 })
 
 export class AtmStatusComponent implements OnInit {
-  public gridOptions: any = {};
-  private $atms_events_ref;
-  @select(['atms', 'events']) $atms_events: Observable<any>;
-  constructor( private gridDefsSrv: GridDefsService, private ngRedux: NgRedux<IStore>,) {
-    this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_EVENTS});
-    this.gridOptions.columnDefs = [];
+  private atm_status_specs: any;
+
+  constructor() {
+    this.atm_status_specs = {
+      gridOptions_SummaryOfAssemblies: {
+        columnDefs: [
+      {headerName: "Accessory", field: "accessory", width: 150, suppressSizeToFit: true},
+      {headerName: "", field: "active", width: 50, cellRendererFramework: AgStatusComponent},
+      {headerName: "Health", field: "health", minWidth: 190, maxWidth: 300},
+      {headerName: "Inventory", field: "inventory", width: 200}
+    ],
+        rowData: [
+        {
+          "accessory": "Card reader",
+          "active": "FATAL",
+          "health": "Work properly",
+          "inventory": 50
+        },
+        {
+          "accessory": "Dispenser",
+          "active": "GOOD",
+          "health": "Work properly",
+          "inventory": 50
+        },
+        {
+          "accessory": "E-calender",
+          "active": "GOOD",
+          "health": "Work properly",
+          "inventory": 50
+        },
+        {
+          "accessory": "Keyboard",
+          "active": "GOOD",
+          "health": "Work properly",
+          "inventory": 50
+        },
+      ],
+        enableColResize: true
+      },
+      gridOptions_General: {
+        columnDefs: [
+          {headerName: "", field: "name", width: 200, suppressSizeToFit: true},
+          {headerName: "", field: "status", width: 150},
+          {headerName: "", field: "active", width: 150, cellRendererFramework: AgStatusComponent},
+        ],
+        rowData: [
+          {
+            "name": "Known state",
+            "status": "Disconnect",
+            "active": "FATAL"
+          },
+          {
+            "name": "Preferred state",
+            "status": "Connect",
+            "active": "GOOD"
+          },
+          {
+            "name": "Communication mode",
+            "status": "Disconnect",
+            "active": "FATAL"
+          },
+          {
+            "name": "IP address",
+            "status": "10.0.0.23",
+          },
+          {
+            "name": "Port number",
+            "status": "5002",
+          },
+          {
+            "name": "Model",
+            "status": "6632",
+          },
+          {
+            "name": "AANDC Edition",
+            "status": "030402",
+          },
+          {
+            "name": "Provides configuration",
+            "status": "0101",
+          },
+          {
+            "name": "Charging status",
+            "status": "00",
+          }
+        ],
+        enableColResize: true
+      },
+      gridOptions_Keys: {
+        columnDefs: [
+          {headerName: "Health", field: "health", width: 200, suppressSizeToFit: true},
+          {headerName: "Key type", field: "KeyType", width: 150},
+          {headerName: "KVC", field: "kvc", width: 150},
+        ],
+
+        rowData: [
+          {
+            "health": "Master Key",
+            "KeyType": "approved",
+            "kvc": "00000"
+          },
+          {
+            "health": "Encryption key",
+            "KeyType": "Canceled",
+            "kvc": "C01F8C"
+          },
+          {
+            "health": "Authentication key",
+            "KeyType": "Canceled",
+            "kvc": "5320E2"
+          }
+        ],
+        enableColResize: true
+      }
+    };
+
   }
 
   ngOnInit() {
-    this.initColDefs();
-    this.$atms_events_ref = this.$atms_events.subscribe((state) => {
-      if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
-        this.gridOptions.api.setRowData(state);
-      }
-    });
   }
 
-  fitCols(){
-    this.gridOptions.api.sizeColumnsToFit();
+  fitCols_SummaryOfAssemblies() {
+    this.atm_status_specs.gridOptions_SummaryOfAssemblies.api.sizeColumnsToFit();
+  }
+  fitCols_General() {
+    this.atm_status_specs.gridOptions_General.api.sizeColumnsToFit();
+  }
+  fitCols_Keys() {
+    this.atm_status_specs.gridOptions_Keys.api.sizeColumnsToFit();
   }
 
-  initColDefs() {
-    let colsDef = this.ngRedux.getState().userSettings.atmsCustomization['alerts'];
-    this.gridOptions = this.gridDefsSrv.initGridOptions();
-    this.gridOptions.columnDefs = this.gridDefsSrv.initAtmsGridColDefs(colsDef, 'Notifications');
-  }
-
-  ngOnDestroy() {
-    this.$atms_events_ref.unsubscribe();
-
-  }
 
 }

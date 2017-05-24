@@ -134,6 +134,11 @@
     "resetDate": "Reset Date",
     "comments": "Comments",
     "balanceOfLastStrokes": "Balance of last strokes",
+    "general":"general",
+    "SummaryOfAssemblies":"Summary of assemblies",
+    "General":"General",
+    "RecentActions":"Recent actions",
+    "Keys":"Keys",
     "tabs": {
       "status": "atm status",
       "accessories": "accessories status",

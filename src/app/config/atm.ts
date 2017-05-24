@@ -220,11 +220,11 @@ export const Atm = {
     }
   },
   RetainedCards: {
-    cardNumber: {headerName: "atm.cardNumber", field: "cardNumber", width: 90},
-    retainTime: {headerName: "atm.retainTime", field: "retainTime", width: 120, cellRendererFramework: AgDateComponent},
-    reason: {headerName: "atm.reason", field: "reason", width: 90},
-    resetDate: {headerName: "atm.resetDate", field: "resetDate", width: 90},
-    comments: {headerName: "atm.comments", field: "comments", width: 90},
+    cardNumber: {headerName: "atm.cardNumber", field: "cardNumber", width: 120},
+    retainTime: {headerName: "atm.retainTime", field: "retainTime", width: 300, cellRendererFramework: AgDateComponent},
+    reason: {headerName: "atm.reason", field: "reason", width: 250},
+    resetDate: {headerName: "atm.resetDate", field: "resetDate", width: 250},
+    comments: {headerName: "atm.comments", field: "comments", width: 700},
 
   }
 };

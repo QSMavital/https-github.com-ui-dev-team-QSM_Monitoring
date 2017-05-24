@@ -1,11 +1,19 @@
-<div class="wrapper">
-  <div fxLayout fxLayoutWrap="wrap" class="row">
-    <ui-accesories-card *ngFor="let widget of widgetsData" [fxFlex]="widget.width" [footerData]="widget.footer" [header]="widget.header">
-      <ag-grid-angular
-        fxFlex
-        class="ag-fresh"
-        [gridOptions]="widget.gridData">
-      </ag-grid-angular>
-    </ui-accesories-card>
+<ui-portlet>
+
+  <div fxLayout fxLayoutWrap class="ui-space-regular">
+
+    <div [fxFlex]="widget.width" *ngFor="let widget of widgetsData">
+      <div fxLayout>
+        <ui-controls-group class="ui-space-regular" fxLayout="column" [header]="widget.header | translate">
+          <ag-grid-angular
+            style="height: 300px;"
+            class="ag-fresh"
+            [gridOptions]="widget.gridData">
+          </ag-grid-angular>
+        </ui-controls-group>
+      </div>
+    </div>
+
   </div>
-</div>
+
+</ui-portlet>

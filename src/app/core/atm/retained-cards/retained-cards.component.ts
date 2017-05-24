@@ -13,62 +13,65 @@ export class RetainedCardsComponent implements OnInit {
   public gridOptions: any = {};
 
   constructor(private translateSrv: TranslateService) {
-    this.gridOptions.columnDefs = [];
+    this.gridOptions= {
+      columnDefs: [],
+        rowData: [
+          {
+            cardNumber: 1,
+            retainTime: "october 10 1964",
+            reason: "Card left in device",
+            resetDate: "october 10 1964",
+            comments: ""
+          },
+          {
+            cardNumber: 2,
+            retainTime: "october 10 1964",
+            reason: "Card left in device",
+            resetDate: "october 10 1964",
+            comments: ""
+          },
+          {
+            cardNumber: 3,
+            retainTime: "october 10 1964",
+            reason: "Card left in device",
+            resetDate: "october 10 1964",
+            comments: ""
+          },
+          {
+            cardNumber: 4,
+            retainTime: "october 10 1964",
+            reason: "Card left in device",
+            resetDate: "october 10 1964",
+            comments: ""
+          },
+          {
+            cardNumber: 5,
+            retainTime: "october 10 1964",
+            reason: "Card left in device",
+            resetDate: "october 10 1964",
+            comments: ""
+          },
+          {
+            cardNumber: 6,
+            retainTime: "october 10 1964",
+            reason: "Card left in device",
+            resetDate: "october 10 1964",
+            comments: ""
+          }, {
+            cardNumber: 7,
+            retainTime: "october 10 1964",
+            reason: "Card left in device",
+            resetDate: "october 10 1964",
+            comments: ""
+          }
+        ],
+        enableColResize: true
+    }
   }
 
   ngOnInit() {
     this.initColDefs();
 
-    this.gridOptions.rowData = [
-      {
-        cardNumber: 1,
-        retainTime: "october 10 1964",
-        reason: "Card left in device",
-        resetDate: "october 10 1964",
-        comments: ""
-      },
-      {
-        cardNumber: 2,
-        retainTime: "october 10 1964",
-        reason: "Card left in device",
-        resetDate: "october 10 1964",
-        comments: ""
-      },
-      {
-        cardNumber: 3,
-        retainTime: "october 10 1964",
-        reason: "Card left in device",
-        resetDate: "october 10 1964",
-        comments: ""
-      },
-      {
-        cardNumber: 4,
-        retainTime: "october 10 1964",
-        reason: "Card left in device",
-        resetDate: "october 10 1964",
-        comments: ""
-      },
-      {
-        cardNumber: 5,
-        retainTime: "october 10 1964",
-        reason: "Card left in device",
-        resetDate: "october 10 1964",
-        comments: ""
-      },
-      {
-        cardNumber: 6,
-        retainTime: "october 10 1964",
-        reason: "Card left in device",
-        resetDate: "october 10 1964",
-        comments: ""
-      }, {
-        cardNumber: 7,
-        retainTime: "october 10 1964",
-        reason: "Card left in device",
-        resetDate: "october 10 1964",
-        comments: ""
-      }
-    ];
   }
 
   initColDefs() {

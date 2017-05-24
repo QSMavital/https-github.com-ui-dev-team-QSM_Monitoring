@@ -4,19 +4,25 @@
 
     <div fxLayout fxFlex>
       <div fxFlex class="ui-space-regular">
-        <ui-controls-group [header]="'General'">
-          bla bla
-
+        <ui-controls-group fxLayout="column" class="stretch-height" [header]="'atm.General' | translate">
+          <div fxFlex>
+            <ag-grid-angular
+              fxFlex
+              (gridReady)="fitCols_General()"
+              class="ag-fresh"
+              [gridOptions]="atm_status_specs.gridOptions_General">
+            </ag-grid-angular>
+          </div>
         </ui-controls-group>
       </div>
       <div fxFlex class="ui-space-regular">
-        <ui-controls-group fxLayout="column" class="stretch-height" [header]="'Summary of assemblies'">
-          <div fxFlex style="display: block" >
+        <ui-controls-group fxLayout="column" class="stretch-height" [header]="'atm.SummaryOfAssemblies' | translate">
+          <div fxFlex>
             <ag-grid-angular
               fxFlex
-              (gridReady)="fitCols()"
+              (gridReady)="fitCols_SummaryOfAssemblies()"
               class="ag-fresh"
-              [gridOptions]="gridOptions">
+              [gridOptions]="atm_status_specs.gridOptions_SummaryOfAssemblies">
             </ag-grid-angular>
           </div>
         </ui-controls-group>
@@ -25,13 +31,21 @@
 
     <div fxLayout fxFlex>
       <div fxFlex class="ui-space-regular">
-        <ui-controls-group [header]="'Recent actions'">
-          bla bla
+        <ui-controls-group [header]="'atm.RecentActions' | translate">
 
         </ui-controls-group>
       </div>
       <div fxFlex class="ui-space-regular">
-        <ui-controls-group fxLayout="column" class="stretch-height" [header]="'Keys'">
+        <ui-controls-group fxLayout="column" class="stretch-height" [header]="'atm.Keys' | translate">
+
+          <div fxFlex>
+            <ag-grid-angular
+              fxFlex
+              (gridReady)="fitCols_Keys()"
+              class="ag-fresh"
+              [gridOptions]="atm_status_specs.gridOptions_Keys">
+            </ag-grid-angular>
+          </div>
 
         </ui-controls-group>
       </div>

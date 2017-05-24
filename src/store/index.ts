@@ -31,6 +31,9 @@ class IAtms {
   inventory?: any;
   events?:any;
 }
+class IAtm {
+
+}
 
 export const rootReducer = combineReducers<IStore>({
   loader: loaderReducer,

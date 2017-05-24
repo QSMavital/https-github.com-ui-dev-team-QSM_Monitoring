@@ -1,8 +1,9 @@
-<ui-tabs [menu]="tabs"></ui-tabs>
+<div class="stretch-height" fxLayout="column">
+  <ui-tabs [menu]="tabs"></ui-tabs>
 
-<div class="wrapper ui-space-medium">
-  <p>HSM MAIN COMP works!</p>
-
-
-  <router-outlet></router-outlet>
+  <div fxFlex class="wrapper ui-space-medium">
+    <ui-portlet>
+      <router-outlet></router-outlet>
+    </ui-portlet>
+  </div>
 </div>

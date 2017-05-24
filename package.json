@@ -51,7 +51,7 @@
     "web-animations-js": "^2.2.5",
     "webpack-spritesmith": "^0.3.3",
     "webpack-webfont": "0.0.1-alpha.7",
-    "zone.js": "^0.7.6"
+    "zone.js": "^0.8.11"
   },
   "devDependencies": {
     "@angular/cli": "1.0.0",

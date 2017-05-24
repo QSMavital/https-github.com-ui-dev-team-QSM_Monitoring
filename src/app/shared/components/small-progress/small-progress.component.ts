@@ -11,7 +11,6 @@ export class SmallProgressComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

@@ -14,6 +14,7 @@ import {TranslateService} from "@ngx-translate/core";
 export class AtmsInventoryFilterComponent implements OnInit,OnChanges {
   public form: FormGroup;
   @Input() filters;
+  @Input() event;
   public filterObj;
 
   constructor(private fb: FormBuilder,
@@ -53,7 +54,7 @@ export class AtmsInventoryFilterComponent implements OnInit,OnChanges {
   }
 
   filter() {
-    console.log('filer data:', this.form.getRawValue());
+    console.log('filer data:',this.event, this.form.getRawValue());
     this.form.markAsPristine();
   }
 

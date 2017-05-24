@@ -1,4 +1,41 @@
 <ui-portlet>
-dd
+
+  <div fxLayout="column" class="stretch-height">
+
+    <div fxLayout fxFlex>
+      <div fxFlex class="ui-space-regular">
+        <ui-controls-group [header]="'General'">
+          bla bla
+
+        </ui-controls-group>
+      </div>
+      <div fxFlex class="ui-space-regular">
+        <ui-controls-group fxLayout="column" class="stretch-height" [header]="'Summary of assemblies'">
+          <div fxFlex style="display: block" >
+            <ag-grid-angular
+              fxFlex
+              (gridReady)="fitCols()"
+              class="ag-fresh"
+              [gridOptions]="gridOptions">
+            </ag-grid-angular>
+          </div>
+        </ui-controls-group>
+      </div>
+    </div>
+
+    <div fxLayout fxFlex>
+      <div fxFlex class="ui-space-regular">
+        <ui-controls-group [header]="'Recent actions'">
+          bla bla
+
+        </ui-controls-group>
+      </div>
+      <div fxFlex class="ui-space-regular">
+        <ui-controls-group fxLayout="column" class="stretch-height" [header]="'Keys'">
+
+        </ui-controls-group>
+      </div>
+    </div>
+  </div>
 
 </ui-portlet>

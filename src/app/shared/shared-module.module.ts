@@ -97,6 +97,7 @@ import {DialogModule} from "primeng/components/dialog/dialog";
     AgAmountComponent,
     InputComponent,
     FormComponent,
+    ControlsGroupComponent,
     AccesoriesCardComponent,
     SmallProgressComponent,
     AgProgressComponent,

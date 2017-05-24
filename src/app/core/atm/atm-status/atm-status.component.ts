@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GridDefsService} from "../../../shared/services/grid-defs.service";
 import {select, NgRedux} from "@angular-redux/store";
 import {IStore} from "../../../../store/index";
@@ -16,7 +16,8 @@ export class AtmStatusComponent implements OnInit {
   public gridOptions: any = {};
   private $atms_events_ref;
   @select(['atms', 'events']) $atms_events: Observable<any>;
-  constructor( private gridDefsSrv: GridDefsService, private ngRedux: NgRedux<IStore>,) {
+
+  constructor(private gridDefsSrv: GridDefsService, private ngRedux: NgRedux<IStore>,) {
     this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_EVENTS});
     this.gridOptions.columnDefs = [];
   }
@@ -30,13 +31,13 @@ export class AtmStatusComponent implements OnInit {
     });
   }
 
-  fitCols(){
+  fitCols() {
     this.gridOptions.api.sizeColumnsToFit();
   }
 
   initColDefs() {
     let colsDef = this.ngRedux.getState().userSettings.atmsCustomization['alerts'];
-    this.gridOptions = this.gridDefsSrv.initGridOptions();
+    this.gridOptions = Object.assign(this.gridDefsSrv.initGridOptions(), {rowSelection: 'multiple'});
     this.gridOptions.columnDefs = this.gridDefsSrv.initAtmsGridColDefs(colsDef, 'Notifications');
   }
 

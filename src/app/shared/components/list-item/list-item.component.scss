@@ -1,4 +1,16 @@
 @import './src/styles/helpers/brand';
-:host{
+
+:host {
   display: block;
+  border-bottom: solid 1px $cats-white;
+    li {
+      width: 100%;
+      height: 32px;
+      line-height: 32px;
+      div {
+        padding: 0 10px;
+        font-size: 14px;
+        color: $raven;
+      }
+    }
 }

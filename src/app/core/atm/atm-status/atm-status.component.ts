@@ -132,14 +132,21 @@ export class AtmStatusComponent implements OnInit {
         })
       }
     };
-    this.recent_actions = [
-      {"key1": 1, "key2": 1, "key3": 1, "key8": 1, "key4": 1, "key5": 1, "key6": 1, "key7": 1},
-      {"key1": 1, "key2": 1, "key3": 1},
-      {"key1": 2, "key2": 2, "key3": 2},
-      {"key1": 2, "key2": 2, "key3": 2},
-      {"key1": 2, "key2": 2, "key3": 2},
-      {"key1": 2, "key2": 2, "key3": 2},
-    ]
+    this.recent_actions = {
+      a:[
+        {"name": "Reason for rejection", "value": "System failure"},
+        {"name": "Swallowed card", "value": "-"},
+        {"name": "Customer type", "value": "Our local"},
+        {"name": "Card type", "value": "Magnetic"}
+
+      ,],
+      b:[
+        {"name": "Card number", "value": "1088"},
+        {"name": "Action Type", "value": "Not executed"},
+        {"name": "Amount", "value": ""},
+        {"name": "Banknote", "value": "-"}
+      ]
+    }
   }
 
   ngOnInit() {

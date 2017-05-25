@@ -1,6 +1,9 @@
 :host{
   display: block;
-  &>li{
-    display: block;
+  ul {
+    display: block!important;
+    &>li{
+      display: block;
+    }
   }
 }

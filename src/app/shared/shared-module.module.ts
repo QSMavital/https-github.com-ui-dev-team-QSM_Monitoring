@@ -40,7 +40,8 @@ import { AddNewComponent } from './components/add-new/add-new.component';
 import {DialogModule} from "primeng/components/dialog/dialog";
 import { ListComponent } from './components/list/list.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
-import {KeysPipe} from './pipes/keys.pipe'
+import {KeysPipe} from './pipes/keys.pipe';
+import { KeyLabelComponent } from './components/key-label/key-label.component'
 
 @NgModule({
   imports: [
@@ -84,7 +85,8 @@ import {KeysPipe} from './pipes/keys.pipe'
     AddNewComponent,
     ListComponent,
     ListItemComponent,
-    KeysPipe
+    KeysPipe,
+    KeyLabelComponent
   ],
   exports: [
     SpinnerComponent,
@@ -112,7 +114,8 @@ import {KeysPipe} from './pipes/keys.pipe'
     AddNewComponent,
     ListComponent,
     ListItemComponent,
-    KeysPipe
+    KeysPipe,
+    KeyLabelComponent
   ],
   providers: [CanActivateRoute, AppActivator,FormBuilderService,GridDefsService]
 })

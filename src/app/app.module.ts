@@ -73,6 +73,11 @@ import {Atms as AtmsMiddleware} from "../store/middlewares/atms-middleware";
 import {AgDateShortComponent} from "./shared/components/ag-date-short/ag-date-short.component";
 import {AgTimeComponent} from "./shared/components/ag-time/ag-time.component";
 import { MasonryModule } from 'angular2-masonry';
+import { AtmStatusGeneralComponent } from './core/atm/atm-status/components/atm-status-general/atm-status-general.component';
+import { AtmStatusSummaryComponent } from './core/atm/atm-status/components/atm-status-summary/atm-status-summary.component';
+import { AtmStatusReventActionComponent } from './core/atm/atm-status/components/atm-status-revent-action/atm-status-revent-action.component';
+import { AtmStatusKeysComponent } from './core/atm/atm-status/components/atm-status-keys/atm-status-keys.component';
+import { BalanceFilterComponent } from './core/atm/retained-cards/components/balance-filter/balance-filter.component';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -128,7 +133,12 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     OnlineSmallComponent,
     WrapperComponent,
     AtmsInventoryFilterComponent,
-    AtmsNotificationsFiltersComponent
+    AtmsNotificationsFiltersComponent,
+    AtmStatusGeneralComponent,
+    AtmStatusSummaryComponent,
+    AtmStatusReventActionComponent,
+    AtmStatusKeysComponent,
+    BalanceFilterComponent
   ],
   imports: [
     MasonryModule,

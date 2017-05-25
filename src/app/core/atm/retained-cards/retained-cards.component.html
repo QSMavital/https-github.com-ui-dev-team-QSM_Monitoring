@@ -1,13 +1,22 @@
 <ui-portlet>
-<div>
+  <div class="stretch-height" fxLayout="column">
+    <ui-filters-bar>
+      <div fxLayout>
+        <ui-balance-filter></ui-balance-filter>
+        <div fxFlex class="text-right"></div>
+      </div>
 
-</div>
-        <ui-controls-group class="ui-space-regular" fxLayout="column" [header]="ghjghj">
-          <ag-grid-angular
-            style="height: 500px; width: 100%;"
-            class="ag-fresh"
-            [gridOptions]="gridOptions">
-          </ag-grid-angular>
-        </ui-controls-group>
+
+    </ui-filters-bar>
+
+    <ag-grid-angular
+      fxFlex
+      style="width: 100%;"
+      class="ag-fresh"
+      [gridOptions]="gridOptions">
+    </ag-grid-angular>
+
+  </div>
+
 
 </ui-portlet>

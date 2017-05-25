@@ -2,7 +2,7 @@
   <div fxLayout="column" fxLayoutAlign="center center" class="stretch-height">
     <div fxFlex="65" class="stretch-width" fxLayout="column" fxLayoutAlign="center center"><div class="right-panel-closed-title fs12 bold">{{'db.actionsStatus' | translate}}</div></div>
     <div class="relative stretch-width colors" *ngIf="true">
-      <div *ngFor="let item of list" [ngStyle]="{background:statusView[actionStatus[item.statusName]].color,height:item.precents+'%'}"></div>
+      <div *ngFor="let item of list" [ngStyle]="{background:statusView[actionStatus[item.statusName]].color,height:item.percents+'%'}"></div>
     </div>
   </div>
 </div>

@@ -1,19 +1,11 @@
 <ui-portlet>
 
-  <div fxLayout="column" class="stretch-height">
+  <div fxLayout="column" class="ui-space-small stretch-height">
 
     <div fxLayout fxFlex>
       <div fxFlex class="ui-space-regular">
-        <ui-controls-group fxLayout="column" class="stretch-height" [header]="'atm.General' | translate">
-          <div fxFlex>
-            <ag-grid-angular
-              fxFlex
-              (gridReady)="fitCols_General()"
-              class="ag-fresh"
-              [gridOptions]="atm_status_specs.gridOptions_General">
-            </ag-grid-angular>
-          </div>
-        </ui-controls-group>
+        <ui-atm-status-general fxLayout="column" class="stretch-height"></ui-atm-status-general>
+
       </div>
       <div fxFlex class="ui-space-regular">
         <ui-controls-group fxLayout="column" class="stretch-height" [header]="'atm.SummaryOfAssemblies' | translate">
@@ -31,7 +23,7 @@
 
     <div fxLayout fxFlex>
       <div fxFlex class="ui-space-regular">
-        <ui-controls-group [header]="'atm.RecentActions' | translate">
+        <ui-controls-group class="stretch-height" [header]="'atm.RecentActions' | translate">
           <div class="ui-list-wrapper" fxLayout>
           <ui-list fxFlex>
             <ui-list-item fxFlex *ngFor="let item of recent_actions.a" [data]="item | keys"></ui-list-item>

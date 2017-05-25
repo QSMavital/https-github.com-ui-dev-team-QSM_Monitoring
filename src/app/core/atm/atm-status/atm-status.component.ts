@@ -51,58 +51,6 @@ export class AtmStatusComponent implements OnInit {
         return 32
       })
       },
-      gridOptions_General: {
-        columnDefs: [
-          {headerName: "", field: "name", width: 200, suppressSizeToFit: true},
-          {headerName: "", field: "status", width: 150},
-          {headerName: "", field: "active", width: 150, cellRendererFramework: AgStatusComponent},
-        ],
-        rowData: [
-          {
-            "name": "Known state",
-            "status": "Disconnect",
-            "active": "FATAL"
-          },
-          {
-            "name": "Preferred state",
-            "status": "Connect",
-            "active": "GOOD"
-          },
-          {
-            "name": "Communication mode",
-            "status": "Disconnect",
-            "active": "FATAL"
-          },
-          {
-            "name": "IP address",
-            "status": "10.0.0.23",
-          },
-          {
-            "name": "Port number",
-            "status": "5002",
-          },
-          {
-            "name": "Model",
-            "status": "6632",
-          },
-          {
-            "name": "AANDC Edition",
-            "status": "030402",
-          },
-          {
-            "name": "Provides configuration",
-            "status": "0101",
-          },
-          {
-            "name": "Charging status",
-            "status": "00",
-          }
-        ],
-        enableColResize: true,
-        getRowHeight:(() => {
-          return 32
-        })
-      },
       gridOptions_Keys: {
         columnDefs: [
           {headerName: "Health", field: "health", width: 200, suppressSizeToFit: true},

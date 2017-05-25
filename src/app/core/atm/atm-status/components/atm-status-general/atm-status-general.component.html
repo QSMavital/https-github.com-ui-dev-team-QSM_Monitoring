@@ -1,0 +1,17 @@
+<ui-controls-group fxLayout="column" class="stretch-height" [header]="'atm.General' | translate">
+  <div fxFlex>
+    <ag-grid-angular
+      fxFlex
+      (gridReady)="fitCols_General()"
+      class="ag-fresh"
+      [gridOptions]="gridOptions">
+    </ag-grid-angular>
+  </div>
+  <div class="ui-space-regular">
+    <ui-key-label [key]="'key'" [value]="'value'"></ui-key-label>
+    <ui-key-label [key]="'key'" [value]="'value'"></ui-key-label>
+    <ui-key-label [key]="'key'" [value]="'value'"></ui-key-label>
+    <ui-key-label [key]="'key'" [value]="'value'"></ui-key-label>
+    <ui-key-label [key]="'key'" [value]="'value'"></ui-key-label>
+  </div>
+</ui-controls-group>

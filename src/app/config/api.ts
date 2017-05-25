@@ -1,4 +1,5 @@
-const apiEntryPoint = "/api";
+const apiEntryPoint = "/operator/api";
+
 export const Api = {
   init: {url:`${apiEntryPoint}/general/settingsUser/get`,payload:{}},
   customer: {url:`${apiEntryPoint}/general/get`,payload:{}},

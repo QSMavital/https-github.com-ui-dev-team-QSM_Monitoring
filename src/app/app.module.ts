@@ -76,7 +76,7 @@ import { MasonryModule } from 'angular2-masonry';
 
 
 export function HttpLoaderFactory(http: Http) {
-  return new TranslateHttpLoader(http, "i18n/", ".json");
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
 export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions, serverURLInterceptor: ServerURLInterceptor) { // Add it here
   let service = new InterceptorService(xhrBackend, requestOptions);
@@ -141,7 +141,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     HttpModule,
     CalendarModule,
     FlexLayoutModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { useHash: true }),
     NgReduxModule,
     TranslateModule.forRoot({
       loader: {

@@ -49,11 +49,12 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
   }
 
   adjustData(state) {
+    console.log('adjustData');
     var data = [];
     state.forEach(i => {
       data.push({
         key: i.statusName,
-        value: i.precents,
+        value: i.percents,
         color: StatusView[ActionsStatus[i.statusName]].color
       });
     });
@@ -61,10 +62,15 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
       return {color: i.color, label: 'actionsStatus.' + i.key}
     });
     this.data = data;
+    console.log('legendData',this.legendData);
+    console.log('data',data);
+
   }
 
   subscribe() {
     this.unsubscriber = this.$actionsStatus.subscribe((state) => {
+      console.log('subscribe',state);
+
       var arr = [];
       if (!isNullOrUndefined(state)) {
         if (isArray(state))

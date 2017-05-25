@@ -23,7 +23,7 @@ var plugins = [
   new WebfontPlugin({
     files: path.resolve(__dirname, 'src/styles/svg/*.svg'),
     css: true,
-    cssTemplateFontPath: '/assets/fonts/',
+    cssTemplateFontPath: 'assets/fonts/',
     fontName: 'ui-icons',
     cssTemplateFontName: 'ui-icons',
     template: 'scss',

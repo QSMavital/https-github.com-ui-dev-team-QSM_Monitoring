@@ -543,16 +543,16 @@ var issuerActionStatus = [
 var actionStatus = [
   {
     "statusName": "IncorrectPINCode",
-    "precents": 32
+    "percents": 32
   }, {
     "statusName": "Rejection",
-    "precents": 13
+    "percents": 13
   }, {
     "statusName": "SuccessfulOperations",
-    "precents": 45
+    "percents": 45
   }, {
     "statusName": "Fault",
-    "precents": 10
+    "percents": 10
   }
 ];
 

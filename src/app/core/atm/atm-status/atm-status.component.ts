@@ -138,8 +138,7 @@ export class AtmStatusComponent implements OnInit {
         {"name": "Swallowed card", "value": "-"},
         {"name": "Customer type", "value": "Our local"},
         {"name": "Card type", "value": "Magnetic"}
-
-      ,],
+      ],
       b:[
         {"name": "Card number", "value": "1088"},
         {"name": "Action Type", "value": "Not executed"},

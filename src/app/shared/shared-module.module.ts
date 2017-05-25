@@ -38,6 +38,9 @@ import {GridDefsService} from "./services/grid-defs.service";
 import { MasonryModule } from 'angular2-masonry';
 import { AddNewComponent } from './components/add-new/add-new.component';
 import {DialogModule} from "primeng/components/dialog/dialog";
+import { ListComponent } from './components/list/list.component';
+import { ListItemComponent } from './components/list-item/list-item.component';
+import {KeysPipe} from './pipes/keys.pipe'
 
 @NgModule({
   imports: [
@@ -78,7 +81,10 @@ import {DialogModule} from "primeng/components/dialog/dialog";
     AgProgressComponent,
     AgDateShortComponent,
     AgTimeComponent,
-    AddNewComponent
+    AddNewComponent,
+    ListComponent,
+    ListItemComponent,
+    KeysPipe
   ],
   exports: [
     SpinnerComponent,
@@ -103,7 +109,10 @@ import {DialogModule} from "primeng/components/dialog/dialog";
     AgProgressComponent,
     AgDateShortComponent,
     AgTimeComponent,
-    AddNewComponent
+    AddNewComponent,
+    ListComponent,
+    ListItemComponent,
+    KeysPipe
   ],
   providers: [CanActivateRoute, AppActivator,FormBuilderService,GridDefsService]
 })

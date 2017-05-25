@@ -9,43 +9,47 @@ import {AgStatusComponent} from "../../../shared/components/ag-status/ag-status.
 
 export class AtmStatusComponent implements OnInit {
   private atm_status_specs: any;
+  private recent_actions: any;
 
   constructor() {
     this.atm_status_specs = {
       gridOptions_SummaryOfAssemblies: {
         columnDefs: [
-      {headerName: "Accessory", field: "accessory", width: 150, suppressSizeToFit: true},
-      {headerName: "", field: "active", width: 50, cellRendererFramework: AgStatusComponent},
-      {headerName: "Health", field: "health", minWidth: 190, maxWidth: 300},
-      {headerName: "Inventory", field: "inventory", width: 200}
-    ],
+          {headerName: "Accessory", field: "accessory", width: 150, suppressSizeToFit: true},
+          {headerName: "", field: "active", width: 50, cellRendererFramework: AgStatusComponent},
+          {headerName: "Health", field: "health", minWidth: 190, maxWidth: 300},
+          {headerName: "Inventory", field: "inventory", width: 200}
+        ],
         rowData: [
-        {
-          "accessory": "Card reader",
-          "active": "FATAL",
-          "health": "Work properly",
-          "inventory": 50
-        },
-        {
-          "accessory": "Dispenser",
-          "active": "GOOD",
-          "health": "Work properly",
-          "inventory": 50
-        },
-        {
-          "accessory": "E-calender",
-          "active": "GOOD",
-          "health": "Work properly",
-          "inventory": 50
-        },
-        {
-          "accessory": "Keyboard",
-          "active": "GOOD",
-          "health": "Work properly",
-          "inventory": 50
-        },
-      ],
-        enableColResize: true
+          {
+            "accessory": "Card reader",
+            "active": "FATAL",
+            "health": "Work properly",
+            "inventory": 50
+          },
+          {
+            "accessory": "Dispenser",
+            "active": "GOOD",
+            "health": "Work properly",
+            "inventory": 50
+          },
+          {
+            "accessory": "E-calender",
+            "active": "GOOD",
+            "health": "Work properly",
+            "inventory": 50
+          },
+          {
+            "accessory": "Keyboard",
+            "active": "GOOD",
+            "health": "Work properly",
+            "inventory": 50
+          },
+        ],
+        enableColResize: true,
+        getRowHeight:(() => {
+        return 32
+      })
       },
       gridOptions_General: {
         columnDefs: [
@@ -94,7 +98,10 @@ export class AtmStatusComponent implements OnInit {
             "status": "00",
           }
         ],
-        enableColResize: true
+        enableColResize: true,
+        getRowHeight:(() => {
+          return 32
+        })
       },
       gridOptions_Keys: {
         columnDefs: [
@@ -102,7 +109,6 @@ export class AtmStatusComponent implements OnInit {
           {headerName: "Key type", field: "KeyType", width: 150},
           {headerName: "KVC", field: "kvc", width: 150},
         ],
-
         rowData: [
           {
             "health": "Master Key",
@@ -120,10 +126,20 @@ export class AtmStatusComponent implements OnInit {
             "kvc": "5320E2"
           }
         ],
-        enableColResize: true
+        enableColResize: true,
+        getRowHeight:(() => {
+          return 32
+        })
       }
     };
-
+    this.recent_actions = [
+      {"key1": 1, "key2": 1, "key3": 1, "key8": 1, "key4": 1, "key5": 1, "key6": 1, "key7": 1},
+      {"key1": 1, "key2": 1, "key3": 1},
+      {"key1": 2, "key2": 2, "key3": 2},
+      {"key1": 2, "key2": 2, "key3": 2},
+      {"key1": 2, "key2": 2, "key3": 2},
+      {"key1": 2, "key2": 2, "key3": 2},
+    ]
   }
 
   ngOnInit() {
@@ -132,9 +148,11 @@ export class AtmStatusComponent implements OnInit {
   fitCols_SummaryOfAssemblies() {
     this.atm_status_specs.gridOptions_SummaryOfAssemblies.api.sizeColumnsToFit();
   }
+
   fitCols_General() {
     this.atm_status_specs.gridOptions_General.api.sizeColumnsToFit();
   }
+
   fitCols_Keys() {
     this.atm_status_specs.gridOptions_Keys.api.sizeColumnsToFit();
   }

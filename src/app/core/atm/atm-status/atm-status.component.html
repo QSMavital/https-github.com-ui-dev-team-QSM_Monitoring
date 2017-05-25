@@ -32,9 +32,12 @@
     <div fxLayout fxFlex>
       <div fxFlex class="ui-space-regular">
         <ui-controls-group [header]="'atm.RecentActions' | translate">
-
+          <ui-list>
+            <ui-list-item *ngFor="let item of recent_actions" [data]="item | keys"></ui-list-item>
+          </ui-list>
         </ui-controls-group>
       </div>
+
       <div fxFlex class="ui-space-regular">
         <ui-controls-group fxLayout="column" class="stretch-height" [header]="'atm.Keys' | translate">
 

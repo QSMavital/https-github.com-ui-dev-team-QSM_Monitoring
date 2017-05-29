@@ -2,7 +2,7 @@
   <div class="stretch-height" fxLayout="column">
     <ui-filters-bar>
       <div fxLayout>
-        <ui-atms-inventory-filter [filters]="filtersData"></ui-atms-inventory-filter>
+        <ui-atms-inventory-filter (onChange)="filter($event)" [filters]="filtersData"></ui-atms-inventory-filter>
         <div fxFlex class="text-right">
           <button class="blue-btn narrow ui-icons-x"></button>
           <button class="blue-btn narrow ui-icons-x"></button>

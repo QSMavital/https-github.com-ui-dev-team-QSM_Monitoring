@@ -2,14 +2,14 @@
   "app": {
     "error": "Error",
     "go": "Go",
-    "select":"Select..."
+    "select": "Select..."
   },
-  "area":{
-    "NONE":"Error",
-    "NORTH":"North",
-    "SOUTH":"South",
-    "CENTER":"Center",
-    "JERUSALEM_AND_SURROUNDINGS":"Jerusalem And Surroundings"
+  "area": {
+    "NONE": "Error",
+    "NORTH": "North",
+    "SOUTH": "South",
+    "CENTER": "Center",
+    "JERUSALEM": "Jerusalem And Surroundings"
   },
   "menu": {
     "main": "main",
@@ -35,9 +35,9 @@
     "lastSettlement": "last settlement",
     "businessDay": "business day",
     "search": "search",
-    "submit":"submit",
-    "cancel":"cancel",
-    "save":"save"
+    "submit": "submit",
+    "cancel": "cancel",
+    "save": "save"
   },
   "atms": {
     "tabs": {
@@ -134,11 +134,11 @@
     "resetDate": "Reset Date",
     "comments": "Comments",
     "balanceOfLastStrokes": "Balance of last strokes",
-    "general":"general",
-    "SummaryOfAssemblies":"Summary of assemblies",
-    "General":"General",
-    "RecentActions":"Recent actions",
-    "Keys":"Keys",
+    "general": "general",
+    "SummaryOfAssemblies": "Summary of assemblies",
+    "General": "General",
+    "RecentActions": "Recent actions",
+    "Keys": "Keys",
     "tabs": {
       "status": "atm status",
       "accessories": "accessories status",
@@ -149,13 +149,13 @@
       "transactions": "transactions",
       "transaction": "transaction"
     },
-    "settings":{
-      "atmGeneralSettings":"Settings",
-      "atmCassetesSettings":"Cassetes",
-      "disableSettings":"Disable",
-      "emvSettings":"EMV",
-      "feeSerttings":"Fee",
-      "limitationAmountsSettings":"Limitation Amounts"
+    "settings": {
+      "atmGeneralSettings": "Settings",
+      "atmCassetesSettings": "Cassetes",
+      "disableSettings": "Disable",
+      "emvSettings": "EMV",
+      "feeSerttings": "Fee",
+      "limitationAmountsSettings": "Limitation Amounts"
     }
   },
   "hsm": {
@@ -193,6 +193,38 @@
     "ATTENTION": "Attention",
     "FATAL": "Fatal",
     "OPERATOR": "Operator"
+  },
+  "banks": {
+    "99": "בנק ישראל",
+    "12": "בנק הפועלים",
+    "10": "בנק לאומי",
+    "11": "בנק דיסקונט",
+    "20": "בנק מזרחי טפחות",
+    "31": "הבנק הבינלאומי הראשון",
+    "14": "בנק אוצר החייל",
+    "17": "בנק מרכנתיל דיסקונט",
+    "9": "בנק הדואר",
+    "13": "בנק איגוד",
+    "46": "בנק מסד",
+    "52": "בנק פועלי אגודת ישראל",
+    "90": "בנק דיסקונט למשכנתאות",
+    "77": "בנק לאומי למשכנתאות בע\"מ",
+    "4": "בנק יהב לעובדי המדינה",
+    "26": "יובנק בע\"מ",
+    "7": "בנק לפיתוח התעשיה",
+    "8": "בנק הספנות לישראל",
+    "6": "בנק אדנים",
+    "54": "בנק ירושלים",
+    "34": "בנק ערבי ישראלי",
+    "1": "בנק יורו טרייד",
+    "19": "בנק החקלאות לישראל",
+    "22": "בנק סיטי",
+    "48": "קופת העובד הלאומי",
+    "68": "בנק אוצר השלטון המקומי",
+    "23": "HSBC",
+    "67": "Arab Land Bank",
+    "25": "BNP Paribas Israel",
+    "39": "SBI State Bank of India"
   }
 }
 

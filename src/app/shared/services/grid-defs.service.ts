@@ -20,12 +20,28 @@ export class GridDefsService {
     // this.gridOptions.suppressMenuColumnPanel = true;
     this.gridOptions.suppressMenuMainPanel = true;
     // this.gridOptions.suppressMenuFilterPanel = true;
-    this.gridOptions.getRowHeight = (() => {
-      return 32
-    });
+    this.gridOptions.rowHeight = 32;
     return this.gridOptions;
   }
 
+  initGridOptionsPagination(page){
+    this.gridOptions.maxPagesInCache = 0;
+    this.gridOptions.infiniteBlockSize = page;
+    this.gridOptions.rowModelType = "infinite";
+    this.gridOptions.pagination = true;
+    this.gridOptions.enableServerSideSorting = true;
+    this.gridOptions.enableServerSideFilter = true;
+    this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl';
+    this.gridOptions.enableSorting = true;
+    this.gridOptions.columnDefs = [];
+    this.gridOptions.suppressContextMenu = true;
+    // this.gridOptions.suppressMenuColumnPanel = true;
+    this.gridOptions.suppressMenuMainPanel = true;
+    // this.gridOptions.suppressMenuFilterPanel = true;
+    this.gridOptions.rowHeight = 32;
+    return this.gridOptions;
+
+  }
   initAtmsGridColDefs(colsDef, region) {
     let columnDefs = [];
     colsDef.forEach((col) => {

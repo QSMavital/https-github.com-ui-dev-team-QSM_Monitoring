@@ -89,6 +89,24 @@ var settingsUser = {
         "visible": true
       }
     ],
+    "atmsFilters":{
+      "status":[
+        "DISABLE",
+        "GOOD",
+        "ATTENTION",
+        "FATAL",
+        "OPERATOR"
+      ],
+      "group":[01],
+      "area":[
+        "NONE",
+        "NORTH",
+        "SOUTH",
+        "CENTER",
+        "JERUSALEM"
+      ]
+    },
+
     "atmsSupply": [
       {
         "field": "terminalId",
@@ -490,7 +508,8 @@ var settingsUser = {
 
 var customerGeneral = {
   businessDay: 1493899326040,
-  customer: "BEINLEUMI"
+  customer: "BEINLEUMI",
+  bankNo : "20"
 };
 
 var mainConnection = [
@@ -557,26 +576,11 @@ var actionStatus = [
 ];
 
 var atms_inventory = {
-  "filters": {
-    "statusFilter": [
-      "DISABLE",
-      "GOOD",
-      "ATTENTION",
-      "FATAL",
-      "OPERATOR"
-    ],
-    "groupFilters": [01],
-    "areaFilters": [
-      "NONE",
-      "NORTH",
-      "SOUTH",
-      "CENTER",
-      "JERUSALEM_AND_SURROUNDINGS"]
-  },
+  "totalCount": 100,
   "atms": [
     {
     "terminalId": "288032",
-    "atmName": "test",
+    "atmName": "1",
     "terminalStatus": "OFF_LINE",
     "closedReason": "UNKNOWN",
     "dispenserColor": "GOOD",

@@ -13,7 +13,7 @@ export class Atms {
   Middleware = store => next => action => {
     switch (action.type) {
       case AtmsActions.ATMS_GET_INVENTORY:
-        this.http.post(Api.atms_inventory.url, Api.atms_inventory.payload)
+        this.http.post(Api.atms_inventory.url, Object.assign(Api.atms_inventory.payload,action.payload))
           .map(res => JSON.parse(res['_body']))
           .subscribe((res) => {
             next({
@@ -21,6 +21,7 @@ export class Atms {
               payload: res
             });
           });
+        break;
       case AtmsActions.ATMS_GET_EVENTS:
         this.http.post(Api.atms_events.url, Api.atms_events.payload)
           .map(res => JSON.parse(res['_body']))
@@ -31,7 +32,7 @@ export class Atms {
             });
           });
 
-
+        break;
       default:
         return next(action);
     }

@@ -10,6 +10,7 @@ import {Observable} from "rxjs";
 import {AtmsActions} from "../../../../store/actions/atms-actions";
 import {GridDefsService} from "../../../shared/services/grid-defs.service";
 import {Router} from "@angular/router";
+import {Api} from "../../../config/api";
 
 @Component({
   selector: 'ui-atms-status',
@@ -19,25 +20,19 @@ import {Router} from "@angular/router";
 export class AtmsStatusComponent implements OnInit {
   public addNew = false;
   public filtersData = {};
+  public filtersLastState = {};
   private $atms_inventory_ref;
+  private dataSource;
+
   @select(['atms', 'inventory']) $atms_inventory: Observable<any>;
   public gridOptions: GridOptions = {};
 
   constructor(private gridDefsSrv: GridDefsService,
               private ngRedux: NgRedux<IStore>,
               private router: Router) {
-    this.gridOptions = {
-      rowSelection: 'multiple',
-      groupSelectsChildren: true,
-      suppressRowClickSelection: true,
-      groupColumnDef: {headerName: "Athlete", field: "athlete", width: 200,
-        cellRenderer: 'group',
-        cellRendererParams: {
-          checkbox: true
-        }}
-    };
-    this.gridOptions.columnDefs = [];
-    this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_INVENTORY});
+    this.filtersData =  this.ngRedux.getState().userSettings.atmsCustomization.atmsFilters;
+    this.filtersLastState=Api.atms_inventory.payload.filters;
+
 
   }
 
@@ -46,19 +41,42 @@ export class AtmsStatusComponent implements OnInit {
     this.$atms_inventory_ref = this.$atms_inventory.subscribe((state)=> {
       if (!isNullOrUndefined(state)&&!isNullOrUndefined(this.gridOptions.api)) {
         this.gridOptions.api.setRowData(state.atms);
-        this.filtersData = state.filters;
       }
     });
   }
 
   initColDefs(){
     let colsDef = this.ngRedux.getState().userSettings.atmsCustomization['atmsStatus'];
-    this.gridOptions = this.gridDefsSrv.initGridOptions();
+    this.gridOptions = this.gridDefsSrv.initGridOptionsPagination(100);
+    this.gridOptions.rowSelection='multiple';
     this.gridOptions.columnDefs = this.gridDefsSrv.initAtmsGridColDefs(colsDef, 'Status');
+    this.dataSource = {
+      getRows:  (params)=> {
+        console.log('asking for ' + params.startRow + ' to ' + params.endRow);
+        console.log('asking for ' , params);
+        this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_INVENTORY,payload:{"fromLine": params.startRow,"numOfLine": params.endRow-params.startRow,filters:this.filtersLastState}});
+        this.$atms_inventory_ref = this.$atms_inventory.subscribe((state) => {
+          if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
+            params.successCallback(state.atms,state.totalCount>=params.endRow?state.atms.length:-1);
+          }
+        });
+
+      }
+    };
+    this.gridOptions.datasource = this.dataSource;
   }
 
   ngOnDestroy(){
     this.$atms_inventory_ref.unsubscribe();
+  }
+
+  filter(event){
+    let gridState=this.gridOptions.api.getInfinitePageState()[0];
+    this.gridOptions.api.ensureIndexVisible(0);
+    this.filtersLastState = event;
+    this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_INVENTORY,
+      payload:{"fromLine": gridState.startRow,"numOfLine": gridState.endRow-gridState.startRow,filters:this.filtersLastState}});
+
   }
 
   selectItem(item){

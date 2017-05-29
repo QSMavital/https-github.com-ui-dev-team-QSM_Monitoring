@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AtmStatusReventActionComponent implements OnInit {
 
-  private recent_actions: any;
+  public recent_actions: any;
 
   constructor() {
     this.recent_actions = {

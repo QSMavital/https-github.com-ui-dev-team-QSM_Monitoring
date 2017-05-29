@@ -12,7 +12,7 @@ export const Api = {
     url: `${apiEntryPoint}/atms/get`, payload: {
       "fromLine": null,
       "numOfLine": null,
-      "filters": {"status": null, "group": null, "area": null}
+      "status": null, "group": null, "area": null
     }
   },
   atms_events: {url: `${apiEntryPoint}/events/get`, payload: {eventSeverity: ["FATAL", "ERROR", "WARN", "INFO"]}},

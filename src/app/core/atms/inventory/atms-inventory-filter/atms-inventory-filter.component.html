@@ -1,7 +1,7 @@
 <form [formGroup]="form">
   <div class="in-block ui-space-r-regular middle">
     <ui-label translate="atms.filters.chooseAtm"></ui-label>
-    <p-dropdown [style]="{'width':'120px'}" formControlName="atm" [placeholder]="'app.select'|translate"
+    <p-dropdown [style]="{'width':'120px'}" formControlName="status" [placeholder]="'app.select'|translate"
                 [options]="filterObj.statusFilter"></p-dropdown>
   </div>
   <div class="in-block ui-space-r-regular middle">
@@ -11,7 +11,7 @@
   </div>
   <div class="in-block ui-space-r-regular middle">
     <ui-label translate="atms.filters.region"></ui-label>
-    <p-dropdown [style]="{'width':'120px'}" formControlName="region" [placeholder]="'app.select'|translate"
+    <p-dropdown [style]="{'width':'120px'}" formControlName="area" [placeholder]="'app.select'|translate"
                 [options]="filterObj.areaFilters"></p-dropdown>
   </div>
   <button class="blue-btn" [disabled]="form.pristine" (click)="filter()" translate="app.go"></button>

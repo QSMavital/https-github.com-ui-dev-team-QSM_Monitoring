@@ -45,9 +45,9 @@ export class AtmsInventoryFilterComponent implements OnInit,OnChanges {
 
   initForm() {
     this.form = this.fb.group({
-      atm: [null],
+      status: [null],
       group: [null],
-      region: [null]
+      area: [null]
     });
 
   }

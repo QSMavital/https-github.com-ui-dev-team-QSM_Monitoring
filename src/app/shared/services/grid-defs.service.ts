@@ -16,7 +16,7 @@ export class GridDefsService {
     this.gridOptions={};
 
     this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl';
-    this.gridOptions.enableSorting = true;
+    this.gridOptions.enableSorting = false;
     this.gridOptions.columnDefs = [];
     this.gridOptions.suppressContextMenu = true;
     // this.gridOptions.suppressMenuColumnPanel = true;
@@ -32,10 +32,10 @@ export class GridDefsService {
     this.gridOptions.infiniteBlockSize = page;
     this.gridOptions.rowModelType = "infinite";
     this.gridOptions.pagination = true;
-    this.gridOptions.enableServerSideSorting = true;
-    this.gridOptions.enableServerSideFilter = true;
+    // this.gridOptions.enableServerSideSorting = true;
+    // this.gridOptions.enableServerSideFilter = true;
     this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl';
-    this.gridOptions.enableSorting = true;
+    this.gridOptions.enableSorting = false;
     this.gridOptions.columnDefs = [];
     this.gridOptions.suppressContextMenu = true;
     // this.gridOptions.suppressMenuColumnPanel = true;

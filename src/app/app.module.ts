@@ -78,6 +78,11 @@ import { AtmStatusSummaryComponent } from './core/atm/atm-status/components/atm-
 import { AtmStatusReventActionComponent } from './core/atm/atm-status/components/atm-status-revent-action/atm-status-revent-action.component';
 import { AtmStatusKeysComponent } from './core/atm/atm-status/components/atm-status-keys/atm-status-keys.component';
 import { BalanceFilterComponent } from './core/atm/retained-cards/components/balance-filter/balance-filter.component';
+import { AccessoriesCashPoolComponent } from './core/atm/accessories-status/components/accessories-cash-pool/accessories-cash-pool.component';
+import { AccessoriesBalanceStrokesComponent } from './core/atm/accessories-status/components/accessories-balance-strokes/accessories-balance-strokes.component';
+import { AccessoriesPrintersComponent } from './core/atm/accessories-status/components/accessories-printers/accessories-printers.component';
+import { AccessoriesChecksComponent } from './core/atm/accessories-status/components/accessories-checks/accessories-checks.component';
+import { AccessoriesOtherComponent } from './core/atm/accessories-status/components/accessories-other/accessories-other.component';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -138,7 +143,12 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     AtmStatusSummaryComponent,
     AtmStatusReventActionComponent,
     AtmStatusKeysComponent,
-    BalanceFilterComponent
+    BalanceFilterComponent,
+    AccessoriesCashPoolComponent,
+    AccessoriesBalanceStrokesComponent,
+    AccessoriesPrintersComponent,
+    AccessoriesChecksComponent,
+    AccessoriesOtherComponent
   ],
   imports: [
     MasonryModule,

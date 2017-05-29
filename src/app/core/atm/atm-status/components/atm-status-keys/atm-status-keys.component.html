@@ -1,3 +1,12 @@
-<p>
-  atm-status-keys works!
-</p>
+<ui-controls-group fxLayout="column" class="stretch-height" [header]="'atm.Keys' | translate">
+
+  <div fxFlex>
+    <ag-grid-angular
+      fxFlex
+      (gridReady)="fitCols_Keys()"
+      class="ag-fresh"
+      [gridOptions]="gridOptions">
+    </ag-grid-angular>
+  </div>
+
+</ui-controls-group>

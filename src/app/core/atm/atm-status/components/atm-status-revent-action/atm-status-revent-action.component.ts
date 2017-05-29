@@ -7,9 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AtmStatusReventActionComponent implements OnInit {
 
-  constructor() { }
+  private recent_actions: any;
+
+  constructor() {
+    this.recent_actions = {
+      a:[
+        {"name": "Reason for rejection", "value": "System failure"},
+        {"name": "Swallowed card", "value": "-"},
+        {"name": "Customer type", "value": "Our local"},
+        {"name": "Card type", "value": "Magnetic"}
+      ],
+      b:[
+        {"name": "Card number", "value": "1088"},
+        {"name": "Action Type", "value": "Not executed"},
+        {"name": "Amount", "value": ""},
+        {"name": "Banknote", "value": "-"}
+      ]
+    }
+  }
 
   ngOnInit() {
+
   }
 
 }

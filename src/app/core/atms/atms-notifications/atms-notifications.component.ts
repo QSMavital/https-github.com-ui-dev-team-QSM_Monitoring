@@ -34,7 +34,6 @@ export class AtmsNotificationsComponent implements OnInit {
         this.gridOptions.api.setRowData(state);
       }
     });
-    console.log(' this.gridOptions', this.gridOptions);
   }
 
 

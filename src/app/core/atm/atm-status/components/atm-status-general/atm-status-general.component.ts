@@ -10,14 +10,23 @@ import {AgStatusComponent} from "../../../../../shared/components/ag-status/ag-s
 export class AtmStatusGeneralComponent implements OnInit {
 
   public gridOptions:GridOptions;
+
+  infos = [
+    { key: "total", value: "15,000"},
+    { key: "Last successful", value: "15/5/17 22:15"},
+    { key: "total", value: "15,000"},
+    { key: "alert", value: "7’000"},
+    { key: "alert 02", value: "4,000"},
+  ];
+
   constructor() { }
 
   ngOnInit() {
     this.gridOptions={
       columnDefs: [
-        {headerName: "1", field: "name", width: 200, suppressSizeToFit: true},
-        {headerName: "2", field: "status", width: 150},
-        {headerName: "3", field: "active", width: 150, cellRendererFramework: AgStatusComponent},
+        {headerName: "Name", field: "name", width: 200, suppressSizeToFit: true},
+        {headerName: "Status", field: "status", width: 150},
+        {headerName: "Active", field: "active", width: 150, cellRendererFramework: AgStatusComponent},
       ],
         rowData: [
         {
@@ -65,14 +74,6 @@ export class AtmStatusGeneralComponent implements OnInit {
         return 32
       })
     }
-  }
-
-  fitCols_Keys() {
-    this.gridOptions.api.sizeColumnsToFit();
-  }
-
-  fitCols_SummaryOfAssemblies() {
-    this.gridOptions.api.sizeColumnsToFit();
   }
 
   fitCols_General() {

@@ -1,3 +1,10 @@
-<p>
-  atm-status-summary works!
-</p>
+<ui-controls-group fxLayout="column" class="stretch-height" [header]="'atm.SummaryOfAssemblies' | translate">
+  <div fxFlex>
+    <ag-grid-angular
+      fxFlex
+      (gridReady)="fitCols_SummaryOfAssemblies()"
+      class="ag-fresh"
+      [gridOptions]="gridOptions">
+    </ag-grid-angular>
+  </div>
+</ui-controls-group>

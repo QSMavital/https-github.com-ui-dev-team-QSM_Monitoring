@@ -1,3 +1,22 @@
-<p>
-  atm-transactions works!
-</p>
+<ui-portlet>
+  <div class="stretch-height" fxLayout="column">
+    <ui-filters-bar>
+      <div fxLayout>
+        <ui-atms-notifications-filters></ui-atms-notifications-filters>
+        <div fxFlex class="text-right"></div>
+      </div>
+
+    </ui-filters-bar>
+
+    <ag-grid-angular
+      (click)="showTransaction()"
+      fxFlex
+      class="ag-fresh"
+      [gridOptions]="widgetsData.gridData">
+    </ag-grid-angular>
+
+  </div>
+
+</ui-portlet>
+
+<ui-atm-transaction [(show)]="transaction"></ui-atm-transaction>

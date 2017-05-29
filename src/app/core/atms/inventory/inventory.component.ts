@@ -65,7 +65,6 @@ export class InventoryComponent implements OnInit, OnDestroy {
 
   showAddNew(){
     this.addNew=true;
-
   }
 
   selectItem(item){

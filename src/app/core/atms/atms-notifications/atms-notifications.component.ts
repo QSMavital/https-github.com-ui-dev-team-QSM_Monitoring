@@ -23,14 +23,12 @@ export class AtmsNotificationsComponent implements OnInit {
               private gridDefsSrv: GridDefsService) {
     this.gridOptions.columnDefs = [];
     this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_EVENTS});
-
   }
 
   ngOnInit() {
     this.initColDefs();
     this.$atms_events_ref = this.$atms_events.subscribe((state) => {
       if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
-        debugger;
         this.gridOptions.api.setRowData(state);
       }
     });

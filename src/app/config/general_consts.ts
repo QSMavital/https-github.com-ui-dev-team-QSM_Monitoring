@@ -30,5 +30,12 @@ export const GeneralConstants = {
     67:{ "bankNo":67 ,"bankName":"Arab Land Bank"},
     25:{ "bankNo":25 ,"bankName":"BNP Paribas Israel"},
     39:{ "bankNo":39 ,"bankName":"SBI State Bank of India"}
+  },
+  CurrencyCode:{
+    NIS:{},
+    USD:{},
+    EUR:{},
+    NONE:{}
   }
+
 };

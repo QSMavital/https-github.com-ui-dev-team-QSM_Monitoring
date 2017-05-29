@@ -3,7 +3,6 @@ import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {NgRedux} from "@angular-redux/store";
 import {IStore} from "../../../../../store/index";
 import {isNullOrUndefined} from "util";
-import {forEach} from "@angular/router/src/utils/collection";
 import {TranslateService} from "@ngx-translate/core";
 
 @Component({
@@ -14,7 +13,7 @@ import {TranslateService} from "@ngx-translate/core";
 export class AtmsInventoryFilterComponent implements OnInit,OnChanges {
   public form: FormGroup;
   @Input() filters;
-  @Input() event;
+  @Output() onChange = new EventEmitter();
   public filterObj;
 
   constructor(private fb: FormBuilder,
@@ -28,17 +27,17 @@ export class AtmsInventoryFilterComponent implements OnInit,OnChanges {
 
   ngOnChanges(newData) {
     this.filterObj = {statusFilter: [], groupFilters: [], areaFilters: []};
-    if (!isNullOrUndefined(newData.filters.currentValue.statusFilter)) {
-      newData.filters.currentValue['statusFilter'].forEach((statusFilter) => {
+    if (!isNullOrUndefined(newData.filters.currentValue.status)) {
+      newData.filters.currentValue['status'].forEach((statusFilter) => {
         this.filterObj.statusFilter.push({
           label: this.translateSrv.instant(`actionsStatus.${statusFilter}`),
           value: statusFilter
         })
       });
-      newData.filters.currentValue['groupFilters'].forEach((groupFilters) => {
+      newData.filters.currentValue['group'].forEach((groupFilters) => {
         this.filterObj.groupFilters.push({label: groupFilters, value: groupFilters})
       });
-      newData.filters.currentValue['areaFilters'].forEach((areaFilters) => {
+      newData.filters.currentValue['area'].forEach((areaFilters) => {
         this.filterObj.areaFilters.push({label: this.translateSrv.instant(`area.${areaFilters}`), value: areaFilters})
       });
     }
@@ -54,7 +53,7 @@ export class AtmsInventoryFilterComponent implements OnInit,OnChanges {
   }
 
   filter() {
-    console.log('filer data:',this.event, this.form.getRawValue());
+    this.onChange.emit(this.form.getRawValue());
     this.form.markAsPristine();
   }
 

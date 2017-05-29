@@ -58,6 +58,7 @@ export const Atms = {
   Status: {
     terminalId: {
       cellRenderer: 'group',
+
       cellRendererParams: {checkbox: true},
       headerName: "atms.terminalId", field: "terminalId", width: 100
     },

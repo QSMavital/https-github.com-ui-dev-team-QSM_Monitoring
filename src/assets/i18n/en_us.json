@@ -9,7 +9,7 @@
     "NORTH": "North",
     "SOUTH": "South",
     "CENTER": "Center",
-    "JERUSALEM_AND_SURROUNDINGS": "Jerusalem And Surroundings"
+    "JERUSALEM": "Jerusalem And Surroundings"
   },
   "menu": {
     "main": "main",

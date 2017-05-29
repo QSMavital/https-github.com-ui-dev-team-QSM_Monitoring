@@ -8,9 +8,8 @@ import {Observable} from "rxjs";
 import {GridDefsService} from "../../../shared/services/grid-defs.service";
 import {FormGroup} from "@angular/forms";
 import {CustomControlGroup} from "../../../config/interfaces/form.interface";
-import {FormBuilderService} from "../../../shared/services/form-builder.service";
-import {Atm} from "../../../config/atm";
 import {Router} from "@angular/router";
+import {Api} from "../../../config/api";
 
 @Component({
   selector: 'ui-inventory',
@@ -20,34 +19,43 @@ import {Router} from "@angular/router";
 export class InventoryComponent implements OnInit, OnDestroy {
   public addNew= false;
   public filtersData = {};
+  public filtersLastState = {};
   private $atms_inventory_ref;
   public gridOptions: GridOptions = {};
-  private atmSettings;
-  private form: FormGroup = new FormGroup({});
-  private controlGroups: CustomControlGroup[] = [];
+  private dataSource;
 
   @select(['atms', 'inventory']) $atms_inventory: Observable<any>;
 
   constructor(private ngRedux: NgRedux<IStore>,
               private gridDefsSrv: GridDefsService,
               private router: Router) {
-    this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_INVENTORY});
+    this.filtersData =  this.ngRedux.getState().userSettings.atmsCustomization.atmsFilters;
+    this.filtersLastState=Api.atms_inventory.payload.filters;
   }
 
   ngOnInit() {
     this.initColDefs();
-    this.$atms_inventory_ref = this.$atms_inventory.subscribe((state) => {
-      if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
-        this.gridOptions.api.setRowData(state.atms);
-        this.filtersData = state.filters;
-      }
-    });
   }
 
   initColDefs() {
     let colsDef = this.ngRedux.getState().userSettings.atmsCustomization['atmsSupply'];
-    this.gridOptions = this.gridDefsSrv.initGridOptions();
+    this.gridOptions = this.gridDefsSrv.initGridOptionsPagination(100);
     this.gridOptions.columnDefs = this.gridDefsSrv.initAtmsGridColDefs(colsDef, 'Inventory');
+
+    this.dataSource = {
+      getRows:  (params)=> {
+        console.log('asking for ' + params.startRow + ' to ' + params.endRow);
+        console.log('asking for ' , params);
+        this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_INVENTORY,payload:{"fromLine": params.startRow,"numOfLine": params.endRow-params.startRow,filters:this.filtersLastState}});
+        this.$atms_inventory_ref = this.$atms_inventory.subscribe((state) => {
+          if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
+            params.successCallback(state.atms,state.totalCount>=params.endRow?state.atms.length:-1);
+          }
+        });
+
+      }
+    };
+    this.gridOptions.datasource = this.dataSource;
 
   }
 
@@ -61,8 +69,16 @@ export class InventoryComponent implements OnInit, OnDestroy {
   }
 
   selectItem(item){
-    console.log(item.data.terminalId);
     this.router.navigate(['/atms','atm',item.data.terminalId]);
+  }
+
+  filter(event){
+    let gridState=this.gridOptions.api.getInfinitePageState()[0];
+    this.gridOptions.api.ensureIndexVisible(0);
+    this.filtersLastState = event;
+    this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_INVENTORY,
+      payload:{"fromLine": gridState.startRow,"numOfLine": gridState.endRow-gridState.startRow,filters:this.filtersLastState}});
 
   }
+
 }

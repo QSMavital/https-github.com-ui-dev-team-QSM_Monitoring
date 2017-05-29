@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {GridOptions} from "ag-grid";
-import {AgDateShortComponent} from "../../../shared/components/ag-date-short/ag-date-short.component";
-import {AgTimeComponent} from "../../../shared/components/ag-time/ag-time.component";
-import {AgStatusComponent} from "../../../shared/components/ag-status/ag-status.component";
+import {TranslateService} from "@ngx-translate/core";
+import {i18n} from "../../../config/i18n";
+import {Atm} from "../../../config/atm";
 
 @Component({
   selector: 'ui-atm-notifications',
@@ -11,51 +10,57 @@ import {AgStatusComponent} from "../../../shared/components/ag-status/ag-status.
 })
 export class AtmNotificationsComponent implements OnInit {
 
-  public gridOptions: GridOptions;
+  public widgetsData: any =
+    {
+      gridData: {
+        rowData: [
+          {
+            id: 1,
+            atmNo: "000000",
+            atmName: "atmName",
+            eventSeverity: "FATAL",
+            date: 1494317961838,
+            time: 1494317961838,
+            eventDestinations: ["SEC", "IT", "CIT"],
+            eventCode: "AC001",
+            eventTextEn: "AC001 Late response(approved) received from bank for transaction 1",
+            eventTextLocal: "תשובה מאוחרת",
+            device: "",
+          }
+        ],
+        enableRtl: i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl',
+        enableSorting: true,
+        getRowHeight: (() => {
+          return 32
+        }),
+        columnDefs: []
+      },
+      width: 50,
+      props: Atm.notifications
+    };
 
-  constructor() {
+  constructor(private translateSrv: TranslateService) {
+
   }
 
   ngOnInit() {
-    /*this.gridOptions = {
-      columnDefs: [
-        {headerName: 'atms.terminalId', field: 'atmNo', width: 80, suppressSizeToFit: true},
-        {
-          headerName: 'atms.date',
-          field: 'date',
-          width: 120,
-          suppressSizeToFit: true,
-          cellRendererFramework: AgDateShortComponent
-        }, {
-          headerName: 'atms.time',
-          field: 'time',
-          width: 120,
-          suppressSizeToFit: true,
-          cellRendererFramework: AgTimeComponent
-        }, {
-          headerName: 'atms.code', field: 'eventCode', width: 100, suppressSizeToFit: true
-        }, {
-          headerName: 'atms.spec', field: 'eventTextEn', width: 200
-        }, {
-          headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 200
-        }, {
-          headerName: 'atms.eventDestinations', field: 'eventDestinations', width: 200
-        }, {
-          headerName: 'atms.device', field: 'device', width: 200
-        }, {
-          headerName: 'atms.device', field: 'device', width: 200
-        }, {
-          headerName: 'atms.severity', field: 'eventSeverity', width: 200, cellRendererFramework: AgStatusComponent
-        }
-      ]
-    }*/
+    this.initColDefs();
+  }
+
+  initColDefs() {
+      for (let prop in this.widgetsData.props) {
+        this.widgetsData.gridData.columnDefs.push(
+          Object.assign({},
+            {suppressFilter: true},
+            this.widgetsData.props[prop],
+            {
+              headerName: this.translateSrv.instant(this.widgetsData.props[prop].headerName)
+            }));
+      }
   }
 
   ngOnDestroy() {
+    this.widgetsData = {};
   }
-
-/*  fitCols() {
-    this.gridOptions.api.sizeColumnsToFit();
-  }*/
-
 }
+

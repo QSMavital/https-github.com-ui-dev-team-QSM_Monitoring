@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'ui-atm-transaction',
   templateUrl: './atm-transaction.component.html',
   styleUrls: ['./atm-transaction.component.scss']
 })
-export class AtmTransactionComponent implements OnInit {
+export class AtmTransactionComponent {
+  @Input() get show() {return this.showValue;}
 
-  constructor() { }
+  private showValue = false;
 
-  ngOnInit() {
+  set show(val) {
+    this.showValue = val;
+  }
+
+  constructor() {
   }
 
 }

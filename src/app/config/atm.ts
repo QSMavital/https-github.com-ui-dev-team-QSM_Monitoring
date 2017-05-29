@@ -1,6 +1,8 @@
 import {AgProgressComponent} from "../shared/components/ag-progress/ag-progress.component";
 import {AgStatusComponent} from "../shared/components/ag-status/ag-status.component";
 import {AgDateComponent} from "../shared/components/ag-date/ag-date.component";
+import {AgDateShortComponent} from "../shared/components/ag-date-short/ag-date-short.component";
+import {AgTimeComponent} from "../shared/components/ag-time/ag-time.component";
 
 export const Atm = {
   Tabs: {
@@ -12,10 +14,10 @@ export const Atm = {
     'events': {label: 'atm.tabs.events', state: 'events'},
     'transactions': {label: 'atm.tabs.transactions', state: 'transactions'}
   },
-  Settings:{
-    atmGeneralSettings:{
-      label:"atm.settings.atmGeneralSettings",
-      name:"atmGeneralSettings",
+  Settings: {
+    atmGeneralSettings: {
+      label: "atm.settings.atmGeneralSettings",
+      name: "atmGeneralSettings",
       controls: [
         {
           name: 'atmNo',
@@ -137,30 +139,30 @@ export const Atm = {
         }
       ]
     },
-    atmCassetesSettings:{
-      label:"atm.settings.atmCassetesSettings",
-      name:"atmCassetesSettings",
-      controls:[]
+    atmCassetesSettings: {
+      label: "atm.settings.atmCassetesSettings",
+      name: "atmCassetesSettings",
+      controls: []
     },
-    disableSettings:{
-      label:"atm.settings.disableSettings",
-      name:"disableSettings",
-      controls:[]
+    disableSettings: {
+      label: "atm.settings.disableSettings",
+      name: "disableSettings",
+      controls: []
     },
-    emvSettings:{
-      label:"atm.settings.emvSettings",
-      name:"emvSettings",
-      controls:[]
+    emvSettings: {
+      label: "atm.settings.emvSettings",
+      name: "emvSettings",
+      controls: []
     },
-    feeSerttings:{
-      label:"atm.settings.feeSerttings",
-      name:"feeSerttings",
-      controls:[]
+    feeSerttings: {
+      label: "atm.settings.feeSerttings",
+      name: "feeSerttings",
+      controls: []
     },
-    limitationAmountsSettings:{
-      label:"atm.settings.limitationAmountsSettings",
-      name:"limitationAmountsSettings",
-      controls:[]
+    limitationAmountsSettings: {
+      label: "atm.settings.limitationAmountsSettings",
+      name: "limitationAmountsSettings",
+      controls: []
     },
   },
   Accessories: {
@@ -219,6 +221,38 @@ export const Atm = {
       counter: {headerName: "atm.counter", field: "counter", width: 90}
     }
   },
+  notifications: {
+    terminalId: {headerName: 'atms.terminalId', field: 'atmNo', width: 80, suppressSizeToFit: true},
+    severity: {headerName: 'atms.severity', field: 'eventSeverity', width: 200, cellRendererFramework: AgStatusComponent
+    },
+    date: {headerName: 'atms.date', field: 'date', width: 120, suppressSizeToFit: true, cellRendererFramework: AgDateShortComponent
+    },
+    time: {headerName: 'atms.time', field: 'time', width: 120, suppressSizeToFit: true, cellRendererFramework: AgTimeComponent
+    },
+    code: {headerName: 'atms.code', field: 'eventCode', width: 100, suppressSizeToFit: true},
+    spec: {headerName: 'atms.spec', field: 'eventTextEn', width: 200},
+    fullSpec: {headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 200},
+    eventDestinations: {headerName: 'atms.eventDestinations', field: 'eventDestinations', width: 200},
+    device: {headerName: 'atms.device', field: 'device', width: 200}
+  },
+  events: {
+    date: {headerName: 'atms.date', field: 'date', width: 120, suppressSizeToFit: true, cellRendererFramework: AgDateShortComponent
+    },
+    time: {headerName: 'atms.time', field: 'time', width: 120, suppressSizeToFit: true, cellRendererFramework: AgTimeComponent
+    },
+    code: {headerName: 'atms.code', field: 'eventCode', width: 100, suppressSizeToFit: true},
+    spec: {headerName: 'atms.spec', field: 'eventTextEn', width: 200},
+    fullSpec: {headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 200},
+  },
+  transactions: {
+    date: {headerName: 'atms.date', field: 'date', width: 220, suppressSizeToFit: true, cellRendererFramework: AgDateShortComponent
+    },
+    time: {headerName: 'atms.time', field: 'time', width: 220, suppressSizeToFit: true, cellRendererFramework: AgTimeComponent
+    },
+    code: {headerName: 'atms.code', field: 'eventCode', width: 200, suppressSizeToFit: true},
+    spec: {headerName: 'atms.spec', field: 'eventTextEn', width: 300},
+    fullSpec: {headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 300},
+  },
   RetainedCards: {
     cardNumber: {headerName: "atm.cardNumber", field: "cardNumber", width: 120},
     retainTime: {headerName: "atm.retainTime", field: "retainTime", width: 300, cellRendererFramework: AgDateComponent},
@@ -228,3 +262,4 @@ export const Atm = {
 
   }
 };
+

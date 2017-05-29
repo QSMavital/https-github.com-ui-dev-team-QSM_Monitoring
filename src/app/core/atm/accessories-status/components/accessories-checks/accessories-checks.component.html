@@ -1,0 +1,9 @@
+<ui-controls-group fxLayout="column" class="stretch-height" [header]="widgetsData.header | translate">
+  <div fxFlex>
+    <ag-grid-angular
+      fxFlex
+      class="ag-fresh"
+      [gridOptions]="widgetsData.gridData">
+    </ag-grid-angular>
+  </div>
+</ui-controls-group>

@@ -97,7 +97,7 @@ var settingsUser = {
         "FATAL",
         "OPERATOR"
       ],
-      "group":[01],
+      "group":[0],
       "area":[
         "NONE",
         "NORTH",

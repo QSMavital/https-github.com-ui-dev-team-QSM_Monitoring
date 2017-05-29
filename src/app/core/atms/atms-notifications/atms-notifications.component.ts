@@ -30,7 +30,6 @@ export class AtmsNotificationsComponent implements OnInit {
     this.initColDefs();
     this.$atms_events_ref = this.$atms_events.subscribe((state) => {
       if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
-        debugger;
         this.gridOptions.api.setRowData(state);
       }
     });

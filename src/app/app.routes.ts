@@ -60,8 +60,7 @@ export const appRoutes: Route[] = [
               {path: 'settings', component: AtmSettingsComponent},
               {path: 'notifications', component: AtmNotificationsComponent},
               {path: 'events', component: AtmEventsComponent},
-              {path: 'transactions', component: AtmTransactionsComponent},
-              {path: 'transaction', component: AtmTransactionComponent}
+              {path: 'transactions', component: AtmTransactionsComponent}
             ]
           },
 

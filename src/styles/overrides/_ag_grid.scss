@@ -412,14 +412,15 @@ $font_3: sans-serif;
     margin-left: 4px;
   }
   .ag-paging-panel {
-    padding: 4px;
+    padding: 15px;
+    text-align: center;
   }
   .ag-paging-button {
     margin-left: 4px;
     margin-right: 4px;
   }
   .ag-paging-row-summary-panel {
-    display: inline-block;
+    display: none;
     width: 300px;
   }
   .ag-tool-panel {

@@ -2,7 +2,10 @@
   <div class="stretch-height" fxLayout="column">
     <ui-filters-bar>
       <div fxLayout>
-        <ui-atms-notifications-filters></ui-atms-notifications-filters>
+        <ui-atms-notifications-filters
+          (onChange)="filter($event)"
+          [filters]="filtersLastState"
+        ></ui-atms-notifications-filters>
         <div fxFlex class="text-right"></div>
       </div>
 

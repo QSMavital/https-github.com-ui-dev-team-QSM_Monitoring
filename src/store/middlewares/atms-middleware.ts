@@ -23,9 +23,10 @@ export class Atms {
           });
         break;
       case AtmsActions.ATMS_GET_EVENTS:
-        this.http.post(Api.atms_events.url, Api.atms_events.payload)
+        this.http.post(Api.atms_events.url, Object.assign(Api.atms_events.payload,action.payload))
           .map(res => JSON.parse(res['_body']))
           .subscribe((res) => {
+          debugger;
             next({
               type: AtmsActions.ATMS_SET_EVENTS,
               payload: res

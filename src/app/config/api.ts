@@ -15,7 +15,16 @@ export const Api = {
       "status": null, "group": null, "area": null
     }
   },
-  atms_events: {url: `${apiEntryPoint}/events/get`, payload: {eventSeverity: ["FATAL", "ERROR", "WARN", "INFO"]}},
+  atms_events: {
+    url: `${apiEntryPoint}/events/get`,
+    payload: {
+      eventSeverity: null,
+      "fromLine": null,
+      "numOfLine": null,
+      "fromDate":new Date().setHours(0,0,0,0),
+      "toDate":new Date().getTime()
+    }
+  },
   // getAtms: {url:'/atms',payload:{action: 'get'}},
   // getAtms: {url:'/atms',payload:{action: 'get'}},
   // getAtms: {url:'/atms',payload:{action: 'get'}},

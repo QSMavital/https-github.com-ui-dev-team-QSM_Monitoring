@@ -13,7 +13,7 @@
   </div>
 
   <span class="ui-space-l-medium in-block">
-  <button class="blue-btn" [disabled]="form.pristine" (click)="filter()" translate="app.go"></button>
+  <button class="blue-btn" [disabled]="form.pristine ||form.controls['fromDate'].value>=form.controls['toDate'].value " (click)="filter()" translate="app.go"></button>
   </span>
 
 </form>

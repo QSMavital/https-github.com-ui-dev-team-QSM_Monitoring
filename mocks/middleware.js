@@ -702,16 +702,19 @@ var atms_inventory = {
   ]
 };
 
-var atms_events = [{
-  "id": 1,
-  "atmNo": "000000",
-  "atmName": "atmName",
-  "date": 1494317961838,
-  "time": 1494317961838,
-  "eventSeverity": "FATAL",
-  "eventCode": "AC001",
-  "eventTextEn": "AC001 Late response(approved) received from bank for transaction 1",
-  "eventTextLocal": "תשובה מאוחרת",
-  "device": "",
-  "eventDestinations": ["SEC", "IT", "CIT"]
-}];
+var atms_events = {
+  "totalCount": 100,
+  "data":[{
+    "id": 1,
+    "atmNo": "000000",
+    "atmName": "atmName",
+    "date": 1494317961838,
+    "time": 1494317961838,
+    "eventSeverity": "FATAL",
+    "eventCode": "AC001",
+    "eventTextEn": "AC001 Late response(approved) received from bank for transaction 1",
+    "eventTextLocal": "תשובה מאוחרת",
+    "device": "",
+    "eventDestinations": ["SEC", "IT", "CIT"]
+  }]
+};

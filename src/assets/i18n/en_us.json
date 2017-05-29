@@ -107,6 +107,7 @@
   },
   "atm": {
     "item": "item",
+    "transaction": "transaction",
     "propriety": "propriety",
     "inventory": "inventory",
     "value": "value",
@@ -225,6 +226,9 @@
     "67": "Arab Land Bank",
     "25": "BNP Paribas Israel",
     "39": "SBI State Bank of India"
+  },
+  "transaction":{
+
   }
 }
 

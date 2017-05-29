@@ -13,7 +13,7 @@ export function AtmsInventoryReducer(state: any = INITIAL_STATE_INVENTORY, actio
 export function AtmsEventsReducer(state: any = INITIAL_STATE_EVENTS, action:any) {
   switch (action.type) {
     case AtmsActions.ATMS_SET_EVENTS:
-      return [...action.payload];
+      return Object.assign({},action.payload);
     default:
       return state;
   }

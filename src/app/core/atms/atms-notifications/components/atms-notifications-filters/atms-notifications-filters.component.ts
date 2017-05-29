@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {FormGroup, FormBuilder} from "@angular/forms";
 
 @Component({
@@ -8,7 +8,8 @@ import {FormGroup, FormBuilder} from "@angular/forms";
 })
 export class AtmsNotificationsFiltersComponent implements OnInit {
   public form: FormGroup;
-
+  @Input() filters;
+  @Output() onChange = new EventEmitter();
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -18,13 +19,13 @@ export class AtmsNotificationsFiltersComponent implements OnInit {
 
   initForm(){
     this.form = this.fb.group({
-      fromDate: [null],
-      toDate: [null]
+      fromDate: [new Date(this.filters.fromDate)],
+      toDate: [new Date(this.filters.toDate)]
     });
   }
 
   filter() {
-    console.log('filer data:', this.form.getRawValue());
+    this.onChange.emit(this.form.getRawValue());
     this.form.markAsPristine();
   }
 

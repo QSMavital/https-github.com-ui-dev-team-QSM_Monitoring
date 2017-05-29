@@ -13,6 +13,8 @@ export class GridDefsService {
   }
 
   initGridOptions() {
+    this.gridOptions={};
+
     this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl';
     this.gridOptions.enableSorting = true;
     this.gridOptions.columnDefs = [];
@@ -21,10 +23,11 @@ export class GridDefsService {
     this.gridOptions.suppressMenuMainPanel = true;
     // this.gridOptions.suppressMenuFilterPanel = true;
     this.gridOptions.rowHeight = 32;
-    return this.gridOptions;
+    return Object.assign(this.gridOptions);
   }
 
   initGridOptionsPagination(page){
+    this.gridOptions={};
     this.gridOptions.maxPagesInCache = 0;
     this.gridOptions.infiniteBlockSize = page;
     this.gridOptions.rowModelType = "infinite";
@@ -39,7 +42,7 @@ export class GridDefsService {
     this.gridOptions.suppressMenuMainPanel = true;
     // this.gridOptions.suppressMenuFilterPanel = true;
     this.gridOptions.rowHeight = 32;
-    return this.gridOptions;
+    return Object.assign(this.gridOptions);
 
   }
   initAtmsGridColDefs(colsDef, region) {

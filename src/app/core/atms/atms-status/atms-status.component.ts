@@ -62,7 +62,6 @@ export class AtmsStatusComponent implements OnInit {
   }
 
   selectItem(item){
-    console.log(item.data.terminalId);
     this.router.navigate(['/atms','atm',item.data.terminalId]);
 
   }

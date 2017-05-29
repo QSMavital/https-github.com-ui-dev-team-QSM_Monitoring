@@ -1,17 +1,2 @@
-@import './src/styles/helpers/brand';
-:host {
 
-  .ui-list-wrapper {
-
-    ui-list:not(:first-child) {
-      margin-left: 15px;
-      border-left: solid 1px $ath-gray;
-    }
-    ui-list:first-child {
-      border-right: solid 1px $ath-gray;
-    }
-
-
-  }
-}
 

@@ -5,49 +5,19 @@
     <div fxLayout fxFlex>
       <div fxFlex class="ui-space-regular">
         <ui-atm-status-general fxLayout="column" class="stretch-height"></ui-atm-status-general>
-
       </div>
       <div fxFlex class="ui-space-regular">
-        <ui-controls-group fxLayout="column" class="stretch-height" [header]="'atm.SummaryOfAssemblies' | translate">
-          <div fxFlex>
-            <ag-grid-angular
-              fxFlex
-              (gridReady)="fitCols_SummaryOfAssemblies()"
-              class="ag-fresh"
-              [gridOptions]="atm_status_specs.gridOptions_SummaryOfAssemblies">
-            </ag-grid-angular>
-          </div>
-        </ui-controls-group>
+        <ui-atm-status-summary fxLayout="column" class="stretch-height"></ui-atm-status-summary>
       </div>
     </div>
 
     <div fxLayout fxFlex>
       <div fxFlex class="ui-space-regular">
-        <ui-controls-group class="stretch-height" [header]="'atm.RecentActions' | translate">
-          <div class="ui-list-wrapper" fxLayout>
-          <ui-list fxFlex>
-            <ui-list-item fxFlex *ngFor="let item of recent_actions.a" [data]="item | keys"></ui-list-item>
-          </ui-list>
-          <ui-list fxFlex>
-            <ui-list-item fxFlex *ngFor="let item of recent_actions.b" [data]="item | keys"></ui-list-item>
-          </ui-list>
-          </div>
-        </ui-controls-group>
+        <ui-atm-status-revent-action fxLayout="column" class="stretch-height"></ui-atm-status-revent-action>
       </div>
 
       <div fxFlex class="ui-space-regular">
-        <ui-controls-group fxLayout="column" class="stretch-height" [header]="'atm.Keys' | translate">
-
-          <div fxFlex>
-            <ag-grid-angular
-              fxFlex
-              (gridReady)="fitCols_Keys()"
-              class="ag-fresh"
-              [gridOptions]="atm_status_specs.gridOptions_Keys">
-            </ag-grid-angular>
-          </div>
-
-        </ui-controls-group>
+        <ui-atm-status-keys fxLayout="column" class="stretch-height"></ui-atm-status-keys>
       </div>
     </div>
   </div>

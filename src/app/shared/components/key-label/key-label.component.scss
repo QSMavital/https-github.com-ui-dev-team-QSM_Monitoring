@@ -1,3 +1,14 @@
-:host{
+@import './src/styles/helpers/brand';
+
+:host {
   display: inline-block;
+  font-size: 13px;
+  text-transform: uppercase;
+  .key_label {
+    color: $kimb;
+  }
+  .value_label {
+    color: $victoria;
+    font-weight: bold;
+  }
 }

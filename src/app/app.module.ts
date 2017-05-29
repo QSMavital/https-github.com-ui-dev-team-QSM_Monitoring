@@ -80,9 +80,9 @@ import { AtmStatusKeysComponent } from './core/atm/atm-status/components/atm-sta
 import { BalanceFilterComponent } from './core/atm/retained-cards/components/balance-filter/balance-filter.component';
 import { AccessoriesCashPoolComponent } from './core/atm/accessories-status/components/accessories-cash-pool/accessories-cash-pool.component';
 import { AccessoriesBalanceStrokesComponent } from './core/atm/accessories-status/components/accessories-balance-strokes/accessories-balance-strokes.component';
-import { AccessoriesPrintersComponent } from './core/atm/accessories-status/components/accessories-printers/accessories-printers.component';
 import { AccessoriesChecksComponent } from './core/atm/accessories-status/components/accessories-checks/accessories-checks.component';
 import { AccessoriesOtherComponent } from './core/atm/accessories-status/components/accessories-other/accessories-other.component';
+import {AccessoriesPrintersComponent} from "./core/atm/accessories-status/components/accessories-printers/accessories-printers.component";
 
 
 export function HttpLoaderFactory(http: Http) {

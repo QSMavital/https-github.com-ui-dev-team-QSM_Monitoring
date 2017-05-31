@@ -13,6 +13,7 @@ export class Atm {
   Middleware = store => next => action => {
     switch (action.type) {
       case AtmActions.ATM_GET_STATUS:
+        debugger;
         this.http.post(Api.getAtmStatus.url, Object.assign(Api.getAtmStatus.payload,action.payload))
           .map(res => JSON.parse(res['_body']))
           .subscribe((res) => {

@@ -20,20 +20,26 @@ export const Api = {
     payload: {
       eventSeverity: null,
       "fromLine": null,
+      "atmNo": null,
       "numOfLine": null,
       "fromDate":new Date().setHours(0,0,0,0),
       "toDate":new Date().getTime()
     }
   },
-  // getAtms: {url:'/atms',payload:{action: 'get'}},
-  // getAtms: {url:'/atms',payload:{action: 'get'}},
-  // getAtms: {url:'/atms',payload:{action: 'get'}},
-  // getAtms: {url:'/atms',payload:{action: 'get'}},
-  // getAtms: {url:'/atms',payload:{action: 'get'}},
-  // getAtms: {url:'/atms',payload:{action: 'get'}},
-  // getAtms: {url:'/atms',payload:{action: 'get'}},
-  // getAtms: {url:'/atms',payload:{action: 'get'}},
-  // getAtms: {url:'/atms',payload:{action: 'get'}},
-  // getAtms: {url:'/atms',payload:{action: 'get'}},
-  // getAtms: {url:'/atms',payload:{action: 'get'}}
+  atms_transactions: {
+    url: `${apiEntryPoint}/atm/transactions/get`,
+    payload: {
+      "atmNo": null,
+      "fromLine": null,
+      "numOfLine": null,
+      "fromDate":new Date().setHours(0,0,0,0),
+      "toDate":new Date().getTime()
+    }
+  },
+  getAtmStatus: {url:`${apiEntryPoint}/atm/atmStatus/get`,payload:{atmNo: null}},
+  getAtmAccessories: {url:`${apiEntryPoint}/atm/atmAccessories/get`,payload:{atmNo: null}},
+  getAtmRetainedCards: {url:`${apiEntryPoint}/atm/retainedCards/get`,payload:{atmNo: null,fromSettelments: "AT_ATM"}},
+  getAtmSettings: {url:`${apiEntryPoint}/atm/settings/get`,payload:{atmNo: null}},
+  saveAtmSettings: {url:`${apiEntryPoint}/atm/settings/patch`},
+  createAtmSettings: {url:`${apiEntryPoint}/atm/settings/post`}
 }

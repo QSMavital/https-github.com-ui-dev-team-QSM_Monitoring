@@ -2,6 +2,13 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {i18n} from "../../../config/i18n";
 import {Atms} from "../../../config/atms";
+import {GridDefsService} from "../../../shared/services/grid-defs.service";
+import {NgRedux, select} from "@angular-redux/store";
+import {IStore} from "../../../../store/index";
+import {Api} from "../../../config/api";
+import {AtmsActions} from "../../../../store/actions/atms-actions";
+import {isNullOrUndefined} from "util";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'ui-atms-transactions',
@@ -9,100 +16,75 @@ import {Atms} from "../../../config/atms";
   styleUrls: ['./atms-transactions.component.scss']
 })
 export class AtmsTransactionsComponent implements OnInit, OnDestroy {
-
   public gridOptions: any = {};
+  public filtersLastState: any = {};
+  private $atms_transactions_ref;
+  @select(['atms', 'transactions']) $atms_transactions: Observable<any>;
 
-  constructor(private translateSrv: TranslateService) {
-    this.gridOptions.columnDefs = [];
+  private dataSource;
+  constructor(private gridDefsSrv: GridDefsService,
+              private ngRedux: NgRedux<IStore>) {
+    this.filtersLastState = Object.assign(Api.atms_transactions.payload);
+
   }
 
   ngOnInit() {
     this.initColDefs();
-
-    this.gridOptions.rowData = [
-      {
-        transactionId: 1,
-        time: 1494795600000,
-        terminalId: 6,
-        card: '0453',
-        bank: 'BOJ',
-        actionType: "cardCheck",
-        amount: 1000,
-        endTransaction: "Authorized",
-        verifiedBy: "pending",
-        rejectionReason: "-",
-        deviceFee: "1.74",
-        businessDay: "20/08/2015"
-      },
-      {
-        transactionId: 2,
-        time: 1494795600000,
-        terminalId: 6,
-        card: '0453',
-        bank: 'BOJ',
-        actionType: "cardCheck",
-        amount: 1000,
-        endTransaction: "Authorized",
-        verifiedBy: "pending",
-        rejectionReason: "-",
-        deviceFee: "1.74",
-        businessDay: "20/08/2015"
-      },
-      {
-        transactionId: 3,
-        time: 1494795600000,
-        terminalId: 6,
-        card: '0453',
-        bank: 'BOJ',
-        actionType: "cardCheck",
-        amount: 1000,
-        endTransaction: "Authorized",
-        verifiedBy: "pending",
-        rejectionReason: "-",
-        deviceFee: "1.74",
-        businessDay: "20/08/2015"
-      },
-      {
-        transactionId: 4,
-        time: 1494795600000,
-        terminalId: 6,
-        card: '0453',
-        bank: 'BOJ',
-        actionType: "cardCheck",
-        amount: 1000,
-        endTransaction: "Authorized",
-        verifiedBy: "pending",
-        rejectionReason: "-",
-        deviceFee: "1.74",
-        businessDay: "20/08/2015"
-      }
-    ];
   }
 
   fitCols() {
-    this.gridOptions.api.sizeColumnsToFit();
+    // this.gridOptions.api.sizeColumnsToFit();
   }
 
   initColDefs() {
-    this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl';
-    this.gridOptions.enableSorting = true;
-    this.gridOptions.getRowHeight = (() => {
-      return 32
-    });
-    this.gridOptions.columnDefs = [];
-    for (var prop in Atms.Transactions) {
-      this.gridOptions.columnDefs.push(
-        Object.assign({},
-          {suppressFilter: true},
-          Atms.Transactions[prop],
-          {
-            headerName: this.translateSrv.instant(Atms.Transactions[prop].headerName)
-          }));
-    }
+    let colsDef = this.ngRedux.getState().userSettings.atmsCustomization['transactions'];
+
+    this.gridOptions = this.gridDefsSrv.initGridOptionsPagination(100);
+    this.gridOptions.columnDefs = this.gridDefsSrv.initAtmsGridColDefs(colsDef, 'Transactions');
+
+    this.dataSource = {
+      getRows: (params) => {
+        console.log('asking for ' + params.startRow + ' to ' + params.endRow);
+        console.log('asking for ', params);
+        this.ngRedux.dispatch({
+          type: AtmsActions.ATMS_GET_TRANSACTIONS,
+          payload: Object.assign(this.filtersLastState, {
+              "fromLine": params.startRow,
+              "numOfLine": params.endRow - params.startRow
+            }
+          )
+        });
+        this.$atms_transactions_ref = this.$atms_transactions.subscribe((state) => {
+          if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
+            params.successCallback(state.data, state.totalCount >= params.endRow ? state.data.length : -1);
+          }
+        });
+
+      }
+    };
+    this.gridOptions.datasource = this.dataSource;
+
   }
 
   ngOnDestroy() {
-    this.gridOptions = {};
+    this.$atms_transactions_ref.unsubscribe();
+  }
+
+  filter(event) {
+    let gridState = this.gridOptions.api.getInfinitePageState()[0];
+    this.gridOptions.api.ensureIndexVisible(0);
+    this.filtersLastState = Object.assign(this.filtersLastState,{
+      fromDate:new Date(event.fromDate).getTime(),
+      toDate:new Date(event.toDate).getTime()
+    });
+    this.ngRedux.dispatch({
+      type: AtmsActions.ATMS_GET_TRANSACTIONS,
+      payload:Object.assign(this.filtersLastState, {
+        "fromLine": gridState.startRow,
+        "numOfLine": gridState.endRow - gridState.startRow
+      })
+    });
+
   }
 
 }

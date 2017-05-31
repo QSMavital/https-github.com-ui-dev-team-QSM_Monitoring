@@ -3,6 +3,7 @@ import {AgDateComponent} from "../shared/components/ag-date/ag-date.component";
 import {AgAmountComponent} from "../shared/components/ag-amount/ag-amount.component";
 import {AgDateShortComponent} from "../shared/components/ag-date-short/ag-date-short.component";
 import {AgTimeComponent} from "../shared/components/ag-time/ag-time.component";
+import {AgTranslateMapComponent} from "../shared/components/ag-translate-map/ag-translate-map.component";
 export const Atms = {
   Tabs: {
     atmsSupply: {label: 'atms.tabs.inventory', state: 'inventory'},
@@ -127,17 +128,18 @@ export const Atms = {
     device: {headerName: 'atms.device', field: 'device', width: 200}
   },
   Transactions: {
-    transactionId: {headerName: 'atms.transactionId', field: 'transactionId', width: 110,suppressSizeToFit: true},
-    time: {headerName: 'atms.time', field: 'time', width: 160, cellRendererFramework: AgDateComponent},
-    terminalId: {headerName: 'atms.terminalId', field: 'terminalId', width: 80,suppressSizeToFit: true},
-    card: {headerName: 'atms.card', field: 'card', width: 60},
-    bank: {headerName: 'atms.bank', field: 'bank', width: 60},
-    actionType: {headerName: 'atms.actionType', field: 'actionType', width: 100},
-    amount: {headerName: 'atms.amount', field: 'amount', width: 80,suppressSizeToFit: true},
-    endTransaction: {headerName: 'atms.endTransaction', field: 'endTransaction', width: 110},
-    verifiedBy: {headerName: 'atms.verifiedBy', field: 'verifiedBy', width:100},
-    rejectionReason: {headerName: 'atms.rejectionReason', field: 'rejectionReason', width: 80},
-    deviceFee: {headerName: 'atms.deviceFee', field: 'deviceFee', width: 85},
-    businessDay: {headerName: 'atms.businessDay', field: 'businessDay', width: 90}
+    transactionId: {headerName: 'atms.transactionId', field: 'transactionId', width: 150,suppressSizeToFit: true},
+    terminalDate: {headerName: 'general.date', field: 'terminalDate', width: 100, cellRendererFramework: AgDateShortComponent,suppressSizeToFit: true},
+    terminalTime: {headerName: 'general.time', field: 'terminalTime', width: 100, cellRendererFramework: AgTimeComponent,suppressSizeToFit: true},
+    atmNo: {headerName: 'atms.terminalId', field: 'atmNo', width: 100,suppressSizeToFit: true},
+    cardNumber: {headerName: 'atms.card', field: 'cardNumber', width: 100,suppressSizeToFit: true},
+    bankNo: {headerName: 'atms.bank', field: 'bankNo', width: 100,suppressSizeToFit: true},
+    transactionType: {headerName: 'atms.transactionType', field: 'transactionType', width: 140,suppressSizeToFit: true,cellRendererFramework: AgTranslateMapComponent},
+    amount: {headerName: 'atms.amount', field: 'amount', width: 110,suppressSizeToFit: true},
+    transactionStatus: {headerName: 'general.transactionStatus', field: 'transactionStatus', width: 180,suppressSizeToFit: true,cellRendererFramework: AgStatusComponent},
+    approver: {headerName: 'general.approver', field: 'approver', width:150,cellRendererFramework: AgTranslateMapComponent,suppressSizeToFit: true},
+    rejectReason: {headerName: 'general.rejectReason', field: 'rejectReason', width: 150,suppressSizeToFit: true},
+    atmFeeAmount: {headerName: 'general.atmFeeAmount', field: 'atmFeeAmount', width: 100,suppressSizeToFit: true},
+    businessDay: {headerName: 'general.businessDay', field: 'businessDay', width: 140,suppressSizeToFit: true,cellRendererFramework: AgDateShortComponent}
   }
 };

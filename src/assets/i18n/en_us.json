@@ -21,11 +21,16 @@
   "general": {
     "date": "date",
     "time": "time",
+    "close": "close",
     "lastNotifications": "last notifications",
     "id": "id",
     "name": "name",
     "status": "status",
     "reason": "reason",
+    "transactionStatus":"Transaction Status",
+    "approver":"approver",
+    "rejectReason":"Reject Reason",
+    "atmFeeAmount":"atm Fee",
     "lastWithdrawal": "last withdrawal",
     "remainingCash": "remaining cash",
     "retainedCards": "retained cards",
@@ -57,6 +62,7 @@
     },
     "terminalId": "ATM #",
     "atmName": "ATM Name",
+    "transactionType": "Transaction Type",
     "terminalShvaId": "Shva ID",
     "terminalStatus": "Status",
     "bankNo": "Bank #",
@@ -93,8 +99,6 @@
     "spec": "Specifications",
     "fullSpec": "Full Specifications",
     "transactionId": "Transaction ID",
-    "date": "Date",
-    "time": "Time",
     "card": "Card",
     "bank": "Bank",
     "actionType": "Action Type",
@@ -102,8 +106,7 @@
     "endTransaction": "End Transaction",
     "verifiedBy": "Verified By",
     "rejectionReason": "Rejection Reason",
-    "deviceFee": "Device Fee",
-    "businessDay": "Business Day"
+    "deviceFee": "Device Fee"
   },
   "atm": {
     "item": "item",
@@ -193,7 +196,14 @@
     "GOOD": "Good",
     "ATTENTION": "Attention",
     "FATAL": "Fatal",
-    "OPERATOR": "Operator"
+    "OPERATOR": "Operator",
+    "NOT_APPROVED": "Not Approved",
+    "APPROVED": "Approved",
+    "QUESTIONABLE": "Questionable",
+    "REVERSED": "Reversed",
+    "DECLINED": "Declined",
+    "APPROVED_TEMPORARY":"Approved Temporary",
+    "REVERSED_SHVA": "Reversed SHVA"
   },
   "banks": {
     "99": "בנק ישראל",
@@ -225,7 +235,11 @@
     "23": "HSBC",
     "67": "Arab Land Bank",
     "25": "BNP Paribas Israel",
-    "39": "SBI State Bank of India"
+    "39": "SBI State Bank of India",
+    "OUR_BANK":"Our Bank"
+  },
+  "enums":{
+    "WITHDRAWAL":"Withdrawal"
   },
   "transaction":{
 

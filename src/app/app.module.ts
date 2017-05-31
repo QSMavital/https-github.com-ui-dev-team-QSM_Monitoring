@@ -70,19 +70,21 @@ import {AgAmountComponent} from "./shared/components/ag-amount/ag-amount.compone
 import {AgDateComponent} from "./shared/components/ag-date/ag-date.component";
 import {AgProgressComponent} from "./shared/components/ag-progress/ag-progress.component";
 import {Atms as AtmsMiddleware} from "../store/middlewares/atms-middleware";
+import {Atm as AtmMiddleware} from "../store/middlewares/atm-middleware";
 import {AgDateShortComponent} from "./shared/components/ag-date-short/ag-date-short.component";
 import {AgTimeComponent} from "./shared/components/ag-time/ag-time.component";
-import { MasonryModule } from 'angular2-masonry';
-import { AtmStatusGeneralComponent } from './core/atm/atm-status/components/atm-status-general/atm-status-general.component';
-import { AtmStatusSummaryComponent } from './core/atm/atm-status/components/atm-status-summary/atm-status-summary.component';
-import { AtmStatusReventActionComponent } from './core/atm/atm-status/components/atm-status-revent-action/atm-status-revent-action.component';
-import { AtmStatusKeysComponent } from './core/atm/atm-status/components/atm-status-keys/atm-status-keys.component';
-import { BalanceFilterComponent } from './core/atm/retained-cards/components/balance-filter/balance-filter.component';
-import { AccessoriesCashPoolComponent } from './core/atm/accessories-status/components/accessories-cash-pool/accessories-cash-pool.component';
-import { AccessoriesBalanceStrokesComponent } from './core/atm/accessories-status/components/accessories-balance-strokes/accessories-balance-strokes.component';
-import { AccessoriesChecksComponent } from './core/atm/accessories-status/components/accessories-checks/accessories-checks.component';
-import { AccessoriesOtherComponent } from './core/atm/accessories-status/components/accessories-other/accessories-other.component';
+import {MasonryModule} from 'angular2-masonry';
+import {AtmStatusGeneralComponent} from './core/atm/atm-status/components/atm-status-general/atm-status-general.component';
+import {AtmStatusSummaryComponent} from './core/atm/atm-status/components/atm-status-summary/atm-status-summary.component';
+import {AtmStatusReventActionComponent} from './core/atm/atm-status/components/atm-status-revent-action/atm-status-revent-action.component';
+import {AtmStatusKeysComponent} from './core/atm/atm-status/components/atm-status-keys/atm-status-keys.component';
+import {BalanceFilterComponent} from './core/atm/retained-cards/components/balance-filter/balance-filter.component';
+import {AccessoriesCashPoolComponent} from './core/atm/accessories-status/components/accessories-cash-pool/accessories-cash-pool.component';
+import {AccessoriesBalanceStrokesComponent} from './core/atm/accessories-status/components/accessories-balance-strokes/accessories-balance-strokes.component';
+import {AccessoriesChecksComponent} from './core/atm/accessories-status/components/accessories-checks/accessories-checks.component';
+import {AccessoriesOtherComponent} from './core/atm/accessories-status/components/accessories-other/accessories-other.component';
 import {AccessoriesPrintersComponent} from "./core/atm/accessories-status/components/accessories-printers/accessories-printers.component";
+import {AgTranslateMapComponent} from "./shared/components/ag-translate-map/ag-translate-map.component";
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -161,7 +163,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     HttpModule,
     CalendarModule,
     FlexLayoutModule,
-    RouterModule.forRoot(appRoutes, { useHash: true }),
+    RouterModule.forRoot(appRoutes, {useHash: true}),
     NgReduxModule,
     TranslateModule.forRoot({
       loader: {
@@ -181,7 +183,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       AgAmountComponent,
       AgProgressComponent,
       AgDateShortComponent,
-      AgTimeComponent
+      AgTimeComponent,
+      AgTranslateMapComponent
     ])
   ],
   providers: [
@@ -194,6 +197,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     Customer,
     Dashboard,
     AtmsMiddleware,
+    AtmMiddleware,
     SettingsResolverService
   ],
   entryComponents: [
@@ -212,7 +216,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
 export class AppModule {
   constructor(private ngRedux: NgRedux<IStore>,
               private customer: Customer,
-              private atms:AtmsMiddleware,
+              private atms: AtmsMiddleware,
+              private atm: AtmMiddleware,
               private dashboard: Dashboard,
               private devTools: DevToolsExtension) {
     var updatedEnhancers = [];
@@ -220,7 +225,7 @@ export class AppModule {
       updatedEnhancers = [...enhancers, devTools.enhancer()];
     } else
       updatedEnhancers = [...enhancers];
-    const middlewares = [customer.Middleware, dashboard.Middleware, atms.Middleware];
+    const middlewares = [customer.Middleware, dashboard.Middleware, atms.Middleware, atm.Middleware];
     this.ngRedux.configureStore(rootReducer, {}, middlewares, updatedEnhancers);
 
   }

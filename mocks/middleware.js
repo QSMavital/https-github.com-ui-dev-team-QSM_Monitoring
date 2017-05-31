@@ -57,6 +57,18 @@ module.exports = function (req, res, next) {
         atms_events
       ));
     }
+    else if (req.url.indexOf('/atm/transactions/get') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        atms_transactions
+      ));
+    }
+    else if (req.url.indexOf('/atm/atmStatus/get') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        atm_status
+      ));
+    }
     else {
       next();
     }
@@ -89,16 +101,16 @@ var settingsUser = {
         "visible": true
       }
     ],
-    "atmsFilters":{
-      "status":[
+    "atmsFilters": {
+      "status": [
         "DISABLE",
         "GOOD",
         "ATTENTION",
         "FATAL",
         "OPERATOR"
       ],
-      "group":[0],
-      "area":[
+      "group": [0],
+      "area": [
         "NONE",
         "NORTH",
         "SOUTH",
@@ -106,7 +118,6 @@ var settingsUser = {
         "JERUSALEM"
       ]
     },
-
     "atmsSupply": [
       {
         "field": "terminalId",
@@ -294,42 +305,42 @@ var settingsUser = {
     ],
     "alerts": [
       {
-      "field": "atmNo",
-      "visible": true
-    },
+        "field": "atmNo",
+        "visible": true
+      },
       {
-      "field": "eventSeverity",
-      "visible": true
-    },
+        "field": "eventSeverity",
+        "visible": true
+      },
       {
-      "field": "date",
-      "visible": true
-    },
+        "field": "date",
+        "visible": true
+      },
       {
-      "field": "time",
-      "visible": true
-    },
+        "field": "time",
+        "visible": true
+      },
       {
 
-      "field": "eventDestinations",
-      "visible": true
-    },
+        "field": "eventDestinations",
+        "visible": true
+      },
       {
-      "field": "eventCode",
-      "visible": true
-    },
+        "field": "eventCode",
+        "visible": true
+      },
       {
-      "field": "eventTextEn",
-      "visible": true
-    },
+        "field": "eventTextEn",
+        "visible": true
+      },
       {
-      "field": "eventTextLocal",
-      "visible": true
-    },
+        "field": "eventTextLocal",
+        "visible": true
+      },
       {
-      "field": "device",
-      "visible": false
-    }
+        "field": "device",
+        "visible": false
+      }
     ],
     "events": [
       {
@@ -369,7 +380,60 @@ var settingsUser = {
         "visible": false
       }
     ],
-    "transactions": [],
+    "transactions": [
+      {
+        "field": "transactionId",
+        "visible": true
+      },
+      {
+        "field": "terminalDate",
+        "visible": true
+      },
+      {
+        "field": "terminalTime",
+        "visible": true
+      },
+      {
+        "field": "atmNo",
+        "visible": true
+      },
+      {
+        "field": "cardNumber",
+        "visible": true
+      },
+      {
+        "field": "bankNo",
+        "visible": true
+      },
+      {
+        "field": "transactionType",
+        "visible": true
+      },
+      {
+        "field": "amount",
+        "visible": true
+      },
+      {
+        "field": "transactionStatus",
+        "visible": true
+      },
+      {
+        "field": "approver",
+        "visible": true
+      },
+      {
+        "field": "rejectReason",
+        "visible": true
+      },
+      {
+        "field": "atmFeeAmount",
+        "visible": true
+      },
+      {
+        "field": "businessDay",
+        "visible": true
+      }
+    ]
 
   },
   atmCustomization: {
@@ -509,7 +573,7 @@ var settingsUser = {
 var customerGeneral = {
   businessDay: 1493899326040,
   customer: "BEINLEUMI",
-  bankNo : "20"
+  bankNo: "20"
 };
 
 var mainConnection = [
@@ -579,36 +643,36 @@ var atms_inventory = {
   "totalCount": 100,
   "atms": [
     {
-    "terminalId": "288032",
-    "atmName": "1",
-    "terminalStatus": "OFF_LINE",
-    "closedReason": "UNKNOWN",
-    "dispenserColor": "GOOD",
-    "cashDepositColor": "GOOD",
-    "checkDepositColor": "DISABLE",
-    "printerColor": "GOOD",
-    "receiptColor": "DISABLE",
-    "cardReaderColor": "GOOD",
-    "eppColor": "GOOD",
-    "lastGoodTransaction": 1449342890265,
-    "lastSettlement": 1472027446100,
-    "lastMessage": 1478269947371,
-    "branch": "288",
-    "belong": "YAHAV",
-    "treatmentStartDate": 0,
-    "responsibility": "NONE",
-    "terminalGroup": "00",
-    "area": "NORTH",
-    "cardsRetained": 0,
-    "lastGoodWdrl": 1449342890265,
-    "lastCardSettlement": 1476307886568,
-    "lastDepositSettlement": 946677600000,
-    "lastCheckSettlement": 946677600000,
-    "totalRemaining": 16965000,
-    "totalDispensed": 0,
-    "checkTotalBin1": 0,
-    "checkTotalBin2": 0
-  },    {
+      "terminalId": "288032",
+      "atmName": "1",
+      "terminalStatus": "OFF_LINE",
+      "closedReason": "UNKNOWN",
+      "dispenserColor": "GOOD",
+      "cashDepositColor": "GOOD",
+      "checkDepositColor": "DISABLE",
+      "printerColor": "GOOD",
+      "receiptColor": "DISABLE",
+      "cardReaderColor": "GOOD",
+      "eppColor": "GOOD",
+      "lastGoodTransaction": 1449342890265,
+      "lastSettlement": 1472027446100,
+      "lastMessage": 1478269947371,
+      "branch": "288",
+      "belong": "YAHAV",
+      "treatmentStartDate": 0,
+      "responsibility": "NONE",
+      "terminalGroup": "00",
+      "area": "NORTH",
+      "cardsRetained": 0,
+      "lastGoodWdrl": 1449342890265,
+      "lastCardSettlement": 1476307886568,
+      "lastDepositSettlement": 946677600000,
+      "lastCheckSettlement": 946677600000,
+      "totalRemaining": 16965000,
+      "totalDispensed": 0,
+      "checkTotalBin1": 0,
+      "checkTotalBin2": 0
+    }, {
       "terminalId": "288032",
       "atmName": "test",
       "terminalStatus": "OFF_LINE",
@@ -638,7 +702,7 @@ var atms_inventory = {
       "totalDispensed": 0,
       "checkTotalBin1": 0,
       "checkTotalBin2": 0
-    },    {
+    }, {
       "terminalId": "288032",
       "atmName": "test",
       "terminalStatus": "OFF_LINE",
@@ -668,7 +732,7 @@ var atms_inventory = {
       "totalDispensed": 0,
       "checkTotalBin1": 0,
       "checkTotalBin2": 0
-    },    {
+    }, {
       "terminalId": "288032",
       "atmName": "test",
       "terminalStatus": "OFF_LINE",
@@ -704,7 +768,7 @@ var atms_inventory = {
 
 var atms_events = {
   "totalCount": 100,
-  "data":[{
+  "data": [{
     "id": 1,
     "atmNo": "000000",
     "atmName": "atmName",
@@ -718,3 +782,85 @@ var atms_events = {
     "eventDestinations": ["SEC", "IT", "CIT"]
   }]
 };
+
+var atms_transactions = {
+  "totalCount": 100,
+  "data": [{
+    "transactionId": 1952,
+    "terminalDate": 1495541554321,
+    "terminalTime": 1495541554321,
+    "atmNo": "123456",
+    "cardNumber": "2009",
+    "bankNo": "20",
+    "transactionType": "WITHDRAWAL",
+    "amount": 100,
+    "transactionStatus": "QUESTIONABLE",
+    "approver": "OUR_BANK",
+    "rejectReason": "NONE",
+    "atmFeeAmount": 0,
+    "businessDay": 1494140054473
+
+  }]
+};
+
+var atm_status = {
+  "atmStatusGeneral": {
+    "terminalStatus": "OFF_LINE",
+    "targetTerminalStatus": "OFF_LINE",
+    "communicationlStatus": "OFF_LINE",
+    "ipAddress": "127.0.0.1",
+    "atmModel": "0000",
+    "softwareVersion": "",
+    "configId": "0000",
+    "loadStage": "NONE",
+    "loadVariant": "",
+    "loadNumber": "00"
+  },
+  "atmStatusLastAction": {
+    "terminalDateTime": 1494317961838,
+    "transactionStatus": "APPROVED",
+    "rejectReason": "NONE",
+    "retainReason": "NONE",
+    "cardholderGroup": "UNKNOWN",
+    "panEntryMode": "MAGNETIC",
+    "cardNumber": 5214,
+    "tranType": "NONE",
+    "amount": 0,
+    "billsInfo": "200/2~100/5"
+  },
+  "atmSummaryStatus": [{
+    "device": "CARD_READER",
+    "statusColor": "DISABLE",
+    "fitness": "NO_ERROR",
+    "supply": "NO_INFO",
+    "counter": 0
+  }, {
+    "device": "",
+    "statusColor": "DISABLE",
+    "fitness": "NO_ERROR",
+    "supply": "NO_INFO",
+    "counter": 0
+  }],
+  "atmKeys": {
+    "keys": [
+      {
+        "keyType": "MASTER",
+        "keyStatus": "CANCELLED",
+        "kcv": "000000",
+      },
+      {
+        "keyType": "ENC",
+        "keyStatus": "CANCELLED",
+        "kcv": "000000",
+      },
+      {
+        "keyType": "AUTH",
+        "keyStatus": "CANCELLED",
+        "kcv": "000000"
+      }
+    ],
+    "eppUid": 52364862,
+    "lastWorkingKeyChange ": 1495613739356
+  }
+}
+;

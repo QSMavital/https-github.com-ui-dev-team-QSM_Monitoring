@@ -47,6 +47,9 @@ export class GridDefsService {
   }
   initAtmsGridColDefs(colsDef, region) {
     let columnDefs = [];
+     if(isNullOrUndefined(colsDef)){
+      return columnDefs;
+    }
     colsDef.forEach((col) => {
       if (col.visible && !isNullOrUndefined(Atms[region][col.field])) {
         columnDefs.push(

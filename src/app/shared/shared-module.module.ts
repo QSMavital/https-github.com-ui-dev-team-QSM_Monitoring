@@ -41,7 +41,8 @@ import {DialogModule} from "primeng/components/dialog/dialog";
 import { ListComponent } from './components/list/list.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import {KeysPipe} from './pipes/keys.pipe';
-import { KeyLabelComponent } from './components/key-label/key-label.component'
+import { KeyLabelComponent } from './components/key-label/key-label.component';
+import { AgTranslateMapComponent } from './components/ag-translate-map/ag-translate-map.component'
 
 @NgModule({
   imports: [
@@ -86,7 +87,8 @@ import { KeyLabelComponent } from './components/key-label/key-label.component'
     ListComponent,
     ListItemComponent,
     KeysPipe,
-    KeyLabelComponent
+    KeyLabelComponent,
+    AgTranslateMapComponent
   ],
   exports: [
     SpinnerComponent,
@@ -111,6 +113,7 @@ import { KeyLabelComponent } from './components/key-label/key-label.component'
     AgProgressComponent,
     AgDateShortComponent,
     AgTimeComponent,
+    AgTranslateMapComponent,
     AddNewComponent,
     ListComponent,
     ListItemComponent,

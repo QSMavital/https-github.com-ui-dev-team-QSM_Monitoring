@@ -4,4 +4,9 @@ export class AtmsActions {
 
   static ATMS_SET_EVENTS: string = 'ATMS_SET_EVENTS';
   static ATMS_GET_EVENTS: string = 'ATMS_GET_EVENTS';
+
+  static ATMS_GET_TRANSACTIONS: string = 'ATMS_GET_TRANSACTIONS';
+  static ATMS_SET_TRANSACTIONS: string = 'ATMS_SET_TRANSACTIONS';
+
+
 }

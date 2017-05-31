@@ -1,9 +1,14 @@
 <router-outlet></router-outlet>
-<p-dialog [(visible)]="errorHandler.show">
+<p-dialog [modal]="true" [(visible)]="errorHandler.show">
   <p-header translate="app.error"></p-header>
   <div class="width-325 scroll-y ui-space-tb-medium">
     <p class="ui-space-b-tiny">{{errorHandler.error.status}} - {{errorHandler.error.statusText}}</p>
     <p class="ui-space-b-tiny">{{errorHandler.error.url}}</p>
   </div>
+  <p-footer>
+    <span class="pull-right">
+      <button (click)="errorHandler.show=false" class="btn purple-btn">{{'general.close' | translate}}</button>
+    </span>
+  </p-footer>
 </p-dialog>
 <ui-spinner *ngIf="srvURLInterceptor?.activeCalls"></ui-spinner>

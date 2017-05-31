@@ -1,0 +1,25 @@
+export class AtmActions {
+  static ATM_GET_STATUS: string = 'ATM_GET_STATUS';
+  static ATM_SET_STATUS: string = 'ATM_SET_STATUS';
+
+  static ATM_GET_ACCESSORIES: string = 'ATM_GET_ACCESSORIES';
+  static ATM_SET_ACCESSORIES: string = 'ATM_SET_ACCESSORIES';
+
+  static ATM_GET_SETTINGS: string = 'ATM_GET_SETTINGS';
+  static ATM_SET_SETTINGS: string = 'ATM_SET_SETTINGS';
+  static ATM_ADD_SETTINGS: string = 'ATM_ADD_SETTINGS';
+  static ATM_UPDATE_SETTINGS: string = 'ATM_UPDATE_SETTINGS';
+
+
+  static ATM_GET_EVENTS: string = 'ATM_GET_EVENTS';
+  static ATM_SET_EVENTS: string = 'ATM_SET_EVENTS';
+
+  static ATM_GET_NOTIFICATIONS: string = 'ATM_GET_NOTIFICATIONS';
+  static ATM_SET_NOTIFICATIONS: string = 'ATM_SET_NOTIFICATIONS';
+
+  static ATM_GET_TRANSACTIONS: string = 'ATM_GET_TRANSACTIONS';
+  static ATM_SET_TRANSACTIONS: string = 'ATM_SET_TRANSACTIONS';
+
+  static ATM_GET_TRANSACTION: string = 'ATM_GET_TRANSACTION';
+  static ATM_SET_TRANSACTION: string = 'ATM_SET_TRANSACTION';
+}

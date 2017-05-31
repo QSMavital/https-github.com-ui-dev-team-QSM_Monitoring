@@ -11,7 +11,7 @@ import {
   OnlineStatusReducer
 } from "./reducers/dashboard-reducer";
 import {AtmsInventoryReducer, AtmsEventsReducer, AtmsTransactionsReducer} from "./reducers/atms-reducer";
-import {AtmStatusReducer} from "./reducers/atm-reducer";
+import {AtmStatusReducer, AtmAccessoriesReducer} from "./reducers/atm-reducer";
 
 
 export class IStore {
@@ -62,7 +62,8 @@ export const rootReducer = combineReducers<IStore>({
     transactions: AtmsTransactionsReducer
   }),
   atm: combineReducers<IAtm>({
-    status: AtmStatusReducer
+    status: AtmStatusReducer,
+    accessories: AtmAccessoriesReducer
   })
 });
 

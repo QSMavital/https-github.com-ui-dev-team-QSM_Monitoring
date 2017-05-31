@@ -19,7 +19,7 @@ export class AtmStatusComponent implements OnInit, OnDestroy {
   public statusData;
 
   constructor(private ngRedux: NgRedux<IStore>,private route: ActivatedRoute) {
-    this.atmId = this.route.params['value']['id'];
+    this.atmId = this.route.parent.params['value']['id'];
     this.ngRedux.dispatch({type:AtmActions.ATM_GET_STATUS,payload:{atmNo:this.atmId}});
     this.$atm_status_ref = this.$atm_status.subscribe((state)=>{
       if(isNullOrUndefined(state)){

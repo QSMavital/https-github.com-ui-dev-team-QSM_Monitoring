@@ -69,6 +69,12 @@ module.exports = function (req, res, next) {
         atm_status
       ));
     }
+    else if (req.url.indexOf('/atm/atmAccessories/get') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        atm_accessories
+      ));
+    }
     else {
       next();
     }
@@ -862,5 +868,170 @@ var atm_status = {
     "eppUid": 52364862,
     "lastWorkingKeyChange ": 1495613739356
   }
+};
+
+var atm_accessories={
+    "accessoriesDispenserInfo" :{
+        "cassettesList":  [
+          {
+          "cassetteType": "1",
+          "statusColor" : "GOOD",
+          "supply" : "NO_INFO",
+          "currencyCode" : "NIS",
+          "denomination" : 5000,
+          "loaded" : 1000,
+          "dispensed" : 0,
+          "rejected" : 0,
+          "remaining" : 1000
+        },
+          {
+          "statusColor" : "GOOD",
+          "supply" : "NO_INFO",
+          "currencyCode" : "NIS",
+          "denomination" : 10000,
+          "loaded" : 1000,
+          "dispensed" : 100,
+          "rejected" : 0,
+          "remaining" : 900
+        },
+          {
+          "statusColor" : "GOOD",
+          "supply" : "NO_INFO",
+          "currencyCode" : "NIS",
+          "denomination" : 20000,
+          "loaded" : 0,
+          "dispensed" : 0,
+          "rejected" : 0,
+          "remaining" : 0
+        },
+          {
+          "statusColor" : "DISABLE",
+          "supply" : "NO_INFO",
+          "currencyCode" : "NIS",
+          "denomination" : 0,
+          "loaded" : 0,
+          "dispensed" : 0,
+          "rejected" : 0,
+          "remaining" : 0
+        } ],
+        "sumDispensed": 12000,
+        "sumRemaing": 10000,
+        "lastGoodWithrawal":1495612612579,
+        "localCurrencyTrigger": 5000000,
+        "localCurrencyTrigger2": 2000000
+      },
+    "lastSettleDispenseList":{
+      "lastSettleDispenseList" :[
+        {
+        "denomination": 10000,
+        "currency": "NIS",
+        "count": 18,
+        "sumMeteg": 180000,
+        "sumAtm":180000,
+        "difference":0
+        },
+        {
+          "denomination": 20000,
+            "currency":"NIS",
+            "count": 4,
+          "sumMeteg":80000,
+            "sumAtm":60000,
+            "difference":20000
+        }
+      ],
+      "lastSettelement":1495612612579,
+      "transactionId":453
+    },
+    "printersInfo":{
+      "deviceList" : [
+        {
+        "device" : "STATEMENT_PRINTER",
+        "statusColor" : "DISABLE",
+        "fitness" : "NO_ERROR",
+        "supply" : "NO_INFO",
+        "counter" : 0
+      },
+        {
+        "device" : "STATEMENT_PRINTER_RIBBON",
+        "statusColor" : "DISABLE",
+        "fitness" : "NO_ERROR",
+        "supply" : "NO_INFO",
+        "counter" : 0
+      },
+        {
+        "device" : "STATEMENT_PRINTER_PRINTHEAD",
+        "statusColor" : "DISABLE",
+        "fitness" : "NO_ERROR",
+        "supply" : "NO_INFO",
+        "counter" : 0
+      },
+        {
+        "device" : "STATEMENT_PRINTER_KNIFE",
+        "statusColor" : "DISABLE",
+        "fitness" : "NO_ERROR",
+        "supply" : "NO_INFO",
+        "counter" : 0
+    },
+        {
+          "device" : "STATEMENT_PRINTER_CAPTURE_BIN",
+        "statusColor" : "DISABLE",
+        "fitness" : "NO_ERROR",
+        "supply" : "NO_INFO",
+        "counter" : 0
+    }
+    ]
+    },
+    "checkInfo":{
+      "deviceList" : [ {
+        "device" : "CHECK_PROCESSOR",
+        "statusColor" : "DISABLE",
+        "fitness" : "NO_ERROR",
+        "supply" : "NO_INFO",
+        "counter" : 0
+      }, {
+        "device" : "CHECK_PROCESSOR_BIN_1",
+        "statusColor" : "DISABLE",
+        "fitness" : "NO_ERROR",
+        "supply" : "NO_INFO",
+        "counter" : 0
+      }, {
+        "device" : "CHECK_PROCESSOR_BIN_2",
+        "statusColor" : "DISABLE",
+        "fitness" : "NO_ERROR",
+        "supply" : "NO_INFO",
+        "counter" : 0
+      }, {
+        "device" : "CHECK_ENDORSE_PRINTER",
+        "statusColor" : "DISABLE",
+        "fitness" : "NO_ERROR",
+        "supply" : "NO_INFO",
+        "counter" : 0
+      } ],
+        "lastCheckDeposit":1495612612579,
+        "lastSettelementCheckDeposit":1495612612579
+    },
+    "otherAccessoriesInfo" : {
+      "deviceList" : [ {
+        "device" : "CARD_READER",
+        "statusColor" : "DISABLE",
+        "fitness" : "NO_ERROR",
+        "supply" : "NO_INFO",
+        "counter" : 0
+      }, {
+        "device" : "ENCRYPTOR",
+        "statusColor" : "DISABLE",
+        "fitness" : "NO_ERROR",
+        "supply" : "NO_INFO",
+        "counter" : 0
+      }, {
+        "device" : "JOURNAL_PRINTER",
+        "statusColor" : "DISABLE",
+        "fitness" : "NO_ERROR",
+        "supply" : "NO_INFO",
+        "counter" : 0
+      }],
+      "lastCardSettelement":1495612612579
+    }
+
 }
-;
+

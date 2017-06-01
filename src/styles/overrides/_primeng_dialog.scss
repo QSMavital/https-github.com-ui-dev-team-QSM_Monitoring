@@ -5,7 +5,6 @@
   .ui-dialog-titlebar {
     padding: .5em .75em;
     position: relative;
-    border: 0;
     text-align: left;
   }
   .ui-dialog-content {
@@ -16,6 +15,7 @@
     overflow: auto;
     zoom: 1;
     text-align: left;
+    word-wrap: break-word;
 
   }
   .ui-dialog-buttonpane {
@@ -94,13 +94,16 @@
   }
 }
 
-.add-atm-dialog {
+p-dialog {
   .ui-dialog-titlebar {
     background: white !important;
     height: 40px;
     line-height: 40px;
     padding: 0 !important;
     padding-left: 15px !important;
+    border: 0;
+    border-bottom: 1px solid $selago!important;
+
   }
   .ui-dialog-title {
     text-transform: uppercase;

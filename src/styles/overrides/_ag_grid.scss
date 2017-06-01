@@ -71,7 +71,7 @@ $font_3: sans-serif;
     .ag-cell-last-left-pinned {
       border-right: 0;
     }
-    .ag-header-container,.header-cell {
+    .ag-header-container, .header-cell {
       font-family: opensans-regular !important;
       font-size: $fs11 !important;
       color: $kimb !important;
@@ -110,7 +110,7 @@ $font_3: sans-serif;
     }
     .ag-selection-checkbox {
       padding-right: 4px;
-      :nth-child(1){
+      :nth-child(1) {
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         background: url('assets/images/checkbox-on.png') no-repeat;
@@ -118,7 +118,7 @@ $font_3: sans-serif;
         height: 16px;
         padding-left: 16px;
       }
-      :nth-child(2){
+      :nth-child(2) {
         -moz-box-sizing: border-box;
 
         box-sizing: border-box;
@@ -411,18 +411,6 @@ $font_3: sans-serif;
   .ag-filter-value {
     margin-left: 4px;
   }
-  .ag-paging-panel {
-    padding: 15px;
-    text-align: center;
-  }
-  .ag-paging-button {
-    margin-left: 4px;
-    margin-right: 4px;
-  }
-  .ag-paging-row-summary-panel {
-    display: none;
-    width: 300px;
-  }
   .ag-tool-panel {
     background-color: $color_black_haze_approx;
     border-bottom: 1px solid $gray;
@@ -546,6 +534,72 @@ $font_3: sans-serif;
   }
   .rtl .ag-tool-panel {
     border-left: 1px solid $gray;
+  }
+
+  .ag-paging-panel {
+    color: #707c87;
+    padding: 15px;
+    text-align: center;
+
+    .ag-paging-row-summary-panel {
+      display: none;
+      width: 300px;
+    }
+    .ag-paging-page-summary-panel {
+      vertical-align: middle;
+      text-transform: uppercase;
+      width: 209px;
+      margin: 0 auto;
+      display: block;
+      .ag-paging-button {
+        font-size: 0;
+        border: none;
+        background: transparent;
+        &:after {
+          cursor: pointer;
+          font-size: 27px;
+        }
+        &[ref='btFirst'] {
+          padding-left: 0;
+          background-color: #ffffff;
+          width: 30px;
+          &:after {
+            background-color: #ffffff;
+            content: "«";
+          }
+        }
+        &[ref='btPrevious']{
+          height: 33px;
+          padding: 0;
+          margin: 0 5px;
+          border-right: solid 5px white;
+          &:after {
+            content: "‹";
+          }
+
+        }
+        &[ref='btNext']{
+          height: 33px;
+          padding: 0;
+          margin: 0 5px;
+          border-left: solid 5px white;
+          &:after {
+            content: "›";
+          }
+
+        }
+        &[ref='btLast'] {
+          padding-right: 0;
+          background-color: #ffffff;
+          width: 30px;
+          &:after {
+            background-color: #ffffff;
+            content: '»';
+
+          }
+        }
+      }
+    }
   }
 }
 

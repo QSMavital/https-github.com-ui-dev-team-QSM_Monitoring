@@ -1,8 +1,10 @@
 <form [formGroup]="form">
   <div class="in-block ui-space-r-regular middle">
-    <ui-label translate="atms.filters.chooseAtm"></ui-label>
-    <p-dropdown [style]="{'width':'120px'}" formControlName="balance" [placeholder]="'app.select'|translate"
-                [options]="[]"></p-dropdown>
+    <ui-label translate="general.settlements"></ui-label>
+    <p-dropdown [style]="{'width':'160px'}"
+                formControlName="settlement"
+                [placeholder]="'app.select'|translate"
+                [options]="options"></p-dropdown>
   </div>
 
   <button class="blue-btn" [disabled]="form.pristine" (click)="filter()" translate="app.go"></button>

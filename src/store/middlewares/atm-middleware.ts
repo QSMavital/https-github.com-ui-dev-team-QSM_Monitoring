@@ -32,6 +32,16 @@ export class Atm {
             });
           });
         break;
+      case AtmActions.ATM_GET_RETIANED_CARDS:
+        this.http.post(Api.getAtmRetainedCards.url, Object.assign(Api.getAtmRetainedCards.payload,action.payload))
+          .map(res => JSON.parse(res['_body']))
+          .subscribe((res) => {
+            next({
+              type: AtmActions.ATM_SET_RETIANED_CARDS,
+              payload: res
+            });
+          });
+        break;
       default:
         return next(action);
     }

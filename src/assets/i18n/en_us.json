@@ -42,7 +42,8 @@
     "search": "search",
     "submit": "submit",
     "cancel": "cancel",
-    "save": "save"
+    "save": "save",
+    "settlements": "Settlements"
   },
   "atms": {
     "tabs": {
@@ -239,7 +240,28 @@
     "OUR_BANK":"Our Bank"
   },
   "enums":{
-    "WITHDRAWAL":"Withdrawal"
+    "WITHDRAWAL":"Withdrawal",
+    "AT_ATM":"At ATM",
+    "LAST_SETTELMENT":"Last Settelment",
+    "PREVIOUS_SETTELMENT":"Previous Settelment",
+    "CARD_BLOCKED":"Card Blocked",
+    "BANK_REQUEST":"Bank Request",
+    "WRONG_PIN":"Wrong PIN",
+    "WRONG_PIN_NOT_OUR":"Wrong PIN",
+    "CARD_LEFT_IN_READER":"Card left in reader",
+    "CARD_LEFT_IN_READER_NOT_OUR":"Card left in reader",
+    "CARD_LEFT_IN_READER_TOURIST":"Card left in reader",
+    "CASH_DEPOSIT_TIMEOUT":"Cash Deposit TO",
+    "DEVICE_FAULT":"Device Fault",
+    "EXPIRED":"Expired",
+    "MEZAHE_NOSAF":"Mezahe Nosaf",
+    "LOST":"Card Lost",
+    "STOLEN":"Card Stolen",
+    "CANCELED":"Card Canceled",
+    "NOT_EXIST":"Card Not Exist",
+    "NOT_ISSUED":"Card Not Issued",
+    "INCORRECT_CHECK_DIGIT":"Incorrect Check Digit"
+
   },
   "transaction":{
 

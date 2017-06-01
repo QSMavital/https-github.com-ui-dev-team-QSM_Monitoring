@@ -39,19 +39,19 @@ export const Atms = {
     lastCardSettlement: {
       headerName: "atms.lastCardSettlement",
       field: "lastCardSettlement",
-      width: 160,
+      width: 220,
       cellRendererFramework: AgDateComponent
     },
     lastSettlement: {
       headerName: "atms.lastSettlement",
       field: "lastSettlement",
-      width: 160,
+      width: 220,
       cellRendererFramework: AgDateComponent
     },
     lastGoodTransaction: {
       headerName: "atms.lastActivity",
       field: "lastGoodTransaction",
-      width: 160,
+      width: 220,
       cellRendererFramework: AgDateComponent
     },
     cardSettlement: {headerName: "atms.cardSettlement", field: "cardSettlement", width: 120}
@@ -59,7 +59,6 @@ export const Atms = {
   Status: {
     terminalId: {
       cellRenderer: 'group',
-
       cellRendererParams: {checkbox: true},
       headerName: "atms.terminalId", field: "terminalId", width: 100
     },
@@ -70,31 +69,31 @@ export const Atms = {
       width: 200,
       cellRendererFramework: AgStatusComponent
     },
-    closedReason: {headerName: "atms.closeReason", field: "closedStatus", width: 120},
+    closedReason: {headerName: "atms.closeReason", field: "closedStatus", width: 150},
     cashDepositColor: {
       headerName: "atms.cashDeposit",
       field: "cashDepositColor",
-      width: 160,
+      width: 200,
       cellRendererFramework: AgStatusComponent
     },
     checkDepositColor: {
       headerName: "atms.checkDeposit",
       field: "checkDepositColor",
-      width: 150,
+      width: 200,
       cellRendererFramework: AgStatusComponent
     },
     cardReaderColor: {
-      headerName: "atms.cardReader", field: "cardReaderColor", width: 150,
+      headerName: "atms.cardReader", field: "cardReaderColor", width: 200,
       cellRendererFramework: AgStatusComponent
     },
     printerColor: {
-      headerName: "atms.printer", field: "printerColor", width: 100,
+      headerName: "atms.printer", field: "printerColor", width: 200,
       cellRendererFramework: AgStatusComponent
     },
     eppColor: {
       headerName: "atms.epp",
       field: "eppColor",
-      width: 160,
+      width: 200,
       cellRendererFramework: AgStatusComponent
     },
     branch: {

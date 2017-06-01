@@ -1,22 +1,17 @@
-<ui-portlet>
-  <div class="stretch-height" fxLayout="column">
-    <ui-filters-bar>
-      <div fxLayout>
-        <ui-balance-filter></ui-balance-filter>
-        <div fxFlex class="text-right"></div>
-      </div>
+<div class="stretch-height" fxLayout="column">
+  <ui-filters-bar>
+    <div fxLayout>
+      <ui-balance-filter (onChange)="filter($event)"></ui-balance-filter>
+      <div fxFlex class="text-right"></div>
+    </div>
+  </ui-filters-bar>
 
+  <ag-grid-angular
+    fxFlex
+    style="width: 100%"
+    (gridReady)="sizeToFit()"
+    class="ag-fresh"
+    [gridOptions]="gridOptions">
+  </ag-grid-angular>
 
-    </ui-filters-bar>
-
-    <ag-grid-angular
-      fxFlex
-      style="width: 100%;"
-      class="ag-fresh"
-      [gridOptions]="gridOptions">
-    </ag-grid-angular>
-
-  </div>
-
-
-</ui-portlet>
+</div>

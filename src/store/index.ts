@@ -11,7 +11,7 @@ import {
   OnlineStatusReducer
 } from "./reducers/dashboard-reducer";
 import {AtmsInventoryReducer, AtmsEventsReducer, AtmsTransactionsReducer} from "./reducers/atms-reducer";
-import {AtmStatusReducer, AtmAccessoriesReducer} from "./reducers/atm-reducer";
+import {AtmStatusReducer, AtmAccessoriesReducer, AtmRetainedCardsReducer} from "./reducers/atm-reducer";
 
 
 export class IStore {
@@ -28,20 +28,22 @@ class IDashboard {
   issuerActionsStatus?: any;
   actionsStatus?: any;
 }
+
 class IAtms {
   inventory?: any;
   events?: any;
   transactions?: any;
   // transaction?: any;
 }
+
 class IAtm {
   status?: any;
   accessories?: any;
+  retainedCards?: any;
   settings?: any;
   events?: any;
   notifications?: any;
   // transaction?: any;
-
 }
 
 export const rootReducer = combineReducers<IStore>({
@@ -63,7 +65,8 @@ export const rootReducer = combineReducers<IStore>({
   }),
   atm: combineReducers<IAtm>({
     status: AtmStatusReducer,
-    accessories: AtmAccessoriesReducer
+    accessories: AtmAccessoriesReducer,
+    retainedCards: AtmRetainedCardsReducer
   })
 });
 

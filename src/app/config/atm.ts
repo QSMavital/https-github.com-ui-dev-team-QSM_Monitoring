@@ -3,6 +3,7 @@ import {AgStatusComponent} from "../shared/components/ag-status/ag-status.compon
 import {AgDateComponent} from "../shared/components/ag-date/ag-date.component";
 import {AgDateShortComponent} from "../shared/components/ag-date-short/ag-date-short.component";
 import {AgTimeComponent} from "../shared/components/ag-time/ag-time.component";
+import {AgTranslateMapComponent} from "../shared/components/ag-translate-map/ag-translate-map.component";
 
 export const Atm = {
   Tabs: {
@@ -245,20 +246,18 @@ export const Atm = {
     fullSpec: {headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 200},
   },
   transactions: {
-    date: {headerName: 'atms.date', field: 'date', width: 220, suppressSizeToFit: true, cellRendererFramework: AgDateShortComponent
-    },
-    time: {headerName: 'atms.time', field: 'time', width: 220, suppressSizeToFit: true, cellRendererFramework: AgTimeComponent
-    },
+    date: {headerName: 'atms.date', field: 'date', width: 220, suppressSizeToFit: true, cellRendererFramework: AgDateShortComponent},
+    time: {headerName: 'atms.time', field: 'time', width: 220, suppressSizeToFit: true, cellRendererFramework: AgTimeComponent},
     code: {headerName: 'atms.code', field: 'eventCode', width: 200, suppressSizeToFit: true},
     spec: {headerName: 'atms.spec', field: 'eventTextEn', width: 300},
     fullSpec: {headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 300},
   },
   RetainedCards: {
-    cardNumber: {headerName: "atm.cardNumber", field: "cardNumber", width: 120},
-    retainTime: {headerName: "atm.retainTime", field: "retainTime", width: 300, cellRendererFramework: AgDateComponent},
-    reason: {headerName: "atm.reason", field: "reason", width: 250},
-    resetDate: {headerName: "atm.resetDate", field: "resetDate", width: 250},
-    comments: {headerName: "atm.comments", field: "comments", width: 700},
+    cardNumber: {headerName: "atm.cardNumber", field: "cardNumber", width: 120, suppressSizeToFit: true},
+    terminalDate: {headerName: "general.date", field: "terminalDate", width: 200, cellRendererFramework: AgDateShortComponent, suppressSizeToFit: true},
+    terminalTime: {headerName: "general.time", field: "terminalTime", width: 200, cellRendererFramework: AgTimeComponent, suppressSizeToFit: true},
+    retainReason: {headerName: "atm.reason", field: "retainReason", width: 200, suppressSizeToFit: true,cellRendererFramework: AgTranslateMapComponent},
+    comments: {headerName: "atm.comments", field: "comments"},
 
   }
 };

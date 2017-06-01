@@ -11,6 +11,7 @@
     </ui-filters-bar>
 
     <ag-grid-angular
+      (click)="showTransaction()"
       fxFlex
       (gridReady)="fitCols()"
       class="ag-fresh"
@@ -20,3 +21,5 @@
   </div>
 
 </ui-portlet>
+
+<ui-atms-transaction [(show)]="transaction"></ui-atms-transaction>

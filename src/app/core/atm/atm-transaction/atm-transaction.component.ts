@@ -9,7 +9,7 @@ import { MasonryOptions } from 'angular2-masonry';
 export class AtmTransactionComponent {
   @Input() get show() {return this.showValue;}
   public data = [];
-  private showValue = false;
+  private showValue = true;
   public masonryOptions: MasonryOptions = {
     transitionDuration: '0',
     fitWidth: true,

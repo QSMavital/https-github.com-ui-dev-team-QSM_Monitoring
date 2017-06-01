@@ -2,13 +2,15 @@ import {Component, OnInit} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {i18n} from "../../../config/i18n";
 import {Atm} from "../../../config/atm";
+import {AtmsActions} from "../../../../store/actions/atms-actions";
 @Component({
   selector: 'ui-atm-transactions',
   templateUrl: './atm-transactions.component.html',
   styleUrls: ['./atm-transactions.component.scss']
 })
 export class AtmTransactionsComponent implements OnInit {
-
+  public filtersLastState: any = { fromDate: new Date().getTime(),
+    toDate: new Date().getTime()};
   public transaction= false;
 
   public widgetsData: any =
@@ -36,6 +38,14 @@ export class AtmTransactionsComponent implements OnInit {
 
   constructor(private translateSrv: TranslateService) {
 
+    this.filtersLastState = Object.assign({
+      "atmNo": null,
+      "fromLine": null,
+      "numOfLine": null,
+      "fromDate": new Date().setHours(0, 0, 0, 0),
+      "toDate": new Date().getTime()
+    });
+
   }
 
   ngOnInit() {
@@ -61,5 +71,12 @@ export class AtmTransactionsComponent implements OnInit {
   showTransaction(){
     this.transaction=true;
   }
+
+/*  filter() {
+    this.filtersLastState = Object.assign(this.filtersLastState, {
+
+    });
+  }*/
+
 
 }

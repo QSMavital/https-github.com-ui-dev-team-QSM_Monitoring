@@ -1,7 +1,4 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {TranslateService} from "@ngx-translate/core";
-import {i18n} from "../../../config/i18n";
-import {Atms} from "../../../config/atms";
 import {GridDefsService} from "../../../shared/services/grid-defs.service";
 import {NgRedux, select} from "@angular-redux/store";
 import {IStore} from "../../../../store/index";
@@ -16,6 +13,7 @@ import {Observable} from "rxjs";
   styleUrls: ['./atms-transactions.component.scss']
 })
 export class AtmsTransactionsComponent implements OnInit, OnDestroy {
+  public transaction= false;
   public gridOptions: any = {};
   public filtersLastState: any = {};
   private $atms_transactions_ref;
@@ -68,6 +66,10 @@ export class AtmsTransactionsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.$atms_transactions_ref.unsubscribe();
+  }
+
+  showTransaction(){
+    this.transaction=true;
   }
 
   filter(event) {

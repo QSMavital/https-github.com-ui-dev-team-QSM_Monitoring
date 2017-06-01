@@ -1,3 +1,47 @@
-<p>
-  atms-transaction works!
-</p>
+<p-dialog [(visible)]="show" [modal]="true" class="dialog-no-padding add-atm-dialog">
+  <p-header translate="atm.transaction"></p-header>
+  <div class="scroll-y ui-space-tb-regular ui-space-l-regular" style="width: 1260px;height: 600px">
+    <div *ngIf="showValue">
+      <masonry [options]="masonryOptions" class="form-body stretch-width">
+        <masonry-brick *ngFor="let item of data" class="brick" style="width:400px">
+          <ui-controls-group [header]="item.title">
+            <ui-list>
+              <ui-list-item
+                *ngFor="let row of item.data"
+                [data]="[{value:row.key},{value:row.value}]"></ui-list-item>
+            </ui-list>
+          </ui-controls-group>
+        </masonry-brick>
+
+      </masonry>
+    </div>
+
+    <!--<div fxLayout="column" style="display: none" class="ui-space-small stretch-height">-->
+
+    <!--<div fxLayout fxFlex>-->
+    <!--<div fxFlex class="ui-space-regular">-->
+    <!--<ui-atm-status-general fxLayout="column" class="stretch-height"></ui-atm-status-general>-->
+    <!--</div>-->
+    <!--<div fxFlex class="ui-space-regular">-->
+    <!--<ui-atm-status-summary fxLayout="column" class="stretch-height"></ui-atm-status-summary>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div fxLayout fxFlex>-->
+    <!--<div fxFlex class="ui-space-regular">-->
+    <!--<ui-atm-status-revent-action fxLayout="column" class="stretch-height"></ui-atm-status-revent-action>-->
+    <!--</div>-->
+
+    <!--<div fxFlex class="ui-space-regular">-->
+    <!--<ui-atm-status-keys fxLayout="column" class="stretch-height"></ui-atm-status-keys>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+  </div>
+  <p-footer>
+    <span class="pull-right">
+      <button (click)="show=!show" class="btn blue-btn">{{'general.cancel' | translate}}</button>
+    </span>
+  </p-footer>
+</p-dialog>

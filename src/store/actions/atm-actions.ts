@@ -5,6 +5,9 @@ export class AtmActions {
   static ATM_GET_ACCESSORIES: string = 'ATM_GET_ACCESSORIES';
   static ATM_SET_ACCESSORIES: string = 'ATM_SET_ACCESSORIES';
 
+  static ATM_GET_RETIANED_CARDS: string = 'ATM_GET_RETIANED_CARDS';
+  static ATM_SET_RETIANED_CARDS: string = 'ATM_SET_RETIANED_CARDS';
+
   static ATM_GET_SETTINGS: string = 'ATM_GET_SETTINGS';
   static ATM_SET_SETTINGS: string = 'ATM_SET_SETTINGS';
   static ATM_ADD_SETTINGS: string = 'ATM_ADD_SETTINGS';

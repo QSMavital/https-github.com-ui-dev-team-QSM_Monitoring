@@ -75,6 +75,12 @@ module.exports = function (req, res, next) {
         atm_accessories
       ));
     }
+    else if (req.url.indexOf('/atm/retainedCards/get') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        atm_retainedCards
+      ));
+    }
     else {
       next();
     }
@@ -1033,5 +1039,21 @@ var atm_accessories={
       "lastCardSettelement":1495612612579
     }
 
-}
+};
 
+var atm_retainedCards = [
+  {
+    "cardNumber" : "4002",
+    "terminalDate" : 1495612612579,
+    "terminalTime" : 1495612612579,
+    "retainReason" : "WRONG_PIN",
+    "removeDate"   : 1495612612579
+  },
+  {
+    "cardNumber" : "1953",
+    "terminalDate" : 1495612612579,
+    "terminalTime" : 1495612612579,
+    "retainReason" : "CARD_BLOCKED",
+    "removeDate"   : 1495612612579
+  }
+];

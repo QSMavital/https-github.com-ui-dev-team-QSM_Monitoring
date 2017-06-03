@@ -42,7 +42,8 @@ import { ListComponent } from './components/list/list.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import {KeysPipe} from './pipes/keys.pipe';
 import { KeyLabelComponent } from './components/key-label/key-label.component';
-import { AgTranslateMapComponent } from './components/ag-translate-map/ag-translate-map.component'
+import { AgTranslateMapComponent } from './components/ag-translate-map/ag-translate-map.component';
+import { TransactionComponent } from './components/transaction/transaction.component'
 
 @NgModule({
   imports: [
@@ -88,7 +89,8 @@ import { AgTranslateMapComponent } from './components/ag-translate-map/ag-transl
     ListItemComponent,
     KeysPipe,
     KeyLabelComponent,
-    AgTranslateMapComponent
+    AgTranslateMapComponent,
+    TransactionComponent
   ],
   exports: [
     SpinnerComponent,
@@ -118,7 +120,8 @@ import { AgTranslateMapComponent } from './components/ag-translate-map/ag-transl
     ListComponent,
     ListItemComponent,
     KeysPipe,
-    KeyLabelComponent
+    KeyLabelComponent,
+    TransactionComponent
   ],
   providers: [CanActivateRoute, AppActivator,FormBuilderService,GridDefsService]
 })

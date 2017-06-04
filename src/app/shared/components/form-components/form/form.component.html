@@ -1,12 +1,13 @@
 <form class="stretch-height scroll-y" [formGroup]="form">
   <masonry  [options]="masonryOptions" class="form-body">
     <masonry-brick  *ngFor="let group of controlGroups" class="brick">
-      <ui-controls-group  [header]="group.label | translate" [formGroupName]="group.name">
-        <!--<div *ngFor="let group of controlGroups" [formGroupName]="group.name">-->
+      <ui-controls-group  [headers]="group.label" >
+        <div class="ui-space-tb-small" [formGroupName]="group.name">
+
         <div class="input-wrapper stretch-width" fxLayout fxLayoutAlign="start center" *ngFor="let i of group.controls">
-          <ui-label *ngIf="i.label" [fxFlex]="100/3" [fxFlexOrder]="i.type === 'checkbox' ? 1 : 0">{{i.label | translate}}<span
-            *ngIf="i.type !== 'checkbox'">:</span></ui-label>
-          <ui-input [formControlName]="i.name"
+          <ui-label *ngIf="i.label" [fxFlex]="100/3" [fxFlexOrder]="i.type === 'checkbox' ? 1 : 0">{{i.label | translate}}<span *ngIf="i.type !== 'checkbox'">:</span></ui-label>
+          <ui-input [controlName]="i.name"
+                    [group]="form.controls[group.name]"
                     [placeholder]="i.placeholder"
                     [type]="i.type"
                     [options]="i.options"
@@ -18,7 +19,8 @@
                [fxFlex]="(100/3)*i.inputs.length">
           <span class="input-group-wrapper" *ngFor="let input of i.inputs">
             <ui-input
-              [formControlName]="input.name"
+              [group]="form.controls[group.name].controls[i.name]"
+              [controlName]="input.name"
               [placeholder]="input.placeholder"
               [type]="input.type"
               [options]="input.options"
@@ -27,17 +29,14 @@
           </span>
           </div>
         </div>
+
+        </div>
       </ui-controls-group>
     </masonry-brick>
   </masonry>
-  <!--<div class="scroll-x form-body" fxLayout="column" fxLayoutWrap fxLayoutAlign="start start">-->
 
-  <!--</div>-->
-  <!--<div class="footer" fxLayout fxLayoutAlign="end center ">-->
-    <!--<button type="submit" class="purple-btn">submit</button>-->
-    <!--<button type="reset" class="blue-btn">cancel</button>-->
-  <!--</div>-->
 </form>
 <!--<pre>-->
 <!--{{form.value | json}}-->
 <!--</pre>-->
+

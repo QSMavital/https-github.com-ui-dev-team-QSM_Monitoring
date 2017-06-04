@@ -1,2 +1,7 @@
 <h4 class="form-inner-title" *ngIf="header">{{header}}</h4>
+<div fxLayout>
+  <h4 fxFlex
+      class="form-inner-title"
+      *ngFor="let header of headers" >{{header | translate}}</h4>
+</div>
 <ng-content></ng-content>

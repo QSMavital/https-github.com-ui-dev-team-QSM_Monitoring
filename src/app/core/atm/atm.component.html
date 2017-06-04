@@ -2,7 +2,7 @@
   <ui-tabs [menu]="tabs"></ui-tabs>
 
   <div fxFlex class="wrapper space-right ui-space-medium">
-    <ui-portlet [header]="atmId">
+    <ui-portlet [header]="('atms.terminalId'| translate)+': '+atmId">
       <router-outlet></router-outlet>
 
     </ui-portlet>

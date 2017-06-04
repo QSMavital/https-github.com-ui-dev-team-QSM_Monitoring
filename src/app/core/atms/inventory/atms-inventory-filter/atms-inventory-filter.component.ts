@@ -35,7 +35,7 @@ export class AtmsInventoryFilterComponent implements OnInit,OnChanges {
         })
       });
       newData.filters.currentValue['group'].forEach((groupFilters) => {
-        this.filterObj.groupFilters.push({label: groupFilters, value: groupFilters})
+        this.filterObj.groupFilters.push({label: groupFilters.toString(), value: groupFilters})
       });
       newData.filters.currentValue['area'].forEach((areaFilters) => {
         this.filterObj.areaFilters.push({label: this.translateSrv.instant(`area.${areaFilters}`), value: areaFilters})

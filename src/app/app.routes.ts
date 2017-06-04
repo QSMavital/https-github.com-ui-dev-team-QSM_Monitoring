@@ -58,9 +58,9 @@ export const appRoutes: Route[] = [
               {path: 'accessories', component: AccessoriesStatusComponent},
               {path: 'retained-cards', component: RetainedCardsComponent},
               {path: 'settings', component: AtmSettingsComponent},
-              {path: 'notifications', component: AtmNotificationsComponent},
-              {path: 'events', component: AtmEventsComponent},
-              {path: 'transactions', component: AtmTransactionsComponent}
+              {path: 'notifications', component: AtmsNotificationsComponent},
+              {path: 'events', component: AtmsEventsComponent},
+              {path: 'transactions', component: AtmsTransactionsComponent}
             ]
           },
 

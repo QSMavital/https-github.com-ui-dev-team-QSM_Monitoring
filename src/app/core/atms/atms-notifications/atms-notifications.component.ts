@@ -1,7 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Atms} from "../../../config/atms";
-import {i18n} from "../../../config/i18n";
-import {TranslateService} from "@ngx-translate/core";
 import {select, NgRedux} from "@angular-redux/store";
 import {Observable} from "rxjs";
 import {AtmsActions} from "../../../../store/actions/atms-actions";
@@ -9,6 +6,7 @@ import {IStore} from "../../../../store/index";
 import {isNullOrUndefined} from "util";
 import {GridDefsService} from "../../../shared/services/grid-defs.service";
 import {Api} from "../../../config/api";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'ui-atms-notifications',
@@ -23,8 +21,9 @@ export class AtmsNotificationsComponent implements OnInit {
   private dataSource;
 
   constructor(private ngRedux: NgRedux<IStore>,
-              private gridDefsSrv: GridDefsService) {
-    this.filtersLastState = Object.assign(Api.atms_events.payload,{eventSeverity:["FATAL", "ERROR", "WARN", "INFO"]});
+              private gridDefsSrv: GridDefsService,
+              private route: ActivatedRoute) {
+    this.filtersLastState = Object.assign(Api.atms_events.payload,{eventSeverity:["FATAL", "ERROR", "WARN", "INFO"]},{atmNo:this.route.parent.params['value']['id'] || null});
   }
 
   ngOnInit() {

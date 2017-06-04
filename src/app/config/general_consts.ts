@@ -1,41 +1,50 @@
 export const GeneralConstants = {
-  Banks:{
-    99:{ "bankNo":99 ,"bankName":"בנק ישראל"},
-    12:{ "bankNo":12 ,"bankName":"בנק הפועלים"},
-    10:{ "bankNo":10 ,"bankName":"בנק לאומי"},
-    11:{ "bankNo":11 ,"bankName":"בנק דיסקונט"},
-    20:{ "bankNo":20 ,"bankName":"בנק מזרחי טפחות"},
-    31:{ "bankNo":31 ,"bankName":"הבנק הבינלאומי הראשון"},
-    14:{ "bankNo":14 ,"bankName":"בנק אוצר החייל"},
-    17:{ "bankNo":17 ,"bankName":"בנק מרכנתיל דיסקונט"},
-    9: { "bankNo":9  ,"bankName":"בנק הדואר"},
-    13:{ "bankNo":13 ,"bankName":"בנק איגוד"},
-    46:{ "bankNo":46 ,"bankName":"בנק מסד"},
-    52:{ "bankNo":52 ,"bankName":"בנק פועלי אגודת ישראל"},
-    90:{ "bankNo":90 ,"bankName":"בנק דיסקונט למשכנתאות"},
-    77:{ "bankNo":77 ,"bankName":"בנק לאומי למשכנתאות בע\"מ"},
-    4: { "bankNo":4  ,"bankName":"בנק יהב לעובדי המדינה"},
-    26:{ "bankNo":26 ,"bankName":"יובנק בע\"מ"},
-    7: { "bankNo":7  ,"bankName":"בנק לפיתוח התעשיה"},
-    8: { "bankNo":8  ,"bankName":"בנק הספנות לישראל"},
-    6: { "bankNo":6  ,"bankName":"בנק אדנים"},
-    54:{ "bankNo":54 ,"bankName":"בנק ירושלים"},
-    34:{ "bankNo":34 ,"bankName":"בנק ערבי ישראלי"},
-    1: { "bankNo":1  ,"bankName":"בנק יורו טרייד"},
-    19:{ "bankNo":19 ,"bankName":"בנק החקלאות לישראל"},
-    22:{ "bankNo":22 ,"bankName":"בנק סיטי"},
-    48:{ "bankNo":48 ,"bankName":"קופת העובד הלאומי"},
-    68:{ "bankNo":68 ,"bankName":"בנק אוצר השלטון המקומי"},
-    23:{ "bankNo":23 ,"bankName":"HSBC"},
-    67:{ "bankNo":67 ,"bankName":"Arab Land Bank"},
-    25:{ "bankNo":25 ,"bankName":"BNP Paribas Israel"},
-    39:{ "bankNo":39 ,"bankName":"SBI State Bank of India"}
-  },
-  CurrencyCode:{
-    NIS:{},
-    USD:{},
-    EUR:{},
-    NONE:{}
-  }
+  Banks: {
+    BEINLEUMI: {value: "BEINLEUMI", label: "BEINLEUMI"},
+    BOJ: {value: "BOJ", label: "BOJ"},
+    MIZRAHI: {value: "MIZRAHI", label: "MIZRAHI"},
+    YAHAV: {value: "YAHAV", label: "YAHAV"}
 
+  },
+  Vendors: {
+    NCR: {value: "NCR", label: "NCR"},
+    WINCOR: {value: "WINCOR", label: "WINCOR"},
+    DIEBOLD: {value: "DIEBOLD", label: "DIEBOLD"}
+  },
+  AtmProtocol: {
+    NCR: {value: "NCR", label: "NCR"},
+    DIEBOLD912: {value: "DIEBOLD912", label: "DIEBOLD912"}
+  },
+  RklProtocol: {
+    NONE: {value: "NONE", label: "rklProtocol.NONE"},
+    NCR_ENHANCED: {value: "NCR_ENHANCED", label: "rklProtocol.NCR_ENHANCED"},
+    CERTIFICATE: {value: "CERTIFICATE", label: "rklProtocol.CERTIFICATE"},
+    WINCOR_SIGNATURE: {value: "WINCOR_SIGNATURE", label: "rklProtocol.WINCOR_SIGNATURE"}
+  },
+  Area: {
+    NONE: {value: "NONE", label: "area.NONE"},
+    NORTH: {value: "NORTH", label: "area.NORTH"},
+    SOUTH: {value: "SOUTH", label: "area.SOUTH"},
+    CENTER: {value: "CENTER", label: "area.CENTER"},
+    JERUSALEM: {value: "JERUSALEM", label: "area.JERUSALEM"},
+
+  },
+  Responsibility:{
+    NONE: {value: "NONE", label: "Responsibility.NONE"},
+    BRANCH: {value: "BRANCH", label: "Responsibility.BRANCH"},
+    VENDOR: {value: "VENDOR", label: "Responsibility.VENDOR"},
+    TECHNICIAN: {value: "TECHNICIAN", label: "Responsibility.TECHNICIAN"}
+  },
+  "CurrencyCode":{
+    NIS: {value: "NIS", label: "CurrencyCode.NIS"},
+    USD: {value: "USD", label: "CurrencyCode.USD"},
+    EUR: {value: "EUR", label: "CurrencyCode.EUR"},
+    NONE: {value: "NONE", label: "CurrencyCode.NONE"},
+  },
+  "Denomination":{
+    20: {value: "20", label: "20"},
+    50: {value: "50", label: "50"},
+    100: {value: "100", label: "100"},
+    200: {value: "200", label: "200"},
+  }
 };

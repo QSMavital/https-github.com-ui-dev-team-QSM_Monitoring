@@ -1,6 +1,7 @@
-import {Component, forwardRef, Input} from '@angular/core';
+import {Component, forwardRef, Input, OnInit} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 import {isNullOrUndefined} from "util";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'ui-input',
@@ -15,24 +16,15 @@ import {isNullOrUndefined} from "util";
   ]
 })
 
-export class InputComponent implements ControlValueAccessor {
-
-  private ddOptions: any[] = [
-    {
-      label: 'something',
-      value: {id: '1'}
-    },
-    {
-      label: 'something_else',
-      value: {id: '2'}
-    }
-  ];
-  // private ddModel: any;
-
+export class InputComponent implements ControlValueAccessor,OnInit {
   private _ph;
+  private localOptions = [];
 
   @Input() options:any[];
+  @Input() _val = 0;
   @Input() type: string = 'text';
+  @Input() controlName;
+  @Input() group;
   @Input()
   get placeholder() {
     return isNullOrUndefined(this._ph) ? '' : this._ph;
@@ -41,8 +33,6 @@ export class InputComponent implements ControlValueAccessor {
     this._ph = val;
   }
 
-  @Input()
-  _val = 0;
 
   get inputValue() {
     return this._val;
@@ -52,17 +42,24 @@ export class InputComponent implements ControlValueAccessor {
     this._val = val;
     this.propagateChange(this._val);
   }
+  constructor(private translateSrv: TranslateService) {
+  }
 
+  ngOnInit(){
+    if(!isNullOrUndefined(this.options)){
+      for(var prop in this.options){
+        this.localOptions.push({label:this.translateSrv.instant(this.options[prop].label),value:prop})
+      }
+    }
+  }
 
-  propagateChange = (_: any) => {
-  };
+  propagateChange = (_: any) => {};
 
   registerOnChange(fn) {
     this.propagateChange = fn;
   }
 
-  registerOnTouched() {
-  }
+  registerOnTouched() {}
 
   writeValue(value: any) {
     if (value !== undefined) {
@@ -70,8 +67,6 @@ export class InputComponent implements ControlValueAccessor {
     }
   }
 
-  constructor() {
-  }
 
 
   onValueChange(value) {

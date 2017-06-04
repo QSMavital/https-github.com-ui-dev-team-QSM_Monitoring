@@ -14,6 +14,7 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./atms-transactions.component.scss']
 })
 export class AtmsTransactionsComponent implements OnInit, OnDestroy {
+  public transaction= false;
   public gridOptions: any = {};
   public filtersLastState: any = {};
   private $atms_transactions_ref;
@@ -67,6 +68,10 @@ export class AtmsTransactionsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.$atms_transactions_ref.unsubscribe();
+  }
+
+  showTransaction(){
+    this.transaction=true;
   }
 
   filter(event) {

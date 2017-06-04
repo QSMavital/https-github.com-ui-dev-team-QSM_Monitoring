@@ -37,6 +37,8 @@
     "reports": "reports"
   },
   "general": {
+    "all":"All",
+    "selected":"Selected",
     "createNewAtm":"Create New Atm",
     "date": "date",
     "time": "time",

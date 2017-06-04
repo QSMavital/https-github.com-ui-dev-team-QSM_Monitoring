@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {AtmsActions} from "../actions/atms-actions";
 import {InterceptorService} from "ng2-interceptors";
 import {Api} from "../../app/config/api";
+import {Notification} from "rxjs";
+import {NotificationsActions} from "../actions/notifications-actions";
 
 @Injectable()
 export class Atms {
@@ -39,6 +41,17 @@ export class Atms {
           .subscribe((res) => {
             next({
               type: AtmsActions.ATMS_SET_TRANSACTIONS,
+              payload: res
+            });
+          });
+
+        break;
+        case AtmsActions.ATMS_ACTION:
+        this.http.post(Api.action.url, Object.assign(Api.action.payload,action.payload))
+          .map(res => JSON.parse(res['_body']))
+          .subscribe((res) => {
+            next({
+              type: NotificationsActions.NOTIFICATION,
               payload: res
             });
           });

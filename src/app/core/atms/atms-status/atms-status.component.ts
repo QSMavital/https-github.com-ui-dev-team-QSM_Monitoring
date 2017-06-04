@@ -20,6 +20,7 @@ import {Api} from "../../../config/api";
 export class AtmsStatusComponent implements OnInit {
   public addNew = false;
   public filtersData = {};
+  public selectedItems = 0;
   public filtersLastState = {};
   private $atms_inventory_ref;
   private dataSource;
@@ -38,11 +39,11 @@ export class AtmsStatusComponent implements OnInit {
 
   ngOnInit() {
     this.initColDefs();
-    this.$atms_inventory_ref = this.$atms_inventory.subscribe((state) => {
-      if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
-        this.gridOptions.api.setRowData(state.atms);
-      }
-    });
+    // this.$atms_inventory_ref = this.$atms_inventory.subscribe((state) => {
+    //   if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
+    //     this.gridOptions.api.setRowData(state.atms);
+    //   }
+    // });
   }
 
   initColDefs() {
@@ -52,8 +53,6 @@ export class AtmsStatusComponent implements OnInit {
     this.gridOptions.columnDefs = this.gridDefsSrv.initAtmsGridColDefs(colsDef, 'Status');
     this.dataSource = {
       getRows: (params) => {
-        console.log('asking for ' + params.startRow + ' to ' + params.endRow);
-        console.log('asking for ', params);
         this.ngRedux.dispatch({
           type: AtmsActions.ATMS_GET_INVENTORY,
           payload: Object.assign(this.filtersLastState, {
@@ -92,6 +91,21 @@ export class AtmsStatusComponent implements OnInit {
 
   selectItem(item) {
     this.router.navigate(['/atms', 'atm', item.data.terminalId]);
+  }
 
+  action(type, list = null) {
+    console.log(list);
+    let atmList = null;
+    if (!isNullOrUndefined(list)) {
+      atmList = [];
+      list.forEach((item) => {
+        atmList.push(item.terminalId);
+      })
+    }
+    this.ngRedux.dispatch({type: AtmsActions.ATMS_ACTION, payload: {action: type, atmList}});
+  }
+
+  selection(e) {
+    this.selectedItems = this.gridOptions.api.getSelectedRows().length;
   }
 }

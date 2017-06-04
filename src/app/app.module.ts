@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule, Http, XHRBackend, RequestOptions} from '@angular/http';
-import {TranslateModule, TranslateLoader, TranslatePipe} from "@ngx-translate/core";
+import {TranslateModule, TranslateLoader} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {AppComponent} from './app.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
@@ -40,10 +40,6 @@ import {AtmStatusComponent} from './core/atm/atm-status/atm-status.component';
 import {AccessoriesStatusComponent} from './core/atm/accessories-status/accessories-status.component';
 import {RetainedCardsComponent} from './core/atm/retained-cards/retained-cards.component';
 import {AtmSettingsComponent} from './core/atm/atm-settings/atm-settings.component';
-import {AtmNotificationsComponent} from './core/atm/atm-notifications/atm-notifications.component';
-import {AtmEventsComponent} from './core/atm/atm-events/atm-events.component';
-import {AtmTransactionsComponent} from './core/atm/atm-transactions/atm-transactions.component';
-import {AtmTransactionComponent} from './core/atm/atm-transaction/atm-transaction.component';
 import {HsmStatusComponent} from './core/hsm/hsm-status/hsm-status.component';
 import {HsmStatisticsComponent} from './core/hsm/hsm-statistics/hsm-statistics.component';
 import {ConnectionStatusComponent} from './core/dashboard/connection-status/connection-status.component';
@@ -123,10 +119,6 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     AccessoriesStatusComponent,
     RetainedCardsComponent,
     AtmSettingsComponent,
-    AtmNotificationsComponent,
-    AtmEventsComponent,
-    AtmTransactionsComponent,
-    AtmTransactionComponent,
     HsmStatusComponent,
     HsmStatisticsComponent,
     ConnectionStatusComponent,

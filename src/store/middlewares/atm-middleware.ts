@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {InterceptorService} from "ng2-interceptors";
 import {Api} from "../../app/config/api";
 import {AtmActions} from "../actions/atm-actions";
+import {NotificationsActions} from "../actions/notifications-actions";
 
 @Injectable()
 export class Atm {
@@ -38,6 +39,16 @@ export class Atm {
           .subscribe((res) => {
             next({
               type: AtmActions.ATM_SET_RETIANED_CARDS,
+              payload: res
+            });
+          });
+        break;
+      case AtmActions.ATM_ADD_SETTINGS:
+        this.http.post(Api.createAtmSettings.url, Object.assign(action.payload))
+          .map(res => JSON.parse(res['_body']))
+          .subscribe((res) => {
+            next({
+              type: NotificationsActions.NOTIFICATION,
               payload: res
             });
           });

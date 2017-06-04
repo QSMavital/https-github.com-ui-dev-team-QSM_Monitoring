@@ -17,76 +17,159 @@ export const Atm = {
     'transactions': {label: 'atm.tabs.transactions', state: 'transactions'}
   },
   Settings: {
-    atmGeneralSettings: {
+    generalSettings: {
       label: ["atm.settings.atmGeneralSettings"],
-      name: "atmGeneralSettings",
+      name: "generalSettings",
       controls: [
         {
           name: 'atmNo',
           label: 'atms.terminalId',
-          type: 'text'
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 6, max: 6
+            },
+            {
+              type: 'required'
+            }
+          ]
         },
         {
           name: 'terminalShvaId',
           label: 'atms.terminalShvaId',
-          type: 'text'
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 4, max: 4
+            },
+            {
+              type: 'required'
+            }
+          ]
         },
         {
           name: 'atmName',
           label: 'atms.atmName',
-          type: 'text'
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 1, max: 40
+            },
+            {
+              type: 'required'
+            }
+          ]
+        },
+        {
+          name: 'city',
+          label: 'atms.city',
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 1, max: 40
+            },
+            {
+              type: 'required'
+            }
+          ]
         },
         {
           name: 'address',
           label: 'atms.address',
-          type: 'text'
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 1, max: 40
+            },
+            {
+              type: 'required'
+            }]
         },
         {
           name: 'zipCode',
           label: 'atms.zipCode',
-          type: 'text'
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 5, max: 7
+            },
+            {
+              type: 'required'
+            },
+            {
+              type: 'number'
+            }]
         },
         {
           name: 'vendor',
           label: 'atms.vendor',
           type: 'select',
           value: "NCR",
-          options: GeneralConstants.Vendors
+          options: GeneralConstants.Vendors,
+          validator: [{
+            type: 'required'
+          }]
         },
         {
           name: 'ipAddress',
           label: 'atms.ipAddress',
-          type: 'text'
+          type: 'text',
+          validator: [{
+            type: 'required'
+          }, {
+            type: 'ip'
+          }]
         },
         {
           name: 'atmProtocol',
           label: 'atms.atmProtocol',
           type: 'select',
           value: 'NCR',
-          options: GeneralConstants.AtmProtocol
+          options: GeneralConstants.AtmProtocol,
+          validator: [{
+            type: 'required'
+          }]
         },
         {
           name: 'rklProtocol',
           label: 'atms.rklProtocol',
           type: 'select',
-          options: GeneralConstants.RklProtocol
+          options: GeneralConstants.RklProtocol,
+          validator: [{
+            type: 'required'
+          }]
 
         },
         {
           name: 'terminalGroup',
           label: 'atms.terminalGroup',
-          type: 'text'
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 2, max: 2
+            },
+            {
+              type: 'required'
+            }
+          ]
         },
         {
           name: 'belong',
           label: 'atms.belong',
-          type: 'text'
+          type: 'select',
+          options: GeneralConstants.Belong,
+          validator: [{
+            type: 'required'
+          }]
         },
         {
           name: 'area',
           type: 'select',
           label: 'atms.area',
-          options: GeneralConstants.Area
+          options: GeneralConstants.Area,
+          validator: [{
+            type: 'required'
+          }]
         },
         {
           name: 'bankNo',
@@ -96,23 +179,53 @@ export const Atm = {
         {
           name: 'branch',
           label: 'atms.branch',
-          type: 'text'
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 3, max: 3
+            },
+            {
+              type: 'required'
+            },
+            {
+              type: 'number'
+            }]
         },
         {
           name: 'configId',
           label: 'atms.configId',
-          type: 'text'
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 4, max: 4
+            },
+            {
+              type: 'required'
+            },
+            {
+              type: 'number'
+            }]
         },
         {
           name: 'maxBills',
           label: 'atms.maxBills',
-          type: 'text'
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 1
+            },
+            {
+              type: 'required'
+            },
+            {
+              type: 'number'
+            }]
         }
       ]
     },
-    atmCassetesSettings: {
+    cassetesSettings: {
       label: ["atm.settings.atmCassetesSettings", "atms.denomination", "atms.amount"],
-      name: "atmCassetesSettings",
+      name: "cassetesSettings",
       controls: [
         {
           name: 'cassette1',
@@ -120,29 +233,29 @@ export const Atm = {
           type: 'inputGroup',
           inputs: [
             {
-              name: 'cassette1_currency',
+              name: 'currency',
               type: 'select',
               options: GeneralConstants.CurrencyCode
             },
             {
-              name: 'cassette1_denomination',
+              name: 'denomination',
               type: 'select',
               options: GeneralConstants.Denomination
             }
           ]
         },
         {
-          name: 'cassette12',
+          name: 'cassette2',
           label: 'atm.cassette2',
           type: 'inputGroup',
           inputs: [
             {
-              name: 'cassette2_currency',
+              name: 'currency',
               type: 'select',
               options: GeneralConstants.CurrencyCode
             },
             {
-              name: 'cassette2_denomination',
+              name: 'denomination',
               type: 'select',
               options: GeneralConstants.Denomination
             }
@@ -154,12 +267,12 @@ export const Atm = {
           type: 'inputGroup',
           inputs: [
             {
-              name: 'cassette3_currency',
+              name: 'currency',
               type: 'select',
               options: GeneralConstants.CurrencyCode
             },
             {
-              name: 'cassette3_denomination',
+              name: 'denomination',
               type: 'select',
               options: GeneralConstants.Denomination
             }
@@ -171,12 +284,12 @@ export const Atm = {
           type: 'inputGroup',
           inputs: [
             {
-              name: 'cassette4_currency',
+              name: 'currency',
               type: 'select',
               options: GeneralConstants.CurrencyCode
             },
             {
-              name: 'cassette4_denomination',
+              name: 'denomination',
               type: 'select',
               options: GeneralConstants.Denomination
             }
@@ -214,17 +327,17 @@ export const Atm = {
           type: 'inputGroup',
           inputs: [
             {
-              name: 'nearestSettings1_bankNo',
+              name: 'bankNo',
               type: 'select',
               options: GeneralConstants.CurrencyCode
             },
             {
-              name: 'nearestSettings1_branch',
+              name: 'branch',
               type: 'text',
               placeholder: 'atms.branch'
             },
             {
-              name: 'nearestSettings1_address',
+              name: 'address',
               type: 'text',
               placeholder: 'atms.address'
             }
@@ -235,17 +348,17 @@ export const Atm = {
           type: 'inputGroup',
           inputs: [
             {
-              name: 'nearestSettings2_bankNo',
+              name: 'bankNo',
               type: 'select',
               options: GeneralConstants.CurrencyCode
             },
             {
-              name: 'nearestSettings2_branch',
+              name: 'branch',
               type: 'text',
               placeholder: 'atms.branch'
             },
             {
-              name: 'nearestSettings2_',
+              name: 'address',
               type: 'text',
               placeholder: 'atms.address'
             }
@@ -256,17 +369,17 @@ export const Atm = {
           type: 'inputGroup',
           inputs: [
             {
-              name: 'nearestSettings3_bankNo',
+              name: 'bankNo',
               type: 'select',
               options: GeneralConstants.CurrencyCode
             },
             {
-              name: 'nearestSettings3_branch',
+              name: 'branch',
               type: 'text',
               placeholder: 'atms.branch'
             },
             {
-              name: 'nearestSettings3_address',
+              name: 'address',
               type: 'text',
               placeholder: 'atms.address'
             }
@@ -277,17 +390,17 @@ export const Atm = {
           type: 'inputGroup',
           inputs: [
             {
-              name: 'nearestSettings4_bankNo',
+              name: 'bankNo',
               type: 'select',
               options: GeneralConstants.CurrencyCode
             },
             {
-              name: 'nearestSettings4_branch',
+              name: 'branch',
               type: 'text',
               placeholder: 'atms.branch'
             },
             {
-              name: 'nearestSettings4_address',
+              name: 'address',
               type: 'text',
               placeholder: 'atms.address'
             }
@@ -319,22 +432,63 @@ export const Atm = {
         {
           name: 'notOursFee',
           label: 'atm.fee',
-          type: 'text'
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 0
+            },
+            {
+              type: 'required'
+            },
+            {
+              type: 'number'
+            }]
+
         },
         {
           name: 'claimAmount',
           label: 'atm.claimAmount',
-          type: 'text'
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 0
+            },
+            {
+              type: 'required'
+            },
+            {
+              type: 'number'
+            }]
         },
         {
           name: 'localCurrencyTrigger',
           label: 'atm.localCurrencyTrigger',
-          type: 'text'
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 0
+            },
+            {
+              type: 'required'
+            },
+            {
+              type: 'number'
+            }]
         },
         {
-          name: 'notOursFee',
+          name: 'localCurrencyTrigger2',
           label: 'atm.localCurrencyTrigger2',
-          type: 'text'
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 0
+            },
+            {
+              type: 'required'
+            },
+            {
+              type: 'number'
+            }]
         }
       ]
     },

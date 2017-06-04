@@ -35,16 +35,21 @@ export const GeneralConstants = {
     VENDOR: {value: "VENDOR", label: "Responsibility.VENDOR"},
     TECHNICIAN: {value: "TECHNICIAN", label: "Responsibility.TECHNICIAN"}
   },
-  "CurrencyCode":{
+  CurrencyCode:{
     NIS: {value: "NIS", label: "CurrencyCode.NIS"},
     USD: {value: "USD", label: "CurrencyCode.USD"},
     EUR: {value: "EUR", label: "CurrencyCode.EUR"},
     NONE: {value: "NONE", label: "CurrencyCode.NONE"},
   },
-  "Denomination":{
+  Denomination:{
     20: {value: "20", label: "20"},
     50: {value: "50", label: "50"},
     100: {value: "100", label: "100"},
     200: {value: "200", label: "200"},
+  },
+  Belong:{
+    BRANCH:{value: "BRANCH", label: "atms.branch"},
+    REMOTE:{value: "REMOTE", label: "enums.REMOTE"},
+    YAHAV:{value: "YAHAV", label:  "enums.YAHAV"}
   }
 };

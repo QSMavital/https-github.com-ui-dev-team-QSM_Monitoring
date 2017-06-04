@@ -8,6 +8,7 @@ export interface CustomControl {
   name:string,
   label?:string,
   type:string,
+  validator?:any,
   value?:any,
   placeholder?:string,
   options?:any[],

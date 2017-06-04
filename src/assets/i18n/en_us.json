@@ -37,6 +37,7 @@
     "reports": "reports"
   },
   "general": {
+    "createNewAtm":"Create New Atm",
     "date": "date",
     "time": "time",
     "close": "close",
@@ -296,7 +297,9 @@
     "CANCELED":"Card Canceled",
     "NOT_EXIST":"Card Not Exist",
     "NOT_ISSUED":"Card Not Issued",
-    "INCORRECT_CHECK_DIGIT":"Incorrect Check Digit"
+    "INCORRECT_CHECK_DIGIT":"Incorrect Check Digit",
+    "REMOTE":"Remote",
+    "YAHAV":"Yahav"
 
   },
   "transaction":{

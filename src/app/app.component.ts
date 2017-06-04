@@ -18,9 +18,11 @@ import {LicenseManager} from "ag-grid-enterprise/main";
 export class AppComponent implements OnDestroy{
   public errorHandler: any = {};
   public unsubsribers: any = {};
+  public notification: any = [];
 
   //subscribers
   @select('errorHandler') errorHandler$: Observable<any>;
+  @select('notifications') notifications$: Observable<any>;
 
   constructor(public srvURLInterceptor: ServerURLInterceptor,
               private translate: TranslateService,
@@ -28,6 +30,7 @@ export class AppComponent implements OnDestroy{
     LicenseManager.setLicenseKey('QSM_Programming_Ltd._Qswitch_1Devs8_May_2018__MTUyNTc1MjAwMDAwMA==1176c44b35f16334586085ac74c58227');
     this.initI18n();
     this.initErrorHandler();
+    this.initNotificationsHandler();
     this.initCustomer();
   }
 
@@ -40,11 +43,21 @@ export class AppComponent implements OnDestroy{
       show: false,
       error: {}
     };
+
     this.unsubsribers.errorHandler = this.errorHandler$.subscribe((state) => {
       if (!isNullOrUndefined(state)) {
         this.errorHandler.show = true;
         this.errorHandler.error = state;
 
+      }
+    });
+
+  }
+
+  initNotificationsHandler() {
+    this.unsubsribers.notifications = this.notifications$.subscribe((state) => {
+      if (!isNullOrUndefined(state)) {
+       this.notification.push({severity:'success', summary:'Info Message', detail:state.result})
       }
     });
   }
@@ -55,6 +68,7 @@ export class AppComponent implements OnDestroy{
 
   ngOnDestroy() {
     this.unsubsribers.errorHandler.unsubscribe();
+    this.unsubsribers.notifications.unsubscribe();
   }
 
 }

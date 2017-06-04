@@ -111,3 +111,15 @@
     border-color: $botti;
   }
 }
+input.ng-invalid.ng-touched{
+  border:1px solid $coral-red!important;
+}
+.ui-growl {
+  bottom: 20px!important;
+  top: auto!important;
+}
+.ui-tooltip{
+  z-index: 3000!important;
+  padding: 2px 5px;
+
+}

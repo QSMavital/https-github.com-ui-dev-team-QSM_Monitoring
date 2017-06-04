@@ -87,6 +87,12 @@ module.exports = function (req, res, next) {
         transaction
       ));
     }
+    else if (req.url.indexOf('api/atm/settings/post') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        {"result":"OK"}
+      ));
+    }
     else {
       next();
     }
@@ -481,11 +487,11 @@ var settingsUser = {
     ],
     "atmSettings": [
       {
-        "field": "atmGeneralSettings",
+        "field": "generalSettings",
         "visible": true
       },
       {
-        "field": "atmCassetesSettings",
+        "field": "cassetesSettings",
         "visible": true
       },
       {

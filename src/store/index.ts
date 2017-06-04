@@ -12,11 +12,13 @@ import {
 } from "./reducers/dashboard-reducer";
 import {AtmsInventoryReducer, AtmsEventsReducer, AtmsTransactionsReducer} from "./reducers/atms-reducer";
 import {AtmStatusReducer, AtmAccessoriesReducer, AtmRetainedCardsReducer} from "./reducers/atm-reducer";
+import {notificationsReducer} from "./reducers/notifications-reducer";
 
 
 export class IStore {
   loader?: boolean;
   errorHandler?: any;
+  notifications?: any;
   userSettings?: any;
   generalCustomer?: any;
 }
@@ -49,6 +51,7 @@ class IAtm {
 export const rootReducer = combineReducers<IStore>({
   loader: loaderReducer,
   errorHandler: errorReducer,
+  notifications: notificationsReducer,
   userSettings: userSettingsReducer,
   generalCustomer: generalCustomerReducer,
   dashboard: combineReducers<IDashboard>({

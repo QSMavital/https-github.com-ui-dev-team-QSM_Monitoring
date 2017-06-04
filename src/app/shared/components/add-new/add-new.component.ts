@@ -8,6 +8,7 @@ import {Atm} from "../../../config/atm";
 import {CustomControlGroup} from "../../../config/interfaces/form.interface";
 import {NgRedux} from "@angular-redux/store";
 import {IStore} from "../../../../store/index";
+import {AtmActions} from "../../../../store/actions/atm-actions";
 
 @Component({
   selector: 'ui-add-new',
@@ -30,7 +31,8 @@ export class AddNewComponent implements OnChanges,AfterViewChecked {
     this.showChange.emit(this.showValue);
   }
 
-  constructor(private cdRef: ChangeDetectorRef,private frmBuilderSrv: FormBuilderService, private ngRedux: NgRedux<IStore>) {
+  constructor(private cdRef: ChangeDetectorRef,
+              private frmBuilderSrv: FormBuilderService, private ngRedux: NgRedux<IStore>) {
   }
 
   ngOnChanges(val) {
@@ -55,4 +57,15 @@ export class AddNewComponent implements OnChanges,AfterViewChecked {
     this.form = this.frmBuilderSrv.createForm(this.controlGroups);
   }
 
+  create(){
+    this.ngRedux.dispatch({
+      type: AtmActions.ATM_ADD_SETTINGS,
+      payload: this.frmBuilderSrv.atmFormToPayload(this.form.getRawValue())
+    });
+  }
+
+
+
 }
+
+

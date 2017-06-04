@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {SpinnerComponent} from './components/spinner/spinner.component';
 import {SidebarModule} from 'ng-sidebar';
+import { CustomFormsModule } from 'ng2-validation'
 
 import {DirSelectionDirective} from './directives/bidi/dir-selection.directive';
 import {SlidingPanelComponent} from './components/sliding-panel/sliding-panel.component';
@@ -47,6 +48,7 @@ import {GridDefsService} from "./services/grid-defs.service";
 
 @NgModule({
   imports: [
+    CustomFormsModule,
     MasonryModule,
     CommonModule,
     SidebarModule.forRoot(),

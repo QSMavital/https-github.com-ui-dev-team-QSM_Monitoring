@@ -52,6 +52,27 @@ export class Atm {
               payload: res
             });
           });
+
+        break;
+      case AtmActions.ATM_UPDATE_SETTINGS:
+        this.http.post(Api.saveAtmSettings.url, Object.assign(action.payload))
+          .map(res => JSON.parse(res['_body']))
+          .subscribe((res) => {
+            next({
+              type: NotificationsActions.NOTIFICATION,
+              payload: res
+            });
+          });
+        break;
+      case AtmActions.ATM_GET_SETTINGS:
+        this.http.post(Api.getAtmSettings.url, Object.assign(Api.getAtmSettings.payload,action.payload))
+          .map(res => JSON.parse(res['_body']))
+          .subscribe((res) => {
+            next({
+              type: AtmActions.ATM_SET_SETTINGS,
+              payload: res
+            });
+          });
         break;
       default:
         return next(action);

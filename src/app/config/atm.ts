@@ -121,6 +121,21 @@ export const Atm = {
           }]
         },
         {
+          name: 'portNumber',
+          label: 'atms.port',
+          type: 'text',
+          validator: [
+            {
+              type: "length", min: 5, max: 7
+            },
+            {
+              type: 'required'
+            },
+            {
+              type: 'number'
+            }]
+        },
+        {
           name: 'atmProtocol',
           label: 'atms.atmProtocol',
           type: 'select',
@@ -223,9 +238,9 @@ export const Atm = {
         }
       ]
     },
-    cassetesSettings: {
-      label: ["atm.settings.atmCassetesSettings", "atms.denomination", "atms.amount"],
-      name: "cassetesSettings",
+    cassettesSettings: {
+      label: ["atm.settings.atmCassettesSettings", "atms.denomination", "atms.amount"],
+      name: "cassettesSettings",
       controls: [
         {
           name: 'cassette1',
@@ -329,7 +344,7 @@ export const Atm = {
             {
               name: 'bankNo',
               type: 'select',
-              options: GeneralConstants.CurrencyCode
+              options: GeneralConstants.Banks
             },
             {
               name: 'branch',
@@ -350,7 +365,7 @@ export const Atm = {
             {
               name: 'bankNo',
               type: 'select',
-              options: GeneralConstants.CurrencyCode
+              options: GeneralConstants.Banks
             },
             {
               name: 'branch',
@@ -371,7 +386,7 @@ export const Atm = {
             {
               name: 'bankNo',
               type: 'select',
-              options: GeneralConstants.CurrencyCode
+              options: GeneralConstants.Banks
             },
             {
               name: 'branch',
@@ -392,7 +407,7 @@ export const Atm = {
             {
               name: 'bankNo',
               type: 'select',
-              options: GeneralConstants.CurrencyCode
+              options: GeneralConstants.Banks
             },
             {
               name: 'branch',

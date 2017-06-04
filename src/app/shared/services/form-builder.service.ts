@@ -57,18 +57,18 @@ export class FormBuilderService {
 
   atmFormToPayload(rawData){
     let formData = Object.assign(rawData);
-    let cassetesSettings = [];
+    let cassettesSettings = [];
     let terminalNearestSettings = [];
     let index = 1;
 
-    for(var prop in formData.cassetesSettings){
-      cassetesSettings.push({
+    for(var prop in formData.cassettesSettings){
+      cassettesSettings.push({
         "cassetteType" : index++,
-        "currencyCode" : formData.cassetesSettings[prop].currency,
-        "denomination" : formData.cassetesSettings[prop].denomination
+        "currencyCode" : formData.cassettesSettings[prop].currency,
+        "denomination" : formData.cassettesSettings[prop].denomination
       })
     }
-    formData.cassetesSettings = cassetesSettings;
+    formData.cassettesSettings = cassettesSettings;
 
 
     for(var prop in formData.terminalNearestSettings){

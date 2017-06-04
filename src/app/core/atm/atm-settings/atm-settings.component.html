@@ -2,7 +2,7 @@
   <div class="stretch-height ui-space-t-regular ui-space-l-regular scroll-y" fxLayout="column">
     <ui-form fxFlex [form]="form" [controlGroups]="controlGroups"></ui-form>
     <div class="text-right ui-space-regular">
-      <button [disabled]="form.pristine" (click)="save()" class="blue-btn">{{'general.save'|translate}}</button>
-      <button class="purple-btn">{{'general.cancel'|translate}}</button>
+      <button [disabled]="!form.valid && form.pristine" (click)="save()" class="blue-btn">{{'general.save'|translate}}</button>
+      <button [disabled]="form.pristine" (click)="cancel()" class="purple-btn">{{'general.cancel'|translate}}</button>
     </div>
   </div>

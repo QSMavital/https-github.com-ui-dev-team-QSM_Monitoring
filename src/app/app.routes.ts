@@ -16,10 +16,6 @@ import {AtmStatusComponent} from "./core/atm/atm-status/atm-status.component";
 import {RetainedCardsComponent} from "./core/atm/retained-cards/retained-cards.component";
 import {AccessoriesStatusComponent} from "./core/atm/accessories-status/accessories-status.component";
 import {AtmSettingsComponent} from "./core/atm/atm-settings/atm-settings.component";
-import {AtmNotificationsComponent} from "./core/atm/atm-notifications/atm-notifications.component";
-import {AtmEventsComponent} from "./core/atm/atm-events/atm-events.component";
-import {AtmTransactionsComponent} from "./core/atm/atm-transactions/atm-transactions.component";
-import {AtmTransactionComponent} from "./core/atm/atm-transaction/atm-transaction.component";
 import {HsmStatusComponent} from "./core/hsm/hsm-status/hsm-status.component";
 import {HsmStatisticsComponent} from "./core/hsm/hsm-statistics/hsm-statistics.component";
 

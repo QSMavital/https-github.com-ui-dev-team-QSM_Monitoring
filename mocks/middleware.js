@@ -487,11 +487,11 @@ var settingsUser = {
         "visible": true
       },
       {
-        "field": "emvSettings",
+        "field": "terminalNearestSettings",
         "visible": true
       },
       {
-        "field": "feeSerttings",
+        "field": "treatmentDeviceSettings",
         "visible": true
       },
       {
@@ -542,7 +542,7 @@ var settingsUser = {
       "emvOurs": false,
       "emvTourist": false
     },
-    "feeSerttings": {
+    "feeSettings": {
       "notOursFee": 0,
       "oursFee": 0,
       "touristFee": 0

@@ -11,6 +11,24 @@
     "CENTER": "Center",
     "JERUSALEM": "Jerusalem And Surroundings"
   },
+  "Responsibility":{
+    "NONE": "None",
+    "BRANCH": "Branch",
+    "VENDOR": "Vendor",
+    "TECHNICIAN": "Technician"
+  },
+  "CurrencyCode":{
+    "NIS":"NIS",
+    "USD": "USD",
+    "EUR": "EUR",
+    "NONE": "Not in use"
+  },
+  "rklProtocol":{
+    "NONE": "None",
+    "NCR_ENHANCED": "NCR Enhanced",
+    "CERTIFICATE": "Certificate",
+    "WINCOR_SIGNATURE": "WINCOR Signature"
+  },
   "menu": {
     "main": "main",
     "atms": "atms",
@@ -62,6 +80,7 @@
       "toDate": "To Date:"
     },
     "terminalId": "ATM #",
+    "denomination": "denomination",
     "atmName": "ATM Name",
     "transactionType": "Transaction Type",
     "terminalShvaId": "Shva ID",
@@ -110,6 +129,11 @@
     "deviceFee": "Device Fee"
   },
   "atm": {
+    "cassette1": "Cassette Type 1",
+    "cassette2": "Cassette Type 2",
+    "cassette3": "Cassette Type 3",
+    "cassette4": "Cassette Type 4",
+
     "item": "item",
     "transaction": "transaction",
     "propriety": "propriety",
@@ -144,6 +168,18 @@
     "General": "General",
     "RecentActions": "Recent actions",
     "Keys": "Keys",
+    "claimAmount": "Claim Amount",
+    "fee": "Fee",
+    "treatmentStartDate": "Start Date",
+    "responsibility": "Responsibility",
+
+    "localCurrencyTrigger": "Local Trigger",
+    "localCurrencyTrigger2": "Local Trigger 2",
+
+    "disabledATM": "Disabled ATM",
+    "disableCheckDeposit": "Check Deposit",
+    "disableReceipt": "Receipt",
+
     "tabs": {
       "status": "atm status",
       "accessories": "accessories status",
@@ -158,8 +194,8 @@
       "atmGeneralSettings": "Settings",
       "atmCassetesSettings": "Cassetes",
       "disableSettings": "Disable",
-      "emvSettings": "EMV",
-      "feeSerttings": "Fee",
+      "terminalNearestSettings": "Nearest terminal Settings",
+      "treatmentDeviceSettings":"Device treatment",
       "limitationAmountsSettings": "Limitation Amounts"
     }
   },

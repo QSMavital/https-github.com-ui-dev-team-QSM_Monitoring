@@ -6,6 +6,7 @@ import {Api} from "../../../config/api";
 import {AtmsActions} from "../../../../store/actions/atms-actions";
 import {isNullOrUndefined} from "util";
 import {Observable} from "rxjs";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'ui-atms-transactions',
@@ -20,9 +21,10 @@ export class AtmsTransactionsComponent implements OnInit, OnDestroy {
   @select(['atms', 'transactions']) $atms_transactions: Observable<any>;
 
   private dataSource;
+
   constructor(private gridDefsSrv: GridDefsService,
-              private ngRedux: NgRedux<IStore>) {
-    this.filtersLastState = Object.assign(Api.atms_transactions.payload);
+              private ngRedux: NgRedux<IStore>, private route: ActivatedRoute) {
+    this.filtersLastState = Object.assign(Api.atms_transactions.payload, {atmNo: this.route.parent.params['value']['id'] || null});
 
   }
 
@@ -75,13 +77,13 @@ export class AtmsTransactionsComponent implements OnInit, OnDestroy {
   filter(event) {
     let gridState = this.gridOptions.api.getInfinitePageState()[0];
     this.gridOptions.api.ensureIndexVisible(0);
-    this.filtersLastState = Object.assign(this.filtersLastState,{
-      fromDate:new Date(event.fromDate).getTime(),
-      toDate:new Date(event.toDate).getTime()
+    this.filtersLastState = Object.assign(this.filtersLastState, {
+      fromDate: new Date(event.fromDate).getTime(),
+      toDate: new Date(event.toDate).getTime()
     });
     this.ngRedux.dispatch({
       type: AtmsActions.ATMS_GET_TRANSACTIONS,
-      payload:Object.assign(this.filtersLastState, {
+      payload: Object.assign(this.filtersLastState, {
         "fromLine": gridState.startRow,
         "numOfLine": gridState.endRow - gridState.startRow
       })

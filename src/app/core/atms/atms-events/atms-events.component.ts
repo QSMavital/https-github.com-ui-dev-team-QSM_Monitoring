@@ -9,6 +9,7 @@ import {isNullOrUndefined} from "util";
 import {Observable} from "rxjs";
 import {GridDefsService} from "../../../shared/services/grid-defs.service";
 import {Api} from "../../../config/api";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'ui-atms-events',
@@ -25,8 +26,9 @@ export class AtmsEventsComponent implements OnInit, OnDestroy {
 
 
   constructor(private ngRedux: NgRedux<IStore>,
-              private gridDefsSrv: GridDefsService) {
-    this.filtersLastState = Object.assign(Api.atms_events.payload,{eventSeverity:["INFO"]});
+              private gridDefsSrv: GridDefsService,
+              private route: ActivatedRoute) {
+    this.filtersLastState = Object.assign(Api.atms_events.payload,{eventSeverity:["INFO"]},{atmNo:this.route.parent.params['value']['id'] || null});
   }
 
   ngOnInit() {

@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ControlsGroupComponent implements OnInit {
 
   @Input() header:string = '';
+  @Input() headers:any = [];
 
   constructor() { }
 

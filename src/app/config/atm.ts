@@ -4,6 +4,7 @@ import {AgDateComponent} from "../shared/components/ag-date/ag-date.component";
 import {AgDateShortComponent} from "../shared/components/ag-date-short/ag-date-short.component";
 import {AgTimeComponent} from "../shared/components/ag-time/ag-time.component";
 import {AgTranslateMapComponent} from "../shared/components/ag-translate-map/ag-translate-map.component";
+import {GeneralConstants} from "./general_consts";
 
 export const Atm = {
   Tabs: {
@@ -17,7 +18,7 @@ export const Atm = {
   },
   Settings: {
     atmGeneralSettings: {
-      label: "atm.settings.atmGeneralSettings",
+      label: ["atm.settings.atmGeneralSettings"],
       name: "atmGeneralSettings",
       controls: [
         {
@@ -38,13 +39,7 @@ export const Atm = {
         {
           name: 'address',
           label: 'atms.address',
-          type: 'select',
-          value: 4,
-          options: [
-            {label: 'opt1', value: 1},
-            {label: 'opt2', value: 2},
-            {label: 'NCR', value: 4}
-          ]
+          type: 'text'
         },
         {
           name: 'zipCode',
@@ -54,7 +49,9 @@ export const Atm = {
         {
           name: 'vendor',
           label: 'atms.vendor',
-          type: 'text'
+          type: 'select',
+          value: "NCR",
+          options: GeneralConstants.Vendors
         },
         {
           name: 'ipAddress',
@@ -62,61 +59,34 @@ export const Atm = {
           type: 'text'
         },
         {
-          name: 'portNumber',
-          label: 'atms.portNumber',
-          type: 'select',
-          value: 4,
-          options: [
-            {label: 'opt1', value: 1},
-            {label: 'opt2', value: 2},
-            {label: 'NCR', value: 4}
-          ]
-        },
-        {
           name: 'atmProtocol',
           label: 'atms.atmProtocol',
           type: 'select',
-          value: 4,
-          options: [
-            {label: 'opt1', value: 1},
-            {label: 'opt2', value: 2},
-            {label: 'NCR', value: 4}
-          ]
+          value: 'NCR',
+          options: GeneralConstants.AtmProtocol
         },
         {
           name: 'rklProtocol',
           label: 'atms.rklProtocol',
-          type: 'text'
+          type: 'select',
+          options: GeneralConstants.RklProtocol
+
         },
         {
           name: 'terminalGroup',
           label: 'atms.terminalGroup',
-          type: 'select',
-          options: [
-            {label: 'opt1', value: 1},
-            {label: 'opt2', value: 2},
-            {label: 'NCR', value: 4}
-          ]
+          type: 'text'
         },
         {
           name: 'belong',
           label: 'atms.belong',
-          type: 'select',
-          options: [
-            {label: 'opt1', value: 1},
-            {label: 'opt2', value: 2},
-            {label: 'NCR', value: 4}
-          ]
+          type: 'text'
         },
         {
           name: 'area',
           type: 'select',
           label: 'atms.area',
-          options: [
-            {label: 'opt1', value: 1},
-            {label: 'opt2', value: 2},
-            {label: 'NCR', value: 4}
-          ]
+          options: GeneralConstants.Area
         },
         {
           name: 'bankNo',
@@ -141,29 +111,232 @@ export const Atm = {
       ]
     },
     atmCassetesSettings: {
-      label: "atm.settings.atmCassetesSettings",
+      label: ["atm.settings.atmCassetesSettings", "atms.denomination", "atms.amount"],
       name: "atmCassetesSettings",
-      controls: []
+      controls: [
+        {
+          name: 'cassette1',
+          label: 'atm.cassette1',
+          type: 'inputGroup',
+          inputs: [
+            {
+              name: 'cassette1_currency',
+              type: 'select',
+              options: GeneralConstants.CurrencyCode
+            },
+            {
+              name: 'cassette1_denomination',
+              type: 'select',
+              options: GeneralConstants.Denomination
+            }
+          ]
+        },
+        {
+          name: 'cassette12',
+          label: 'atm.cassette2',
+          type: 'inputGroup',
+          inputs: [
+            {
+              name: 'cassette2_currency',
+              type: 'select',
+              options: GeneralConstants.CurrencyCode
+            },
+            {
+              name: 'cassette2_denomination',
+              type: 'select',
+              options: GeneralConstants.Denomination
+            }
+          ]
+        },
+        {
+          name: 'cassette3',
+          label: 'atm.cassette3',
+          type: 'inputGroup',
+          inputs: [
+            {
+              name: 'cassette3_currency',
+              type: 'select',
+              options: GeneralConstants.CurrencyCode
+            },
+            {
+              name: 'cassette3_denomination',
+              type: 'select',
+              options: GeneralConstants.Denomination
+            }
+          ]
+        },
+        {
+          name: 'cassette4',
+          label: 'atm.cassette4',
+          type: 'inputGroup',
+          inputs: [
+            {
+              name: 'cassette4_currency',
+              type: 'select',
+              options: GeneralConstants.CurrencyCode
+            },
+            {
+              name: 'cassette4_denomination',
+              type: 'select',
+              options: GeneralConstants.Denomination
+            }
+          ]
+        },
+      ]
     },
     disableSettings: {
-      label: "atm.settings.disableSettings",
+      label: ["atm.settings.disableSettings"],
       name: "disableSettings",
-      controls: []
+      controls: [
+        {
+          name: 'disabledATM',
+          label: 'atm.disabledATM',
+          type: 'checkbox'
+        },
+        {
+          name: 'disableCheckDeposit',
+          label: 'atm.disableCheckDeposit',
+          type: 'checkbox'
+        },
+        {
+          name: 'disableReceipt',
+          label: 'atm.disableReceipt',
+          type: 'checkbox'
+        }
+      ]
     },
-    emvSettings: {
-      label: "atm.settings.emvSettings",
-      name: "emvSettings",
-      controls: []
+    terminalNearestSettings: {
+      label: ["atm.settings.terminalNearestSettings"],
+      name: "terminalNearestSettings",
+      controls: [
+        {
+          name: 'nearestSettings1',
+          type: 'inputGroup',
+          inputs: [
+            {
+              name: 'nearestSettings1_bankNo',
+              type: 'select',
+              options: GeneralConstants.CurrencyCode
+            },
+            {
+              name: 'nearestSettings1_branch',
+              type: 'text',
+              placeholder: 'atms.branch'
+            },
+            {
+              name: 'nearestSettings1_address',
+              type: 'text',
+              placeholder: 'atms.address'
+            }
+          ]
+        },
+        {
+          name: 'nearestSettings2',
+          type: 'inputGroup',
+          inputs: [
+            {
+              name: 'nearestSettings2_bankNo',
+              type: 'select',
+              options: GeneralConstants.CurrencyCode
+            },
+            {
+              name: 'nearestSettings2_branch',
+              type: 'text',
+              placeholder: 'atms.branch'
+            },
+            {
+              name: 'nearestSettings2_',
+              type: 'text',
+              placeholder: 'atms.address'
+            }
+          ]
+        },
+        {
+          name: 'nearestSettings3',
+          type: 'inputGroup',
+          inputs: [
+            {
+              name: 'nearestSettings3_bankNo',
+              type: 'select',
+              options: GeneralConstants.CurrencyCode
+            },
+            {
+              name: 'nearestSettings3_branch',
+              type: 'text',
+              placeholder: 'atms.branch'
+            },
+            {
+              name: 'nearestSettings3_address',
+              type: 'text',
+              placeholder: 'atms.address'
+            }
+          ]
+        },
+        {
+          name: 'nearestSettings4',
+          type: 'inputGroup',
+          inputs: [
+            {
+              name: 'nearestSettings4_bankNo',
+              type: 'select',
+              options: GeneralConstants.CurrencyCode
+            },
+            {
+              name: 'nearestSettings4_branch',
+              type: 'text',
+              placeholder: 'atms.branch'
+            },
+            {
+              name: 'nearestSettings4_address',
+              type: 'text',
+              placeholder: 'atms.address'
+            }
+          ]
+        }
+      ]
     },
-    feeSerttings: {
-      label: "atm.settings.feeSerttings",
-      name: "feeSerttings",
-      controls: []
+    treatmentDeviceSettings: {
+      label: ["atm.settings.treatmentDeviceSettings"],
+      name: "treatmentDeviceSettings",
+      controls: [
+        {
+          name: 'treatmentStartDate',
+          label: 'atm.treatmentStartDate',
+          type: 'labelDate'
+        },
+        {
+          name: 'responsibility',
+          label: 'atm.responsibility',
+          type: 'select',
+          options: GeneralConstants.Responsibility
+        },
+      ]
     },
     limitationAmountsSettings: {
-      label: "atm.settings.limitationAmountsSettings",
+      label: ["atm.settings.limitationAmountsSettings"],
       name: "limitationAmountsSettings",
-      controls: []
+      controls: [
+        {
+          name: 'notOursFee',
+          label: 'atm.fee',
+          type: 'text'
+        },
+        {
+          name: 'claimAmount',
+          label: 'atm.claimAmount',
+          type: 'text'
+        },
+        {
+          name: 'localCurrencyTrigger',
+          label: 'atm.localCurrencyTrigger',
+          type: 'text'
+        },
+        {
+          name: 'notOursFee',
+          label: 'atm.localCurrencyTrigger2',
+          type: 'text'
+        }
+      ]
     },
   },
   Accessories: {
@@ -224,11 +397,22 @@ export const Atm = {
   },
   notifications: {
     terminalId: {headerName: 'atms.terminalId', field: 'atmNo', width: 80, suppressSizeToFit: true},
-    severity: {headerName: 'atms.severity', field: 'eventSeverity', width: 200, cellRendererFramework: AgStatusComponent
+    severity: {
+      headerName: 'atms.severity', field: 'eventSeverity', width: 200, cellRendererFramework: AgStatusComponent
     },
-    date: {headerName: 'atms.date', field: 'date', width: 120, suppressSizeToFit: true, cellRendererFramework: AgDateShortComponent
+    date: {
+      headerName: 'atms.date',
+      field: 'date',
+      width: 120,
+      suppressSizeToFit: true,
+      cellRendererFramework: AgDateShortComponent
     },
-    time: {headerName: 'atms.time', field: 'time', width: 120, suppressSizeToFit: true, cellRendererFramework: AgTimeComponent
+    time: {
+      headerName: 'atms.time',
+      field: 'time',
+      width: 120,
+      suppressSizeToFit: true,
+      cellRendererFramework: AgTimeComponent
     },
     code: {headerName: 'atms.code', field: 'eventCode', width: 100, suppressSizeToFit: true},
     spec: {headerName: 'atms.spec', field: 'eventTextEn', width: 200},
@@ -237,26 +421,66 @@ export const Atm = {
     device: {headerName: 'atms.device', field: 'device', width: 200}
   },
   events: {
-    date: {headerName: 'atms.date', field: 'date', width: 120, suppressSizeToFit: true, cellRendererFramework: AgDateShortComponent
+    date: {
+      headerName: 'atms.date',
+      field: 'date',
+      width: 120,
+      suppressSizeToFit: true,
+      cellRendererFramework: AgDateShortComponent
     },
-    time: {headerName: 'atms.time', field: 'time', width: 120, suppressSizeToFit: true, cellRendererFramework: AgTimeComponent
+    time: {
+      headerName: 'atms.time',
+      field: 'time',
+      width: 120,
+      suppressSizeToFit: true,
+      cellRendererFramework: AgTimeComponent
     },
     code: {headerName: 'atms.code', field: 'eventCode', width: 100, suppressSizeToFit: true},
     spec: {headerName: 'atms.spec', field: 'eventTextEn', width: 200},
     fullSpec: {headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 200},
   },
   transactions: {
-    date: {headerName: 'atms.date', field: 'date', width: 220, suppressSizeToFit: true, cellRendererFramework: AgDateShortComponent},
-    time: {headerName: 'atms.time', field: 'time', width: 220, suppressSizeToFit: true, cellRendererFramework: AgTimeComponent},
+    date: {
+      headerName: 'atms.date',
+      field: 'date',
+      width: 220,
+      suppressSizeToFit: true,
+      cellRendererFramework: AgDateShortComponent
+    },
+    time: {
+      headerName: 'atms.time',
+      field: 'time',
+      width: 220,
+      suppressSizeToFit: true,
+      cellRendererFramework: AgTimeComponent
+    },
     code: {headerName: 'atms.code', field: 'eventCode', width: 200, suppressSizeToFit: true},
     spec: {headerName: 'atms.spec', field: 'eventTextEn', width: 300},
     fullSpec: {headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 300},
   },
   RetainedCards: {
     cardNumber: {headerName: "atm.cardNumber", field: "cardNumber", width: 120, suppressSizeToFit: true},
-    terminalDate: {headerName: "general.date", field: "terminalDate", width: 200, cellRendererFramework: AgDateShortComponent, suppressSizeToFit: true},
-    terminalTime: {headerName: "general.time", field: "terminalTime", width: 200, cellRendererFramework: AgTimeComponent, suppressSizeToFit: true},
-    retainReason: {headerName: "atm.reason", field: "retainReason", width: 200, suppressSizeToFit: true,cellRendererFramework: AgTranslateMapComponent},
+    terminalDate: {
+      headerName: "general.date",
+      field: "terminalDate",
+      width: 200,
+      cellRendererFramework: AgDateShortComponent,
+      suppressSizeToFit: true
+    },
+    terminalTime: {
+      headerName: "general.time",
+      field: "terminalTime",
+      width: 200,
+      cellRendererFramework: AgTimeComponent,
+      suppressSizeToFit: true
+    },
+    retainReason: {
+      headerName: "atm.reason",
+      field: "retainReason",
+      width: 200,
+      suppressSizeToFit: true,
+      cellRendererFramework: AgTranslateMapComponent
+    },
     comments: {headerName: "atm.comments", field: "comments"},
 
   }

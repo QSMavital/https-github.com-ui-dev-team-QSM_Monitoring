@@ -2,6 +2,9 @@
   <ui-tabs [menu]="tabs"></ui-tabs>
 
   <div fxFlex class="wrapper space-right ui-space-medium">
-    <router-outlet></router-outlet>
+    <ui-portlet>
+      <router-outlet></router-outlet>
+
+    </ui-portlet>
   </div>
 </div>

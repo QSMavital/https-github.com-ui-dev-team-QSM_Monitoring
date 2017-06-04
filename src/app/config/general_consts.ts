@@ -46,5 +46,13 @@ export const GeneralConstants = {
     50: {value: "50", label: "50"},
     100: {value: "100", label: "100"},
     200: {value: "200", label: "200"},
+  },
+  Supply:{
+    "NO_INFO":"100",
+    "GOOD":"25",
+    "LOW":"25",
+    "OUT":"50",
+    "OVERFILL":"75",
+    "NEARLY_FULL":"50"
   }
 };

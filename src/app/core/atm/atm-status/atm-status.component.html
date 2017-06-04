@@ -1,25 +1,26 @@
-<pre>
+<!--<pre>
   {{statusData | json}}
-</pre>
+</pre>-->
 
   <div fxLayout="column" class="ui-space-small stretch-height">
 
-    <div fxLayout fxFlex="65%">
+    <div fxLayout fxFlex>
       <div fxFlex class="ui-space-regular">
-        <ui-atm-status-general fxLayout="column" class="stretch-height"></ui-atm-status-general>
+        <ui-atm-status-general [general_data]="statusData.atmStatusGeneral" fxLayout="column"              class="stretch-height"></ui-atm-status-general>
+
       </div>
       <div fxFlex class="ui-space-regular">
-        <ui-atm-status-summary fxLayout="column" class="stretch-height"></ui-atm-status-summary>
+        <ui-atm-status-summary [summary_data]="statusData?.atmSummaryStatus" fxLayout="column" class="stretch-height"></ui-atm-status-summary>
       </div>
     </div>
 
-    <div fxLayout fxFlex="35%">
-      <div fxFlex class="ui-space-regular">
-        <ui-atm-status-revent-action fxLayout="column" class="stretch-height"></ui-atm-status-revent-action>
+    <div fxLayout fxFlex>
+      <div fxFlex="50%" class="ui-space-regular">
+        <ui-atm-status-revent-action [action_data]="statusData?.atmStatusLastAction" fxLayout="column" class="stretch-height"></ui-atm-status-revent-action>
       </div>
 
-      <div fxFlex class="ui-space-regular">
-        <ui-atm-status-keys fxLayout="column" class="stretch-height"></ui-atm-status-keys>
+      <div fxFlex="50%" class="ui-space-regular">
+        <ui-atm-status-keys [keys_data]="statusData?.atmKeys" fxLayout="column" class="stretch-height"></ui-atm-status-keys>
       </div>
     </div>
   </div>

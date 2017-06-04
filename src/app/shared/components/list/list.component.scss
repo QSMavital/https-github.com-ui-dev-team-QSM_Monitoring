@@ -1,9 +1,10 @@
 :host{
   display: block;
+  width: 100%;
   ul {
-    display: block!important;
+    //display: block!important;
     &>li{
-      display: block;
+      //display: block;
     }
   }
 }

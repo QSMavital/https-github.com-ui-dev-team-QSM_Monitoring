@@ -16,7 +16,7 @@ export class AtmStatusComponent implements OnInit, OnDestroy {
   @select(['atm', 'status']) $atm_status: Observable<any>;
   private $atm_status_ref;
   private atmId;
-  public statusData;
+  public statusData = {};
 
   constructor(private ngRedux: NgRedux<IStore>,private route: ActivatedRoute) {
     this.atmId = this.route.parent.params['value']['id'];
@@ -30,7 +30,6 @@ export class AtmStatusComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
   }
 
   ngOnDestroy() {

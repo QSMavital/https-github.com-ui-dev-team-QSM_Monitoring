@@ -41,5 +41,6 @@ export const Api = {
   getAtmRetainedCards: {url:`${apiEntryPoint}/atm/retainedCards/get`,payload:{atmNo: null,fromSettelments: "AT_ATM"}},
   getAtmSettings: {url:`${apiEntryPoint}/atm/settings/get`,payload:{atmNo: null}},
   saveAtmSettings: {url:`${apiEntryPoint}/atm/settings/patch`},
-  createAtmSettings: {url:`${apiEntryPoint}/atm/settings/post`}
+  createAtmSettings: {url:`${apiEntryPoint}/atm/settings/post`},
+  getTransaction: {url:`${apiEntryPoint}/atm/transactions/transaction/get`,payload:{transactionId: null}},
 }

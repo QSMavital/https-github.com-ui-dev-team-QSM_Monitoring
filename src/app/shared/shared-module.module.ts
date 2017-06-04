@@ -30,19 +30,20 @@ import {ControlsGroupComponent} from './components/form-components/controls-grou
 import {AccesoriesCardComponent} from './components/accesories-card/accesories-card.component';
 import {SmallProgressComponent} from './components/small-progress/small-progress.component';
 import { AgProgressComponent } from './components/ag-progress/ag-progress.component';
-import {FormBuilderService} from "./services/form-builder.service";
+import { FormBuilderService} from "./services/form-builder.service";
 import { AgDateShortComponent } from './components/ag-date-short/ag-date-short.component';
 import { AgTimeComponent } from './components/ag-time/ag-time.component';
-import {GridDefsService} from "./services/grid-defs.service";
 import { MasonryModule } from 'angular2-masonry';
 import { AddNewComponent } from './components/add-new/add-new.component';
-import {DialogModule} from "primeng/components/dialog/dialog";
+import { DialogModule} from "primeng/components/dialog/dialog";
 import { ListComponent } from './components/list/list.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
-import {KeysPipe} from './pipes/keys.pipe';
+import { KeysPipe} from './pipes/keys.pipe';
 import { KeyLabelComponent } from './components/key-label/key-label.component';
 import { AgTranslateMapComponent } from './components/ag-translate-map/ag-translate-map.component';
 import { TransactionComponent } from './components/transaction/transaction.component'
+import {ApiService} from "./services/api-services.service";
+import {GridDefsService} from "./services/grid-defs.service";
 
 @NgModule({
   imports: [
@@ -122,7 +123,7 @@ import { TransactionComponent } from './components/transaction/transaction.compo
     KeyLabelComponent,
     TransactionComponent
   ],
-  providers: [CanActivateRoute, AppActivator,FormBuilderService,GridDefsService]
+  providers: [CanActivateRoute, AppActivator,FormBuilderService,ApiService,GridDefsService]
 })
 
 export class SharedModule {

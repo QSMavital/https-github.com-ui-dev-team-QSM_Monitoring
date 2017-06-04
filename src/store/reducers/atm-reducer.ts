@@ -27,3 +27,11 @@ export function AtmRetainedCardsReducer(state: any = INITIAL_STATE_RETAINED_CARD
       return state;
   }
 }
+export function AtmSettingsReducer(state: any = INITIAL_STATE_RETAINED_CARDS, action:any) {
+  switch (action.type) {
+    case AtmActions.ATM_SET_SETTINGS:
+      return Object.assign({},action.payload);
+    default:
+      return state;
+  }
+}

@@ -2,9 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {FormGroup} from "@angular/forms";
 import {CustomControlGroup} from "../../../config/interfaces/form.interface";
 import {FormBuilderService} from "../../../shared/services/form-builder.service";
-import {NgRedux} from "@angular-redux/store";
+import {NgRedux, select} from "@angular-redux/store";
 import {IStore} from "../../../../store/index";
 import {Atm} from "../../../config/atm";
+import {ActivatedRoute} from "@angular/router";
+import {AtmActions} from "../../../../store/actions/atm-actions";
+import {Observable} from "rxjs";
+import {isNullOrUndefined} from "util";
 
 @Component({
   selector: 'ui-atm-settings',
@@ -16,595 +20,78 @@ export class AtmSettingsComponent implements OnInit {
   public form: FormGroup = new FormGroup({});
   public controlGroups: CustomControlGroup[] = [];
   private atmSettings;
+  private latestState;
+  private $atm_settings_ref;
+  @select(['atm', 'settings']) $atm_settings: Observable<any>;
 
-  private old = [
-    {
-      title: 'settings',
-      name: 'settings',
-      controls: [
-        {
-          name: 'c1',
-          label: 'ATM Number',
-          type: 'text'
-        },
-        {
-          name: 'c2',
-          label: 'ATM Number',
-          type: 'text'
-        },
-        {
-          name: 'c3',
-          label: 'ATM Number',
-          type: 'text'
-        },
-        {
-          name: 'c4',
-          type: 'select',
-          label: 'ATM Number',
-          value: 4,
-          options: [
-            {label: 'opt1', value: 1},
-            {label: 'opt2', value: 2},
-            {label: 'NCR', value: 4}
-          ]
-        },
-        {
-          name: 'c5',
-          label: 'ATM Number',
-          type: 'text'
-        },
-        {
-          name: 'c6',
-          label: 'ATM Number',
-          type: 'text'
-        },
-        {
-          name: 'c7',
-          label: 'ATM Number',
-          type: 'text'
-        },
-        {
-          name: 'c8',
-          type: 'select',
-          label: 'ATM Number',
-          value: 4,
-          options: [
-            {label: 'opt1', value: 1},
-            {label: 'opt2', value: 2},
-            {label: 'NCR', value: 4}
-          ]
-        },
-        {
-          name: 'c9',
-          type: 'select',
-          label: 'ATM Number',
-          value: 4,
-          options: [
-            {label: 'opt1', value: 1},
-            {label: 'opt2', value: 2},
-            {label: 'NCR', value: 4}
-          ]
-        },
-        {
-          name: 'c10',
-          label: 'ATM Number',
-          type: 'text'
-        },
-        {
-          name: 'c11',
-          type: 'select',
-          label: 'ATM Number',
-          value: 4,
-          options: [
-            {label: 'opt1', value: 1},
-            {label: 'opt2', value: 2},
-            {label: 'NCR', value: 4}
-          ]
-        },
-        {
-          name: 'c12',
-          type: 'select',
-          label: 'ATM Number',
-          value: 4,
-          options: [
-            {label: 'opt1', value: 1},
-            {label: 'opt2', value: 2},
-            {label: 'NCR', value: 4}
-          ]
-        },
-        {
-          name: 'c13', type: 'select',
-          label: 'ATM Number',
-          value: 4,
-          options: [
-            {label: 'opt1', value: 1},
-            {label: 'opt2', value: 2},
-            {label: 'NCR', value: 4}
-          ]
-        },
-        {
-          name: 'c14',
-          type: 'select',
-          label: 'ATM Number',
-          value: 4,
-          options: [
-            {label: 'opt1', value: 1},
-            {label: 'opt2', value: 2},
-            {label: 'NCR', value: 4}
-          ]
-        },
-        {
-          name: 'c15',
-          label: 'ATM Number',
-          type: 'text'
-        },
-        {
-          name: 'c16',
-          label: 'ATM Number',
-          type: 'text'
-        }
-      ]
-    },
-    {
-      title: 'settings',
-      name: 'settings2',
-      controls: [
-        {
-          name: 'c201',
-          label: 'ATM Number',
-          type: 'inputGroup',
-          inputs: [
-            {
-              name: 'c2011',
-              type: 'select',
-              value: 4,
-              options: [
-                {label: 'opt1', value: 1},
-                {label: 'opt2', value: 2},
-                {label: '', value: 4}
-                ]
-            }, {
-            name: 'c2012',
-            type: 'select',
-            value: 4,
-            options: [
-              {label: 'opt1', value: 1},
-              {label: 'opt2', value: 2},
-              {label: '', value: 4}
-              ]
-          }
-            ]
-        },
-        {
-          name: 'c202',
-          label: 'ATM Number',
-          type: 'inputGroup',
-          inputs: [
-            {
-              name: 'c2021',
-              type: 'select',
-              value: 4,
-              options: [
-                {label: 'opt1', value: 1},
-                {label: 'opt2', value: 2},
-                {label: '', value: 4}
-                ]
-            },
-            {
-              name: 'c2022',
-              type: 'select',
-              value: 4,
-              options: [
-                {label: 'opt1', value: 1},
-                {label: 'opt2', value: 2},
-                {label: '', value: 4}
-                ]
-            }
-            ]
-        },
-        {
-          name: 'c203',
-          label: 'ATM Number',
-          type: 'inputGroup',
-          inputs: [
-            {
-              name: 'c2031',
-              type: 'select',
-              value: 4,
-              options: [
-                {label: 'opt1', value: 1},
-                {label: 'opt2', value: 2},
-                {label: '', value: 4}
-                ]
-            }, {
-            name: 'c2032',
-            type: 'select',
-            value: 4,
-            options: [
-              {label: 'opt1', value: 1},
-              {label: 'opt2', value: 2},
-              {label: '', value: 4}
-              ]
-          }
-            ]
-        },
-        {
-          name: 'c204',
-          label: 'ATM Number',
-          type: 'inputGroup',
-          inputs: [
-            {
-              name: 'c2041',
-              type: 'select',
-              value: 4,
-              options: [
-                {label: 'opt1', value: 1},
-                {label: 'opt2', value: 2},
-                {label: '', value: 4}
-                ]
-            }, {
-            name: 'c2042',
-            type: 'select',
-            value: 4,
-            options: [
-              {label: 'opt1', value: 1},
-              {label: 'opt2', value: 2},
-              {label: '', value: 4}
-              ]
-          }
-            ]
-        }
-        ]
-    },
-    {
-      title: 'settings',
-        name: 'settings3',
-      controls: [
-      {
-        name: 'c301',
-        type: 'inputGroup',
-        inputs: [
-          {
-            name: 'c3011',
-            type: 'select',
-            value: 4,
-            options: [
-              {label: 'opt1', value: 1},
-              {label: 'opt2', value: 2},
-              {label: '', value: 4}
-            ]
-          }, {
-            name: 'c3012-Branch',
-            type: 'text',
-            placeholder: 'Branch'
-          },
-          {
-            name: 'c3013-Address',
-            type: 'text',
-            placeholder: 'Address'
-          }
-        ]
-      },
-      {
-        name: 'c302',
-        type: 'inputGroup',
-        inputs: [
-          {
-            name: 'c3021',
-            type: 'select',
-            value: 4,
-            options: [
-              {label: 'opt1', value: 1},
-              {label: 'opt2', value: 2},
-              {label: '', value: 4}
-            ]
-          }, {
-            name: 'c3022-Branch',
-            type: 'text',
-            placeholder: 'Branch'
-          },
-          {
-            name: 'c3023-Address',
-            type: 'text',
-            placeholder: 'Address'
-          }
-        ]
-      },
-      {
-        name: 'c303',
-        type: 'inputGroup',
-        inputs: [
-          {
-            name: 'c3031',
-            type: 'select',
-            value: 4,
-            options: [
-              {label: 'opt1', value: 1},
-              {label: 'opt2', value: 2},
-              {label: '', value: 4}
-            ]
-          }, {
-            name: 'c3032-Branch',
-            type: 'text',
-            placeholder: 'Branch'
-          },
-          {
-            name: 'c3033-Address',
-            type: 'text',
-            placeholder: 'Address'
-          }
-        ]
-      }
-    ]
-    },
-    {
-      title: 'settings',
-        name: 'settings4',
-      controls: [
-      {
-        name: 'c401',
-        label: 'ATM Number',
-        type: 'text'
-      },
-      {
-        name: 'c402',
-        label: 'ATM Number',
-        type: 'text'
-      },
-      {
-        name: 'c403',
-        label: 'ATM Number',
-        type: 'text'
-      },
-      {
-        name: 'c404',
-        label: 'ATM Number',
-        type: 'text'
-      }
-    ]
-    },
-    {
-      title: 'settings',
-        name: 'settings5',
-      controls: [
-      {
-        name: 'c501',
-        label: 'ATM Number',
-        type: 'checkbox',
-        value: true
-      },
-      {
-        name: 'c502',
-        label: 'ATM Number',
-        type: 'checkbox',
-        value: true
-      },
-      {
-        name: 'c503',
-        label: 'ATM Number',
-        type: 'checkbox',
-        value: false
-      },
-    ]
-    },
-    {
-      title: 'settings',
-        name: 'settings5',
-      controls: [
-      {
-        name: 'c501',
-        label: 'ATM Number',
-        type: 'checkbox',
-        value: true
-      },
-      {
-        name: 'c502',
-        label: 'ATM Number',
-        type: 'checkbox',
-        value: true
-      },
-      {
-        name: 'c503',
-        label: 'ATM Number',
-        type: 'checkbox',
-        value: false
-      },
-    ]
-    },
-    {
-      title: 'settings',
-        name: 'settings5',
-      controls: [
-      {
-        name: 'c501',
-        label: 'ATM Number',
-        type: 'checkbox',
-        value: true
-      },
-      {
-        name: 'c502',
-        label: 'ATM Number',
-        type: 'checkbox',
-        value: true
-      },
-      {
-        name: 'c503',
-        label: 'ATM Number',
-        type: 'checkbox',
-        value: false
-      },
-    ]
-    },
-    {
-      title: 'settings',
-        name: 'settings5',
-      controls: [
-      {
-        name: 'c501',
-        label: 'ATM Number',
-        type: 'checkbox',
-        value: true
-      },
-      {
-        name: 'c502',
-        label: 'ATM Number',
-        type: 'checkbox',
-        value: true
-      },
-      {
-        name: 'c503',
-        label: 'ATM Number',
-        type: 'checkbox',
-        value: false
-      },
-    ]
-    },
-    {
-      title: 'settings',
-        name: 'settings',
-      controls: [
-      {
-        name: 'c1',
-        label: 'ATM Number',
-        type: 'text'
-      },
-      {
-        name: 'c2',
-        label: 'ATM Number',
-        type: 'text'
-      },
-      {
-        name: 'c3',
-        label: 'ATM Number',
-        type: 'text'
-      },
-      {
-        name: 'c4',
-        type: 'select',
-        label: 'ATM Number',
-        value: 4,
-        options: [
-          {label: 'opt1', value: 1},
-          {label: 'opt2', value: 2},
-          {label: 'NCR', value: 4}
-        ]
-      },
-      {
-        name: 'c5',
-        label: 'ATM Number',
-        type: 'text'
-      },
-      {
-        name: 'c6',
-        label: 'ATM Number',
-        type: 'text'
-      },
-      {
-        name: 'c7',
-        label: 'ATM Number',
-        type: 'text'
-      },
-      {
-        name: 'c8',
-        type: 'select',
-        label: 'ATM Number',
-        value: 4,
-        options: [
-          {label: 'opt1', value: 1},
-          {label: 'opt2', value: 2},
-          {label: 'NCR', value: 4}
-        ]
-      },
-      {
-        name: 'c9',
-        type: 'select',
-        label: 'ATM Number',
-        value: 4,
-        options: [
-          {label: 'opt1', value: 1},
-          {label: 'opt2', value: 2},
-          {label: 'NCR', value: 4}
-        ]
-      },
-      {
-        name: 'c10',
-        label: 'ATM Number',
-        type: 'text'
-      },
-      {
-        name: 'c11',
-        type: 'select',
-        label: 'ATM Number',
-        value: 4,
-        options: [
-          {label: 'opt1', value: 1},
-          {label: 'opt2', value: 2},
-          {label: 'NCR', value: 4}
-        ]
-      },
-      {
-        name: 'c12',
-        type: 'select',
-        label: 'ATM Number',
-        value: 4,
-        options: [
-          {label: 'opt1', value: 1},
-          {label: 'opt2', value: 2},
-          {label: 'NCR', value: 4}
-        ]
-      },
-      {
-        name: 'c13', type: 'select',
-        label: 'ATM Number',
-        value: 4,
-        options: [
-          {label: 'opt1', value: 1},
-          {label: 'opt2', value: 2},
-          {label: 'NCR', value: 4}
-        ]
-      },
-      {
-        name: 'c14',
-        type: 'select',
-        label: 'ATM Number',
-        value: 4,
-        options: [
-          {label: 'opt1', value: 1},
-          {label: 'opt2', value: 2},
-          {label: 'NCR', value: 4}
-        ]
-      },
-      {
-        name: 'c15',
-        label: 'ATM Number',
-        type: 'text'
-      },
-      {
-        name: 'c16',
-        label: 'ATM Number',
-        type: 'text'
-      }
-    ]
-    }
-];
-  constructor(private frmBuilderSrv: FormBuilderService,private ngRedux: NgRedux<IStore>) {
 
+  constructor(private frmBuilderSrv: FormBuilderService,
+              private ngRedux: NgRedux<IStore>,
+              private route: ActivatedRoute) {
     this.atmSettings = this.ngRedux.getState().userSettings.atmCustomization['atmSettings'];
-
+    this.ngRedux.dispatch({
+      type: AtmActions.ATM_GET_SETTINGS,
+      payload: {atmNo: this.route.parent.params['value']['id']}
+    });
   }
 
+
   ngOnInit() {
-    this.atmSettings.forEach((config)=>{
-      if(config.visible){
+    this.createForm();
+    this.$atm_settings_ref = this.$atm_settings.subscribe((state) => {
+      if (!isNullOrUndefined(state)) {
+        this.latestState=state;
+        this.setDataToForm(state);
+      }
+    })
+  }
+
+  createForm() {
+    this.atmSettings.forEach((config) => {
+      if (config.visible) {
         this.controlGroups.push(Atm.Settings[config.field]);
       }
     });
     this.form = this.frmBuilderSrv.createForm(this.controlGroups);
   }
 
-  save(){
-    console.log('form data:', this.form.getRawValue());
+  cancel(){
     this.form.markAsPristine();
+    this.setDataToForm(this.latestState);
   }
+
+  setDataToForm(state){
+    for (var prop in state.generalSettings) {
+      this.form.controls['generalSettings']['controls'][prop].setValue(state.generalSettings[prop]);
+    }
+    for (var prop in state.disableSettings) {
+      this.form.controls['disableSettings']['controls'][prop].setValue(state.disableSettings[prop]);
+    }
+    for (var prop in state.limitationAmountsSettings) {
+      this.form.controls['limitationAmountsSettings']['controls'][prop].setValue(state.limitationAmountsSettings[prop]);
+    }
+    for (var prop in state.treatmentDeviceSettings) {
+      this.form.controls['treatmentDeviceSettings']['controls'][prop].setValue(state.treatmentDeviceSettings[prop]);
+    }
+
+    state.cassettesSettings.forEach((item,index) => {
+      this.form.controls['cassettesSettings']['controls'][`cassette${index+1}`].controls['currency'].setValue(item['currencyCode']);
+      this.form.controls['cassettesSettings']['controls'][`cassette${index+1}`].controls['denomination'].setValue(item['denomination']);
+    });
+
+    state.terminalNearestSettings.forEach((item,index) => {
+      this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index+1}`].controls['bankNo'].setValue(item['bankNo']);
+      this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index+1}`].controls['branch'].setValue(item['branch']);
+      this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index+1}`].controls['address'].setValue(item['address']);
+    })
+  }
+  save() {
+    this.form.markAsPristine();
+    this.ngRedux.dispatch({
+      type: AtmActions.ATM_UPDATE_SETTINGS,
+      payload: this.frmBuilderSrv.atmFormToPayload(this.form.getRawValue())
+    });
+  }
+
 
 }

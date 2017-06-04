@@ -1,20 +1,23 @@
-<div  [formGroup]="group" [ngSwitch]="type">
-  <div *ngSwitchCase="'text'">
+<div class="stretch-width" [formGroup]="group" [ngSwitch]="type">
+  <div class="stretch-width" *ngSwitchCase="'text'">
     <input type="text"
            [formControlName]="controlName"
            style="width:100%"
-           [placeholder]="placeholder | translate" (keyup)="onValueChange($event.target.value)">
+           [placeholder]="(placeholder | translate)+'...'" (keyup)="onValueChange($event.target.value)">
   </div>
-  <div *ngSwitchCase="'select'">
+  <div class="stretch-width" *ngSwitchCase="'select'">
     <p-dropdown [placeholder]="'app.select'|translate"
-                 [options]="localOptions"
-                [style]="{'width':'100%'}"
+                [options]="localOptions"
+                [autoWidth]="false"
+                [style]="{'width':'100%','max-width':'100%','display':'block'}"
                 [formControlName]="controlName"></p-dropdown>
   </div>
-  <div *ngSwitchCase="'checkbox'">
+  <div class="stretch-width" *ngSwitchCase="'checkbox'">
     <p-checkbox [formControlName]="controlName" binary="true"></p-checkbox>
   </div>
-  <div *ngSwitchCase="'labelDate'">
-    <span *ngIf="inputValue">{{inputValue | date}}</span>
+  <div class="stretch-width" *ngSwitchCase="'labelDate'">
+    <span>{{group.controls[controlName].value | date:"short"}}</span>
+    <input type="text" style="display: none" [formControlName]="controlName">
   </div>
 </div>
+

@@ -15,6 +15,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class AtmsTransactionsComponent implements OnInit, OnDestroy {
   public transaction= false;
+  public transactionId;
   public gridOptions: any = {};
   public filtersLastState: any = {};
   private $atms_transactions_ref;
@@ -70,8 +71,9 @@ export class AtmsTransactionsComponent implements OnInit, OnDestroy {
     this.$atms_transactions_ref.unsubscribe();
   }
 
-  showTransaction(){
+  showTransaction(e){
     this.transaction=true;
+    this.transactionId=e.data.transactionId;
   }
 
   filter(event) {

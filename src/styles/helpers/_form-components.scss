@@ -30,10 +30,14 @@ input[type=text] {
   border: 1px solid $botti;
   height: 23px;
   line-height: 23px;
-  font-size: $fs13 !important;
+  font-size: $fs13;
+  color: $shuttle !important;
+  font-weight: 100;
+  font-family: 'opensans-regular', sans-serif;
+
   .placeholder-settings {
     font-size: $fs13 !important;
-    color: $botti;
+    color: #ccc;
   }
   &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     @extend .placeholder-settings;

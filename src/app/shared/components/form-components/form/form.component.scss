@@ -17,7 +17,8 @@
       .group-container {
         .input-group-wrapper {
           padding-right:5px;
-          width:123px;
+          width: 123px;
+          max-width: 123px;
           &:last-child {
             padding-right:0 !important;
           }

@@ -81,7 +81,7 @@ import {AccessoriesChecksComponent} from './core/atm/accessories-status/componen
 import {AccessoriesOtherComponent} from './core/atm/accessories-status/components/accessories-other/accessories-other.component';
 import {AccessoriesPrintersComponent} from "./core/atm/accessories-status/components/accessories-printers/accessories-printers.component";
 import {AgTranslateMapComponent} from "./shared/components/ag-translate-map/ag-translate-map.component";
-
+import {GrowlModule} from 'primeng/primeng';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -145,6 +145,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     AccessoriesOtherComponent
   ],
   imports: [
+    GrowlModule,
     MasonryModule,
     DataTableModule,
     BrowserModule,

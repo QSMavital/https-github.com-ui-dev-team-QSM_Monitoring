@@ -17,7 +17,7 @@
           ></ui-input>
           <div class="group-container" *ngIf="i.type === 'inputGroup'" [formGroupName]="i.name" fxLayout
                [fxFlex]="(100/3)*i.inputs.length">
-          <span class="input-group-wrapper" *ngFor="let input of i.inputs">
+          <div class="input-group-wrapper" *ngFor="let input of i.inputs">
             <ui-input
               [group]="form.controls[group.name].controls[i.name]"
               [controlName]="input.name"
@@ -26,7 +26,7 @@
               [options]="input.options"
               *ngIf="input"
             ></ui-input>
-          </span>
+          </div>
           </div>
         </div>
 

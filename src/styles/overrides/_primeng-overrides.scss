@@ -74,6 +74,9 @@
     padding-left: 10px;
     font-size: $fs13;
     color: $shuttle !important;
+    font-weight: 100;
+    font-family: 'opensans-regular', sans-serif;
+
   }
   .ui-dropdown-item {
     text-align: left !important;
@@ -110,4 +113,16 @@
     color: $casper;
     border-color: $botti;
   }
+}
+input.ng-invalid.ng-touched{
+  border:1px solid $coral-red!important;
+}
+.ui-growl {
+  bottom: 20px!important;
+  top: auto!important;
+}
+.ui-tooltip{
+  z-index: 3000!important;
+  padding: 2px 5px;
+
 }

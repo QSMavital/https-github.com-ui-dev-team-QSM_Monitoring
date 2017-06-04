@@ -37,6 +37,7 @@
     "reports": "reports"
   },
   "general": {
+    "createNewAtm":"Create New Atm",
     "date": "date",
     "time": "time",
     "close": "close",
@@ -139,6 +140,7 @@
     "cassette4": "Cassette Type 4",
 
     "item": "item",
+    "city": "city",
     "transaction": "transaction",
     "propriety": "propriety",
     "inventory": "inventory",
@@ -195,7 +197,7 @@
     },
     "settings": {
       "atmGeneralSettings": "Settings",
-      "atmCassetesSettings": "Cassetes",
+      "atmCassettesSettings": "Cassettes",
       "disableSettings": "Disable",
       "terminalNearestSettings": "Nearest terminal Settings",
       "treatmentDeviceSettings":"Device treatment",
@@ -347,7 +349,11 @@
     "ROUTINE":"Routine",
     "WARNING":"Warning",
     "SUSPEND":"Suspend",
-    "FATAL":"Fatal"
+    "FATAL":"Fatal",
+    "INCORRECT_CHECK_DIGIT":"Incorrect Check Digit",
+    "REMOTE":"Remote",
+    "YAHAV":"Yahav"
+
   },
   "transaction":{
 

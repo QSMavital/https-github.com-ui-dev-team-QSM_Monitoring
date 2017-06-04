@@ -11,7 +11,7 @@
     </ui-filters-bar>
 
     <ag-grid-angular
-      (click)="showTransaction()"
+      (rowDoubleClicked)="showTransaction($event)"
       fxFlex
       (gridReady)="fitCols()"
       class="ag-fresh"
@@ -20,5 +20,4 @@
 
   </div>
 
-
-<ui-transaction [(show)]="transaction"></ui-transaction>
+<ui-transaction [transactionId]="transactionId"  [(show)]="transaction"></ui-transaction>

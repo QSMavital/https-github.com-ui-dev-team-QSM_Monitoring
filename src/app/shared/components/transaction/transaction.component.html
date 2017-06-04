@@ -1,0 +1,25 @@
+<p-dialog [(visible)]="show" [modal]="true" class="dialog-no-padding add-atm-dialog">
+  <p-header translate="atm.transaction"></p-header>
+  <div class="scroll-y ui-space-tb-regular ui-space-l-regular" style="width: 1260px;height: 600px">
+    <div *ngIf="showValue">
+      <masonry [options]="masonryOptions" class="form-body stretch-width">
+        <masonry-brick *ngFor="let item of data" class="brick" style="width:400px">
+          <ui-controls-group [header]="item.title">
+            <ui-list>
+              <ui-list-item
+                *ngFor="let row of item.data"
+                [data]="[{value:row.key},{value:row.value}]"></ui-list-item>
+            </ui-list>
+          </ui-controls-group>
+        </masonry-brick>
+
+      </masonry>
+    </div>
+  </div>
+
+  <p-footer>
+    <span class="pull-right">
+      <button (click)="show=!show" class="btn blue-btn">{{'general.cancel' | translate}}</button>
+    </span>
+  </p-footer>
+</p-dialog>

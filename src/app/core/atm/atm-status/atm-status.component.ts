@@ -16,7 +16,12 @@ export class AtmStatusComponent implements OnDestroy {
   @select(['atm', 'status']) $atm_status: Observable<any>;
   private $atm_status_ref;
   private atmId;
-  public statusData = {};
+  public statusData = {
+    atmStatusGeneral:null,
+    atmSummaryStatus:null,
+    atmStatusLastAction:null,
+    atmKeys:null
+  };
 
   constructor(private ngRedux: NgRedux<IStore>,private route: ActivatedRoute) {
     this.atmId = this.route.parent.params['value']['id'];

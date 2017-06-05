@@ -9,7 +9,7 @@
     "mock1": "json-server -p 4001 --delay 1500 --watch mocks/mock.json --routes mocks/routes.json  --middlewares mocks/middleware.js",
     "mock2": "json-server -p 4001 --delay 1500 --watch mocks/mock.json  --middlewares mocks/middleware.js",
     "icons": "webpack -w",
-    "build": "webpack -p && ng build -prod",
+    "build": "webpack -p && ng build --prod --base-href /operator/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

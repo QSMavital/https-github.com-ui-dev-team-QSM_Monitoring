@@ -9,7 +9,7 @@ import {ApiService} from "../../services/api-services.service";
   styleUrls: ['./transaction.component.scss']
 })
 export class TransactionComponent implements OnChanges{
-  private showValue;
+  public showValue;
   @Input() transactionId;
   @Input() get show() {return this.showValue;}
   @Output() showChange = new EventEmitter();

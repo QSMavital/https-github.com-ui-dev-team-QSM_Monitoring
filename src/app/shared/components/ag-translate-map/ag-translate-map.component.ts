@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ag-translate-map.component.scss']
 })
 export class AgTranslateMapComponent{
-  private value;
-  private map = {
+  public value;
+  public map = {
     approver:"banks",
     default:"enums",
     rejectReason:"rejectReason",

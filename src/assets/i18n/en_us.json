@@ -51,6 +51,9 @@
     "fitness": "Fitness",
     "supply": "Supply",
     "counter": "Counter",
+    "count": "Count",
+    "sumMeteg":"Sum Meteg",
+    "sumAtm":"Sum on Atm",
     "reason": "reason",
     "transactionStatus": "Transaction Status",
     "approver": "approver",
@@ -68,7 +71,10 @@
     "submit": "submit",
     "cancel": "cancel",
     "save": "save",
-    "settlements": "Settlements"
+    "settlements": "Settlements",
+    "CurrencyCode":"Currency",
+    "keyType":"Key Type",
+    "kcv":"KCV"
   },
   "atms": {
     "tabs": {
@@ -87,7 +93,7 @@
       "toDate": "To Date:"
     },
     "terminalId": "ATM #",
-    "denomination": "denomination",
+    "denomination": "Denomination",
     "atmName": "ATM Name",
     "transactionType": "Transaction Type",
     "terminalShvaId": "Shva ID",
@@ -141,6 +147,8 @@
     "cassette2": "Cassette Type 2",
     "cassette3": "Cassette Type 3",
     "cassette4": "Cassette Type 4",
+    "lastSettleDispenseList": "last Settle Dispense List",
+    "accessoriesDispenserInfo":"Accessories Dispenser Info",
     "item": "item",
     "city": "city",
     "transaction": "transaction",
@@ -151,6 +159,7 @@
     "withdrawed": "withdrawed",
     "left": "left",
     "loaded": "loaded",
+    "dispensed":"Dispensed",
     "rejected": "rejected",
     "amount": "Amount",
     "difference": "difference",
@@ -184,6 +193,10 @@
     "disabledATM": "Disabled ATM",
     "disableCheckDeposit": "Check Deposit",
     "disableReceipt": "Receipt",
+    "device":"Device",
+    "remaining":"Remaining",
+    "checkInfo":"Check deposit",
+    "otherAccessoriesInfo":"Other Accessories Info",
     "tabs": {
       "status": "atm status",
       "accessories": "accessories status",
@@ -225,6 +238,11 @@
         "amount": "Amount",
         "billsInfo": "?????",
         "tranType": "Transaction type"
+      }
+    },
+    "accessories": {
+      "accessoriesDispenserInfo": {
+        "cassetteType":"Cassette Type"
       }
     }
   },
@@ -348,10 +366,19 @@
     "ROUTINE": "Routine",
     "WARNING": "Warning",
     "SUSPEND": "Suspend",
-    "FATAL": "Fatal",
     "REMOTE": "Remote",
     "YAHAV": "Yahav",
-    "lastWorkingKeyChange": "Last Working Key Change"
+    "lastWorkingKeyChange": "Last Working Key Change",
+    "sumDispensed":"Sum Dispensed",
+    "sumRemaing":"sum Remaing",
+    "lastGoodWithrawal":"last Good Withdrawal",
+    "localCurrencyTrigger":"local Currency Trigger",
+    "localCurrencyTrigger2":"local Currency Trigger 2",
+    "lastSettelement":"last Settlement",
+    "transactionId":"transaction Id",
+    "lastCheckDeposit":"last Check Deposit",
+    "lastSettelementCheckDeposit":"last Settlement Check Deposit",
+    "lastCardSettelement":"last Card Settlement"
   },
   "loadStage": {
     "NONE": "-",

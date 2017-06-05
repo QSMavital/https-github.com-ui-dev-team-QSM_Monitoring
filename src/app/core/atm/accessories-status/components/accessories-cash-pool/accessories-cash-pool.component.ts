@@ -19,10 +19,12 @@ export class AccessoriesCashPoolComponent implements OnChanges {
 
 
 
-constructor(private gridDefsSrv: GridDefsService) {
+constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService) {
   this.gridOptions = this.gridDefsSrv.initGridOptions();
-  for (var prop in Atm.Accessories.CashPool){
-    this.gridOptions.columnDefs.push(Atm.Accessories.CashPool[prop]);
+  for (let prop in Atm.Accessories.CashPool){
+    this.gridOptions.columnDefs.push(Object.assign({}, { suppressFilter: true }, Atm.Accessories.CashPool[prop], {
+      headerName: this.translateSrv.instant(Atm.Accessories.CashPool[prop].headerName)
+    }));
   }
 }
 

@@ -3,8 +3,7 @@ import {Atm} from "../../../../../config/atm";
 import {GridDefsService} from "../../../../../shared/services/grid-defs.service";
 import {GridOptions} from "ag-grid";
 import {isNullOrUndefined} from "util";
-
-
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'ui-accessories-balance-strokes',
@@ -16,10 +15,12 @@ export class AccessoriesBalanceStrokesComponent implements OnChanges {
   public infos: any[] = [];
   public gridOptions: GridOptions;
 
-  constructor(private gridDefsSrv: GridDefsService) {
+  constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService) {
     this.gridOptions = this.gridDefsSrv.initGridOptions();
-    for (var prop in Atm.Accessories.LastStrokes){
-      this.gridOptions.columnDefs.push(Atm.Accessories.LastStrokes[prop]);
+    for (let prop in Atm.Accessories.LastStrokes){
+      this.gridOptions.columnDefs.push(Object.assign({}, { suppressFilter: true }, Atm.Accessories.LastStrokes[prop], {
+        headerName: this.translateSrv.instant(Atm.Accessories.LastStrokes[prop].headerName)
+      }));
     }
   }
 

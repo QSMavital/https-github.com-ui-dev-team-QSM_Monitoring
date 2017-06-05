@@ -3,6 +3,7 @@ import {Atm} from "../../../../../config/atm";
 import {GridOptions} from "ag-grid";
 import {GridDefsService} from "../../../../../shared/services/grid-defs.service";
 import {isNullOrUndefined} from "util";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'ui-accessories-other',
@@ -14,10 +15,12 @@ export class AccessoriesOtherComponent implements OnChanges {
   public infos: any[] = [];
   public gridOptions: GridOptions;
 
-  constructor(private gridDefsSrv: GridDefsService) {
+  constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService) {
     this.gridOptions = this.gridDefsSrv.initGridOptions();
     for (let prop in Atm.Accessories.Other) {
-      this.gridOptions.columnDefs.push(Atm.Accessories.Other[prop]);
+      this.gridOptions.columnDefs.push(Object.assign({}, { suppressFilter: true }, Atm.Accessories.Other[prop], {
+        headerName: this.translateSrv.instant(Atm.Accessories.Other[prop].headerName)
+      }));
     }
   };
 

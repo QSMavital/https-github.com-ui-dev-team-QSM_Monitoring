@@ -510,38 +510,38 @@ export const Atm = {
   },
   Accessories: {
     CashPool: {
-      cassetteType: {headerName: "atm.cassetteType", field: "cassetteType", width: 80},
-      statusColor: {headerName: "atm.statusColor", field: "statusColor", width: 80, cellRendererFramework: AgStatusComponent},
-      supply: {headerName: "atm.supply", field: "supply", width: 75, cellRendererFramework: AgProgressComponent},
-      currencyCode: {headerName: "atm.currencyCode", field: "currencyCode", width: 60},
-      denomination: {headerName: "atm.denomination", field: "denomination", width: 60},
+      cassetteType: {headerName: "atm.accessories.accessoriesDispenserInfo.cassetteType", field: "cassetteType", width: 80},
+      statusColor: {headerName: "atms.tabs.status", field: "statusColor", width: 80, cellRendererFramework: AgStatusComponent},
+      supply: {headerName: "general.supply", field: "supply", width: 75, cellRendererFramework: AgProgressComponent},
+      currencyCode: {headerName: "general.CurrencyCode", field: "currencyCode", width: 60},
+      denomination: {headerName: "atms.denomination", field: "denomination", width: 60},
       loaded: {headerName: "atm.loaded", field: "loaded", width: 60},
       dispensed: {headerName: "atm.dispensed", field: "dispensed", width: 60},
       rejected: {headerName: "atm.rejected", field: "rejected", width: 60},
       remaining: {headerName: "atm.remaining", field: "remaining", width: 60}
     },
     LastStrokes: {
-      value: {headerName: "atm.denomination", field: "denomination", width: 100},
-      propriety: {headerName: "atm.currency", field: "currency", width: 100},
-      coin: {headerName: "atm.count", field: "count", width: 100},
-      sumMeteg: {headerName: "atm.sumMeteg", field: "sumMeteg", width: 100},
-      sumAtm: {headerName: "atm.sumAtm", field: "sumAtm", width: 100},
+      value: {headerName: "atms.denomination", field: "denomination", width: 100},
+      propriety: {headerName: "general.CurrencyCode", field: "currency", width: 100},
+      coin: {headerName: "general.count", field: "count", width: 100},
+      sumMeteg: {headerName: "general.sumMeteg", field: "sumMeteg", width: 100},
+      sumAtm: {headerName: "general.sumAtm", field: "sumAtm", width: 100},
       difference: {headerName: "atm.difference", field: "difference", width: 100}
     },
     Printers: {
       device: {headerName: "atm.device", field: "device", width: 170},
-      statusColor: {headerName: "atm.statusColor", field: "statusColor", width: 170, cellRendererFramework: AgStatusComponent}
+      statusColor: {headerName: "general.fitness", field: "statusColor", width: 170, cellRendererFramework: AgStatusComponent}
     },
     Checks: {
       device: {headerName: "atm.device", field: "device", width: 90},
-      statusColor: {headerName: "atm.statusColor", field: "statusColor", width: 90, cellRendererFramework: AgStatusComponent},
-      supply: {headerName: "atm.supply", field: "supply", width: 90, cellRendererFramework: AgProgressComponent},
+      statusColor: {headerName: "general.fitness", field: "statusColor", width: 90, cellRendererFramework: AgStatusComponent},
+      supply: {headerName: "general.supply", field: "supply", width: 90, cellRendererFramework: AgProgressComponent},
       counter: {headerName: "atm.counter", field: "counter", width: 90}
     },
     Other: {
       device: {headerName: "atm.device", field: "device", width: 90},
-      statusColor: {headerName: "atm.statusColor", field: "statusColor", width: 90, cellRendererFramework: AgStatusComponent},
-      supply: {headerName: "atm.supply", field: "supply", width: 90,
+      statusColor: {headerName: "general.fitness", field: "statusColor", width: 90, cellRendererFramework: AgStatusComponent},
+      supply: {headerName: "general.supply", field: "supply", width: 90,
         cellRendererFramework: AgProgressComponent},
       counter: {headerName: "atm.counter", field: "counter", width: 90}
     }

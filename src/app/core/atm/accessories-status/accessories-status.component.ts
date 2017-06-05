@@ -15,7 +15,13 @@ export class AccessoriesStatusComponent implements OnInit,OnDestroy {
   @select(['atm', 'accessories']) $atm_accessories: Observable<any>;
   private $atm_accessories_ref;
   private atmId;
-  public accessoriesData;
+  public accessoriesData = {
+    accessoriesDispenserInfo:null,
+    lastSettleDispenseList:null,
+    printersInfo:null,
+    checkInfo:null,
+    otherAccessoriesInfo:null
+  };
 
   constructor(private ngRedux: NgRedux<IStore>,private route: ActivatedRoute) {
     this.atmId = this.route.parent.params['value']['id'];

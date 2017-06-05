@@ -1,4 +1,4 @@
-<ui-controls-group fxLayout="column" class="stretch-height" [header]="'atm.General' | translate">
+<ui-controls-group fxLayout="column" class="stretch-height" [header]="'atm.general' | translate">
   <div fxFlex>
     <ag-grid-angular
       fxFlex
@@ -6,8 +6,5 @@
       class="ag-fresh"
       [gridOptions]="gridOptions">
     </ag-grid-angular>
-  </div>
-  <div class="ui-space-regular">
-    <ui-key-label *ngFor="let info of infos" [key]="info.key" [value]="info.value"></ui-key-label>
   </div>
 </ui-controls-group>

@@ -77,5 +77,13 @@ export const GeneralConstants = {
     BRANCH:{value: "BRANCH", label: "atms.branch"},
     REMOTE:{value: "REMOTE", label: "enums.REMOTE"},
     YAHAV:{value: "YAHAV", label:  "enums.YAHAV"}
+  },
+  Supply:{
+    "NO_INFO":"100",
+    "GOOD":"25",
+    "LOW":"25",
+    "OUT":"50",
+    "OVERFILL":"75",
+    "NEARLY_FULL":"50"
   }
 };

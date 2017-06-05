@@ -961,10 +961,10 @@ var atm_status = {
     "supply": "NO_INFO",
     "counter": 0
   }, {
-    "device": "",
+    "device": "CHECK_ENDORSE_PRINTER",
     "statusColor": "DISABLE",
     "fitness": "NO_ERROR",
-    "supply": "NO_INFO",
+    "supply": "NEARLY_FULL",
     "counter": 0
   }],
   "atmKeys": {
@@ -986,7 +986,7 @@ var atm_status = {
       }
     ],
     "eppUid": 52364862,
-    "lastWorkingKeyChange ": 1495613739356
+    "lastWorkingKeyChange": 1495613739356
   }
 };
 

@@ -273,6 +273,9 @@ ui-key-label+ui-key-label{
   margin-left: 25px;
 }
 
-ui-list-item:last-child{
-  border-bottom: 0;
+//ui-list-item:last-child{
+//  border-bottom: 0;
+//}
+ui-list-item:nth-child(even) {
+  border-left: $cats-white 1px solid;
 }

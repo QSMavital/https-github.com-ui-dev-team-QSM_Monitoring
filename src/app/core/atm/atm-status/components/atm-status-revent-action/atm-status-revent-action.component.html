@@ -1,10 +1,9 @@
-<ui-controls-group class="stretch-height" [header]="'atm.RecentActions' | translate">
-  <div class="ui-list-wrapper" fxLayout>
-    <ui-list fxFlex>
-      <ui-list-item fxFlex *ngFor="let item of recent_actions.a" [data]="item | keys"></ui-list-item>
+<ui-controls-group class="stretch-height" [header]="'atm.atmStatusLastAction' | translate">
+  <div class="ui-list-wrapper" *ngIf="recent_actions">
+    <ui-list>
+      <ui-list-item fxFlex="50%" *ngFor="let item of recent_actions"
+                    [data]="item | keys"></ui-list-item>
     </ui-list>
-    <ui-list fxFlex>
-      <ui-list-item fxFlex *ngFor="let item of recent_actions.b" [data]="item | keys"></ui-list-item>
-    </ui-list>
+
   </div>
 </ui-controls-group>

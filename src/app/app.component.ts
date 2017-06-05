@@ -1,5 +1,4 @@
 import {Component, OnDestroy} from '@angular/core';
-import {Router} from "@angular/router";
 import {ServerURLInterceptor} from "./app.interceptors";
 import {select, NgRedux} from "@angular-redux/store";
 import {Observable} from "rxjs";

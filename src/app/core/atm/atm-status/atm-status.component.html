@@ -7,19 +7,19 @@
 
     </div>
     <div fxFlex="50%" class="ui-space-t-regular ui-space-lr-regular">
-      <ui-atm-status-summary [summary_data]="statusData?.atmSummaryStatus" fxLayout="column"
+      <ui-atm-status-summary [summary_data]="statusData.atmSummaryStatus" fxLayout="column"
                              class="stretch-height"></ui-atm-status-summary>
     </div>
   </div>
 
   <div fxLayout>
     <div fxFlex="50%" class="ui-space-tb-regular ui-space-l-regular">
-      <ui-atm-status-revent-action [action_data]="statusData?.atmStatusLastAction" fxLayout="column"
+      <ui-atm-status-revent-action [action_data]="statusData.atmStatusLastAction" fxLayout="column"
                                    class="stretch-height"></ui-atm-status-revent-action>
     </div>
 
     <div fxFlex="50%" class="ui-space-tb-regular ui-space-lr-regular">
-      <ui-atm-status-keys [keys_data]="statusData?.atmKeys" fxLayout="column"
+      <ui-atm-status-keys [keys_data]="statusData.atmKeys" fxLayout="column"
                           class="stretch-height"></ui-atm-status-keys>
     </div>
   </div>

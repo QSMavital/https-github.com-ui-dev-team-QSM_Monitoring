@@ -23,7 +23,7 @@ export class AddNewComponent implements OnChanges,AfterViewChecked {
   @Output() showChange = new EventEmitter();
   private showValue = false;
   private atmSettings;
-  private form: FormGroup = new FormGroup({});
+  public form: FormGroup = new FormGroup({});
   private controlGroups: CustomControlGroup[] = [];
 
   set show(val) {

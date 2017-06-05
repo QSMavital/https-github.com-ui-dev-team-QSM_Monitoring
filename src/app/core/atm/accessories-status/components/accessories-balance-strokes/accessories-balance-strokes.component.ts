@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {TranslateService} from "@ngx-translate/core";
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {Atm} from "../../../../../config/atm";
-import {i18n} from "../../../../../config/i18n";
+import {GridDefsService} from "../../../../../shared/services/grid-defs.service";
+import {GridOptions} from "ag-grid";
+import {isNullOrUndefined} from "util";
 
 
 
@@ -10,56 +11,58 @@ import {i18n} from "../../../../../config/i18n";
   templateUrl: './accessories-balance-strokes.component.html',
   styleUrls: ['./accessories-balance-strokes.component.scss']
 })
-export class AccessoriesBalanceStrokesComponent implements OnInit {
+export class AccessoriesBalanceStrokesComponent implements OnChanges {
+@Input() public accessories_data: any = {};
+  public infos: any[] = [];
+  public gridOptions: GridOptions;
 
-  public widgetsData: any =
-    {
-      header: "atm.balanceOfLastStrokes",
-      gridData: {
-        rowData: [
-          {
-            "value": 100,
-            "propriety": "FATAL",
-            "coin": "NIS",
-            "amount": 100,
-            "difference": 50
-          }
-        ],
-        enableRtl: i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl',
-        enableSorting: true,
-        getRowHeight: (() => {
-          return 32
-        }),
-        columnDefs: []
-      },
-      footer: {"atm.total": "15,000", "atm.alert": "7,000"},
-      width: 50,
-      props: Atm.Accessories.LastStrokes
-    };
-
-  constructor(private translateSrv: TranslateService) {
-
-  }
-
-  ngOnInit() {
-    this.initColDefs();
-  }
-
-  initColDefs() {
-    for (let prop in this.widgetsData.props) {
-      this.widgetsData.gridData.columnDefs.push(
-        Object.assign({},
-          {suppressFilter: true},
-          this.widgetsData.props[prop],
-          {
-            headerName: this.translateSrv.instant(this.widgetsData.props[prop].headerName)
-          }));
+  constructor(private gridDefsSrv: GridDefsService) {
+    this.gridOptions = this.gridDefsSrv.initGridOptions();
+    for (var prop in Atm.Accessories.LastStrokes){
+      this.gridOptions.columnDefs.push(Atm.Accessories.LastStrokes[prop]);
     }
-
   }
 
-  ngOnDestroy() {
-    this.widgetsData={};
+  fitCols_accessories() {
+    this.gridOptions.api.sizeColumnsToFit();
   }
+  ngOnChanges(newValue){
+    if(!isNullOrUndefined(newValue.accessories_data)&&!isNullOrUndefined(newValue.accessories_data.currentValue)){
+      let rowData = this.accessories_data.lastSettleDispenseList;
+      this.gridOptions.api.setRowData(rowData);
 
+      for (let key in this.accessories_data){
+        if(key !== 'lastSettleDispenseList'){
+          if (key === 'transactionId') {
+            this.infos.push({key: `enums.${key}`, value: this.accessories_data[key]})
+          } else {
+            this.infos.push({key: `enums.${key}`, value: new Date(this.accessories_data[key]).toLocaleString()})
+          }
+        }
+      }
+    }
+  }
 }
+
+/*{
+  "lastSettleDispenseList": [
+  {
+    "denomination": 10000,
+    "currency": "NIS",
+    "count": 18,
+    "sumMeteg": 180000,
+    "sumAtm": 180000,
+    "difference": 0
+  },
+  {
+    "denomination": 20000,
+    "currency": "NIS",
+    "count": 4,
+    "sumMeteg": 80000,
+    "sumAtm": 60000,
+    "difference": 20000
+  }
+],
+  "lastSettelement": 1495612612579,
+  "transactionId": 453
+}*/

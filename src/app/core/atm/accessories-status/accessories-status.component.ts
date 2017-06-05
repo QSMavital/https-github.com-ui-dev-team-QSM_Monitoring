@@ -35,6 +35,4 @@ export class AccessoriesStatusComponent implements OnInit,OnDestroy {
   ngOnDestroy() {
     this.$atm_accessories_ref.unsubscribe();
   }
-
-
 }

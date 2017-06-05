@@ -510,57 +510,39 @@ export const Atm = {
   },
   Accessories: {
     CashPool: {
-      item: {headerName: "atm.item", field: "item", width: 80},
-      propriety: {headerName: "atm.propriety", field: "propriety", width: 80, cellRendererFramework: AgStatusComponent},
-      inventory: {
-        headerName: "atm.inventory",
-        field: "inventory",
-        width: 75,
-        cellRendererFramework: AgProgressComponent
-      },
-      coin: {headerName: "atm.coin", field: "coin", width: 60},
-      value: {headerName: "atm.value", field: "value", width: 60},
+      cassetteType: {headerName: "atm.cassetteType", field: "cassetteType", width: 80},
+      statusColor: {headerName: "atm.statusColor", field: "statusColor", width: 80, cellRendererFramework: AgStatusComponent},
+      supply: {headerName: "atm.supply", field: "supply", width: 75, cellRendererFramework: AgProgressComponent},
+      currencyCode: {headerName: "atm.currencyCode", field: "currencyCode", width: 60},
+      denomination: {headerName: "atm.denomination", field: "denomination", width: 60},
       loaded: {headerName: "atm.loaded", field: "loaded", width: 60},
-      withdrawed: {headerName: "atm.withdrawed", field: "withdrawed", width: 60},
+      dispensed: {headerName: "atm.dispensed", field: "dispensed", width: 60},
       rejected: {headerName: "atm.rejected", field: "rejected", width: 60},
-      left: {headerName: "atm.left", field: "left", width: 60}
+      remaining: {headerName: "atm.remaining", field: "remaining", width: 60}
     },
     LastStrokes: {
-      value: {headerName: "atm.value", field: "value", width: 100},
-      propriety: {
-        headerName: "atm.propriety",
-        field: "propriety",
-        width: 100,
-        cellRendererFramework: AgStatusComponent
-      },
-      coin: {headerName: "atm.coin", field: "coin", width: 100},
-      amount: {headerName: "atm.amount", field: "amount", width: 100},
+      value: {headerName: "atm.denomination", field: "denomination", width: 100},
+      propriety: {headerName: "atm.currency", field: "currency", width: 100},
+      coin: {headerName: "atm.count", field: "count", width: 100},
+      sumMeteg: {headerName: "atm.sumMeteg", field: "sumMeteg", width: 100},
+      sumAtm: {headerName: "atm.sumAtm", field: "sumAtm", width: 100},
       difference: {headerName: "atm.difference", field: "difference", width: 100}
     },
     Printers: {
-      item: {headerName: "atm.item", field: "item", width: 170},
-      propriety: {headerName: "atm.propriety", field: "propriety", width: 170, cellRendererFramework: AgStatusComponent}
+      device: {headerName: "atm.device", field: "device", width: 170},
+      statusColor: {headerName: "atm.statusColor", field: "statusColor", width: 170, cellRendererFramework: AgStatusComponent}
     },
     Checks: {
-      item: {headerName: "atm.item", field: "item", width: 90},
-      propriety: {headerName: "atm.propriety", field: "propriety", width: 90, cellRendererFramework: AgStatusComponent},
-      inventory: {
-        headerName: "atm.inventory",
-        field: "inventory",
-        width: 90,
-        cellRendererFramework: AgProgressComponent
-      },
+      device: {headerName: "atm.device", field: "device", width: 90},
+      statusColor: {headerName: "atm.statusColor", field: "statusColor", width: 90, cellRendererFramework: AgStatusComponent},
+      supply: {headerName: "atm.supply", field: "supply", width: 90, cellRendererFramework: AgProgressComponent},
       counter: {headerName: "atm.counter", field: "counter", width: 90}
     },
     Other: {
-      item: {headerName: "atm.item", field: "item", width: 90},
-      propriety: {headerName: "atm.propriety", field: "propriety", width: 90, cellRendererFramework: AgStatusComponent},
-      inventory: {
-        headerName: "atm.inventory",
-        field: "inventory",
-        width: 90,
-        cellRendererFramework: AgProgressComponent
-      },
+      device: {headerName: "atm.device", field: "device", width: 90},
+      statusColor: {headerName: "atm.statusColor", field: "statusColor", width: 90, cellRendererFramework: AgStatusComponent},
+      supply: {headerName: "atm.supply", field: "supply", width: 90,
+        cellRendererFramework: AgProgressComponent},
       counter: {headerName: "atm.counter", field: "counter", width: 90}
     }
   },

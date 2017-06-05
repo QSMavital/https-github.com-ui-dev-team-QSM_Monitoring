@@ -1,7 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {Atm} from "../../../../../config/atm";
 import {i18n} from "../../../../../config/i18n";
 import {TranslateService} from "@ngx-translate/core";
+import {GridOptions} from "ag-grid";
+import {GridDefsService} from "../../../../../shared/services/grid-defs.service";
+import {isNullOrUndefined} from "util";
 
 
 @Component({
@@ -9,85 +12,89 @@ import {TranslateService} from "@ngx-translate/core";
   templateUrl: './accessories-cash-pool.component.html',
   styleUrls: ['./accessories-cash-pool.component.scss']
 })
-export class AccessoriesCashPoolComponent implements OnInit {
+export class AccessoriesCashPoolComponent implements OnChanges {
+  public infos: any[] = [];
+  public gridOptions: GridOptions;
+@Input() public cash_pool_data: any = {};
 
-  public widgetsData: any =
-    {
-      header: "atm.cashPool",
-      gridData: {
-        rowData: [
-          {
-            "item": "1",
-            "propriety": "FATAL",
-            "inventory": 50,
-            "coin": "NIS",
-            "value": 100,
-            "loaded": 1000,
-            "withdrawed": 200,
-            "rejected": 5,
-            "left": 795
-          },
-          {
-            "item": "2",
-            "propriety": "FATAL",
-            "inventory": 25,
-            "coin": "NIS",
-            "value": 100,
-            "loaded": 1000,
-            "withdrawed": 200,
-            "rejected": 5,
-            "left": 795
-          },
-          {
-            "item": "3",
-            "propriety": "FATAL",
-            "inventory": 66,
-            "coin": "NIS",
-            "value": 100,
-            "loaded": 1000,
-            "withdrawed": 200,
-            "rejected": 5,
-            "left": 795
-          }
-        ],
-        enableRtl: i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl',
-        enableSorting: true,
-        getRowHeight: (() => {
-          return 32
-        }),
-        columnDefs: [],
-      },
-      footer: {
-        "atm.total": "150,000",
-        "atm.lastSuccessful": {time: true, value: "15 may 2017 22:15"}
-      },
-      width: 50,
-      props: Atm.Accessories.CashPool
-    };
 
-  constructor(private translateSrv: TranslateService) {
 
+constructor(private gridDefsSrv: GridDefsService) {
+  this.gridOptions = this.gridDefsSrv.initGridOptions();
+  for (var prop in Atm.Accessories.CashPool){
+    this.gridOptions.columnDefs.push(Atm.Accessories.CashPool[prop]);
   }
-
-  ngOnInit() {
-    this.initColDefs();
-  }
-
-  initColDefs() {
-    for (let prop in this.widgetsData.props) {
-      this.widgetsData.gridData.columnDefs.push(
-        Object.assign({},
-          {suppressFilter: true},
-          this.widgetsData.props[prop],
-          {
-            headerName: this.translateSrv.instant(this.widgetsData.props[prop].headerName)
-          }));
-    }
-
-  }
-
-  ngOnDestroy() {
-    this.widgetsData = {};
-  }
-
 }
+
+  fitCols_dispenserInfo(){
+    this.gridOptions.api.sizeColumnsToFit();
+  }
+
+  ngOnChanges(newValue){
+    if(!isNullOrUndefined(newValue.cash_pool_data)&&!isNullOrUndefined(newValue.cash_pool_data.currentValue)){
+      let rowData = this.cash_pool_data.cassettesList;
+      this.gridOptions.api.setRowData(rowData);
+
+      for (let key in this.cash_pool_data){
+        if(key !== 'cassettesList'){
+          if (key === 'lastGoodWithrawal') {
+            this.infos.push({key: `enums.${key}`, value: new Date(this.cash_pool_data[key]).toLocaleString()})
+          } else {
+            this.infos.push({key: `enums.${key}`, value: this.cash_pool_data[key]})
+          }
+        }
+      }
+    }
+  }
+}
+
+/*accessoriesDispenserInfo{
+  "cassettesList": [
+  {
+    "cassetteType": "1",
+    "statusColor": "GOOD",
+    "supply": "NO_INFO",
+    "currencyCode": "NIS",
+    "denomination": 5000,
+    "loaded": 1000,
+    "dispensed": 0,
+    "rejected": 0,
+    "remaining": 1000
+  },
+  {
+    "statusColor": "GOOD",
+    "supply": "NO_INFO",
+    "currencyCode": "NIS",
+    "denomination": 10000,
+    "loaded": 1000,
+    "dispensed": 100,
+    "rejected": 0,
+    "remaining": 900
+  },
+  {
+    "statusColor": "GOOD",
+    "supply": "NO_INFO",
+    "currencyCode": "NIS",
+    "denomination": 20000,
+    "loaded": 0,
+    "dispensed": 0,
+    "rejected": 0,
+    "remaining": 0
+  },
+  {
+    "statusColor": "DISABLE",
+    "supply": "NO_INFO",
+    "currencyCode": "NIS",
+    "denomination": 0,
+    "loaded": 0,
+    "dispensed": 0,
+    "rejected": 0,
+    "remaining": 0
+  }
+],
+  "sumDispensed": 12000,
+  "sumRemaing": 10000,
+  "lastGoodWithrawal": 1495612612579,
+  "localCurrencyTrigger": 5000000,
+  "localCurrencyTrigger2": 2000000
+}*/

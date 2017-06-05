@@ -1,74 +1,70 @@
-import { Component, OnInit } from '@angular/core';
-import {TranslateService} from "@ngx-translate/core";
-import {i18n} from "../../../../../config/i18n";
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {Atm} from "../../../../../config/atm";
+import {GridOptions} from "ag-grid";
+import {GridDefsService} from "../../../../../shared/services/grid-defs.service";
+import {isNullOrUndefined} from "util";
 
 @Component({
   selector: 'ui-accessories-other',
   templateUrl: './accessories-other.component.html',
   styleUrls: ['./accessories-other.component.scss']
 })
-export class AccessoriesOtherComponent implements OnInit {
+export class AccessoriesOtherComponent implements OnChanges {
+@Input() other_accessories_data: any = {};
+  public infos: any[] = [];
+  public gridOptions: GridOptions;
 
-  public widgetsData: any =
-    {
-      header: "atm.other",
-      gridData: {
-        rowData: [
-          {
-            item: "item1",
-            propriety: "FATAL",
-            inventory: "67",
-            counter: 0
-          },
-          {
-            item: "item2",
-            propriety: "FATAL",
-            inventory: "67",
-            counter: 0
-          },
-          {
-            item: "item3",
-            propriety: "FATAL",
-            inventory: "67",
-            counter: 0
-          }
-        ],
-        enableRtl: i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl',
-        enableSorting: true,
-        getRowHeight: (() => {
-          return 32
-        }),
-        columnDefs: []
-      },
-      width: 100 / 3,
-      footer: {"atm.lastReset": {time: true, value: "oct 10 1926"}},
-      props: Atm.Accessories.Other
-    };
-
-  constructor(private translateSrv: TranslateService) {
-
-  }
-
-  ngOnInit() {
-    this.initColDefs();
-  }
-
-  initColDefs() {
-    for (let prop in this.widgetsData.props) {
-      this.widgetsData.gridData.columnDefs.push(
-        Object.assign({},
-          {suppressFilter: true},
-          this.widgetsData.props[prop],
-          {
-            headerName: this.translateSrv.instant(this.widgetsData.props[prop].headerName)
-          }));
+  constructor(private gridDefsSrv: GridDefsService) {
+    this.gridOptions = this.gridDefsSrv.initGridOptions();
+    for (let prop in Atm.Accessories.Other) {
+      this.gridOptions.columnDefs.push(Atm.Accessories.Other[prop]);
     }
+  };
 
+  fitCols_otherAccessoriesInfo() {
+    this.gridOptions.api.sizeColumnsToFit();
   }
 
-  ngOnDestroy() {
-    this.widgetsData={};
+  ngOnChanges(newValue) {
+    if (!isNullOrUndefined(newValue.other_accessories_data) && !isNullOrUndefined(newValue.other_accessories_data.currentValue)) {
+      let rowData = this.other_accessories_data.deviceList;
+      this.gridOptions.api.setRowData(rowData);
+
+      for (let key in this.other_accessories_data) {
+        if (key !== 'deviceList') {
+          this.infos.push({key: `enums.${key}`, value: new Date(this.other_accessories_data[key]).toLocaleString()})
+        }
+      }
+    }
   }
 
 }
+
+/*
+{
+  "deviceList": [
+  {
+    "device": "CARD_READER",
+    "statusColor": "DISABLE",
+    "fitness": "NO_ERROR",
+    "supply": "NO_INFO",
+    "counter": 0
+  },
+  {
+    "device": "ENCRYPTOR",
+    "statusColor": "DISABLE",
+    "fitness": "NO_ERROR",
+    "supply": "NO_INFO",
+    "counter": 0
+  },
+  {
+    "device": "JOURNAL_PRINTER",
+    "statusColor": "DISABLE",
+    "fitness": "NO_ERROR",
+    "supply": "NO_INFO",
+    "counter": 0
+  }
+],
+  "lastCardSettelement": 1495612612579
+}
+*/

@@ -1,37 +1,26 @@
-<pre>
-  {{accessoriesData | json}}
-</pre>
-  <div fxLayout="column" class="ui-space-small stretch-height">
-
+ <div fxLayout="column" class="ui-space-small stretch-height">
     <div fxLayout fxFlex="65%">
       <div fxFlex class="ui-space-regular">
-
-        <ui-accessories-cash-pool></ui-accessories-cash-pool>
-
+        <ui-accessories-cash-pool
+          [cash_pool_data]="accessoriesData?.accessoriesDispenserInfo"></ui-accessories-cash-pool>
       </div>
       <div fxFlex class="ui-space-regular">
-
-        <ui-accessories-balance-strokes></ui-accessories-balance-strokes>
-
+        <ui-accessories-balance-strokes
+          [accessories_data]="accessoriesData?.lastSettleDispenseList"></ui-accessories-balance-strokes>
       </div>
     </div>
-
     <div fxLayout fxFlex="35%">
       <div fxFlex class="ui-space-regular">
-
-        <ui-accessories-printers></ui-accessories-printers>
-
-      </div>
-
-      <div fxFlex class="ui-space-regular">
-
-        <ui-accessories-checks></ui-accessories-checks>
-
+        <ui-accessories-printers
+          [printers_data]="accessoriesData?.printersInfo"></ui-accessories-printers>
       </div>
       <div fxFlex class="ui-space-regular">
-
-        <ui-accessories-other></ui-accessories-other>
-
+        <ui-accessories-checks
+          [checkInfo_data]="accessoriesData?.checkInfo"></ui-accessories-checks>
+      </div>
+      <div fxFlex class="ui-space-regular">
+        <ui-accessories-other
+          [other_accessories_data]="accessoriesData?.otherAccessoriesInfo"></ui-accessories-other>
       </div>
     </div>
   </div>

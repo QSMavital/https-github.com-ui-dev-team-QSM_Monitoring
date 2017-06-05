@@ -1,7 +1,6 @@
-<ui-controls-group fxLayout="column" class="stretch-height" [header]="widgetsData.header | translate">
-  <ag-grid-angular
-    fxFlex
-    class="ag-fresh"
-    [gridOptions]="widgetsData.gridData">
+<ui-controls-group fxLayout="column" class="stretch-height" [header]="'atm.printersInfo' | translate">
+  <ag-grid-angular fxFlex class="ag-fresh"
+                   (gridReady)="fitCols_printers()"
+                   [gridOptions]="gridOptions">
   </ag-grid-angular>
 </ui-controls-group>

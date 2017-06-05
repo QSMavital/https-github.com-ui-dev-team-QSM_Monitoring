@@ -17,10 +17,6 @@ export class AtmStatusReventActionComponent implements OnChanges {
 
       this.recent_actions = [];
 
-
-
-
-
       for(var prop in this.action_data){
 
         switch(prop){

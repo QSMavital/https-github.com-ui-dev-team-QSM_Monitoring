@@ -269,8 +269,9 @@ pre {
 .uppercase {
   text-transform: uppercase;
 }
-ui-key-label+ui-key-label{
-  margin-left: 25px;
+ui-key-label{
+  margin-right: 25px;
+  margin-top:10px;
 }
 
 //ui-list-item:last-child{

@@ -40,7 +40,7 @@ export class AtmStatusGeneralComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(newValue){
-    if(!isNullOrUndefined(newValue.general_data)&&!isNullOrUndefined(newValue.general_data.currentValue)){
+    if(!isNullOrUndefined(newValue.general_data)&&!isNullOrUndefined(newValue.general_data.currentValue)&&!isNullOrUndefined(this.gridOptions.api)){
       let rowData = [
         {
           "name":  this.translateSrv.instant('atm.status.general.terminalStatus'),

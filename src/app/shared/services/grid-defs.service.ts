@@ -15,7 +15,7 @@ export class GridDefsService {
   initGridOptions() {
     this.gridOptions={};
 
-    this.gridOptions.enableRtl = true
+    this.gridOptions.enableRtl = i18n[this.translateSrv.getDefaultLang().toUpperCase()] == 'rtl';
     this.gridOptions.enableSorting = false;
     this.gridOptions.columnDefs = [];
     this.gridOptions.suppressContextMenu = true;

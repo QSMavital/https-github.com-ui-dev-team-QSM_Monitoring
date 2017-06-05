@@ -227,24 +227,11 @@
     "unavailable": "unavailable",
     "working": "working"
   },
-  "actionsStatus": {
+  "keys": {
     "IncorrectPINCode": "Incorrect PIN code",
     "Rejection": "Rejection",
     "SuccessfulOperations": "Successful Operations",
-    "Fault": "Fault",
-    "OFF_LINE": "Disconnected",
-    "DISABLE": "Disable",
-    "GOOD": "Good",
-    "ATTENTION": "Attention",
-    "FATAL": "Fatal",
-    "OPERATOR": "Operator",
-    "NOT_APPROVED": "Not Approved",
-    "APPROVED": "Approved",
-    "QUESTIONABLE": "Questionable",
-    "REVERSED": "Reversed",
-    "DECLINED": "Declined",
-    "APPROVED_TEMPORARY":"Approved Temporary",
-    "REVERSED_SHVA": "Reversed SHVA"
+    "Fault": "Fault"
   },
   "banks": {
     "99": "בנק ישראל",
@@ -280,6 +267,19 @@
     "OUR_BANK":"Our Bank"
   },
   "enums":{
+    "OFF_LINE": "Disconnected",
+    "DISABLE": "Disable",
+    "GOOD": "Good",
+    "ATTENTION": "Attention",
+    "FATAL": "Fatal",
+    "OPERATOR": "Operator",
+    "NOT_APPROVED": "Not Approved",
+    "APPROVED": "Approved",
+    "QUESTIONABLE": "Questionable",
+    "REVERSED": "Reversed",
+    "DECLINED": "Declined",
+    "APPROVED_TEMPORARY":"Approved Temporary",
+    "REVERSED_SHVA": "Reversed SHVA",
     "WITHDRAWAL":"Withdrawal",
     "AT_ATM":"At ATM",
     "LAST_SETTELMENT":"Last Settelment",
@@ -303,7 +303,6 @@
     "INCORRECT_CHECK_DIGIT":"Incorrect Check Digit",
     "REMOTE":"Remote",
     "YAHAV":"Yahav"
-
   },
   "transaction":{
 

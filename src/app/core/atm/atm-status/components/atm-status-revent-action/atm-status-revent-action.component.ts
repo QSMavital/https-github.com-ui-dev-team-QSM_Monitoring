@@ -17,26 +17,55 @@ export class AtmStatusReventActionComponent implements OnChanges {
 
       this.recent_actions = [];
 
-
-
-
-
       for(var prop in this.action_data){
 
         switch(prop){
           case 'terminalDateTime':
             this.recent_actions.push(
               {
-                name:this.translateSrv.instant('atm.status.lastTransaction.'+prop),
+                name:this.translateSrv.instant(`atm.status.lastTransaction.${prop}`),
                 value: new Date(this.action_data[prop]).toLocaleString()
-
               });
             break;
-
+           case 'rejectReason':
+            this.recent_actions.push(
+              {
+                name:this.translateSrv.instant(`atm.status.lastTransaction.${prop}`),
+                value: this.translateSrv.instant('rejectReason.'+this.action_data[prop]),
+              });
+            break;
+          case 'retainReason':
+            this.recent_actions.push(
+              {
+                name:this.translateSrv.instant(`atm.status.lastTransaction.${prop}`),
+                value: this.translateSrv.instant('enums.'+this.action_data[prop]),
+              });
+            break;
+          case 'cardholderGroup':
+            this.recent_actions.push(
+              {
+                name:this.translateSrv.instant(`atm.status.lastTransaction.${prop}`),
+                value: this.translateSrv.instant('cardholderGroup.'+this.action_data[prop]),
+              });
+            break;
+          case 'tranType':
+            this.recent_actions.push(
+              {
+                name:this.translateSrv.instant(`atm.status.lastTransaction.${prop}`),
+                value: this.translateSrv.instant('transactionType.'+this.action_data[prop]),
+              });
+            break;
+          case 'panEntryMode':
+            this.recent_actions.push(
+              {
+                name:this.translateSrv.instant(`atm.status.lastTransaction.${prop}`),
+                value: this.translateSrv.instant('panEntryMode.'+this.action_data[prop]),
+              });
+            break;
           default:
             this.recent_actions.push(
               {
-                name:this.translateSrv.instant('atm.status.lastTransaction.'+prop),
+                name:this.translateSrv.instant(`atm.status.lastTransaction.${prop}`),
                 value:this.action_data[prop]
               });
             break;

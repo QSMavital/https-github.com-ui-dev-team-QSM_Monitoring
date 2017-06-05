@@ -29,9 +29,12 @@ export class IssuerActionsStatusComponent implements OnInit, OnDestroy {
       scales: {
         yAxes: [{
           stacked: true,
+          gridLines: {
+            display: false,
+            drawBorder: true, zeroLineWidth: 1
+          },
           ticks: {
             padding: 0,
-            stepSize: 5000,
             fontFamily: 'opensans-regular',
             fontSize: 12,
             fontColor: '#6f7b87'
@@ -42,10 +45,9 @@ export class IssuerActionsStatusComponent implements OnInit, OnDestroy {
             barPercentage: 0.65,
             gridLines: {
               display: false,
-              drawBorder: false, zeroLineWidth: 0
+              drawBorder: true, zeroLineWidth: 1
             },
             ticks: {
-              stepSize: 5000,
               fontFamily: 'opensans-regular',
               fontSize: 10,
               fontColor: '#6f7b87'

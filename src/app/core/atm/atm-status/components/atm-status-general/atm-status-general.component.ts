@@ -72,7 +72,7 @@ export class AtmStatusGeneralComponent implements OnInit, OnChanges {
         },
         {
           "name": this.translateSrv.instant('atm.status.general.loadStage'),
-          "status": this.general_data.loadStage
+          "status": this.translateSrv.instant(`loadStage.${this.general_data.loadStage}`)
         }
       ];
       this.gridOptions.api.setRowData(rowData);

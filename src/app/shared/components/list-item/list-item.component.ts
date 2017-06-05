@@ -7,4 +7,5 @@ import {Component, Input} from '@angular/core';
 })
 export class ListItemComponent{
   @Input('data') data;
+  @Input('status') status;
 }

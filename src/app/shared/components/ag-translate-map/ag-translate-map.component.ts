@@ -9,7 +9,9 @@ export class AgTranslateMapComponent{
   private value;
   private map = {
     approver:"banks",
-    default:"enums"
+    default:"enums",
+    rejectReason:"rejectReason",
+    branch:"banks"
   };
 
   agInit(params: any): void {

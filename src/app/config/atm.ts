@@ -570,14 +570,14 @@ export const Atm = {
       headerName: 'atms.severity', field: 'eventSeverity', width: 200, cellRendererFramework: AgStatusComponent
     },
     date: {
-      headerName: 'atms.date',
+      headerName: 'general.date',
       field: 'date',
       width: 120,
       suppressSizeToFit: true,
       cellRendererFramework: AgDateShortComponent
     },
     time: {
-      headerName: 'atms.time',
+      headerName: 'general.time',
       field: 'time',
       width: 120,
       suppressSizeToFit: true,
@@ -591,14 +591,14 @@ export const Atm = {
   },
   events: {
     date: {
-      headerName: 'atms.date',
+      headerName: 'general.date',
       field: 'date',
       width: 120,
       suppressSizeToFit: true,
       cellRendererFramework: AgDateShortComponent
     },
     time: {
-      headerName: 'atms.time',
+      headerName: 'general.time',
       field: 'time',
       width: 120,
       suppressSizeToFit: true,
@@ -610,14 +610,14 @@ export const Atm = {
   },
   transactions: {
     date: {
-      headerName: 'atms.date',
+      headerName: 'general.date',
       field: 'date',
       width: 220,
       suppressSizeToFit: true,
       cellRendererFramework: AgDateShortComponent
     },
     time: {
-      headerName: 'atms.time',
+      headerName: 'general.time',
       field: 'time',
       width: 220,
       suppressSizeToFit: true,

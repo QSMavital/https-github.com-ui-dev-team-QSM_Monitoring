@@ -12,7 +12,7 @@ import {isNullOrUndefined} from "util";
   styleUrls: ['./atm-status.component.scss']
 })
 
-export class AtmStatusComponent implements OnInit, OnDestroy {
+export class AtmStatusComponent implements OnDestroy {
   @select(['atm', 'status']) $atm_status: Observable<any>;
   private $atm_status_ref;
   private atmId;
@@ -28,10 +28,6 @@ export class AtmStatusComponent implements OnInit, OnDestroy {
       this.statusData = state;
     });
   }
-
-  ngOnInit() {
-  }
-
   ngOnDestroy() {
     this.$atm_status_ref.unsubscribe();
   }

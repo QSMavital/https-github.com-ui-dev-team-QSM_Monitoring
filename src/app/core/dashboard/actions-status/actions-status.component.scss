@@ -2,12 +2,13 @@
   .wrapper {
     .chart-wrapper {
       height: 275px;
-      top: calc(50% - 160px);
+      top: calc(50% - 167px);
       app-nvd3 {
         position: absolute;
         top: -45px;
         left: 0;
         width: 100%;
+
       }
     }
   }

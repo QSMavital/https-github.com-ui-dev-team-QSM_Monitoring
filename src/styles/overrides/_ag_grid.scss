@@ -1,6 +1,5 @@
 //colors
 @import "./src/styles/helpers/brand";
-
 $color_log_cabin_approx: #222;
 $gray: #808080;
 $color_boulder_40_approx: rgba(120, 120, 120, 0.4);
@@ -538,7 +537,7 @@ $font_3: sans-serif;
 
   .ag-paging-panel {
     color: #707c87;
-    padding: 15px;
+    padding: 5px;
     text-align: center;
 
     .ag-paging-row-summary-panel {
@@ -627,6 +626,7 @@ $font_3: sans-serif;
 
 .ag-fresh .ag-header-cell-menu-button {
   margin-top: 12px !important;
+  float: right;
 }
 
 ag-tab-body, .ag-menu, .ag-menu-option-popup-pointer, .ag-fresh .ag-header-icon {

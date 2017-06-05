@@ -1,3 +1,4 @@
+
 p-calendar {
 
   .ui-calendar-w-btn{
@@ -7,7 +8,6 @@ p-calendar {
       border-right: 0;
     }
   }
-
 
   .ui-datepicker.ui-widget {
     top: 30px!important;
@@ -87,4 +87,25 @@ p-calendar {
 
 
 
+}
+.ui-calendar button {
+  position: absolute;
+  height: 100%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  position: absolute;
+  width: 2em;
+  border-left: 0 none;
+  border-right: 1px solid;
+}
+.ui-button {
+  margin-left: 0;
+  margin-right: .1em;
+}
+.ui-inputtext.ui-state-focus, .ui-inputtext:focus {
+  box-shadow: none !important;
+}
+.ui-datepicker{
+ left: 0;
+  right: auto;
 }

@@ -26,7 +26,8 @@
     "last_activity":"פעילות אחרונה",
     "last_settlement":"last settlement",
     "business_day":"יום עסקים",
-    "search":"חיפוש"
+    "search":"חיפוש",
+    "businessDay": "יום עסקים"
   },
   "atms": {
     "tabs": {
@@ -36,7 +37,16 @@
       "events": "אירועים",
       "transactions": "עסקאות",
       "transaction": "עסקה"
-    }
+    },
+    "filters": {
+      "chooseAtm": "בחר בנקט:",
+      "group": "קבוצה:",
+      "region": "אזור:",
+      "fromDate": "מתאריך:",
+      "toDate": "עד תאריך:"
+    },
+    "terminalId": "בנקט #",
+    "atmName": "שם בנקט"
   }
-}
 
+}

@@ -4,6 +4,8 @@
     height: 215px;
     .label {
       color: $pale-sky;
+      position: relative;
+      top:10px;
     }
     .gauge-wrapper {
       height: 150px;
@@ -22,6 +24,8 @@
     }
     .value {
       color: $pale-sky;
+      position: relative;
+      bottom: 10px;
       .perc {
         opacity: .6;
       }

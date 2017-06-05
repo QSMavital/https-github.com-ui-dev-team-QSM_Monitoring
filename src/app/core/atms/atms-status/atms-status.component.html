@@ -4,9 +4,18 @@
       <div fxLayout>
         <ui-atms-inventory-filter (onChange)="filter($event)" [filters]="filtersData"></ui-atms-inventory-filter>
         <div fxFlex class="text-right">
-          <button class="blue-btn narrow ui-icons-x"></button>
-          <button class="blue-btn narrow ui-icons-x"></button>
+          <span class="ui-space-r-regular">
+            <ui-label translate="general.all"></ui-label>
+            <button (click)="action('CLOSE_ALL')" class="narrow close-btn ui-icons-close"></button>
+            <button (click)="action('OPEN_ALL')" class="narrow open-btn ui-icons-open"></button>
+          </span>
+          <span class="ui-space-r-regular">
+            <ui-label translate="general.selected"></ui-label>
+            <button [disabled]="!selectedItems" (click)="action('CLOSE',gridOptions.api.getSelectedRows())" class="narrow close-btn ui-icons-close"></button>
+            <button [disabled]="!selectedItems" (click)="action('OPEN',gridOptions.api.getSelectedRows())" class="narrow open-btn ui-icons-open"></button>
+          </span>
           <button (click)="addNew=!addNew;" class="blue-btn narrow ui-icons-add-new"></button>
+
 
         </div>
       </div>
@@ -16,6 +25,7 @@
 
     <ag-grid-angular
       (rowDoubleClicked)="selectItem($event)"
+      (selectionChanged)="selection($event)"
       fxFlex
       class="ag-fresh"
       [gridOptions]="gridOptions">

@@ -5,6 +5,7 @@ import {isArray, isNullOrUndefined} from "util";
 import {Observable} from "rxjs";
 import {DashboardActions} from "../../../../store/actions/dashboard-actions";
 import {ActionsStatus, StatusView} from "../../../config/statusView";
+import {TranslateService} from "@ngx-translate/core";
 
 
 @Component({
@@ -20,11 +21,19 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
 
   @select(['dashboard', 'actionsStatus']) $actionsStatus: Observable<any>;
 
-  constructor(private ngRedux: NgRedux<IStore>) {
+  constructor(private ngRedux: NgRedux<IStore>,
+  private trananslateSrv:TranslateService) {
     this.options = {
       chart: {
+        options: {
+            labels: {
+              // This more specific font property overrides the global property
+              fontColor: 'black',
+              fontSize: 20
+            }
+        },
         type: 'pieChart',
-        height: 380,
+        height: 430,
         x: function (d) {
           return d.key;
         },
@@ -38,10 +47,10 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
         labelSunbeamLayout: false,
         labelType: "percent",
         showLegend: false,
-        growOnHover: false,
+        growOnHover: true,
         tooltip: {
-          contentGenerator: function (d) {
-            return d.series[0].key + ': ' + d.series[0].value + '%';
+          contentGenerator: (d)=> {
+            return this.trananslateSrv.instant(`keys.${d.series[0].key}`) + ': ' + d.series[0].value + '%';
           }
         }
       }
@@ -58,7 +67,7 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
       });
     });
     this.legendData = data.map(i => {
-      return {color: i.color, label: 'actionsStatus.' + i.key}
+      return {color: i.color, label: 'keys.' + i.key}
     });
     this.data = data;
 

@@ -44,8 +44,6 @@ export class InventoryComponent implements OnInit, OnDestroy {
 
     this.dataSource = {
       getRows: (params) => {
-        console.log('asking for ' + params.startRow + ' to ' + params.endRow);
-        console.log('asking for ', params);
         this.ngRedux.dispatch({
           type: AtmsActions.ATMS_GET_INVENTORY,
           payload: Object.assign(this.filtersLastState, {

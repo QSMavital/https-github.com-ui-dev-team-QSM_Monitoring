@@ -30,7 +30,7 @@ export class AtmsInventoryFilterComponent implements OnInit,OnChanges {
     if (!isNullOrUndefined(newData.filters.currentValue.status)) {
       newData.filters.currentValue['status'].forEach((statusFilter) => {
         this.filterObj.statusFilter.push({
-          label: this.translateSrv.instant(`actionsStatus.${statusFilter}`),
+          label: this.translateSrv.instant(`enums.${statusFilter}`),
           value: statusFilter
         })
       });

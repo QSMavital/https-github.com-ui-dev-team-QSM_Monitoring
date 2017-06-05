@@ -14,7 +14,10 @@
     height:21px !important;
     width:21px !important;
     padding:0;
+    font-size: $fs12 !important;
+
   }
+
   &[disabled]{
     opacity: .5;
     pointer-events: none;
@@ -25,6 +28,18 @@
   @extend .btn;
   color: $che-blue;
   border: 1px solid $che-blue;
+}
+.close-btn{
+  @extend .btn;
+
+  color:$coral-red;
+  border: 1px solid $coral-red;
+
+}
+.open-btn{
+  @extend .btn;
+  color:$malachite;
+  border: 1px solid $malachite;
 }
 
 .purple-btn {

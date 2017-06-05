@@ -1,3 +1,6 @@
 <li>
-  <div fxFlex fxLayout fxLayoutAlign="space-between center" *ngFor="let item of data">{{item.value}}</div>
+  <div fxFlex fxLayout fxLayoutAlign="space-between center" *ngFor="let item of data">
+    <ui-status-indicator
+      [status]="item.value" [showStatus]="true"></ui-status-indicator>
+  </div>
 </li>

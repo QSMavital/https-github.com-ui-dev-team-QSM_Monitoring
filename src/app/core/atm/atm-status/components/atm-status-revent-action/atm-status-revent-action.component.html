@@ -2,6 +2,7 @@
   <div class="ui-list-wrapper" *ngIf="recent_actions">
     <ui-list>
       <ui-list-item fxFlex="50%" *ngFor="let item of recent_actions"
+                    [status]="item.status"
                     [data]="item | keys"></ui-list-item>
     </ui-list>
 

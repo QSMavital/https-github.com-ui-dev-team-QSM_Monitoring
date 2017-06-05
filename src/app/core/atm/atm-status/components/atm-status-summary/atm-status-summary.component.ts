@@ -53,7 +53,7 @@ export class AtmStatusSummaryComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(newValue) {
-    if (!isNullOrUndefined(newValue.summary_data) && !isNullOrUndefined(newValue.summary_data.currentValue)) {
+    if (!isNullOrUndefined(newValue.summary_data) && !isNullOrUndefined(newValue.summary_data.currentValue)&&!isNullOrUndefined(this.gridOptions.api)) {
       let rowData = this.summary_data;
       this.gridOptions.api.setRowData(rowData);
     }

@@ -99,15 +99,16 @@ export const Atms = {
     branch: {
       headerName: "atms.branch",
       field: "branch",
-      width: 160
+      width: 160,
+      cellRendererFramework: AgTranslateMapComponent
     },
-    belong: {headerName: "atms.belong", field: "belong", width: 120}
+    belong: {headerName: "atms.belong", field: "belong", width: 120,cellRendererFramework: AgTranslateMapComponent}
 
   },
   Notifications: {
     atmNo: {headerName: 'atms.terminalId', field: 'atmNo', width: 80,suppressSizeToFit: true},
-    date: {headerName: 'atms.date', field: 'date', width: 120,suppressSizeToFit: true,cellRendererFramework: AgDateShortComponent},
-    time: {headerName: 'atms.time', field: 'time', width: 120,suppressSizeToFit: true,cellRendererFramework: AgTimeComponent},
+    date: {headerName: 'general.date', field: 'date', width: 120,suppressSizeToFit: true,cellRendererFramework: AgDateShortComponent},
+    time: {headerName: 'general.time', field: 'time', width: 120,suppressSizeToFit: true,cellRendererFramework: AgTimeComponent},
     eventCode: {headerName: 'atms.code', field: 'eventCode', width: 100,suppressSizeToFit: true},
     eventTextEn: {headerName: 'atms.spec', field: 'eventTextEn', width: 200},
     eventTextLocal: {headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 200},
@@ -117,8 +118,8 @@ export const Atms = {
   },
   Events: {
     atmNo: {headerName: 'atms.terminalId', field: 'atmNo', width: 80,suppressSizeToFit: true},
-    date: {headerName: 'atms.date', field: 'date', width: 120,suppressSizeToFit: true,cellRendererFramework: AgDateShortComponent},
-    time: {headerName: 'atms.time', field: 'time', width: 120,suppressSizeToFit: true,cellRendererFramework: AgTimeComponent},
+    date: {headerName: 'general.date', field: 'date', width: 120,suppressSizeToFit: true,cellRendererFramework: AgDateShortComponent},
+    time: {headerName: 'general.time', field: 'time', width: 120,suppressSizeToFit: true,cellRendererFramework: AgTimeComponent},
     eventCode: {headerName: 'atms.code', field: 'eventCode', width: 100,suppressSizeToFit: true},
     eventTextEn: {headerName: 'atms.spec', field: 'eventTextEn', width: 200},
     eventTextLocal: {headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 200},
@@ -137,7 +138,7 @@ export const Atms = {
     amount: {headerName: 'atms.amount', field: 'amount', width: 110,suppressSizeToFit: true},
     transactionStatus: {headerName: 'general.transactionStatus', field: 'transactionStatus', width: 180,suppressSizeToFit: true,cellRendererFramework: AgStatusComponent},
     approver: {headerName: 'general.approver', field: 'approver', width:150,cellRendererFramework: AgTranslateMapComponent,suppressSizeToFit: true},
-    rejectReason: {headerName: 'general.rejectReason', field: 'rejectReason', width: 150,suppressSizeToFit: true},
+    rejectReason: {headerName: 'general.rejectReason', field: 'rejectReason', width: 150,suppressSizeToFit: true,cellRendererFramework: AgTranslateMapComponent},
     atmFeeAmount: {headerName: 'general.atmFeeAmount', field: 'atmFeeAmount', width: 100,suppressSizeToFit: true},
     businessDay: {headerName: 'general.businessDay', field: 'businessDay', width: 140,suppressSizeToFit: true,cellRendererFramework: AgDateShortComponent}
   }

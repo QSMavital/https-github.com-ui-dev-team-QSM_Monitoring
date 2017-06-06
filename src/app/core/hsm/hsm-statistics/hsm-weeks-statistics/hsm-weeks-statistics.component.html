@@ -1,0 +1,14 @@
+<div fxFlex>
+  <ui-portlet [header]="'week 25/4/2017'">
+    <div class="inside-portlet-wrapper stretch-width stretch-height">
+
+    <ag-grid-angular
+        fxFlex
+        class="ag-fresh stretch-height"
+        (gridReady)="fitCols_weeks_statistics()"
+        [gridOptions]="gridOptions">
+      </ag-grid-angular>
+
+    </div>
+  </ui-portlet>
+</div>

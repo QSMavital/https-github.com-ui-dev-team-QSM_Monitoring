@@ -82,6 +82,8 @@ import {AccessoriesOtherComponent} from './core/atm/accessories-status/component
 import {AccessoriesPrintersComponent} from "./core/atm/accessories-status/components/accessories-printers/accessories-printers.component";
 import {AgTranslateMapComponent} from "./shared/components/ag-translate-map/ag-translate-map.component";
 import {GrowlModule} from 'primeng/primeng';
+import { HsmStatisticsFilterComponent } from './core/hsm/hsm-statistics/hsm-statistics-filter/hsm-statistics-filter.component';
+import { HsmWeeksStatisticsComponent } from './core/hsm/hsm-statistics/hsm-weeks-statistics/hsm-weeks-statistics.component';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -142,7 +144,9 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     AccessoriesBalanceStrokesComponent,
     AccessoriesPrintersComponent,
     AccessoriesChecksComponent,
-    AccessoriesOtherComponent
+    AccessoriesOtherComponent,
+    HsmStatisticsFilterComponent,
+    HsmWeeksStatisticsComponent
   ],
   imports: [
     GrowlModule,

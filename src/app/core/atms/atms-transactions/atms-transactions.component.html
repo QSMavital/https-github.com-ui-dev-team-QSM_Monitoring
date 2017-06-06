@@ -1,23 +1,23 @@
+<div class="stretch-height" fxLayout="column">
+  <ui-filters-bar>
+    <div fxLayout>
+      <ui-atms-notifications-filters (onChange)="filter($event)"
+                                     [filters]="filtersLastState"></ui-atms-notifications-filters>
+      <div fxFlex class="text-right">
 
-  <div class="stretch-height" fxLayout="column">
-    <ui-filters-bar>
-      <div fxLayout>
-        <ui-atms-notifications-filters (onChange)="filter($event)" [filters]="filtersLastState"></ui-atms-notifications-filters>
-        <div fxFlex class="text-right">
-
-        </div>
       </div>
+    </div>
 
-    </ui-filters-bar>
+  </ui-filters-bar>
 
-    <ag-grid-angular
-      (rowDoubleClicked)="showTransaction($event)"
-      fxFlex
-      (gridReady)="fitCols()"
-      class="ag-fresh"
-      [gridOptions]="gridOptions">
-    </ag-grid-angular>
+  <ag-grid-angular
+    (rowDoubleClicked)="showTransaction($event)"
+    fxFlex
+    (gridReady)="fitCols()"
+    class="ag-fresh"
+    [gridOptions]="gridOptions">
+  </ag-grid-angular>
 
-  </div>
+</div>
 
-<ui-transaction [transactionId]="transactionId"  [(show)]="transaction"></ui-transaction>
+<ui-transaction [transactionId]="transactionId" [(show)]="transaction"></ui-transaction>

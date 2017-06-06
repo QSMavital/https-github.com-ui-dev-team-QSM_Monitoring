@@ -1,0 +1,8 @@
+<ui-portlet>
+  <div class="inside-portlet-wrapper stretch-width">
+    <ui-filters-bar>
+      <ui-atms-notifications-filters (onChange)="filter($event)"
+                                     [filters]="filtersLastState"></ui-atms-notifications-filters>
+    </ui-filters-bar>
+  </div>
+</ui-portlet>

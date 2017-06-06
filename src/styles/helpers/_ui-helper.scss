@@ -279,3 +279,9 @@ ui-key-label{
 ui-list-item:nth-child(even) {
   border-left: $cats-white 1px solid;
 }
+ui-list-item.stretch-width:last-child,ui-list-item:not(.stretch-width):nth-last-child(1),ui-list-item:not(.stretch-width):nth-last-child(2){
+  border-bottom:0;
+}
+ui-list-item.stretch-width:nth-child(even) {
+   border-left: 0;
+ }

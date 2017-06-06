@@ -10,11 +10,10 @@ import {TranslateService} from "@ngx-translate/core";
   templateUrl: './atm-status-general.component.html',
   styleUrls: ['./atm-status-general.component.scss']
 })
-export class AtmStatusGeneralComponent implements OnInit, OnChanges {
+export class AtmStatusGeneralComponent implements OnChanges {
   @Input() general_data: any;
   public gridOptions: GridOptions;
   constructor(private gridDefsSrv: GridDefsService,private translateSrv: TranslateService) {
-
     this.gridOptions = this.gridDefsSrv.initGridOptions();
     this.gridOptions.columnDefs =  [
       {
@@ -29,9 +28,6 @@ export class AtmStatusGeneralComponent implements OnInit, OnChanges {
         cellRendererFramework: AgStatusComponent
       },
     ];
-  }
-
-  ngOnInit() {
 
   }
 

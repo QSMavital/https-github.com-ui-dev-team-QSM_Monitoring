@@ -5,6 +5,7 @@ import {AgDateShortComponent} from "../shared/components/ag-date-short/ag-date-s
 import {AgTimeComponent} from "../shared/components/ag-time/ag-time.component";
 import {AgTranslateMapComponent} from "../shared/components/ag-translate-map/ag-translate-map.component";
 import {GeneralConstants} from "./general_consts";
+import {AgDiv100Component} from "../shared/components/ag-div100/ag-div100.component";
 
 export const Atm = {
   Tabs: {
@@ -514,14 +515,14 @@ export const Atm = {
       statusColor: {headerName: "atms.tabs.status", field: "statusColor", width: 80, cellRendererFramework: AgStatusComponent},
       supply: {headerName: "general.supply", field: "supply", width: 75, cellRendererFramework: AgProgressComponent},
       currencyCode: {headerName: "general.CurrencyCode", field: "currencyCode", width: 60, cellRendererFramework: AgTranslateMapComponent},
-      denomination: {headerName: "atms.denomination", field: "denomination", width: 60},
+      denomination: {headerName: "atms.denomination", field: "denomination", width: 60,cellRendererFramework:AgDiv100Component},
       loaded: {headerName: "atm.loaded", field: "loaded", width: 60},
       dispensed: {headerName: "atm.dispensed", field: "dispensed", width: 60},
       rejected: {headerName: "atm.rejected", field: "rejected", width: 60},
       remaining: {headerName: "atm.remaining", field: "remaining", width: 60}
     },
     LastStrokes: {
-      value: {headerName: "atms.denomination", field: "denomination", width: 100},
+      value: {headerName: "atms.denomination", field: "denomination", width: 100,cellRendererFramework:AgDiv100Component},
       propriety: {headerName: "general.CurrencyCode", field: "currency", width: 100},
       coin: {headerName: "general.count", field: "count", width: 100},
       sumMeteg: {headerName: "general.sumMeteg", field: "sumMeteg", width: 100},

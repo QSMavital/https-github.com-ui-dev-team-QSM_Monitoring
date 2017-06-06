@@ -10,22 +10,26 @@ import {TranslateService} from "@ngx-translate/core";
   templateUrl: './accessories-other.component.html',
   styleUrls: ['./accessories-other.component.scss']
 })
-export class AccessoriesOtherComponent implements OnChanges {
+export class AccessoriesOtherComponent implements OnChanges, OnInit {
 @Input() other_accessories_data: any = {};
   public infos: any[] = [];
-  public gridOptions: GridOptions;
+  public gridOptions: GridOptions = {};
 
   constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService) {
+
+  };
+
+  fitCols_otherAccessoriesInfo() {
+    this.gridOptions.api.sizeColumnsToFit();
+  }
+
+  ngOnInit(){
     this.gridOptions = this.gridDefsSrv.initGridOptions();
     for (let prop in Atm.Accessories.Other) {
       this.gridOptions.columnDefs.push(Object.assign({}, { suppressFilter: true }, Atm.Accessories.Other[prop], {
         headerName: this.translateSrv.instant(Atm.Accessories.Other[prop].headerName)
       }));
     }
-  };
-
-  fitCols_otherAccessoriesInfo() {
-    this.gridOptions.api.sizeColumnsToFit();
   }
 
   ngOnChanges(newValue) {

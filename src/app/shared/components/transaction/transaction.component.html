@@ -5,8 +5,9 @@
       <masonry [options]="masonryOptions" class="form-body stretch-width">
         <masonry-brick *ngFor="let item of data" class="brick" style="width:400px;margin-right: 15px">
           <ui-controls-group [header]="item.title">
-            <ui-list>
+            <ui-list >
               <ui-list-item
+                [block]="true"
                 *ngFor="let row of item.data"
                 [data]="[{value:row.key},{value:row.value}]"></ui-list-item>
             </ui-list>

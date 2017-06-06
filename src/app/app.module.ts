@@ -81,6 +81,7 @@ import {AccessoriesOtherComponent} from './core/atm/accessories-status/component
 import {AccessoriesPrintersComponent} from "./core/atm/accessories-status/components/accessories-printers/accessories-printers.component";
 import {AgTranslateMapComponent} from "./shared/components/ag-translate-map/ag-translate-map.component";
 import {GrowlModule} from 'primeng/primeng';
+import {AgDiv100Component} from "./shared/components/ag-div100/ag-div100.component";
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -175,7 +176,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       AgProgressComponent,
       AgDateShortComponent,
       AgTimeComponent,
-      AgTranslateMapComponent
+      AgTranslateMapComponent,
+      AgDiv100Component
     ])
   ],
   providers: [

@@ -282,7 +282,6 @@ $font_3: sans-serif;
   }
   .ag-body {
     background-color: $color_black_haze_approx;
-    top: 38px !important;
     .ag-body-container {
       .ag-row {
         border-bottom: solid 1px #dfe8ef;
@@ -556,7 +555,7 @@ $font_3: sans-serif;
         background: transparent;
         &:after {
           cursor: pointer;
-          font-size: 27px;
+          font-size: 25px;
         }
         &[ref='btFirst'] {
           padding-left: 0;

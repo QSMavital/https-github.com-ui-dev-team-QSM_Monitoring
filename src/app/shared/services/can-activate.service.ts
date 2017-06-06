@@ -63,6 +63,7 @@ export class AppActivator implements CanActivate {
               private http: InterceptorService,
               private translate: TranslateService) {
     this.auth = new Observable((ob) => {
+      console.log('AppActivator');
       if(!isNullOrUndefined(this.ngRedux.getState().userSettings)){
         ob.next(true);
         return;

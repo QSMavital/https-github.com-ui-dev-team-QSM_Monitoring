@@ -28,7 +28,6 @@ export const appRoutes: Route[] = [
       {
         path: '', component: DashboardComponent,
         canActivate: [CanActivateRoute],
-
         data: {state: "MAIN"}
       },
       {

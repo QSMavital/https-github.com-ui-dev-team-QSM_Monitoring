@@ -45,6 +45,7 @@ import { AgTranslateMapComponent } from './components/ag-translate-map/ag-transl
 import { TransactionComponent } from './components/transaction/transaction.component'
 import {ApiService} from "./services/api-services.service";
 import {GridDefsService} from "./services/grid-defs.service";
+import { AgDiv100Component } from './components/ag-div100/ag-div100.component';
 
 @NgModule({
   imports: [
@@ -92,7 +93,8 @@ import {GridDefsService} from "./services/grid-defs.service";
     KeysPipe,
     KeyLabelComponent,
     AgTranslateMapComponent,
-    TransactionComponent
+    TransactionComponent,
+    AgDiv100Component
   ],
   exports: [
     SpinnerComponent,
@@ -118,6 +120,7 @@ import {GridDefsService} from "./services/grid-defs.service";
     AgDateShortComponent,
     AgTimeComponent,
     AgTranslateMapComponent,
+    AgDiv100Component,
     AddNewComponent,
     ListComponent,
     ListItemComponent,

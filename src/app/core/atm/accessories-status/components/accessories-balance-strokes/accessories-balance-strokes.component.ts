@@ -35,9 +35,9 @@ export class AccessoriesBalanceStrokesComponent implements OnChanges {
       for (let key in this.accessories_data){
         if(key !== 'lastSettleDispenseList'){
           if (key === 'transactionId') {
-            this.infos.push({key: `enums.${key}`, value: this.accessories_data[key]})
+            this.infos.push({key: `atm.${key}`, value: this.accessories_data[key]})
           } else {
-            this.infos.push({key: `enums.${key}`, value: new Date(this.accessories_data[key]).toLocaleString()})
+            this.infos.push({key: `atm.${key}`, value: new Date(this.accessories_data[key]).toLocaleString()})
           }
         }
       }

@@ -529,17 +529,17 @@ export const Atm = {
       difference: {headerName: "atm.difference", field: "difference", width: 100}
     },
     Printers: {
-      device: {headerName: "atm.device", field: "device", width: 170},
+      device: {headerName: "atm.device", field: "device", width: 170, cellRendererFramework: AgTranslateMapComponent},
       statusColor: {headerName: "general.fitness", field: "statusColor", width: 170, cellRendererFramework: AgStatusComponent}
     },
     Checks: {
-      device: {headerName: "atm.device", field: "device", width: 90},
+      device: {headerName: "atm.device", field: "device", width: 90, cellRendererFramework: AgTranslateMapComponent},
       statusColor: {headerName: "general.fitness", field: "statusColor", width: 90, cellRendererFramework: AgStatusComponent},
       supply: {headerName: "general.supply", field: "supply", width: 90, cellRendererFramework: AgProgressComponent},
       counter: {headerName: "atm.counter", field: "counter", width: 90}
     },
     Other: {
-      device: {headerName: "atm.device", field: "device", width: 90},
+      device: {headerName: "atm.device", field: "device", width: 90, cellRendererFramework: AgTranslateMapComponent},
       statusColor: {headerName: "general.fitness", field: "statusColor", width: 90, cellRendererFramework: AgStatusComponent},
       supply: {headerName: "general.supply", field: "supply", width: 90,
         cellRendererFramework: AgProgressComponent},

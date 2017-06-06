@@ -35,7 +35,7 @@ export class AccessoriesOtherComponent implements OnChanges {
 
       for (let key in this.other_accessories_data) {
         if (key !== 'deviceList') {
-          this.infos.push({key: `enums.${key}`, value: new Date(this.other_accessories_data[key]).toLocaleString()})
+          this.infos.push({key: `atm.${key}`, value: new Date(this.other_accessories_data[key]).toLocaleString()})
         }
       }
     }

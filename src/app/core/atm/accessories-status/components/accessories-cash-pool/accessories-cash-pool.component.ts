@@ -40,9 +40,9 @@ constructor(private gridDefsSrv: GridDefsService, private translateSrv: Translat
       for (let key in this.cash_pool_data){
         if(key !== 'cassettesList'){
           if (key === 'lastGoodWithrawal') {
-            this.infos.push({key: `enums.${key}`, value: new Date(this.cash_pool_data[key]).toLocaleString()})
+            this.infos.push({key: `atm.${key}`, value: new Date(this.cash_pool_data[key]).toLocaleString()})
           } else {
-            this.infos.push({key: `enums.${key}`, value: this.cash_pool_data[key]})
+            this.infos.push({key: `atm.${key}`, value: this.cash_pool_data[key]})
           }
         }
       }

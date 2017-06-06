@@ -56,7 +56,7 @@ export class AppComponent implements OnDestroy{
   initNotificationsHandler() {
     this.unsubsribers.notifications = this.notifications$.subscribe((state) => {
       if (!isNullOrUndefined(state)) {
-       this.notification.push({severity:'success', summary:'Info Message', detail:state.result})
+       this.notification.push({severity:state.result?'success':'error', summary:state.summary, detail:state.details})
       }
     });
   }

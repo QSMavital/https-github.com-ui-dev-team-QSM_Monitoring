@@ -63,7 +63,7 @@ export class AtmsStatusComponent implements OnInit {
         });
         this.$atms_inventory_ref = this.$atms_inventory.subscribe((state) => {
           if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
-            params.successCallback(state.atms, state.totalCount >= params.endRow ? state.atms.length : -1);
+            params.successCallback(state.atms, state.totalCount <= params.endRow ? state.atms.length : -1);
           }
         });
 
@@ -94,7 +94,6 @@ export class AtmsStatusComponent implements OnInit {
   }
 
   action(type, list = null) {
-    console.log(list);
     let atmList = null;
     if (!isNullOrUndefined(list)) {
       atmList = [];

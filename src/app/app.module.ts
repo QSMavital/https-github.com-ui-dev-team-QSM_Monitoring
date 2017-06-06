@@ -33,7 +33,6 @@ import {AtmsStatusComponent} from './core/atms/atms-status/atms-status.component
 import {AtmsNotificationsComponent} from './core/atms/atms-notifications/atms-notifications.component';
 import {AtmsEventsComponent} from './core/atms/atms-events/atms-events.component';
 import {AtmsTransactionsComponent} from './core/atms/atms-transactions/atms-transactions.component';
-import {AtmsTransactionComponent} from './core/atms/atms-transaction/atms-transaction.component';
 import {Customer} from "../store/middlewares/customer-middleware";
 import {MainComponent} from './core/master/main/main.component';
 import {AtmStatusComponent} from './core/atm/atm-status/atm-status.component';
@@ -113,7 +112,6 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     AtmsNotificationsComponent,
     AtmsEventsComponent,
     AtmsTransactionsComponent,
-    AtmsTransactionComponent,
     MainComponent,
     AtmStatusComponent,
     AccessoriesStatusComponent,

@@ -43,10 +43,6 @@ export class AtmsNotificationsComponent implements OnInit {
 
     this.dataSource = {
       getRows: (params) => {
-        console.log('asking for ' + params.startRow + ' to ' + params.endRow);
-        console.log('asking for ', params);
-        // this.ngRedux.dispatch({type: AtmsActions.ATMS_GET_EVENTS,payload:this.filtersLastState});
-
         this.ngRedux.dispatch({
           type: AtmsActions.ATMS_GET_EVENTS,
           payload: Object.assign(this.filtersLastState, {
@@ -57,7 +53,7 @@ export class AtmsNotificationsComponent implements OnInit {
         });
         this.$atms_events_ref = this.$atms_events.subscribe((state) => {
           if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
-            params.successCallback(state.data, state.totalCount >= params.endRow ? state.totalCount : -1);
+            params.successCallback(state.allEvents, state.totalCount <= params.endRow ? state.totalCount : -1);
           }
         });
 

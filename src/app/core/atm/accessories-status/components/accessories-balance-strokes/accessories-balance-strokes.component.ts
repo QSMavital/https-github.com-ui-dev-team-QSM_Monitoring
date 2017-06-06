@@ -28,7 +28,7 @@ export class AccessoriesBalanceStrokesComponent implements OnChanges {
     this.gridOptions.api.sizeColumnsToFit();
   }
   ngOnChanges(newValue){
-    if(!isNullOrUndefined(newValue.accessories_data)&&!isNullOrUndefined(newValue.accessories_data.currentValue)){
+    if(!isNullOrUndefined(newValue.accessories_data)&&!isNullOrUndefined(newValue.accessories_data.currentValue)&&!isNullOrUndefined(this.gridOptions.api)){
       let rowData = this.accessories_data.lastSettleDispenseList;
       this.gridOptions.api.setRowData(rowData);
 

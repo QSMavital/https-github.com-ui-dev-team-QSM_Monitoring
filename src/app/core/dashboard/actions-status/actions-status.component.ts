@@ -33,7 +33,7 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
             }
         },
         type: 'pieChart',
-        height: 430,
+        height: 380,
         x: function (d) {
           return d.key;
         },

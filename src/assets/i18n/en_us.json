@@ -9,7 +9,7 @@
     "NORTH": "North",
     "SOUTH": "South",
     "CENTER": "Center",
-    "JERUSALEM": "Jerusalem And Surroundings"
+    "JERUSALEM_AND_SURROUNDINGS": "Jerusalem And Surroundings"
   },
   "Responsibility": {
     "NONE": "None",
@@ -37,6 +37,7 @@
     "reports": "reports"
   },
   "general": {
+    "removeDate":"Remove Date",
     "all": "All ATM's",
     "selected": "Selected Atm's",
     "createNewAtm": "Create New Atm",
@@ -294,20 +295,20 @@
     "31": "הבנק הבינלאומי הראשון",
     "14": "בנק אוצר החייל",
     "17": "בנק מרכנתיל דיסקונט",
-    "9": "בנק הדואר",
+    "09": "בנק הדואר",
     "13": "בנק איגוד",
     "46": "בנק מסד",
     "52": "בנק פועלי אגודת ישראל",
     "90": "בנק דיסקונט למשכנתאות",
     "77": "בנק לאומי למשכנתאות בע\"מ",
-    "4": "בנק יהב לעובדי המדינה",
+    "04": "בנק יהב לעובדי המדינה",
     "26": "יובנק בע\"מ",
-    "7": "בנק לפיתוח התעשיה",
-    "8": "בנק הספנות לישראל",
-    "6": "בנק אדנים",
+    "07": "בנק לפיתוח התעשיה",
+    "08": "בנק הספנות לישראל",
+    "06": "בנק אדנים",
     "54": "בנק ירושלים",
     "34": "בנק ערבי ישראלי",
-    "1": "בנק יורו טרייד",
+    "01": "בנק יורו טרייד",
     "19": "בנק החקלאות לישראל",
     "22": "בנק סיטי",
     "48": "קופת העובד הלאומי",
@@ -316,16 +317,21 @@
     "67": "Arab Land Bank",
     "25": "BNP Paribas Israel",
     "39": "SBI State Bank of India",
-    "OUR_BANK": "Our Bank",
-    "288":"Missing name"
+    "OUR_BANK": "Our Bank"
   },
   "enums": {
     "NONE": "-",
     "OFF_LINE": "Disconnected",
+    "DISABLED": "Disabled",
     "DISABLE": "Disable",
     "GOOD": "Good",
     "ATTENTION": "Attention",
     "FATAL": "Fatal",
+    "ERROR":"Error",
+    "WARN":"Warn",
+    "INFO":"Info",
+    "DEBUG":"Debug",
+    "TRACE":"Trace",
     "OPERATOR": "Operator",
     "NOT_APPROVED": "Not Approved",
     "APPROVED": "Approved",
@@ -376,7 +382,8 @@
     "WARNING": "Warning",
     "SUSPEND": "Suspend",
     "REMOTE": "Remote",
-    "YAHAV": "Yahav"
+    "YAHAV": "Yahav",
+    "BRANCH":"Branch"
   },
   "loadStage": {
     "NONE": "-",
@@ -397,6 +404,17 @@
     "SUPPLY_DATA": "Supply testing",
     "FITNESS": "Fitness testing",
     "SENSOR_DATA": "Sensor testing"
+  },
+  "closedReason":{
+    "UNKNOWN":"Unknown",
+    "CLOSE_STATUS":"Status",
+    "CLOSE_OPERATOR":"Operator",
+    "CLOSE_GROUP":"Group",
+    "CLOSE_ALL":"All",
+    "Loading":"Loading",
+    "OFFLINE":"Offline",
+    "OPEN":"Open",
+    "DISABLED":"Disabled"
   },
   "rejectReason": {
     "NONE": "-",

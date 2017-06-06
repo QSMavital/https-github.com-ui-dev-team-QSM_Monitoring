@@ -29,7 +29,7 @@ export class AccessoriesOtherComponent implements OnChanges {
   }
 
   ngOnChanges(newValue) {
-    if (!isNullOrUndefined(newValue.other_accessories_data) && !isNullOrUndefined(newValue.other_accessories_data.currentValue)) {
+    if (!isNullOrUndefined(newValue.other_accessories_data) && !isNullOrUndefined(newValue.other_accessories_data.currentValue)&&!isNullOrUndefined(this.gridOptions.api)) {
       let rowData = this.other_accessories_data.deviceList;
       this.gridOptions.api.setRowData(rowData);
 

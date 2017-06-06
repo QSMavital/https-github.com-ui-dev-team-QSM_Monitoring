@@ -29,7 +29,7 @@ export class AccessoriesChecksComponent implements OnChanges {
   }
 
   ngOnChanges(newValue) {
-    if (!isNullOrUndefined(newValue.checkInfo_data) && !isNullOrUndefined(newValue.checkInfo_data.currentValue)) {
+    if (!isNullOrUndefined(newValue.checkInfo_data) && !isNullOrUndefined(newValue.checkInfo_data.currentValue)&&!isNullOrUndefined(this.gridOptions.api)) {
       let rowData = this.checkInfo_data.deviceList;
       this.gridOptions.api.setRowData(rowData);
 

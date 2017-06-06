@@ -513,7 +513,7 @@ export const Atm = {
       cassetteType: {headerName: "atm.accessories.accessoriesDispenserInfo.cassetteType", field: "cassetteType", width: 80},
       statusColor: {headerName: "atms.tabs.status", field: "statusColor", width: 80, cellRendererFramework: AgStatusComponent},
       supply: {headerName: "general.supply", field: "supply", width: 75, cellRendererFramework: AgProgressComponent},
-      currencyCode: {headerName: "general.CurrencyCode", field: "currencyCode", width: 60},
+      currencyCode: {headerName: "general.CurrencyCode", field: "currencyCode", width: 60, cellRendererFramework: AgTranslateMapComponent},
       denomination: {headerName: "atms.denomination", field: "denomination", width: 60},
       loaded: {headerName: "atm.loaded", field: "loaded", width: 60},
       dispensed: {headerName: "atm.dispensed", field: "dispensed", width: 60},
@@ -632,7 +632,14 @@ export const Atm = {
       suppressSizeToFit: true,
       cellRendererFramework: AgTranslateMapComponent
     },
-    comments: {headerName: "atm.comments", field: "comments"},
+    removeDate: {
+      headerName: "general.removeDate",
+      field: "removeDate",
+      width: 200,
+      cellRendererFramework: AgDateComponent,
+      suppressSizeToFit: true
+    },
+    comments: {headerName: "atm.comments", field: "comments"}
 
   }
 };

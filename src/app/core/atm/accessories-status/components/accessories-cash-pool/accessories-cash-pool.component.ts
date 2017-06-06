@@ -33,7 +33,7 @@ constructor(private gridDefsSrv: GridDefsService, private translateSrv: Translat
   }
 
   ngOnChanges(newValue){
-    if(!isNullOrUndefined(newValue.cash_pool_data)&&!isNullOrUndefined(newValue.cash_pool_data.currentValue)){
+    if(!isNullOrUndefined(newValue.cash_pool_data)&&!isNullOrUndefined(newValue.cash_pool_data.currentValue)&&!isNullOrUndefined(this.gridOptions.api)){
       let rowData = this.cash_pool_data.cassettesList;
       this.gridOptions.api.setRowData(rowData);
 

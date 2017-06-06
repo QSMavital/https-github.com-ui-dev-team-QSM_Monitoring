@@ -14,7 +14,7 @@ export class Atm {
   Middleware = store => next => action => {
     switch (action.type) {
       case AtmActions.ATM_GET_STATUS:
-        this.http.post(Api.getAtmStatus.url, Object.assign(Api.getAtmStatus.payload,action.payload))
+        this.http.post(Api.getAtmStatus.url, Object.assign({},Api.getAtmStatus.payload,action.payload))
           .map(res => JSON.parse(res['_body']))
           .subscribe((res) => {
             next({
@@ -24,7 +24,7 @@ export class Atm {
           });
         break;
       case AtmActions.ATM_GET_ACCESSORIES:
-        this.http.post(Api.getAtmAccessories.url, Object.assign(Api.getAtmAccessories.payload,action.payload))
+        this.http.post(Api.getAtmAccessories.url, Object.assign({},Api.getAtmAccessories.payload,action.payload))
           .map(res => JSON.parse(res['_body']))
           .subscribe((res) => {
             next({
@@ -34,7 +34,7 @@ export class Atm {
           });
         break;
       case AtmActions.ATM_GET_RETIANED_CARDS:
-        this.http.post(Api.getAtmRetainedCards.url, Object.assign(Api.getAtmRetainedCards.payload,action.payload))
+        this.http.post(Api.getAtmRetainedCards.url, Object.assign({},Api.getAtmRetainedCards.payload,action.payload))
           .map(res => JSON.parse(res['_body']))
           .subscribe((res) => {
             next({
@@ -44,7 +44,7 @@ export class Atm {
           });
         break;
       case AtmActions.ATM_ADD_SETTINGS:
-        this.http.post(Api.createAtmSettings.url, Object.assign(action.payload))
+        this.http.post(Api.createAtmSettings.url, Object.assign({},action.payload))
           .map(res => JSON.parse(res['_body']))
           .subscribe((res) => {
             next({
@@ -55,7 +55,7 @@ export class Atm {
 
         break;
       case AtmActions.ATM_UPDATE_SETTINGS:
-        this.http.post(Api.saveAtmSettings.url, Object.assign(action.payload))
+        this.http.post(Api.saveAtmSettings.url, Object.assign({},action.payload))
           .map(res => JSON.parse(res['_body']))
           .subscribe((res) => {
             next({
@@ -65,7 +65,7 @@ export class Atm {
           });
         break;
       case AtmActions.ATM_GET_SETTINGS:
-        this.http.post(Api.getAtmSettings.url, Object.assign(Api.getAtmSettings.payload,action.payload))
+        this.http.post(Api.getAtmSettings.url, Object.assign({},Api.getAtmSettings.payload,action.payload))
           .map(res => JSON.parse(res['_body']))
           .subscribe((res) => {
             next({

@@ -28,7 +28,7 @@ export class AccessoriesPrintersComponent implements OnChanges{
   }
 
   ngOnChanges(newValue){
-    if(!isNullOrUndefined(newValue.printers_data)&&!isNullOrUndefined(newValue.printers_data.currentValue)){
+    if(!isNullOrUndefined(newValue.printers_data)&&!isNullOrUndefined(newValue.printers_data.currentValue)&&!isNullOrUndefined(this.gridOptions.api)){
       let rowData = this.printers_data.deviceList;
       this.gridOptions.api.setRowData(rowData);
     }

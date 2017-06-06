@@ -21,7 +21,7 @@ export const Atms = {
       width: 200,
       cellRendererFramework: AgStatusComponent
     },
-    closedReason: {headerName: "atms.closeReason", field: "closedStatus", width: 120},
+    closedReason: {headerName: "atms.closeReason", field: "closedReason", width: 120,cellRendererFramework: AgTranslateMapComponent},
     lastGoodWdrl: {
       headerName: "atms.lastWithdrawal",
       field: "lastGoodWdrl",
@@ -69,7 +69,7 @@ export const Atms = {
       width: 200,
       cellRendererFramework: AgStatusComponent
     },
-    closedReason: {headerName: "atms.closeReason", field: "closedStatus", width: 150},
+    closedReason: {headerName: "atms.closeReason", field: "closedReason", width: 150,cellRendererFramework: AgTranslateMapComponent},
     cashDepositColor: {
       headerName: "atms.cashDeposit",
       field: "cashDepositColor",
@@ -99,8 +99,7 @@ export const Atms = {
     branch: {
       headerName: "atms.branch",
       field: "branch",
-      width: 160,
-      cellRendererFramework: AgTranslateMapComponent
+      width: 160
     },
     belong: {headerName: "atms.belong", field: "belong", width: 120,cellRendererFramework: AgTranslateMapComponent}
 

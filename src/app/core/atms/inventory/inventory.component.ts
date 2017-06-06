@@ -19,7 +19,11 @@ import {Api} from "../../../config/api";
 export class InventoryComponent implements OnInit, OnDestroy {
   public addNew = false;
   public filtersData = {};
-  public filtersLastState = {};
+  public filtersLastState = {
+    status: null,
+    group: null,
+    area: null
+  };
   private $atms_inventory_ref;
   public gridOptions: GridOptions = {};
   private dataSource;
@@ -30,7 +34,7 @@ export class InventoryComponent implements OnInit, OnDestroy {
               private gridDefsSrv: GridDefsService,
               private router: Router) {
     this.filtersData = this.ngRedux.getState().userSettings.atmsCustomization.atmsFilters;
-    this.filtersLastState = Api.atms_inventory.payload;
+    this.filtersLastState = Object.assign(Api.atms_inventory.payload);
   }
 
   ngOnInit() {
@@ -54,7 +58,7 @@ export class InventoryComponent implements OnInit, OnDestroy {
         });
         this.$atms_inventory_ref = this.$atms_inventory.subscribe((state) => {
           if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
-            params.successCallback(state.atms, state.totalCount >= params.endRow ? state.atms.length : -1);
+            params.successCallback(state.atms, state.totalCount <= params.endRow ? state.atms.length : -1);
           }
         });
 
@@ -81,6 +85,7 @@ export class InventoryComponent implements OnInit, OnDestroy {
     let gridState = this.gridOptions.api.getInfinitePageState()[0];
     this.gridOptions.api.ensureIndexVisible(0);
     this.filtersLastState = event;
+
     this.ngRedux.dispatch({
       type: AtmsActions.ATMS_GET_INVENTORY,
       payload:Object.assign(this.filtersLastState, {

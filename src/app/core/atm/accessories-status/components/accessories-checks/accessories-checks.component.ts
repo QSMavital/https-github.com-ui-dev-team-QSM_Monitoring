@@ -29,13 +29,13 @@ export class AccessoriesChecksComponent implements OnChanges {
   }
 
   ngOnChanges(newValue) {
-    if (!isNullOrUndefined(newValue.checkInfo_data) && !isNullOrUndefined(newValue.checkInfo_data.currentValue)) {
+    if (!isNullOrUndefined(newValue.checkInfo_data) && !isNullOrUndefined(newValue.checkInfo_data.currentValue)&&!isNullOrUndefined(this.gridOptions.api)) {
       let rowData = this.checkInfo_data.deviceList;
       this.gridOptions.api.setRowData(rowData);
 
       for (let key in this.checkInfo_data) {
         if (key !== 'deviceList') {
-          this.infos.push({key: `enums.${key}`, value: new Date(this.checkInfo_data[key]).toLocaleString()})
+          this.infos.push({key: `atm.${key}`, value: new Date(this.checkInfo_data[key]).toLocaleString()})
         }
       }
     }

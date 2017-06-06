@@ -28,16 +28,16 @@ export class AccessoriesBalanceStrokesComponent implements OnChanges {
     this.gridOptions.api.sizeColumnsToFit();
   }
   ngOnChanges(newValue){
-    if(!isNullOrUndefined(newValue.accessories_data)&&!isNullOrUndefined(newValue.accessories_data.currentValue)){
+    if(!isNullOrUndefined(newValue.accessories_data)&&!isNullOrUndefined(newValue.accessories_data.currentValue)&&!isNullOrUndefined(this.gridOptions.api)){
       let rowData = this.accessories_data.lastSettleDispenseList;
       this.gridOptions.api.setRowData(rowData);
 
       for (let key in this.accessories_data){
         if(key !== 'lastSettleDispenseList'){
           if (key === 'transactionId') {
-            this.infos.push({key: `enums.${key}`, value: this.accessories_data[key]})
+            this.infos.push({key: `atm.${key}`, value: this.accessories_data[key]})
           } else {
-            this.infos.push({key: `enums.${key}`, value: new Date(this.accessories_data[key]).toLocaleString()})
+            this.infos.push({key: `atm.${key}`, value: new Date(this.accessories_data[key]).toLocaleString()})
           }
         }
       }

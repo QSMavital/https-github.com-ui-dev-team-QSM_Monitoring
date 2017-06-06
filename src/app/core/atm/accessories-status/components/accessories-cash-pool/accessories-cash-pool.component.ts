@@ -33,16 +33,16 @@ constructor(private gridDefsSrv: GridDefsService, private translateSrv: Translat
   }
 
   ngOnChanges(newValue){
-    if(!isNullOrUndefined(newValue.cash_pool_data)&&!isNullOrUndefined(newValue.cash_pool_data.currentValue)){
+    if(!isNullOrUndefined(newValue.cash_pool_data)&&!isNullOrUndefined(newValue.cash_pool_data.currentValue)&&!isNullOrUndefined(this.gridOptions.api)){
       let rowData = this.cash_pool_data.cassettesList;
       this.gridOptions.api.setRowData(rowData);
 
       for (let key in this.cash_pool_data){
         if(key !== 'cassettesList'){
           if (key === 'lastGoodWithrawal') {
-            this.infos.push({key: `enums.${key}`, value: new Date(this.cash_pool_data[key]).toLocaleString()})
+            this.infos.push({key: `atm.${key}`, value: new Date(this.cash_pool_data[key]).toLocaleString()})
           } else {
-            this.infos.push({key: `enums.${key}`, value: this.cash_pool_data[key]})
+            this.infos.push({key: `atm.${key}`, value: this.cash_pool_data[key]})
           }
         }
       }

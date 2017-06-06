@@ -11,7 +11,9 @@ export class AgTranslateMapComponent{
     approver:"banks",
     default:"enums",
     rejectReason:"rejectReason",
-    branch:"banks"
+    closedReason:"closedReason",
+    branch:"banks",
+    currencyCode:"CurrencyCode"
   };
 
   agInit(params: any): void {

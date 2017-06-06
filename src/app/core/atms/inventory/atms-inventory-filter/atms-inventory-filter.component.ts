@@ -16,14 +16,17 @@ export class AtmsInventoryFilterComponent implements OnInit,OnChanges {
   @Output() onChange = new EventEmitter();
   public filterObj;
 
+
   constructor(private fb: FormBuilder,
               private ngRedux: NgRedux<IStore>,
               private translateSrv: TranslateService) {
-    this.initForm();
     this.filterObj = {statusFilter: [], groupFilters: [], areaFilters: []}
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.initForm();
+
+  }
 
   ngOnChanges(newData) {
     this.filterObj = {statusFilter: [], groupFilters: [], areaFilters: []};

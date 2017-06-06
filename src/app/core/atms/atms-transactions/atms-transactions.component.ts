@@ -34,7 +34,7 @@ export class AtmsTransactionsComponent implements OnInit, OnDestroy {
   }
 
   fitCols() {
-    // this.gridOptions.api.sizeColumnsToFit();
+    this.gridOptions.api.sizeColumnsToFit();
   }
 
   initColDefs() {
@@ -45,8 +45,6 @@ export class AtmsTransactionsComponent implements OnInit, OnDestroy {
 
     this.dataSource = {
       getRows: (params) => {
-        console.log('asking for ' + params.startRow + ' to ' + params.endRow);
-        console.log('asking for ', params);
         this.ngRedux.dispatch({
           type: AtmsActions.ATMS_GET_TRANSACTIONS,
           payload: Object.assign(this.filtersLastState, {
@@ -57,7 +55,7 @@ export class AtmsTransactionsComponent implements OnInit, OnDestroy {
         });
         this.$atms_transactions_ref = this.$atms_transactions.subscribe((state) => {
           if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
-            params.successCallback(state.data, state.totalCount >= params.endRow ? state.data.length : -1);
+            params.successCallback(state.allTransactions, state.totalCount <= params.endRow ? state.allTransactions.length : -1);
           }
         });
 

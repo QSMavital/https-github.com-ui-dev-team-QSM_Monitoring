@@ -1,24 +1,23 @@
+<div class="stretch-height" fxLayout="column">
+  <ui-filters-bar>
+    <div fxLayout>
+      <ui-atms-notifications-filters
+        (onChange)="filter($event)"
+        [filters]="filtersLastState"
+      ></ui-atms-notifications-filters>
+      <!--<div fxFlex class="text-right">-->
+      <!--xx-->
+      <!--</div>-->
+    </div>
 
-  <div class="stretch-height" fxLayout="column">
-    <ui-filters-bar>
-      <div fxLayout>
-        <ui-atms-notifications-filters
-          (onChange)="filter($event)"
-          [filters]="filtersLastState"
-        ></ui-atms-notifications-filters>
-        <!--<div fxFlex class="text-right">-->
-          <!--xx-->
-        <!--</div>-->
-      </div>
+  </ui-filters-bar>
 
-    </ui-filters-bar>
+  <ag-grid-angular
+    (gridReady)="fitCols()"
+    fxFlex
+    class="ag-fresh"
+    [gridOptions]="gridOptions">
+  </ag-grid-angular>
 
-    <ag-grid-angular
-      (gridReady)="fitCols()"
-      fxFlex
-      class="ag-fresh"
-      [gridOptions]="gridOptions">
-    </ag-grid-angular>
-
-  </div>
+</div>
 

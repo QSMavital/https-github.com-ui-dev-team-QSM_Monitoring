@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Api} from "../../../config/api";
 
 @Component({
   selector: 'ui-hsm-statistics',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HsmStatisticsComponent implements OnInit {
 
-  constructor() {}
+  public filtersLastState: any = {};
+
+
+  constructor() {
+
+    this.filtersLastState = Object.assign(
+      {}, Api.hsm_statistic.payload)
+  }
 
   ngOnInit() {
   }

@@ -1,11 +1,17 @@
 <div fxLayout="column" class="stretch-height">
 
-  <ui-hsm-statistics-filter class="ui-space-regular"></ui-hsm-statistics-filter>
+  <div>
+    <ui-portlet>
+      <ui-filters-bar>
+        <ui-atms-notifications-filters (onChange)="filter($event)"
+                                       [filters]="filtersLastState"></ui-atms-notifications-filters>
+      </ui-filters-bar>
+    </ui-portlet>
+  </div>
 
+  <ui-hsm-weeks-statistics fxFlex class="ui-space-tb-regular"></ui-hsm-weeks-statistics>
 
-  <ui-hsm-weeks-statistics fxFlex class="ui-space-regular"></ui-hsm-weeks-statistics>
-
-  <ui-hsm-weeks-statistics fxFlex class="ui-space-regular"></ui-hsm-weeks-statistics>
+  <ui-hsm-weeks-statistics fxFlex ></ui-hsm-weeks-statistics>
 
 </div>
 

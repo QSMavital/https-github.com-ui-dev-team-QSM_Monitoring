@@ -19,8 +19,8 @@ export class AtmsNotificationsFiltersComponent implements OnInit {
 
   initForm(){
     this.form = this.fb.group({
-      fromDate: [new Date(this.filters.fromDate)],
-      toDate: [new Date(this.filters.toDate)]
+      fromDate: [new Date(this.filters.fromDate || null)],
+      toDate: [new Date(this.filters.toDate || null)]
     });
   }
 

@@ -41,7 +41,7 @@ export class AtmStatusKeysComponent implements OnChanges {
           if (key === 'eppUid') {
             this.infos.push({key: `enums.${key}`, value: this.keys_data[key]})
           } else {
-            this.infos.push({key: `enums.${key}`, value: new Date(this.keys_data[key]).toLocaleString()})
+            this.infos.push({key: `atm.${key}`, value: new Date(this.keys_data[key]).toLocaleString()})
           }
         }
       }

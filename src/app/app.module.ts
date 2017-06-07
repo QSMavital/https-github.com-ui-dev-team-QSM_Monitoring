@@ -93,7 +93,6 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
   return service;
 }
 
-
 @NgModule({
   declarations: [
     AppComponent,

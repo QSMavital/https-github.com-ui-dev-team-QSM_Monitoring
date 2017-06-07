@@ -31,8 +31,7 @@ export const Atms = {
     totalRemaining: {
       headerName: "atms.totalRemaining",
       field: "totalRemaining",
-      width: 150,
-      cellRendererFramework: AgAmountComponent
+      width: 150
     },
     cardsRetained: {headerName: "atms.retainedCards", field: "cardsRetained", width: 150},
     branch: {headerName: "atms.branch", field: "branch", width: 100},
@@ -134,11 +133,11 @@ export const Atms = {
     cardNumber: {headerName: 'atms.card', field: 'cardNumber', width: 100,suppressSizeToFit: true},
     bankNo: {headerName: 'atms.bank', field: 'bankNo', width: 100,suppressSizeToFit: true},
     transactionType: {headerName: 'atms.transactionType', field: 'transactionType', width: 140,suppressSizeToFit: true,cellRendererFramework: AgTranslateMapComponent},
-    amount: {headerName: 'atms.amount', field: 'amount', width: 110,suppressSizeToFit: true},
+    amount: {headerName: 'atms.amount', field: 'amount', width: 110,suppressSizeToFit: true,cellRendererFramework: AgAmountComponent},
     transactionStatus: {headerName: 'general.transactionStatus', field: 'transactionStatus', width: 180,suppressSizeToFit: true,cellRendererFramework: AgStatusComponent},
     approver: {headerName: 'general.approver', field: 'approver', width:150,cellRendererFramework: AgTranslateMapComponent,suppressSizeToFit: true},
     rejectReason: {headerName: 'general.rejectReason', field: 'rejectReason', width: 150,suppressSizeToFit: true,cellRendererFramework: AgTranslateMapComponent},
-    atmFeeAmount: {headerName: 'general.atmFeeAmount', field: 'atmFeeAmount', width: 100,suppressSizeToFit: true},
+    atmFeeAmount: {headerName: 'general.atmFeeAmount', field: 'atmFeeAmount', width: 100,suppressSizeToFit: true,cellRendererFramework: AgAmountComponent},
     businessDay: {headerName: 'general.businessDay', field: 'businessDay', width: 140,suppressSizeToFit: true,cellRendererFramework: AgDateShortComponent}
   }
 };

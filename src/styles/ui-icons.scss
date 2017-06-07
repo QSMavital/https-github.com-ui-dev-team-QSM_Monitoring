@@ -1,6 +1,6 @@
-$ui-icons-add-new: "\ea02";
-$ui-icons-calendar: "\ea03";
-$ui-icons-close: "\ea01";
+$ui-icons-add-new: "\ea01";
+$ui-icons-calendar: "\ea02";
+$ui-icons-close: "\ea03";
 $ui-icons-info: "\ea04";
 $ui-icons-mail: "\ea05";
 $ui-icons-open: "\ea06";
@@ -59,15 +59,15 @@ $ui-icons-x: "\ea0a";
 }
 
 .ui-icons-add-new::before {
-    content: "\ea02";
+    content: "\ea01";
 }
 
 .ui-icons-calendar::before {
-    content: "\ea03";
+    content: "\ea02";
 }
 
 .ui-icons-close::before {
-    content: "\ea01";
+    content: "\ea03";
 }
 
 .ui-icons-info::before {

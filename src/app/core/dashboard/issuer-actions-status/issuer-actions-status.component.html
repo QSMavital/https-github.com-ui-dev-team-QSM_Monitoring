@@ -1,10 +1,11 @@
-<div class="wrapper no-select" >
+<div class="wrapper no-select">
   <ui-portlet [header]="'db.issuerActionsStatus' | translate" [footer]="true">
     <div class="inside-portlet-wrapper ui-space-t-small stretch-width ui-space-b-medium">
       <p-chart [type]="options.type" [data]="data" [options]="options"></p-chart>
     </div>
     <div footer>
-      <ui-legend [data]="[{label:'db.noError',color:'#71d36b'},{label:'db.fatal',color:'#ff563e'}]"></ui-legend>
+      <ui-legend
+        [data]="[{label:'db.issuer_actions_status.noError',color:'#71d36b'},{label:'db.issuer_actions_status.fatal',color:'#ff563e'}]"></ui-legend>
     </div>
   </ui-portlet>
 </div>

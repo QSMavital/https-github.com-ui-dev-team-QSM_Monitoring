@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AgTranslateMapComponent{
   public value;
   public map = {
-    approver:"banks",
+    approver:"approver",
     default:"enums",
     rejectReason:"rejectReason",
     closedReason:"closedReason",

@@ -1,5 +1,5 @@
 <div class="wrapper no-select" [ngClass]="size" fxLayout="row" fxLayoutAlign="start center"
-     *ngIf="(status && statusView && statusView[status])">
+     *ngIf="(status && statusView && statusView[status]); else otherContent">
   <span class="circle" *ngIf="(status && statusView && statusView[status])" [ngClass]="{'no-margin':!showLabel}">
     <span class="inner" [ngStyle]="{background:statusView[status].color}">
 
@@ -13,4 +13,6 @@
   <span *ngIf="showStatus">{{'enums.'+status | translate}}</span>
 </div>
 
-<span *ngIf="!statusView[status]">{{status}}</span>
+<ng-template #otherContent>
+  <span>{{status}}</span>
+</ng-template>

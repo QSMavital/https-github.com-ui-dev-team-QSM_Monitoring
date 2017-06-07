@@ -25,13 +25,6 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
   private trananslateSrv:TranslateService) {
     this.options = {
       chart: {
-        options: {
-            labels: {
-              // This more specific font property overrides the global property
-              fontColor: 'black',
-              fontSize: 20
-            }
-        },
         type: 'pieChart',
         height: 380,
         x: function (d) {
@@ -41,13 +34,20 @@ export class ActionsStatusComponent implements OnInit, OnDestroy {
           return d.value;
         },
         showLabels: true,
-        labelsOutside: false,
+        labelsOutside: true,
         duration: 500,
         labelThreshold: 0.01,
         labelSunbeamLayout: false,
-        labelType: "percent",
+        labelType: "value",
         showLegend: false,
         growOnHover: true,
+        valueFormat:(d,e)=>{
+          let a = this.data.find((e)=>{
+            return e.value === d;
+          });
+          // return `${this.trananslateSrv.instant('keys.'+a.key)} ${d}%`;
+          return `${d}%`;
+        },
         tooltip: {
           contentGenerator: (d)=> {
             return this.trananslateSrv.instant(`keys.${d.series[0].key}`) + ': ' + d.series[0].value + '%';

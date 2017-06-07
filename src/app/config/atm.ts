@@ -511,7 +511,7 @@ export const Atm = {
   },
   Accessories: {
     CashPool: {
-      cassetteType: {headerName: "atm.accessories.accessoriesDispenserInfo.cassetteType", field: "cassetteType", width: 80},
+      cassetteType: {headerName: "atm.accessories.accessoriesDispenserInfo.cassetteType", field: "cassetteType", width: 100},
       statusColor: {headerName: "atms.tabs.status", field: "statusColor", width: 80, cellRendererFramework: AgStatusComponent},
       supply: {headerName: "general.supply", field: "supply", width: 75, cellRendererFramework: AgProgressComponent},
       currencyCode: {headerName: "general.CurrencyCode", field: "currencyCode", width: 60, cellRendererFramework: AgTranslateMapComponent},

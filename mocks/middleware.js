@@ -3504,46 +3504,138 @@ var atm_retainedCards = [
   }
 ];
 
-var transaction = [{
-  "title": "TransactionIdentifer",
-  "data": [
-    {
-    "key": "transactionId",
-    "value": "0",
-    "type": ""
+var transaction = [
+  {
+    "title": "TransactionIdentifer",
+    "data": [{
+      "key": "transactionId",
+      "value": "0",
+      "type": ""
+    }, {
+      "key": "transactionType",
+      "value": "NONE",
+      "type": ""
+    }, {
+      "key": "terminalId",
+      "value": "000000",
+      "type": ""
+    }, {
+      "key": "terminalShvaId",
+      "value": "0000",
+      "type": ""
+    }, {
+      "key": "atmSeq",
+      "value": "0",
+      "type": ""
+    }, {
+      "key": "terminalDateTime",
+      "value": "Wed Jun 07 16:02:11 IDT 2017",
+      "type": ""
+    }, {
+      "key": "bussinessDay",
+      "value": "Thu Jan 01 02:00:00 IST 1970",
+      "type": ""
+    }]
   }, {
-    "key": "transactionType",
-    "value": "NONE",
-    "type": ""
+    "title": "TransactionGeneral",
+    "data": [{
+      "key": "languageCode",
+      "value": "HEBREW",
+      "type": "Language"
+    }, {
+      "key": "withReceipt",
+      "value": "false",
+      "type": ""
+    }, {
+      "key": "pinVerified",
+      "value": "false",
+      "type": ""
+    }, {
+      "key": "authorizationCode",
+      "value": "000000",
+      "type": ""
+    }]
   }, {
-    "key": "terminald",
-    "value": "000000",
-    "type": ""
+    "title": "TransactionAmount",
+    "data": [{
+      "key": "amount",
+      "value": "0",
+      "type": ""
+    }, {
+      "key": "currencyCode",
+      "value": "NIS",
+      "type": ""
+    }]
   }, {
-    "key": "terminalShvaId",
-    "value": "0000",
-    "type": ""
+    "title": "TransactionDetails",
+    "data": [{
+      "key": "balanceDate",
+      "value": "0000",
+      "type": ""
+    }, {
+      "key": "feeAmount",
+      "value": "0",
+      "type": ""
+    }, {
+      "key": "atmFeeAmount",
+      "value": "0",
+      "type": ""
+    }]
   }, {
-    "key": "atmSeq",
-    "value": "0",
-    "type": ""
+    "title": "TransactionStatus",
+    "data": [{
+      "key": "transactionStatus",
+      "value": "NOT_APPROVED",
+      "type": "TransactionStatus"
+    }, {
+      "key": "approver",
+      "value": "NONE",
+      "type": "Approver"
+    }, {
+      "key": "rejectReason",
+      "value": "NONE",
+      "type": "RejectReason"
+    }, {
+      "key": "switchDecision",
+      "value": "NONE",
+      "type": "SwitchDecision"
+    }, {
+      "key": "retainReason",
+      "value": "NONE",
+      "type": "RetainReason"
+    }]
   }, {
-    "key": "terminalDateTime",
-    "value": "Tue Jun 06 13:42:34 IDT 2017",
-    "type": ""
-  }, {
-    "key": "bussinessDate",
-    "value": "Thu Jan 01 02:00:00 IST 1970",
-    "type": ""
-  }]
-}, {
-  "title": "GeneralData",
-  "data": [{
-    "key": "languageCode",
-    "value": "HEBREW",
-    "type": "Language"
-  }]
-}];
+    "title": "CardDetails",
+    "data": [{
+      "key": "cardNumber",
+      "value": "",
+      "type": ""
+    }, {
+      "key": "cardholderGroup",
+      "value": "UNKNOWN",
+      "type": "CardholderGroup"
+    }, {
+      "key": "cardStatusCode",
+      "value": "UNKNOWN",
+      "type": "CardStatusCode"
+    }, {
+      "key": "accountBank",
+      "value": "",
+      "type": ""
+    }, {
+      "key": "accountBranch",
+      "value": "",
+      "type": ""
+    }, {
+      "key": "accountNo",
+      "value": "",
+      "type": ""
+    }, {
+      "key": "accountStatusCode",
+      "value": "false",
+      "type": ""
+    }]
+  }];
 
 var atm_settings = {
   "generalSettings": {

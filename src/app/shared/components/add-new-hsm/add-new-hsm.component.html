@@ -1,7 +1,20 @@
 <p-dialog  [(visible)]="show" [modal]="true" class="dialog-no-padding add-atm-dialog">
- <p-header translate="atm.addNewAtm"></p-header>
-  <div class="scroll-y ui-space-tb-regular ui-space-l-regular" style="width: 300px;height: 300px">
-    ZZZZZZZZ XXXXXXXXXXXXXXXX
+ <p-header translate="hsm.addNewHsm"></p-header>
+  <div class="scroll-y ui-space-tb-regular ui-space-regular" style="width: 300px;height: 300px">
+
+    <div class="ui-space-tb-regular" fxLayout fxLayoutAlign="space-between center">
+      <div>{{"hsm.status.serial" | translate}}:</div>
+      <input id="bla" type="text">
+    </div>
+    <div class="ui-space-tb-regular" fxLayout fxLayoutAlign="space-between center">
+      <div>{{"atm.status.general.ipAddress" | translate}}:</div>
+      <input id="bla2" type="text">
+    </div>
+    <div class="ui-space-tb-regular" fxLayout fxLayoutAlign="space-between center">
+      <div>{{"hsm.status.port" | translate}}:</div>
+      <input id="bla3" type="text">
+    </div>
+
   </div>
   <p-footer>
     <span class="pull-right">

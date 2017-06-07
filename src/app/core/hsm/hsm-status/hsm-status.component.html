@@ -15,12 +15,12 @@
         </div>
         <div fxFlex class="text-right">
           <span class="ui-space-r-regular">
-            <ui-label translate="general.all"></ui-label>
+            <ui-label translate="hsm.status.all"></ui-label>
             <button (click)="action('CLOSE_ALL')" class="narrow close-btn ui-icons-close"></button>
             <button (click)="action('OPEN_ALL')" class="narrow open-btn ui-icons-open"></button>
           </span>
           <span class="ui-space-r-regular">
-            <ui-label translate="general.selected"></ui-label>
+            <ui-label translate="hsm.status.selected"></ui-label>
             <button [disabled]="!selectedItems" (click)="action('CLOSE',gridOptions.api.getSelectedRows())"
                     class="narrow close-btn ui-icons-close"></button>
             <button [disabled]="!selectedItems" (click)="action('OPEN',gridOptions.api.getSelectedRows())"
@@ -33,7 +33,7 @@
   </ui-portlet>
 
   <div class="ui-space-tb-regular">
-    <ui-portlet [header]="'ssss'">
+    <ui-portlet [header]="'hsm.status.hsmTable' | translate">
       <ag-grid-angular
         (gridReady)="fitCols_hsm_table()"
         [ngStyle]="{height: (gridOptions?.api?.getModel().getRowCount()*31)+38+'px'}"
@@ -44,7 +44,7 @@
   </div>
 
 
-  <ui-portlet  [header]="'ssss'">
+  <ui-portlet [header]="'hsm.status.linkTable' | translate">
     <ag-grid-angular
       (gridReady)="fitCols_link_table()"
       [ngStyle]="{height: (gridOptions2?.api?.getModel().getRowCount()*31)+38+'px'}"

@@ -37,7 +37,7 @@
     "reports": "reports"
   },
   "general": {
-    "removeDate":"Remove Date",
+    "removeDate": "Remove Date",
     "all": "All ATM's",
     "selected": "Selected Atm's",
     "date": "date",
@@ -52,8 +52,8 @@
     "supply": "Supply",
     "counter": "Counter",
     "count": "Count",
-    "sumMeteg":"Sum Meteg",
-    "sumAtm":"Sum on Atm",
+    "sumMeteg": "Sum Meteg",
+    "sumAtm": "Sum on Atm",
     "reason": "reason",
     "transactionStatus": "Transaction Status",
     "approver": "approver",
@@ -72,9 +72,9 @@
     "cancel": "cancel",
     "save": "save",
     "settlements": "Settlements",
-    "CurrencyCode":"Currency",
-    "keyType":"Key Type",
-    "kcv":"KCV"
+    "CurrencyCode": "Currency",
+    "keyType": "Key Type",
+    "kcv": "KCV"
   },
   "atms": {
     "tabs": {
@@ -178,7 +178,7 @@
     "cassette3": "Cassette Type 3",
     "cassette4": "Cassette Type 4",
     "lastSettleDispenseList": "last Settle Dispense List",
-    "accessoriesDispenserInfo":"Accessories Dispenser Info",
+    "accessoriesDispenserInfo": "Accessories Dispenser Info",
     "item": "item",
     "city": "city",
     "transaction": "transaction",
@@ -189,7 +189,7 @@
     "withdrawed": "withdrawed",
     "left": "left",
     "loaded": "loaded",
-    "dispensed":"Dispensed",
+    "dispensed": "Dispensed",
     "rejected": "rejected",
     "amount": "Amount",
     "difference": "difference",
@@ -221,21 +221,21 @@
     "localCurrencyTrigger": "Local Trigger",
     "localCurrencyTrigger2": "Local Trigger 2",
     "lastWorkingKeyChange": "Last Working Key Change",
-    "sumDispensed":"Dispensed",
-    "sumRemaing":"Remaining",
-    "lastGoodWithrawal":"last Withdrawal",
-    "lastSettelement":"last Settlement",
-    "transactionId":"transaction Id",
-    "lastCheckDeposit":"last Check Deposit",
-    "lastSettelementCheckDeposit":"last Settlement Check Deposit",
-    "lastCardSettelement":"last Card Settlement",
+    "sumDispensed": "Dispensed",
+    "sumRemaing": "Remaining",
+    "lastGoodWithrawal": "last Withdrawal",
+    "lastSettelement": "last Settlement",
+    "transactionId": "transaction Id",
+    "lastCheckDeposit": "last Check Deposit",
+    "lastSettelementCheckDeposit": "last Settlement Check Deposit",
+    "lastCardSettelement": "last Card Settlement",
     "disabledATM": "Disabled ATM",
     "disableCheckDeposit": "Check Deposit",
     "disableReceipt": "Receipt",
-    "device":"Device",
-    "remaining":"Remaining",
-    "checkInfo":"Check deposit",
-    "otherAccessoriesInfo":"Other Accessories Info",
+    "device": "Device",
+    "remaining": "Remaining",
+    "checkInfo": "Check deposit",
+    "otherAccessoriesInfo": "Other Accessories Info",
     "tabs": {
       "status": "atm status",
       "accessories": "accessories status",
@@ -281,14 +281,37 @@
     },
     "accessories": {
       "accessoriesDispenserInfo": {
-        "cassetteType":"Cassette Type"
+        "cassetteType": "Cassette Type"
       }
     }
   },
   "hsm": {
+    "addNewHsm":"Add New Hsm",
     "tabs": {
       "status": "HSM Status",
       "statistics": "hsm statistics"
+    },
+    "status": {
+      "all": "All HSM's",
+      "selected": "Selected HSM's",
+      "hsmTable": "HSM Table",
+      "linkTable": "Link Table",
+      "directive": "Directive",
+      "serial": "Serial",
+      "sessionNumber": "SESSION Number",
+      "hsmType": "HSM Type",
+      "type": "Type",
+      "port": "PORT"
+    },
+    "statistics": {
+      "session": "Session",
+      "ValidCodeActions": "Valid code actions",
+      "InvalidCodeActions": "Invalid code actions",
+      "ValidMacActions": "Valid mac actions",
+      "InvalidMacActions": "Invalid mac actions",
+      "otherValidActions": "other Valid actions",
+      "otherInvalidActions": "other Invalid actions",
+      "failedActions": "failed actions"
     }
   },
   "db": {
@@ -306,11 +329,11 @@
     "needToBeFixed": "need to be fixed",
     "unavailable": "unavailable",
     "working": "working",
-    "online_status":{
+    "online_status": {
       "fatal": "fatal",
       "noError": "no error"
     },
-    "issuer_actions_status":{
+    "issuer_actions_status": {
       "fatal": "fatal",
       "noError": "no error"
     }
@@ -353,15 +376,15 @@
     "25": "BNP Paribas Israel",
     "39": "SBI State Bank of India"
   },
-  "approver":{
-    "OUR_BANK":"Our bank" ,
-    "OTHER_BANK":"Other Bank" ,
-    "METEG":"Switch" ,
-    "SHVA":"Shva" ,
-    "LEUMI":"Leumi" ,
-    "GAMA":"Gama" ,
-    "HAND":"Hand" ,
-    "TOURIST_BANK":"Tourist Bank"
+  "approver": {
+    "OUR_BANK": "Our bank",
+    "OTHER_BANK": "Other Bank",
+    "METEG": "Switch",
+    "SHVA": "Shva",
+    "LEUMI": "Leumi",
+    "GAMA": "Gama",
+    "HAND": "Hand",
+    "TOURIST_BANK": "Tourist Bank"
   },
   "enums": {
     "NONE": "-",
@@ -371,11 +394,11 @@
     "GOOD": "Good",
     "ATTENTION": "Attention",
     "FATAL": "Fatal",
-    "ERROR":"Error",
-    "WARN":"Warn",
-    "INFO":"Info",
-    "DEBUG":"Debug",
-    "TRACE":"Trace",
+    "ERROR": "Error",
+    "WARN": "Warn",
+    "INFO": "Info",
+    "DEBUG": "Debug",
+    "TRACE": "Trace",
     "OPERATOR": "Operator",
     "NOT_APPROVED": "Not Approved",
     "APPROVED": "Approved",
@@ -427,7 +450,7 @@
     "SUSPEND": "Suspend",
     "REMOTE": "Remote",
     "YAHAV": "Yahav",
-    "BRANCH":"Branch"
+    "BRANCH": "Branch"
   },
   "loadStage": {
     "NONE": "-",
@@ -449,16 +472,16 @@
     "FITNESS": "Fitness testing",
     "SENSOR_DATA": "Sensor testing"
   },
-  "closedReason":{
-    "UNKNOWN":"Unknown",
-    "CLOSE_STATUS":"Status",
-    "CLOSE_OPERATOR":"Operator",
-    "CLOSE_GROUP":"Group",
-    "CLOSE_ALL":"All",
-    "Loading":"Loading",
-    "OFFLINE":"Offline",
-    "OPEN":"Open",
-    "DISABLED":"Disabled"
+  "closedReason": {
+    "UNKNOWN": "Unknown",
+    "CLOSE_STATUS": "Status",
+    "CLOSE_OPERATOR": "Operator",
+    "CLOSE_GROUP": "Group",
+    "CLOSE_ALL": "All",
+    "Loading": "Loading",
+    "OFFLINE": "Offline",
+    "OPEN": "Open",
+    "DISABLED": "Disabled"
   },
   "rejectReason": {
     "NONE": "-",

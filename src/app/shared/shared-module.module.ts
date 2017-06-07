@@ -46,6 +46,7 @@ import { TransactionComponent } from './components/transaction/transaction.compo
 import {ApiService} from "./services/api-services.service";
 import {GridDefsService} from "./services/grid-defs.service";
 import { AgDiv100Component } from './components/ag-div100/ag-div100.component';
+import { AddNewHsmComponent } from './components/add-new-hsm/add-new-hsm.component';
 
 @NgModule({
   imports: [
@@ -94,7 +95,8 @@ import { AgDiv100Component } from './components/ag-div100/ag-div100.component';
     KeyLabelComponent,
     AgTranslateMapComponent,
     TransactionComponent,
-    AgDiv100Component
+    AgDiv100Component,
+    AddNewHsmComponent
   ],
   exports: [
     SpinnerComponent,
@@ -126,7 +128,8 @@ import { AgDiv100Component } from './components/ag-div100/ag-div100.component';
     ListItemComponent,
     KeysPipe,
     KeyLabelComponent,
-    TransactionComponent
+    TransactionComponent,
+    AddNewHsmComponent
   ],
   providers: [CanActivateRoute, AppActivator,FormBuilderService,ApiService,GridDefsService]
 })

@@ -116,10 +116,8 @@ p-dialog {
     display: block;
     height:37px;
     line-height: 37px;
-    padding:0x !important;
+    padding:0 15px !important;
     border-top: 1px solid $selago;
-    .btn {
-      margin-right:15px !important;
-    }
+
   }
 }

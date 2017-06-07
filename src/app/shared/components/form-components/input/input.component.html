@@ -3,7 +3,7 @@
     <input type="text"
            [formControlName]="controlName"
            style="width:100%"
-           [placeholder]="(placeholder | translate)+'...'" (keyup)="onValueChange($event.target.value)">
+           [placeholder]="(placeholder | translate)" (keyup)="onValueChange($event.target.value)">
   </div>
   <div class="stretch-width" *ngSwitchCase="'select'">
     <p-dropdown [placeholder]="'app.select'|translate"

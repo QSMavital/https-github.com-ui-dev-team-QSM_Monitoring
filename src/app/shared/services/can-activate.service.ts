@@ -16,29 +16,25 @@ export class CanActivateRoute implements CanActivate,OnDestroy {
   @select('userSettings') userSettings: Observable<any>;
   private auth: Observable<boolean>;
 
-  constructor(private ngRedux: NgRedux<IStore>,
-              private http: InterceptorService,
-              private translate: TranslateService,
-              private route: ActivatedRoute,
-              private router: Router) {
-  }
+  constructor(private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    console.log('ddd');
     this.auth = new Observable((ob) => {
       this.userSettings.subscribe((state) => {
         if (isNullOrUndefined(state)) {
           return;
         }
-
         ob.next(this.redirect(state.menu, route.data.state));
-
-
       });
     });
+    console.log('qqq');
     return this.auth;
   }
 
   redirect(menuSettings, state) {
+    console.log('aaaa');
+
     if (menuSettings.length && menuSettings.indexOf(state) == -1) {
       this.router.navigate(["/"]);
       return false;
@@ -63,7 +59,6 @@ export class AppActivator implements CanActivate {
               private http: InterceptorService,
               private translate: TranslateService) {
     this.auth = new Observable((ob) => {
-      console.log('AppActivator');
       if(!isNullOrUndefined(this.ngRedux.getState().userSettings)){
         ob.next(true);
         return;
@@ -81,7 +76,6 @@ export class AppActivator implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-
     return this.auth;
   }
 

@@ -1,23 +1,24 @@
+<div class="stretch-height" fxLayout="column">
+  <ui-filters-bar>
+    <div fxLayout>
+      <ui-atms-inventory-filter
+        (onChange)="filter($event)"
+        [filters]="filtersData"></ui-atms-inventory-filter>
+      <div fxFlex class="text-right">
 
-  <div class="stretch-height" fxLayout="column">
-    <ui-filters-bar>
-      <div fxLayout>
-        <ui-atms-inventory-filter
-          (onChange)="filter($event)"
-          [filters]="filtersData"></ui-atms-inventory-filter>
-        <div fxFlex class="text-right">
-          <button  (click)="showAddNew()" class="blue-btn narrow ui-icons-add-new"></button>
-        </div>
+        <ui-label translate="atm.addNewAtm"></ui-label>
+        <button (click)="addNew=!addNew;" class="blue-btn narrow ui-icons-add-new"></button>
       </div>
+    </div>
 
-    </ui-filters-bar>
-    <ag-grid-angular
-      (rowDoubleClicked)="selectItem($event)"
-      fxFlex
-      class="ag-fresh"
-      [gridOptions]="gridOptions">
-    </ag-grid-angular>
-  </div>
+  </ui-filters-bar>
+  <ag-grid-angular
+    (rowDoubleClicked)="selectItem($event)"
+    fxFlex
+    class="ag-fresh"
+    [gridOptions]="gridOptions">
+  </ag-grid-angular>
+</div>
 
 <ui-add-new [(show)]="addNew"></ui-add-new>
 

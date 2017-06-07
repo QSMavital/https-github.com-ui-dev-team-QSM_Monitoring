@@ -13,7 +13,8 @@ export class AgTranslateMapComponent{
     rejectReason:"rejectReason",
     closedReason:"closedReason",
     branch:"banks",
-    currencyCode:"CurrencyCode"
+    currencyCode:"CurrencyCode",
+    transactionType:"transactionType",
   };
 
   agInit(params: any): void {

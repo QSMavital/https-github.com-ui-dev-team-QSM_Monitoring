@@ -48,7 +48,7 @@ export class AtmStatusReventActionComponent implements OnChanges {
                 value: this.translateSrv.instant('cardholderGroup.'+this.action_data[prop]),
               });
             break;
-          case 'tranType':
+          case 'transactionType':
             this.recent_actions.push(
               {
                 name:this.translateSrv.instant(`atm.status.lastTransaction.${prop}`),

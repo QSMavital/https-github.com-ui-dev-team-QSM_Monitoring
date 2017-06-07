@@ -83,6 +83,7 @@ import {AgTranslateMapComponent} from "./shared/components/ag-translate-map/ag-t
 import {GrowlModule} from 'primeng/primeng';
 import {AgDiv100Component} from "./shared/components/ag-div100/ag-div100.component";
 import { HsmWeeksStatisticsComponent } from './core/hsm/hsm-statistics/hsm-weeks-statistics/hsm-weeks-statistics.component';
+import {AgDirectiveComponent} from "./shared/components/ag-directive/ag-directive.component";
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -178,7 +179,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       AgDateShortComponent,
       AgTimeComponent,
       AgTranslateMapComponent,
-      AgDiv100Component
+      AgDiv100Component,
+      AgDirectiveComponent
     ])
   ],
   providers: [

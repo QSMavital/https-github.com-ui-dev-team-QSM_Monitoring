@@ -24,7 +24,7 @@ export class GridDefsService {
     // this.gridOptions.suppressMenuFilterPanel = true;
     this.gridOptions.rowHeight = 32;
     this.gridOptions.headerHeight = 38;
-    return Object.assign(this.gridOptions);
+    return Object.assign({},this.gridOptions);
   }
 
   initGridOptionsPagination(page){
@@ -44,7 +44,7 @@ export class GridDefsService {
     // this.gridOptions.suppressMenuFilterPanel = true;
     this.gridOptions.rowHeight = 32;
     this.gridOptions.headerHeight = 38;
-    return Object.assign(this.gridOptions);
+    return Object.assign({},this.gridOptions);
 
   }
   initAtmsGridColDefs(colsDef, region) {

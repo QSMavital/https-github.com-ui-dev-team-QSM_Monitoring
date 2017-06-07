@@ -257,7 +257,7 @@
   },
   "hsm": {
     "tabs": {
-      "status": "hsm status",
+      "status": "HSM Status",
       "statistics": "hsm statistics"
     }
   },

@@ -1,54 +1,58 @@
-<div class="stretch-height">
+<div>
 
-  <div fxLayout="column" class="inside-portlet-wrapper stretch-width stretch-height">
-    <ui-portlet fxFlex="10%">
-      <ui-filters-bar>
-        <div fxLayout>
-          <div>
-            XXXXXXXXXXXXXXXX
-          </div>
-          <div fxFlex class="text-right">
+  <ui-portlet>
+    <ui-filters-bar>
+      <div fxLayout>
+        <div>
+          <span class="middle in-block ui-space-r-tiny">
+            <ui-label translate="hsm.tabs.status"></ui-label>
+          </span>
+          <span class="middle in-block">
+            <ui-status-indicator
+              [status]="'DISABLED'" [showStatus]="true"></ui-status-indicator>
+          </span>
+
+        </div>
+        <div fxFlex class="text-right">
           <span class="ui-space-r-regular">
             <ui-label translate="general.all"></ui-label>
             <button (click)="action('CLOSE_ALL')" class="narrow close-btn ui-icons-close"></button>
             <button (click)="action('OPEN_ALL')" class="narrow open-btn ui-icons-open"></button>
           </span>
-            <span class="ui-space-r-regular">
+          <span class="ui-space-r-regular">
             <ui-label translate="general.selected"></ui-label>
             <button [disabled]="!selectedItems" (click)="action('CLOSE',gridOptions.api.getSelectedRows())"
                     class="narrow close-btn ui-icons-close"></button>
             <button [disabled]="!selectedItems" (click)="action('OPEN',gridOptions.api.getSelectedRows())"
                     class="narrow open-btn ui-icons-open"></button>
           </span>
-            <button (click)="addNew=!addNew;" class="blue-btn narrow ui-icons-add-new"></button>
-          </div>
+          <button (click)="addNew=!addNew;" class="blue-btn narrow ui-icons-add-new"></button>
         </div>
-      </ui-filters-bar>
+      </div>
+    </ui-filters-bar>
+  </ui-portlet>
+
+  <div class="ui-space-tb-regular">
+    <ui-portlet [header]="'ssss'">
+      <ag-grid-angular
+        (gridReady)="fitCols_hsm_table()"
+        [ngStyle]="{height: (gridOptions?.api?.getModel().getRowCount()*31)+38+'px'}"
+        class="ag-fresh stretch-width"
+        [gridOptions]="gridOptions">
+      </ag-grid-angular>
     </ui-portlet>
-
-    <div fxFlex="20%" class="ui-space-tb-regular">
-      <ui-portlet>
-        <ag-grid-angular
-          fxFlex
-          (gridReady)="fitCols_hsm_table()"
-          class="ag-fresh"
-          [gridOptions]="gridOptions">
-        </ag-grid-angular>
-      </ui-portlet>
-    </div>
-
-    <div fxFlex="70%">
-      <ui-portlet>
-        <ag-grid-angular
-          fxFlex
-          (gridReady)="fitCols_link_table()"
-          class="ag-fresh"
-          [gridOptions]="gridOptions2">
-        </ag-grid-angular>
-      </ui-portlet>
-    </div>
-
   </div>
+
+
+  <ui-portlet  [header]="'ssss'">
+    <ag-grid-angular
+      (gridReady)="fitCols_link_table()"
+      [ngStyle]="{height: (gridOptions2?.api?.getModel().getRowCount()*31)+38+'px'}"
+      class="ag-fresh stretch-width"
+      [gridOptions]="gridOptions2">
+    </ag-grid-angular>
+  </ui-portlet>
+
 
 </div>
 <ui-add-new-hsm [(show)]="addNew"></ui-add-new-hsm>

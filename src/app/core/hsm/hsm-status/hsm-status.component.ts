@@ -3,6 +3,7 @@ import {GridOptions} from "ag-grid";
 import {GridDefsService} from "../../../shared/services/grid-defs.service";
 import {TranslateService} from "@ngx-translate/core";
 import {AgStatusComponent} from "../../../shared/components/ag-status/ag-status.component";
+import {AgDirectiveComponent} from "../../../shared/components/ag-directive/ag-directive.component";
 
 
 @Component({
@@ -19,7 +20,7 @@ export class HsmStatusComponent {
   constructor(private gridDefsSrv: GridDefsService,private translateSrv: TranslateService) {
     this.gridOptions = this.gridDefsSrv.initGridOptions();
     this.gridOptions.columnDefs = [
-      {headerName: "Directive", field: "directive", width: 200},
+      {headerName: "Directive", field: "directive", width: 200,cellRendererFramework:AgDirectiveComponent},
       {headerName: "Main", field: "main", width: 150},
       {headerName: "Serial", field: "serial", width: 150},
       {headerName: "IP Address", field: "ipAddress", width: 200},
@@ -30,16 +31,17 @@ export class HsmStatusComponent {
     this.gridOptions2 = this.gridDefsSrv.initGridOptions();
     this.gridOptions2.rowSelection = 'multiple';
     this.gridOptions2.columnDefs = [
-      {headerName: "HSM Type", field: "hsmType", width: 200},
+      {
+        headerName: "HSM Type", field: "hsmType", width: 200,
+        cellRenderer: 'group',
+        cellRendererParams: {checkbox: true}
+      },
       {headerName: "Serial", field: "serial", width: 150},
       {headerName: "Type", field: "type", width: 150},
       {headerName: "Status", field: "status", width: 200},
       {headerName: "Directive", field: "directive", width: 150}
     ];
-  }
 
-
-  fitCols_link_table(){
     let rowData2 = [
       {
         "hsmType": "1",
@@ -63,7 +65,12 @@ export class HsmStatusComponent {
         "directive": ""
       }
     ];
-    this.gridOptions2.api.setRowData(rowData2);
+    this.gridOptions2.rowData = rowData2;
+  }
+
+
+  fitCols_link_table(){
+
     this.gridOptions2.api.sizeColumnsToFit();
   }
 

@@ -47,6 +47,7 @@ import {ApiService} from "./services/api-services.service";
 import {GridDefsService} from "./services/grid-defs.service";
 import { AgDiv100Component } from './components/ag-div100/ag-div100.component';
 import { AddNewHsmComponent } from './components/add-new-hsm/add-new-hsm.component';
+import { AgDirectiveComponent } from './components/ag-directive/ag-directive.component';
 
 @NgModule({
   imports: [
@@ -96,7 +97,8 @@ import { AddNewHsmComponent } from './components/add-new-hsm/add-new-hsm.compone
     AgTranslateMapComponent,
     TransactionComponent,
     AgDiv100Component,
-    AddNewHsmComponent
+    AddNewHsmComponent,
+    AgDirectiveComponent
   ],
   exports: [
     SpinnerComponent,
@@ -118,11 +120,6 @@ import { AddNewHsmComponent } from './components/add-new-hsm/add-new-hsm.compone
     ControlsGroupComponent,
     AccesoriesCardComponent,
     SmallProgressComponent,
-    AgProgressComponent,
-    AgDateShortComponent,
-    AgTimeComponent,
-    AgTranslateMapComponent,
-    AgDiv100Component,
     AddNewComponent,
     ListComponent,
     ListItemComponent,

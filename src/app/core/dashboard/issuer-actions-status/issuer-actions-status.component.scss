@@ -1,6 +1,7 @@
 :host {
   .wrapper {
     .inside-portlet-wrapper {
+      display: block;
       margin:auto;
       p-chart {
         height:300px;

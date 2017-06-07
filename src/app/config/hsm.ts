@@ -1,30 +1,38 @@
 import {AgStatusComponent} from "../shared/components/ag-status/ag-status.component";
 import {AgProgressComponent} from "../shared/components/ag-progress/ag-progress.component";
+import {AgDirectiveComponent} from "../shared/components/ag-directive/ag-directive.component";
 
 export const Hsm = {
   Tabs: {
     atmsSupply: {label: 'atms.tabs.inventory', state: 'inventory'},
     atmsStatus: {label: 'atms.tabs.status', state: 'status'}
   },
-  status: {},
+  status: {
+    hsmTable: {
+      directive: {headerName: "hsm.status.directive", field: "directive", width: 200,cellRendererFramework:AgDirectiveComponent},
+      main: {headerName: "menu.main", field: "main", width: 150},
+      serial: {headerName: "hsm.status.serial", field: "serial", width: 150},
+      ipAddress: {headerName: "atms.ipAddress", field: "ipAddress", width: 200},
+      portNumber: {headerName: "atms.portNumber", field: "portNumber", width: 150},
+      hsmStatus: {headerName: "hsm.tabs.status", field: "hsmStatus", width: 150, cellRendererFramework: AgStatusComponent},
+      sessionNumber: {headerName: "hsm.status.sessionNumber", field: "sessionNumber", width: 150}
+    },
+    linkTable: {
+      hsmType: {headerName: "hsm.status.hsmType", field: "hsmType", width: 200, cellRenderer: 'group', cellRendererParams: {checkbox: true}},
+      serial: {headerName: "hsm.status.serial", field: "serial", width: 150},
+      type: {headerName: "hsm.status.type", field: "type", width: 150},
+      status: {headerName: "general.status", field: "status", width: 200},
+      directive: {headerName: "hsm.status.directive", field: "directive", width: 150}
+    }
+  },
   statistics: {
-    cassetteType: {
-      headerName: "atm.accessories.accessoriesDispenserInfo.cassetteType",
-      field: "cassetteType",
-      width: 80
-    },
-    statusColor: {
-      headerName: "atms.tabs.status",
-      field: "statusColor",
-      width: 80,
-      cellRendererFramework: AgStatusComponent
-    },
-    supply: {headerName: "general.supply", field: "supply", width: 75, cellRendererFramework: AgProgressComponent},
-    currencyCode: {headerName: "general.CurrencyCode", field: "currencyCode", width: 60},
-    denomination: {headerName: "atms.denomination", field: "denomination", width: 60},
-    loaded: {headerName: "atm.loaded", field: "loaded", width: 60},
-    dispensed: {headerName: "atm.dispensed", field: "dispensed", width: 60},
-    rejected: {headerName: "atm.rejected", field: "rejected", width: 60},
-    remaining: {headerName: "atm.remaining", field: "remaining", width: 60}
+    session: {headerName: "hsm.statistics.session", field: "session", width: 200},
+    ValidCodeActions: {headerName: "hsm.statistics.ValidCodeActions", field: "ValidCodeActions", width: 150},
+    InvalidCodeActions: {headerName: "hsm.statistics.InvalidCodeActions", field: "InvalidCodeActions", width: 150},
+    ValidMacActions: {headerName: "hsm.statistics.ValidMacActions", field: "ValidMacActions", width: 200},
+    InvalidMacActions: {headerName: "hsm.statistics.InvalidMacActions", field: "InvalidMacActions", width: 150},
+    otherValidActions: {headerName: "hsm.statistics.otherValidActions", field: "otherValidActions", width: 150},
+    otherInvalidActions: {headerName: "hsm.statistics.otherInvalidActions", field: "otherInvalidActions", width: 150},
+    failedActions: {headerName: "hsm.statistics.failedActions", field: "failedActions", width: 150}
   }
 };

@@ -3660,61 +3660,59 @@ var transaction = [
       }]
   }];
 
-var atm_settings =
-    {
-      "generalSettings" : {
-        "atmNo" : "000011",
-        "atmName" : "Jerusalem",
-        "address" : "Menachem Begin 27",
-        "zipCode" : "5416682",
-        "vendor" : "NCR",
-        "ipAddress" : "10.0.0.13",
-        "portNumber" : 5006,
-        "atmProtocol" : "NDC",
-        "rklProtocol" : "NCR_ENHANCED",
-        "terminalGroup" : "01",
-        "belongi" : 0,
-        "belong" : "BRANCH",
-        "area" : "NORTH",
-        "bankNo" : "20",
-        "branch" : "123",
-        "configId" : "1111",
-        "maxBills" : 40
-      },
-      "cassettesSettings" : [
-        {
-        "cassetteType" : "1",
-        "currencyCode" : "NIS",
-        "denomination" : 200
+var atm_settings = {
+    "generalSettings": {
+      "atmNo": "000011",
+      "atmName": "Jerusalem",
+      "address": "Menachem Begin 27",
+      "zipCode": "5416682",
+      "vendor": "NCR",
+      "ipAddress": "10.0.0.13",
+      "portNumber": 5006,
+      "atmProtocol": "NDC",
+      "rklProtocol": "NCR_ENHANCED",
+      "terminalGroup": "01",
+      "belongi": 0,
+      "belong": "BRANCH",
+      "area": "NORTH",
+      "bankNo": "20",
+      "branch": "123",
+      "configId": "1111",
+      "maxBills": 40
+    },
+    "cassettesSettings": [
+      {
+        "cassetteType": "1",
+        "currencyCode": "NIS",
+        "denomination": 200
       }, {
-        "cassetteType" : "2",
-        "currencyCode" : "NIS",
-        "denomination" : 5000
+        "cassetteType": "2",
+        "currencyCode": "NIS",
+        "denomination": 5000
       }, {
-        "cassetteType" : "3",
-        "currencyCode" : "NIS",
-        "denomination" : 10000
+        "cassetteType": "3",
+        "currencyCode": "NIS",
+        "denomination": 10000
       }, {
-        "cassetteType" : "4",
-        "currencyCode" : "NIS",
-        "denomination" : 2000
-      } ],
-      "disableSettings" : {
-        "disabledATM" : false,
-        "disableCheckDeposit" : true,
-        "disableReceipt" : false
-      },
-      "emvSettings" : {
-        "emvNotOurs" : false,
-        "emvOurs" : false,
-        "emvTourist" : false
-      },
-      "treatmentDeviceSettings" : {
-        "treatmentStartDate" : 1496782800000,
-        "responsibility" : "VENDOR"
-      }
+        "cassetteType": "4",
+        "currencyCode": "NIS",
+        "denomination": 2000
+      }],
+    "disableSettings": {
+      "disabledATM": false,
+      "disableCheckDeposit": true,
+      "disableReceipt": false
+    },
+    "emvSettings": {
+      "emvNotOurs": false,
+      "emvOurs": false,
+      "emvTourist": false
+    },
+    "treatmentDeviceSettings": {
+      "treatmentStartDate": 1496782800000,
+      "responsibility": "VENDOR"
     }
-  ;
+  };
 
 var hsm_status = {
   "hsmStatus": "GOOD",

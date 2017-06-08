@@ -289,3 +289,20 @@ ui-list-item.stretch-width:last-child,ui-list-item:not(.stretch-width):nth-last-
 ui-list-item.stretch-width:nth-child(even) {
    border-left: 0;
  }
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: $fs13 !important;
+  color: #ccc;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-size: $fs13 !important;
+  color: #ccc;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-size: $fs13 !important;
+  color: #ccc;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-size: $fs13 !important;
+  color: #ccc;
+}

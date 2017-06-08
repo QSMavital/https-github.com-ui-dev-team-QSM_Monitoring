@@ -49,6 +49,7 @@ import { AgDiv100Component } from './components/ag-div100/ag-div100.component';
 import { AddNewHsmComponent } from './components/add-new-hsm/add-new-hsm.component';
 import { AgDirectiveComponent } from './components/ag-directive/ag-directive.component';
 import { AddNewEppComponent } from './components/add-new-epp/add-new-epp.component';
+import { AgNumberComponent } from './components/ag-number/ag-number.component';
 
 @NgModule({
   imports: [
@@ -101,6 +102,8 @@ import { AddNewEppComponent } from './components/add-new-epp/add-new-epp.compone
     AddNewHsmComponent,
     AgDirectiveComponent,
     AddNewEppComponent
+    AgDirectiveComponent,
+    AgNumberComponent
   ],
   exports: [
     SpinnerComponent,

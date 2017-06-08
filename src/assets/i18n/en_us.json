@@ -77,6 +77,7 @@
     "kcv": "KCV"
   },
   "atms": {
+    "city":"City",
     "tabs": {
       "inventory": "Inventory",
       "status": "status",
@@ -346,6 +347,10 @@
       "fatal": "fatal",
       "noError": "no error"
     },
+    "deviceStatus": {
+      "fatal": "fatal",
+      "noError": "no error"
+    },
     "issuer_actions_status": {
       "fatal": "fatal",
       "noError": "no error"
@@ -390,6 +395,7 @@
     "39": "SBI State Bank of India"
   },
   "approver": {
+    "NONE": "-",
     "OUR_BANK": "Our bank",
     "OTHER_BANK": "Other Bank",
     "METEG": "Switch",
@@ -402,6 +408,11 @@
   "enums": {
     "NONE": "-",
     "OFF_LINE": "Disconnected",
+    "CLOSED":"Closed",
+    "OPEN":"Open",
+    "LOADING":"Loading",
+    "SUPERVISOR":"Supervisor",
+
     "DISABLED": "Disabled",
     "DISABLE": "Disable",
     "GOOD": "Good",
@@ -442,9 +453,6 @@
     "NOT_ISSUED": "Card Not Issued",
     "INCORRECT_CHECK_DIGIT": "Incorrect Check Digit",
     "eppUid": "EPP UID",
-    "MASTER": "Master key",
-    "ENC": "Working Key",
-    "AUTH": "MAC Key",
     "CARD_READER": "Card reader",
     "STATEMENT_PRINTER": "Statement printer",
     "STATEMENT_PRINTER_CAPTURE_BIN": "Statement printer capture bin",
@@ -698,5 +706,36 @@
     "TEST_WITHDRAWAL": "Test withdrawal",
     "CANCEL_APPROVAL_NO_CHARGE": "cancel transaction done in offline",
     "CANCEL_AUTOMATIC_BY_POS": "cancel automatic by pos"
+  },
+  "languageCode": {
+    "HEBREW": "Hebrew",
+    "ENGLISH": "English",
+    "RUSSIAN": "Russian",
+    "ARABIC": "Arabic"
+  },
+  "cardStatusCode": {
+    "UNKNOWN": "Unidentified",
+    "VALID": "Valid",
+    "BLOCKED": "Block",
+    "RETAIN": "Retain",
+    "ALERT": "Valid",
+    "NOT_AVAILABLE": "Not Available"
+  },
+  "switchDecision":{
+    "NONE":"-",
+    "DECLINE":"Decline",
+    "APPROVE":"Approve"
+
+  },
+  "keyType":{
+    "MASTER":"Master key",
+    "ENC":"Working Key",
+    "AUTH":"MAC Key"
+  },
+  "keyStatus":{
+    "CANCELLED":"Cancelled",
+    "SENT":"Sent",
+    "ACKNOWLEDGED":"Acknowledged"
+
   }
 }

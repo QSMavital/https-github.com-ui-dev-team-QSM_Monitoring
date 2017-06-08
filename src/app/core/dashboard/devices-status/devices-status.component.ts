@@ -24,7 +24,7 @@ export class DevicesStatusComponent implements OnInit, OnDestroy {
     return [
       {
         type: 'Donut',
-        title: 'db.noError',
+        title: 'db.deviceStatus.noError',
         maxValue: 100,
         minValue: 0,
         value: 0,
@@ -43,7 +43,7 @@ export class DevicesStatusComponent implements OnInit, OnDestroy {
       },
       {
         type: 'Donut',
-        title: 'db.fatal',
+        title: 'db.deviceStatus.fatal',
         maxValue: 100,
         minValue: 0,
         value: 0,

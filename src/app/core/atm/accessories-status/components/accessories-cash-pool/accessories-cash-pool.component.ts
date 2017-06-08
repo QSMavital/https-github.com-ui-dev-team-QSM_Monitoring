@@ -5,6 +5,7 @@ import {TranslateService} from "@ngx-translate/core";
 import {GridOptions} from "ag-grid";
 import {GridDefsService} from "../../../../../shared/services/grid-defs.service";
 import {isNullOrUndefined} from "util";
+import {DecimalPipe} from "@angular/common";
 
 
 @Component({
@@ -19,7 +20,7 @@ export class AccessoriesCashPoolComponent implements OnChanges {
 
 
 
-constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService) {
+constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService,private decimalPipe:DecimalPipe) {
   this.gridOptions = this.gridDefsSrv.initGridOptions();
   for (let prop in Atm.Accessories.CashPool){
     this.gridOptions.columnDefs.push(Object.assign({}, { suppressFilter: true }, Atm.Accessories.CashPool[prop], {
@@ -41,7 +42,9 @@ constructor(private gridDefsSrv: GridDefsService, private translateSrv: Translat
         if(key !== 'cassettesList'){
           if (key === 'lastGoodWithrawal') {
             this.infos.push({key: `atm.${key}`, value: new Date(this.cash_pool_data[key]).toLocaleString()})
-          } else {
+          } else if(key === 'sumDispensed' ||key === 'sumRemaing' ||key === 'localCurrencyTrigger' ||key === 'localCurrencyTrigger2' ){
+            this.infos.push({key: `atm.${key}`, value: this.decimalPipe.transform(this.cash_pool_data[key],'1.0-0')})
+          }else {
             this.infos.push({key: `atm.${key}`, value: this.cash_pool_data[key]})
           }
         }

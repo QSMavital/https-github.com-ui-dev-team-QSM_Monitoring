@@ -105,6 +105,18 @@ module.exports = function (req, res, next) {
         atm_settings
       ));
     }
+    else if (req.url.indexOf('/api/hsm/get') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        hsm_status
+      ));
+    }
+    else if (req.url.indexOf('/api/hsm/statistics/get') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        hsm_statistics
+      ));
+    }
     else {
       next();
     }
@@ -3593,134 +3605,158 @@ var transaction = [
     "title": "TransactionStatus",
     "data": [
       {
-      "key": "transactionStatus",
-      "value": "NOT_APPROVED",
-      "type": "TransactionStatus"
-    }, {
-      "key": "approver",
-      "value": "NONE",
-      "type": "Approver"
-    }, {
-      "key": "rejectReason",
-      "value": "NONE",
-      "type": "RejectReason"
-    }, {
-      "key": "switchDecision",
-      "value": "NONE",
-      "type": "SwitchDecision"
-    }, {
-      "key": "retainReason",
-      "value": "NONE",
-      "type": "RetainReason"
-    }]
+        "key": "transactionStatus",
+        "value": "NOT_APPROVED",
+        "type": "TransactionStatus"
+      }, {
+        "key": "approver",
+        "value": "NONE",
+        "type": "Approver"
+      }, {
+        "key": "rejectReason",
+        "value": "NONE",
+        "type": "RejectReason"
+      }, {
+        "key": "switchDecision",
+        "value": "NONE",
+        "type": "SwitchDecision"
+      }, {
+        "key": "retainReason",
+        "value": "NONE",
+        "type": "RetainReason"
+      }]
   },
   {
     "title": "CardDetails",
     "data": [
       {
-      "key": "cardNumber",
-      "value": "",
-      "type": ""
-    }, {
-      "key": "cardholderGroup",
-      "value": "UNKNOWN",
-      "type": "CardholderGroup"
-    }, {
-      "key": "cardStatusCode",
-      "value": "UNKNOWN",
-      "type": "CardStatusCode"
-    }, {
-      "key": "accountBank",
-      "value": "",
-      "type": ""
-    }, {
-      "key": "accountBranch",
-      "value": "",
-      "type": ""
-    }, {
-      "key": "accountNo",
-      "value": "",
-      "type": ""
-    }, {
-      "key": "accountStatusCode",
-      "value": "false",
-      "type": ""
-    }]
+        "key": "cardNumber",
+        "value": "",
+        "type": ""
+      }, {
+        "key": "cardholderGroup",
+        "value": "UNKNOWN",
+        "type": "CardholderGroup"
+      }, {
+        "key": "cardStatusCode",
+        "value": "UNKNOWN",
+        "type": "CardStatusCode"
+      }, {
+        "key": "accountBank",
+        "value": "",
+        "type": ""
+      }, {
+        "key": "accountBranch",
+        "value": "",
+        "type": ""
+      }, {
+        "key": "accountNo",
+        "value": "",
+        "type": ""
+      }, {
+        "key": "accountStatusCode",
+        "value": "false",
+        "type": ""
+      }]
   }];
 
-var atm_settings = {
-  "generalSettings": {
-    "atmNo": "123456",
-    "terminalShvaId": "0000",
-    "atmName": "TEST",
-    "address": "rehov 1",
-    "zipCode": "1234567",
-    "vendor": "NCR",
-    "ipAddress": "10.0.0.13",
-    "portNumber": 5006,
-    "atmProtocol": "NDC",
-    "rklProtocol": "NONE",
-    "terminalGroup": "01",
-    "belong": "YAHAV",
-    "area": "NONE",
-    "bankNo": "20",
-    "branch": "123",
-    "configId": "1111",
-    "maxBills": 200
-  },
-  "cassettesSettings": [
+var atm_settings =
     {
-      "cassetteType": "1",
-      "currencyCode": "NIS",
-      "denomination": 200
-    },
-    {
-      "cassetteType": "2",
-      "currencyCode": "NIS",
-      "denomination": 100
-    },
-    {
-      "cassetteType": "3",
-      "currencyCode": "NIS",
-      "denomination": 50
-    },
-    {
-      "cassetteType": "4",
-      "currencyCode": "NIS",
-      "denomination": 20
+      "generalSettings" : {
+        "atmNo" : "000011",
+        "atmName" : "Jerusalem",
+        "address" : "Menachem Begin 27",
+        "zipCode" : "5416682",
+        "vendor" : "NCR",
+        "ipAddress" : "10.0.0.13",
+        "portNumber" : 5006,
+        "atmProtocol" : "NDC",
+        "rklProtocol" : "NCR_ENHANCED",
+        "terminalGroup" : "01",
+        "belongi" : 0,
+        "belong" : "BRANCH",
+        "area" : "NORTH",
+        "bankNo" : "20",
+        "branch" : "123",
+        "configId" : "1111",
+        "maxBills" : 40
+      },
+      "cassettesSettings" : [
+        {
+        "cassetteType" : "1",
+        "currencyCode" : "NIS",
+        "denomination" : 200
+      }, {
+        "cassetteType" : "2",
+        "currencyCode" : "NIS",
+        "denomination" : 5000
+      }, {
+        "cassetteType" : "3",
+        "currencyCode" : "NIS",
+        "denomination" : 10000
+      }, {
+        "cassetteType" : "4",
+        "currencyCode" : "NIS",
+        "denomination" : 2000
+      } ],
+      "disableSettings" : {
+        "disabledATM" : false,
+        "disableCheckDeposit" : true,
+        "disableReceipt" : false
+      },
+      "emvSettings" : {
+        "emvNotOurs" : false,
+        "emvOurs" : false,
+        "emvTourist" : false
+      },
+      "treatmentDeviceSettings" : {
+        "treatmentStartDate" : 1496782800000,
+        "responsibility" : "VENDOR"
+      }
     }
-  ],
-  "disableSettings": {
-    "disabledATM": true,
-    "disableCheckDeposit": false,
-    "disableReceipt": false
-  },
-  "limitationAmountsSettings": {
-    "notOursFee": 0,
-    "claimAmount": 0,
-    "localCurrencyTrigger": 5000000,
-    "localCurrencyTrigger2": 1000000
-  },
-  "treatmentDeviceSettings": {
-    "treatmentStartDate": 1494140054473,
-    "responsibility": "NONE"
-  },
-  "terminalNearestSettings": [
-    {
-      "bankNo": "20",
-      "branch": "110",
-      "address": "address"
-    }, {
-      "bankNo": "20",
-      "branch": "110",
-      "address": " address "
-    }, {
-      "bankNo": "20",
-      "branch": "110",
-      "address": " address "
-    }
+  ;
+
+var hsm_status = {
+  "hsmStatus": "GOOD",
+  "hsms": [{
+    "main": true,
+    "hsmSerialId": "3567/4444",
+    "hsmAddress": "127.0.0.1",
+    "hsmPort": 1024,
+    "hsmStatusColor": "GOOD",
+    "numberOfSessions": 1
+  }],
+  "sessions": [{
+    "hsmSerialId": "3567/4444",
+    "sessionNumber": 1,
+    "sessionType": "REGULAR",
+    "sessionStatus": "NONE",
+    "sessionRequest": "NONE"
+  }
   ]
 };
 
-
-
+var hsm_statistics = {
+  "statistics1": [{
+    "sessionNumber": 1,
+    "pinGood": 5,
+    "pinBad": 0,
+    "macGood": 6,
+    "macBad": 2,
+    "otherGood": 1,
+    "otherBad": 1,
+    "fail": 0
+  }
+  ],
+  "statistics2": [{
+    "sessionNumber": 1,
+    "pinGood": 5,
+    "pinBad": 0,
+    "macGood": 6,
+    "macBad": 2,
+    "otherGood": 1,
+    "otherBad": 1,
+    "fail": 0
+  }
+  ]
+};

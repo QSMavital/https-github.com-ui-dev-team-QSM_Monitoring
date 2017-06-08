@@ -16,15 +16,13 @@
         <div fxFlex class="text-right">
           <span class="ui-space-r-regular">
             <ui-label translate="hsm.status.all"></ui-label>
-            <button (click)="action('CLOSE_ALL')" class="narrow close-btn ui-icons-close"></button>
-            <button (click)="action('OPEN_ALL')" class="narrow open-btn ui-icons-open"></button>
+            <button class="narrow close-btn ui-icons-close"></button>
+            <button  class="narrow open-btn ui-icons-open"></button>
           </span>
           <span class="ui-space-r-regular">
             <ui-label translate="hsm.status.selected"></ui-label>
-            <button [disabled]="!selectedItems" (click)="action('CLOSE',gridOptions.api.getSelectedRows())"
-                    class="narrow close-btn ui-icons-close"></button>
-            <button [disabled]="!selectedItems" (click)="action('OPEN',gridOptions.api.getSelectedRows())"
-                    class="narrow open-btn ui-icons-open"></button>
+            <button class="narrow close-btn ui-icons-close"></button>
+            <button  class="narrow open-btn ui-icons-open"></button>
           </span>
           <ui-label translate="hsm.status.addAtm"></ui-label>
           <button (click)="addNew=!addNew;" class="blue-btn narrow ui-icons-add-new"></button>
@@ -37,7 +35,7 @@
     <ui-portlet [header]="'hsm.status.hsmTable' | translate">
       <ag-grid-angular
         (gridReady)="fitCols_hsm_table()"
-        [ngStyle]="{height: (gridOptions?.api?.getModel().getRowCount()*31)+38+'px'}"
+        [ngStyle]="{height: (gridOptions?.api?.getModel().getRowCount()*32)+45+'px'}"
         class="ag-fresh stretch-width"
         [gridOptions]="gridOptions">
       </ag-grid-angular>
@@ -47,7 +45,7 @@
   <ui-portlet [header]="'hsm.status.linkTable' | translate">
     <ag-grid-angular
       (gridReady)="fitCols_link_table()"
-      [ngStyle]="{height: (gridOptions2?.api?.getModel().getRowCount()*31)+38+'px'}"
+      [ngStyle]="{height: (gridOptions2?.api?.getModel().getRowCount()*32)+45+'px'}"
       class="ag-fresh stretch-width"
       [gridOptions]="gridOptions2">
     </ag-grid-angular>
@@ -56,5 +54,4 @@
 </div>
 <ui-add-new-hsm [(show)]="addNew"></ui-add-new-hsm>
 
-
-<!--(gridReady)="fitCols_weeks_statistics()"-->
+<pre>{{data | json}}</pre>

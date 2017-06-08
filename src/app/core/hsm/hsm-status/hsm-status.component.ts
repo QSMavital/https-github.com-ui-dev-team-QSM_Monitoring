@@ -1,8 +1,13 @@
-import { Component } from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {GridOptions} from "ag-grid";
 import {GridDefsService} from "../../../shared/services/grid-defs.service";
 import {Hsm} from "../../../config/hsm";
 import {TranslateService} from "@ngx-translate/core";
+import {select, NgRedux} from "@angular-redux/store";
+import {Observable} from "rxjs";
+import {IStore} from "../../../../store/index";
+import {HsmActions} from "../../../../store/actions/hsms-actions";
+import {isNullOrUndefined} from "util";
 
 
 @Component({
@@ -10,13 +15,16 @@ import {TranslateService} from "@ngx-translate/core";
   templateUrl: './hsm-status.component.html',
   styleUrls: ['./hsm-status.component.scss']
 })
-export class HsmStatusComponent {
+export class HsmStatusComponent implements OnInit,OnDestroy{
   public addNew = false;
+  public data;
   public selectedItems = 0;
   public gridOptions: GridOptions = {};
   public gridOptions2: GridOptions = {};
-
-  constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService) {
+  @select(['hsm', 'status']) $hsm_status: Observable<any>;
+  private $hsm_status_ref;
+  constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService,private ngRedux: NgRedux<IStore>) {
+    this.ngRedux.dispatch({type:HsmActions.HSM_GET});
     this.gridOptions = this.gridDefsSrv.initGridOptions();
     for(let prop in Hsm.status.hsmTable){
       this.gridOptions.columnDefs.push(Object.assign({}, { suppressFilter: true }, Hsm.status.hsmTable[prop], {
@@ -78,5 +86,18 @@ export class HsmStatusComponent {
 
   selection(e) {
     this.selectedItems = this.gridOptions2.api.getSelectedRows().length;
+  }
+
+  ngOnInit(){
+    this.$hsm_status_ref = this.$hsm_status.subscribe((state)=>{
+      if(!isNullOrUndefined(state)){
+        console.log(state);
+        this.data = state
+      }
+    });
+  }
+
+  ngOnDestroy(){
+    this.$hsm_status_ref.unsubscribe();
   }
 }

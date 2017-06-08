@@ -26,7 +26,7 @@ import {IStore, rootReducer, enhancers} from "../store/index";
 import {ServerURLInterceptor} from "./app.interceptors";
 import {DialogModule, DropdownModule, ChartModule} from 'primeng/primeng';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {CommonModule} from "@angular/common";
+import {CommonModule, DecimalPipe} from "@angular/common";
 import {AtmsComponent} from './core/atms/atms.component';
 import {InventoryComponent} from './core/atms/inventory/inventory.component';
 import {AtmsStatusComponent} from './core/atms/atms-status/atms-status.component';
@@ -84,6 +84,8 @@ import {GrowlModule} from 'primeng/primeng';
 import {AgDiv100Component} from "./shared/components/ag-div100/ag-div100.component";
 import { HsmWeeksStatisticsComponent } from './core/hsm/hsm-statistics/hsm-weeks-statistics/hsm-weeks-statistics.component';
 import {AgDirectiveComponent} from "./shared/components/ag-directive/ag-directive.component";
+import {Hsm} from "../store/middlewares/hsm-middleware";
+import {AgNumberComponent} from "./shared/components/ag-number/ag-number.component";
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -180,7 +182,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       AgTimeComponent,
       AgTranslateMapComponent,
       AgDiv100Component,
-      AgDirectiveComponent
+      AgDirectiveComponent,
+      AgNumberComponent
     ])
   ],
   providers: [
@@ -191,10 +194,12 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       deps: [XHRBackend, RequestOptions, ServerURLInterceptor] // Add it here, in the same order as the signature of interceptorFactory
     },
     Customer,
+    Hsm,
     Dashboard,
     AtmsMiddleware,
     AtmMiddleware,
-    SettingsResolverService
+    SettingsResolverService,
+    DecimalPipe
   ],
   entryComponents: [
     ConnectionStatusComponent,
@@ -213,6 +218,7 @@ export class AppModule {
   constructor(private ngRedux: NgRedux<IStore>,
               private customer: Customer,
               private atms: AtmsMiddleware,
+              private hsm: Hsm,
               private atm: AtmMiddleware,
               private dashboard: Dashboard,
               private devTools: DevToolsExtension) {
@@ -221,7 +227,7 @@ export class AppModule {
       updatedEnhancers = [...enhancers, devTools.enhancer()];
     } else
       updatedEnhancers = [...enhancers];
-    const middlewares = [customer.Middleware, dashboard.Middleware, atms.Middleware, atm.Middleware];
+    const middlewares = [customer.Middleware, dashboard.Middleware, atms.Middleware, atm.Middleware, hsm.Middleware];
     this.ngRedux.configureStore(rootReducer, {}, middlewares, updatedEnhancers);
 
   }

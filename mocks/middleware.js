@@ -105,6 +105,18 @@ module.exports = function (req, res, next) {
         atm_settings
       ));
     }
+    else if (req.url.indexOf('/api/hsm/get') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        hsm_status
+      ));
+    }
+    else if (req.url.indexOf('/api/hsm/statistics/get') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        hsm_statistics
+      ));
+    }
     else {
       next();
     }
@@ -3593,59 +3605,59 @@ var transaction = [
     "title": "TransactionStatus",
     "data": [
       {
-      "key": "transactionStatus",
-      "value": "NOT_APPROVED",
-      "type": "TransactionStatus"
-    }, {
-      "key": "approver",
-      "value": "NONE",
-      "type": "Approver"
-    }, {
-      "key": "rejectReason",
-      "value": "NONE",
-      "type": "RejectReason"
-    }, {
-      "key": "switchDecision",
-      "value": "NONE",
-      "type": "SwitchDecision"
-    }, {
-      "key": "retainReason",
-      "value": "NONE",
-      "type": "RetainReason"
-    }]
+        "key": "transactionStatus",
+        "value": "NOT_APPROVED",
+        "type": "TransactionStatus"
+      }, {
+        "key": "approver",
+        "value": "NONE",
+        "type": "Approver"
+      }, {
+        "key": "rejectReason",
+        "value": "NONE",
+        "type": "RejectReason"
+      }, {
+        "key": "switchDecision",
+        "value": "NONE",
+        "type": "SwitchDecision"
+      }, {
+        "key": "retainReason",
+        "value": "NONE",
+        "type": "RetainReason"
+      }]
   },
   {
     "title": "CardDetails",
     "data": [
       {
-      "key": "cardNumber",
-      "value": "",
-      "type": ""
-    }, {
-      "key": "cardholderGroup",
-      "value": "UNKNOWN",
-      "type": "CardholderGroup"
-    }, {
-      "key": "cardStatusCode",
-      "value": "UNKNOWN",
-      "type": "CardStatusCode"
-    }, {
-      "key": "accountBank",
-      "value": "",
-      "type": ""
-    }, {
-      "key": "accountBranch",
-      "value": "",
-      "type": ""
-    }, {
-      "key": "accountNo",
-      "value": "",
-      "type": ""
-    }, {
-      "key": "accountStatusCode",
-      "value": "false",
-      "type": ""
-    }]
+        "key": "cardNumber",
+        "value": "",
+        "type": ""
+      }, {
+        "key": "cardholderGroup",
+        "value": "UNKNOWN",
+        "type": "CardholderGroup"
+      }, {
+        "key": "cardStatusCode",
+        "value": "UNKNOWN",
+        "type": "CardStatusCode"
+      }, {
+        "key": "accountBank",
+        "value": "",
+        "type": ""
+      }, {
+        "key": "accountBranch",
+        "value": "",
+        "type": ""
+      }, {
+        "key": "accountNo",
+        "value": "",
+        "type": ""
+      }, {
+        "key": "accountStatusCode",
+        "value": "false",
+        "type": ""
+      }]
   }];
 
 var atm_settings = {
@@ -3722,5 +3734,47 @@ var atm_settings = {
   ]
 };
 
+var hsm_status = {
+  "hsmStatus": "GOOD",
+  "hsms": [{
+    "main": true,
+    "hsmSerialId": "3567/4444",
+    "hsmAddress": "127.0.0.1",
+    "hsmPort": 1024,
+    "hsmStatusColor": "GOOD",
+    "numberOfSessions": 1
+  }],
+  "sessions": [{
+    "hsmSerialId": "3567/4444",
+    "sessionNumber": 1,
+    "sessionType": "REGULAR",
+    "sessionStatus": "NONE",
+    "sessionRequest": "NONE"
+  }
+  ]
+};
 
-
+var hsm_statistics = {
+  "statistics1": [{
+    "sessionNumber": 1,
+    "pinGood": 5,
+    "pinBad": 0,
+    "macGood": 6,
+    "macBad": 2,
+    "otherGood": 1,
+    "otherBad": 1,
+    "fail": 0
+  }
+  ],
+  "statistics2": [{
+    "sessionNumber": 1,
+    "pinGood": 5,
+    "pinBad": 0,
+    "macGood": 6,
+    "macBad": 2,
+    "otherGood": 1,
+    "otherBad": 1,
+    "fail": 0
+  }
+  ]
+};

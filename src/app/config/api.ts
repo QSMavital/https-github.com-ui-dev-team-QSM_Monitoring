@@ -26,15 +26,15 @@ export const Api = {
       "toDate":new Date().getTime()
     }
   },
-  hsm_statistic: {
+  hsm_status: {
+    url: `${apiEntryPoint}/hsm/get`,
+    payload: { }
+  },
+  hsm_statistics: {
     url: `${apiEntryPoint}/hsm/statistics/get`,
     payload: {
-      eventSeverity: null,
-      "fromLine": null,
-      "atmNo": null,
-      "numOfLine": null,
-      "fromDate":new Date().setHours(0,0,0,0),
-      "toDate":new Date().getTime()
+      "dateStatistics1":new Date().getTime(),
+      "dateStatistics2":new Date().setDate(new Date().getDate() - 1)
     }
   },
   atms_transactions: {

@@ -1,8 +1,8 @@
-export class HsmsActions {
-  static HSMS_GET: string = 'HSMS_GET';
-  static HSMS_SET: string = 'HSMS_SET';
+export class HsmActions {
+  static HSM_GET: string = 'HSM_GET';
+  static HSM_SET: string = 'HSM_SET';
 
-  static HSMS_GET_STATISTICS: string = 'HSMS_GET_STATISTICS';
-  static HSMS_SET_STATISTICS: string = 'HSMS_SET_STATISTICS';
+  static HSM_GET_STATISTICS: string = 'HSM_GET_STATISTICS';
+  static HSM_SET_STATISTICS: string = 'HSM_SET_STATISTICS';
 
 }

@@ -16,6 +16,7 @@ import {
   AtmSettingsReducer
 } from "./reducers/atm-reducer";
 import {notificationsReducer} from "./reducers/notifications-reducer";
+import {HsmStatisticsReducer, HsmReducer} from "./reducers/hsms-reducer";
 
 
 export class IStore {
@@ -49,7 +50,7 @@ class IAtm {
 }
 
 class IHsm {
-  hsms?: any;
+  status?: any;
   statistics?: any;
 }
 
@@ -77,8 +78,9 @@ export const rootReducer = combineReducers<IStore>({
     retainedCards: AtmRetainedCardsReducer,
     settings: AtmSettingsReducer
   }),
-  hsms:combineReducers<IHsm>({
-
+  hsm: combineReducers<IHsm>({
+    status: HsmReducer,
+    statistics: HsmStatisticsReducer
   })
 });
 

@@ -34,7 +34,7 @@
     <ui-portlet [header]="'hsm.status.hsmTable' | translate">
       <ag-grid-angular
         (gridReady)="fitCols_hsm_table()"
-        [ngStyle]="{height: (gridOptions?.api?.getModel().getRowCount()*31)+38+'px'}"
+        [ngStyle]="{height: (gridOptions?.api?.getModel().getRowCount()*32)+45+'px'}"
         class="ag-fresh stretch-width"
         [gridOptions]="gridOptions">
       </ag-grid-angular>
@@ -45,7 +45,7 @@
   <ui-portlet [header]="'hsm.status.linkTable' | translate">
     <ag-grid-angular
       (gridReady)="fitCols_link_table()"
-      [ngStyle]="{height: (gridOptions2?.api?.getModel().getRowCount()*31)+38+'px'}"
+      [ngStyle]="{height: (gridOptions2?.api?.getModel().getRowCount()*32)+45+'px'}"
       class="ag-fresh stretch-width"
       [gridOptions]="gridOptions2">
     </ag-grid-angular>
@@ -55,5 +55,4 @@
 </div>
 <ui-add-new-hsm [(show)]="addNew"></ui-add-new-hsm>
 
-
-<!--(gridReady)="fitCols_weeks_statistics()"-->
+<pre>{{data | json}}</pre>

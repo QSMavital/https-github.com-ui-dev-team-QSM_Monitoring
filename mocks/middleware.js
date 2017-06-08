@@ -3660,79 +3660,61 @@ var transaction = [
       }]
   }];
 
-var atm_settings = {
-  "generalSettings": {
-    "atmNo": "123456",
-    "terminalShvaId": "0000",
-    "atmName": "TEST",
-    "address": "rehov 1",
-    "zipCode": "1234567",
-    "vendor": "NCR",
-    "ipAddress": "10.0.0.13",
-    "portNumber": 5006,
-    "atmProtocol": "NDC",
-    "rklProtocol": "NONE",
-    "terminalGroup": "01",
-    "belong": "YAHAV",
-    "area": "NONE",
-    "bankNo": "20",
-    "branch": "123",
-    "configId": "1111",
-    "maxBills": 200
-  },
-  "cassettesSettings": [
+var atm_settings =
     {
-      "cassetteType": "1",
-      "currencyCode": "NIS",
-      "denomination": 200
-    },
-    {
-      "cassetteType": "2",
-      "currencyCode": "NIS",
-      "denomination": 100
-    },
-    {
-      "cassetteType": "3",
-      "currencyCode": "NIS",
-      "denomination": 50
-    },
-    {
-      "cassetteType": "4",
-      "currencyCode": "NIS",
-      "denomination": 20
+      "generalSettings" : {
+        "atmNo" : "000011",
+        "atmName" : "Jerusalem",
+        "address" : "Menachem Begin 27",
+        "zipCode" : "5416682",
+        "vendor" : "NCR",
+        "ipAddress" : "10.0.0.13",
+        "portNumber" : 5006,
+        "atmProtocol" : "NDC",
+        "rklProtocol" : "NCR_ENHANCED",
+        "terminalGroup" : "01",
+        "belongi" : 0,
+        "belong" : "BRANCH",
+        "area" : "NORTH",
+        "bankNo" : "20",
+        "branch" : "123",
+        "configId" : "1111",
+        "maxBills" : 40
+      },
+      "cassettesSettings" : [
+        {
+        "cassetteType" : "1",
+        "currencyCode" : "NIS",
+        "denomination" : 200
+      }, {
+        "cassetteType" : "2",
+        "currencyCode" : "NIS",
+        "denomination" : 5000
+      }, {
+        "cassetteType" : "3",
+        "currencyCode" : "NIS",
+        "denomination" : 10000
+      }, {
+        "cassetteType" : "4",
+        "currencyCode" : "NIS",
+        "denomination" : 2000
+      } ],
+      "disableSettings" : {
+        "disabledATM" : false,
+        "disableCheckDeposit" : true,
+        "disableReceipt" : false
+      },
+      "emvSettings" : {
+        "emvNotOurs" : false,
+        "emvOurs" : false,
+        "emvTourist" : false
+      },
+      "treatmentDeviceSettings" : {
+        "treatmentStartDate" : 1496782800000,
+        "responsibility" : "VENDOR"
+      }
     }
-  ],
-  "disableSettings": {
-    "disabledATM": true,
-    "disableCheckDeposit": false,
-    "disableReceipt": false
-  },
-  "limitationAmountsSettings": {
-    "notOursFee": 0,
-    "claimAmount": 0,
-    "localCurrencyTrigger": 5000000,
-    "localCurrencyTrigger2": 1000000
-  },
-  "treatmentDeviceSettings": {
-    "treatmentStartDate": 1494140054473,
-    "responsibility": "NONE"
-  },
-  "terminalNearestSettings": [
-    {
-      "bankNo": "20",
-      "branch": "110",
-      "address": "address"
-    }, {
-      "bankNo": "20",
-      "branch": "110",
-      "address": " address "
-    }, {
-      "bankNo": "20",
-      "branch": "110",
-      "address": " address "
-    }
-  ]
-};
+  ;
 
 var hsm_status = {
   "hsmStatus": "GOOD",

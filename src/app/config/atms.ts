@@ -4,6 +4,7 @@ import {AgAmountComponent} from "../shared/components/ag-amount/ag-amount.compon
 import {AgDateShortComponent} from "../shared/components/ag-date-short/ag-date-short.component";
 import {AgTimeComponent} from "../shared/components/ag-time/ag-time.component";
 import {AgTranslateMapComponent} from "../shared/components/ag-translate-map/ag-translate-map.component";
+import {AgDiv100Component} from "../shared/components/ag-div100/ag-div100.component";
 export const Atms = {
   Tabs: {
     atmsSupply: {label: 'atms.tabs.inventory', state: 'inventory'},
@@ -31,7 +32,8 @@ export const Atms = {
     totalRemaining: {
       headerName: "atms.totalRemaining",
       field: "totalRemaining",
-      width: 150
+      width: 150,
+      cellRendererFramework:AgDiv100Component
     },
     cardsRetained: {headerName: "atms.retainedCards", field: "cardsRetained", width: 150},
     branch: {headerName: "atms.branch", field: "branch", width: 100},

@@ -23,7 +23,11 @@ export const StatusView = {
   REVERSED: {color: colors.red},
   DECLINED: {color: colors.yellow},
   APPROVED_TEMPORARY: {color: colors.green},
-  REVERSED_SHVA: {color: colors.red}
+  REVERSED_SHVA: {color: colors.red},
+  CLOSED: {color: colors.green},
+  OPEN: {color: colors.green},
+  LOADING: {color: colors.yellow},
+  SUPERVISOR: {color: colors.yellow},
 };
 
 export const ActionsStatus = {

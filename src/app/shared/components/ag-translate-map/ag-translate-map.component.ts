@@ -15,6 +15,9 @@ export class AgTranslateMapComponent{
     branch:"banks",
     currencyCode:"CurrencyCode",
     transactionType:"transactionType",
+    keyType:"keyType",
+    keyStatus:"keyStatus"
+
   };
 
   agInit(params: any): void {

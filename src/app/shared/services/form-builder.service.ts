@@ -45,6 +45,7 @@ export class FormBuilderService {
             });
           }
 
+          debugger;
           temp[i.name] = new FormControl(i.value,validators);
 
         }

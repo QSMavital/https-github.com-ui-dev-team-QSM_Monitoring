@@ -35,22 +35,7 @@ input[type=text] {
   font-weight: 100;
   font-family: 'opensans-regular', sans-serif;
 
-  .placeholder-settings {
-    font-size: $fs13 !important;
-    color: #ccc;
-  }
-  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    @extend .placeholder-settings;
-  }
-  &::-moz-placeholder { /* Firefox 19+ */
-    @extend .placeholder-settings;
-  }
-  &:-ms-input-placeholder { /* IE 10+ */
-    @extend .placeholder-settings;
-  }
-  &:-moz-placeholder { /* Firefox 18- */
-    @extend .placeholder-settings;
-  }
+
 }
 
 

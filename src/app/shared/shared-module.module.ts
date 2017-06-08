@@ -48,6 +48,7 @@ import {GridDefsService} from "./services/grid-defs.service";
 import { AgDiv100Component } from './components/ag-div100/ag-div100.component';
 import { AddNewHsmComponent } from './components/add-new-hsm/add-new-hsm.component';
 import { AgDirectiveComponent } from './components/ag-directive/ag-directive.component';
+import { AgNumberComponent } from './components/ag-number/ag-number.component';
 
 @NgModule({
   imports: [
@@ -98,7 +99,8 @@ import { AgDirectiveComponent } from './components/ag-directive/ag-directive.com
     TransactionComponent,
     AgDiv100Component,
     AddNewHsmComponent,
-    AgDirectiveComponent
+    AgDirectiveComponent,
+    AgNumberComponent
   ],
   exports: [
     SpinnerComponent,

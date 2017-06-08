@@ -2,8 +2,8 @@ $ui-icons-add-new: "\ea01";
 $ui-icons-calendar: "\ea02";
 $ui-icons-close: "\ea03";
 $ui-icons-info: "\ea04";
-$ui-icons-mail: "\ea05";
-$ui-icons-open: "\ea06";
+$ui-icons-mail: "\ea06";
+$ui-icons-open: "\ea05";
 $ui-icons-print: "\ea07";
 $ui-icons-save: "\ea08";
 $ui-icons-v: "\ea09";
@@ -75,11 +75,11 @@ $ui-icons-x: "\ea0a";
 }
 
 .ui-icons-mail::before {
-    content: "\ea05";
+    content: "\ea06";
 }
 
 .ui-icons-open::before {
-    content: "\ea06";
+    content: "\ea05";
 }
 
 .ui-icons-print::before {

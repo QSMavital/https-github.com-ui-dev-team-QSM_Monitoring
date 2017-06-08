@@ -40,7 +40,7 @@ export class AtmSettingsComponent implements OnInit {
     this.createForm();
     this.$atm_settings_ref = this.$atm_settings.subscribe((state) => {
       if (!isNullOrUndefined(state)) {
-        this.latestState=state;
+        this.latestState = state;
         this.setDataToForm(state);
       }
     })
@@ -55,36 +55,53 @@ export class AtmSettingsComponent implements OnInit {
     this.form = this.frmBuilderSrv.createForm(this.controlGroups);
   }
 
-  cancel(){
+  cancel() {
     this.form.markAsPristine();
     this.setDataToForm(this.latestState);
   }
 
-  setDataToForm(state){
+  setDataToForm(state) {
     for (var prop in state.generalSettings) {
-      this.form.controls['generalSettings']['controls'][prop].setValue(state.generalSettings[prop]);
+      console.log(this.form.controls['generalSettings']['controls'][prop]);
+      if (!isNullOrUndefined(this.form.controls['generalSettings']['controls'][prop])) {
+        this.form.controls['generalSettings']['controls'][prop].setValue(state.generalSettings[prop]);
+      }
     }
     for (var prop in state.disableSettings) {
-      this.form.controls['disableSettings']['controls'][prop].setValue(state.disableSettings[prop]);
+      if (!isNullOrUndefined(this.form.controls['disableSettings']['controls'][prop])) {
+        this.form.controls['disableSettings']['controls'][prop].setValue(state.disableSettings[prop]);
+      }
     }
     for (var prop in state.limitationAmountsSettings) {
-      this.form.controls['limitationAmountsSettings']['controls'][prop].setValue(state.limitationAmountsSettings[prop]);
+      if (!isNullOrUndefined(this.form.controls['limitationAmountsSettings']['controls'][prop])) {
+        this.form.controls['limitationAmountsSettings']['controls'][prop].setValue(state.limitationAmountsSettings[prop]);
+      }
     }
     for (var prop in state.treatmentDeviceSettings) {
-      this.form.controls['treatmentDeviceSettings']['controls'][prop].setValue(state.treatmentDeviceSettings[prop]);
+      if (!isNullOrUndefined(this.form.controls['treatmentDeviceSettings']['controls'][prop])) {
+        this.form.controls['treatmentDeviceSettings']['controls'][prop].setValue(state.treatmentDeviceSettings[prop]);
+      }
     }
 
-    state.cassettesSettings.forEach((item,index) => {
-      this.form.controls['cassettesSettings']['controls'][`cassette${index+1}`].controls['currency'].setValue(item['currencyCode']);
-      this.form.controls['cassettesSettings']['controls'][`cassette${index+1}`].controls['denomination'].setValue(item['denomination']);
+    state.cassettesSettings.forEach((item, index) => {
+      if (!isNullOrUndefined(this.form.controls['cassettesSettings']['controls'][`cassette${index + 1}`].controls['currency'].setValue(item['currencyCode']))){
+        this.form.controls['cassettesSettings']['controls'][`cassette${index + 1}`].controls['currency'].setValue(item['currencyCode']);
+      }
+      if (!isNullOrUndefined(this.form.controls['cassettesSettings']['controls'][`cassette${index + 1}`].controls['denomination'].setValue(item['denomination']))){
+        this.form.controls['cassettesSettings']['controls'][`cassette${index + 1}`].controls['denomination'].setValue(item['denomination']);
+      }
     });
 
-    state.terminalNearestSettings.forEach((item,index) => {
-      this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index+1}`].controls['bankNo'].setValue(item['bankNo']);
-      this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index+1}`].controls['branch'].setValue(item['branch']);
-      this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index+1}`].controls['address'].setValue(item['address']);
+    state.terminalNearestSettings.forEach((item, index) => {
+      if (!isNullOrUndefined(this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index + 1}`])) {
+        this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index + 1}`].controls['bankNo'].setValue(item['bankNo']);
+        this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index + 1}`].controls['branch'].setValue(item['branch']);
+        this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index + 1}`].controls['address'].setValue(item['address']);
+      }
+
     })
   }
+
   save() {
     this.form.markAsPristine();
     this.ngRedux.dispatch({

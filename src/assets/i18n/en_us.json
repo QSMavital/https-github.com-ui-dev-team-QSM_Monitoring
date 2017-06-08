@@ -141,36 +141,36 @@
     "verifiedBy": "Verified By",
     "rejectionReason": "Rejection Reason",
     "deviceFee": "Device Fee",
-    "atmSeq":"Atm Seq",
-    "terminalDateTime":"Terminal Date Time",
-    "bussinessDay":"Bussiness Day",
-    "languageCode":"Language Code",
-    "withReceipt":"With Receipt",
-    "pinVerified":"Pin Verified",
-    "authorizationCode":"Authorization Code",
-    "currencyCode":"Currency Code",
-    "billsInfoX":"Bills Info X",
-    "balanceDate":"Balance Date",
-    "feeAmount":"Fee Amount",
-    "atmFeeAmount":"Atm Fee Amount",
-    "transactionStatus":"Transaction Status",
-    "approver":"Approver",
-    "rejectReason":"Reject Reason",
-    "switchDecision":"Switch Decision",
-    "retainReason":"Retain Reason",
-    "cardNumber":"Card Number",
-    "cardholderGroup":"Cardholder Group",
-    "cardStatusCode":"Card Status Code",
-    "accountBank":"Account Bank",
-    "accountBranch":"Account Branch",
-    "accountNo":"Account No",
-    "accountStatusCode":"Account Status Code",
-    "TransactionIdentifer":"Transaction Identifer",
-    "TransactionGeneral":"Transaction General",
-    "TransactionAmount":"Transaction Amount",
-    "TransactionDetails":"Transaction Details",
-    "TransactionStatus":"Transaction Status",
-    "CardDetails":"Card Details"
+    "atmSeq": "Atm Seq",
+    "terminalDateTime": "Terminal Date Time",
+    "bussinessDay": "Bussiness Day",
+    "languageCode": "Language Code",
+    "withReceipt": "With Receipt",
+    "pinVerified": "Pin Verified",
+    "authorizationCode": "Authorization Code",
+    "currencyCode": "Currency Code",
+    "billsInfoX": "Bills Info X",
+    "balanceDate": "Balance Date",
+    "feeAmount": "Fee Amount",
+    "atmFeeAmount": "Atm Fee Amount",
+    "transactionStatus": "Transaction Status",
+    "approver": "Approver",
+    "rejectReason": "Reject Reason",
+    "switchDecision": "Switch Decision",
+    "retainReason": "Retain Reason",
+    "cardNumber": "Card Number",
+    "cardholderGroup": "Cardholder Group",
+    "cardStatusCode": "Card Status Code",
+    "accountBank": "Account Bank",
+    "accountBranch": "Account Branch",
+    "accountNo": "Account No",
+    "accountStatusCode": "Account Status Code",
+    "TransactionIdentifer": "Transaction Identifer",
+    "TransactionGeneral": "Transaction General",
+    "TransactionAmount": "Transaction Amount",
+    "TransactionDetails": "Transaction Details",
+    "TransactionStatus": "Transaction Status",
+    "CardDetails": "Card Details"
   },
   "atm": {
     "cassette1": "Cassette Type 1",
@@ -286,7 +286,7 @@
     }
   },
   "hsm": {
-    "addNewHsm":"Add New Hsm",
+    "addNewHsm": "Add New Hsm",
     "tabs": {
       "status": "HSM Status",
       "statistics": "hsm statistics"
@@ -301,7 +301,8 @@
       "sessionNumber": "SESSION Number",
       "hsmType": "HSM Type",
       "type": "Type",
-      "port": "PORT"
+      "port": "PORT",
+      "addAtm": "Add new HSM"
     },
     "statistics": {
       "session": "Session",
@@ -314,6 +315,18 @@
       "failedActions": "failed actions"
     }
   },
+  "epp": {
+    "addNewEpp": "Add New Epp",
+    "tabs": {
+    },
+    "tables": {
+      "eppNumber": "EPP Number",
+      "rklStatus": "RKL Status",
+      "deviceNumber": "Device number",
+      "deviceName": "Device Name",
+      "chooseType":"Choose Type"
+    }
+  },
   "db": {
     "panelTitle": "dashboard",
     "connectionStatus": "connection status",
@@ -324,7 +337,7 @@
     "inOrder": "in order",
     "exception": "exception",
     "attention": "attention",
-    "disabled": "disabled",
+    "disabled": "Disabled",
     "broken": "broken",
     "needToBeFixed": "need to be fixed",
     "unavailable": "unavailable",

@@ -547,6 +547,17 @@ export const Atm = {
       counter: {headerName: "atm.counter", field: "counter", width: 90}
     }
   },
+  Status: {
+    general: {
+      name: {headerName: 'general.name', field: "name", width: 200, suppressSizeToFit: true},
+      status: {headerName: 'general.status', field: "status", cellRendererFramework: AgStatusComponent}
+    },
+    keys: {
+      keyType: {headerName: 'general.keyType', field: "keyType", width: 200, suppressSizeToFit: true,cellRendererFramework: AgTranslateMapComponent},
+      keyStatus: {headerName: 'general.fitness', field: "keyStatus", width: 150, cellRendererFramework: AgTranslateMapComponent},
+      kcv: {headerName: 'general.kcv', field: "kcv", width: 150}
+    }
+  },
   notifications: {
     terminalId: {headerName: 'atms.terminalId', field: 'atmNo', width: 80, suppressSizeToFit: true},
     severity: {

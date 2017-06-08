@@ -1,0 +1,25 @@
+:host {
+  .input {
+    height: 32px;
+    div {
+      display: inline-block;
+      vertical-align: middle;
+      color: #7b8ea0;
+      font-size: 13px;
+    }
+    select {
+      width: 168px;
+      border-radius: 2px;
+      padding: 0 10px;
+      outline: none;
+      box-shadow: none;
+      border: 1px solid #c7d7e5;
+      height: 23px;
+      line-height: 23px;
+      font-size: 0.92857rem;
+      color: #5d6a76 !important;
+      font-weight: 100;
+      font-family: 'opensans-regular', sans-serif;
+    }
+  }
+}

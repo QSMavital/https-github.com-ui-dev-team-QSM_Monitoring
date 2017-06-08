@@ -10,7 +10,7 @@ export class HsmComponent implements OnInit {
   public tabs = [
     {label:'hsm.tabs.status',state:'status'},
     {label:'hsm.tabs.statistics',state:'statistics'}
-  ]
+  ];
 
   constructor() { }
 

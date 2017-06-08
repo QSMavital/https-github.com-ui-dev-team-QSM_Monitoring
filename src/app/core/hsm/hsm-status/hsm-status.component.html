@@ -4,10 +4,10 @@
     <ui-filters-bar>
       <div fxLayout>
         <div>
-          <span class="middle in-block ui-space-r-tiny">
+          <span class="sub in-block ui-space-r-tiny">
             <ui-label translate="hsm.tabs.status"></ui-label>
           </span>
-          <span class="middle in-block">
+          <span class="sub in-block">
             <ui-status-indicator
               [status]="'DISABLED'" [showStatus]="true"></ui-status-indicator>
           </span>
@@ -26,6 +26,7 @@
             <button [disabled]="!selectedItems" (click)="action('OPEN',gridOptions.api.getSelectedRows())"
                     class="narrow open-btn ui-icons-open"></button>
           </span>
+          <ui-label translate="hsm.status.addAtm"></ui-label>
           <button (click)="addNew=!addNew;" class="blue-btn narrow ui-icons-add-new"></button>
         </div>
       </div>
@@ -43,7 +44,6 @@
     </ui-portlet>
   </div>
 
-
   <ui-portlet [header]="'hsm.status.linkTable' | translate">
     <ag-grid-angular
       (gridReady)="fitCols_link_table()"
@@ -52,7 +52,6 @@
       [gridOptions]="gridOptions2">
     </ag-grid-angular>
   </ui-portlet>
-
 
 </div>
 <ui-add-new-hsm [(show)]="addNew"></ui-add-new-hsm>

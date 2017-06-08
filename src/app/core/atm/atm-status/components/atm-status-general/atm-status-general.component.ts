@@ -1,9 +1,9 @@
 import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {GridOptions} from "ag-grid";
-import {AgStatusComponent} from "../../../../../shared/components/ag-status/ag-status.component";
 import {isNullOrUndefined} from "util";
 import {GridDefsService} from "../../../../../shared/services/grid-defs.service";
 import {TranslateService} from "@ngx-translate/core";
+import {Atm} from "../../../../../config/atm";
 
 @Component({
   selector: 'ui-atm-status-general',
@@ -15,19 +15,11 @@ export class AtmStatusGeneralComponent implements OnChanges {
   public gridOptions: GridOptions;
   constructor(private gridDefsSrv: GridDefsService,private translateSrv: TranslateService) {
     this.gridOptions = this.gridDefsSrv.initGridOptions();
-    this.gridOptions.columnDefs =  [
-      {
-        headerName: this.translateSrv.instant('general.name'),
-        field: "name",
-        width: 200,
-        suppressSizeToFit: true
-      },
-      {
-        headerName: this.translateSrv.instant('general.status'),
-        field: "status",
-        cellRendererFramework: AgStatusComponent
-      },
-    ];
+    for(let prop in Atm.Status.general){
+      this.gridOptions.columnDefs.push(Object.assign({}, { suppressFilter: true }, Atm.Status.general[prop], {
+        headerName: this.translateSrv.instant(Atm.Status.general[prop].headerName)
+      }));
+    }
 
   }
 

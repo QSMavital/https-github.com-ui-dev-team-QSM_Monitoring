@@ -1,9 +1,9 @@
 import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {GridOptions} from "ag-grid";
 import {isNullOrUndefined} from "util";
-import {AgTranslateMapComponent} from "../../../../../shared/components/ag-translate-map/ag-translate-map.component";
 import {GridDefsService} from "../../../../../shared/services/grid-defs.service";
 import {TranslateService} from "@ngx-translate/core";
+import {Atm} from "../../../../../config/atm";
 
 @Component({
   selector: 'ui-atm-status-keys',
@@ -15,17 +15,13 @@ export class AtmStatusKeysComponent implements OnChanges {
   public gridOptions: GridOptions;
   public infos: any[] = [];
 
-  constructor(private gridDefsSrv: GridDefsService,private translateSrv: TranslateService) {
-
+  constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService) {
     this.gridOptions = this.gridDefsSrv.initGridOptions();
-    this.gridOptions.columnDefs = [
-      {
-        headerName: this.translateSrv.instant('general.keyType'), field: "keyType", width: 200, suppressSizeToFit: true,
-        cellRendererFramework: AgTranslateMapComponent
-      },
-      {headerName: this.translateSrv.instant('general.fitness'), field: "keyStatus", width: 150, cellRendererFramework: AgTranslateMapComponent},
-      {headerName: this.translateSrv.instant('general.kcv'), field: "kcv", width: 150},
-    ];
+    for (let prop in Atm.Status.keys) {
+      this.gridOptions.columnDefs.push(Object.assign({}, {suppressFilter: true}, Atm.Status.keys[prop], {
+        headerName: this.translateSrv.instant(Atm.Status.keys[prop].headerName)
+      }));
+    }
   }
 
   fitCols_Keys() {
@@ -33,9 +29,9 @@ export class AtmStatusKeysComponent implements OnChanges {
   }
 
   ngOnChanges(newValue) {
-    if (!isNullOrUndefined(newValue.keys_data) && !isNullOrUndefined(newValue.keys_data.currentValue)&&!isNullOrUndefined(this.gridOptions.api)) {
+    if (!isNullOrUndefined(newValue.keys_data) && !isNullOrUndefined(newValue.keys_data.currentValue) && !isNullOrUndefined(this.gridOptions.api)) {
       this.gridOptions.api.setRowData(this.keys_data["keys"]);
-      this.infos=[];
+      this.infos = [];
       for (var key in this.keys_data) {
         if (key !== 'keys') {
           if (key === 'eppUid') {

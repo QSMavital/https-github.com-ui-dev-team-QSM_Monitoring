@@ -19,7 +19,6 @@ export class CanActivateRoute implements CanActivate,OnDestroy {
   constructor(private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    console.log('ddd');
     this.auth = new Observable((ob) => {
       this.userSettings.subscribe((state) => {
         if (isNullOrUndefined(state)) {
@@ -28,12 +27,10 @@ export class CanActivateRoute implements CanActivate,OnDestroy {
         ob.next(this.redirect(state.menu, route.data.state));
       });
     });
-    console.log('qqq');
     return this.auth;
   }
 
   redirect(menuSettings, state) {
-    console.log('aaaa');
 
     if (menuSettings.length && menuSettings.indexOf(state) == -1) {
       this.router.navigate(["/"]);

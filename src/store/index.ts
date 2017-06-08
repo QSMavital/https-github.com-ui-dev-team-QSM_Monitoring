@@ -46,7 +46,11 @@ class IAtm {
   accessories?: any;
   retainedCards?: any;
   settings?: any;
-  // transaction?: any;
+}
+
+class IHsm {
+  hsms?: any;
+  statistics?: any;
 }
 
 export const rootReducer = combineReducers<IStore>({
@@ -72,6 +76,9 @@ export const rootReducer = combineReducers<IStore>({
     accessories: AtmAccessoriesReducer,
     retainedCards: AtmRetainedCardsReducer,
     settings: AtmSettingsReducer
+  }),
+  hsms:combineReducers<IHsm>({
+
   })
 });
 

@@ -8,24 +8,30 @@
             <ui-label translate="hsm.tabs.status"></ui-label>
           </span>
           <span class="sub in-block">
+            <ui-label>
             <ui-status-indicator
               [status]="'DISABLED'" [showStatus]="true"></ui-status-indicator>
+            </ui-label>
           </span>
 
         </div>
         <div fxFlex class="text-right">
           <span class="ui-space-r-regular">
-            <ui-label translate="hsm.status.all"></ui-label>
+            <ui-label translate="hsm.status.closeLink"></ui-label>
             <button class="narrow close-btn ui-icons-close"></button>
-            <button  class="narrow open-btn ui-icons-open"></button>
           </span>
           <span class="ui-space-r-regular">
-            <ui-label translate="hsm.status.selected"></ui-label>
-            <button class="narrow close-btn ui-icons-close"></button>
-            <button  class="narrow open-btn ui-icons-open"></button>
+            <ui-label translate="hsm.status.openLink"></ui-label>
+            <button class="narrow open-btn ui-icons-open"></button>
           </span>
-          <ui-label translate="hsm.status.addAtm"></ui-label>
-          <button (click)="addNew=!addNew;" class="blue-btn narrow ui-icons-add-new"></button>
+          <span class="ui-space-r-regular">
+            <ui-label translate="hsm.status.checkLink"></ui-label>
+            <button class="narrow info-btn ui-icons-info"></button>
+          </span>
+          <span class="ui-space-r-regular">
+            <ui-label translate="hsm.status.addAtm"></ui-label>
+            <button (click)="addNew=!addNew;" class="blue-btn narrow ui-icons-add-new"></button>
+          </span>
         </div>
       </div>
     </ui-filters-bar>

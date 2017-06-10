@@ -41,6 +41,11 @@
   color:$malachite;
   border: 1px solid $malachite;
 }
+.info-btn{
+  @extend .btn;
+  color:$tan;
+  border: 1px solid $tan;
+}
 
 .purple-btn {
   @extend .btn;

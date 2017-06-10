@@ -1,13 +1,13 @@
 <p-dialog  [(visible)]="show" [modal]="true" class="dialog-no-padding add-atm-dialog">
   <p-header translate="epp.addNewEpp"></p-header>
-  <div class="scroll-y ui-space-tb-regular ui-space-regular" style="width: 300px;height: 300px">
+  <div class="scroll-y ui-space-tb-regular ui-space-regular" style="width: 300px">
 
     <div class="input" fxLayout fxLayoutAlign="space-between center">
-      <ui-label translate="epp.tables.eppNumber"></ui-label>
+      <ui-label>{{("epp.tables.eppNumber"|translate)+":"}}</ui-label>
       <input type="text">
     </div>
     <div class="input" fxLayout fxLayoutAlign="space-between center">
-      <ui-label translate="epp.tables.chooseType"></ui-label>
+      <ui-label>{{("epp.tables.chooseType"|translate)+":"}}</ui-label>
       <select>
         <option value="Type">Add Type</option>
         <option value="Type">Add Type</option>

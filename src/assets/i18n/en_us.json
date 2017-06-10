@@ -303,7 +303,10 @@
       "hsmType": "HSM Type",
       "type": "Type",
       "port": "PORT",
-      "addAtm": "Add new HSM"
+      "addAtm": "Add new HSM",
+      "openLink": "Open Link",
+      "closeLink": "Close Link",
+      "checkLink": "Check Link"
     },
     "statistics": {
       "session": "Session",

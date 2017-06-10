@@ -101,7 +101,7 @@ import { AgNumberComponent } from './components/ag-number/ag-number.component';
     AgDiv100Component,
     AddNewHsmComponent,
     AgDirectiveComponent,
-    AddNewEppComponent
+    AddNewEppComponent,
     AgDirectiveComponent,
     AgNumberComponent
   ],

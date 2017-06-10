@@ -1,20 +1,20 @@
 <div class="stretch-height" fxLayout="column">
   <div fxLayout="column" class="stretch-height wrapper space-right ui-space-medium">
-    <div class="ui-space-regular">
-      <ui-portlet>
 
+    <div class="ui-space-tb-regular">
+      <ui-portlet>
         <ui-filters-bar>
             <div class="text-right">
               <ui-label translate="epp.addNewEpp"></ui-label>
               <button (click)="addNew=!addNew;" class="blue-btn narrow ui-icons-add-new"></button>
             </div>
         </ui-filters-bar>
-
       </ui-portlet>
     </div>
 
     <div fxFlex fxLayout>
-      <div fxFlex class="ui-space-regular">
+
+      <div fxFlex class="ui-space-r-regular">
         <ui-portlet>
 
           <ag-grid-angular
@@ -26,7 +26,8 @@
 
         </ui-portlet>
       </div>
-      <div fxFlex class="ui-space-regular">
+
+      <div fxFlex class="ui-space-l-regular">
         <ui-portlet>
 
           <ag-grid-angular
@@ -38,6 +39,7 @@
 
         </ui-portlet>
       </div>
+
     </div>
   </div>
 </div>

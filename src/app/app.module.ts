@@ -86,6 +86,8 @@ import { HsmWeeksStatisticsComponent } from './core/hsm/hsm-statistics/hsm-weeks
 import {AgDirectiveComponent} from "./shared/components/ag-directive/ag-directive.component";
 import {Hsm} from "../store/middlewares/hsm-middleware";
 import {AgNumberComponent} from "./shared/components/ag-number/ag-number.component";
+import { HsmTableComponent } from './core/hsm/hsm-status/components/hsm-table/hsm-table.component';
+import { HsmLinkTableComponent } from './core/hsm/hsm-status/components/hsm-link-table/hsm-link-table.component';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -146,7 +148,9 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     AccessoriesPrintersComponent,
     AccessoriesChecksComponent,
     AccessoriesOtherComponent,
-    HsmWeeksStatisticsComponent
+    HsmWeeksStatisticsComponent,
+    HsmTableComponent,
+    HsmLinkTableComponent
   ],
   imports: [
     GrowlModule,

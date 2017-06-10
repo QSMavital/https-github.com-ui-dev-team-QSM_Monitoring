@@ -11,18 +11,18 @@ export const Hsm = {
     hsmTable: {
       directive: {headerName: "hsm.status.directive", field: "directive", width: 200,cellRendererFramework:AgDirectiveComponent},
       main: {headerName: "menu.main", field: "main", width: 150},
-      serial: {headerName: "hsm.status.serial", field: "serial", width: 150},
-      ipAddress: {headerName: "atms.ipAddress", field: "ipAddress", width: 200},
-      portNumber: {headerName: "atms.portNumber", field: "portNumber", width: 150},
-      hsmStatus: {headerName: "hsm.tabs.status", field: "hsmStatus", width: 150, cellRendererFramework: AgStatusComponent},
-      sessionNumber: {headerName: "hsm.status.sessionNumber", field: "sessionNumber", width: 150}
+      serial: {headerName: "hsm.status.serial", field: "hsmSerialId", width: 150},
+      hsmAddress: {headerName: "atms.ipAddress", field: "hsmAddress", width: 200},
+      portNumber: {headerName: "atms.portNumber", field: "hsmPort", width: 150},
+      hsmStatus: {headerName: "hsm.tabs.status", field: "hsmStatusColor", width: 150, cellRendererFramework: AgStatusComponent},
+      sessionNumber: {headerName: "hsm.status.sessionNumber", field: "numberOfSessions", width: 150}
     },
     linkTable: {
-      hsmType: {headerName: "hsm.status.hsmType", field: "hsmType", width: 200, cellRenderer: 'group', cellRendererParams: {checkbox: true}},
-      serial: {headerName: "hsm.status.serial", field: "serial", width: 150},
-      type: {headerName: "hsm.status.type", field: "type", width: 150},
-      status: {headerName: "general.status", field: "status", width: 200},
-      directive: {headerName: "hsm.status.directive", field: "directive", width: 150}
+      hsmType: {headerName: "hsm.status.hsmType", field: "sessionNumber", width: 200, cellRenderer: 'group', cellRendererParams: {checkbox: true}},
+      serial: {headerName: "hsm.status.serial", field: "hsmSerialId", width: 150},
+      type: {headerName: "hsm.status.type", field: "sessionType", width: 150},
+      status: {headerName: "general.status", field: "sessionStatus", width: 200},
+      directive: {headerName: "hsm.status.directive", field: "sessionRequest", width: 150}
     }
   },
   statistics: {

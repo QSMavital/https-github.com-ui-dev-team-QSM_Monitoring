@@ -3,6 +3,7 @@
   <ui-portlet>
     <ui-filters-bar>
       <div fxLayout>
+
         <div>
           <span class="sub in-block ui-space-r-tiny">
             <ui-label translate="hsm.tabs.status"></ui-label>
@@ -10,11 +11,11 @@
           <span class="sub in-block">
             <ui-label>
             <ui-status-indicator
-              [status]="'DISABLED'" [showStatus]="true"></ui-status-indicator>
+              [status]="data?.hsmStatus" [showStatus]="true"></ui-status-indicator>
             </ui-label>
           </span>
-
         </div>
+
         <div fxFlex class="text-right">
           <span class="ui-space-r-regular">
             <ui-label translate="hsm.status.closeLink"></ui-label>
@@ -33,31 +34,15 @@
             <button (click)="addNew=!addNew;" class="blue-btn narrow ui-icons-add-new"></button>
           </span>
         </div>
+
       </div>
     </ui-filters-bar>
   </ui-portlet>
 
-  <div class="ui-space-tb-regular">
-    <ui-portlet [header]="'hsm.status.hsmTable' | translate">
-      <ag-grid-angular
-        (gridReady)="fitCols_hsm_table()"
-        [ngStyle]="{height: (gridOptions?.api?.getModel().getRowCount()*32)+45+'px'}"
-        class="ag-fresh stretch-width"
-        [gridOptions]="gridOptions">
-      </ag-grid-angular>
-    </ui-portlet>
-  </div>
+  <ui-hsm-table [gridData]="data?.hsms"></ui-hsm-table>
 
-  <ui-portlet [header]="'hsm.status.linkTable' | translate">
-    <ag-grid-angular
-      (gridReady)="fitCols_link_table()"
-      [ngStyle]="{height: (gridOptions2?.api?.getModel().getRowCount()*32)+45+'px'}"
-      class="ag-fresh stretch-width"
-      [gridOptions]="gridOptions2">
-    </ag-grid-angular>
-  </ui-portlet>
+  <ui-hsm-link-table [gridData]="data?.sessions"></ui-hsm-link-table>
 
 </div>
 <ui-add-new-hsm [(show)]="addNew"></ui-add-new-hsm>
 
-<pre>{{data | json}}</pre>

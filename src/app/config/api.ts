@@ -33,8 +33,8 @@ export const Api = {
   hsm_statistics: {
     url: `${apiEntryPoint}/hsm/statistics/get`,
     payload: {
-      "dateStatistics1":new Date().getTime(),
-      "dateStatistics2":new Date().setDate(new Date().getDate() - 1)
+      "dateStatistics1":new Date().setDate(new Date().getDate() - 1),
+      "dateStatistics2":new Date().getTime()
     }
   },
   atms_transactions: {

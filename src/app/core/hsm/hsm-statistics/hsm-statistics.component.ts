@@ -34,6 +34,18 @@ export class HsmStatisticsComponent implements OnInit, OnDestroy {
     this.$hsm_statistics_ref.unsubscribe();
   }
 
+  filter(event) {
+    console.log(event);
+    this.ngRedux.dispatch({
+      type: HsmActions.HSM_GET_STATISTICS,
+      payload:Object.assign(this.filtersLastState, {
+        "dateStatistics1": new Date(event.dateStatistics1).getTime(),
+        "dateStatistics2": new Date(event.dateStatistics2).getTime()
+      })
+    });
+
+  }
+
 }
 
 /*{

@@ -1,0 +1,19 @@
+<form [formGroup]="form">
+
+  <div class="in-block ui-space-r-regular middle">
+    <ui-label translate="hsm.filters.date"></ui-label>
+    <p-calendar formControlName="dateStatistics1" icon="ui-icons-calendar" showIcon="true"
+    ></p-calendar>
+  </div>
+
+  <div class="in-block ui-space-l-medium ui-space-r-regular middle">
+    <ui-label translate="hsm.filters.dateCompare"></ui-label>
+    <p-calendar  formControlName="dateStatistics2" icon="ui-icons-calendar" showIcon="true"
+    ></p-calendar>
+  </div>
+
+  <span class="ui-space-l-medium in-block">
+  <button class="blue-btn" [disabled]="form.pristine" (click)="filter()" translate="hsm.filters.query"></button>
+  </span>
+
+</form>

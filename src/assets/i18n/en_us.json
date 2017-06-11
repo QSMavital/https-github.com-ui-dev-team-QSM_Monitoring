@@ -317,6 +317,11 @@
       "otherValidActions": "other Valid actions",
       "otherInvalidActions": "other Invalid actions",
       "failedActions": "failed actions"
+    },
+    "filters":{
+      "date":"Date:",
+      "dateCompare":"Date to compare:",
+      "query":"Query"
     }
   },
   "epp": {

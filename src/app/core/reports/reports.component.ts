@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'ui-reports',
@@ -6,6 +7,10 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./reports.component.scss']
 })
 export class ReportsComponent implements OnInit {
+  public form: FormGroup;
+  public filtersLastState: any = {};
+  public date: any;
+/*
   public ddOptions:any[] = [
     {
       label:'something',
@@ -17,7 +22,6 @@ export class ReportsComponent implements OnInit {
     }
   ];
   public ddModel:any;
-
   public tableMock = [
     {
       id: '345563',
@@ -101,10 +105,20 @@ export class ReportsComponent implements OnInit {
     }
 
   ];
+  */
 
-  constructor() {}
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit() {
+    this.initForm();
+  }
+
+  initForm(){
+    this.form = this.fb.group({
+      fromDate: [new Date(this.filters.fromDate || null)],
+      toDate: [new Date(this.filters.toDate || null)]
+    });
   }
 
 }

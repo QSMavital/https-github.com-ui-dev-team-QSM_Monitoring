@@ -3,7 +3,7 @@ var colors={
   green:'#71d36b',
   red:'#ff563e',
   yellow:'#fa9a52',
-}
+};
 export const StatusView = {
   DISABLE: {color: colors.blue},
   DISABLED: {color: colors.blue},
@@ -35,4 +35,4 @@ export const ActionsStatus = {
     Rejection: "FATAL",
     SuccessfulOperations:"GOOD",
     Fault:"DISABLE"
-}
+};

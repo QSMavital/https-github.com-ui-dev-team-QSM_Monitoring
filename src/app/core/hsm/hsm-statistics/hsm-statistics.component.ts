@@ -43,34 +43,5 @@ export class HsmStatisticsComponent implements OnInit, OnDestroy {
         "dateStatistics2": new Date(event.dateStatistics2).getTime()
       })
     });
-
   }
-
 }
-
-/*{
-  "statistics1": [
-  {
-    "sessionNumber": 1,
-    "pinGood": 5,
-    "pinBad": 0,
-    "macGood": 6,
-    "macBad": 2,
-    "otherGood": 1,
-    "otherBad": 1,
-    "fail": 0
-  }
-],
-  "statistics2": [
-  {
-    "sessionNumber": 1,
-    "pinGood": 5,
-    "pinBad": 0,
-    "macGood": 6,
-    "macBad": 2,
-    "otherGood": 1,
-    "otherBad": 1,
-    "fail": 0
-  }
-]
-}*/

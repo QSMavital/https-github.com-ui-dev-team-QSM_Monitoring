@@ -1,6 +1,40 @@
-<div class="wrapper ui-space-medium">
-  <ui-portlet header="general.lastNotifications" style="margin-top:20px;display: inline-block">
-    <button class="blue-btn">a button</button>
+<div class="wrapper stretch-height space-right ui-space-medium">
+  <div class="stretch-height" fxLayout="column">
+
+    <div>
+      <ui-portlet>
+        <ui-filters-bar>
+          <form [formGroup]="form">
+
+            <div class="in-block ui-space-r-regular middle">
+              <ui-label translate="hsm.filters.date"></ui-label>
+              <p-calendar formControlName="date" icon="ui-icons-calendar" showIcon="true"
+              ></p-calendar>
+            </div>
+
+            <div class="in-block ui-space-l-medium ui-space-r-regular middle">
+              <ui-label translate="hsm.filters.dateCompare"></ui-label>
+              <p-calendar formControlName="date" icon="ui-icons-calendar" showIcon="true"
+              ></p-calendar>
+            </div>
+
+            <!--<span class="ui-space-l-medium in-block">
+  <button class="blue-btn" [disabled]="form.pristine" (click)="filter()" translate="hsm.filters.query"></button>
+  </span>-->
+
+          </form>
+        </ui-filters-bar>
+      </ui-portlet>
+    </div>
+
+    <ui-portlet fxFlex class="ui-space-t-regular">
+      Test TestTest TestTest TestTest TestTest TestTest TestTest TestTest TestTest TestTest TestTest TestTest TestTest TestTest Test
+    </ui-portlet>
+  </div>
+</div>
+
+
+<!-- <button class="blue-btn">a button</button>
     <br>
     <div class="search-wrapper" style="margin-top:10px;">
       <input type="text" placeholder="search">
@@ -13,6 +47,4 @@
       <p-dropdown id="pdd" [options]="ddOptions" [(ngModel)]="ddModel"></p-dropdown>
     </div>
 
-    <ui-table [colDef]="colDef" [data]="tableMock"></ui-table>
-  </ui-portlet>
-</div>
+    <ui-table [colDef]="colDef" [data]="tableMock"></ui-table>-->

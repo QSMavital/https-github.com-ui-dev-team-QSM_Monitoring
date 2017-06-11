@@ -74,7 +74,8 @@
     "settlements": "Settlements",
     "CurrencyCode": "Currency",
     "keyType": "Key Type",
-    "kcv": "KCV"
+    "kcv": "KCV",
+    "week":"Week"
   },
   "atms": {
     "city":"City",

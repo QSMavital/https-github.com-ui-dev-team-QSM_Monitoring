@@ -12,6 +12,7 @@ import {isNullOrUndefined} from "util";
 })
 export class HsmWeeksStatisticsComponent implements OnChanges {
   @Input() public gridData: any = {};
+  @Input() public date: string;
   public gridOptions: GridOptions = {};
 
   constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService) {

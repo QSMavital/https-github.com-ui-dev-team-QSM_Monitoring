@@ -4,4 +4,4 @@ export const MainMenu = {
   HSMS: {link: '/hsm', label: "menu.hsm"},
   EPPS: {link: '/epp', label: "menu.epp"},
   REPORTS: {link: '/reports', label: "menu.reports"}
-}
+};

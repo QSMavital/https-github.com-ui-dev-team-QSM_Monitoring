@@ -102,7 +102,6 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
 @NgModule({
   declarations: [
     AppComponent,
-
     SidebarComponent,
     HeaderComponent,
     MenuComponent,

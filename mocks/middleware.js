@@ -93,7 +93,7 @@ module.exports = function (req, res, next) {
         transaction
       ));
     }
-    else if (req.url.indexOf('/atm/settings/post') !== -1 || req.url.indexOf('/api/atm/settings/patch') !== -1) {
+    else if (req.url.indexOf('/atm/settings/post') !== -1 || req.url.indexOf('/api/atm/settings/patch') !== -1|| req.url.indexOf('/api/hsm/patch') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         {"result": "OK"}

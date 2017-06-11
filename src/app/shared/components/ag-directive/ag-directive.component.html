@@ -1,1 +1,5 @@
-<p-dropdown appendTo="body" [options]="cities" [(ngModel)]="selectedCity"></p-dropdown>&nbsp;<button class="blue-btn" translate="app.go"></button>
+<p-dropdown [style]="{'width':'130px'}"
+            [placeholder]="'app.select'|translate"
+            appendTo="body"
+            [options]="directives"
+            [(ngModel)]="selectedDirective"></p-dropdown>&nbsp;<button [disabled]="!selectedDirective" (click)="action()" class="blue-btn" translate="app.go"></button>

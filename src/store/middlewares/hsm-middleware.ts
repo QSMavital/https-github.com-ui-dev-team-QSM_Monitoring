@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {InterceptorService} from "ng2-interceptors";
 import {Api} from "../../app/config/api";
 import {HsmActions} from "../actions/hsms-actions";
+import {NotificationsActions} from "../actions/notifications-actions";
 
 @Injectable()
 export class Hsm {
@@ -28,6 +29,16 @@ export class Hsm {
           .subscribe((res) => {
             next({
               type: HsmActions.HSM_SET,
+              payload: res
+            });
+          });
+        break;
+        case HsmActions.HSM_CREATE:
+        this.http.post(Api.hsm_add.url, Object.assign({},Api.hsm_add.payload,action.payload))
+          .map(res => JSON.parse(res['_body']))
+          .subscribe((res) => {
+            next({
+              type: NotificationsActions.NOTIFICATION,
               payload: res
             });
           });

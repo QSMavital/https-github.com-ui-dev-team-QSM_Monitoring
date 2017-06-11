@@ -116,8 +116,8 @@ export class ReportsComponent implements OnInit {
 
   initForm(){
     this.form = this.fb.group({
-      fromDate: [new Date(this.filters.fromDate || null)],
-      toDate: [new Date(this.filters.toDate || null)]
+      fromDate: [new Date(null)],
+      toDate: [new Date(null)]
     });
   }
 

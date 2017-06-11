@@ -33,8 +33,8 @@ export const Api = {
   hsm_statistics: {
     url: `${apiEntryPoint}/hsm/statistics/get`,
     payload: {
-      "dateStatistics1":new Date().setDate(new Date().getDate() - 1),
-      "dateStatistics2":new Date().getTime()
+      "dateStatistics1":new Date().getTime(),
+      "dateStatistics2":new Date().setDate(new Date().getDate() - 1),
     }
   },
   atms_transactions: {
@@ -54,5 +54,7 @@ export const Api = {
   saveAtmSettings: {url:`${apiEntryPoint}/atm/settings/patch`},
   createAtmSettings: {url:`${apiEntryPoint}/atm/settings/post`},
   getTransaction: {url:`${apiEntryPoint}/transactions/transaction/get`,payload:{transactionId: null}},
-  action: {url:`${apiEntryPoint}/atms/action`,payload:{action: null,atmList:null}}
+  action: {url:`${apiEntryPoint}/atms/action`,payload:{action: null,atmList:null}},
+  hsm_add: {url:`${apiEntryPoint}/hsm/patch`,payload:{hsmSerialId:null,ipAddress:null, portNumber:null}},
+  hsm_action: {url:`${apiEntryPoint}/hsm/hsms/action`,payload:{hsmSerialId:[],action:null}}
 }

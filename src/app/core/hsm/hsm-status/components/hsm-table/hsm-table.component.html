@@ -2,7 +2,7 @@
   <ui-portlet [header]="'hsm.status.hsmTable' | translate">
     <ag-grid-angular
       (gridReady)="fitCols_hsm_table()"
-      [ngStyle]="{height: '150px'}"
+      [ngStyle]="{height: (gridOptions?.api?.getModel().getRowCount()*32)+45+'px'}"
       class="ag-fresh stretch-width"
       [gridOptions]="gridOptions">
     </ag-grid-angular>

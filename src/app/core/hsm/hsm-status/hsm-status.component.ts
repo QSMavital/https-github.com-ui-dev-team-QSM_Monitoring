@@ -17,12 +17,15 @@ import {isNullOrUndefined} from "util";
 })
 export class HsmStatusComponent implements OnDestroy{
   public addNew = false;
-  public data;
+  public data=  {
+    hsms:null,
+    sessions:null,
+  };
   public gridOptions2: GridOptions = {};
   @select(['hsm', 'status']) $hsm_status: Observable<any>;
   private $hsm_status_ref;
 
-  constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService,private ngRedux: NgRedux<IStore>) {
+  constructor(private ngRedux: NgRedux<IStore>) {
     this.ngRedux.dispatch({type:HsmActions.HSM_GET});
     this.$hsm_status_ref = this.$hsm_status.subscribe((state)=>{
       if(isNullOrUndefined(state)){

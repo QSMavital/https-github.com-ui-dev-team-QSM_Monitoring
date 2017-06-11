@@ -15,7 +15,8 @@ export class HsmStatisticsComponent implements OnInit, OnDestroy {
   @select(['hsm', 'statistics']) $hsm_statistics: Observable<any>;
   private $hsm_statistics_ref;
   public filtersLastState: any = {};
-  public data;
+  public data = {};
+
   constructor(private ngRedux: NgRedux<IStore>) {
     this.ngRedux.dispatch({type:HsmActions.HSM_GET_STATISTICS,payload:Api.hsm_statistics.payload});
     this.filtersLastState = Object.assign({}, Api.hsm_statistics.payload);
@@ -34,3 +35,30 @@ export class HsmStatisticsComponent implements OnInit, OnDestroy {
   }
 
 }
+
+/*{
+  "statistics1": [
+  {
+    "sessionNumber": 1,
+    "pinGood": 5,
+    "pinBad": 0,
+    "macGood": 6,
+    "macBad": 2,
+    "otherGood": 1,
+    "otherBad": 1,
+    "fail": 0
+  }
+],
+  "statistics2": [
+  {
+    "sessionNumber": 1,
+    "pinGood": 5,
+    "pinBad": 0,
+    "macGood": 6,
+    "macBad": 2,
+    "otherGood": 1,
+    "otherBad": 1,
+    "fail": 0
+  }
+]
+}*/

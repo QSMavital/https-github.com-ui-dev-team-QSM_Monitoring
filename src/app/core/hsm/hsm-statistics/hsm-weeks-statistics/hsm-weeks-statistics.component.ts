@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {GridOptions} from "ag-grid";
 import {Hsm} from "../../../../config/hsm";
 import {TranslateService} from "@ngx-translate/core";
@@ -10,73 +10,27 @@ import {isNullOrUndefined} from "util";
   templateUrl: './hsm-weeks-statistics.component.html',
   styleUrls: ['./hsm-weeks-statistics.component.scss']
 })
-export class HsmWeeksStatisticsComponent {
-  public gridOptions: GridOptions;
+export class HsmWeeksStatisticsComponent implements OnChanges {
+  @Input() public gridData: any = {};
+  public gridOptions: GridOptions = {};
 
-
-  constructor(private gridDefsSrv: GridDefsService,private translateSrv: TranslateService) {
+  constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService) {
     this.gridOptions = this.gridDefsSrv.initGridOptions();
-    for(let prop in Hsm.statistics){
-      this.gridOptions.columnDefs.push(Object.assign({}, { suppressFilter: true }, Hsm.statistics[prop], {
+    for (let prop in Hsm.statistics) {
+      this.gridOptions.columnDefs.push(Object.assign({}, {suppressFilter: true}, Hsm.statistics[prop], {
         headerName: this.translateSrv.instant(Hsm.statistics[prop].headerName)
       }));
     }
-    this.gridOptions.rowData = [
-      {
-        "session": "session",
-        "ValidCodeActions": "Disconnect",
-        "InvalidCodeActions": "Disconnect",
-        "ValidMacActions": "Disconnect",
-        "InvalidMacActions": "Disconnect",
-        "otherValidActions": "Disconnect",
-        "otherInvalidActions": "Disconnect",
-        "failedActions": "Disconnect",
-      },
-      {
-        "session": "session",
-        "ValidCodeActions": "Disconnect",
-        "InvalidCodeActions": "Disconnect",
-        "ValidMacActions": "Disconnect",
-        "InvalidMacActions": "Disconnect",
-        "otherValidActions": "Disconnect",
-        "otherInvalidActions": "Disconnect",
-        "failedActions": "Disconnect",
-      },
-      {
-        "session": "session",
-        "ValidCodeActions": "Disconnect",
-        "InvalidCodeActions": "Disconnect",
-        "ValidMacActions": "Disconnect",
-        "InvalidMacActions": "Disconnect",
-        "otherValidActions": "Disconnect",
-        "otherInvalidActions": "Disconnect",
-        "failedActions": "Disconnect",
-      },
-      {
-        "session": "session",
-        "ValidCodeActions": "Disconnect",
-        "InvalidCodeActions": "Disconnect",
-        "ValidMacActions": "Disconnect",
-        "InvalidMacActions": "Disconnect",
-        "otherValidActions": "Disconnect",
-        "otherInvalidActions": "Disconnect",
-        "failedActions": "Disconnect",
-      },
-      {
-        "session": "session",
-        "ValidCodeActions": "Disconnect",
-        "InvalidCodeActions": "Disconnect",
-        "ValidMacActions": "Disconnect",
-        "InvalidMacActions": "Disconnect",
-        "otherValidActions": "Disconnect",
-        "otherInvalidActions": "Disconnect",
-        "failedActions": "Disconnect",
-      }
-    ];
   }
 
   fitCols_weeks_statistics() {
     this.gridOptions.api.sizeColumnsToFit();
   }
 
+  ngOnChanges(newValue) {
+    if (!isNullOrUndefined(newValue.gridData) && !isNullOrUndefined(newValue.gridData.currentValue) && !isNullOrUndefined(this.gridOptions.api)) {
+      let rowData = this.gridData;
+      this.gridOptions.api.setRowData(rowData);
+    }
+  }
 }

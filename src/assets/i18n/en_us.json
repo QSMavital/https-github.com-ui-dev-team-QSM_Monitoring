@@ -302,7 +302,7 @@
       "sessionNumber": "SESSION Number",
       "hsmType": "HSM Type",
       "type": "Type",
-      "port": "PORT",
+      "port": "Port",
       "addAtm": "Add new HSM",
       "openLink": "Open Link",
       "closeLink": "Close Link",

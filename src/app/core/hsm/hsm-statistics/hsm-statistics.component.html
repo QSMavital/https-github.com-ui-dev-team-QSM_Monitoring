@@ -9,12 +9,10 @@
     </ui-portlet>
   </div>
 
-  <ui-hsm-weeks-statistics
-    fxFlex
-    class="ui-space-tb-regular"></ui-hsm-weeks-statistics>
+  <ui-hsm-weeks-statistics [gridData]="data?.statistics1" fxFlex class="ui-space-tb-regular"></ui-hsm-weeks-statistics>
+  <ui-hsm-weeks-statistics [gridData]="data?.statistics2" fxFlex></ui-hsm-weeks-statistics>
 
-  <ui-hsm-weeks-statistics
-    fxFlex></ui-hsm-weeks-statistics>
+  <!--<ui-hsm-weeks-statistics fxFlex></ui-hsm-weeks-statistics>-->
 
 </div>
-<pre>{{data | json}}</pre>
+

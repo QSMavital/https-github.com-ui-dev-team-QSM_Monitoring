@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {GridOptions} from "ag-grid";
 import {Hsm} from "../../../../../config/hsm";
 import {GridDefsService} from "../../../../../shared/services/grid-defs.service";
@@ -10,7 +10,7 @@ import {isNullOrUndefined} from "util";
   templateUrl: './hsm-link-table.component.html',
   styleUrls: ['./hsm-link-table.component.scss']
 })
-export class HsmLinkTableComponent implements OnInit {
+export class HsmLinkTableComponent {
   @Input() public gridData: any = {};
   public gridOptions: GridOptions = {};
   public selectedItems = 0;
@@ -22,33 +22,6 @@ export class HsmLinkTableComponent implements OnInit {
         headerName: this.translateSrv.instant(Hsm.status.linkTable[prop].headerName)
       }));
     }
-    this.gridOptions.rowSelection = 'multiple';
-    this.gridOptions.rowData = [
-      {
-        "hsmType": "1",
-        "serial": "2",
-        "type": "Regular",
-        "status": "Active",
-        "directive": ""
-      },
-      {
-        "hsmType": "2",
-        "serial": "3",
-        "type": "Regular",
-        "status": "Open",
-        "directive": ""
-      },
-      {
-        "hsmType": "3",
-        "serial": "5",
-        "type": "Regular",
-        "status": "Active",
-        "directive": ""
-      }
-    ];
-  }
-
-  ngOnInit() {
   }
 
   fitCols_link_table(){

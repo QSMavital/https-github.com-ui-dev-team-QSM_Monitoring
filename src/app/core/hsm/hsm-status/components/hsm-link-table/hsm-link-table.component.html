@@ -1,6 +1,7 @@
 <ui-portlet [header]="'hsm.status.linkTable' | translate">
   <ag-grid-angular
     (gridReady)="fitCols_link_table()"
+    (selectionChanged)="selection($event)"
     [ngStyle]="{height: (gridOptions?.api?.getModel().getRowCount()*32)+45+'px'}"
     class="ag-fresh stretch-width"
     [gridOptions]="gridOptions">

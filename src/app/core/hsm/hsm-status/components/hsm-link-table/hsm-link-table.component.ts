@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, Output, EventEmitter} from '@angular/core';
 import {GridOptions} from "ag-grid";
 import {Hsm} from "../../../../../config/hsm";
 import {GridDefsService} from "../../../../../shared/services/grid-defs.service";
@@ -11,9 +11,9 @@ import {isNullOrUndefined} from "util";
   styleUrls: ['./hsm-link-table.component.scss']
 })
 export class HsmLinkTableComponent {
-  @Input() public gridData: any = {};
+  @Input() gridData: any = {};
+  @Output() selectedSessions = new EventEmitter();
   public gridOptions: GridOptions = {};
-  public selectedItems = 0;
 
   constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService) {
     this.gridOptions = this.gridDefsSrv.initGridOptions();
@@ -29,7 +29,7 @@ export class HsmLinkTableComponent {
   }
 
   selection(e) {
-    this.selectedItems = this.gridOptions.api.getSelectedRows().length;
+    this.selectedSessions.emit(this.gridOptions.api.getSelectedRows());
   }
 
   ngOnChanges(newValue) {

@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Hsm} from "../../../config/hsm";
 import {TranslateService} from "@ngx-translate/core";
+import {NgRedux} from "@angular-redux/store";
+import {IStore} from "../../../../store/index";
+import {HsmActions} from "../../../../store/actions/hsms-actions";
 
 @Component({
   selector: 'ui-ag-directive',
@@ -12,7 +15,7 @@ export class AgDirectiveComponent {
   directives: any = [];
   selectedDirective: string;
 
-  constructor(private translateSrv: TranslateService) {
+  constructor(private translateSrv: TranslateService,private ngRedux: NgRedux<IStore>) {
     Hsm.status.actions.forEach((action)=>{
       this.directives.push(Object.assign({},action,{label:this.translateSrv.instant(action.label)}));
     });
@@ -23,6 +26,7 @@ export class AgDirectiveComponent {
   }
 
   action(){
-    console.log(this.selectedDirective);
+    this.ngRedux.dispatch({type:HsmActions.HSM_ACTION,payload:{hsmSerialId:this.params.data.hsmSerialId,action:this.selectedDirective}});
+    this.selectedDirective=null;
   }
 }

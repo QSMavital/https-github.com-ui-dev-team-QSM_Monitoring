@@ -14,7 +14,7 @@ export class Hsm {
   Middleware = store => next => action => {
     switch (action.type) {
       case HsmActions.HSM_GET_STATISTICS:
-        this.http.post(Api.hsm_statistics.url, Object.assign({},Api.hsm_statistics.payload,action.payload))
+        this.http.post(Api.hsm_statistics.url, Object.assign({}, Api.hsm_statistics.payload, action.payload))
           .map(res => JSON.parse(res['_body']))
           .subscribe((res) => {
             next({
@@ -24,7 +24,7 @@ export class Hsm {
           });
         break;
       case HsmActions.HSM_GET:
-        this.http.post(Api.hsm_status.url, Object.assign({},Api.hsm_status.payload,action.payload))
+        this.http.post(Api.hsm_status.url, Object.assign({}, Api.hsm_status.payload, action.payload))
           .map(res => JSON.parse(res['_body']))
           .subscribe((res) => {
             next({
@@ -33,8 +33,28 @@ export class Hsm {
             });
           });
         break;
-        case HsmActions.HSM_CREATE:
-        this.http.post(Api.hsm_add.url, Object.assign({},Api.hsm_add.payload,action.payload))
+      case HsmActions.HSM_CREATE:
+        this.http.post(Api.hsm_add.url, Object.assign({}, Api.hsm_add.payload, action.payload))
+          .map(res => JSON.parse(res['_body']))
+          .subscribe((res) => {
+            next({
+              type: NotificationsActions.NOTIFICATION,
+              payload: res
+            });
+          });
+        break;
+      case HsmActions.HSM_ACTION:
+        this.http.post(Api.hsm_action.url, Object.assign({}, Api.hsm_action.payload, action.payload))
+          .map(res => JSON.parse(res['_body']))
+          .subscribe((res) => {
+            next({
+              type: NotificationsActions.NOTIFICATION,
+              payload: res
+            });
+          });
+        break;
+      case HsmActions.HSM_SESSIONS_ACTION:
+        this.http.post(Api.hsm_sessions_action.url, Object.assign({}, Api.hsm_sessions_action.payload, action.payload))
           .map(res => JSON.parse(res['_body']))
           .subscribe((res) => {
             next({

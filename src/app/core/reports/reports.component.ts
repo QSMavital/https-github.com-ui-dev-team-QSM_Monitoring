@@ -115,10 +115,10 @@ export class ReportsComponent implements OnInit {
   }
 
   initForm(){
-    this.form = this.fb.group({
+/*    this.form = this.fb.group({
       fromDate: [new Date(this.filters.fromDate || null)],
       toDate: [new Date(this.filters.toDate || null)]
-    });
+    });*/
   }
 
 }

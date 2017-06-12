@@ -21,6 +21,7 @@ export class AtmsStatusComponent implements OnInit {
   public addNew = false;
   public filtersData = {};
   public selectedItems = 0;
+  public atmsActions = Atms.Actions;
   public filtersLastState = {};
   private $atms_inventory_ref;
   private dataSource;

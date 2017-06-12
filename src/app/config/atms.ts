@@ -141,5 +141,11 @@ export const Atms = {
     rejectReason: {headerName: 'general.rejectReason', field: 'rejectReason', width: 150,suppressSizeToFit: true,cellRendererFramework: AgTranslateMapComponent},
     atmFeeAmount: {headerName: 'general.atmFeeAmount', field: 'atmFeeAmount', width: 100,suppressSizeToFit: true,cellRendererFramework: AgAmountComponent},
     businessDay: {headerName: 'general.businessDay', field: 'businessDay', width: 140,suppressSizeToFit: true,cellRendererFramework: AgDateShortComponent}
+  },
+  Actions:{
+    CLOSE_ALL:"CLOSE_ALL",
+    OPEN_ALL:"OPEN_ALL",
+    CLOSE:"CLOSE",
+    OPEN:"OPEN"
   }
 };

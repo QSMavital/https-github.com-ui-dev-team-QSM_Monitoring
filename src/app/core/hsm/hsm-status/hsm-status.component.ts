@@ -17,6 +17,7 @@ import {isNullOrUndefined} from "util";
 })
 export class HsmStatusComponent implements OnDestroy{
   public addNew = false;
+  public sessions_actions=Hsm.status.sessions_actions;
   public selectedSessions = [];
   public data=  {
     hsms:null,

@@ -28,6 +28,11 @@ export const Hsm = {
       {value:"DOWN_DISABLED_HSM",label:"hsm.status.DOWN_DISABLED_HSM"}
 
     ],
+    sessions_actions:{
+      SESSION_DOWN:"SESSION_DOWN",
+      SESSION_UP:"SESSION_UP",
+      SESSION_TEST:"SESSION_TEST",
+    },
     linkTable: {
       hsmType: {headerName: "hsm.status.hsmType", field: "sessionNumber", width: 200, cellRenderer: 'group', cellRendererParams: {checkbox: true}},
       serial: {headerName: "hsm.status.serial", field: "hsmSerialId", width: 150},

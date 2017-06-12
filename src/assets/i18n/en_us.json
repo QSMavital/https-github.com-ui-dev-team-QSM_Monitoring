@@ -307,7 +307,16 @@
       "addAtm": "Add new HSM",
       "openLink": "Open Link",
       "closeLink": "Close Link",
-      "checkLink": "Check Link"
+      "checkLink": "Check Link",
+      "ADD_SESSION":"Add Session",
+      "DOWN_SESSION":"Remove Session",
+      "SYNC_KEYS":"Sync Keys",
+      "ADD_HSM":"Add HSM",
+      "DELETE_HSM":"Delete HSM",
+      "HSM_MAIN":"Set as main",
+      "DISABLED_HSM":"Disable HSM",
+      "DOWN_DISABLED_HSM":"Remove disabled HSM"
+
     },
     "statistics": {
       "session": "Session",

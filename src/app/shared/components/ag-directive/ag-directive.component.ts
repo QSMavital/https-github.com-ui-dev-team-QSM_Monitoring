@@ -1,4 +1,9 @@
 import {Component, OnInit} from '@angular/core';
+import {Hsm} from "../../../config/hsm";
+import {TranslateService} from "@ngx-translate/core";
+import {NgRedux} from "@angular-redux/store";
+import {IStore} from "../../../../store/index";
+import {HsmActions} from "../../../../store/actions/hsms-actions";
 
 @Component({
   selector: 'ui-ag-directive',
@@ -7,21 +12,21 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AgDirectiveComponent {
   public params: any;
-  cities: any = [];
-  selectedCity: string;
+  directives: any = [];
+  selectedDirective: string;
 
-  constructor() {
-    this.cities = [];
-    this.cities.push({label: 'Select City', value: null});
-    this.cities.push({label: 'New York', value: {id: 1, name: 'New York', code: 'NY'}});
-    this.cities.push({label: 'Rome', value: {id: 2, name: 'Rome', code: 'RM'}});
-    this.cities.push({label: 'London', value: {id: 3, name: 'London', code: 'LDN'}});
-    this.cities.push({label: 'Istanbul', value: {id: 4, name: 'Istanbul', code: 'IST'}});
-    this.cities.push({label: 'Paris', value: {id: 5, name: 'Paris', code: 'PRS'}});
+  constructor(private translateSrv: TranslateService,private ngRedux: NgRedux<IStore>) {
+    Hsm.status.actions.forEach((action)=>{
+      this.directives.push(Object.assign({},action,{label:this.translateSrv.instant(action.label)}));
+    });
   }
 
   agInit(params: any): void {
     this.params = params;
   }
 
+  action(){
+    this.ngRedux.dispatch({type:HsmActions.HSM_ACTION,payload:{hsmSerialId:this.params.data.hsmSerialId,action:this.selectedDirective}});
+    this.selectedDirective=null;
+  }
 }

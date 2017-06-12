@@ -17,6 +17,7 @@ import {isNullOrUndefined} from "util";
 })
 export class HsmStatusComponent implements OnDestroy{
   public addNew = false;
+  public selectedSessions = [];
   public data=  {
     hsms:null,
     sessions:null,
@@ -40,27 +41,16 @@ export class HsmStatusComponent implements OnDestroy{
   ngOnDestroy(){
     this.$hsm_status_ref.unsubscribe();
   }
-}
 
-/*{
-  "hsmStatus": "GOOD",
-  "hsms": [
-  {
-    "main": true,
-    "hsmSerialId": "3567/4444",
-    "hsmAddress": "127.0.0.1",
-    "hsmPort": 1024,
-    "hsmStatusColor": "GOOD",
-    "numberOfSessions": 1
+  setSelectedSessions(e){
+    this.selectedSessions=e;
   }
-],
-  "sessions": [
-  {
-    "hsmSerialId": "3567/4444",
-    "sessionNumber": 1,
-    "sessionType": "REGULAR",
-    "sessionStatus": "NONE",
-    "sessionRequest": "NONE"
+
+  sessionAction(action){
+    let sessions=[];
+    this.selectedSessions.forEach((session)=>{
+      sessions.push({"hsmSerialId": session['hsmSerialId'],"sessionNumber": session['sessionNumber']});
+    });
+    this.ngRedux.dispatch({type:HsmActions.HSM_SESSIONS_ACTION,payload:{action,sessions}});
   }
-]
-}*/
+}

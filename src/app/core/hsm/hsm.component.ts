@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Hsm} from "../../config/hsm";
 
 @Component({
   selector: 'ui-hsm',
@@ -7,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HsmComponent implements OnInit {
 
-  public tabs = [
-    {label:'hsm.tabs.status',state:'status'},
-    {label:'hsm.tabs.statistics',state:'statistics'}
-  ];
+  public tabs = [];
 
-  constructor() { }
+  constructor() {
+    for(var prop in Hsm.Tabs){
+      this.tabs.push(Hsm.Tabs[prop]);
+    }
+  }
 
   ngOnInit() {
   }

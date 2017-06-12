@@ -4,8 +4,8 @@ import {AgDirectiveComponent} from "../shared/components/ag-directive/ag-directi
 
 export const Hsm = {
   Tabs: {
-    atmsSupply: {label: 'atms.tabs.inventory', state: 'inventory'},
-    atmsStatus: {label: 'atms.tabs.status', state: 'status'}
+    hsmStatus: {label:'hsm.tabs.status',state:'status'},
+    hsmStatistics: {label:'hsm.tabs.statistics',state:'statistics'}
   },
   status: {
     hsmTable: {
@@ -17,6 +17,17 @@ export const Hsm = {
       hsmStatus: {headerName: "hsm.tabs.status", field: "hsmStatusColor", width: 100, cellRendererFramework: AgStatusComponent},
       sessionNumber: {headerName: "hsm.status.sessionNumber", field: "numberOfSessions", width: 100}
     },
+    actions:[
+      {value:"ADD_SESSION",label:"hsm.status.ADD_SESSION"},
+      {value:"DOWN_SESSION",label:"hsm.status.DOWN_SESSION"},
+      {value:"SYNC_KEYS",label:"hsm.status.SYNC_KEYS"},
+      {value:"ADD_HSM",label:"hsm.status.ADD_HSM"},
+      {value:"DELETE_HSM",label:"hsm.status.DELETE_HSM"},
+      {value:"HSM_MAIN",label:"hsm.status.HSM_MAIN"},
+      {value:"DISABLED_HSM",label:"hsm.status.DISABLED_HSM"},
+      {value:"DOWN_DISABLED_HSM",label:"hsm.status.DOWN_DISABLED_HSM"}
+
+    ],
     linkTable: {
       hsmType: {headerName: "hsm.status.hsmType", field: "sessionNumber", width: 200, cellRenderer: 'group', cellRendererParams: {checkbox: true}},
       serial: {headerName: "hsm.status.serial", field: "hsmSerialId", width: 150},

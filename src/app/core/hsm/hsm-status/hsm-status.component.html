@@ -19,15 +19,15 @@
         <div fxFlex class="text-right">
           <span class="ui-space-r-regular">
             <ui-label translate="hsm.status.closeLink"></ui-label>
-            <button class="narrow close-btn ui-icons-close"></button>
+            <button (click)="sessionAction('SESSION_DOWN')" [disabled]="!selectedSessions.length" class="narrow close-btn ui-icons-close"></button>
           </span>
           <span class="ui-space-r-regular">
             <ui-label translate="hsm.status.openLink"></ui-label>
-            <button class="narrow open-btn ui-icons-open"></button>
+            <button (click)="sessionAction('SESSION_UP')" [disabled]="!selectedSessions.length" class="narrow open-btn ui-icons-open"></button>
           </span>
           <span class="ui-space-r-regular">
             <ui-label translate="hsm.status.checkLink"></ui-label>
-            <button class="narrow info-btn ui-icons-info"></button>
+            <button (click)="sessionAction('SESSION_TEST')" [disabled]="!selectedSessions.length" class="narrow info-btn ui-icons-info"></button>
           </span>
           <span>
             <ui-label translate="hsm.status.addAtm"></ui-label>
@@ -41,7 +41,7 @@
 
   <ui-hsm-table [gridData]="data.hsms"></ui-hsm-table>
 
-  <ui-hsm-link-table [gridData]="data.sessions"></ui-hsm-link-table>
+  <ui-hsm-link-table (selectedSessions)="setSelectedSessions($event)" [gridData]="data.sessions"></ui-hsm-link-table>
 
 </div>
 <ui-add-new-hsm [(show)]="addNew"></ui-add-new-hsm>

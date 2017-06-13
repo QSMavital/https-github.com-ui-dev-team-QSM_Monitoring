@@ -305,9 +305,9 @@
       "type": "Type",
       "port": "Port",
       "addAtm": "Add new HSM",
-      "openLink": "Open Link",
-      "closeLink": "Close Link",
-      "checkLink": "Check Link",
+      "openLink": "Open Session",
+      "closeLink": "Close Session",
+      "checkLink": "Check Session",
       "ADD_SESSION":"Add Session",
       "DOWN_SESSION":"Remove Session",
       "SYNC_KEYS":"Sync Keys",
@@ -316,7 +316,6 @@
       "HSM_MAIN":"Set as main",
       "DISABLED_HSM":"Disable HSM",
       "DOWN_DISABLED_HSM":"Remove disabled HSM"
-
     },
     "statistics": {
       "session": "Session",

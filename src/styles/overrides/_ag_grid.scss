@@ -17,6 +17,7 @@ $black: #000;
 $color_silver_approx: #bebebe;
 $color_black_haze_approx: #fff;
 $powder_blue: #b0e0e6;
+$selected_row: #e7ebf7;
 $color_gallery_approx: #f0f0f0;
 $white_50: rgba(255, 255, 255, 0.5);
 $color_mercury_approx: #e6e6e6;
@@ -36,7 +37,7 @@ $font_3: sans-serif;
 .ag-fresh {
   line-height: 1.4;
   font-family: $font_0, $font_1, $font_2, $font_3;
-  font-size: 14px;
+  font-size: $fs14;
   color: $color_log_cabin_approx;
   img {
     vertical-align: middle;
@@ -207,7 +208,7 @@ $font_3: sans-serif;
     transition: background-color 0.1s;
   }
   .ag-rich-select {
-    font-size: 14px;
+    font-size: $fs14;
     border: 1px solid $gray;
     background-color: $white;
   }
@@ -300,7 +301,7 @@ $font_3: sans-serif;
     background-color: white;
   }
   .ag-row-selected {
-    background-color: $powder_blue;
+    background-color: $selected_row;
   }
   .ag-overlay-loading-wrapper {
     background-color: $white_50;
@@ -342,7 +343,7 @@ $font_3: sans-serif;
     background-color: $color_black_haze_approx;
     cursor: default;
     font-family: $font_0, $font_1, $font_2, $font_3;
-    font-size: 14px;
+    font-size: $fs14;
     .ag-tab-header {
       background-color: $ath-gray;
     }
@@ -421,7 +422,7 @@ $font_3: sans-serif;
   .ag-status-bar {
     color: $color_log_cabin_approx;
     background-color: $color_black_haze_approx;
-    font-size: 14px;
+    font-size: $fs14;
     height: 22px;
     border-bottom: 1px solid $gray;
     border-left: 1px solid $gray;
@@ -493,7 +494,7 @@ $font_3: sans-serif;
   .ag-select-agg-func-popup {
     cursor: default;
     position: absolute;
-    font-size: 14px;
+    font-size: $fs14;
     background-color: $white;
     border: 1px solid $gray;
   }

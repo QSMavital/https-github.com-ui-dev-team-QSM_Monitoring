@@ -17,7 +17,6 @@ export class AgTranslateMapComponent{
     transactionType:"transactionType",
     keyType:"keyType",
     keyStatus:"keyStatus"
-
   };
 
   agInit(params: any): void {

@@ -38,17 +38,5 @@ export class HsmTableComponent implements OnChanges {
 
     }
   }
-
-
 }
 
-
-/*
-{
-  "main": true,
-  "hsmSerialId": "3567/4444",
-  "hsmAddress": "127.0.0.1",
-  "hsmPort": 1024,
-  "hsmStatusColor": "GOOD",
-  "numberOfSessions": 1
-}*/

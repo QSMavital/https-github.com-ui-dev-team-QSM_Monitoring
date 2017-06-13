@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
-import {TranslateService} from "@ngx-translate/core";
-import {Api} from "../../../config/api";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {SelectItem} from "primeng/primeng";
 
 @Component({
   selector: 'ui-add-new-epp',
@@ -9,33 +8,36 @@ import {Api} from "../../../config/api";
   styleUrls: ['./add-new-epp.component.scss']
 })
 export class AddNewEppComponent implements OnInit {
+  private showValue = false;
+  private form: FormGroup;
+  public options: any = [];
+  selectedOption: string;
+
   @Input() get show() {
     return this.showValue;
   }
-  @Output() showChange = new EventEmitter();
-
-  public form:FormGroup;
-  public options;
-
   set show(val) {
     this.showValue = val;
   }
 
-  private showValue = false;
-  constructor(private formBuilder:FormBuilder,
-              private translateSrv: TranslateService) { }
-
-  ngOnInit() {
-    this.form = this.formBuilder.group({
-      settlement: [Api.getAtmRetainedCards.payload.fromSettelments]
-    });
-
-    this.options = [
-      {label:this.translateSrv.instant(`enums.AT_ATM`),value:"AT_ATM"},
-      {label:this.translateSrv.instant(`enums.LAST_SETTELMENT`),value:"LAST_SETTELMENT"},
-      {label:this.translateSrv.instant(`enums.PREVIOUS_SETTELMENT`),value:"PREVIOUS_SETTELMENT"}
-    ];
+  optionType: SelectItem[];
+  selectedType: string = '';
+  constructor(private formBuilder:FormBuilder) {
+    this.optionType = [];
+    this.optionType.push({label: 'Select Type', value: 'Type1'});
+    this.optionType.push({label: 'Select Type', value: 'Type2'});
+    this.optionType.push({label: 'Select Type', value: 'Type3'});
 
   }
 
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      eppNumber:[null,Validators.required],
+      group:[null,Validators.required]
+    });
+  }
+
+  create(){
+   /* alert(JSON.stringify(this.form.getRawValue()));*/
+  }
 }

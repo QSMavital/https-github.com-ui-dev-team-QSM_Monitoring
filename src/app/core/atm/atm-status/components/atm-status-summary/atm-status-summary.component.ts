@@ -59,20 +59,3 @@ export class AtmStatusSummaryComponent implements OnInit, OnChanges {
     }
   }
 }
-
-/*[
- {
- "device": "CARD_READER",
- "statusColor": "DISABLE",
- "fitness": "NO_ERROR",
- "supply": "NO_INFO",
- "counter": 0
- },
- {
- "device": "",
- "statusColor": "DISABLE",
- "fitness": "NO_ERROR",
- "supply": "NO_INFO",
- "counter": 0
- }
- ]*/

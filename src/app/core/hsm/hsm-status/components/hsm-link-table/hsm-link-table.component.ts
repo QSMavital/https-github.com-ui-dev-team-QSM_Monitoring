@@ -40,13 +40,5 @@ export class HsmLinkTableComponent {
 
     }
   }
-
 }
 
-/*{
-  "hsmSerialId": "3567/4444",
-  "sessionNumber": 1,
-  "sessionType": "REGULAR",
-  "sessionStatus": "NONE",
-  "sessionRequest": "NONE"
-}*/

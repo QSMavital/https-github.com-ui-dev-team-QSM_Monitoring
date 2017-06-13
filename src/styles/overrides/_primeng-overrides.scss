@@ -113,6 +113,10 @@
     color: $casper;
     border-color: $botti;
   }
+  .ui-button:enabled:hover {
+    background-color: #9dabe8;
+    border-color: #c7d7e5;
+  }
 }
 input.ng-invalid.ng-touched{
   border:1px solid $coral-red!important;

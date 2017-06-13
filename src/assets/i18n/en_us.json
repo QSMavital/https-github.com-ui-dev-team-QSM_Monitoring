@@ -297,7 +297,7 @@
       "all": "All HSM's",
       "selected": "Selected HSM's",
       "hsmTable": "HSM Table",
-      "linkTable": "Link Table",
+      "sessions": "Sessions",
       "directive": "Directive",
       "serial": "Serial",
       "sessionNumber": "SESSION Number",
@@ -343,6 +343,15 @@
       "deviceNumber": "Device number",
       "deviceName": "Device Name",
       "chooseType":"Choose Type"
+    }
+  },
+  "reports": {
+    "filters": {
+      "reportType": "Report Type",
+      "HardwareFaultReport": "Hardware fault report",
+      "deviceNo": "Device No",
+      "accountNo": "Account No",
+      "show": "Show"
     }
   },
   "db": {
@@ -754,5 +763,25 @@
     "SENT":"Sent",
     "ACKNOWLEDGED":"Acknowledged"
 
+  },
+  "sessionType":{
+    "MANAGEMENT": "Management",
+    "REGULAR": "Regular",
+    "SPECIAL": "Special"
+  },
+  "sessionStatus":{
+    "NONE": "",
+    "UP": "Up",
+    "DOWN": "Down",
+    "INIT": "Init",
+    "STOPPED": "Stopped",
+    "WAIT": "Wait",
+    "FAIL": "fail"
+  },
+  "sessionRequest":{
+    "NONE": "",
+    "STOP":	"Stop",
+    "START":	"Start",
+    "TEST":	"Test"
   }
 }

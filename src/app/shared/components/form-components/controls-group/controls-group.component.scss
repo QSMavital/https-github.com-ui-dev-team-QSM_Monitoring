@@ -5,12 +5,12 @@
   border:1px solid $ath-gray;
   //margin-bottom:15px;
   .form-inner-title {
-    font-weight: bold;
-    font-size: $fs11 !important;
-    color: $victoria;
-    background: $selago;
+    font-size: $fs12 !important;
+    color: $kimb;
+    background: $ath-gray;
     padding: 10px 0;
     text-transform: uppercase;
+    font-family: 'opensans-regular', sans-serif;
     &:first-child{
       padding: 10px 0 10px 15px;
     }

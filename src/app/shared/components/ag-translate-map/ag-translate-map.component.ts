@@ -16,7 +16,10 @@ export class AgTranslateMapComponent{
     currencyCode:"CurrencyCode",
     transactionType:"transactionType",
     keyType:"keyType",
-    keyStatus:"keyStatus"
+    keyStatus:"keyStatus",
+    sessionType:"sessionType",
+    sessionStatus:"sessionStatus",
+    sessionRequest:"sessionRequest"
   };
 
   agInit(params: any): void {

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {SelectItem} from "primeng/primeng";
 
 @Component({
   selector: 'ui-reports',
@@ -7,9 +8,11 @@ import {FormBuilder, FormGroup} from "@angular/forms";
   styleUrls: ['./reports.component.scss']
 })
 export class ReportsComponent implements OnInit {
-  public form: FormGroup;
+  private form: FormGroup;
   public filtersLastState: any = {};
   public date: any;
+  public filters;
+  public selectedItem: SelectItem[];
 /*
   public ddOptions:any[] = [
     {
@@ -107,18 +110,37 @@ export class ReportsComponent implements OnInit {
   ];
   */
 
-  constructor(private fb: FormBuilder) {
+  constructor(private formBuilder:FormBuilder) {
+    this.filters = {
+      fromDate: new Date(),
+      toDate: new Date(),
+      dropDown: [
+        {label: 'List Name 01', value: '01'},
+        {label: 'Long List Name 02', value: '02'},
+        {label: 'List Name 03', value: '03'},
+        {label: 'Very Long List Name 04', value: '04'},
+        {label: 'List Name 05', value: '05'},
+        {label: 'List Name 06', value: '06'}
+      ]};
+
   }
 
   ngOnInit() {
     this.initForm();
   }
 
+  filter(){
+    alert(JSON.stringify(this.form.getRawValue()));
+  }
+
   initForm(){
-/*    this.form = this.fb.group({
+   this.form = this.formBuilder.group({
       fromDate: [new Date(this.filters.fromDate || null)],
-      toDate: [new Date(this.filters.toDate || null)]
-    });*/
+      toDate: [new Date(this.filters.toDate || null)],
+      dropDown:[""],
+     deviceNo: [""],
+     accountNo: [""]
+    });
   }
 
 }

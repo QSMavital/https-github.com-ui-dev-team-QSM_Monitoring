@@ -11,7 +11,6 @@ export class AddNewEppComponent implements OnInit {
   private showValue = false;
   private form: FormGroup;
   public options: any = [];
-  selectedOption: string;
 
   @Input() get show() {
     return this.showValue;

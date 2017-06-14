@@ -9,7 +9,7 @@ import {TranslateService} from "@ngx-translate/core";
   styleUrls: ['./reports-filter.component.scss']
 })
 export class ReportsFilterComponent implements OnInit {
-  private form: FormGroup;
+  public form: FormGroup;
   public date: any;
   public filters;
   public selectedItem: SelectItem[];

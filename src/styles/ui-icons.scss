@@ -1,17 +1,17 @@
-$ui-icons-add-new: "\ea04";
-$ui-icons-arrow: "\ea01";
-$ui-icons-arrow_01: "\ea02";
-$ui-icons-calendar: "\ea03";
+$ui-icons-add-new: "\ea01";
+$ui-icons-arrow: "\ea02";
+$ui-icons-arrow_01: "\ea03";
+$ui-icons-calendar: "\ea04";
 $ui-icons-check: "\ea05";
 $ui-icons-close: "\ea06";
-$ui-icons-info: "\ea08";
-$ui-icons-mail: "\ea07";
+$ui-icons-info: "\ea07";
+$ui-icons-mail: "\ea08";
 $ui-icons-open: "\ea09";
 $ui-icons-print: "\ea0a";
 $ui-icons-save: "\ea0b";
 $ui-icons-v: "\ea0c";
-$ui-icons-waiting: "\ea0e";
-$ui-icons-x: "\ea0d";
+$ui-icons-waiting: "\ea0d";
+$ui-icons-x: "\ea0e";
 
 @font-face {
     font-family: ui-icons;
@@ -63,19 +63,19 @@ $ui-icons-x: "\ea0d";
 }
 
 .ui-icons-add-new::before {
-    content: "\ea04";
-}
-
-.ui-icons-arrow::before {
     content: "\ea01";
 }
 
-.ui-icons-arrow_01::before {
+.ui-icons-arrow::before {
     content: "\ea02";
 }
 
-.ui-icons-calendar::before {
+.ui-icons-arrow_01::before {
     content: "\ea03";
+}
+
+.ui-icons-calendar::before {
+    content: "\ea04";
 }
 
 .ui-icons-check::before {
@@ -87,11 +87,11 @@ $ui-icons-x: "\ea0d";
 }
 
 .ui-icons-info::before {
-    content: "\ea08";
+    content: "\ea07";
 }
 
 .ui-icons-mail::before {
-    content: "\ea07";
+    content: "\ea08";
 }
 
 .ui-icons-open::before {
@@ -111,9 +111,9 @@ $ui-icons-x: "\ea0d";
 }
 
 .ui-icons-waiting::before {
-    content: "\ea0e";
+    content: "\ea0d";
 }
 
 .ui-icons-x::before {
-    content: "\ea0d";
+    content: "\ea0e";
 }

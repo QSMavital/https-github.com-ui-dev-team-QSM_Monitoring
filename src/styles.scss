@@ -18,6 +18,7 @@
 @import "styles/helpers/buttons";
 @import "styles/helpers/form-components";
 
+@import "styles/mixins/mixins";
 //icons
 @include sprites($spritesheet-sprites);
 [class*="ui-icons"] {

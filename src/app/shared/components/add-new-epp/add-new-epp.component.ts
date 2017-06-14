@@ -1,6 +1,11 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {SelectItem} from "primeng/primeng";
+import {GeneralConstants} from "../../../config/general_consts";
+import {NgRedux} from "@angular-redux/store";
+import {IStore} from "../../../../store/index";
+import {EppActions} from "../../../../store/actions/epp-actions";
+import {CustomValidators} from "ng2-validation";
 
 @Component({
   selector: 'ui-add-new-epp',
@@ -10,33 +15,31 @@ import {SelectItem} from "primeng/primeng";
 export class AddNewEppComponent implements OnInit {
   private showValue = false;
   private form: FormGroup;
-  public options: any = [];
+  public optionType: SelectItem[] =[];
 
   @Input() get show() {
     return this.showValue;
   }
+
   set show(val) {
     this.showValue = val;
   }
 
-  optionType: SelectItem[];
-  selectedType: string = '';
-  constructor(private formBuilder:FormBuilder) {
-    this.optionType = [];
-    this.optionType.push({label: 'Select Type', value: 'Type1'});
-    this.optionType.push({label: 'Select Type', value: 'Type2'});
-    this.optionType.push({label: 'Select Type', value: 'Type3'});
 
+  constructor(private formBuilder: FormBuilder,private ngRedux: NgRedux<IStore>) {
+    for(let prop in GeneralConstants.Vendors){
+      this.optionType.push(GeneralConstants.Vendors[prop])
+    }
   }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      eppNumber:[null,Validators.required],
-      group:[null,Validators.required]
+      eppUid: [null, [Validators.required,CustomValidators.number,Validators.minLength(5),Validators.maxLength(5)]],
+      eppType: [null, Validators.required]
     });
   }
 
-  create(){
-   /* alert(JSON.stringify(this.form.getRawValue()));*/
+  create() {
+    this.ngRedux.dispatch({type:EppActions.EPP_CREATE,payload:this.form.getRawValue()});
   }
 }

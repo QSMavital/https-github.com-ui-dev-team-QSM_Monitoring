@@ -17,6 +17,7 @@ import {
 } from "./reducers/atm-reducer";
 import {notificationsReducer} from "./reducers/notifications-reducer";
 import {HsmStatisticsReducer, HsmReducer} from "./reducers/hsms-reducer";
+import {EppReducer} from "./reducers/epp-reducer";
 
 
 export class IStore {
@@ -54,6 +55,11 @@ class IHsm {
   statistics?: any;
 }
 
+class IEpp {
+  epps?: any;
+}
+
+
 export const rootReducer = combineReducers<IStore>({
   loader: loaderReducer,
   errorHandler: errorReducer,
@@ -81,6 +87,9 @@ export const rootReducer = combineReducers<IStore>({
   hsm: combineReducers<IHsm>({
     status: HsmReducer,
     statistics: HsmStatisticsReducer
+  }),
+  epp: combineReducers<IEpp>({
+    epps: EppReducer
   })
 });
 

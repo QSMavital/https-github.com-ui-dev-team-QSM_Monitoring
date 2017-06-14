@@ -3,6 +3,9 @@ import {GridOptions} from "ag-grid";
 import {Epps} from "../../config/epp";
 import {GridDefsService} from "../../shared/services/grid-defs.service";
 import {TranslateService} from "@ngx-translate/core";
+import {NgRedux} from "@angular-redux/store";
+import {IStore} from "../../../store/index";
+import {EppActions} from "../../../store/actions/epp-actions";
 
 @Component({
   selector: 'ui-epps',
@@ -11,263 +14,42 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class EppsComponent implements OnInit {
   public addNew = false;
-  public gridOptions: GridOptions = {};
-  public gridOptions2: GridOptions = {};
+  public gridOptions: {
+    grid_left: GridOptions,
+    grid_right: GridOptions
+  };
 
-  constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService) {
-    this.gridOptions = this.gridDefsSrv.initGridOptions();
-    for(let prop in Epps.eppTable1){
-      this.gridOptions.columnDefs.push(Object.assign({}, { suppressFilter: true }, Epps.eppTable1[prop], {
-        headerName: this.translateSrv.instant(Epps.eppTable1[prop].headerName)
-      }));
-    }
-    this.gridOptions.rowData = [
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      }
-    ];
+  constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService,private ngRedux: NgRedux<IStore>) {
+    this.ngRedux.dispatch({type:EppActions.EPP_GET});
 
-    this.gridOptions2 = this.gridDefsSrv.initGridOptions();
-    for(let prop in Epps.eppTable2){
-      this.gridOptions2.columnDefs.push(Object.assign({}, { suppressFilter: true }, Epps.eppTable2[prop], {
-        headerName: this.translateSrv.instant(Epps.eppTable2[prop].headerName)
-      }));
-    }
-    this.gridOptions2.rowData = [
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      },
-      {
-        "eppNumber": "00044564",
-        "rklStatus": "DISABLE",
-        "disabled": true,
-        "deviceNumber": "000000",
-        "deviceName": ""
-      }
-    ];
+    this.initGridDefs();
+
   }
 
   ngOnInit() {
 
   }
 
-  fitCols_epp_table1(){
-    this.gridOptions.api.sizeColumnsToFit();
+  initGridDefs(){
+    this.gridOptions.grid_left = this.gridDefsSrv.initGridOptions();
+    this.gridOptions.grid_right = this.gridDefsSrv.initGridOptions();
+
+    for (let prop in Epps.eppTable) {
+      this.gridOptions.grid_right.columnDefs.push(Object.assign({}, {suppressFilter: true}, Epps.eppTable[prop], {
+        headerName: this.translateSrv.instant(Epps.eppTable[prop].headerName)
+      }));
+      this.gridOptions.grid_left.columnDefs.push(Object.assign({}, {suppressFilter: true}, Epps.eppTable[prop], {
+        headerName: this.translateSrv.instant(Epps.eppTable[prop].headerName)
+      }));
+    }
   }
 
-  fitCols_epp_table2(){
-    this.gridOptions2.api.sizeColumnsToFit();
+  fitCols_epp_right() {
+    this.gridOptions.grid_right.api.sizeColumnsToFit();
+  }
+
+  fitCols_epp_left() {
+    this.gridOptions.grid_left.api.sizeColumnsToFit();
   }
 
 }

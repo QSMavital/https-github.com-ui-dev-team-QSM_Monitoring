@@ -57,5 +57,7 @@ export const Api = {
   action: {url:`${apiEntryPoint}/atms/action`,payload:{action: null,atmList:null}},
   hsm_add: {url:`${apiEntryPoint}/hsm/patch`,payload:{hsmSerialId:null,ipAddress:null, portNumber:null}},
   hsm_action: {url:`${apiEntryPoint}/hsm/hsms/action`,payload:{hsmSerialId:null,action:null}},
-  hsm_sessions_action: {url:`${apiEntryPoint}/hsm/sessions/action`,payload:{sessions:[],action:null}}
+  hsm_sessions_action: {url:`${apiEntryPoint}/hsm/sessions/action`,payload:{sessions:[],action:null}},
+  epp_get: {url:`${apiEntryPoint}/epp/get`,payload:{"fromLine": null,"numOfLine": null}},
+  epp_add: {url:`${apiEntryPoint}/epp/patch`,payload:{"eppUid": null,"eppType": null}},
 }

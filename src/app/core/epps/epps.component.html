@@ -1,7 +1,7 @@
 <div class="stretch-height" fxLayout="column">
   <div fxLayout="column" class="stretch-height wrapper space-right ui-space-medium">
 
-    <div class="ui-space-tb-regular">
+    <div class="ui-space-b-regular">
       <ui-portlet>
         <ui-filters-bar>
             <div class="text-right">
@@ -18,10 +18,10 @@
         <ui-portlet>
 
           <ag-grid-angular
-            (gridReady)="fitCols_epp_table1()"
+            (gridReady)="fitCols_epp_left()"
             style="height: 100%"
             class="ag-fresh stretch-width"
-            [gridOptions]="gridOptions">
+            [gridOptions]="gridOptions.grid_left">
           </ag-grid-angular>
 
         </ui-portlet>
@@ -31,10 +31,10 @@
         <ui-portlet>
 
           <ag-grid-angular
-            (gridReady)="fitCols_epp_table2()"
+            (gridReady)="fitCols_epp_right()"
             style="height: 100%"
             class="ag-fresh stretch-width"
-            [gridOptions]="gridOptions2">
+            [gridOptions]="gridOptions.grid_right">
           </ag-grid-angular>
 
         </ui-portlet>

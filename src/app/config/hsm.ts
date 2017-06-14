@@ -1,6 +1,7 @@
 import {AgStatusComponent} from "../shared/components/ag-status/ag-status.component";
 import {AgProgressComponent} from "../shared/components/ag-progress/ag-progress.component";
 import {AgDirectiveComponent} from "../shared/components/ag-directive/ag-directive.component";
+import {AgTranslateMapComponent} from "../shared/components/ag-translate-map/ag-translate-map.component";
 
 export const Hsm = {
   Tabs: {

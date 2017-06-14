@@ -46,6 +46,13 @@
   color:$tan;
   border: 1px solid $tan;
 }
+.check-btn{
+  @extend .btn;
+  color:$tan;
+  border: 1px solid $tan;
+  padding-right: 1px!important;
+  padding-top: 1px!important;
+}
 
 .purple-btn {
   @extend .btn;

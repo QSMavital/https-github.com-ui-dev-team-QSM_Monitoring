@@ -1,14 +1,17 @@
+$ui-icons-Check: "\ea04";
 $ui-icons-add-new: "\ea01";
-$ui-icons-calendar: "\ea02";
-$ui-icons-close: "\ea03";
-$ui-icons-info: "\ea04";
-$ui-icons-mail: "\ea05";
-$ui-icons-open: "\ea06";
-$ui-icons-print: "\ea07";
-$ui-icons-save: "\ea08";
-$ui-icons-v: "\ea09";
-$ui-icons-waiting: "\ea0a";
-$ui-icons-x: "\ea0b";
+$ui-icons-arrow: "\ea02";
+$ui-icons-arrow_01: "\ea03";
+$ui-icons-calendar: "\ea05";
+$ui-icons-close: "\ea06";
+$ui-icons-info: "\ea07";
+$ui-icons-mail: "\ea08";
+$ui-icons-open: "\ea09";
+$ui-icons-print: "\ea0a";
+$ui-icons-save: "\ea0e";
+$ui-icons-v: "\ea0b";
+$ui-icons-waiting: "\ea0c";
+$ui-icons-x: "\ea0d";
 
 @font-face {
     font-family: ui-icons;
@@ -59,46 +62,58 @@ $ui-icons-x: "\ea0b";
     text-align: center;
 }
 
+.ui-icons-Check::before {
+    content: "\ea04";
+}
+
 .ui-icons-add-new::before {
     content: "\ea01";
 }
 
-.ui-icons-calendar::before {
+.ui-icons-arrow::before {
     content: "\ea02";
 }
 
-.ui-icons-close::before {
+.ui-icons-arrow_01::before {
     content: "\ea03";
 }
 
-.ui-icons-info::before {
-    content: "\ea04";
-}
-
-.ui-icons-mail::before {
+.ui-icons-calendar::before {
     content: "\ea05";
 }
 
-.ui-icons-open::before {
+.ui-icons-close::before {
     content: "\ea06";
 }
 
-.ui-icons-print::before {
+.ui-icons-info::before {
     content: "\ea07";
 }
 
-.ui-icons-save::before {
+.ui-icons-mail::before {
     content: "\ea08";
 }
 
-.ui-icons-v::before {
+.ui-icons-open::before {
     content: "\ea09";
 }
 
-.ui-icons-waiting::before {
+.ui-icons-print::before {
     content: "\ea0a";
 }
 
-.ui-icons-x::before {
+.ui-icons-save::before {
+    content: "\ea0e";
+}
+
+.ui-icons-v::before {
     content: "\ea0b";
+}
+
+.ui-icons-waiting::before {
+    content: "\ea0c";
+}
+
+.ui-icons-x::before {
+    content: "\ea0d";
 }

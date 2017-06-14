@@ -1,0 +1,29 @@
+:host {
+
+  .portlet-withoutShadow {
+    border-radius: 2px;
+    background: white;
+
+    .grey_BG {
+      background-color: #e8eaeb;
+      padding: 7px;
+      .inner_BG {
+        background-color: #f1f2f2;
+        border: dashed 2px #d4d8db;
+        div {
+          i {
+            font-size: 12rem !important;
+            color: #d5dadc;
+          }
+          div {
+            color: #c6ccce;
+            top: 35px;
+            right: 30px;
+            width: 65%;
+            line-height: 2.2rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 //colors
 @import "./src/styles/helpers/brand";
+@import "./src/styles/ui-icons";
 $color_log_cabin_approx: #222;
 $gray: #808080;
 $color_boulder_40_approx: rgba(120, 120, 120, 0.4);
@@ -48,6 +49,9 @@ $font_3: sans-serif;
   }
   .ag-cell {
     @extend .my-cell;
+    ui-ag-directive{
+      line-height: 23px;
+    }
   }
   .ag-cell-not-inline-editing {
     padding: 1px;
@@ -284,6 +288,7 @@ $font_3: sans-serif;
   .ag-body {
     background-color: $color_black_haze_approx;
     .ag-body-container {
+      width: 100%!important;
       .ag-row {
         border-bottom: solid 1px #dfe8ef;
         > div {
@@ -559,42 +564,58 @@ $font_3: sans-serif;
           font-size: 25px;
         }
         &[ref='btFirst'] {
+          @extend .ui-icons-arrow;
+          cursor: pointer;
+          height: 33px;
           padding-left: 0;
           background-color: #ffffff;
           width: 30px;
-          &:after {
-            background-color: #ffffff;
-            content: "«";
+          &:before {
+            @extend .fs11;
+            font-family: "ui-icons";
+            display: inline-block;
+            transform: rotate(180deg);
           }
         }
         &[ref='btPrevious']{
+          @extend .ui-icons-arrow_01;
+          cursor: pointer;
           height: 33px;
           padding: 0;
           margin: 0 5px;
           border-right: solid 5px white;
-          &:after {
-            content: "‹";
+          &:before {
+            @extend .fs11;
+            font-family: "ui-icons";
+            display: inline-block;
+            transform: rotate(180deg);
           }
 
         }
         &[ref='btNext']{
+          @extend .ui-icons-arrow_01;
+          cursor: pointer;
           height: 33px;
           padding: 0;
           margin: 0 5px;
           border-left: solid 5px white;
-          &:after {
-            content: "›";
+          &:before {
+            @extend .fs11;
+            font-family: "ui-icons";
           }
 
         }
         &[ref='btLast'] {
+          @extend .ui-icons-arrow;
+          cursor: pointer;
+          height: 33px;
           padding-right: 0;
           background-color: #ffffff;
           width: 30px;
-          &:after {
-            background-color: #ffffff;
-            content: '»';
-
+          &:before {
+            background-color: white;
+            @extend .fs11;
+            font-family: "ui-icons";
           }
         }
       }

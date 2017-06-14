@@ -351,7 +351,11 @@
       "HardwareFaultReport": "Hardware fault report",
       "deviceNo": "Device No",
       "accountNo": "Account No",
-      "show": "Show"
+      "show": "Show",
+      "listName":"List Name",
+      "longListName":"Long List Name",
+      "veryLongListName":"Very Long List Name",
+      "WaitingData":"Waiting to enter data"
     }
   },
   "db": {

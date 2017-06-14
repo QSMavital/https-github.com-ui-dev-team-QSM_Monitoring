@@ -1,0 +1,41 @@
+<ui-portlet>
+  <ui-filters-bar>
+    <form [formGroup]="form">
+
+      <div class="in-block ui-space-r-regular middle">
+        <ui-label>{{("reports.filters.reportType"|translate)+":"}}</ui-label>
+        <p-dropdown appendTo="body" [style]="{'width':'168px'}"
+                    formControlName="dropDown"
+                    [placeholder]="'reports.filters.HardwareFaultReport'|translate"
+                    [options]="filters.dropDown" [(ngModel)]="selectedItem"></p-dropdown>
+      </div>
+
+      <div class="in-block ui-space-r-regular middle">
+        <ui-label>{{("atms.filters.fromDate"|translate)+":"}}</ui-label>
+        <p-calendar formControlName="fromDate" icon="ui-icons-calendar" showIcon="true"
+        ></p-calendar>
+      </div>
+
+      <div class="in-block ui-space-r-regular ui-space-l-medium middle">
+        <ui-label>{{("atms.filters.toDate"|translate)+":"}}</ui-label>
+        <p-calendar formControlName="toDate" icon="ui-icons-calendar" showIcon="true"
+        ></p-calendar>
+      </div>
+
+      <div class="in-block ui-space-r-regular ui-space-l-medium middle">
+        <ui-label>{{("reports.filters.deviceNo"|translate)+".:"}}</ui-label>
+        <input type="text" formControlName="deviceNo">
+      </div>
+
+      <div class="in-block ui-space-r-regular middle">
+        <ui-label>{{("reports.filters.accountNo"|translate)+".:"}}</ui-label>
+        <input type="text" formControlName="accountNo">
+      </div>
+
+      <div class="in-block ui-space-l-regular middle">
+        <button class="blue-btn" (click)="filter()" translate="reports.filters.show"></button>
+      </div>
+
+    </form>
+  </ui-filters-bar>
+</ui-portlet>

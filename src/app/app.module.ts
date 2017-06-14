@@ -92,6 +92,8 @@ import {HsmTableComponent} from './core/hsm/hsm-status/components/hsm-table/hsm-
 import {HsmLinkTableComponent} from './core/hsm/hsm-status/components/hsm-link-table/hsm-link-table.component';
 import {HsmFilterComponent} from './core/hsm/hsm-statistics/hsm-filter/hsm-filter.component';
 import {AgBooleanComponent} from "./shared/components/ag-boolean/ag-boolean.component";
+import { ReportsFilterComponent } from './core/reports/components/reports-filter/reports-filter.component';
+import { ReportsDataComponent } from './core/reports/components/reports-data/reports-data.component';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -154,7 +156,9 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     HsmWeeksStatisticsComponent,
     HsmTableComponent,
     HsmLinkTableComponent,
-    HsmFilterComponent
+    HsmFilterComponent,
+    ReportsFilterComponent,
+    ReportsDataComponent
   ],
   imports: [
     GrowlModule,

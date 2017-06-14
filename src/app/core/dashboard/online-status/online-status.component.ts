@@ -35,7 +35,7 @@ export class OnlineStatusComponent implements OnInit, OnDestroy {
       generateGradient: true,
       highDpiSupport: true,     // High resolution support
       staticLabels: {
-        font: "0.9285714rem opensans-regular",  // Specifies font
+        font: "1rem opensans-regular",  // Specifies font
         labels: [],  // Print labels at these values
         color: "#6f7b87",  // Optional: Label text color
         fractionDigits: 0  // Optional: Numerical precision. 0=round off.

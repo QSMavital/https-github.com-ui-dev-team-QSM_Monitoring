@@ -438,7 +438,9 @@
     "OPEN":"Open",
     "LOADING":"Loading",
     "SUPERVISOR":"Supervisor",
-
+    "IN_PROCESS":"In Process",
+    "FAILED":"Failed",
+    "DONE":"Done",
     "DISABLED": "Disabled",
     "DISABLE": "Disable",
     "GOOD": "Good",
@@ -732,6 +734,7 @@
     "TEST_WITHDRAWAL": "Test withdrawal",
     "CANCEL_APPROVAL_NO_CHARGE": "cancel transaction done in offline",
     "CANCEL_AUTOMATIC_BY_POS": "cancel automatic by pos"
+
   },
   "languageCode": {
     "HEBREW": "Hebrew",

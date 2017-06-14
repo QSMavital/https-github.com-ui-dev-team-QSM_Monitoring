@@ -1,0 +1,10 @@
+@import "../../../../styles/helpers/brand";
+
+:host{
+  .fa-times{
+    color:$coral-red;
+  }
+  .fa-check{
+    color:$apple;
+  }
+}

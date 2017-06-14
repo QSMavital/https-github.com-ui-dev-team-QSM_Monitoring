@@ -93,7 +93,7 @@ module.exports = function (req, res, next) {
         transaction
       ));
     }
-    else if (req.url.indexOf('/atm/settings/post') !== -1 || req.url.indexOf('/api/atm/settings/patch') !== -1|| req.url.indexOf('/api/hsm/patch') !== -1) {
+    else if (req.url.indexOf('/atm/settings/post') !== -1 || req.url.indexOf('/api/atm/settings/patch') !== -1 || req.url.indexOf('/api/hsm/patch') !== -1) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         {"result": "OK"}
@@ -115,6 +115,12 @@ module.exports = function (req, res, next) {
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(
         hsm_statistics
+      ));
+    }
+    else if (req.url.indexOf('/api/epp/get') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        epps
       ));
     }
     else {
@@ -3661,58 +3667,58 @@ var transaction = [
   }];
 
 var atm_settings = {
-    "generalSettings": {
-      "atmNo": "000011",
-      "atmName": "Jerusalem",
-      "address": "Menachem Begin 27",
-      "zipCode": "5416682",
-      "vendor": "NCR",
-      "ipAddress": "10.0.0.13",
-      "portNumber": 5006,
-      "atmProtocol": "NDC",
-      "rklProtocol": "NCR_ENHANCED",
-      "terminalGroup": "01",
-      "belongi": 0,
-      "belong": "BRANCH",
-      "area": "NORTH",
-      "bankNo": "20",
-      "branch": "123",
-      "configId": "1111",
-      "maxBills": 40
-    },
-    "cassettesSettings": [
-      {
-        "cassetteType": "1",
-        "currencyCode": "NIS",
-        "denomination": 200
-      }, {
-        "cassetteType": "2",
-        "currencyCode": "NIS",
-        "denomination": 5000
-      }, {
-        "cassetteType": "3",
-        "currencyCode": "NIS",
-        "denomination": 10000
-      }, {
-        "cassetteType": "4",
-        "currencyCode": "NIS",
-        "denomination": 2000
-      }],
-    "disableSettings": {
-      "disabledATM": false,
-      "disableCheckDeposit": true,
-      "disableReceipt": false
-    },
-    "emvSettings": {
-      "emvNotOurs": false,
-      "emvOurs": false,
-      "emvTourist": false
-    },
-    "treatmentDeviceSettings": {
-      "treatmentStartDate": 1496782800000,
-      "responsibility": "VENDOR"
-    }
-  };
+  "generalSettings": {
+    "atmNo": "000011",
+    "atmName": "Jerusalem",
+    "address": "Menachem Begin 27",
+    "zipCode": "5416682",
+    "vendor": "NCR",
+    "ipAddress": "10.0.0.13",
+    "portNumber": 5006,
+    "atmProtocol": "NDC",
+    "rklProtocol": "NCR_ENHANCED",
+    "terminalGroup": "01",
+    "belongi": 0,
+    "belong": "BRANCH",
+    "area": "NORTH",
+    "bankNo": "20",
+    "branch": "123",
+    "configId": "1111",
+    "maxBills": 40
+  },
+  "cassettesSettings": [
+    {
+      "cassetteType": "1",
+      "currencyCode": "NIS",
+      "denomination": 200
+    }, {
+      "cassetteType": "2",
+      "currencyCode": "NIS",
+      "denomination": 5000
+    }, {
+      "cassetteType": "3",
+      "currencyCode": "NIS",
+      "denomination": 10000
+    }, {
+      "cassetteType": "4",
+      "currencyCode": "NIS",
+      "denomination": 2000
+    }],
+  "disableSettings": {
+    "disabledATM": false,
+    "disableCheckDeposit": true,
+    "disableReceipt": false
+  },
+  "emvSettings": {
+    "emvNotOurs": false,
+    "emvOurs": false,
+    "emvTourist": false
+  },
+  "treatmentDeviceSettings": {
+    "treatmentStartDate": 1496782800000,
+    "responsibility": "VENDOR"
+  }
+};
 
 var hsm_status = {
   "hsmStatus": "GOOD",
@@ -3758,3 +3764,15 @@ var hsm_statistics = {
   }
   ]
 };
+
+var epps = {
+  "totalCount": 100,
+  "allEpp": [{
+    "eppUid": 0005674,
+    "rklStatus": 'IN_PROCESS',
+    "eppDisable": true,
+    "atmNo": '001234',
+    "atmName": 'שם מכשיר'
+  }]
+}
+

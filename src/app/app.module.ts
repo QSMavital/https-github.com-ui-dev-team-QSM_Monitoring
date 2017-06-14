@@ -91,6 +91,7 @@ import {AgNumberComponent} from "./shared/components/ag-number/ag-number.compone
 import {HsmTableComponent} from './core/hsm/hsm-status/components/hsm-table/hsm-table.component';
 import {HsmLinkTableComponent} from './core/hsm/hsm-status/components/hsm-link-table/hsm-link-table.component';
 import {HsmFilterComponent} from './core/hsm/hsm-statistics/hsm-filter/hsm-filter.component';
+import {AgBooleanComponent} from "./shared/components/ag-boolean/ag-boolean.component";
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -191,7 +192,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       AgTranslateMapComponent,
       AgDiv100Component,
       AgDirectiveComponent,
-      AgNumberComponent
+      AgNumberComponent,
+      AgBooleanComponent
     ])
   ],
   providers: [

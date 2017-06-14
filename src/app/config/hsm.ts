@@ -2,6 +2,7 @@ import {AgStatusComponent} from "../shared/components/ag-status/ag-status.compon
 import {AgProgressComponent} from "../shared/components/ag-progress/ag-progress.component";
 import {AgDirectiveComponent} from "../shared/components/ag-directive/ag-directive.component";
 import {AgTranslateMapComponent} from "../shared/components/ag-translate-map/ag-translate-map.component";
+import {AgBooleanComponent} from "../shared/components/ag-boolean/ag-boolean.component";
 
 export const Hsm = {
   Tabs: {
@@ -11,7 +12,7 @@ export const Hsm = {
   status: {
     hsmTable: {
       directive: {headerName: "hsm.status.directive", field: "directive", width: 150,cellRendererFramework:AgDirectiveComponent},
-      main: {headerName: "menu.main", field: "main", width: 100},
+      main: {headerName: "menu.main", field: "main", width: 100,cellRendererFramework:AgBooleanComponent},
       serial: {headerName: "hsm.status.serial", field: "hsmSerialId", width: 100},
       hsmAddress: {headerName: "atms.ipAddress", field: "hsmAddress", width: 150},
       portNumber: {headerName: "atms.portNumber", field: "hsmPort", width: 100},

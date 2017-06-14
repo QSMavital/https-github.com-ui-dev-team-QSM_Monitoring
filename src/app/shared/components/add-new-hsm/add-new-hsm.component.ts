@@ -23,20 +23,28 @@ export class AddNewHsmComponent implements OnInit {
     this.showValue = val;
   }
 
-  constructor(private formBuilder:FormBuilder,private ngRedux: NgRedux<IStore>) {
+  constructor(private formBuilder: FormBuilder, private ngRedux: NgRedux<IStore>) {
 
   }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      hsmSerialId:[null,Validators.required],
-      ipAddress:[null,Validators.required],
-      portNumber:[null,Validators.required]
+      hsmSerialId: [null, [
+        Validators.required,
+        Validators.minLength(1),
+        Validators.maxLength(16),
+        Validators.pattern('[0-9/\s-]*')]],
+      ipAddress: [null, [Validators.required, Validators.pattern("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$")]],
+      portNumber: [null, [
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(4)
+      ]]
     });
   }
 
-  create(){
-    this.ngRedux.dispatch({type:HsmActions.HSM_CREATE,payload:this.form.getRawValue()});
+  create() {
+    this.ngRedux.dispatch({type: HsmActions.HSM_CREATE, payload: this.form.getRawValue()});
   }
 
 }

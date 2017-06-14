@@ -33,9 +33,9 @@ export const GeneralConstants = {
 
   },
   Vendors: {
-    NCR: {value: "NCR", label: "NCR"},
-    WINCOR: {value: "WINCOR", label: "WINCOR"},
-    DIEBOLD: {value: "DIEBOLD", label: "DIEBOLD"}
+    NCR: {value: "NCR", label: "NCR",validations:{minLength:8,maxLength:8}},
+    WINCOR: {value: "WINCOR", label: "WINCOR",validations:{minLength:16,maxLength:16}},
+    DIEBOLD: {value: "DIEBOLD", label: "DIEBOLD",validations:{minLength:8,maxLength:8}}
   },
   AtmProtocol: {
     NCR: {value: "NCR", label: "NCR"},

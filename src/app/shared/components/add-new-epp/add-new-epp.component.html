@@ -4,14 +4,13 @@
 
     <form [formGroup]="form">
       <div class="input" fxLayout fxLayoutAlign="space-between center">
-        <ui-label>{{("epp.tables.eppNumber"|translate)+":"}}</ui-label>
-        <input formControlName="eppUid" type="text">
+        <ui-label>{{("epp.tables.chooseType"|translate)+":"}}</ui-label>
+        <p-dropdown (onChange)="onChange($event)" appendTo="body" [style]="{'width':'168px'}" formControlName="eppType" [placeholder]="'app.select'|translate"
+                    [options]="optionType"></p-dropdown>
       </div>
       <div class="input" fxLayout fxLayoutAlign="space-between center">
-        <ui-label>{{("epp.tables.chooseType"|translate)+":"}}</ui-label>
-
-        <p-dropdown appendTo="body" [style]="{'width':'168px'}" formControlName="eppType" [placeholder]="'app.select'|translate"
-                    [options]="optionType"></p-dropdown>
+        <ui-label>{{("epp.tables.eppNumber"|translate)+":"}}</ui-label>
+        <input formControlName="eppUid" type="text">
       </div>
     </form>
   </div>

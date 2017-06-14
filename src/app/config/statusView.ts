@@ -28,6 +28,11 @@ export const StatusView = {
   OPEN: {color: colors.green},
   LOADING: {color: colors.yellow},
   SUPERVISOR: {color: colors.yellow},
+  NONE: {color: colors.blue},
+  IN_PROCESS: {color: colors.yellow},
+  FAILED: {color: colors.red},
+  DONE: {color: colors.green}
+
 };
 
 export const ActionsStatus = {

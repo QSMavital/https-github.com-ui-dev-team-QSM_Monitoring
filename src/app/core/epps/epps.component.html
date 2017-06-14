@@ -1,47 +1,23 @@
-<div class="stretch-height" fxLayout="column">
-  <div fxLayout="column" class="stretch-height wrapper space-right ui-space-medium">
-
-    <div class="ui-space-tb-regular">
-      <ui-portlet>
-        <ui-filters-bar>
-            <div class="text-right">
-              <ui-label translate="epp.addNewEpp"></ui-label>
-              <button (click)="addNew=!addNew;" class="blue-btn narrow ui-icons-add-new"></button>
-            </div>
-        </ui-filters-bar>
-      </ui-portlet>
-    </div>
-
-    <div fxFlex fxLayout>
-
-      <div fxFlex class="ui-space-r-regular">
-        <ui-portlet>
-
-          <ag-grid-angular
-            (gridReady)="fitCols_epp_table1()"
-            style="height: 100%"
-            class="ag-fresh stretch-width"
-            [gridOptions]="gridOptions">
-          </ag-grid-angular>
-
-        </ui-portlet>
-      </div>
-
-      <div fxFlex>
-        <ui-portlet>
-
-          <ag-grid-angular
-            (gridReady)="fitCols_epp_table2()"
-            style="height: 100%"
-            class="ag-fresh stretch-width"
-            [gridOptions]="gridOptions2">
-          </ag-grid-angular>
-
-        </ui-portlet>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 <ui-add-new-epp [(show)]="addNew"></ui-add-new-epp>
+
+<div fxFlex class="wrapper space-right ui-space-medium">
+  <ui-portlet>
+    <div class="stretch-height" fxLayout="column">
+      <ui-filters-bar>
+        <div class="text-right">
+          <ui-label translate="epp.addNewEpp"></ui-label>
+          <button (click)="addNew=!addNew;" class="blue-btn narrow ui-icons-add-new"></button>
+        </div>
+      </ui-filters-bar>
+
+      <ag-grid-angular
+        (gridReady)="fitCols_epp()"
+        fxFlex
+        class="ag-fresh stretch-width"
+        [gridOptions]="gridOptions">
+      </ag-grid-angular>
+    </div>
+
+  </ui-portlet>
+</div>

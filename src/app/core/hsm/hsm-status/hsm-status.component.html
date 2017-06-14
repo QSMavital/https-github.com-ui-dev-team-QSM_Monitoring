@@ -19,15 +19,15 @@
         <div fxFlex class="text-right">
           <span class="ui-space-r-regular">
             <ui-label translate="hsm.status.closeLink"></ui-label>
-            <button (click)="sessionAction('SESSION_DOWN')" [disabled]="!selectedSessions.length" class="narrow close-btn ui-icons-close"></button>
+            <button (click)="sessionAction(sessions_actions.SESSION_DOWN)" [disabled]="!selectedSessions.length" class="narrow close-btn ui-icons-close"></button>
           </span>
           <span class="ui-space-r-regular">
             <ui-label translate="hsm.status.openLink"></ui-label>
-            <button (click)="sessionAction('SESSION_UP')" [disabled]="!selectedSessions.length" class="narrow open-btn ui-icons-open"></button>
+            <button (click)="sessionAction(sessions_actions.SESSION_UP)" [disabled]="!selectedSessions.length" class="narrow open-btn ui-icons-open"></button>
           </span>
           <span class="ui-space-r-regular">
             <ui-label translate="hsm.status.checkLink"></ui-label>
-            <button (click)="sessionAction('SESSION_TEST')" [disabled]="!selectedSessions.length" class="narrow info-btn ui-icons-info"></button>
+            <button (click)="sessionAction(sessions_actions.SESSION_TEST)" [disabled]="!selectedSessions.length" class="narrow info-btn ui-icons-info"></button>
           </span>
           <span>
             <ui-label translate="hsm.status.addAtm"></ui-label>

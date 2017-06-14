@@ -66,6 +66,8 @@ import {AgDateComponent} from "./shared/components/ag-date/ag-date.component";
 import {AgProgressComponent} from "./shared/components/ag-progress/ag-progress.component";
 import {Atms as AtmsMiddleware} from "../store/middlewares/atms-middleware";
 import {Atm as AtmMiddleware} from "../store/middlewares/atm-middleware";
+import {Hsm as HsmMiddleware} from "../store/middlewares/hsm-middleware";
+import {Epp as EppMiddleware} from "../store/middlewares/epp-middleware";
 import {AgDateShortComponent} from "./shared/components/ag-date-short/ag-date-short.component";
 import {AgTimeComponent} from "./shared/components/ag-time/ag-time.component";
 import {MasonryModule} from 'angular2-masonry';
@@ -82,13 +84,14 @@ import {AccessoriesPrintersComponent} from "./core/atm/accessories-status/compon
 import {AgTranslateMapComponent} from "./shared/components/ag-translate-map/ag-translate-map.component";
 import {GrowlModule} from 'primeng/primeng';
 import {AgDiv100Component} from "./shared/components/ag-div100/ag-div100.component";
-import { HsmWeeksStatisticsComponent } from './core/hsm/hsm-statistics/hsm-weeks-statistics/hsm-weeks-statistics.component';
+import {HsmWeeksStatisticsComponent} from './core/hsm/hsm-statistics/hsm-weeks-statistics/hsm-weeks-statistics.component';
 import {AgDirectiveComponent} from "./shared/components/ag-directive/ag-directive.component";
 import {Hsm} from "../store/middlewares/hsm-middleware";
 import {AgNumberComponent} from "./shared/components/ag-number/ag-number.component";
-import { HsmTableComponent } from './core/hsm/hsm-status/components/hsm-table/hsm-table.component';
-import { HsmLinkTableComponent } from './core/hsm/hsm-status/components/hsm-link-table/hsm-link-table.component';
-import { HsmFilterComponent } from './core/hsm/hsm-statistics/hsm-filter/hsm-filter.component';
+import {HsmTableComponent} from './core/hsm/hsm-status/components/hsm-table/hsm-table.component';
+import {HsmLinkTableComponent} from './core/hsm/hsm-status/components/hsm-link-table/hsm-link-table.component';
+import {HsmFilterComponent} from './core/hsm/hsm-statistics/hsm-filter/hsm-filter.component';
+import {AgBooleanComponent} from "./shared/components/ag-boolean/ag-boolean.component";
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -189,7 +192,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       AgTranslateMapComponent,
       AgDiv100Component,
       AgDirectiveComponent,
-      AgNumberComponent
+      AgNumberComponent,
+      AgBooleanComponent
     ])
   ],
   providers: [
@@ -200,10 +204,11 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       deps: [XHRBackend, RequestOptions, ServerURLInterceptor] // Add it here, in the same order as the signature of interceptorFactory
     },
     Customer,
-    Hsm,
+    HsmMiddleware,
     Dashboard,
     AtmsMiddleware,
     AtmMiddleware,
+    EppMiddleware,
     SettingsResolverService,
     DecimalPipe
   ],
@@ -224,7 +229,8 @@ export class AppModule {
   constructor(private ngRedux: NgRedux<IStore>,
               private customer: Customer,
               private atms: AtmsMiddleware,
-              private hsm: Hsm,
+              private hsm: HsmMiddleware,
+              private epp: EppMiddleware,
               private atm: AtmMiddleware,
               private dashboard: Dashboard,
               private devTools: DevToolsExtension) {
@@ -233,7 +239,7 @@ export class AppModule {
       updatedEnhancers = [...enhancers, devTools.enhancer()];
     } else
       updatedEnhancers = [...enhancers];
-    const middlewares = [customer.Middleware, dashboard.Middleware, atms.Middleware, atm.Middleware, hsm.Middleware];
+    const middlewares = [customer.Middleware, dashboard.Middleware, atms.Middleware, atm.Middleware, hsm.Middleware, epp.Middleware];
     this.ngRedux.configureStore(rootReducer, {}, middlewares, updatedEnhancers);
 
   }

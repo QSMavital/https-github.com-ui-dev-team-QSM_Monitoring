@@ -5,13 +5,13 @@
     <form [formGroup]="form">
       <div class="input" fxLayout fxLayoutAlign="space-between center">
         <ui-label>{{("epp.tables.eppNumber"|translate)+":"}}</ui-label>
-        <input formControlName="eppNumber" type="text">
+        <input formControlName="eppUid" type="text">
       </div>
       <div class="input" fxLayout fxLayoutAlign="space-between center">
         <ui-label>{{("epp.tables.chooseType"|translate)+":"}}</ui-label>
 
-        <p-dropdown appendTo="body" [style]="{'width':'168px'}" formControlName="group" [placeholder]="'app.select'|translate"
-                    [options]="optionType" [(ngModel)]="selectedType"></p-dropdown>
+        <p-dropdown appendTo="body" [style]="{'width':'168px'}" formControlName="eppType" [placeholder]="'app.select'|translate"
+                    [options]="optionType"></p-dropdown>
       </div>
     </form>
   </div>
@@ -22,3 +22,4 @@
     </span>
   </p-footer>
 </p-dialog>
+

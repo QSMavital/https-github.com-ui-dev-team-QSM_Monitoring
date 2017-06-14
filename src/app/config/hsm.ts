@@ -2,6 +2,7 @@ import {AgStatusComponent} from "../shared/components/ag-status/ag-status.compon
 import {AgProgressComponent} from "../shared/components/ag-progress/ag-progress.component";
 import {AgDirectiveComponent} from "../shared/components/ag-directive/ag-directive.component";
 import {AgTranslateMapComponent} from "../shared/components/ag-translate-map/ag-translate-map.component";
+import {AgBooleanComponent} from "../shared/components/ag-boolean/ag-boolean.component";
 
 export const Hsm = {
   Tabs: {
@@ -11,7 +12,7 @@ export const Hsm = {
   status: {
     hsmTable: {
       directive: {headerName: "hsm.status.directive", field: "directive", width: 150,cellRendererFramework:AgDirectiveComponent},
-      main: {headerName: "menu.main", field: "main", width: 100},
+      main: {headerName: "menu.main", field: "main", width: 100,cellRendererFramework:AgBooleanComponent},
       serial: {headerName: "hsm.status.serial", field: "hsmSerialId", width: 100},
       hsmAddress: {headerName: "atms.ipAddress", field: "hsmAddress", width: 150},
       portNumber: {headerName: "atms.portNumber", field: "hsmPort", width: 100},
@@ -29,8 +30,13 @@ export const Hsm = {
       {value:"DOWN_DISABLED_HSM",label:"hsm.status.DOWN_DISABLED_HSM"}
 
     ],
-    sessions: {
-      hsmType: {headerName: "hsm.status.hsmType", field: "F", width: 200, cellRenderer: 'group', cellRendererParams: {checkbox: true}},
+    sessions_actions:{
+      SESSION_DOWN:"SESSION_DOWN",
+      SESSION_UP:"SESSION_UP",
+      SESSION_TEST:"SESSION_TEST",
+    },
+    linkTable: {
+      hsmType: {headerName: "hsm.status.hsmType", field: "sessionNumber", width: 200, cellRenderer: 'group', cellRendererParams: {checkbox: true}},
       serial: {headerName: "hsm.status.serial", field: "hsmSerialId", width: 150},
       type: {headerName: "hsm.status.type", field: "sessionType", width: 150,cellRendererFramework: AgTranslateMapComponent},
       status: {headerName: "general.status", field: "sessionStatus", width: 200,cellRendererFramework: AgTranslateMapComponent},

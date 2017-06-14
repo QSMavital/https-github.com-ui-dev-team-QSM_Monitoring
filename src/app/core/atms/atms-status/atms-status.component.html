@@ -5,13 +5,13 @@
       <div fxFlex class="text-right">
           <span class="ui-space-r-regular">
             <ui-label translate="general.all"></ui-label>
-            <button (click)="action(atmsActions.CLOSE_ALL)" class="narrow close-btn ui-icons-close"></button>
+            <button (click)="action(atmsActions.CLOSE_ALL)" class="narrow margin-button-r close-btn ui-icons-close"></button>
             <button (click)="action(atmsActions.OPEN_ALL)" class="narrow open-btn ui-icons-open"></button>
           </span>
         <span class="ui-space-r-regular">
             <ui-label translate="general.selected"></ui-label>
             <button [disabled]="!selectedItems" (click)="action(atmsActions.CLOSE,gridOptions.api.getSelectedRows())"
-                    class="narrow close-btn ui-icons-close"></button>
+                    class="narrow margin-button-r close-btn ui-icons-close"></button>
             <button [disabled]="!selectedItems" (click)="action(atmsActions.OPEN,gridOptions.api.getSelectedRows())"
                     class="narrow open-btn ui-icons-open"></button>
           </span>

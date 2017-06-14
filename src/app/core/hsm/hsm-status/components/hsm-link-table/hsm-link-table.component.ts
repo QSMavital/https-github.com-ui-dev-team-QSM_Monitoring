@@ -17,9 +17,9 @@ export class HsmLinkTableComponent {
 
   constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService) {
     this.gridOptions = this.gridDefsSrv.initGridOptions();
-    for(let prop in Hsm.status.linkTable){
-      this.gridOptions.columnDefs.push(Object.assign({}, { suppressFilter: true }, Hsm.status.linkTable[prop], {
-        headerName: this.translateSrv.instant(Hsm.status.linkTable[prop].headerName)
+    for(let prop in Hsm.status.sessions){
+      this.gridOptions.columnDefs.push(Object.assign({}, { suppressFilter: true }, Hsm.status.sessions[prop], {
+        headerName: this.translateSrv.instant(Hsm.status.sessions[prop].headerName)
       }));
     }
   }
@@ -40,13 +40,5 @@ export class HsmLinkTableComponent {
 
     }
   }
-
 }
 
-/*{
-  "hsmSerialId": "3567/4444",
-  "sessionNumber": 1,
-  "sessionType": "REGULAR",
-  "sessionStatus": "NONE",
-  "sessionRequest": "NONE"
-}*/

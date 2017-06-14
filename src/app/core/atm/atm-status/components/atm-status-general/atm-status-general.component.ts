@@ -69,16 +69,3 @@ export class AtmStatusGeneralComponent implements OnChanges {
 
 }
 
-// todo: get the data form QSM
-/*{
- "terminalStatus": "OFF_LINE",
- "targetTerminalStatus": "OFF_LINE",
- "communicationlStatus": "OFF_LINE",
- "ipAddress": "127.0.0.1",
- "atmModel": "0000",
- "softwareVersion": "",
- "configId": "0000",
- "loadStage": "NONE",
- "loadVariant": "",
- "loadNumber": "00"
- }*/

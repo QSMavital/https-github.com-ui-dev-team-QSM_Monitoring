@@ -44,26 +44,3 @@ export class AccessoriesBalanceStrokesComponent implements OnChanges {
     }
   }
 }
-
-/*{
-  "lastSettleDispenseList": [
-  {
-    "denomination": 10000,
-    "currency": "NIS",
-    "count": 18,
-    "sumMeteg": 180000,
-    "sumAtm": 180000,
-    "difference": 0
-  },
-  {
-    "denomination": 20000,
-    "currency": "NIS",
-    "count": 4,
-    "sumMeteg": 80000,
-    "sumAtm": 60000,
-    "difference": 20000
-  }
-],
-  "lastSettelement": 1495612612579,
-  "transactionId": 453
-}*/

@@ -7,7 +7,8 @@ $ui-icons-open: "\ea06";
 $ui-icons-print: "\ea07";
 $ui-icons-save: "\ea08";
 $ui-icons-v: "\ea09";
-$ui-icons-x: "\ea0a";
+$ui-icons-waiting: "\ea0a";
+$ui-icons-x: "\ea0b";
 
 @font-face {
     font-family: ui-icons;
@@ -94,6 +95,10 @@ $ui-icons-x: "\ea0a";
     content: "\ea09";
 }
 
-.ui-icons-x::before {
+.ui-icons-waiting::before {
     content: "\ea0a";
+}
+
+.ui-icons-x::before {
+    content: "\ea0b";
 }

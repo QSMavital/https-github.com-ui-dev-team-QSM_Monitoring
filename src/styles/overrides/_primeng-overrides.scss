@@ -85,7 +85,7 @@
     background: $gun-powder;
   }
   .ui-dropdown-trigger .fa {
-    margin-top: 0.3em !important;
+    margin-top: 4px !important;
   }
 }
 
@@ -102,7 +102,7 @@
       border: 1px solid $botti;
     }
     .ui-chkbox-icon {
-      font-size: 10px !important;
+      font-size: $fs10 !important;
     }
   }
 }
@@ -112,6 +112,10 @@
     background: white;
     color: $casper;
     border-color: $botti;
+  }
+  .ui-button:enabled:hover {
+    background-color: #9dabe8;
+    border-color: #c7d7e5;
   }
 }
 input.ng-invalid.ng-touched{

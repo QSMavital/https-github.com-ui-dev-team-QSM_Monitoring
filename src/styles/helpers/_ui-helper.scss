@@ -117,7 +117,7 @@ body {
 }
 
 .ui-button-icon-only .fa {
-  font-size: 14px;
+  font-size: $fs14;
 }
 
 .dir-rtl {
@@ -305,4 +305,7 @@ ui-list-item.stretch-width:nth-child(even) {
 :-moz-placeholder { /* Firefox 18- */
   font-size: $fs13 !important;
   color: #ccc;
+}
+.margin-button-r {
+  margin-right: 5px;
 }

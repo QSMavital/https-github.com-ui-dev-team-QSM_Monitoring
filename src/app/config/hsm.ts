@@ -36,9 +36,9 @@ export const Hsm = {
     linkTable: {
       hsmType: {headerName: "hsm.status.hsmType", field: "sessionNumber", width: 200, cellRenderer: 'group', cellRendererParams: {checkbox: true}},
       serial: {headerName: "hsm.status.serial", field: "hsmSerialId", width: 150},
-      type: {headerName: "hsm.status.type", field: "sessionType", width: 150},
-      status: {headerName: "general.status", field: "sessionStatus", width: 200},
-      directive: {headerName: "hsm.status.directive", field: "sessionRequest", width: 150}
+      type: {headerName: "hsm.status.type", field: "sessionType", width: 150,cellRendererFramework: AgTranslateMapComponent},
+      status: {headerName: "general.status", field: "sessionStatus", width: 200,cellRendererFramework: AgTranslateMapComponent},
+      directive: {headerName: "hsm.status.directive", field: "sessionRequest", width: 150,cellRendererFramework: AgTranslateMapComponent}
     }
   },
   statistics: {

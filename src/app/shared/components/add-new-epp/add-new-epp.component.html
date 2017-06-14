@@ -1,28 +1,23 @@
-<p-dialog  [(visible)]="show" [modal]="true" class="dialog-no-padding add-atm-dialog">
+<p-dialog [(visible)]="show" [modal]="true" class="dialog-no-padding add-atm-dialog">
   <p-header translate="epp.addNewEpp"></p-header>
   <div class="scroll-y ui-space-tb-regular ui-space-regular" style="width: 300px">
 
-    <div class="input" fxLayout fxLayoutAlign="space-between center">
-      <ui-label>{{("epp.tables.eppNumber"|translate)+":"}}</ui-label>
-      <input type="text">
-    </div>
-    <div class="input" fxLayout fxLayoutAlign="space-between center">
-      <ui-label>{{("epp.tables.chooseType"|translate)+":"}}</ui-label>
-      <select>
-        <option value="Type">Add Type</option>
-        <option value="Type">Add Type</option>
-        <option value="Type">Add Type</option>
-        <option value="Type">Add Type</option>
-        <option value="Type">Add Type</option>
-        <option value="Type">Add Type</option>
-        <option value="Type">Add Type</option>
-      </select>
-    </div>
+    <form [formGroup]="form">
+      <div class="input" fxLayout fxLayoutAlign="space-between center">
+        <ui-label>{{("epp.tables.eppNumber"|translate)+":"}}</ui-label>
+        <input formControlName="eppNumber" type="text">
+      </div>
+      <div class="input" fxLayout fxLayoutAlign="space-between center">
+        <ui-label>{{("epp.tables.chooseType"|translate)+":"}}</ui-label>
 
+        <p-dropdown appendTo="body" [style]="{'width':'168px'}" formControlName="group" [placeholder]="'app.select'|translate"
+                    [options]="optionType" [(ngModel)]="selectedType"></p-dropdown>
+      </div>
+    </form>
   </div>
   <p-footer>
     <span class="pull-right">
-      <button class="btn purple-btn">{{'general.submit' | translate}}</button>
+      <button (click)="create();show=!show" class="btn purple-btn margin-button-r" [disabled]="!form.valid">{{'general.submit' | translate}}</button>
       <button (click)="show=!show" class="btn blue-btn">{{'general.cancel' | translate}}</button>
     </span>
   </p-footer>

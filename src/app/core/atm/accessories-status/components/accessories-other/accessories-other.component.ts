@@ -44,34 +44,4 @@ export class AccessoriesOtherComponent implements OnChanges, OnInit {
       }
     }
   }
-
 }
-
-/*
-{
-  "deviceList": [
-  {
-    "device": "CARD_READER",
-    "statusColor": "DISABLE",
-    "fitness": "NO_ERROR",
-    "supply": "NO_INFO",
-    "counter": 0
-  },
-  {
-    "device": "ENCRYPTOR",
-    "statusColor": "DISABLE",
-    "fitness": "NO_ERROR",
-    "supply": "NO_INFO",
-    "counter": 0
-  },
-  {
-    "device": "JOURNAL_PRINTER",
-    "statusColor": "DISABLE",
-    "fitness": "NO_ERROR",
-    "supply": "NO_INFO",
-    "counter": 0
-  }
-],
-  "lastCardSettelement": 1495612612579
-}
-*/

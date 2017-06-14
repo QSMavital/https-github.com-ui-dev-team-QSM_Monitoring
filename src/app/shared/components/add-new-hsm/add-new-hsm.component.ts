@@ -24,6 +24,7 @@ export class AddNewHsmComponent implements OnInit {
   }
 
   constructor(private formBuilder:FormBuilder,private ngRedux: NgRedux<IStore>) {
+
   }
 
   ngOnInit() {

@@ -23,7 +23,6 @@ export class HsmStatusComponent implements OnDestroy{
     hsms:null,
     sessions:null,
   };
-  public gridOptions2: GridOptions = {};
   @select(['hsm', 'status']) $hsm_status: Observable<any>;
   private $hsm_status_ref;
 
@@ -36,8 +35,6 @@ export class HsmStatusComponent implements OnDestroy{
       this.data = state
     });
   }
-
-
 
   ngOnDestroy(){
     this.$hsm_status_ref.unsubscribe();

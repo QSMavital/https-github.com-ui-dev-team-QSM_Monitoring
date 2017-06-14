@@ -20,8 +20,9 @@ export class HsmStatusComponent implements OnDestroy{
   public sessions_actions=Hsm.status.sessions_actions;
   public selectedSessions = [];
   public data=  {
+    hsmStatus:null,
     hsms:null,
-    sessions:null,
+    sessions:null
   };
   @select(['hsm', 'status']) $hsm_status: Observable<any>;
   private $hsm_status_ref;

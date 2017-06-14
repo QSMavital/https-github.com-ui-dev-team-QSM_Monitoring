@@ -14,7 +14,7 @@ import {CustomValidators} from "ng2-validation";
 })
 export class AddNewEppComponent implements OnInit {
   private showValue = false;
-  private form: FormGroup;
+  public form: FormGroup;
   public optionType: SelectItem[] =[];
 
   @Input() get show() {

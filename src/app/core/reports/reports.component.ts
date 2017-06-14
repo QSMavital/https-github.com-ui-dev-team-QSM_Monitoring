@@ -8,7 +8,7 @@ import {SelectItem} from "primeng/primeng";
   styleUrls: ['./reports.component.scss']
 })
 export class ReportsComponent implements OnInit {
-  private form: FormGroup;
+  public form: FormGroup;
   public filtersLastState: any = {};
   public date: any;
   public filters;

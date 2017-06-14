@@ -15,7 +15,7 @@ export class HsmStatisticsComponent implements OnInit, OnDestroy {
   @select(['hsm', 'statistics']) $hsm_statistics: Observable<any>;
   private $hsm_statistics_ref;
   public filtersLastState: any = {};
-  public data = {};
+  public data = {statistics1:null,statistics2:null};
 
   constructor(private ngRedux: NgRedux<IStore>) {
     this.ngRedux.dispatch({type:HsmActions.HSM_GET_STATISTICS,payload:Api.hsm_statistics.payload});

@@ -11,7 +11,7 @@ import {HsmActions} from "../../../../store/actions/hsms-actions";
 })
 export class AddNewHsmComponent implements OnInit {
   private showValue = false;
-  private form: FormGroup;
+  public form: FormGroup;
 
   @Input() get show() {
     return this.showValue;

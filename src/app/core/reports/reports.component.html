@@ -1,24 +1,24 @@
 <div class="wrapper stretch-height space-right ui-space-medium">
   <div class="stretch-height stretch-width" fxLayout="column">
 
-    <ui-reports-filter></ui-reports-filter>
+    <ui-reports-filter (onChange)="filter($event)"></ui-reports-filter>
+    <ui-reports-data
+      fxFlex
+      *ngIf="!data.length;else dataTemp"
+      class="ui-space-t-medium"></ui-reports-data>
 
-    <ui-reports-data fxFlex class="ui-space-t-regular"></ui-reports-data>
-
+    <ng-template #dataTemp>
+      <div fxFlex class="ui-space-t-medium">
+        <ui-portlet>
+          <ag-grid-angular
+            (gridReady)="sizeToFit()"
+            fxFlex
+            class="ag-fresh"
+            [gridOptions]="gridOptions">
+          </ag-grid-angular>
+        </ui-portlet>
+      </div>
+    </ng-template>
   </div>
 </div>
 
-<!-- <button class="blue-btn">a button</button>
-    <br>
-    <div class="search-wrapper" style="margin-top:10px;">
-      <input type="text" placeholder="search">
-    </div>
-    <div style="margin:10px 0">
-      <input type="text">
-    </div>
-    <div style="margin-top:10px;">
-      <pre>{{ddModel | json}}</pre>
-      <p-dropdown id="pdd" [options]="ddOptions" [(ngModel)]="ddModel"></p-dropdown>
-    </div>
-
-    <ui-table [colDef]="colDef" [data]="tableMock"></ui-table>-->

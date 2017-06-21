@@ -8,8 +8,8 @@ $ui-icons-info: "\ea07";
 $ui-icons-mail: "\ea08";
 $ui-icons-open: "\ea09";
 $ui-icons-print: "\ea0a";
-$ui-icons-save: "\ea0b";
-$ui-icons-v: "\ea0c";
+$ui-icons-save: "\ea0c";
+$ui-icons-v: "\ea0b";
 $ui-icons-waiting: "\ea0d";
 $ui-icons-x: "\ea0e";
 
@@ -103,11 +103,11 @@ $ui-icons-x: "\ea0e";
 }
 
 .ui-icons-save::before {
-    content: "\ea0b";
+    content: "\ea0c";
 }
 
 .ui-icons-v::before {
-    content: "\ea0c";
+    content: "\ea0b";
 }
 
 .ui-icons-waiting::before {

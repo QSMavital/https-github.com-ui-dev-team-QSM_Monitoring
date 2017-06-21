@@ -3,37 +3,51 @@
     <form [formGroup]="form">
 
       <div class="in-block ui-space-r-regular middle">
-        <ui-label>{{("reports.filters.reportType"|translate)+":"}}</ui-label>
-        <p-dropdown appendTo="body" [style]="{'width':'168px'}"
-                    formControlName="dropDown"
-                    [placeholder]="'reports.filters.HardwareFaultReport'|translate"
-                    [options]="filters.dropDown" [(ngModel)]="selectedItem"></p-dropdown>
+        <ui-label>{{("reports.filter.report"|translate)}}</ui-label>
+        <p-dropdown (onChange)="onChangeType($event)" appendTo="body" [style]="{'width':'160px'}"
+                    formControlName="type"
+                    [options]="options"></p-dropdown>
       </div>
 
-      <div class="in-block ui-space-r-regular middle">
-        <ui-label>{{("atms.filters.fromDate"|translate)+":"}}</ui-label>
-        <p-calendar formControlName="fromDate" icon="ui-icons-calendar" showIcon="true"
+      <div class="in-block ui-space-r-regular ui-space-r-medium middle">
+        <ui-label>{{("atms.filters.fromDate"|translate)}}</ui-label>
+        <p-calendar  showTime="true" hourFormat="24" formControlName="fromDate" icon="ui-icons-calendar" showIcon="true"
         ></p-calendar>
       </div>
 
-      <div class="in-block ui-space-r-regular ui-space-l-medium middle">
-        <ui-label>{{("atms.filters.toDate"|translate)+":"}}</ui-label>
-        <p-calendar formControlName="toDate" icon="ui-icons-calendar" showIcon="true"
+      <div class="in-block ui-space-l-regular ui-space-r-medium middle">
+        <ui-label>{{("atms.filters.toDate"|translate)}}</ui-label>
+        <p-calendar showTime="true" hourFormat="24" formControlName="toDate" icon="ui-icons-calendar" showIcon="true"
         ></p-calendar>
       </div>
 
-      <div class="in-block ui-space-r-regular ui-space-l-medium middle">
-        <ui-label>{{("reports.filters.deviceNo"|translate)+".:"}}</ui-label>
-        <input type="text" formControlName="deviceNo">
+      <div
+        *ngIf="form.controls['type'].value!='CARD_ACTIVITY'&&form.controls['type'].value!='ACCOUNT_ACTIVITY'"
+        class="in-block ui-space-l-regular middle">
+        <ui-label>{{("reports.filter.deviceNo"|translate)}}</ui-label>
+        <input placeholder="{{'reports.filter.optional' | translate}}" type="text" style="width: 90px" formControlName="atmNo">
       </div>
 
-      <div class="in-block ui-space-r-regular middle">
-        <ui-label>{{("reports.filters.accountNo"|translate)+".:"}}</ui-label>
-        <input type="text" formControlName="accountNo">
+      <div *ngIf="form.controls['type'].value=='CARD_ACTIVITY'" class="in-block ui-space-l-regular middle">
+        <ui-label>{{("reports.filter.cardNo"|translate)}}</ui-label>
+        <input  placeholder="{{'reports.filter.lastFour' | translate}}" type="text" style="width: 110px" formControlName="cardNo">
+      </div>
+
+      <div *ngIf="form.controls['type'].value=='ACCOUNT_ACTIVITY'" class="in-block ui-space-l-regular middle">
+        <ui-label>{{("reports.filter.branch"|translate)}}</ui-label>
+        <input type="text" style="width: 90px" formControlName="branch">
+      </div>
+      <div *ngIf="form.controls['type'].value=='ACCOUNT_ACTIVITY'" class="in-block ui-space-l-regular middle">
+        <ui-label>{{("reports.filter.accountNo"|translate)}}</ui-label>
+        <input type="text" style="width: 90px" formControlName="accountNo">
       </div>
 
       <div class="in-block ui-space-l-regular middle">
-        <button class="blue-btn" (click)="filter()" translate="reports.filters.show"></button>
+        <button class="blue-btn"
+                (gridReady)="sizeToFit()"
+                [disabled]="!form.valid ||form.controls['fromDate'].value>=form.controls['toDate'].value "
+                (click)="filter(form.getRawValue())"
+                translate="reports.filter.show"></button>
       </div>
 
     </form>

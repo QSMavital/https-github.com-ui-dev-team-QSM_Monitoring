@@ -621,7 +621,262 @@ var settingsUser = {
         "visible": true
       }
     ]
+  },
+  reports: {
+    "hardwareReport": [
+      {
+        "field": "atmNo",
+        "visible": true
+      }, {
+        "field": "date",
+        "visible": true
+      }, {
+        "field": "time",
+        "visible": true
+      }, {
+        "field": "device",
+        "visible": true
+      }, {
+        "field": "eventSeverity",
+        "visible": true
+      }, {
+        "field": "eventTextLocal",
+        "visible": true
+      }, {
+        "field": "eventTextEn",
+        "visible": true
+      }
+    ],
+    "faultReports": [
+      {
+        "field": "atmNo",
+        "visible": true
+      }, {
+        "field": "date",
+        "visible": true
+      }, {
+        "field": "time",
+        "visible": true
+      }, {
+        "field": "eventSeverity",
+        "visible": true
+      }, {
+        "field": "eventTextLocal",
+        "visible": true
+      }, {
+        "field": "eventTextEn",
+        "visible": true
+      }, {
+        "field": "device",
+        "visible": false
+      }
+    ],
+    "cardRetainReports": [
+      {
+        "field": "atmNo",
+        "visible": true
+      },
+      {
+        "field": "cardNumber",
+        "visible": true
+      },
+      {
+        "field": "terminalDate",
+        "visible": true
+      },
+      {
+        "field": "terminalTime",
+        "visible": true
+      },
+      {
+        "field": "remove",
+        "visible": true
+      },
+      {
+        "field": "retainReason",
+        "visible": false
+      },
+      {
+        "field": " removeDate ",
+        "visible": false
+      }
+
+    ],
+    "cardActivityReport": [
+      {
+        "field": "terminalDate",
+        "visible": true
+      },
+      {
+        "field": "terminalTime",
+        "visible": true
+      },
+      {
+        "field": "atmNo",
+        "visible": true
+      },
+      {
+        "field": "cardNumber",
+        "visible": true
+      },
+      {
+        "field": "transactionType",
+        "visible": true
+      },
+      {
+        "field": "amount",
+        "visible": true
+      },
+      {
+        "field": "transactionStatus",
+        "visible": true
+      },
+      {
+        "field": "approver",
+        "visible": true
+      },
+      {
+        "field": "rejectReason",
+        "visible": true
+      },
+      {
+        "field": "retainReason",
+        "visible": true
+      },
+
+      {
+        "field": "atmFeeAmount",
+        "visible": true
+      },
+      {
+        "field": "businessDay",
+        "visible": true
+      }, {
+        "field": "transactionId",
+        "visible": false
+      },
+      {
+        "field": "bankNo",
+        "visible": false
+      },
+    ],
+    "accountActivityReport": [
+      {
+        "field": "terminalDate",
+        "visible": true
+      },
+      {
+        "field": "terminalTime",
+        "visible": true
+      },
+      {
+        "field": "atmNo",
+        "visible": true
+      },
+      {
+        "field": "cardNumber",
+        "visible": true
+      },
+      {
+        "field": "transactionType",
+        "visible": true
+      },
+      {
+        "field": "amount",
+        "visible": true
+      },
+      {
+        "field": "transactionStatus",
+        "visible": true
+      },
+      {
+        "field": "approver",
+        "visible": true
+      },
+      {
+        "field": "rejectReason",
+        "visible": true
+      },
+      {
+        "field": "retainReason",
+        "visible": true
+      },
+      {
+        "field": "atmFeeAmount",
+        "visible": true
+      },
+      {
+        "field": "businessDay",
+        "visible": true
+      }, {
+        "field": "transactionId",
+        "visible": false
+      },
+      {
+        "field": "bankNo",
+        "visible": false
+      },
+    ],
+    "transactionsReport": [
+      {
+        "field": "terminalDate",
+        "visible": true
+      },
+      {
+        "field": "terminalTime",
+        "visible": true
+      },
+      {
+        "field": "atmNo",
+        "visible": true
+      },
+      {
+        "field": "cardNumber",
+        "visible": true
+      },
+      {
+        "field": "transactionType",
+        "visible": true
+      },
+      {
+        "field": "amount",
+        "visible": true
+      },
+      {
+        "field": "transactionStatus",
+        "visible": true
+      },
+      {
+        "field": "approver",
+        "visible": true
+      },
+      {
+        "field": "rejectReason",
+        "visible": true
+      },
+      {
+        "field": "retainReason",
+        "visible": true
+      },
+
+      {
+        "field": "atmFeeAmount",
+        "visible": true
+      },
+      {
+        "field": "businessDay",
+        "visible": true
+      }, {
+        "field": "transactionId",
+        "visible": false
+      },
+      {
+        "field": "bankNo",
+        "visible": false
+      },
+    ]
   }
+
 };
 
 var customerGeneral = {

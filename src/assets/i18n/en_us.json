@@ -42,6 +42,7 @@
     "selected": "Selected Atm's",
     "date": "date",
     "time": "time",
+    "remove": "remove",
     "close": "close",
     "lastNotifications": "last notifications",
     "id": "Id",
@@ -346,16 +347,24 @@
     }
   },
   "reports": {
-    "filters": {
-      "reportType": "Report Type",
-      "HardwareFaultReport": "Hardware fault report",
-      "deviceNo": "Device No",
-      "accountNo": "Account No",
-      "show": "Show",
-      "listName":"List Name",
-      "longListName":"Long List Name",
-      "veryLongListName":"Very Long List Name",
-      "WaitingData":"Waiting to enter data"
+    "filter": {
+      "HARDWARE_ERRORS": "Hardware Errors",
+      "ERRORS": "Errors",
+      "RETAINED_CARDS": "Retained Cards",
+      "CARD_ACTIVITY": "Card Activity",
+      "ACCOUNT_ACTIVITY": "Account Activity",
+      "TRANSACTIONS":"Transactions",
+      "SETTLEMENT":"Settlement",
+      "show":"Show report",
+      "report":"Report:",
+      "deviceNo":"Device #:",
+      "cardNo":"Card #:",
+      "accountNo":"Account:",
+      "branch":"Branch:",
+      "optional":"Optional",
+      "lastFour":"Last 4 digits",
+      "WaitingData":"Waiting Data"
+
     }
   },
   "db": {

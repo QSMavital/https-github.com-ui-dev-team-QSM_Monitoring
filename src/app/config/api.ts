@@ -22,6 +22,7 @@ export const Api = {
       "fromLine": null,
       "atmNo": null,
       "numOfLine": null,
+      "deviceEvents":"ALL",
       "fromDate":new Date().setHours(0,0,0,0),
       "toDate":new Date().getTime()
     }
@@ -49,7 +50,9 @@ export const Api = {
   },
   getAtmStatus: {url:`${apiEntryPoint}/atm/atmStatus/get`,payload:{atmNo: null}},
   getAtmAccessories: {url:`${apiEntryPoint}/atm/atmAccessories/get`,payload:{atmNo: null}},
-  getAtmRetainedCards: {url:`${apiEntryPoint}/atm/retainedCards/get`,payload:{atmNo: null,fromSettelments: "AT_ATM"}},
+  getAtmRetainedCards: {url:`${apiEntryPoint}/atm/retainedCards/get`,payload:{
+    atmNo: null,fromSettelments: "AT_ATM",fromDate:null,toDate:null
+  }},
   getAtmSettings: {url:`${apiEntryPoint}/atm/settings/get`,payload:{atmNo: null}},
   saveAtmSettings: {url:`${apiEntryPoint}/atm/settings/patch`},
   createAtmSettings: {url:`${apiEntryPoint}/atm/settings/post`},

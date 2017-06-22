@@ -5,15 +5,19 @@ import {AgTimeComponent} from "../shared/components/ag-time/ag-time.component";
 import {AgStatusComponent} from "../shared/components/ag-status/ag-status.component";
 import {AgAmountComponent} from "../shared/components/ag-amount/ag-amount.component";
 export const Reports = {
-  Options: [
-    {type: "HARDWARE_ERRORS", id: 1, label: "reports.filter.HARDWARE_ERRORS"},
-    {type: "ERRORS", id: 2, label: "reports.filter.ERRORS"},
-    {type: "RETAINED_CARDS", id: 3, label: "reports.filter.RETAINED_CARDS"},
-    {type: "CARD_ACTIVITY", id: 4, label: "reports.filter.CARD_ACTIVITY"},
-    {type: "ACCOUNT_ACTIVITY", id: 5, label: "reports.filter.ACCOUNT_ACTIVITY"},
-    {type: "TRANSACTIONS", id: 6, label: "reports.filter.TRANSACTIONS"},
-    {type: "SETTLEMENT", id: 7, label: "reports.filter.SETTLEMENT"}
-  ],
+  Options: {
+    hardwareReport: {type: "HARDWARE_ERRORS", id: "hardwareReport", label: "reports.filter.HARDWARE_ERRORS"},
+    faultReports: {type: "ERRORS", id: "faultReports", label: "reports.filter.ERRORS"},
+    cardRetainReports: {type: "RETAINED_CARDS", id: "cardRetainReports", label: "reports.filter.RETAINED_CARDS"},
+    cardActivityReport: {type: "CARD_ACTIVITY", id: "cardActivityReport", label: "reports.filter.CARD_ACTIVITY"},
+    accountActivityReport: {
+      type: "ACCOUNT_ACTIVITY",
+      id: "accountActivityReport",
+      label: "reports.filter.ACCOUNT_ACTIVITY"
+    },
+    transactionsReport: {type: "TRANSACTIONS", id: "transactionsReport", label: "reports.filter.TRANSACTIONS"},
+    dispenseSettelmentReport: {type: "SETTLEMENT", id: "dispenseSettelmentReport", label: "reports.filter.SETTLEMENT"}
+  },
   retainReason: {
     atmNo: {headerName: "atms.terminalId", field: "atmNo", width: 120, suppressSizeToFit: true},
     cardNumber: {headerName: "atm.cardNumber", field: "cardNumber", width: 120, suppressSizeToFit: true},
@@ -162,4 +166,6 @@ export const Reports = {
     bankNo: {headerName: 'atms.bank', field: 'bankNo', width: 100,suppressSizeToFit: true}
   }
 };
+
+
 

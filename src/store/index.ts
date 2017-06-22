@@ -18,6 +18,7 @@ import {
 import {notificationsReducer} from "./reducers/notifications-reducer";
 import {HsmStatisticsReducer, HsmReducer} from "./reducers/hsms-reducer";
 import {EppReducer} from "./reducers/epp-reducer";
+import {ReportsSettlementReducer} from "./reducers/reports-reducer";
 
 
 export class IStore {
@@ -42,6 +43,11 @@ class IAtms {
   transactions?: any;
   // transaction?: any;
 }
+
+class IReports {
+  settlement?: any;
+}
+
 
 class IAtm {
   status?: any;
@@ -90,6 +96,9 @@ export const rootReducer = combineReducers<IStore>({
   }),
   epp: combineReducers<IEpp>({
     epps: EppReducer
+  }),
+  reports: combineReducers<IReports>({
+    settlement: ReportsSettlementReducer
   })
 });
 

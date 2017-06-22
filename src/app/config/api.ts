@@ -22,20 +22,20 @@ export const Api = {
       "fromLine": null,
       "atmNo": null,
       "numOfLine": null,
-      "deviceEvents":"ALL",
-      "fromDate":new Date().setHours(0,0,0,0),
-      "toDate":new Date().getTime()
+      "deviceEvents": "ALL",
+      "fromDate": new Date().setHours(0, 0, 0, 0),
+      "toDate": new Date().getTime()
     }
   },
   hsm_status: {
     url: `${apiEntryPoint}/hsm/get`,
-    payload: { }
+    payload: {}
   },
   hsm_statistics: {
     url: `${apiEntryPoint}/hsm/statistics/get`,
     payload: {
-      "dateStatistics1":new Date().getTime(),
-      "dateStatistics2":new Date().setDate(new Date().getDate() - 1),
+      "dateStatistics1": new Date().getTime(),
+      "dateStatistics2": new Date().setDate(new Date().getDate() - 1),
     }
   },
   atms_transactions: {
@@ -44,23 +44,29 @@ export const Api = {
       "atmNo": null,
       "fromLine": null,
       "numOfLine": null,
-      "fromDate":new Date().setHours(0,0,0,0),
-      "toDate":new Date().getTime()
+      "fromDate": new Date().setHours(0, 0, 0, 0),
+      "toDate": new Date().getTime()
     }
   },
-  getAtmStatus: {url:`${apiEntryPoint}/atm/atmStatus/get`,payload:{atmNo: null}},
-  getAtmAccessories: {url:`${apiEntryPoint}/atm/atmAccessories/get`,payload:{atmNo: null}},
-  getAtmRetainedCards: {url:`${apiEntryPoint}/atm/retainedCards/get`,payload:{
-    atmNo: null,fromSettelments: "AT_ATM",fromDate:null,toDate:null
-  }},
-  getAtmSettings: {url:`${apiEntryPoint}/atm/settings/get`,payload:{atmNo: null}},
-  saveAtmSettings: {url:`${apiEntryPoint}/atm/settings/patch`},
-  createAtmSettings: {url:`${apiEntryPoint}/atm/settings/post`},
-  getTransaction: {url:`${apiEntryPoint}/transactions/transaction/get`,payload:{transactionId: null}},
-  action: {url:`${apiEntryPoint}/atms/action`,payload:{action: null,atmList:null}},
-  hsm_add: {url:`${apiEntryPoint}/hsm/patch`,payload:{hsmSerialId:null,ipAddress:null, portNumber:null}},
-  hsm_action: {url:`${apiEntryPoint}/hsm/hsms/action`,payload:{hsmSerialId:null,action:null}},
-  hsm_sessions_action: {url:`${apiEntryPoint}/hsm/sessions/action`,payload:{sessions:[],action:null}},
-  epp_get: {url:`${apiEntryPoint}/epp/get`,payload:{"fromLine": null,"numOfLine": null}},
-  epp_add: {url:`${apiEntryPoint}/epp/patch`,payload:{"eppUid": null,"eppType": null}},
+  getAtmStatus: {url: `${apiEntryPoint}/atm/atmStatus/get`, payload: {atmNo: null}},
+  getAtmAccessories: {url: `${apiEntryPoint}/atm/atmAccessories/get`, payload: {atmNo: null}},
+  getAtmRetainedCards: {
+    url: `${apiEntryPoint}/atm/retainedCards/get`, payload: {
+      atmNo: null, fromSettelments: "AT_ATM", fromDate: null, toDate: null
+    }
+  },
+  getAtmSettings: {url: `${apiEntryPoint}/atm/settings/get`, payload: {atmNo: null}},
+  saveAtmSettings: {url: `${apiEntryPoint}/atm/settings/patch`},
+  createAtmSettings: {url: `${apiEntryPoint}/atm/settings/post`},
+  getTransaction: {url: `${apiEntryPoint}/transactions/transaction/get`, payload: {transactionId: null}},
+  action: {url: `${apiEntryPoint}/atms/action`, payload: {action: null, atmList: null}},
+  hsm_add: {url: `${apiEntryPoint}/hsm/patch`, payload: {hsmSerialId: null, ipAddress: null, portNumber: null}},
+  hsm_action: {url: `${apiEntryPoint}/hsm/hsms/action`, payload: {hsmSerialId: null, action: null}},
+  hsm_sessions_action: {url: `${apiEntryPoint}/hsm/sessions/action`, payload: {sessions: [], action: null}},
+  epp_get: {url: `${apiEntryPoint}/epp/get`, payload: {"fromLine": null, "numOfLine": null}},
+  epp_add: {url: `${apiEntryPoint}/epp/patch`, payload: {"eppUid": null, "eppType": null}},
+  reports_settlement: {
+    url: `${apiEntryPoint}/reports/settleDispense`,
+    payload: {"atmNo": null, "fromLine": null, "numOfLine": null, "fromDate": null, "toDate": null}
+  }
 }

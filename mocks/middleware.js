@@ -123,6 +123,12 @@ module.exports = function (req, res, next) {
         epps
       ));
     }
+    else if (req.url.indexOf('/api/reports/settleDispense') !== -1) {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(
+        settlement
+      ));
+    }
     else {
       next();
     }
@@ -623,6 +629,36 @@ var settingsUser = {
     ]
   },
   reports: {
+    "reportsTypes": [
+      {
+        "field": "hardwareReport",
+        "visible": true
+      },
+      {
+        "field": "faultReports",
+        "visible": true
+      },
+      {
+        "field": "cardRetainReports",
+        "visible": true
+      },
+      {
+        "field": "cardActivityReport",
+        "visible": true
+      },
+      {
+        "field": "accountActivityReport",
+        "visible": true
+      },
+      {
+        "field": "transactionsReport",
+        "visible": true
+      },
+      {
+        "field": "dispenseSettelmentReport",
+        "visible": true
+      }
+    ],
     "hardwareReport": [
       {
         "field": "atmNo",
@@ -4029,5 +4065,25 @@ var epps = {
     "atmNo": '001234',
     "atmName": 'שם מכשיר'
   }]
+}
+
+var settlement = {
+  "totalCount": 1,
+  "reports": [{
+    "Id": 34,
+    "transactionId": 782,
+    "terminalDate": 1495612612579,
+    "terminalTime": 1495612612579,
+    "atmNo": '001234',
+    "denomination": 20000,
+    "currency": 'NIS',
+    "countQswitch": 3,
+    "amountQswitch": 60000,
+    "countAtm": 2,
+    "amountAtm": 40000,
+    "differenceBills": 1,
+    "differenceAmount": 20000
+  }]
+
 }
 

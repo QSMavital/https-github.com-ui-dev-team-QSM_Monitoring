@@ -9,6 +9,7 @@ import {isNullOrUndefined} from "util";
 import {Reports} from "../../config/reports";
 import {TranslateService} from "@ngx-translate/core";
 import {AtmsActions} from "../../../store/actions/atms-actions";
+import {ReportsActions} from "../../../store/actions/reports-actions";
 
 @Component({
   selector: 'ui-reports',
@@ -23,6 +24,7 @@ export class ReportsComponent implements OnInit {
   @select(['atm', 'retainedCards']) $atm_retained_cards: Observable<any>;
   @select(['atms', 'events']) $atms_events: Observable<any>;
   @select(['atms', 'transactions']) $atms_transactions: Observable<any>;
+  @select(['reports', 'settlement']) $reports_settlement: Observable<any>;
 
   constructor(private ngRedux: NgRedux<IStore>, private gridDefsSrv: GridDefsService, private translateSrv: TranslateService) {
     this.data = [];
@@ -66,6 +68,27 @@ export class ReportsComponent implements OnInit {
       let colsDef = this.ngRedux.getState().userSettings.reports[type[this.reportType]];
       this.gridOptions = this.gridDefsSrv.initGridOptions();
       this.colsSetter(colsDef, 'transactions');
+    }));
+
+    this.redux_refs.push(this.$reports_settlement.subscribe((state) => {
+      if (isNullOrUndefined(state)) {
+        return
+      }
+      console.log(state);
+      //todo
+      //todo
+      //todo
+      //todo
+
+      // this.data = state.allTransactions;
+      // let type= {
+      //   CARD_ACTIVITY:"cardActivityReport",
+      //   ACCOUNT_ACTIVITY:"accountActivityReport",
+      //   TRANSACTIONS:"transactionsReport"
+      // };
+      // let colsDef = this.ngRedux.getState().userSettings.reports[type[this.reportType]];
+      // this.gridOptions = this.gridDefsSrv.initGridOptions();
+      // this.colsSetter(colsDef, 'transactions');
     }));
 
   }
@@ -199,6 +222,19 @@ export class ReportsComponent implements OnInit {
         });
         break;
       case 'SETTLEMENT':
+        this.ngRedux.dispatch({
+          type: ReportsActions.REPORTS_GET_SETTLEMENT,
+          payload: Object.assign({
+            atmNo: e.atmNo,
+            fromLine: 1,
+            numOfLine: null,
+            fromDate: new Date(e.fromDate).getTime(),
+            toDate: new Date(e.toDate).getTime(),
+            card:e.cardNo,
+            branch:e.branch,
+            accountNo:e.accountNo
+          })
+        });
         break;
     }
   }

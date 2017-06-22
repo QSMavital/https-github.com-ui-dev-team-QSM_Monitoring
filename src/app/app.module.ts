@@ -34,6 +34,7 @@ import {AtmsNotificationsComponent} from './core/atms/atms-notifications/atms-no
 import {AtmsEventsComponent} from './core/atms/atms-events/atms-events.component';
 import {AtmsTransactionsComponent} from './core/atms/atms-transactions/atms-transactions.component';
 import {Customer} from "../store/middlewares/customer-middleware";
+import {Reports} from "../store/middlewares/reports-middleware";
 import {MainComponent} from './core/master/main/main.component';
 import {AtmStatusComponent} from './core/atm/atm-status/atm-status.component';
 import {AccessoriesStatusComponent} from './core/atm/accessories-status/accessories-status.component';
@@ -92,8 +93,8 @@ import {HsmTableComponent} from './core/hsm/hsm-status/components/hsm-table/hsm-
 import {HsmLinkTableComponent} from './core/hsm/hsm-status/components/hsm-link-table/hsm-link-table.component';
 import {HsmFilterComponent} from './core/hsm/hsm-statistics/hsm-filter/hsm-filter.component';
 import {AgBooleanComponent} from "./shared/components/ag-boolean/ag-boolean.component";
-import { ReportsFilterComponent } from './core/reports/components/reports-filter/reports-filter.component';
-import { ReportsDataComponent } from './core/reports/components/reports-data/reports-data.component';
+import {ReportsFilterComponent} from './core/reports/components/reports-filter/reports-filter.component';
+import {ReportsDataComponent} from './core/reports/components/reports-data/reports-data.component';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -212,6 +213,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     Dashboard,
     AtmsMiddleware,
     AtmMiddleware,
+    Reports,
     EppMiddleware,
     SettingsResolverService,
     DecimalPipe
@@ -235,6 +237,7 @@ export class AppModule {
               private atms: AtmsMiddleware,
               private hsm: HsmMiddleware,
               private epp: EppMiddleware,
+              private reports: Reports,
               private atm: AtmMiddleware,
               private dashboard: Dashboard,
               private devTools: DevToolsExtension) {
@@ -243,7 +246,7 @@ export class AppModule {
       updatedEnhancers = [...enhancers, devTools.enhancer()];
     } else
       updatedEnhancers = [...enhancers];
-    const middlewares = [customer.Middleware, dashboard.Middleware, atms.Middleware, atm.Middleware, hsm.Middleware, epp.Middleware];
+    const middlewares = [customer.Middleware, dashboard.Middleware, atms.Middleware, atm.Middleware, hsm.Middleware, epp.Middleware, reports.Middleware];
     this.ngRedux.configureStore(rootReducer, {}, middlewares, updatedEnhancers);
 
   }

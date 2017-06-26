@@ -4,21 +4,18 @@
     <ui-reports-filter (onChange)="filter($event)"></ui-reports-filter>
     <ui-reports-data
       fxFlex
-      *ngIf="!data.length;else dataTemp"
+      *ngIf="!data.length"
       class="ui-space-t-medium"></ui-reports-data>
 
-    <ng-template #dataTemp>
-      <div fxFlex class="ui-space-t-medium">
+      <div [ngStyle]="{'display': !data.length?'none':'block'}" fxFlex class="ui-space-t-medium">
         <ui-portlet>
           <ag-grid-angular
-            (gridReady)="sizeToFit()"
             fxFlex
             class="ag-fresh"
             [gridOptions]="gridOptions">
           </ag-grid-angular>
         </ui-portlet>
       </div>
-    </ng-template>
   </div>
 </div>
 

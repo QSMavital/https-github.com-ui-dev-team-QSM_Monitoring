@@ -52,6 +52,8 @@ export const Api = {
   getAtmAccessories: {url: `${apiEntryPoint}/atm/atmAccessories/get`, payload: {atmNo: null}},
   getAtmRetainedCards: {
     url: `${apiEntryPoint}/atm/retainedCards/get`, payload: {
+      fromLine: null,
+      numOfLine: null,
       atmNo: null, fromSettelments: "AT_ATM", fromDate: null, toDate: null
     }
   },

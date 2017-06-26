@@ -62,7 +62,6 @@ export class AtmSettingsComponent implements OnInit {
 
   setDataToForm(state) {
     for (var prop in state.generalSettings) {
-      console.log(this.form.controls['generalSettings']['controls'][prop]);
       if (!isNullOrUndefined(this.form.controls['generalSettings']['controls'][prop])) {
         this.form.controls['generalSettings']['controls'][prop].setValue(state.generalSettings[prop]);
       }

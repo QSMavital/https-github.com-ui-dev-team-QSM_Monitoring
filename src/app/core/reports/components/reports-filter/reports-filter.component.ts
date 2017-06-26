@@ -32,11 +32,10 @@ export class ReportsFilterComponent implements OnInit {
 
     });
 
-  }
-
-  ngOnInit() {
     this.initForm();
   }
+
+  ngOnInit() {}
 
   filter(value) {
     this.onChange.emit(value);
@@ -47,7 +46,7 @@ export class ReportsFilterComponent implements OnInit {
     this.form = this.formBuilder.group({
       fromDate: [new Date(new Date().setHours(0,0,0,0)),Validators.required],
       toDate: [new Date(),Validators.required],
-      type: [this.options[0].type]
+      type: [this.options[0].value]
     });
 
     this.onChangeType({value:this.options[0].type});
@@ -57,7 +56,7 @@ export class ReportsFilterComponent implements OnInit {
     switch($event.value){
       case 'CARD_ACTIVITY':
         this.form.removeControl('atmNo');
-        this.form.addControl('cardNo', new FormControl(null, [Validators.minLength(4),Validators.maxLength(4),Validators.required,CustomValidators.number]));
+        this.form.addControl('cardNo', new FormControl(null, [Validators.minLength(4),Validators.maxLength(19),Validators.required,CustomValidators.number]));
         break;
       case 'ACCOUNT_ACTIVITY':
         this.form.removeControl('atmNo');

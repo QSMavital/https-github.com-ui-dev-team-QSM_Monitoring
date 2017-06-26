@@ -45,7 +45,6 @@ export class TransactionComponent implements OnChanges {
       this.apiSrv.getTransaction(newValue.transactionId.currentValue).subscribe((data) => {
         for (var cube = 0; cube < data.length; cube++) {
           for (var item = 0; item < data[cube].data.length; item++) {
-            // console.log(data[cube].data[item]);
             if (data[cube].data[item].type) {
               switch (this.toCamelCase(data[cube].data[item].type)){
                 case 'retainReason':

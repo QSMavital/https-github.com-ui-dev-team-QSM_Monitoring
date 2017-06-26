@@ -19,19 +19,20 @@ export class RetainedCardsComponent implements OnInit {
   private $atm_retained_cards_ref;
   private atmId;
   public gridOptions: any = {};
+  private dataSource;
 
   constructor(private translateSrv: TranslateService,
               private route: ActivatedRoute,
               private ngRedux: NgRedux<IStore>,
               private gridDefsSrv: GridDefsService) {
     this.atmId = this.route.parent.params['value']['id'];
-    this.ngRedux.dispatch({type:AtmActions.ATM_GET_RETIANED_CARDS,payload:{atmNo:this.atmId}});
-    this.$atm_retained_cards_ref = this.$atm_retained_cards.subscribe((state)=>{
-      if(isNullOrUndefined(state)||isNullOrUndefined(this.gridOptions.api)){
-        return;
-      }
-      this.gridOptions.api.setRowData(state);
-    });
+    // this.ngRedux.dispatch({type:AtmActions.ATM_GET_RETIANED_CARDS,payload:{atmNo:this.atmId}});
+    // this.$atm_retained_cards_ref = this.$atm_retained_cards.subscribe((state)=>{
+    //   if(isNullOrUndefined(state)||isNullOrUndefined(this.gridOptions.api)){
+    //     return;
+    //   }
+    //   this.gridOptions.api.setRowData(state);
+    // });
   }
 
   ngOnInit() {
@@ -43,21 +44,54 @@ export class RetainedCardsComponent implements OnInit {
   }
 
   initColDefs() {
-    this.gridOptions = this.gridDefsSrv.initGridOptions();
+    this.gridOptions = this.gridDefsSrv.initGridOptionsPagination(100);
+
     for (var prop in Atm.RetainedCards) {
       this.gridOptions.columnDefs.push(
         Object.assign({}, {suppressFilter: true}, Atm.RetainedCards[prop], {
-            headerName: this.translateSrv.instant(Atm.RetainedCards[prop].headerName)
-          }));
+          headerName: this.translateSrv.instant(Atm.RetainedCards[prop].headerName)
+        }));
     }
+
+    this.dataSource = {
+      getRows: (params) => {
+        this.ngRedux.dispatch({
+          type: AtmActions.ATM_GET_RETIANED_CARDS,
+          payload: {
+            atmNo: this.atmId,
+            "fromLine": params.startRow,
+            "numOfLine": params.endRow - params.startRow
+          }
+        });
+
+        this.$atm_retained_cards_ref = this.$atm_retained_cards.subscribe((state) => {
+          if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
+            params.successCallback(state.allRetainedCards, state.totalCount <= params.endRow ? state.totalCount : -1);
+          }
+        });
+
+
+      }
+    };
+    this.gridOptions.datasource = this.dataSource;
   }
 
   ngOnDestroy() {
     this.$atm_retained_cards_ref.unsubscribe();
   }
 
-  filter(e){
-    this.ngRedux.dispatch({type:AtmActions.ATM_GET_RETIANED_CARDS,payload:{atmNo:this.atmId,fromSettelments:e.settlement}});
+  filter(e) {
+    let gridState = this.gridOptions.api.getInfinitePageState()[0];
+
+    this.ngRedux.dispatch({
+      type: AtmActions.ATM_GET_RETIANED_CARDS,
+      payload: {
+        atmNo: this.atmId,
+        fromSettelments: e.settlement,
+        fromLine: gridState.startRow,
+        numOfLine: gridState.endRow - gridState.startRow
+      }
+    });
   }
 
 }

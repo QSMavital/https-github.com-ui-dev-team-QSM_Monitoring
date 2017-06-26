@@ -164,6 +164,33 @@ export const Reports = {
     businessDay: {headerName: 'general.businessDay', field: 'businessDay', width: 140,suppressSizeToFit: true,cellRendererFramework: AgDateShortComponent},
     transactionId: {headerName: 'atms.transactionId', field: 'transactionId', width: 150,suppressSizeToFit: true},
     bankNo: {headerName: 'atms.bank', field: 'bankNo', width: 100,suppressSizeToFit: true}
+  },
+  settlement:{
+    id: {headerName: "general.id", field: "id",width: 60, suppressSizeToFit: true},
+    transactionId: {headerName: "atms.transactionId", field: "transactionId", width: 150, suppressSizeToFit: true},
+    terminalDate: {
+      headerName: "general.date",
+      field: "terminalDate",
+      width: 130,
+      cellRendererFramework: AgDateShortComponent,
+      suppressSizeToFit: true
+    },
+    terminalTime: {
+      headerName: "general.time",
+      field: "terminalTime",
+      width: 130,
+      cellRendererFramework: AgTimeComponent,
+      suppressSizeToFit: true
+    },
+    atmNo: {headerName: "atms.terminalId", field: "atmNo"},
+    denomination: {headerName: "atms.denomination", field: "denomination"},
+    currency: {headerName: "atms.currencyCode", field: "currency"},
+    countQswitch: {headerName: "atms.countQswitch", field: "countQswitch"},
+    amountQswitch: {headerName: "atms.amountQswitch", field: "amountQswitch"},
+    countAtm: {headerName: "atms.countAtm", field: "atmNo"},
+    differenceBills: {headerName: "atms.differenceBills", field: "differenceBills"},
+    differenceAmount: {headerName: "atms.differenceAmount", field: "differenceAmount" },
+
   }
 };
 

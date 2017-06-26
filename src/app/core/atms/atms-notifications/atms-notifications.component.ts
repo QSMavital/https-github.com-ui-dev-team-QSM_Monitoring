@@ -28,7 +28,6 @@ export class AtmsNotificationsComponent implements OnInit {
 
   ngOnInit() {
     this.initColDefs();
-
   }
 
 

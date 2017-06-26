@@ -910,9 +910,62 @@ var settingsUser = {
         "field": "bankNo",
         "visible": false
       },
+    ],
+    "dispenseSettelmentReport": [
+      {
+        "field": "id",
+        "visible": true
+      },
+      {
+        "field": "transactionId",
+        "visible": true
+      },
+      {
+        "field": "terminalDate",
+        "visible": true
+      },
+      {
+        "field": "terminalTime",
+        "visible": true
+      },
+      {
+        "field": "atmNo",
+        "visible": true
+      },
+      {
+        "field": "denomination",
+        "visible": true
+      },
+      {
+        "field": "currency",
+        "visible": true
+      },
+      {
+        "field": "countQswitch",
+        "visible": true
+      },
+      {
+        "field": "amountQswitch",
+        "visible": true
+      },
+      {
+        "field": "countAtm",
+        "visible": true
+      },
+
+      {
+        "field": "amountAtm",
+        "visible": true
+      },
+      {
+        "field": "differenceBills",
+        "visible": true
+      }, {
+        "field": "differenceAmount",
+        "visible": false
+      }
     ]
   }
-
 };
 
 var customerGeneral = {
@@ -3796,7 +3849,9 @@ var atm_accessories = {
 
 };
 
-var atm_retainedCards = [
+var atm_retainedCards = {
+  "totalCount": 2,
+  allRetainedCards:[
   {
     "cardNumber": "4002",
     "terminalDate": 1495612612579,
@@ -3811,7 +3866,7 @@ var atm_retainedCards = [
     "retainReason": "CARD_BLOCKED",
     "removeDate": 1495612612579
   }
-];
+]};
 
 var transaction = [
   {

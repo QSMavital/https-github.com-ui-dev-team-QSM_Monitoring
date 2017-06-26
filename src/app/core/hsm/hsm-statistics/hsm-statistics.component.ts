@@ -35,7 +35,6 @@ export class HsmStatisticsComponent implements OnInit, OnDestroy {
   }
 
   filter(event) {
-    console.log(event);
     this.ngRedux.dispatch({
       type: HsmActions.HSM_GET_STATISTICS,
       payload:Object.assign(this.filtersLastState, {

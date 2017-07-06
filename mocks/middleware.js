@@ -628,7 +628,7 @@ var settingsUser = {
       }
     ]
   },
-  reports: {
+  reportsCustomization: {
     "reportsTypes": [
       {
         "field": "hardwareReport",
@@ -3490,22 +3490,1012 @@ var atms_inventory = {
   }]
 };
 
-var atms_events = {
-  "totalCount": 100,
-  "allEvents": [{
-    "id": 1,
-    "atmNo": "000000",
-    "atmName": "atmName",
-    "date": 1494317961838,
-    "time": 1494317961838,
-    "eventSeverity": "WARN",
-    "eventCode": "AC001",
-    "eventTextEn": "AC001 Late response(approved) received from bank for transaction 1",
-    "eventTextLocal": "תשובה מאוחרת",
-    "device": "",
-    "eventDestinations": ["SEC", "IT", "CIT"]
-  }]
-};
+var atms_events =
+  {
+    "totalCount" : 105,
+    "allEvents" : [ {
+      "atmNo" : "11111111",
+      "eventDate" : 1498726618977,
+      "eventTime" : 1498726618977,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498726619317,
+      "eventTime" : 1498726619317,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND025",
+      "eventTextEn" : "Starting NDC server.",
+      "eventTextLocal" : "החל שירות NDC של תוכנת מתג.",
+      "device" : "",
+      "eventDestinations" : [ "LOG" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498726619367,
+      "eventTime" : 1498726619367,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498726619680,
+      "eventTime" : 1498726619680,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV002",
+      "eventTextEn" : "Shva TCP/IP socket opened.",
+      "eventTextLocal" : "תקשורת לשב\"א עלתה.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498726619997,
+      "eventTime" : 1498726619997,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498726620960,
+      "eventTime" : 1498726620960,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727046843,
+      "eventTime" : 1498727046843,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727047133,
+      "eventTime" : 1498727047133,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND025",
+      "eventTextEn" : "Starting NDC server.",
+      "eventTextLocal" : "החל שירות NDC של תוכנת מתג.",
+      "device" : "",
+      "eventDestinations" : [ "LOG" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727047193,
+      "eventTime" : 1498727047193,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727047327,
+      "eventTime" : 1498727047327,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV002",
+      "eventTextEn" : "Shva TCP/IP socket opened.",
+      "eventTextLocal" : "תקשורת לשב\"א עלתה.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727051463,
+      "eventTime" : 1498727051463,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727055867,
+      "eventTime" : 1498727055867,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727085190,
+      "eventTime" : 1498727085190,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV019",
+      "eventTextEn" : "Duplicate message from Shva.",
+      "eventTextLocal" : "מסר כפול התקבל משב\"א.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727165850,
+      "eventTime" : 1498727165850,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727285467,
+      "eventTime" : 1498727285467,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727285780,
+      "eventTime" : 1498727285780,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND025",
+      "eventTextEn" : "Starting NDC server.",
+      "eventTextLocal" : "החל שירות NDC של תוכנת מתג.",
+      "device" : "",
+      "eventDestinations" : [ "LOG" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727285823,
+      "eventTime" : 1498727285823,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727286010,
+      "eventTime" : 1498727286010,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV002",
+      "eventTextEn" : "Shva TCP/IP socket opened.",
+      "eventTextLocal" : "תקשורת לשב\"א עלתה.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727286050,
+      "eventTime" : 1498727286050,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727290707,
+      "eventTime" : 1498727290707,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727295503,
+      "eventTime" : 1498727295503,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727363880,
+      "eventTime" : 1498727363880,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV019",
+      "eventTextEn" : "Duplicate message from Shva.",
+      "eventTextLocal" : "מסר כפול התקבל משב\"א.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727405173,
+      "eventTime" : 1498727405173,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727491210,
+      "eventTime" : 1498727491210,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727491520,
+      "eventTime" : 1498727491520,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND025",
+      "eventTextEn" : "Starting NDC server.",
+      "eventTextLocal" : "החל שירות NDC של תוכנת מתג.",
+      "device" : "",
+      "eventDestinations" : [ "LOG" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727491547,
+      "eventTime" : 1498727491547,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727491697,
+      "eventTime" : 1498727491697,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV002",
+      "eventTextEn" : "Shva TCP/IP socket opened.",
+      "eventTextLocal" : "תקשורת לשב\"א עלתה.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727496417,
+      "eventTime" : 1498727496417,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727499267,
+      "eventTime" : 1498727499267,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV019",
+      "eventTextEn" : "Duplicate message from Shva.",
+      "eventTextLocal" : "מסר כפול התקבל משב\"א.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727501293,
+      "eventTime" : 1498727501293,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727545047,
+      "eventTime" : 1498727545047,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV019",
+      "eventTextEn" : "Duplicate message from Shva.",
+      "eventTextLocal" : "מסר כפול התקבל משב\"א.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498727610657,
+      "eventTime" : 1498727610657,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498728212877,
+      "eventTime" : 1498728212877,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498728213177,
+      "eventTime" : 1498728213177,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND025",
+      "eventTextEn" : "Starting NDC server.",
+      "eventTextLocal" : "החל שירות NDC של תוכנת מתג.",
+      "device" : "",
+      "eventDestinations" : [ "LOG" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498728213207,
+      "eventTime" : 1498728213207,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498728213930,
+      "eventTime" : 1498728213930,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV002",
+      "eventTextEn" : "Shva TCP/IP socket opened.",
+      "eventTextLocal" : "תקשורת לשב\"א עלתה.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498728215137,
+      "eventTime" : 1498728215137,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498728217223,
+      "eventTime" : 1498728217223,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498728265917,
+      "eventTime" : 1498728265917,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV019",
+      "eventTextEn" : "Duplicate message from Shva.",
+      "eventTextLocal" : "מסר כפול התקבל משב\"א.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498728330003,
+      "eventTime" : 1498728330003,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498728453797,
+      "eventTime" : 1498728453797,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498728453827,
+      "eventTime" : 1498728453827,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV002",
+      "eventTextEn" : "Shva TCP/IP socket opened.",
+      "eventTextLocal" : "תקשורת לשב\"א עלתה.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498728513817,
+      "eventTime" : 1498728513817,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498728513867,
+      "eventTime" : 1498728513867,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV002",
+      "eventTextEn" : "Shva TCP/IP socket opened.",
+      "eventTextLocal" : "תקשורת לשב\"א עלתה.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498731106990,
+      "eventTime" : 1498731106990,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498731107260,
+      "eventTime" : 1498731107260,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND025",
+      "eventTextEn" : "Starting NDC server.",
+      "eventTextLocal" : "החל שירות NDC של תוכנת מתג.",
+      "device" : "",
+      "eventDestinations" : [ "LOG" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498731107293,
+      "eventTime" : 1498731107293,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498731107500,
+      "eventTime" : 1498731107500,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV002",
+      "eventTextEn" : "Shva TCP/IP socket opened.",
+      "eventTextLocal" : "תקשורת לשב\"א עלתה.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498731108740,
+      "eventTime" : 1498731108740,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498731109943,
+      "eventTime" : 1498731109943,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498733932733,
+      "eventTime" : 1498733932733,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498733932987,
+      "eventTime" : 1498733932987,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND025",
+      "eventTextEn" : "Starting NDC server.",
+      "eventTextLocal" : "החל שירות NDC של תוכנת מתג.",
+      "device" : "",
+      "eventDestinations" : [ "LOG" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498733933017,
+      "eventTime" : 1498733933017,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498733933243,
+      "eventTime" : 1498733933243,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV002",
+      "eventTextEn" : "Shva TCP/IP socket opened.",
+      "eventTextLocal" : "תקשורת לשב\"א עלתה.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498733946553,
+      "eventTime" : 1498733946553,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498733957060,
+      "eventTime" : 1498733957060,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498733958483,
+      "eventTime" : 1498733958483,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV019",
+      "eventTextEn" : "Duplicate message from Shva.",
+      "eventTextLocal" : "מסר כפול התקבל משב\"א.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498734154823,
+      "eventTime" : 1498734154823,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498734155123,
+      "eventTime" : 1498734155123,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND025",
+      "eventTextEn" : "Starting NDC server.",
+      "eventTextLocal" : "החל שירות NDC של תוכנת מתג.",
+      "device" : "",
+      "eventDestinations" : [ "LOG" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498734155167,
+      "eventTime" : 1498734155167,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498734155320,
+      "eventTime" : 1498734155320,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV002",
+      "eventTextEn" : "Shva TCP/IP socket opened.",
+      "eventTextLocal" : "תקשורת לשב\"א עלתה.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498734155370,
+      "eventTime" : 1498734155370,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498734162893,
+      "eventTime" : 1498734162893,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498734176107,
+      "eventTime" : 1498734176107,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV019",
+      "eventTextEn" : "Duplicate message from Shva.",
+      "eventTextLocal" : "מסר כפול התקבל משב\"א.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498734202737,
+      "eventTime" : 1498734202737,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498734310537,
+      "eventTime" : 1498734310537,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498734395647,
+      "eventTime" : 1498734395647,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980055843,
+      "eventTime" : 1498980055843,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980055883,
+      "eventTime" : 1498980055883,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980055917,
+      "eventTime" : 1498980055917,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980056483,
+      "eventTime" : 1498980056483,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND025",
+      "eventTextEn" : "Starting NDC server.",
+      "eventTextLocal" : "החל שירות NDC של תוכנת מתג.",
+      "device" : "",
+      "eventDestinations" : [ "LOG" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980056523,
+      "eventTime" : 1498980056523,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980220693,
+      "eventTime" : 1498980220693,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980220697,
+      "eventTime" : 1498980220697,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980220697,
+      "eventTime" : 1498980220697,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980221193,
+      "eventTime" : 1498980221193,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND025",
+      "eventTextEn" : "Starting NDC server.",
+      "eventTextLocal" : "החל שירות NDC של תוכנת מתג.",
+      "device" : "",
+      "eventDestinations" : [ "LOG" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980221230,
+      "eventTime" : 1498980221230,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980333117,
+      "eventTime" : 1498980333117,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980333120,
+      "eventTime" : 1498980333120,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980333143,
+      "eventTime" : 1498980333143,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980333553,
+      "eventTime" : 1498980333553,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND025",
+      "eventTextEn" : "Starting NDC server.",
+      "eventTextLocal" : "החל שירות NDC של תוכנת מתג.",
+      "device" : "",
+      "eventDestinations" : [ "LOG" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980333563,
+      "eventTime" : 1498980333563,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980452933,
+      "eventTime" : 1498980452933,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980452967,
+      "eventTime" : 1498980452967,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980452983,
+      "eventTime" : 1498980452983,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980848307,
+      "eventTime" : 1498980848307,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND026",
+      "eventTextEn" : "Stopping NDC server.",
+      "eventTextLocal" : "נעצר שירות NDC של תוכנת מתג.",
+      "device" : "",
+      "eventDestinations" : [ "LOG" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498980849217,
+      "eventTime" : 1498980849217,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND041",
+      "eventTextEn" : "All NDC ATM communications are stopped.",
+      "eventTextLocal" : "כל תקשורת NDC לATM נעצרת.",
+      "device" : "",
+      "eventDestinations" : [ "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498984396487,
+      "eventTime" : 1498984396487,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498984396500,
+      "eventTime" : 1498984396500,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498984396517,
+      "eventTime" : 1498984396517,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498984396827,
+      "eventTime" : 1498984396827,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND025",
+      "eventTextEn" : "Starting NDC server.",
+      "eventTextLocal" : "החל שירות NDC של תוכנת מתג.",
+      "device" : "",
+      "eventDestinations" : [ "LOG" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498984396873,
+      "eventTime" : 1498984396873,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498994204580,
+      "eventTime" : 1498994204580,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498994204583,
+      "eventTime" : 1498994204583,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498994204603,
+      "eventTime" : 1498994204603,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498994204923,
+      "eventTime" : 1498994204923,
+      "eventSeverity" : "INFO",
+      "eventCode" : "ND025",
+      "eventTextEn" : "Starting NDC server.",
+      "eventTextLocal" : "החל שירות NDC של תוכנת מתג.",
+      "device" : "",
+      "eventDestinations" : [ "LOG" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498994204953,
+      "eventTime" : 1498994204953,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SV003",
+      "eventTextEn" : "Shva TCP/IP socket closed.",
+      "eventTextLocal" : "תקשורת לשב\"א ירדה.",
+      "device" : "",
+      "eventDestinations" : [ "BO", "CC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498994324443,
+      "eventTime" : 1498994324443,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/1 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498994324467,
+      "eventTime" : 1498994324467,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/2 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    }, {
+      "atmNo" : "000000",
+      "eventDate" : 1498994324487,
+      "eventTime" : 1498994324487,
+      "eventSeverity" : "INFO",
+      "eventCode" : "SM007",
+      "eventTextEn" : "Session 0/3 opened.",
+      "eventTextLocal" : "נפתח קישור ל-HSM.",
+      "device" : "",
+      "eventDestinations" : [ "CC", "SEC" ]
+    } ]
+  }
+;
 
 var atms_transactions = {
   "totalCount": 100,

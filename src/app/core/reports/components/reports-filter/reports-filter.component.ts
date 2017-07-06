@@ -20,7 +20,7 @@ export class ReportsFilterComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private translateSrv: TranslateService,
               private ngRedux: NgRedux<IStore>) {
-    let optionsCustomizationDef = this.ngRedux.getState().userSettings.reports.reportsTypes;
+    let optionsCustomizationDef = this.ngRedux.getState().userSettings.reportsCustomization.reportsTypes;
 
     optionsCustomizationDef.forEach((option) => {
       if(option['field'] == Reports.Options[option['field']].id){
@@ -69,6 +69,7 @@ export class ReportsFilterComponent implements OnInit {
         this.form.addControl('atmNo', new FormControl(null, [CustomValidators.number]));
         this.form.removeControl('accountNo');
         this.form.removeControl('cardNo');
+        this.form.removeControl('branch');
         break;
     }
   }

@@ -44,7 +44,6 @@
 
       <div class="in-block ui-space-l-regular middle">
         <button class="blue-btn"
-                (gridReady)="sizeToFit()"
                 [disabled]="!form.valid ||form.controls['fromDate'].value>=form.controls['toDate'].value "
                 (click)="filter(form.getRawValue())"
                 translate="reports.filter.show"></button>

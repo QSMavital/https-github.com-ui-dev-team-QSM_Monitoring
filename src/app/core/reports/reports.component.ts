@@ -46,7 +46,7 @@ export class ReportsComponent implements OnInit,OnDestroy {
           if (isNullOrUndefined(state) || !this.init) {
             return
           }
-          let colsDef = this.ngRedux.getState().userSettings.reports['cardRetainReports'];
+          let colsDef = this.ngRedux.getState().userSettings.reportsCustomization['cardRetainReports'];
           this.setRetainedCardsCols(colsDef);
           if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
             params.successCallback(state.allRetainedCards, state.totalCount <= params.endRow ? state.totalCount : -1);
@@ -61,7 +61,7 @@ export class ReportsComponent implements OnInit,OnDestroy {
           }
 
           let type = this.reportType == "HARDWARE_ERRORS" ? 'hardwareReport' : 'faultReports';
-          let colsDef = this.ngRedux.getState().userSettings.reports[type];
+          let colsDef = this.ngRedux.getState().userSettings.reportsCustomization[type];
 
           this.colsSetter(colsDef, type);
 
@@ -83,7 +83,7 @@ export class ReportsComponent implements OnInit,OnDestroy {
             ACCOUNT_ACTIVITY: "accountActivityReport",
             TRANSACTIONS: "transactionsReport"
           };
-          let colsDef = this.ngRedux.getState().userSettings.reports[type[this.reportType]];
+          let colsDef = this.ngRedux.getState().userSettings.reportsCustomization[type[this.reportType]];
           this.colsSetter(colsDef, 'transactions');
           if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
             params.successCallback(state.allTransactions, state.totalCount <= params.endRow ? state.totalCount : -1);
@@ -96,7 +96,7 @@ export class ReportsComponent implements OnInit,OnDestroy {
             return
           }
 
-          let colsDef = this.ngRedux.getState().userSettings.reports['dispenseSettelmentReport'];
+          let colsDef = this.ngRedux.getState().userSettings.reportsCustomization['dispenseSettelmentReport'];
           this.colsSetter(colsDef, 'settlement');
           if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
             params.successCallback(state.reports, state.totalCount <= params.endRow ? state.totalCount : -1);
@@ -160,6 +160,7 @@ export class ReportsComponent implements OnInit,OnDestroy {
       this.gridOptions.api.ensureIndexVisible(0);
     }
 
+    debugger;
     switch (e.type) {
       case 'HARDWARE_ERRORS':
         this.ngRedux.dispatch({
@@ -170,7 +171,9 @@ export class ReportsComponent implements OnInit,OnDestroy {
               fromLine: 1,
               numOfLine: null,
               atmNo: e.atmNo,
-              deviceEvents: "ONLY_DEVICE"
+              deviceEvents: "ONLY_DEVICE",
+              fromDate: new Date(e.fromDate).getTime(),
+              toDate: new Date(e.toDate).getTime()
             }
           )
         });
@@ -184,7 +187,9 @@ export class ReportsComponent implements OnInit,OnDestroy {
               fromLine: gridState.startRow,
               numOfLine: gridState.endRow - gridState.startRow,
               atmNo: e.atmNo,
-              deviceEvents: "WITHOUT_DEVICE"
+              deviceEvents: "WITHOUT_DEVICE",
+              fromDate: new Date(e.fromDate).getTime(),
+              toDate: new Date(e.toDate).getTime()
             }
           )
         });
@@ -201,7 +206,6 @@ export class ReportsComponent implements OnInit,OnDestroy {
             toDate: new Date(e.toDate).getTime()
           }
         });
-
         break;
       case 'CARD_ACTIVITY':
         this.ngRedux.dispatch({
@@ -228,8 +232,8 @@ export class ReportsComponent implements OnInit,OnDestroy {
             fromDate: new Date(e.fromDate).getTime(),
             toDate: new Date(e.toDate).getTime(),
             dataForSearch: [
-              {accountNo: e.accountNo},
-              {accountBranch: e.branch}
+              {field:'accountNo', value: e.accountNo},
+              {field:'accountBranch',value: e.branch}
             ]
           })
         });

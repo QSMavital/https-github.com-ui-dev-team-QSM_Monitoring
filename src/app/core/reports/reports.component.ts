@@ -160,7 +160,6 @@ export class ReportsComponent implements OnInit,OnDestroy {
       this.gridOptions.api.ensureIndexVisible(0);
     }
 
-    debugger;
     switch (e.type) {
       case 'HARDWARE_ERRORS':
         this.ngRedux.dispatch({
@@ -168,8 +167,8 @@ export class ReportsComponent implements OnInit,OnDestroy {
           payload: Object.assign({},
             {
               eventSeverity: ["FATAL", "ERROR", "WARN"],
-              fromLine: 1,
-              numOfLine: null,
+              fromLine: gridState.startRow,
+              numOfLine: gridState.endRow - gridState.startRow,
               atmNo: e.atmNo,
               deviceEvents: "ONLY_DEVICE",
               fromDate: new Date(e.fromDate).getTime(),
@@ -217,7 +216,7 @@ export class ReportsComponent implements OnInit,OnDestroy {
             fromDate: new Date(e.fromDate).getTime(),
             toDate: new Date(e.toDate).getTime(),
             dataForSearch: [
-              {cardNumber: e.cardNo}
+              {field:'cardNumber', value: e.cardNo}
             ]
           })
         });

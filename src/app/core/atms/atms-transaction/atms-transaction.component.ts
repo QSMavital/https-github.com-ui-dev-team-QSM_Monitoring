@@ -13,6 +13,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class TransactionComponent{
   public data = [];
   public showModal: boolean;
+  public transactionId: string;
   public masonryOptions: MasonryOptions = {
     transitionDuration: '0',
     fitWidth: true,
@@ -21,8 +22,8 @@ export class TransactionComponent{
 
   constructor(private apiSrv: ApiService, private translateSrv: TranslateService,private route: ActivatedRoute, private router: Router) {
     this.showModal = true;
-    this.getData(this.route.params['value']['id']);
-    debugger;
+    this.transactionId = this.route.params['value']['id'];
+    this.getData(this.transactionId);
   }
 
   toCamelCase(str) {

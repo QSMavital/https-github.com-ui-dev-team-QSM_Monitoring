@@ -18,6 +18,7 @@ import {AccessoriesStatusComponent} from "./core/atm/accessories-status/accessor
 import {AtmSettingsComponent} from "./core/atm/atm-settings/atm-settings.component";
 import {HsmStatusComponent} from "./core/hsm/hsm-status/hsm-status.component";
 import {HsmStatisticsComponent} from "./core/hsm/hsm-statistics/hsm-statistics.component";
+import {TransactionComponent} from "./core/atms/atms-transaction/atms-transaction.component";
 
 export const appRoutes: Route[] = [
 
@@ -42,7 +43,10 @@ export const appRoutes: Route[] = [
               {path: 'status', component: AtmsStatusComponent},
               {path: 'notifications', component: AtmsNotificationsComponent},
               {path: 'events', component: AtmsEventsComponent},
-              {path: 'transactions', component: AtmsTransactionsComponent}
+              {path: 'transactions', component: AtmsTransactionsComponent,
+                children: [
+                  {path:':id',component:TransactionComponent}
+              ]}
             ],
           },
 
@@ -55,7 +59,10 @@ export const appRoutes: Route[] = [
               {path: 'settings', component: AtmSettingsComponent},
               {path: 'notifications', component: AtmsNotificationsComponent},
               {path: 'events', component: AtmsEventsComponent},
-              {path: 'transactions', component: AtmsTransactionsComponent}
+              {path: 'transactions', component: AtmsTransactionsComponent,
+                children: [
+                  {path:':id',component:TransactionComponent}
+                ]}
             ]
           },
 

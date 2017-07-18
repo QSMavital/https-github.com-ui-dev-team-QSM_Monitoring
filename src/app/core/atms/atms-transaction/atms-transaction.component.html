@@ -1,7 +1,7 @@
-<p-dialog [(visible)]="show" [modal]="true" class="dialog-no-padding add-atm-dialog">
+<p-dialog [visible]="showModal" (onHide)="close()" [closeOnEscape]="true" modal="true" class="dialog-no-padding add-atm-dialog">
   <p-header>{{'atm.transaction' | translate}} {{transactionId}}</p-header>
   <div class="scroll-y ui-space-tb-regular ui-space-l-regular" style="width: 1260px;height: 600px">
-    <div *ngIf="showValue">
+    <div>
       <masonry [options]="masonryOptions" class="form-body stretch-width">
         <masonry-brick *ngFor="let item of data" class="brick" style="width:400px;margin-right: 15px">
           <ui-controls-group [header]="'atms.'+item.title | translate">
@@ -19,7 +19,7 @@
 
   <p-footer>
     <span class="pull-right">
-      <button (click)="show=false" class="btn blue-btn">{{'general.close' | translate}}</button>
+      <button (click)="showModal=false" class="btn blue-btn">{{'general.close' | translate}}</button>
     </span>
   </p-footer>
 </p-dialog>

@@ -9,6 +9,8 @@
     </div>
 
   </ui-filters-bar>
+  <router-outlet></router-outlet>
+
 
   <ag-grid-angular
     (rowDoubleClicked)="showTransaction($event)"
@@ -20,4 +22,3 @@
 
 </div>
 
-<ui-transaction [transactionId]="transactionId" [(show)]="transaction"></ui-transaction>

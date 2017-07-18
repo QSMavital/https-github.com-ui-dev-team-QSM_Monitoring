@@ -75,7 +75,8 @@
     "CurrencyCode": "Currency",
     "keyType": "Key Type",
     "kcv": "KCV",
-    "week":"Week"
+    "week":"Week",
+    "day":"Day"
   },
   "atms": {
     "city":"City",
@@ -505,6 +506,9 @@
     "STATEMENT_PRINTER_KNIFE": "Statement printer knife",
     "STATEMENT_PRINTER_PRINTHEAD": "Statement printer printhead",
     "STATEMENT_PRINTER_RIBBON": "Statement printer ribbon",
+    "DISPENSER":"Dispenser",
+    "RECEIPT_PRINTER":"Receipt printer",
+    "BUNCH_NOTE_ACCEPTOR":"Bunch note acceptor",
     "CHECK_ENDORSE_PRINTER": "Check endorse printer",
     "CHECK_PROCESSOR": "Check processor",
     "CHECK_PROCESSOR_BIN_1": "Check processor bin 1",

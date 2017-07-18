@@ -15,29 +15,37 @@ export class HsmStatisticsComponent implements OnInit, OnDestroy {
   @select(['hsm', 'statistics']) $hsm_statistics: Observable<any>;
   private $hsm_statistics_ref;
   public filtersLastState: any = {};
-  public data = {statistics1:null,statistics2:null};
+  public data = {statistics1: null, statistics2: null};
 
   constructor(private ngRedux: NgRedux<IStore>) {
-    this.ngRedux.dispatch({type:HsmActions.HSM_GET_STATISTICS,payload:Api.hsm_statistics.payload});
-    this.filtersLastState = Object.assign({}, Api.hsm_statistics.payload);
+    debugger;
+    let payload = Object.assign({}, Api.hsm_statistics.payload, {
+      dateStatistics1: new Date(Api.hsm_statistics.payload.dateStatistics1).setHours(0, 0, 0, 0),
+      dateStatistics2: new Date(Api.hsm_statistics.payload.dateStatistics2).setHours(0, 0, 0, 0)
+    });
+    this.ngRedux.dispatch({
+      type: HsmActions.HSM_GET_STATISTICS,
+      payload
+    });
+    this.filtersLastState = Object.assign({}, payload);
   }
 
-  ngOnInit(){
-    this.$hsm_statistics_ref = this.$hsm_statistics.subscribe((state)=>{
-      if(!isNullOrUndefined(state)){
+  ngOnInit() {
+    this.$hsm_statistics_ref = this.$hsm_statistics.subscribe((state) => {
+      if (!isNullOrUndefined(state)) {
         this.data = state;
       }
     });
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.$hsm_statistics_ref.unsubscribe();
   }
 
   filter(event) {
     this.ngRedux.dispatch({
       type: HsmActions.HSM_GET_STATISTICS,
-      payload:Object.assign(this.filtersLastState, {
+      payload: Object.assign(this.filtersLastState, {
         "dateStatistics1": new Date(event.dateStatistics1).getTime(),
         "dateStatistics2": new Date(event.dateStatistics2).getTime()
       })

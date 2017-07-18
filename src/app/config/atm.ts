@@ -481,8 +481,8 @@ export const Atm = {
       denomination: {headerName: "atms.denomination", field: "denomination", width: 130,cellRendererFramework:AgDiv100Component, suppressSizeToFit: true},
       loaded: {headerName: "atm.loaded", field: "loaded", width: 90, suppressSizeToFit: true},
       dispensed: {headerName: "atm.dispensed", field: "dispensed", width: 110, suppressSizeToFit: true},
-      rejected: {headerName: "atm.rejected", field: "rejected", width: 90, suppressSizeToFit: true},
-      remaining: {headerName: "atm.remaining", field: "remaining", width: 60}
+      rejected: {headerName: "atm.rejected", field: "rejected", width: 110, suppressSizeToFit: true},
+      remaining: {headerName: "atm.remaining", field: "remaining", width: 110, suppressSizeToFit: true}
     },
     LastStrokes: {
       value: {headerName: "atms.denomination", field: "denomination", width: 100,cellRendererFramework:AgDiv100Component},
@@ -494,7 +494,8 @@ export const Atm = {
     },
     Printers: {
       device: {headerName: "atm.device", field: "device", width: 170, cellRendererFramework: AgTranslateMapComponent},
-      statusColor: {headerName: "general.fitness", field: "statusColor", width: 170, cellRendererFramework: AgStatusComponent}
+      statusColor: {headerName: "general.fitness", field: "statusColor", width: 170, cellRendererFramework: AgStatusComponent},
+      supply: {headerName: "general.supply", field: "supply", width: 170, cellRendererFramework: AgProgressComponent}
     },
     Checks: {
       device: {headerName: "atm.device", field: "device", width: 90, cellRendererFramework: AgTranslateMapComponent},

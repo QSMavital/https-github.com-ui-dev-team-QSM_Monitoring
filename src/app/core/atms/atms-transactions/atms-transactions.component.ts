@@ -6,7 +6,7 @@ import {Api} from "../../../config/api";
 import {AtmsActions} from "../../../../store/actions/atms-actions";
 import {isNullOrUndefined} from "util";
 import {Observable} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'ui-atms-transactions',
@@ -24,7 +24,7 @@ export class AtmsTransactionsComponent implements OnInit, OnDestroy {
   private dataSource;
 
   constructor(private gridDefsSrv: GridDefsService,
-              private ngRedux: NgRedux<IStore>, private route: ActivatedRoute) {
+              private ngRedux: NgRedux<IStore>, private route: ActivatedRoute, private router: Router) {
     this.filtersLastState = Object.assign(Api.atms_transactions.payload, {atmNo: this.route.parent.params['value']['id'] || null});
 
   }
@@ -70,8 +70,9 @@ export class AtmsTransactionsComponent implements OnInit, OnDestroy {
   }
 
   showTransaction(e){
-    this.transaction=true;
-    this.transactionId=e.data.transactionId;
+    this.router.navigate([e.data.transactionId], { relativeTo: this.route });
+    // this.transaction=true;
+    // this.transactionId=Object.assign({},{id:e.data.transactionId});
   }
 
   filter(event) {

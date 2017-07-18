@@ -42,7 +42,6 @@ import { ListItemComponent } from './components/list-item/list-item.component';
 import { KeysPipe} from './pipes/keys.pipe';
 import { KeyLabelComponent } from './components/key-label/key-label.component';
 import { AgTranslateMapComponent } from './components/ag-translate-map/ag-translate-map.component';
-import { TransactionComponent } from './components/transaction/transaction.component'
 import {ApiService} from "./services/api-services.service";
 import {GridDefsService} from "./services/grid-defs.service";
 import { AgDiv100Component } from './components/ag-div100/ag-div100.component';
@@ -98,7 +97,6 @@ import { AgBooleanComponent } from './components/ag-boolean/ag-boolean.component
     KeysPipe,
     KeyLabelComponent,
     AgTranslateMapComponent,
-    TransactionComponent,
     AgDiv100Component,
     AddNewHsmComponent,
     AgDirectiveComponent,
@@ -132,7 +130,6 @@ import { AgBooleanComponent } from './components/ag-boolean/ag-boolean.component
     ListItemComponent,
     KeysPipe,
     KeyLabelComponent,
-    TransactionComponent,
     AddNewHsmComponent,
     AddNewEppComponent
   ],

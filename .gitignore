@@ -12,6 +12,7 @@
 .idea
 .project
 .classpath
+.metadata
 .c9/
 *.launch
 .settings/

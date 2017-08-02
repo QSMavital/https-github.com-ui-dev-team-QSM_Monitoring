@@ -117,8 +117,9 @@ export const Atms = {
     eventTextEn: {headerName: 'atms.spec', field: 'eventTextEn', width: 200},
     eventTextLocal: {headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 200},
     eventDestinations: {headerName: 'atms.eventDestinations', field: 'eventDestinations', width: 200},
-    eventSeverity: {headerName: 'atms.severity', field: 'eventSeverity', width: 200,cellRendererFramework: AgStatusComponent},
-    device: {headerName: 'general.device', field: 'device', width: 200}
+    eventSeverity: {headerName: 'atms.severity', field: 'eventSeverity', width: 80,cellRendererFramework: AgStatusComponent},
+    device: {headerName: 'general.device', field: 'device', width: 200},
+    actionItem:{headerName: 'atms.actionItem', field:'actionItem', width:200}
   },
   Events: {
     atmNo: {headerName: 'atms.terminalId', field: 'atmNo', width: 80,suppressSizeToFit: true},
@@ -128,8 +129,9 @@ export const Atms = {
     eventTextEn: {headerName: 'atms.spec', field: 'eventTextEn', width: 200},
     eventTextLocal: {headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 200},
     eventDestinations: {headerName: 'atms.eventDestinations', field: 'eventDestinations', width: 200},
-    eventSeverity: {headerName: 'atms.severity', field: 'eventSeverity', width: 200,cellRendererFramework: AgStatusComponent},
-    device: {headerName: 'atms.device', field: 'device', width: 200}
+    eventSeverity: {headerName: 'atms.severity', field: 'eventSeverity', width: 80,cellRendererFramework: AgStatusComponent},
+    device: {headerName: 'atms.device', field: 'device', width: 200},
+    actionItem:{headerName: 'atms.actionItem', field:'actionItem', width:200}
   },
   Transactions: {
     transactionId: {headerName: 'atms.transactionId', field: 'transactionId', width: 150,suppressSizeToFit: true},

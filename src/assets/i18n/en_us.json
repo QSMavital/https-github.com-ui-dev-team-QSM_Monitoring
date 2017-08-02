@@ -178,7 +178,8 @@
     "TransactionAmount": "Transaction Amount",
     "TransactionDetails": "Transaction Details",
     "TransactionStatus": "Transaction Status",
-    "CardDetails": "Card Details"
+    "CardDetails": "Card Details",
+    "actionItem": "Action Item"
   },
   "atm": {
     "cassette1": "Type 1",
@@ -375,10 +376,10 @@
   },
   "db": {
     "panelTitle": "dashboard",
-    "connectionStatus": "connections",
-    "devicesStatus": "atms status",
-    "onlineStatus": "activity",
-    "issuerActionsStatus": "transactions by issuer",
+   "connectionStatus": "Connections",
+    "devicesStatus": "ATMs Status",
+    "onlineStatus": "Activity",
+    "issuerActionsStatus": "Transactions By Issuer",
     "actionsStatus": "Transactions",
     "inOrder": "in order",
     "exception": "exception",

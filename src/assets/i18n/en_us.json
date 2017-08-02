@@ -30,11 +30,11 @@
     "WINCOR_SIGNATURE": "WINCOR Signature"
   },
   "menu": {
-    "main": "Main",
-    "atms": "ATMs",
-    "epp": "EPP",
-    "hsm": "HSM",
-    "reports": "Reports"
+    "main": "main",
+    "atms": "atms",
+    "epp": "epp",
+    "hsm": "hsm",
+    "reports": "reports"
   },
   "general": {
     "removeDate": "Removal Date",

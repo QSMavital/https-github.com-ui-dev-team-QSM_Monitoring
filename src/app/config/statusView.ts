@@ -24,14 +24,17 @@ export const StatusView = {
   DECLINED: {color: colors.yellow},
   APPROVED_TEMPORARY: {color: colors.green},
   REVERSED_SHVA: {color: colors.red},
-  CLOSED: {color: colors.green},
+  CLOSED: {color: colors.red},
   OPEN: {color: colors.green},
   LOADING: {color: colors.yellow},
   SUPERVISOR: {color: colors.yellow},
   NONE: {color: colors.blue},
   IN_PROCESS: {color: colors.yellow},
   FAILED: {color: colors.red},
-  DONE: {color: colors.green}
+  DONE: {color: colors.green},
+  LOGGED_OFF: {color: colors.red},
+  LOGGED_ON:{color:colors.green},
+  OFFLINE:{color:colors.red}
 
 };
 

@@ -10,6 +10,7 @@ import {FormGroup} from "@angular/forms";
 import {CustomControlGroup} from "../../../config/interfaces/form.interface";
 import {Router} from "@angular/router";
 import {Api} from "../../../config/api";
+import {Atms} from "../../../config/atms";
 
 @Component({
   selector: 'ui-inventory',
@@ -18,6 +19,8 @@ import {Api} from "../../../config/api";
 })
 export class InventoryComponent implements OnInit, OnDestroy {
   public addNew = false;
+   public selectedItems = 0;
+   public atmsActions = Atms.Actions;
   public filtersData = {};
   public filtersLastState = {
     status: null,
@@ -45,7 +48,8 @@ export class InventoryComponent implements OnInit, OnDestroy {
     let colsDef = this.ngRedux.getState().userSettings.atmsCustomization['atmsSupply'];
     this.gridOptions = this.gridDefsSrv.initGridOptionsPagination(100);
     this.gridOptions.columnDefs = this.gridDefsSrv.initAtmsGridColDefs(colsDef, 'Inventory');
-
+    this.gridOptions.rowSelection = 'multiple';
+    
     this.dataSource = {
       getRows: (params) => {
         this.ngRedux.dispatch({
@@ -94,6 +98,21 @@ export class InventoryComponent implements OnInit, OnDestroy {
       })
     });
 
+  }
+
+  action(type, list = null) {
+    let atmList = null;
+    if (!isNullOrUndefined(list)) {
+      atmList = [];
+      list.forEach((item) => {
+        atmList.push(item.terminalId);
+      })
+    }
+    this.ngRedux.dispatch({type: AtmsActions.ATMS_ACTION, payload: {action: type, atmList}});
+  }
+
+  selection(e) {
+    this.selectedItems = this.gridOptions.api.getSelectedRows().length;
   }
 
 }

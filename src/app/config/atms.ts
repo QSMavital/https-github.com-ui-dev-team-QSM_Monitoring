@@ -14,7 +14,11 @@ export const Atms = {
     transactions: {label: 'atms.tabs.transactions', state: 'transactions'}
   },
   Inventory: {
-    terminalId: {headerName: "atms.terminalId", field: "terminalId", width: 100},
+    terminalId: {
+      cellRenderer: 'group',
+      cellRendererParams: {checkbox: true},
+      headerName: "atms.terminalId", field: "terminalId", width: 100
+    },
     atmName: {headerName: "atms.atmName", field: "atmName", width: 130},
     terminalStatus: {
       headerName: "atms.terminalStatus",

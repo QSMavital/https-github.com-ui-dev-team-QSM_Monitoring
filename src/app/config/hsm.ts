@@ -17,7 +17,7 @@ export const Hsm = {
       hsmAddress: {headerName: "atms.ipAddress", field: "hsmAddress", width: 150},
       portNumber: {headerName: "atms.portNumber", field: "hsmPort", width: 100},
       hsmStatus: {headerName: "hsm.tabs.status", field: "hsmStatusColor", width: 100, cellRendererFramework: AgStatusComponent},
-      sessionNumber: {headerName: "hsm.status.sessionNumber", field: "numberOfSessions", width: 100}
+      sessionNumber: {headerName: "hsm.status.sessionNumbers", field: "numberOfSessions", width: 100}
     },
     actions:[
       {value:"ADD_SESSION",label:"hsm.status.ADD_SESSION"},
@@ -36,8 +36,8 @@ export const Hsm = {
       SESSION_TEST:"SESSION_TEST",
     },
     linkTable: {
-      hsmType: {headerName: "hsm.status.hsmType", field: "sessionNumber", width: 200, cellRenderer: 'group', cellRendererParams: {checkbox: true}},
       serial: {headerName: "hsm.status.serial", field: "hsmSerialId", width: 150},
+      sessionNumber: {headerName: "hsm.status.sessionNumber", field: "sessionNumber", width: 200, cellRenderer: 'group', cellRendererParams: {checkbox: true}},
       type: {headerName: "hsm.status.type", field: "sessionType", width: 150,cellRendererFramework: AgTranslateMapComponent},
       status: {headerName: "general.status", field: "sessionStatus", width: 200,cellRendererFramework: AgTranslateMapComponent},
       directive: {headerName: "hsm.status.directive", field: "sessionRequest", width: 150,cellRendererFramework: AgTranslateMapComponent}

@@ -177,7 +177,8 @@
     "TransactionAmount": "Transaction Amount",
     "TransactionDetails": "Transaction Details",
     "TransactionStatus": "Transaction Status",
-    "CardDetails": "Card Details"
+    "CardDetails": "Card Details",
+    "actionItem" : "Action Item"
   },
   "atm": {
     "cassette1": "סוג מחסנית 1",

@@ -13,15 +13,21 @@ import {isNullOrUndefined} from "util";
 export class ConnectionStatusComponent implements OnInit, OnDestroy {
 
   private unsubscriber;
-  public data: any[];
+  public data: any;
   @select(['dashboard', 'connectionStatus']) $connectionStatus: Observable<any>;
 
-  constructor(private store: NgRedux<IStore>) { }
+  constructor(private store: NgRedux<IStore>) { 
+    this.data = {
+      connections: [],
+      summaryStatusView : 'GOOD'
+    }
+  }
 
   subscribe() {
     this.unsubscriber = this.$connectionStatus.subscribe((state) => {
       if (!isNullOrUndefined(state)) {
-        this.data = state;
+        this.data.connections = state.connections;
+        this.data.summaryStatusView = state.summaryStatusView;
       }
     })
   }

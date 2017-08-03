@@ -23,7 +23,7 @@ export class AtmsNotificationsComponent implements OnInit {
   constructor(private ngRedux: NgRedux<IStore>,
               private gridDefsSrv: GridDefsService,
               private route: ActivatedRoute) {
-    this.filtersLastState = Object.assign(Api.atms_events.payload,{eventSeverity:["FATAL", "ERROR", "WARN", "INFO"]},{atmNo:this.route.parent.params['value']['id'] || null});
+    this.filtersLastState = Object.assign(Api.atms_events.payload,{eventSeverity:["FATAL", "ERROR"]},{atmNo:this.route.parent.params['value']['id'] || null});
   }
 
   ngOnInit() {

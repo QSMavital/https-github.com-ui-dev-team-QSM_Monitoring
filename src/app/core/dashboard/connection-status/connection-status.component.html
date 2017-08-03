@@ -1,7 +1,7 @@
 <div class="stretch-height">
   <ui-portlet class="stretch-height" [header]="'db.connectionStatus' | translate">
     <div class="wrapper ui-space-t-small ui-space-lr-regular" fxLayout="column" fxLayoutWrap="true" *ngIf="data">
-      <div *ngFor="let item of data" class="ui-space-b-regular">
+      <div *ngFor="let item of data.connections" class="ui-space-b-regular">
         <ui-status-indicator [status]="item.statusView" [title]="item?.connectionName?.toUpperCase()">
           {{item.connectionName}}
         </ui-status-indicator>

@@ -13,7 +13,6 @@ import {StatusView} from "../../../../config/statusView";
 export class ConnectionSmallComponent implements OnInit, OnDestroy {
 
   private unsubscriber: any;
-  private list: any[] = [];
   private statusView: any;
 
   @select(['dashboard', 'connectionStatus']) $status;
@@ -22,14 +21,12 @@ export class ConnectionSmallComponent implements OnInit, OnDestroy {
     this.statusView = StatusView;
   }
 
-  public get shortList() {
-    return this.list.slice(0, 3);
-  }
 
   subscribe() {
     this.unsubscriber = this.$status.subscribe(state => {
-      if (!isNullOrUndefined(state))
-        this.list = state;
+      if (!isNullOrUndefined(state)){
+        this.statusView = state.summaryStatusView;
+      }
     });
   }
 

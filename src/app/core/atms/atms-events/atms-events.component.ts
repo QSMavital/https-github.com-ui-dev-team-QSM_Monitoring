@@ -28,7 +28,7 @@ export class AtmsEventsComponent implements OnInit, OnDestroy {
   constructor(private ngRedux: NgRedux<IStore>,
               private gridDefsSrv: GridDefsService,
               private route: ActivatedRoute) {
-    this.filtersLastState = Object.assign(Api.atms_events.payload,{eventSeverity:["INFO"]},{atmNo:this.route.parent.params['value']['id'] || null});
+    this.filtersLastState = Object.assign(Api.atms_events.payload,{eventSeverity:["INFO", "WARN", "ERROR", "FATAL"]},{atmNo:this.route.parent.params['value']['id'] || null});
   }
 
   ngOnInit() {

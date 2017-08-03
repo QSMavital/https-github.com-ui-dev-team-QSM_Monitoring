@@ -17,7 +17,7 @@ export function ActionsStatusReducer(state: any = INITIAL_STATE_ACTIONS_STATUS, 
 export function ConnectionStatusReducer(state: any = INITIAL_STATE_CONNECTION_STATUS, action:any) {
   switch (action.type) {
     case DashboardActions.WIDGET_SET_CONNECTION_STATUS:
-      return [...action.payload];
+      return Object.assign({},action.payload);
     default:
       return state;
   }

@@ -8,8 +8,8 @@ export const Dashboard = {
   },
   Small_Widgets:{
     ConnectionStatusComponent: {widget: 'ConnectionSmallComponent'},
+    DevicesStatusComponent:{widget: 'DevicesSmallComponent'},
     ActionsStatusComponent: {widget: 'ActionsSmallComponent'},
     OnlineStatusComponent: {widget: 'OnlineSmallComponent'}
-
 }
 }

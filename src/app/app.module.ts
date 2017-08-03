@@ -95,6 +95,7 @@ import {AgBooleanComponent} from "./shared/components/ag-boolean/ag-boolean.comp
 import {ReportsFilterComponent} from './core/reports/components/reports-filter/reports-filter.component';
 import {ReportsDataComponent} from './core/reports/components/reports-data/reports-data.component';
 import {TransactionComponent} from "./core/atms/atms-transaction/atms-transaction.component";
+import { DevicesSmallComponent } from './core/dashboard/closed-bar-widgets/device-small/device-small.component';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -160,7 +161,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     HsmFilterComponent,
     ReportsFilterComponent,
     ReportsDataComponent,
-    TransactionComponent
+    TransactionComponent,
+    DevicesSmallComponent
   ],
   imports: [
     DialogModule,
@@ -227,7 +229,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     ActionsStatusComponent,
     ConnectionSmallComponent,
     ActionsSmallComponent,
-    OnlineSmallComponent
+    OnlineSmallComponent,
+    DevicesSmallComponent
   ],
   bootstrap: [AppComponent]
 })

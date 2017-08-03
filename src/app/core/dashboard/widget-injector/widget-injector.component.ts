@@ -8,6 +8,7 @@ import {ActionsStatusComponent} from "../actions-status/actions-status.component
 import {OnlineSmallComponent} from "../closed-bar-widgets/online-small/online-small.component";
 import {ConnectionSmallComponent} from "../closed-bar-widgets/connection-small/connection-small.component";
 import {ActionsSmallComponent} from "../closed-bar-widgets/actions-small/actions-small.component";
+import{DevicesSmallComponent} from "../closed-bar-widgets/device-small/device-small.component"
 
 
 @Component({
@@ -32,7 +33,8 @@ export class WidgetInjectorComponent implements OnInit {
       ActionsStatusComponent,
       OnlineSmallComponent,
       ConnectionSmallComponent,
-      ActionsSmallComponent
+      ActionsSmallComponent,
+      DevicesSmallComponent
     };
 
     let Obj = new DashboardInject(components[this.widget], this.data);

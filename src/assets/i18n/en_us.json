@@ -82,11 +82,11 @@
     "city":"City",
     "tabs": {
       "inventory": "Supplies",
-      "status": "status",
-      "notifications": "alerts",
-      "events": "events",
-      "transactions": "transactions",
-      "transaction": "transaction"
+      "status": "Status",
+      "notifications": "Alerts",
+      "events": "Events",
+      "transactions": "Transactions",
+      "transaction": "Transaction"
     },
     "filters": {
       "chooseAtm": "ATM:",
@@ -247,14 +247,14 @@
     "otherAccessoriesInfo": "Other Accessories Info",
     "LASTGOODWDRL": "Last good withdrawal",
     "tabs": {
-      "status": "atm status",
-      "accessories": "accessories status",
-      "retainedCards": "retained cards",
-      "settings": "settings",
-      "notifications": "alerts",
-      "events": "events",
-      "transactions": "transactions",
-      "transaction": "transaction"
+      "status": "ATM Status",
+      "accessories": "Accessories Status",
+      "retainedCards": "Retained Cards",
+      "settings": "Settings",
+      "notifications": "Alerts",
+      "events": "Events",
+      "transactions": "Transactions",
+      "transaction": "Transaction"
     },
     "settings": {
       "atmGeneralSettings": "Settings",

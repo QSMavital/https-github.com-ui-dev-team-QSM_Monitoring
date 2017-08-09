@@ -1,6 +1,9 @@
 <ul class="fs20 bold">
-  <li><i class="ui-icons-info"></i></li>
+  <li><i class="ui-icons-info" (click)="open()"></i></li>
   <!--<li><i class="ui-icons-mail"></i></li>-->
   <li><i class="ui-icons-print"></i></li>
   <!--<li><i aria-hidden="true" class="ui-icons ui-icons-save"></i></li>-->
 </ul>
+<info-dialog [(show)]="showModal" [qswitchVersion] = "qswitchVersion" [operatorVersion] = "operatorVersion"></info-dialog>
+
+

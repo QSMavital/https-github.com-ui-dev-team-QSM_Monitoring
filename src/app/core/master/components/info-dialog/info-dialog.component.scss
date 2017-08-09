@@ -1,0 +1,11 @@
+ @import "./src/styles/helpers/brand";
+a {
+      color: $blue-haze;
+      margin:20px;
+   }
+.info-dialog{
+    left: 120px !important;
+    top: 490px !important;
+    width: 390px; 
+    height: 150px;
+}

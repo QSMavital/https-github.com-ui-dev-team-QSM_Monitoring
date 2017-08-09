@@ -19,6 +19,7 @@ import {notificationsReducer} from "./reducers/notifications-reducer";
 import {HsmStatisticsReducer, HsmReducer} from "./reducers/hsms-reducer";
 import {EppReducer} from "./reducers/epp-reducer";
 import {ReportsSettlementReducer} from "./reducers/reports-reducer";
+import {actionMenuReducer} from "./reducers/action-menu-reducer";
 
 
 export class IStore {
@@ -27,6 +28,7 @@ export class IStore {
   notifications?: any;
   userSettings?: any;
   generalCustomer?: any;
+  actionMenu?:any;
 }
 
 class IDashboard {
@@ -72,6 +74,7 @@ export const rootReducer = combineReducers<IStore>({
   notifications: notificationsReducer,
   userSettings: userSettingsReducer,
   generalCustomer: generalCustomerReducer,
+  actionMenu: actionMenuReducer,
   dashboard: combineReducers<IDashboard>({
     connectionStatus: ConnectionStatusReducer,
     deviceStatus: DeviceStatusReducer,

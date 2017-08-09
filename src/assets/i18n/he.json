@@ -75,7 +75,12 @@
     "keyType": "Key Type",
     "kcv": "KCV",
     "week":"Week",
-    "day":"Day"
+    "day":"Day",
+    "operatorVersion": "Operator version ",
+    "qswitchVersion": "QSwitch version ",
+    "copyrights": "QSwitch Copyright (C) 2014 to present, QSM Programming Ltd. All rights reserved",
+    "website": "www.qsm.co.il",
+    "companyMail": "support@qsm.co.il"
   },
   "atms": {
     "city":"City",

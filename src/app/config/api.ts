@@ -3,6 +3,7 @@ const apiEntryPoint = "/operator/api";
 export const Api = {
   init: {url: `${apiEntryPoint}/general/settingsUser/get`, payload: {}},
   customer: {url: `${apiEntryPoint}/general/get`, payload: {}},
+  version: {url: `${apiEntryPoint}/general/version/get`, payload: {}},
   dashboard_connection: {url: `${apiEntryPoint}/main/connection/get`, payload: {}},
   dashboard_device_status: {url: `${apiEntryPoint}/main/deviceStatus/get`, payload: {}},
   dashboard_action_status: {url: `${apiEntryPoint}/main/actionStatus/get`, payload: {}},

@@ -69,6 +69,7 @@ import {Atms as AtmsMiddleware} from "../store/middlewares/atms-middleware";
 import {Atm as AtmMiddleware} from "../store/middlewares/atm-middleware";
 import {Hsm as HsmMiddleware} from "../store/middlewares/hsm-middleware";
 import {Epp as EppMiddleware} from "../store/middlewares/epp-middleware";
+import {ActionMenu as ActionMenuMiddleware} from "../store/middlewares/action-menu-middleware";
 import {AgDateShortComponent} from "./shared/components/ag-date-short/ag-date-short.component";
 import {AgTimeComponent} from "./shared/components/ag-time/ag-time.component";
 import {MasonryModule} from 'angular2-masonry';
@@ -96,6 +97,8 @@ import {ReportsFilterComponent} from './core/reports/components/reports-filter/r
 import {ReportsDataComponent} from './core/reports/components/reports-data/reports-data.component';
 import {TransactionComponent} from "./core/atms/atms-transaction/atms-transaction.component";
 import { DevicesSmallComponent } from './core/dashboard/closed-bar-widgets/device-small/device-small.component';
+import { InfoDialogComponent } from './core/master/components/info-dialog/info-dialog.component';
+
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -162,7 +165,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     ReportsFilterComponent,
     ReportsDataComponent,
     TransactionComponent,
-    DevicesSmallComponent
+    DevicesSmallComponent,
+    InfoDialogComponent
   ],
   imports: [
     DialogModule,
@@ -218,6 +222,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     AtmMiddleware,
     Reports,
     EppMiddleware,
+    ActionMenuMiddleware,
     SettingsResolverService,
     DecimalPipe
   ],
@@ -243,6 +248,7 @@ export class AppModule {
               private epp: EppMiddleware,
               private reports: Reports,
               private atm: AtmMiddleware,
+              private actionMenu:ActionMenuMiddleware,
               private dashboard: Dashboard,
               private devTools: DevToolsExtension) {
     var updatedEnhancers = [];
@@ -250,7 +256,7 @@ export class AppModule {
       updatedEnhancers = [...enhancers, devTools.enhancer()];
     } else
       updatedEnhancers = [...enhancers];
-    const middlewares = [customer.Middleware, dashboard.Middleware, atms.Middleware, atm.Middleware, hsm.Middleware, epp.Middleware, reports.Middleware];
+    const middlewares = [customer.Middleware, dashboard.Middleware, atms.Middleware, atm.Middleware, hsm.Middleware, epp.Middleware, reports.Middleware, actionMenu.Middleware];
     this.ngRedux.configureStore(rootReducer, {}, middlewares, updatedEnhancers);
 
   }

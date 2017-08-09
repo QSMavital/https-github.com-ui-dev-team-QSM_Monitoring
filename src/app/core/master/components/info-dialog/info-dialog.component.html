@@ -1,0 +1,26 @@
+<p-dialog [(visible)]="show"  [closeOnEscape]="true" modal="true" class="dialog-no-padding">
+  <p-header>Information</p-header>
+  <div class="ui-space-tb-regular ui-space-l-regular info-dialog">
+
+   <ui-label> {{'general.operatorVersion' | translate }} {{operatorVersion}}</ui-label> &nbsp; &nbsp; &nbsp; &nbsp;
+     <ui-label>   {{'general.qswitchVersion' | translate }} {{qswitchVersion}}</ui-label>
+     
+      <br>
+      <br>
+      <br>
+      <ui-label class="ui-space-r-tiny"> 
+           {{'general.copyrights' | translate}}
+      </ui-label>
+     <br>
+     <br>
+     <br>
+     <a href="http://www.qsm.co.il" target="_blank">{{'general.website' | translate}}</a>&nbsp; &nbsp; &nbsp; &nbsp;
+     <a href="mailto:name@email.com">{{'general.companyMail' | translate}}</a> 
+    </div>
+
+  <p-footer>
+    <span class="pull-right">
+      <button (click)="show = !show" class="btn blue-btn">{{'general.close' | translate}}</button>
+    </span>
+  </p-footer>
+</p-dialog>

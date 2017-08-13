@@ -43,7 +43,7 @@ export const Reports = {
       cellRendererFramework: AgTranslateMapComponent
     },
     remove: {
-      headerName: "general.remove",
+      headerName: "general.removeDate",
       field: "remove",
       width: 200,
       cellRendererFramework: AgBooleanComponent,

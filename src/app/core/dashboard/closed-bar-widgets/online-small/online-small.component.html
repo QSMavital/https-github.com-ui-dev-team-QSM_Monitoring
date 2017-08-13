@@ -1,7 +1,7 @@
 <div class="wrapper stretch-height">
   <div fxLayout="column" fxLayoutAlign="center center" class="stretch-height">
     <div class="stretch-width" fxFlex="65" fxLayout="column" fxLayoutAlign="center center">
-      <div class="right-panel-closed-title fs12 bold">{{'db.onlineStatus' | translate}}</div>
+      <div class="right-panel-closed-title fs12 bold">{{'db.onlineSmallStatus' | translate}}</div>
     </div>
     <div class="relative stretch-width text-center ui-space-tb-small green tag"
          [ngClass]="{'red':(data.currentOnline < data.avg*0.2) ||(data.currentOnline > (data.avg*2-(data.avg*0.2)))}"

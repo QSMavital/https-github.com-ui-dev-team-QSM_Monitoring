@@ -250,6 +250,9 @@
     "checkInfo": "Check deposit",
     "otherAccessoriesInfo": "אביזרים אחרים",
     "LASTGOODWDRL": "משיכה מוצלחת אחרונה",
+    "emvNotOurs": "EMV Not Ours",
+    "emvOurs": "EMV Ours",
+    "emvTourist" :"EMV Tourist",
     "tabs": {
       "status": "מצב מכשיר",
       "accessories": "מצב אביזרים",
@@ -297,7 +300,11 @@
       "accessoriesDispenserInfo": {
         "cassetteType": "Cassette Type",
         "general": "General",
-        "rejectBin" :"Reject Bin"
+        "rejectBin" :"Reject Bin",
+        "1": "1",
+        "2":"2",
+        "3":"3",
+        "4":"4"
       }
     }
   },

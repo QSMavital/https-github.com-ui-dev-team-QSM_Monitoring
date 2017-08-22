@@ -295,7 +295,9 @@
     },
     "accessories": {
       "accessoriesDispenserInfo": {
-        "cassetteType": "Cassette Type"
+        "cassetteType": "Cassette Type",
+        "general": "General",
+        "rejectBin" :"Reject Bin"
       }
     }
   },

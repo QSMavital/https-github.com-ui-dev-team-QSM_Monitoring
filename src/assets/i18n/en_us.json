@@ -21,7 +21,8 @@
     "NIS": "NIS",
     "USD": "USD",
     "EUR": "EUR",
-    "NONE": "Not in use"
+    "NONE": "Not in use",
+     "" : "-"
   },
   "rklProtocol": {
     "NONE": "None",
@@ -40,8 +41,8 @@
     "removeDate": "Removal Date",
     "all": "All ATM's",
     "selected": "Selected Atm's",
-    "date": "date",
-    "time": "time",
+    "date": "Date",
+    "time": "Time",
     "close": "close",
     "lastNotifications": "last alert",
     "id": "Id",
@@ -58,14 +59,14 @@
     "transactionStatus": "Transaction Status",
     "approver": "approver",
     "rejectReason": "Reject Reason",
-    "atmFeeAmount": "atm Fee",
+    "atmFeeAmount": "ATM Fee",
     "lastWithdrawal": "last withdrawal",
     "remainingCash": "remaining cash",
     "retainedCards": "retained cards",
     "cardSettlement": "card settlement",
     "branch": "branch",
     "lastActivity": "last activity",
-    "lastSettlement": "last settlement",
+    "lastSettlement": "Last Settlement",
     "businessDay": "business day",
     "search": "search",
     "submit": "submit",
@@ -100,7 +101,7 @@
       "fromDate": "From Date:",
       "toDate": "To Date:"
     },
-    "terminalId": "ATM id",
+    "terminalId": "ATM Id",
     "denomination": "Denom",
     "atmName": "Name",
     "transactionType": "Transaction Type",
@@ -191,7 +192,7 @@
     "cassette2": "Type 2",
     "cassette3": "Type 3",
     "cassette4": "Type 4",
-    "lastSettleDispenseList": "last Settlement",
+    "lastSettleDispenseList": "Last Settlement",
     "accessoriesDispenserInfo": "Dispenser Info",
     "item": "item",
     "city": "city",
@@ -213,8 +214,8 @@
     "lastSuccessful": "Last successful",
     "lastReset": "Last reset",
     "alert": "alert",
-    "counter": "counter",
-    "printers": "printer",
+    "counter": "Counter",
+    "printers": "Printer",
     "checks": "checks",
     "other": "other",
     "atmSettings": "ATM Settings",
@@ -238,7 +239,7 @@
     "sumDispensed": "Total Dispensed",
     "sumRemaing": "Total Remaining",
     "lastGoodWithrawal": "last Withdrawal",
-    "lastSettelement": "last Settlement",
+    "lastSettelement": "Last Settlement",
     "transactionId": "transaction Id",
     "lastCheckDeposit": "last Check Deposit",
     "lastSettelementCheckDeposit": "last Settlement Check Deposit",
@@ -251,6 +252,10 @@
     "checkInfo": "Check deposit",
     "otherAccessoriesInfo": "Other Accessories Info",
     "LASTGOODWDRL": "Last good withdrawal",
+    "emvNotOurs": "EMV Not Ours",
+    "emvOurs": "EMV Ours",
+    "emvTourist" :"EMV Tourist",
+ 
     "tabs": {
       "status": "ATM Status",
       "accessories": "Accessories Status",
@@ -265,9 +270,10 @@
       "atmGeneralSettings": "Settings",
       "atmCassettesSettings": "Cassettes",
       "disableSettings": "Disable",
-      "terminalNearestSettings": "Nearest terminal Settings",
+      "terminalNearestSettings": "Nearest Terminal Settings",
       "treatmentDeviceSettings": "Problem Resolution",
-      "limitationAmountsSettings": "Limits"
+      "limitationAmountsSettings": "Limits",
+      "emvSettings": "EMV Settings"
     },
     "status": {
       "general": {
@@ -296,15 +302,23 @@
     },
     "accessories": {
       "accessoriesDispenserInfo": {
-        "cassetteType": "Cassette Type"
+        "cassetteType": "Cassette Type",
+        "general": "General",
+        "rejectBin" :"Reject Bin",
+        "1": "1",
+        "2":"2",
+        "3":"3",
+        "4":"4"
+
       }
+    
     }
   },
   "hsm": {
     "addNewHsm": "Add New Hsm",
     "tabs": {
       "status": "HSM Status",
-      "statistics": "hsm statistics"
+      "statistics": "HSM Statistics"
     },
     "status": {
       "all": "All HSM's",
@@ -313,8 +327,8 @@
       "sessions": "Sessions",
       "directive": "Request",
       "serial": "Serial",
-      "sessionNumber": "SESSION Number",
-      "sessionNumbers": "SESSION Numbers",
+      "sessionNumber": "Session Number",
+      "sessionNumbers": "Session Numbers",
       "type": "Type",
       "port": "Port",
       "addAtm": "Add new HSM",
@@ -332,13 +346,13 @@
     },
     "statistics": {
       "session": "Session",
-      "ValidCodeActions": "Valid PIN actions",
-      "InvalidCodeActions": "Invalid PIN actions",
-      "ValidMacActions": "Valid mac actions",
-      "InvalidMacActions": "Invalid mac actions",
-      "otherValidActions": "other Valid actions",
-      "otherInvalidActions": "other Invalid actions",
-      "failedActions": "failed actions"
+      "ValidCodeActions": "Valid PIN Actions",
+      "InvalidCodeActions": "Invalid PIN Actions",
+      "ValidMacActions": "Valid Mac Actions",
+      "InvalidMacActions": "Invalid Mac Actions",
+      "otherValidActions": "Other Valid Actions",
+      "otherInvalidActions": "Other Invalid Actions",
+      "failedActions": "Failed Actions"
     },
     "filters":{
       "date":"Date:",
@@ -389,7 +403,7 @@
     "inOrder": "in order",
     "exception": "exception",
     "attention": "attention",
-    "disabled": "disabled",
+    "disabled": "Disabled",
     "broken": "broken",
     "needToBeFixed": "need to be fixed",
     "unavailable": "unavailable",

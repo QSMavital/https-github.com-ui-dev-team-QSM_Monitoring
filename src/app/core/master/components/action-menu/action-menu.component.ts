@@ -16,9 +16,9 @@ export class ActionMenuComponent implements OnInit, OnDestroy {
 
   @select(['actionMenu']) $actionMenu: Observable<any>;
   private unsubscriber;
-  private showModal:boolean;
-  private qswitchVersion : string = "";
-  private operatorVersion: string = "";
+  public showModal:boolean;
+  public qswitchVersion : string = "";
+  public operatorVersion: string = "";
   constructor(private ngRedux: NgRedux<IStore>) {
    }
 
@@ -35,7 +35,7 @@ export class ActionMenuComponent implements OnInit, OnDestroy {
       }
     })
   }
-  open(){
+  onChange(){
     this.showModal = !this.showModal;
     this.ngRedux.dispatch({type: ActionMenuActions.GENERAL_GET_VERSION});
   }

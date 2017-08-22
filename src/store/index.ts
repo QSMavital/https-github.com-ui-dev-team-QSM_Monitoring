@@ -29,6 +29,7 @@ export class IStore {
   userSettings?: any;
   generalCustomer?: any;
   actionMenu?:any;
+  lastAction?:any;
 }
 
 class IDashboard {
@@ -67,6 +68,9 @@ class IEpp {
   epps?: any;
 }
 
+function lastAction(state = null, action) {
+  return action;
+}
 
 export const rootReducer = combineReducers<IStore>({
   loader: loaderReducer,
@@ -102,7 +106,8 @@ export const rootReducer = combineReducers<IStore>({
   }),
   reports: combineReducers<IReports>({
     settlement: ReportsSettlementReducer
-  })
+  }),
+  lastAction
 });
 
 export const enhancers = [

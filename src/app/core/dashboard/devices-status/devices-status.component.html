@@ -2,7 +2,7 @@
   <div class="wrapper relative ui-space-t-small" fxLayout="row" fxLayoutAlign="center center" *ngIf="data">
     <div class="stretch-height text-center" fxFlex="25%" *ngFor="let item of data">
       <div class="label fs12 uppercase">{{item.title | translate}}</div>
-      <div class="gauge-wrapper relative" *ngIf="item.value">
+      <div class="gauge-wrapper relative" *ngIf="item.value" (dblclick)="filter(item.statusView)">
         <ui-gauge class="gauge absolute" [width]="'200px'" [config]="item" [value]="item.value"></ui-gauge>
         <div class="icon-wrapper stretch-width absolute"><i class="icon" [ngClass]="item.icon"></i></div>
       </div>

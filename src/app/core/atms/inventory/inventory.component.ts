@@ -32,7 +32,7 @@ export class InventoryComponent implements OnInit, OnDestroy {
   private dataSource;
 
   @select(['atms', 'inventory']) $atms_inventory: Observable<any>;
-
+  
   constructor(private ngRedux: NgRedux<IStore>,
               private gridDefsSrv: GridDefsService,
               private router: Router) {
@@ -61,8 +61,8 @@ export class InventoryComponent implements OnInit, OnDestroy {
           )
         });
         this.$atms_inventory_ref = this.$atms_inventory.subscribe((state) => {
-          if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api)) {
-            params.successCallback(state.atms, state.totalCount <= params.endRow ? state.atms.length : -1);
+           if (!isNullOrUndefined(state) && !isNullOrUndefined(this.gridOptions.api) && this.ngRedux.getState().lastAction.type === AtmsActions.ATMS_SET_INVENTORY ) {
+              params.successCallback(state.atms, state.totalCount <= params.endRow ? state.atms.length : -1);
           }
         });
 

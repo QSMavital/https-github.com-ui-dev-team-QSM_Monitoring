@@ -13,7 +13,7 @@ import {StatusView} from "../../../../config/statusView";
 export class ConnectionSmallComponent implements OnInit, OnDestroy {
 
   private unsubscriber: any;
-  private statusView: any;
+  public statusView: any;
 
   @select(['dashboard', 'connectionStatus']) $status;
 

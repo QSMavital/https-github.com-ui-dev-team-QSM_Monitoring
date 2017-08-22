@@ -27,7 +27,6 @@ export class DevicesSmallComponent implements OnInit {
 
  subscribe() {
     this.unsubscriber = this.$devicesStatus.subscribe((state) => {
-      console.log('state: ', state);
       if (!isNullOrUndefined(state)) {
         if (isArray(state)) {      
             this.list = state;

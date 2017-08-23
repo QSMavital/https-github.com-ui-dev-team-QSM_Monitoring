@@ -1,5 +1,5 @@
 module.exports = function (req, res, next) {
-  //
+  //test
   var delay = 1000;
   setTimeout(function () {
 
@@ -140,7 +140,7 @@ module.exports = function (req, res, next) {
 
 
 var settingsUser = {
-  language: "en_US",
+  language: "en_us",
   menu: ["MAIN", "ATMS", "HSMS", "EPPS", "COMMUNICATION", "REPORTS"],
   atmsCustomization: {
     "atmsTabs": [

@@ -194,6 +194,8 @@
     "cassette4": "סוג מחסנית 4",
     "lastSettleDispenseList": "איזון אחרון",
     "accessoriesDispenserInfo": "Dispenser Info",
+    "accessoriesDispenserSum": "Dispenser Info",
+    "accessoriesDispenserDenom": "Dispenser Denom",
     "item": "item",
     "city": "city",
     "transaction": "transaction",
@@ -252,9 +254,6 @@
     "checkInfo": "Check deposit",
     "otherAccessoriesInfo": "אביזרים אחרים",
     "LASTGOODWDRL": "משיכה מוצלחת אחרונה",
-    "emvNotOurs": "EMV Not Ours",
-    "emvOurs": "EMV Ours",
-    "emvTourist" :"EMV Tourist",
     "tabs": {
       "status": "מצב מכשיר",
       "accessories": "מצב אביזרים",
@@ -300,13 +299,7 @@
     },
     "accessories": {
       "accessoriesDispenserInfo": {
-        "cassetteType": "Cassette Type",
-        "general": "General",
-        "rejectBin" :"Reject Bin",
-        "1": "1",
-        "2":"2",
-        "3":"3",
-        "4":"4"
+        "cassetteType": "Cassette Type"
       }
     }
   },

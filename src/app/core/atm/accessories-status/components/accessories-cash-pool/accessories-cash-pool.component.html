@@ -1,5 +1,5 @@
 <ui-controls-group fxLayout="column" class="stretch-height"
-                   [header]="'atm.accessoriesDispenserInfo' | translate">
+                   [tabs]="tabs" (onChange)="changeTab($event)">
   <div fxFlex>
     <ag-grid-angular
       fxFlex

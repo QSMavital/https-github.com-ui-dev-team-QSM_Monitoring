@@ -98,6 +98,7 @@ import {ReportsDataComponent} from './core/reports/components/reports-data/repor
 import {TransactionComponent} from "./core/atms/atms-transaction/atms-transaction.component";
 import { DevicesSmallComponent } from './core/dashboard/closed-bar-widgets/device-small/device-small.component';
 import { InfoDialogComponent } from './core/master/components/info-dialog/info-dialog.component';
+import { AgDivDenomComponent } from './shared/components/ag-div-denom/ag-div-denom.component';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -166,7 +167,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     ReportsDataComponent,
     TransactionComponent,
     DevicesSmallComponent,
-    InfoDialogComponent
+    InfoDialogComponent,
+    AgDivDenomComponent
   ],
   imports: [
     DialogModule,
@@ -205,7 +207,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       AgDiv100Component,
       AgDirectiveComponent,
       AgNumberComponent,
-      AgBooleanComponent
+      AgBooleanComponent,
+      AgDivDenomComponent
     ])
   ],
   providers: [

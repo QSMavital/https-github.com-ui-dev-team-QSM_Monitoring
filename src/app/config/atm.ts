@@ -7,6 +7,7 @@ import {AgTranslateMapComponent} from "../shared/components/ag-translate-map/ag-
 import {GeneralConstants} from "./general_consts";
 import {AgDiv100Component} from "../shared/components/ag-div100/ag-div100.component";
 import {AgDivDenomComponent} from "../shared/components/ag-div-denom/ag-div-denom.component";
+import {AgCheckEmpty} from "../shared/components/ag-check-empty/ag-check-empty";
 
 export const Atm = {
   Tabs: {
@@ -472,6 +473,27 @@ export const Atm = {
         }
       ]
     },
+    emvSettings:{
+      label: ["atm.settings.emvSettings"],
+      name: "emvSettings",
+      controls: [
+        {
+          name: 'emvNotOurs',
+          label: 'atm.emvNotOurs',
+          type: 'checkbox'
+        },
+        {
+          name: 'emvOurs',
+          label: 'atm.emvOurs',
+          type: 'checkbox'
+        },
+        {
+          name: 'emvTourist',
+          label: 'atm.emvTourist',
+          type: 'checkbox'
+        }
+      ]
+    }
   },
   Accessories: {
     CashPool: {
@@ -480,15 +502,15 @@ export const Atm = {
         'dispenserDenom': {label: 'atm.accessoriesDispenserDenom', active: 'false'}
       },
       AmountData:{
-        cassetteType: {headerName: "atm.accessories.accessoriesDispenserInfo.cassetteType", field: "cassetteType", width: 115, suppressSizeToFit: true},
-        statusColor: {headerName: "atms.tabs.status", field: "statusColor", width: 95, cellRendererFramework: AgStatusComponent, suppressSizeToFit: true},
-        supply: {headerName: "general.supply", field: "supply", width: 80, cellRendererFramework: AgProgressComponent, suppressSizeToFit: true},
-        currencyCode: {headerName: "general.CurrencyCode", field: "currencyCode", width: 100, cellRendererFramework: AgTranslateMapComponent, suppressSizeToFit: true},
-        denomination: {headerName: "atms.denomination", field: "denomination", width: 130,cellRendererFramework:AgDiv100Component, suppressSizeToFit: true},
-        loaded: {headerName: "atm.loaded", field: "loaded", width: 90, suppressSizeToFit: true},
-        dispensed: {headerName: "atm.dispensed", field: "dispensed", width: 110, suppressSizeToFit: true},
-        rejected: {headerName: "atm.rejected", field: "rejected", width: 110, suppressSizeToFit: true},
-        remaining: {headerName: "atm.remaining", field: "remaining", width: 110, suppressSizeToFit: true}
+        cassetteType: {headerName: "atm.accessories.accessoriesDispenserInfo.cassetteType", field: "cassetteType", width: 115,cellRendererFramework: AgTranslateMapComponent, suppressSizeToFit: true},
+      statusColor: {headerName: "atms.tabs.status", field: "statusColor", width: 95, cellRendererFramework: AgStatusComponent, suppressSizeToFit: true},
+      supply: {headerName: "general.supply", field: "supply", width: 80, cellRendererFramework: AgProgressComponent, suppressSizeToFit: true},
+      currencyCode: {headerName: "general.CurrencyCode", field: "currencyCode", width: 100, cellRendererFramework: AgTranslateMapComponent, suppressSizeToFit: true},
+      denomination: {headerName: "atms.denomination", field: "denomination", width: 130,cellRendererFramework:AgDiv100Component, suppressSizeToFit: true},
+      loaded: {headerName: "atm.loaded", field: "loaded", width: 90, cellRendererFramework: AgCheckEmpty,suppressSizeToFit: true},
+      dispensed: {headerName: "atm.dispensed", field: "dispensed", width: 110, cellRendererFramework: AgCheckEmpty, suppressSizeToFit: true},
+      rejected: {headerName: "atm.rejected", field: "rejected", width: 110,cellRendererFramework: AgCheckEmpty, suppressSizeToFit: true},
+      remaining: {headerName: "atm.remaining", field: "remaining", width: 110,cellRendererFramework: AgCheckEmpty, suppressSizeToFit: true}
       },
        SumData:{
         cassetteType: {headerName: "atm.accessories.accessoriesDispenserInfo.cassetteType", field: "cassetteType", width: 115, suppressSizeToFit: true},

@@ -26,7 +26,6 @@ export class InfoDialogComponent implements OnInit {
 constructor(){}
 
   ngOnInit() {
-    console.log('parameters: ' , this.qswitchVersion, this.operatorVersion);
   }
 
 }

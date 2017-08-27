@@ -19,7 +19,8 @@ export class AgTranslateMapComponent{
     keyStatus:"keyStatus",
     sessionType:"sessionType",
     sessionStatus:"sessionStatus",
-    sessionRequest:"sessionRequest"
+    sessionRequest:"sessionRequest",
+    cassetteType:"atm.accessories.accessoriesDispenserInfo"
   };
 
   agInit(params: any): void {

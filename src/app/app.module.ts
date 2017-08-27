@@ -99,7 +99,7 @@ import {TransactionComponent} from "./core/atms/atms-transaction/atms-transactio
 import { DevicesSmallComponent } from './core/dashboard/closed-bar-widgets/device-small/device-small.component';
 import { InfoDialogComponent } from './core/master/components/info-dialog/info-dialog.component';
 import { AgDivDenomComponent } from './shared/components/ag-div-denom/ag-div-denom.component';
-
+import {AgCheckEmpty} from './shared/components/ag-check-empty/ag-check-empty';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -168,7 +168,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     TransactionComponent,
     DevicesSmallComponent,
     InfoDialogComponent,
-    AgDivDenomComponent
+    AgDivDenomComponent,
+    AgCheckEmpty
   ],
   imports: [
     DialogModule,
@@ -208,7 +209,8 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       AgDirectiveComponent,
       AgNumberComponent,
       AgBooleanComponent,
-      AgDivDenomComponent
+      AgDivDenomComponent,
+      AgCheckEmpty
     ])
   ],
   providers: [

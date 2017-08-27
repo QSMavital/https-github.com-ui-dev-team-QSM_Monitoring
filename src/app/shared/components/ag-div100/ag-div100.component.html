@@ -1,1 +1,1 @@
-{{(params.value*0.01) | number: '1.0-0'}}
+{{params.value ? ((params.value*0.01) | number: '1.0-0') : '-'}}

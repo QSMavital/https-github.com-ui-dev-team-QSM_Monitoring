@@ -47,7 +47,7 @@ export class AtmSettingsComponent implements OnInit {
   }
 
   createForm() {
-    this.atmSettings.forEach((config) => {
+   this.atmSettings.forEach((config) => {
       if (config.visible) {
         this.controlGroups.push(Atm.Settings[config.field]);
       }
@@ -86,8 +86,8 @@ export class AtmSettingsComponent implements OnInit {
       if (!isNullOrUndefined(this.form.controls['cassettesSettings']['controls'][`cassette${index + 1}`].controls['currency'].setValue(item['currencyCode']))){
         this.form.controls['cassettesSettings']['controls'][`cassette${index + 1}`].controls['currency'].setValue(item['currencyCode']);
       }
-      if (!isNullOrUndefined(this.form.controls['cassettesSettings']['controls'][`cassette${index + 1}`].controls['denomination'].setValue(item['denomination']))){
-        this.form.controls['cassettesSettings']['controls'][`cassette${index + 1}`].controls['denomination'].setValue(item['denomination']);
+      if (!isNullOrUndefined(this.form.controls['cassettesSettings']['controls'][`cassette${index + 1}`].controls['denomination'].setValue(item['denomination']/100))){
+        this.form.controls['cassettesSettings']['controls'][`cassette${index + 1}`].controls['denomination'].setValue(item['denomination']/100);
       }
     });
 
@@ -99,6 +99,11 @@ export class AtmSettingsComponent implements OnInit {
       }
 
     })
+    for (var prop in state.emvSettings) {
+      if (!isNullOrUndefined(this.form.controls['emvSettings']['controls'][prop])) {
+        this.form.controls['emvSettings']['controls'][prop].setValue(state.emvSettings[prop]);
+      }
+    }
   }
 
   save() {

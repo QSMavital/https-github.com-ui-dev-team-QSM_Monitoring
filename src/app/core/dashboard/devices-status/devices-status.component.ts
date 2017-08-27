@@ -4,6 +4,10 @@ import {Observable} from "rxjs";
 import {isArray, isNullOrUndefined} from "util";
 import {IStore} from "../../../../store/index";
 import {DashboardActions} from "../../../../store/actions/dashboard-actions";
+import {Router} from "@angular/router";
+import {AtmsActions} from "../../../../store/actions/atms-actions";
+import {Api} from "../../../config/api";
+import {Atms} from "../../../config/atms";
 
 @Component({
   selector: 'ui-devices-status',
@@ -14,10 +18,17 @@ export class DevicesStatusComponent implements OnInit, OnDestroy {
   private unsubscriber;
   public data: any[];
   @select(['dashboard', 'deviceStatus']) $devicesStatus: Observable<any>;
-
-  constructor(private ngRedux: NgRedux<IStore>) {
+  public filtersLastState = {
+    fromLine:0,
+    numOfLine:25,
+    status: null,
+    group: null,
+    area: null
+  };
+  constructor(private ngRedux: NgRedux<IStore>, private router: Router) {
     this.data = this.initData();
     this.ngRedux.dispatch({type: DashboardActions.WIDGET_GET_DEVICE_STATUS});
+     this.filtersLastState = Object.assign(Api.atms_inventory.payload);
   }
 
   initData(): any[] {
@@ -28,7 +39,7 @@ export class DevicesStatusComponent implements OnInit, OnDestroy {
         maxValue: 100,
         minValue: 0,
         value: 0,
-        statusView: 'good',
+        statusView: 'GOOD',
         icon: 'icon-working',
         angle: 1, // The span of the gauge arc
         lineWidth: 0.1, // The line thickness
@@ -47,7 +58,7 @@ export class DevicesStatusComponent implements OnInit, OnDestroy {
         maxValue: 100,
         minValue: 0,
         value: 0,
-        statusView: 'fatal',
+        statusView: 'FATAL',
         icon: 'icon-broken',
         angle: 1, // The span of the gauge arc
         lineWidth: 0.1, // The line thickness
@@ -64,7 +75,7 @@ export class DevicesStatusComponent implements OnInit, OnDestroy {
         type: 'Donut',
         title: 'db.attention',
         maxValue: 100,
-        statusView: 'attention',
+        statusView: 'ATTENTION',
         minValue: 0,
         value: 0,
         icon: 'icon-fix',
@@ -82,7 +93,7 @@ export class DevicesStatusComponent implements OnInit, OnDestroy {
       {
         type: 'Donut',
         title: 'db.disabled',
-        statusView: 'disable',
+        statusView: 'DISABLE',
         maxValue: 100,
         minValue: 0,
         value: 0,
@@ -124,5 +135,9 @@ export class DevicesStatusComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.unsubscriber.unsubscribe();
 
+  }
+  filter(status){
+     this.filtersLastState.status = status;
+     this.router.navigate(['/atms', 'inventory']);
   }
 }

@@ -308,7 +308,7 @@ export const Atm = {
           type: 'inputGroup',
           inputs: [
             {
-              name: 'bankNo',
+              name: 'bank',
               type: 'select',
               options: GeneralConstants.Banks
             },
@@ -329,7 +329,7 @@ export const Atm = {
           type: 'inputGroup',
           inputs: [
             {
-              name: 'bankNo',
+              name: 'bank',
               type: 'select',
               options: GeneralConstants.Banks
             },
@@ -350,7 +350,7 @@ export const Atm = {
           type: 'inputGroup',
           inputs: [
             {
-              name: 'bankNo',
+              name: 'bank',
               type: 'select',
               options: GeneralConstants.Banks
             },
@@ -371,7 +371,7 @@ export const Atm = {
           type: 'inputGroup',
           inputs: [
             {
-              name: 'bankNo',
+              name: 'bank',
               type: 'select',
               options: GeneralConstants.Banks
             },
@@ -497,12 +497,12 @@ export const Atm = {
   },
   Accessories: {
     CashPool: {
-      Tabs:{
+    Tabs:{
         'dispenser': {label: 'atm.accessoriesDispenserSum', active: 'true'},
         'dispenserDenom': {label: 'atm.accessoriesDispenserDenom', active: 'false'}
       },
       AmountData:{
-        cassetteType: {headerName: "atm.accessories.accessoriesDispenserInfo.cassetteType", field: "cassetteType", width: 115,cellRendererFramework: AgTranslateMapComponent, suppressSizeToFit: true},
+      cassetteType: {headerName: "atm.accessories.accessoriesDispenserInfo.cassetteType", field: "cassetteType", width: 115,cellRendererFramework: AgTranslateMapComponent, suppressSizeToFit: true},
       statusColor: {headerName: "atms.tabs.status", field: "statusColor", width: 95, cellRendererFramework: AgStatusComponent, suppressSizeToFit: true},
       supply: {headerName: "general.supply", field: "supply", width: 80, cellRendererFramework: AgProgressComponent, suppressSizeToFit: true},
       currencyCode: {headerName: "general.CurrencyCode", field: "currencyCode", width: 100, cellRendererFramework: AgTranslateMapComponent, suppressSizeToFit: true},

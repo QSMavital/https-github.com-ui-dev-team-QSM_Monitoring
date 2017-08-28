@@ -300,7 +300,6 @@
     },
     "accessories": {
       "accessoriesDispenserInfo": {
-<<<<<<< HEAD
         "cassetteType": "Cassette Type",
         "general": "כללי",
         "rejectBin" :"תא נדחים",
@@ -309,9 +308,6 @@
         "3":"3",
         "4":"4",
         "total": "סך הכל"
-=======
-        "cassetteType": "Cassette Type"
->>>>>>> 6b934e414f94af7d9a63af68339d3165ebd86d18
       }
     }
   },

@@ -255,6 +255,9 @@
     "checkInfo": "Check deposit",
     "otherAccessoriesInfo": "אביזרים אחרים",
     "LASTGOODWDRL": "משיכה מוצלחת אחרונה",
+    "emvNotOurs": "EMV Not Ours",
+    "emvOurs": "EMV Ours",
+    "emvTourist" :"EMV Tourist",
     "tabs": {
       "status": "מצב מכשיר",
       "accessories": "מצב אביזרים",

@@ -27,8 +27,8 @@ export class AddNewEppComponent implements OnInit {
 
 
   constructor(private formBuilder: FormBuilder, private ngRedux: NgRedux<IStore>) {
-    for (let prop in GeneralConstants.Vendors) {
-      this.optionType.push(GeneralConstants.Vendors[prop])
+    for (let prop in GeneralConstants.EppVendors) {
+      this.optionType.push(GeneralConstants.EppVendors[prop])
     }
   }
 
@@ -51,8 +51,8 @@ export class AddNewEppComponent implements OnInit {
       this.form.controls['eppUid'].setValidators([
         Validators.required,
         CustomValidators.number,
-        Validators.minLength(GeneralConstants.Vendors[e.value].validations.minLength),
-        Validators.maxLength(GeneralConstants.Vendors[e.value].validations.maxLength)
+        Validators.minLength(GeneralConstants.EppVendors[e.value].validations.minLength),
+        Validators.maxLength(GeneralConstants.EppVendors[e.value].validations.maxLength)
       ]);
       this.form.controls['eppUid'].updateValueAndValidity;
       this.form.controls['eppUid'].enable();

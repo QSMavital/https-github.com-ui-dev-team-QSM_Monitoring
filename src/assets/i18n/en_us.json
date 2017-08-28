@@ -195,6 +195,8 @@
     "cassette4": "Type 4",
     "lastSettleDispenseList": "Last Settlement",
     "accessoriesDispenserInfo": "Dispenser Info",
+    "accessoriesDispenserSum": "Dispenser Info",
+    "accessoriesDispenserDenom": "Dispenser Denom",
     "item": "item",
     "city": "city",
     "transaction": "transaction",

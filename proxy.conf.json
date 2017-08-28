@@ -1,6 +1,6 @@
 {
   "/operator/api": {
-    "target": "http://localhost:4001",
+    "target": "https://localhost:8443",
     "secure": false,
     "pathRewrite": {"^/api" : ""}
   }

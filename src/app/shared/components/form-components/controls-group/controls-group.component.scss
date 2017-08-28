@@ -19,4 +19,28 @@
     }
     //margin-bottom:10px;
   }
+  ul{
+    border-bottom:1px solid #eceff2;
+    display: inline-block;
+    margin-top: -10px;
+    li{
+      display: inline-block;
+      margin-right:40px;
+      cursor: pointer;
+      color:$bali;
+      height:40px;
+      line-height:40px;
+      outline: none;
+      span{
+        border-bottom: 4px solid transparent;
+        &.active {
+            color: $lynch;
+            border-color: $lavender;
+        }
+      }
+      &:last-child{
+        margin: 0;
+      }
+    }
+  }
 }

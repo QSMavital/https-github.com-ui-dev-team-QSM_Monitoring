@@ -16,16 +16,40 @@ import {DecimalPipe} from "@angular/common";
 export class AccessoriesCashPoolComponent implements OnChanges {
   public infos: any[] = [];
   public gridOptions: GridOptions;
+  denom:boolean=false;
+  tabs:any=[];
+  lastActive:any;
+  DefWithDenom=[];
+  DefWithOutDenom=[];
 @Input() public cash_pool_data: any = {};
 
 
 
 constructor(private gridDefsSrv: GridDefsService, private translateSrv: TranslateService,private decimalPipe:DecimalPipe) {
   this.gridOptions = this.gridDefsSrv.initGridOptions();
-  for (let prop in Atm.Accessories.CashPool){
-    this.gridOptions.columnDefs.push(Object.assign({}, { suppressFilter: true }, Atm.Accessories.CashPool[prop], {
-      headerName: this.translateSrv.instant(Atm.Accessories.CashPool[prop].headerName)
-    }));
+  let tab:any;
+  for (let prop in Atm.Accessories.CashPool.Tabs){
+      tab=Atm.Accessories.CashPool.Tabs[prop];
+      if(tab.active==='true')
+        this.lastActive=tab;
+      this.tabs.push(tab);
+  }
+  for (let prop in Atm.Accessories.CashPool.AmountData){
+      this.DefWithOutDenom.push(Object.assign({}, {suppressFilter: true },
+        Atm.Accessories.CashPool.AmountData[prop],{
+          headerName: this.translateSrv.instant(Atm.Accessories.CashPool.AmountData[prop].headerName)
+        }));
+      this.DefWithDenom.push(Object.assign({}, {suppressFilter: true },
+        Atm.Accessories.CashPool.SumData[prop],{
+          headerName: this.translateSrv.instant(Atm.Accessories.CashPool.SumData[prop].headerName)
+        }));
+  }
+  if(this.lastActive&&this.lastActive.label==="atm.accessoriesDispenserDenom"){
+    this.denom=true;
+    this.gridOptions.columnDefs=this.DefWithDenom;
+  }
+  else{
+    this.gridOptions.columnDefs=this.DefWithOutDenom;
   }
 }
 
@@ -33,12 +57,28 @@ constructor(private gridDefsSrv: GridDefsService, private translateSrv: Translat
     this.gridOptions.api.sizeColumnsToFit();
   }
 
+  changeTab(value){
+    this.denom=!this.denom;
+    this.lastActive.active="false";
+    value.active="true";
+    this.lastActive=value;
+    this.dataChanged();
+  }
+  dataChanged(){
+    if(this.denom){
+      this.gridOptions.api.setColumnDefs(this.DefWithDenom);
+    }
+    else{
+     this.gridOptions.api.setColumnDefs(this.DefWithOutDenom);
+    }
+  }
+
   ngOnChanges(newValue){
     if(!isNullOrUndefined(newValue.cash_pool_data)&&!isNullOrUndefined(newValue.cash_pool_data.currentValue)&&!isNullOrUndefined(this.gridOptions.api)){
       let rowData = this.cash_pool_data.cassettesList;      
       rowData.push({'cassetteType': 'total','currencyCode':'', 'dispensed': this.cash_pool_data.sumDispensed/100, 'remaining':this.cash_pool_data.sumRemaining/100});
       this.gridOptions.api.setRowData(rowData);
-
+      this.dataChanged();
       for (let key in this.cash_pool_data){
         if(key !== 'cassettesList'){
           if (key === 'lastGoodWithrawal') {

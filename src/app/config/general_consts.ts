@@ -33,7 +33,12 @@ export const GeneralConstants = {
 
   },
   Vendors: {
-    NCR: {value: "NCR", label: "NCR",validations:{minLength:8,maxLength:8}},
+    NCR_ENHANCED: {value: "ENHANCED", label: "NCR",validations:{minLength:8,maxLength:8}},
+    WINCOR: {value: "WINCOR", label: "WINCOR",validations:{minLength:16,maxLength:16}},
+    DIEBOLD: {value: "DIEBOLD", label: "DIEBOLD",validations:{minLength:8,maxLength:8}}
+  },
+  EppVendors: {
+    NCR_ENHANCED: {value: "NCR_ENHANCED", label: "NCR",validations:{minLength:8,maxLength:8}},
     WINCOR: {value: "WINCOR", label: "WINCOR",validations:{minLength:16,maxLength:16}},
     DIEBOLD: {value: "DIEBOLD", label: "DIEBOLD",validations:{minLength:8,maxLength:8}}
   },

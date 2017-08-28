@@ -98,6 +98,7 @@ import {ReportsDataComponent} from './core/reports/components/reports-data/repor
 import {TransactionComponent} from "./core/atms/atms-transaction/atms-transaction.component";
 import { DevicesSmallComponent } from './core/dashboard/closed-bar-widgets/device-small/device-small.component';
 import { InfoDialogComponent } from './core/master/components/info-dialog/info-dialog.component';
+import { AgDivDenomComponent } from './shared/components/ag-div-denom/ag-div-denom.component';
 import {AgCheckEmpty} from './shared/components/ag-check-empty/ag-check-empty';
 
 export function HttpLoaderFactory(http: Http) {
@@ -167,6 +168,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
     TransactionComponent,
     DevicesSmallComponent,
     InfoDialogComponent,
+    AgDivDenomComponent,
     AgCheckEmpty
   ],
   imports: [
@@ -207,6 +209,7 @@ export function interceptorFactory(xhrBackend: XHRBackend, requestOptions: Reque
       AgDirectiveComponent,
       AgNumberComponent,
       AgBooleanComponent,
+      AgDivDenomComponent,
       AgCheckEmpty
     ])
   ],

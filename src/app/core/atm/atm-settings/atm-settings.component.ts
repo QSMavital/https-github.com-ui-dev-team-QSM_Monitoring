@@ -93,7 +93,7 @@ export class AtmSettingsComponent implements OnInit {
 
     state.terminalNearestSettings.forEach((item, index) => {
       if (!isNullOrUndefined(this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index + 1}`])) {
-        this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index + 1}`].controls['bankNo'].setValue(item['bankNo']);
+        this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index + 1}`].controls['bank'].setValue(item['bank']);
         this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index + 1}`].controls['branch'].setValue(item['branch']);
         this.form.controls['terminalNearestSettings']['controls'][`nearestSettings${index + 1}`].controls['address'].setValue(item['address']);
       }

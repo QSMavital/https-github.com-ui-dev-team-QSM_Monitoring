@@ -35,18 +35,19 @@ constructor(private gridDefsSrv: GridDefsService, private translateSrv: Translat
 
   ngOnChanges(newValue){
     if(!isNullOrUndefined(newValue.cash_pool_data)&&!isNullOrUndefined(newValue.cash_pool_data.currentValue)&&!isNullOrUndefined(this.gridOptions.api)){
-      let rowData = this.cash_pool_data.cassettesList;
+      let rowData = this.cash_pool_data.cassettesList;      
+      rowData.push({'cassetteType': 'total','currencyCode':'', 'dispensed': this.cash_pool_data.sumDispensed/100, 'remaining':this.cash_pool_data.sumRemaining/100});
       this.gridOptions.api.setRowData(rowData);
 
       for (let key in this.cash_pool_data){
         if(key !== 'cassettesList'){
           if (key === 'lastGoodWithrawal') {
             this.infos.push({key: `atm.${key}`, value: new Date(this.cash_pool_data[key]).toLocaleString()})
-          } else if(key === 'sumDispensed' ||key === 'sumRemaing' ||key === 'localCurrencyTrigger' ||key === 'localCurrencyTrigger2' ){
+          } else if(key === 'localCurrencyTrigger' ||key === 'localCurrencyTrigger2' ){
             this.infos.push({key: `atm.${key}`, value: this.decimalPipe.transform(this.cash_pool_data[key],'1.0-0')})
-          }else {
-            this.infos.push({key: `atm.${key}`, value: this.cash_pool_data[key]})
-          }
+          }//else {
+           // this.infos.push({key: `atm.${key}`, value: this.cash_pool_data[key]})
+          //}
         }
       }
     }

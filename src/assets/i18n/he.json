@@ -22,7 +22,8 @@
     "NIS": "שקל",
     "USD": "דולר",
     "EUR": "יורו",
-    "NONE": "לא בשימוש"
+    "NONE": "לא בשימוש",
+    "" : "-"
   },
   "rklProtocol": {
     "NONE": "None",
@@ -301,12 +302,13 @@
     "accessories": {
       "accessoriesDispenserInfo": {
         "cassetteType": "Cassette Type",
-        "general": "General",
-        "rejectBin" :"Reject Bin",
+        "general": "כללי",
+        "rejectBin" :"תא נדחים",
         "1": "1",
         "2":"2",
         "3":"3",
-        "4":"4"
+        "4":"4",
+        "total": "סך הכל"
       }
     }
   },
@@ -377,7 +379,7 @@
       "ACCOUNT_ACTIVITY": "דוח פעילות חשבון",
       "TRANSACTIONS":"דוח תנועות",
       "SETTLEMENT":"דוח איזונים",
-      "show":"הצד דוח",
+      "show":"הצג דוח",
       "report":"דוחות",
       "deviceNo":"מס מכשיר",
       "cardNo":"Card no:",

@@ -274,7 +274,8 @@
       "disableSettings": "Disable",
       "terminalNearestSettings": "Nearest terminal Settings",
       "treatmentDeviceSettings": "Problem Resolution",
-      "limitationAmountsSettings": "Limits"
+      "limitationAmountsSettings": "Limits",
+      "emvSettings": "EMV Settings"
     },
     "status": {
       "general": {

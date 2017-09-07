@@ -334,7 +334,7 @@
       "sessionNumbers": "Session Numbers",
       "type": "Type",
       "port": "Port",
-      "addAtm": "Add new HSM",
+      "addHsm": "Add new HSM",
       "openLink": "Open Session",
       "closeLink": "Close Session",
       "checkLink": "Check Session",

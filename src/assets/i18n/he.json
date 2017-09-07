@@ -332,7 +332,7 @@
       "sessionNumbers": "מספר קישור",
       "type": "Type",
       "port": "Port",
-      "addAtm": "הוסף ATM",
+      "addHsm": "הוסף HSM",
       "openLink": "פתיחת קישור",
       "closeLink": "סגירת קישור",
       "checkLink": "בדיקת קישור",

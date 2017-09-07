@@ -1,4 +1,4 @@
-<h4 class="form-inner-title">
+<h4 *ngIf="header||tabs.length>0" class="form-inner-title">
   <span  *ngIf="header">{{header}} </span>
   <ul *ngIf="tabs">
       <li (click)="activateClass(item)" *ngFor="let item of tabs">

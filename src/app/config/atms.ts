@@ -123,8 +123,8 @@ export const Atms = {
   },
   Events: {
     atmNo: {headerName: 'atms.terminalId', field: 'atmNo', width: 80,suppressSizeToFit: true},
-    date: {headerName: 'general.date', field: 'date', width: 120,suppressSizeToFit: true,cellRendererFramework: AgDateShortComponent},
-    time: {headerName: 'general.time', field: 'time', width: 120,suppressSizeToFit: true,cellRendererFramework: AgTimeComponent},
+    date: {headerName: 'general.date', field: 'eventDate', width: 120,suppressSizeToFit: true,cellRendererFramework: AgDateShortComponent},
+    time: {headerName: 'general.time', field: 'eventTime', width: 120,suppressSizeToFit: true,cellRendererFramework: AgTimeComponent},
     eventCode: {headerName: 'atms.code', field: 'eventCode', width: 100,suppressSizeToFit: true},
     eventTextEn: {headerName: 'atms.spec', field: 'eventTextEn', width: 200},
     eventTextLocal: {headerName: 'atms.fullSpec', field: 'eventTextLocal', width: 200},
